@@ -1,0 +1,3900 @@
+1
+00:00:02,210 --> 00:00:06,900
+ All right, where did we leave?
+
+2
+00:00:08,650 --> 00:00:13,100
+ Well, last week, or last lesson when it comes to fundamentals,
+
+3
+00:00:13,200 --> 00:00:15,440
+ because I know you took a little break on Monday.
+
+4
+00:00:16,140 --> 00:00:21,020
+ You went into GitHub and, yeah, talked a little bit about commits and so on.
+
+5
+00:00:22,450 --> 00:00:26,710
+ But if we go back to Thursday's lesson,
+
+6
+00:00:27,160 --> 00:00:31,260
+ the last thing we spoke about was, well, controlling the flow, right?
+
+7
+00:00:31,930 --> 00:00:33,590
+ Controlling the flow of our programs.
+
+8
+00:00:33,590 --> 00:00:41,750
+ Well, we used if statements, and, yeah, we used loops.
+
+9
+00:00:43,280 --> 00:00:45,040
+ We used comparisons.
+
+10
+00:00:47,100 --> 00:00:49,320
+ And, of course, Boolean logic, right?
+
+11
+00:00:54,030 --> 00:00:56,910
+ Yeah, and since we have already spoken about this,
+
+12
+00:00:57,390 --> 00:00:59,030
+ now when it comes to the labs,
+
+13
+00:00:59,190 --> 00:01:04,410
+ maybe you saw that we can actually make decisions and process collections, right?
+
+14
+00:01:04,800 --> 00:01:06,270
+ For example, this collection here.
+
+15
+00:01:06,460 --> 00:01:10,600
+ But there is still one problem, right?
+
+16
+00:01:10,600 --> 00:01:17,270
+ Well, most of our code is written from top to bottom in one large script, right?
+
+17
+00:01:19,420 --> 00:01:22,400
+ And, for example, if we look at this example that I just wrote,
+
+18
+00:01:23,800 --> 00:01:25,780
+ well, this works perfectly fine, doesn't it?
+
+19
+00:01:28,190 --> 00:01:34,290
+ But what if, let's say, I need this logic in several different places?
+
+20
+00:01:36,790 --> 00:01:40,490
+ Well, I could copy and paste the code, right?
+
+21
+00:01:41,470 --> 00:01:45,100
+ But copying the code, well, creates another problem.
+
+22
+00:01:45,540 --> 00:01:48,870
+ Because if I later need to change the logic,
+
+23
+00:01:49,150 --> 00:01:51,430
+ I may need to change it in several places, right?
+
+24
+00:01:51,430 --> 00:02:00,910
+ And this is one of the problems that we can solve now after this lesson.
+
+25
+00:02:01,780 --> 00:02:03,460
+ Because what do you think is that I'm getting at?
+
+26
+00:02:04,150 --> 00:02:05,560
+ What are we going to talk about today?
+
+27
+00:02:06,220 --> 00:02:06,790
+ Do you think?
+
+28
+00:02:11,680 --> 00:02:12,120
+ Classes?
+
+29
+00:02:12,700 --> 00:02:13,480
+ Something like that?
+
+30
+00:02:14,200 --> 00:02:14,520
+ Functions.
+
+31
+00:02:15,170 --> 00:02:15,950
+ Yeah, there we go.
+
+32
+00:02:16,250 --> 00:02:18,110
+ We're actually going to talk about functions today.
+
+33
+00:02:24,820 --> 00:02:30,240
+ All right, may I interrupt?
+
+34
+00:02:32,270 --> 00:02:34,250
+ Could it make the text a bit bigger?
+
+35
+00:02:35,580 --> 00:02:36,180
+ Yeah, sure.
+
+36
+00:02:40,560 --> 00:02:41,330
+ Yeah, thanks.
+
+37
+00:02:44,170 --> 00:02:44,610
+ Go.
+
+38
+00:02:44,890 --> 00:02:47,290
+ All right.
+
+39
+00:02:48,070 --> 00:02:53,470
+ Well, a function, well, you might know this, or you should already know this.
+
+40
+00:02:53,570 --> 00:02:56,220
+ But anyways, a small reminder.
+
+41
+00:02:57,040 --> 00:03:01,740
+ Well, a function is just reusable code, right?
+
+42
+00:03:02,460 --> 00:03:03,740
+ I can actually write that there.
+
+43
+00:03:05,940 --> 00:03:09,020
+ Reu code, right?
+
+44
+00:03:10,550 --> 00:03:17,720
+ Or reusable, I can even say, let's say, like this, block code.
+
+45
+00:03:19,790 --> 00:03:22,980
+ Well, it's designed to perform a task, right?
+
+46
+00:03:24,520 --> 00:03:31,980
+ And, well, we have already been using functions since lesson one, to be honest, right?
+
+47
+00:03:32,740 --> 00:03:37,300
+ For example, this function, right?
+
+48
+00:03:38,210 --> 00:03:50,710
+ Or this function, or I don't know, maybe this function, right?
+
+49
+00:03:51,330 --> 00:04:11,090
+ So the difference today is that instead of only using functions that Python actually gives us, built-in functions, well, we're going actually to start to create our own functions and how we do it in Python.
+
+50
+00:04:11,580 --> 00:04:13,900
+ That's basically the idea of the lesson.
+
+51
+00:04:17,010 --> 00:04:18,350
+ So let's begin.
+
+52
+00:04:20,360 --> 00:04:31,540
+ In Python, we actually create a function using the keyword def, and def is short for define.
+
+53
+00:04:33,280 --> 00:04:35,150
+ So that's how you begin a function in Python.
+
+54
+00:04:35,920 --> 00:04:39,650
+ So def, and let's name it to, for example, greet.
+
+55
+00:04:40,210 --> 00:04:41,130
+ Let me move that.
+
+56
+00:04:43,500 --> 00:04:46,770
+ And let me just do something here.
+
+57
+00:04:47,360 --> 00:04:54,780
+ And maybe, whoops, right?
+
+58
+00:04:55,310 --> 00:04:58,220
+ So let's take a look at the syntax here.
+
+59
+00:04:58,220 --> 00:05:05,770
+ So we have a def here, define, and then we have the function's name.
+
+60
+00:05:06,490 --> 00:05:07,880
+ In this case, greet.
+
+61
+00:05:08,330 --> 00:05:10,260
+ So I chose the name greet, right?
+
+62
+00:05:12,660 --> 00:05:16,580
+ After that, we have parentheses and a colon.
+
+63
+00:05:17,340 --> 00:05:23,080
+ And then we have some indented code block, right?
+
+64
+00:05:24,330 --> 00:05:30,480
+ So notice again that indentation here actually defines the block.
+
+65
+00:05:32,000 --> 00:05:37,090
+ So if I were to run this, will this actually print hello?
+
+66
+00:05:37,880 --> 00:05:39,830
+ Well, let's take a look.
+
+67
+00:05:39,830 --> 00:05:43,930
+ Well, obviously not, right?
+
+68
+00:05:45,170 --> 00:05:51,600
+ So what we have done here is only to define the function, but we have not called it yet, right?
+
+69
+00:05:51,600 --> 00:06:00,960
+ So in order to call the function, I would do something like this, greet.
+
+70
+00:06:01,280 --> 00:06:05,900
+ And now Python actually executes the code inside the function.
+
+71
+00:06:06,580 --> 00:06:09,450
+ And we get our hello, since we have print hello here.
+
+72
+00:06:10,710 --> 00:06:17,390
+ So what we can do is actually call the function again and again and again.
+
+73
+00:06:17,750 --> 00:06:18,840
+ No problem at all.
+
+74
+00:06:19,600 --> 00:06:22,280
+ So this would be the first benefit, right?
+
+75
+00:06:22,530 --> 00:06:24,330
+ So we get our three hellos over here.
+
+76
+00:06:26,740 --> 00:06:28,600
+ We can reuse our code.
+
+77
+00:06:29,060 --> 00:06:38,550
+ So we define the behavior once and can actually execute it many times, as we see here.
+
+78
+00:06:42,870 --> 00:06:55,190
+ When it comes to function names, well, they would follow the same convention as variables, as naming variables, lowercase and snakecase.
+
+79
+00:06:57,830 --> 00:07:22,960
+ For example, let's do something easier.
+
+80
+00:07:23,160 --> 00:07:27,710
+ Print or name.
+
+81
+00:07:29,730 --> 00:07:32,060
+ There we go.
+
+82
+00:07:32,650 --> 00:07:35,930
+ And then we can call it say good morning.
+
+83
+00:07:36,770 --> 00:07:37,110
+ There we go.
+
+84
+00:07:37,110 --> 00:07:44,680
+ So try to choose names that would actually describe what the function actually does.
+
+85
+00:07:45,750 --> 00:07:47,500
+ For example, I don't know.
+
+86
+00:07:48,290 --> 00:07:51,540
+ I'm not good mot name, but you get the point.
+
+87
+00:07:52,740 --> 00:08:03,660
+ Well, we could use names, for example, as calculate the average, validate email, get student score, and so on.
+
+88
+00:08:03,660 --> 00:08:11,130
+ Rather than function one, function two, function three, or do stuff, or something like that.
+
+89
+00:08:14,630 --> 00:08:22,830
+ So our greet function over here, if we take that back, let me just reuse that one.
+
+90
+00:08:35,840 --> 00:08:40,190
+ So our greet function always prints the exact same thing, right?
+
+91
+00:08:40,730 --> 00:08:42,980
+ But we could make it more flexible.
+
+92
+00:08:43,830 --> 00:08:48,570
+ We can actually give a function parameters like this.
+
+93
+00:08:49,160 --> 00:08:56,310
+ I would write name over here, and then maybe hello to the name.
+
+94
+00:08:59,370 --> 00:09:05,950
+ And now name is actually a parameter.
+
+95
+00:09:07,570 --> 00:09:12,720
+ It acts like a variable inside the function.
+
+96
+00:09:12,720 --> 00:09:21,870
+ So when I'm supposed to call it here, it will actually ask for a name.
+
+97
+00:09:23,720 --> 00:09:27,560
+ And I can actually use a name.
+
+98
+00:09:27,710 --> 00:09:28,690
+ For example, Ada.
+
+99
+00:09:28,830 --> 00:09:35,370
+ So I'm actually providing a value for our variable.
+
+100
+00:09:36,970 --> 00:09:40,210
+ So I can run this, and I will get hello, Ada.
+
+101
+00:09:45,210 --> 00:09:54,820
+ Therefore, I can use the same function again and again and again, since I can do with a different name.
+
+102
+00:09:55,370 --> 00:09:58,460
+ For example, I don't know, Grace, for example.
+
+103
+00:09:58,460 --> 00:10:01,580
+ So if I were to run this, hello, Ada.
+
+104
+00:10:01,950 --> 00:10:02,560
+ Hello, Grace.
+
+105
+00:10:03,890 --> 00:10:06,190
+ And I can't keep on going.
+
+106
+00:10:06,960 --> 00:10:10,410
+ Cannot get the point, right?
+
+107
+00:10:11,410 --> 00:10:12,350
+ Hello, Ada.
+
+108
+00:10:12,680 --> 00:10:13,230
+ Hello, Grace.
+
+109
+00:10:13,550 --> 00:10:13,950
+ Hello, Guida.
+
+110
+00:10:14,320 --> 00:10:16,860
+ So same function, different inputs.
+
+111
+00:10:17,600 --> 00:10:21,930
+ So this actually makes the function reusable, as you see here.
+
+112
+00:10:25,570 --> 00:10:33,920
+ Well, we have two words that are often mixed up, and that is parameters and arguments.
+
+113
+00:10:33,920 --> 00:10:43,760
+ So in this particular example, name is actually the parameter.
+
+114
+00:10:44,800 --> 00:10:47,660
+ It is the variable defined by the function.
+
+115
+00:10:49,640 --> 00:10:53,260
+ And Ada, over here, for example, is the argument.
+
+116
+00:10:54,720 --> 00:11:06,520
+ So here we have our parameter, and here we have our argument, right?
+
+117
+00:11:06,520 --> 00:11:15,860
+ So that's the actual value that we pass into the function.
+
+118
+00:11:15,860 --> 00:11:31,400
+ So yeah, people usually or sometimes use words interchangeably, right, in normal conversations.
+
+119
+00:11:31,840 --> 00:11:34,640
+ But technically, there is a difference.
+
+120
+00:11:36,730 --> 00:11:40,780
+ We can also have multiple parameters.
+
+121
+00:11:41,140 --> 00:11:41,880
+ Let's take an example.
+
+122
+00:11:46,270 --> 00:11:47,450
+ How would that look?
+
+123
+00:11:48,750 --> 00:11:49,010
+ Let's see here.
+
+124
+00:11:49,130 --> 00:11:52,330
+ For example, def introduce.
+
+125
+00:11:53,180 --> 00:11:59,060
+ Let's take to name and age, for example.
+
+126
+00:12:01,540 --> 00:12:03,120
+ And then I can do a print here.
+
+127
+00:12:05,930 --> 00:12:19,060
+ Name is age years.
+
+128
+00:12:20,680 --> 00:12:24,510
+ Something like that.
+
+129
+00:12:24,510 --> 00:12:38,510
+ So when I'm calling the function here, and you will notice, in introduce, in my parentheses, I see that I need a name, an age, right?
+
+130
+00:12:38,900 --> 00:12:42,910
+ Since this function has multiple parameters, a name and an age.
+
+131
+00:12:47,490 --> 00:12:49,870
+ And they are separated by commas.
+
+132
+00:12:51,040 --> 00:12:53,230
+ Important to remember, separated by commas.
+
+133
+00:12:53,960 --> 00:12:58,320
+ So I will provide a name, for example, Grace, for example.
+
+134
+00:12:59,470 --> 00:13:01,700
+ And we need an age.
+
+135
+00:13:02,690 --> 00:13:04,050
+ Let Grace be 85.
+
+136
+00:13:04,820 --> 00:13:06,750
+ 85 years young.
+
+137
+00:13:06,750 --> 00:13:08,230
+ All right.
+
+138
+00:13:08,650 --> 00:13:09,610
+ Let's try it out.
+
+139
+00:13:11,530 --> 00:13:12,690
+ And this actually works.
+
+140
+00:13:13,400 --> 00:13:14,900
+ Grace is 85 years old.
+
+141
+00:13:15,970 --> 00:13:28,830
+ And it's good to remember that, by default, these arguments are actually positional.
+
+142
+00:13:30,570 --> 00:13:36,540
+ So Python would actually match them based on their position.
+
+143
+00:13:37,200 --> 00:13:39,800
+ So let's actually take a look at that.
+
+144
+00:13:41,650 --> 00:13:44,020
+ Let's see an example, for example.
+
+145
+00:13:45,110 --> 00:13:49,410
+ I can actually get rid of that as well.
+
+146
+00:13:49,840 --> 00:13:51,730
+ So we have a name and age.
+
+147
+00:13:51,730 --> 00:13:53,050
+ So I can do something like this.
+
+148
+00:13:53,190 --> 00:13:56,690
+ Print name.
+
+149
+00:13:59,130 --> 00:14:03,560
+ Be name, right?
+
+150
+00:14:06,750 --> 00:14:09,660
+ Print age.
+
+151
+00:14:19,520 --> 00:14:21,080
+ Age, right?
+
+152
+00:14:25,580 --> 00:14:30,980
+ And let's also call the function.
+
+153
+00:14:31,670 --> 00:14:32,150
+ Introduce.
+
+154
+00:14:32,290 --> 00:14:34,640
+ I need to provide a name.
+
+155
+00:14:35,650 --> 00:14:37,190
+ Let's change to Ada this time.
+
+156
+00:14:39,190 --> 00:14:40,560
+ And let's give her an age.
+
+157
+00:14:40,620 --> 00:14:41,520
+ For example, 36.
+
+158
+00:14:42,350 --> 00:14:42,530
+ All right.
+
+159
+00:14:42,990 --> 00:14:47,750
+ So what happens here is that the first argument will go to name.
+
+160
+00:14:47,750 --> 00:14:50,620
+ And the second argument will actually go to age.
+
+161
+00:14:51,870 --> 00:14:57,010
+ So if I were to put instead of Ada 36, let's just try it.
+
+162
+00:14:57,250 --> 00:14:59,590
+ So we get name, Ada, age 36, right?
+
+163
+00:15:01,080 --> 00:15:14,910
+ But if I were to write like this, 36, Ada, will Python actually stop us?
+
+164
+00:15:15,550 --> 00:15:16,070
+ Let's check.
+
+165
+00:15:18,060 --> 00:15:19,760
+ No, it doesn't.
+
+166
+00:15:20,890 --> 00:15:24,060
+ So Python accepts the values, 36 and Ada.
+
+167
+00:15:24,290 --> 00:15:28,710
+ But semantically, this would be wrong, right?
+
+168
+00:15:28,790 --> 00:15:30,630
+ So the name is 36 and age is Ada.
+
+169
+00:15:30,730 --> 00:15:31,550
+ That makes no sense, right?
+
+170
+00:15:32,070 --> 00:15:40,210
+ So the order matters when we use positional arguments, okay?
+
+171
+00:15:41,530 --> 00:15:51,250
+ But what I can do here, let me just keep that one so we know where we came from.
+
+172
+00:15:51,680 --> 00:15:54,510
+ But what we can do here is something like this, age equals.
+
+173
+00:15:55,350 --> 00:15:59,210
+ And here we can do name equals, right?
+
+174
+00:16:00,630 --> 00:16:07,720
+ And if we run this, we get our name, Ada, age 36.
+
+175
+00:16:08,300 --> 00:16:17,900
+ So what we did here is using the word arguments.
+
+176
+00:16:19,060 --> 00:16:26,800
+ So we explicitly say which parameter each value actually belongs to.
+
+177
+00:16:29,020 --> 00:16:35,600
+ And because of that, order no longer matters.
+
+178
+00:16:36,320 --> 00:16:38,100
+ Pretty cool.
+
+179
+00:16:45,110 --> 00:16:49,250
+ Hopefully, you're able to follow along.
+
+180
+00:16:52,220 --> 00:16:52,960
+ Let's see here.
+
+181
+00:16:53,600 --> 00:16:54,080
+ Johanna?
+
+182
+00:16:55,630 --> 00:16:55,870
+ Yes.
+
+183
+00:16:56,070 --> 00:17:01,560
+ Does that also mean that you don't, that some arguments can be like voluntary?
+
+184
+00:17:01,920 --> 00:17:06,730
+ If you just want to send a name, is that possible?
+
+185
+00:17:07,010 --> 00:17:09,340
+ Is that like okay to do?
+
+186
+00:17:11,120 --> 00:17:14,160
+ So I think what you're trying to say here.
+
+187
+00:17:14,700 --> 00:17:22,010
+ So your question is, could I have a default name, for example, or default age, right?
+
+188
+00:17:22,630 --> 00:17:29,020
+ Yeah, or just not necessary to send in all the parameters or, yeah.
+
+189
+00:17:29,660 --> 00:17:30,160
+ Very good.
+
+190
+00:17:30,540 --> 00:17:33,040
+ We will actually see in a minute or so.
+
+191
+00:17:33,220 --> 00:17:33,500
+ Okay.
+
+192
+00:17:33,720 --> 00:17:36,140
+ So just give it five minutes and we will see.
+
+193
+00:17:36,480 --> 00:17:36,980
+ We will get there.
+
+194
+00:17:37,020 --> 00:17:38,300
+ So let's take one step by step.
+
+195
+00:17:38,400 --> 00:17:41,460
+ But that's a great question because it is relevant, right?
+
+196
+00:17:42,450 --> 00:17:45,040
+ So we're actually going to see that in a while.
+
+197
+00:17:45,920 --> 00:17:46,300
+ Great question.
+
+198
+00:17:48,440 --> 00:17:56,580
+ So let me just give you a, let me just give you one thing here.
+
+199
+00:17:56,580 --> 00:18:12,030
+ We're going to create a calculate tax and let's say income over here and let's give it another one.
+
+200
+00:18:12,230 --> 00:18:14,240
+ Tax rate, for example.
+
+201
+00:18:15,260 --> 00:18:20,440
+ Then we can do something like this.
+
+202
+00:18:20,540 --> 00:18:28,310
+ Tax equals income multiplied by tax.
+
+203
+00:18:29,860 --> 00:18:35,210
+ Let's just take a small step before we move to the next part where Johanna is talking about.
+
+204
+00:18:36,360 --> 00:18:47,030
+ Call this one calculate tax with 5,000, for example, or 50,000 maybe.
+
+205
+00:18:48,340 --> 00:18:51,680
+ And 0.3, for example, or 0.3, right?
+
+206
+00:18:52,320 --> 00:19:01,860
+ So this function actually reveals, or rather, say it like this.
+
+207
+00:19:02,300 --> 00:19:05,040
+ It actually receives two values, right?
+
+208
+00:19:06,060 --> 00:19:09,890
+ And it performs actually a calculation as well.
+
+209
+00:19:10,250 --> 00:19:15,040
+ And it also prints out the result.
+
+210
+00:19:15,630 --> 00:19:16,700
+ Let's actually see.
+
+211
+00:19:17,020 --> 00:19:17,780
+ Yes, it does.
+
+212
+00:19:19,690 --> 00:19:21,290
+ Or did it?
+
+213
+00:19:24,810 --> 00:19:27,090
+ Yeah, 15,000, right?
+
+214
+00:19:28,120 --> 00:19:32,350
+ So it did the calculation and it also printed out the result.
+
+215
+00:19:34,030 --> 00:19:46,020
+ But there is one thing, or I could say something at least, about this function that I don't really like.
+
+216
+00:19:47,320 --> 00:19:53,110
+ So the function actually calculates a useful value, right?
+
+217
+00:19:53,930 --> 00:19:55,830
+ But then it only prints it.
+
+218
+00:19:58,340 --> 00:20:05,740
+ Let's say another part of my program actually needs to use this calculated tax.
+
+219
+00:20:05,740 --> 00:20:12,000
+ This wouldn't be possible with this function, right?
+
+220
+00:20:12,080 --> 00:20:14,920
+ Since we're only printing out the tax, right?
+
+221
+00:20:17,000 --> 00:20:19,740
+ What would I do then?
+
+222
+00:20:23,910 --> 00:20:24,890
+ All right, Noisa, go for it.
+
+223
+00:20:28,840 --> 00:20:34,050
+ Sorry, I didn't hear me.
+
+224
+00:20:48,160 --> 00:20:51,940
+ Titika?
+
+225
+00:20:52,610 --> 00:20:54,820
+ To print in the value.
+
+226
+00:20:55,270 --> 00:20:56,230
+ Yes, exactly.
+
+227
+00:20:57,220 --> 00:21:00,270
+ So I'm actually going to do a little change here.
+
+228
+00:21:00,330 --> 00:21:11,690
+ Instead of writing print here, I'm actually going to put return tax without any parentheses, right?
+
+229
+00:21:12,830 --> 00:21:15,490
+ So this is actually an important concept, right?
+
+230
+00:21:17,580 --> 00:21:23,310
+ Return actually sends a value back to the place where the function was actually called.
+
+231
+00:21:23,310 --> 00:21:38,500
+ So the function is no longer responsible for deciding what I do with the result.
+
+232
+00:21:38,500 --> 00:21:43,550
+ Since I now, instead of doing that, I would rather do something like this.
+
+233
+00:21:45,980 --> 00:22:01,960
+ So the result equals calculate tax, for example, just to make it a little bit clearer, 50,000 and 0.3.
+
+234
+00:22:02,110 --> 00:22:08,070
+ And now I would actually just print out the what?
+
+235
+00:22:08,070 --> 00:22:09,650
+ Well, the result, obviously.
+
+236
+00:22:09,650 --> 00:22:15,740
+ I can print it.
+
+237
+00:22:15,740 --> 00:22:17,720
+ I can actually save it.
+
+238
+00:22:17,720 --> 00:22:23,850
+ I can use it in another calculation and I can pass it to another function, right?
+
+239
+00:22:26,480 --> 00:22:31,370
+ So a little bit of difference between return and print.
+
+240
+00:22:35,200 --> 00:22:54,540
+ So let's actually make the print and return very clear, clearer example.
+
+241
+00:22:55,130 --> 00:22:57,190
+ Let's do something like this.
+
+242
+00:22:57,910 --> 00:22:58,650
+ Let me think.
+
+243
+00:23:02,420 --> 00:23:02,840
+ Let's do this.
+
+244
+00:23:03,220 --> 00:23:25,170
+ Def add with print and B, print plus B, right?
+
+245
+00:23:26,270 --> 00:23:38,600
+ And the result equals print, numbers here, 5 and 3, that's it.
+
+246
+00:23:39,260 --> 00:23:55,470
+ And then we can do print, result, result.
+
+247
+00:23:55,470 --> 00:24:15,350
+ So what do you guys think that the result contains, Fabian?
+
+248
+00:24:17,660 --> 00:24:24,350
+ Here, I'm going to be honest that I'm not entirely sure because we haven't specified the types of A and B.
+
+249
+00:24:24,950 --> 00:24:27,200
+ So, oh, never mind.
+
+250
+00:24:27,420 --> 00:24:28,140
+ No, no, no, no.
+
+251
+00:24:28,160 --> 00:24:28,660
+ You did it.
+
+252
+00:24:28,760 --> 00:24:30,380
+ It should be 8, never mind.
+
+253
+00:24:30,520 --> 00:24:30,800
+ All right.
+
+254
+00:24:31,000 --> 00:24:31,720
+ It should be 8, right?
+
+255
+00:24:32,680 --> 00:24:36,050
+ So let's actually see here, all right?
+
+256
+00:24:36,700 --> 00:24:37,600
+ Let's take a look.
+
+257
+00:24:38,750 --> 00:24:41,450
+ As you see here, look at that.
+
+258
+00:24:41,950 --> 00:24:46,990
+ We get an 8 and then we have result none, right?
+
+259
+00:24:49,960 --> 00:24:51,090
+ Result none.
+
+260
+00:24:51,090 --> 00:24:55,640
+ So the function actually printed out 8.
+
+261
+00:24:56,420 --> 00:24:57,900
+ So far, so good, right?
+
+262
+00:24:58,690 --> 00:25:07,240
+ But it did not return 8 because we don't have an explicit return value.
+
+263
+00:25:08,330 --> 00:25:11,850
+ Therefore, Python will return none.
+
+264
+00:25:15,980 --> 00:25:19,960
+ We were able to follow that one.
+
+265
+00:25:21,000 --> 00:25:21,990
+ Let me say that again.
+
+266
+00:25:21,990 --> 00:25:30,750
+ So the function printed out 8, but it did not return 8.
+
+267
+00:25:40,960 --> 00:25:49,100
+ Don't, I don't know, return 8 or doesn't, all right, turn 8.
+
+268
+00:25:49,180 --> 00:25:49,820
+ You get the point.
+
+269
+00:25:49,940 --> 00:25:52,410
+ Return 8, right?
+
+270
+00:25:55,650 --> 00:25:58,580
+ Because why?
+
+271
+00:25:59,040 --> 00:26:02,100
+ Well, because we don't have a return value.
+
+272
+00:26:02,740 --> 00:26:05,480
+ And since we don't, well, Python returns none.
+
+273
+00:26:05,480 --> 00:26:16,870
+ So if we want to actually change this, one would do what?
+
+274
+00:26:17,170 --> 00:26:26,550
+ Well, here, first of all, we would say return a plus b.
+
+275
+00:26:27,820 --> 00:26:31,650
+ And now let's try it out.
+
+276
+00:26:32,270 --> 00:26:37,430
+ To run this, we actually get our result 8.
+
+277
+00:26:37,630 --> 00:26:44,500
+ So now the value 8 comes back from the function, and it's actually stored in result.
+
+278
+00:26:51,910 --> 00:26:56,540
+ And it's a usual beginner mistake, right?
+
+279
+00:26:56,830 --> 00:27:05,980
+ That you can see, people would say, or somebody who's new to programming would maybe say, well, I actually get an 8, right?
+
+280
+00:27:06,100 --> 00:27:15,430
+ I can see the value in the terminal, but somebody more experienced would rather say the function actually returned the value 8, right?
+
+281
+00:27:15,880 --> 00:27:18,090
+ And that's not the same thing, right?
+
+282
+00:27:24,800 --> 00:27:39,660
+ Take another example, just to make sure.
+
+283
+00:27:40,400 --> 00:27:42,120
+ Another return example.
+
+284
+00:27:42,120 --> 00:27:52,520
+ Say def calculate.
+
+285
+00:27:53,310 --> 00:27:57,880
+ It's a tax, right?
+
+286
+00:27:59,000 --> 00:28:00,610
+ Income here.
+
+287
+00:28:02,180 --> 00:28:19,320
+ And we need a tax rate return multiplied by tax rate.
+
+288
+00:28:20,680 --> 00:28:26,110
+ So what I can do here is actually do something like this.
+
+289
+00:28:26,310 --> 00:28:43,290
+ Tax equals, calculate tax, 2,000, multiplied by 0.3.
+
+290
+00:28:44,640 --> 00:28:49,780
+ Now I can actually use that tax in another variable.
+
+291
+00:28:51,160 --> 00:28:54,910
+ Let's make income, what should we call that?
+
+292
+00:28:55,220 --> 00:28:56,460
+ After tax, maybe?
+
+293
+00:28:57,440 --> 00:29:11,480
+ Equals 50,000 minus the tax that we just calculated over here at line 1016.
+
+294
+00:29:15,250 --> 00:29:19,550
+ And now we can actually print a lot of things here.
+
+295
+00:29:19,550 --> 00:29:23,580
+ For example, we can start up by printing out tax.
+
+296
+00:29:24,920 --> 00:29:29,130
+ That would be our tax, right?
+
+297
+00:29:29,270 --> 00:29:30,490
+ That we calculate over here.
+
+298
+00:29:33,020 --> 00:29:33,830
+ Sorry.
+
+299
+00:29:34,540 --> 00:29:37,720
+ That we calculate over here.
+
+300
+00:29:39,380 --> 00:29:46,820
+ And then we can also do another print with the income after tax.
+
+301
+00:29:50,570 --> 00:29:53,880
+ Income tax.
+
+302
+00:29:56,290 --> 00:29:59,330
+ And that would be income after tax.
+
+303
+00:29:59,660 --> 00:30:00,950
+ Something like that.
+
+304
+00:30:03,640 --> 00:30:04,870
+ Let's run this and see.
+
+305
+00:30:07,010 --> 00:30:08,200
+ Maybe I missed something.
+
+306
+00:30:09,160 --> 00:30:09,920
+ Can you find it?
+
+307
+00:30:10,660 --> 00:30:11,420
+ Sure.
+
+308
+00:30:11,600 --> 00:30:11,820
+ Gloria.
+
+309
+00:30:14,590 --> 00:30:15,030
+ Yeah.
+
+310
+00:30:15,370 --> 00:30:25,190
+ I think in the line 1016, you are passing just one parameter, one argument, because you
+
+311
+00:30:25,190 --> 00:30:25,810
+ are multiplying.
+
+312
+00:30:26,480 --> 00:30:26,680
+ Yeah.
+
+313
+00:30:28,100 --> 00:30:29,090
+ There we go.
+
+314
+00:30:30,940 --> 00:30:31,420
+ There we go.
+
+315
+00:30:32,830 --> 00:30:33,830
+ That looks much better.
+
+316
+00:30:34,050 --> 00:30:34,210
+ Right?
+
+317
+00:30:35,930 --> 00:30:37,140
+ Thank you for that one.
+
+318
+00:30:38,290 --> 00:30:39,520
+ Monday morning.
+
+319
+00:30:41,200 --> 00:30:42,110
+ So, there we go.
+
+320
+00:30:42,250 --> 00:30:47,820
+ We get our tax, 15,000, and we get our income after tax, right?
+
+321
+00:30:48,380 --> 00:30:52,950
+ Because calculate tax actually returns a value.
+
+322
+00:30:55,220 --> 00:31:00,220
+ And because it does that, well, then the rest of our program can continue working with that
+
+323
+00:31:00,220 --> 00:31:02,340
+ value, right?
+
+324
+00:31:02,340 --> 00:31:14,570
+ We don't actually always need an extra variable inside the function.
+
+325
+00:31:15,110 --> 00:31:16,330
+ We don't actually need that.
+
+326
+00:31:19,320 --> 00:31:31,100
+ We could do something like this and take, let's do this.
+
+327
+00:31:32,230 --> 00:31:35,940
+ Let me use that one separate here.
+
+328
+00:31:39,640 --> 00:31:41,870
+ There we go.
+
+329
+00:31:43,300 --> 00:31:48,720
+ And what we can do here is actually, we can do something like this.
+
+330
+00:31:48,840 --> 00:31:51,250
+ Print is perfectly fine.
+
+331
+00:31:52,770 --> 00:32:02,590
+ Calculate tax, 5,000 or 50,000 multiplied, sorry, 0.8.
+
+332
+00:32:03,560 --> 00:32:06,010
+ For example, you could do that.
+
+333
+00:32:08,040 --> 00:32:10,230
+ So, both versions are actually correct.
+
+334
+00:32:10,730 --> 00:32:11,630
+ No problem at all.
+
+335
+00:32:14,190 --> 00:32:25,610
+ So, sometimes this, and what we call it, an intermediate variable actually improves maybe
+
+336
+00:32:25,610 --> 00:32:27,530
+ the readability, right?
+
+337
+00:32:27,860 --> 00:32:28,780
+ As we saw here.
+
+338
+00:32:29,330 --> 00:32:34,980
+ But sometimes returning the expression directly is maybe perfectly clear.
+
+339
+00:32:35,340 --> 00:32:37,560
+ So, this would be valid.
+
+340
+00:32:40,490 --> 00:32:40,690
+ All right.
+
+341
+00:32:44,520 --> 00:32:49,750
+ Now, let's take another small step here.
+
+342
+00:32:52,860 --> 00:32:59,150
+ We're actually going to look at code after the return.
+
+343
+00:33:01,350 --> 00:33:01,930
+ Let's see here.
+
+344
+00:33:03,540 --> 00:33:05,100
+ We can do something like this.
+
+345
+00:33:05,180 --> 00:33:06,700
+ Def example.
+
+346
+00:33:09,630 --> 00:33:13,620
+ And let's do something like this.
+
+347
+00:33:14,450 --> 00:33:19,770
+ Print before return.
+
+348
+00:33:20,660 --> 00:33:27,370
+ Let's return 10.
+
+349
+00:33:28,800 --> 00:33:31,110
+ And then actually do another print.
+
+350
+00:33:31,520 --> 00:33:38,560
+ Print after return, right?
+
+351
+00:33:39,920 --> 00:33:44,120
+ And then, let me just do result.
+
+352
+00:33:45,180 --> 00:33:50,150
+ Result equals example.
+
+353
+00:33:51,300 --> 00:33:55,530
+ And then, let's actually print the result.
+
+354
+00:33:58,110 --> 00:33:59,040
+ There we go.
+
+355
+00:34:01,180 --> 00:34:06,960
+ So, the question is actually, will this print be printed out?
+
+356
+00:34:07,930 --> 00:34:12,930
+ Will we actually see after return in Terminal when I run this code?
+
+357
+00:34:14,030 --> 00:34:15,140
+ What do you guys say?
+
+358
+00:34:16,900 --> 00:34:22,650
+ If you haven't tried it on your computers, of course.
+
+359
+00:34:23,370 --> 00:34:23,590
+ Daniel?
+
+360
+00:34:26,270 --> 00:34:28,320
+ The function ends at return.
+
+361
+00:34:28,710 --> 00:34:29,560
+ Very good.
+
+362
+00:34:30,050 --> 00:34:30,890
+ It actually does.
+
+363
+00:34:31,950 --> 00:34:38,400
+ So, let's run this as Daniel suspected here.
+
+364
+00:34:39,290 --> 00:34:42,190
+ Or he said, print.
+
+365
+00:34:42,390 --> 00:34:45,300
+ We will get our print, first print, before return.
+
+366
+00:34:45,630 --> 00:34:47,340
+ We will get our 10.
+
+367
+00:34:47,680 --> 00:34:52,720
+ But as we see here, is that return immediately ends the function call.
+
+368
+00:34:52,720 --> 00:35:01,480
+ So, any code after that return in the same execution will not run.
+
+369
+00:35:02,680 --> 00:35:07,660
+ So, the print after return will never run.
+
+370
+00:35:10,930 --> 00:35:19,110
+ Therefore, let me see if I will answer your question, Maxime.
+
+371
+00:35:19,710 --> 00:35:21,570
+ Let me save that question for a little bit.
+
+372
+00:35:21,990 --> 00:35:31,050
+ So, this actually means that return works very naturally with, of course, conditions.
+
+373
+00:35:32,130 --> 00:35:34,780
+ For example, let's take an example here.
+
+374
+00:35:34,780 --> 00:35:42,510
+ Def and check grade.
+
+375
+00:35:44,580 --> 00:35:46,060
+ Let's say score here.
+
+376
+00:35:48,400 --> 00:35:48,560
+ Oops.
+
+377
+00:35:51,070 --> 00:35:53,650
+ Excuse me.
+
+378
+00:35:54,270 --> 00:35:55,650
+ So, let's do an if here.
+
+379
+00:35:56,540 --> 00:36:03,900
+ If the score is greater than or equal to, let's say, 70.
+
+380
+00:36:04,310 --> 00:36:10,870
+ I can return a pass.
+
+381
+00:36:13,310 --> 00:36:14,630
+ I can also use an else here.
+
+382
+00:36:15,800 --> 00:36:25,390
+ Else return fail.
+
+383
+00:36:25,390 --> 00:36:34,860
+ Let's see here.
+
+384
+00:36:41,070 --> 00:36:41,410
+ Call it.
+
+385
+00:36:41,670 --> 00:36:42,250
+ Try it out.
+
+386
+00:36:43,840 --> 00:36:50,710
+ Print, check, check grade.
+
+387
+00:36:51,810 --> 00:36:54,200
+ Let's do it with 85.
+
+388
+00:36:54,620 --> 00:36:55,660
+ We can do another one.
+
+389
+00:36:59,060 --> 00:37:02,390
+ Instead of 85, let's use 60.
+
+390
+00:37:04,300 --> 00:37:08,370
+ Let's try it out.
+
+391
+00:37:10,780 --> 00:37:12,920
+ We get a pass and a fail.
+
+392
+00:37:14,010 --> 00:37:18,090
+ It's 85 and 62 over 70, under 70.
+
+393
+00:37:18,360 --> 00:37:18,500
+ Right?
+
+394
+00:37:19,500 --> 00:37:20,880
+ So far, so good.
+
+395
+00:37:21,940 --> 00:37:30,660
+ But since return here, since return actually ends the function, we can actually write this in a more simpler way.
+
+396
+00:37:31,190 --> 00:37:37,480
+ So, let me just save that one so we remember where we came from to something like this.
+
+397
+00:37:37,480 --> 00:37:41,610
+ So, instead of writing else and all that, let me just write.
+
+398
+00:37:43,180 --> 00:37:47,820
+ I can just put return.
+
+399
+00:37:48,260 --> 00:37:52,320
+ This will actually work as well.
+
+400
+00:37:55,000 --> 00:38:05,390
+ So, if the score is 70 or higher, the first return will actually end the function.
+
+401
+00:38:07,370 --> 00:38:24,180
+ But if it's lower, so if Python actually reaches the second return, well, we already know that the first condition was actually false.
+
+402
+00:38:24,340 --> 00:38:35,020
+ Or it would have never have come to this pretty good, right?
+
+403
+00:38:46,570 --> 00:38:46,970
+ Yeah.
+
+404
+00:38:47,030 --> 00:38:48,570
+ Actually, one question, one comment.
+
+405
+00:38:48,870 --> 00:38:50,950
+ So, for the above one where you were showing me.
+
+406
+00:38:51,350 --> 00:38:52,110
+ Do you hear me, right?
+
+407
+00:38:52,890 --> 00:38:53,630
+ Yeah.
+
+408
+00:38:53,790 --> 00:39:03,470
+ So, the above one, even if you have a brain fart, the compiler will usually tell you that if you put something after return, it's grayed out, meaning that it will not be called.
+
+409
+00:39:03,590 --> 00:39:07,580
+ But in this function, can you do it in an enhanced if statement?
+
+410
+00:39:09,170 --> 00:39:12,670
+ Like in all the scores, let's say more this, return true, tell us false?
+
+411
+00:39:15,990 --> 00:39:16,390
+ Yes.
+
+412
+00:39:17,000 --> 00:39:17,670
+ Yes, we can.
+
+413
+00:39:17,890 --> 00:39:19,090
+ Or is it a bit too soon?
+
+414
+00:39:19,920 --> 00:39:23,600
+ No, I think we're going to come there very shortly.
+
+415
+00:39:24,350 --> 00:39:24,490
+ Yeah.
+
+416
+00:39:25,730 --> 00:39:27,900
+ We will get there, very good.
+
+417
+00:39:29,470 --> 00:39:32,210
+ But we will also look at it from another perspective as well.
+
+418
+00:39:32,330 --> 00:39:33,630
+ But we will get there, we will get there.
+
+419
+00:39:35,350 --> 00:39:36,870
+ Good question.
+
+420
+00:39:37,830 --> 00:39:40,490
+ Let's see here, I had an idea here.
+
+421
+00:39:41,440 --> 00:39:42,800
+ Or maybe I will skip down one.
+
+422
+00:39:42,820 --> 00:39:44,380
+ What time do we have 9.42?
+
+423
+00:39:45,320 --> 00:39:51,250
+ Okay.
+
+424
+00:39:52,600 --> 00:39:56,240
+ Let me take another small step.
+
+425
+00:39:57,340 --> 00:40:02,720
+ And hopefully, all the steps by the end will actually answer all your questions.
+
+426
+00:40:03,300 --> 00:40:05,210
+ And, of course, the lab as well.
+
+427
+00:40:10,080 --> 00:40:14,470
+ We're actually going to look at, well, let's see.
+
+428
+00:40:15,130 --> 00:40:21,050
+ Parameters can actually receive more than simple integers and strings, as we have seen so far.
+
+429
+00:40:22,350 --> 00:40:25,660
+ We can actually pass collections into functions.
+
+430
+00:40:27,950 --> 00:40:33,400
+ So what we can do here, something like this.
+
+431
+00:40:34,490 --> 00:40:49,090
+ Get first item, items, return here.
+
+432
+00:40:49,470 --> 00:40:50,610
+ Let's take the first item.
+
+433
+00:40:51,330 --> 00:40:52,900
+ Since we said first item, right?
+
+434
+00:40:53,510 --> 00:40:58,400
+ And it's not item, it's items.
+
+435
+00:40:59,510 --> 00:41:02,630
+ And let's create a list here.
+
+436
+00:41:03,350 --> 00:41:07,310
+ Languages equals.
+
+437
+00:41:10,000 --> 00:41:14,200
+ Let's put up a bunch of things.
+
+438
+00:41:14,380 --> 00:41:28,820
+ Languages, Python, Java, C, Sharp, for example.
+
+439
+00:41:31,390 --> 00:41:47,330
+ And then we can do something like this, print, well, get first item, and that will be with languages.
+
+440
+00:41:47,880 --> 00:41:55,060
+ Let's run this, see what happens.
+
+441
+00:41:56,870 --> 00:41:57,290
+ Python.
+
+442
+00:41:58,030 --> 00:42:11,420
+ So the parameters, the parameter items, refers, well, what, to the list that we have passed into the function.
+
+443
+00:42:12,400 --> 00:42:14,300
+ So a little bit different from what we saw before.
+
+444
+00:42:16,590 --> 00:42:22,970
+ We can also create a function that actually loops through a list.
+
+445
+00:42:23,200 --> 00:42:24,490
+ Let's try that out.
+
+446
+00:42:26,070 --> 00:42:44,590
+ Let's say, let's call it something simpler, print languages, languages, and our parameter will actually be languages.
+
+447
+00:42:45,310 --> 00:42:45,680
+ All right.
+
+448
+00:42:47,090 --> 00:42:56,150
+ So we can actually do a loop here, or language in languages, perfectly fine.
+
+449
+00:42:56,680 --> 00:43:01,640
+ As we have seen before, print language.
+
+450
+00:43:03,520 --> 00:43:04,320
+ Excuse me.
+
+451
+00:43:06,950 --> 00:43:15,990
+ My language, or my languages, right?
+
+452
+00:43:16,730 --> 00:43:17,950
+ We're creating a list here.
+
+453
+00:43:18,910 --> 00:43:22,200
+ Let me just use that one.
+
+454
+00:43:22,990 --> 00:43:23,700
+ There we go.
+
+455
+00:43:24,660 --> 00:43:25,190
+ There we go.
+
+456
+00:43:25,740 --> 00:43:26,380
+ There we go.
+
+457
+00:43:27,710 --> 00:43:28,870
+ Something like that.
+
+458
+00:43:29,740 --> 00:43:31,450
+ And let's see if we can loop through that.
+
+459
+00:43:32,710 --> 00:43:33,570
+ Print languages.
+
+460
+00:43:37,020 --> 00:43:37,690
+ Languages.
+
+461
+00:43:39,630 --> 00:43:47,150
+ So we can actually combine functions.
+
+462
+00:43:47,150 --> 00:43:59,450
+ We can actually combine functions with loops from what we saw in the previous lesson.
+
+463
+00:43:59,830 --> 00:44:01,610
+ Python, Java, C Sharp.
+
+464
+00:44:11,340 --> 00:44:16,710
+ We can even make our functions even more useful.
+
+465
+00:44:18,830 --> 00:44:20,670
+ Take an example.
+
+466
+00:44:22,570 --> 00:44:28,270
+ Instead of only printing values, let's actually calculate something.
+
+467
+00:44:28,490 --> 00:44:40,890
+ And return the result with a loop, a list, for example.
+
+468
+00:44:42,210 --> 00:44:43,150
+ We could actually do that.
+
+469
+00:44:44,290 --> 00:44:47,260
+ So let's call it count.
+
+470
+00:44:47,940 --> 00:44:49,360
+ Let's make it super clear.
+
+471
+00:44:49,680 --> 00:44:50,200
+ Passing.
+
+472
+00:44:51,550 --> 00:44:52,450
+ Scores, maybe.
+
+473
+00:45:07,170 --> 00:45:07,510
+ Past.
+
+474
+00:45:07,650 --> 00:45:09,410
+ Zero.
+
+475
+00:45:10,160 --> 00:45:12,890
+ You see what I'm trying to get to now, right?
+
+476
+00:45:13,770 --> 00:45:15,350
+ I'm putting past a zero.
+
+477
+00:45:15,890 --> 00:45:16,290
+ All right.
+
+478
+00:45:16,440 --> 00:45:23,150
+ I have four in a loop for score in scores.
+
+479
+00:45:25,790 --> 00:45:28,600
+ And let's do an if statement.
+
+480
+00:45:29,410 --> 00:45:36,700
+ If score is greater than or equal to, let's take it to 70.
+
+481
+00:45:39,750 --> 00:45:52,710
+ Well, then we will say just past plus equals to one, right?
+
+482
+00:45:53,150 --> 00:46:00,200
+ Instead of writing else, I would just put return, oh, it's not here.
+
+483
+00:46:00,660 --> 00:46:01,210
+ Here, right?
+
+484
+00:46:01,860 --> 00:46:05,030
+ Return past.
+
+485
+00:46:07,320 --> 00:46:11,100
+ And let's create a little list here.
+
+486
+00:46:11,690 --> 00:46:30,590
+ Scores equals 85, I don't know, 62, 91, exactly 70, and 48, for example.
+
+487
+00:46:30,590 --> 00:46:37,230
+ And then do a result variable.
+
+488
+00:46:39,510 --> 00:46:41,620
+ Count passing scores.
+
+489
+00:46:42,790 --> 00:46:47,350
+ And that will be with scores.
+
+490
+00:46:55,260 --> 00:46:58,450
+ And let's do a print, a little nice print here.
+
+491
+00:46:58,590 --> 00:47:08,350
+ Print passed, the result that actually passed.
+
+492
+00:47:13,130 --> 00:47:18,360
+ Let's run this.
+
+493
+00:47:20,230 --> 00:47:32,640
+ So now this function now combines several things that we have learned, right?
+
+494
+00:47:33,490 --> 00:47:37,640
+ What that we have spoken about throughout this course.
+
+495
+00:47:39,350 --> 00:47:53,960
+ Covers functions, obviously, parameters, lists, loops, additions, variables, of course.
+
+496
+00:47:54,340 --> 00:47:57,310
+ And also the return that we spoke about.
+
+497
+00:48:00,620 --> 00:48:05,570
+ And this is much closer to how, of course, programming concepts are actually used together.
+
+498
+00:48:09,640 --> 00:48:11,510
+ Could we use a dictionary?
+
+499
+00:48:12,190 --> 00:48:13,050
+ Well, yes.
+
+500
+00:48:13,410 --> 00:48:15,210
+ Let's take a look.
+
+501
+00:48:17,440 --> 00:48:23,640
+ Just tell me if it's going too fast.
+
+502
+00:48:23,640 --> 00:48:29,430
+ So let's take a look at dictionaries, and then we can actually take a little break, of course.
+
+503
+00:48:30,800 --> 00:48:32,920
+ Let's see here.
+
+504
+00:48:33,600 --> 00:48:43,730
+ Do that.
+
+505
+00:48:45,850 --> 00:48:47,920
+ Status.
+
+506
+00:48:52,040 --> 00:48:52,750
+ Do that.
+
+507
+00:48:53,420 --> 00:49:07,770
+ So if student created the start of here.
+
+508
+00:49:08,340 --> 00:49:15,580
+ So let me just erase that so it makes some sense because I actually see the whole example in front of me, but you don't, right?
+
+509
+00:49:15,810 --> 00:49:19,570
+ So let me actually create the dictionary here.
+
+510
+00:49:19,790 --> 00:49:25,550
+ Student equals to, there we go.
+
+511
+00:49:25,550 --> 00:49:31,990
+ The student actually has a name.
+
+512
+00:49:35,890 --> 00:49:47,530
+ That would be, let's take Ada, and also score, right?
+
+513
+00:49:48,930 --> 00:49:52,180
+ And let's give her an 85, right?
+
+514
+00:49:52,240 --> 00:49:55,440
+ And of course, it's complaining since we haven't closed the function here.
+
+515
+00:49:56,160 --> 00:50:00,150
+ We could do that with a simple pass, but we will get there later.
+
+516
+00:50:01,690 --> 00:50:07,800
+ So we have a dictionary called student containing key and values.
+
+517
+00:50:08,610 --> 00:50:12,920
+ The first key is name, value Ada, key score, and value 85, right?
+
+518
+00:50:13,580 --> 00:50:40,030
+ So let's create a function, so if student, the score here, so if the score is greater than or equal to 70, well, then we want to return a pass.
+
+519
+00:50:40,160 --> 00:50:48,510
+ Instead of writing else, I will just directly write return.
+
+520
+00:50:48,510 --> 00:51:04,850
+ We have our dictionary, and let's try it out.
+
+521
+00:51:04,850 --> 00:51:19,600
+ Let's create a variable, and we can call it status, equals to get student status, the student, right?
+
+522
+00:51:21,640 --> 00:51:36,460
+ Print, print student name, and of course, the status.
+
+523
+00:51:36,720 --> 00:51:37,940
+ Let me not forget that.
+
+524
+00:51:39,120 --> 00:51:39,600
+ Status.
+
+525
+00:51:39,890 --> 00:51:40,300
+ There we go.
+
+526
+00:51:42,770 --> 00:51:45,240
+ Let's run this and see if it works.
+
+527
+00:51:48,190 --> 00:51:49,150
+ Ada pass.
+
+528
+00:51:49,460 --> 00:51:50,200
+ There you go.
+
+529
+00:51:50,850 --> 00:51:51,990
+ So this actually works as well.
+
+530
+00:51:56,720 --> 00:52:00,840
+ Could I do this with a list of dictionaries?
+
+531
+00:52:01,410 --> 00:52:02,830
+ Yes, of course I can.
+
+532
+00:52:04,490 --> 00:52:08,130
+ Add a lesson.
+
+533
+00:52:09,640 --> 00:52:12,020
+ Write it again here.
+
+534
+00:52:19,280 --> 00:52:29,260
+ Let's use a list of dictionaries.
+
+535
+00:52:35,280 --> 00:52:36,080
+ How about with students?
+
+536
+00:52:37,090 --> 00:52:38,490
+ Now, the score of 85.
+
+537
+00:52:39,250 --> 00:52:40,750
+ Bob with the score of 62.
+
+538
+00:52:41,220 --> 00:52:43,020
+ Charlie with the score of 91, right?
+
+539
+00:52:44,210 --> 00:52:46,080
+ And then we'll go here.
+
+540
+00:52:46,080 --> 00:52:58,990
+ We can do f, get student, collect the same thing.
+
+541
+00:53:00,290 --> 00:53:03,250
+ Student status, student.
+
+542
+00:53:05,020 --> 00:53:08,350
+ Let's do an if statement.
+
+543
+00:53:08,790 --> 00:53:16,180
+ If student, it's the same thing here.
+
+544
+00:53:16,900 --> 00:53:24,680
+ Score is greater than or equal to 70, then we will return a pass.
+
+545
+00:53:30,350 --> 00:53:35,690
+ Else, instead of things we will do directly in the return here, fail.
+
+546
+00:53:37,630 --> 00:53:40,660
+ And then let's make a loop here.
+
+547
+00:53:40,660 --> 00:54:16,900
+ So for student in students, this equals get student status, student status.
+
+548
+00:54:22,930 --> 00:54:32,350
+ Think I missed something?
+
+549
+00:54:33,860 --> 00:54:38,400
+ No, I want to ask you if you can go through this one again, like explaining.
+
+550
+00:54:38,960 --> 00:54:39,440
+ Sure.
+
+551
+00:54:39,440 --> 00:54:39,780
+ It's funny.
+
+552
+00:54:39,900 --> 00:54:40,180
+ Yeah, yeah, yeah.
+
+553
+00:54:40,240 --> 00:54:40,740
+ Thank you.
+
+554
+00:54:41,610 --> 00:54:44,980
+ So let's actually run this just to see.
+
+555
+00:54:47,460 --> 00:54:50,490
+ Pass, Bob fail, Charlie pass, right?
+
+556
+00:54:50,850 --> 00:54:56,580
+ Since Anna has score grade in 1070, Bob doesn't, but Charlie does, right?
+
+557
+00:54:56,580 --> 00:55:04,970
+ So we can actually compare this to the last lesson we had or lesson three, Thursday's lesson.
+
+558
+00:55:06,120 --> 00:55:11,340
+ So here, the loop is actually responsible for going through students, right?
+
+559
+00:55:11,340 --> 00:55:18,140
+ The loop here is responsible for going through the students, right?
+
+560
+00:55:18,440 --> 00:55:29,110
+ But the function itself is, well, responsible for deciding status only.
+
+561
+00:55:29,280 --> 00:55:35,760
+ So we have actually separated the responsibilities.
+
+562
+00:55:35,800 --> 00:55:49,640
+ So here, we have the responsibility of getting the status, whilst here, we're actually doing the loop as we did in the last lesson.
+
+563
+00:55:53,610 --> 00:56:04,390
+ And this, of course, is very important to know, as programs always get larger and larger and larger, usually.
+
+564
+00:56:04,890 --> 00:56:05,010
+ Right?
+
+565
+00:56:06,120 --> 00:56:07,700
+ Gloria, did that make some sense?
+
+566
+00:56:11,890 --> 00:56:13,050
+ Yeah, it makes sense.
+
+567
+00:56:13,770 --> 00:56:19,590
+ Of course, I think you guys also need to try it out just to get the feel of it.
+
+568
+00:56:20,790 --> 00:56:22,090
+ Now you're just watching, right?
+
+569
+00:56:22,550 --> 00:56:28,780
+ But when you try it yourself from memory, for example, you will remember what did what and so on.
+
+570
+00:56:29,680 --> 00:56:31,530
+ And it will be easier to grasp.
+
+571
+00:56:33,860 --> 00:56:38,070
+ Now, let's answer another question.
+
+572
+00:56:38,250 --> 00:56:40,710
+ But before we do that, we need to take some break.
+
+573
+00:56:41,140 --> 00:56:42,980
+ I see it's almost 10 o'clock.
+
+574
+00:56:43,180 --> 00:56:45,580
+ So let's take a well-deserved break here.
+
+575
+00:56:45,970 --> 00:56:48,670
+ And then we will move one more step.
+
+576
+00:56:49,210 --> 00:56:51,390
+ So I will leave you with a little cliffhanger here.
+
+577
+00:56:52,770 --> 00:57:00,060
+ So let's say, well, we can take 10.15, right?
+
+578
+00:57:01,380 --> 00:57:06,230
+ So I'm just going to write it back 10.15.
+
+579
+00:57:06,790 --> 00:57:08,380
+ There's a lot going on in the chat.
+
+580
+00:57:10,980 --> 00:57:13,040
+ Okay, back 10.15, and then we can continue.
+
+581
+01:04:58,540 --> 01:12:44,530
+ There we go.
+
+582
+01:12:45,800 --> 01:12:46,480
+ All right, guys, back.
+
+583
+01:12:50,210 --> 01:12:55,450
+ Perfect, perfect, as well.
+
+584
+01:13:02,610 --> 01:13:12,510
+ All right, let's continue here.
+
+585
+01:13:22,830 --> 01:13:27,650
+ Where did we go exactly with dictionaries and so on?
+
+586
+01:13:29,870 --> 01:13:37,210
+ The next part that we're going to look at, and the rest is actually something that you will explore,
+
+587
+01:13:37,410 --> 01:13:46,670
+ also in the labs, because, yeah, we could always end up in endless, can we do this and can we do that?
+
+588
+01:13:46,750 --> 01:13:48,630
+ So let's actually explore that in the lab.
+
+589
+01:13:48,770 --> 01:13:53,140
+ And then something that's not covered, of course, you can always ask about it.
+
+590
+01:13:53,220 --> 01:13:54,520
+ Just write to me or anything.
+
+591
+01:13:54,640 --> 01:13:57,920
+ I can call you up, and we can have a little discussion about it, of course.
+
+592
+01:13:59,440 --> 01:14:11,500
+ But what we're also going to look at is something I think was a question before, and that is that Python actually allows parameters to have default values.
+
+593
+01:14:11,500 --> 01:14:14,830
+ So, for example, I'll do something like this.
+
+594
+01:14:15,070 --> 01:14:16,800
+ Let's create something simple.
+
+595
+01:14:18,370 --> 01:14:26,610
+ That's greet name and greeting, right?
+
+596
+01:14:26,750 --> 01:14:30,680
+ But this time, I'm actually not going to just do that.
+
+597
+01:14:30,780 --> 01:14:32,280
+ I'm actually going to put the default here.
+
+598
+01:14:34,190 --> 01:14:35,950
+ For example, hello.
+
+599
+01:14:37,560 --> 01:14:37,780
+ All right.
+
+600
+01:14:38,540 --> 01:14:57,370
+ If I were to do a simple print here, greet with the name, I can actually just call the function and just write by just writing greet.
+
+601
+01:14:57,470 --> 01:15:02,710
+ When I put my parentheses, I actually see here that we have a name.
+
+602
+01:15:03,080 --> 01:15:04,320
+ We need the name, right?
+
+603
+01:15:04,420 --> 01:15:05,080
+ Specify name.
+
+604
+01:15:05,400 --> 01:15:11,600
+ And then we have a default value for our greeting here, which is actually hello.
+
+605
+01:15:12,960 --> 01:15:19,280
+ So let's just provide a name here, Ada, for example, and nothing else.
+
+606
+01:15:23,020 --> 01:15:25,100
+ So here I'll only provide a name.
+
+607
+01:15:25,710 --> 01:15:26,350
+ Let's run this.
+
+608
+01:15:26,590 --> 01:15:28,510
+ We actually get hello Ada, right?
+
+609
+01:15:31,560 --> 01:15:38,340
+ Because, and I get my hello since I did not provide a greeting.
+
+610
+01:15:38,460 --> 01:15:46,380
+ Since I did not provide the greeting, Python will use the default value, which I have specified as hello.
+
+611
+01:15:48,000 --> 01:15:55,680
+ But I could also do, no, there we go.
+
+612
+01:15:55,840 --> 01:16:05,150
+ So what I can also do is Ada, but here also put, for example, good morning.
+
+613
+01:16:08,290 --> 01:16:19,000
+ So if I were to provide a value, then the value will actually replace the default value, which was hello.
+
+614
+01:16:19,400 --> 01:16:25,840
+ So now we actually get good morning Ada instead of hello Ada, as we saw previously.
+
+615
+01:16:25,840 --> 01:16:30,890
+ So yes, we can actually provide the default value.
+
+616
+01:16:42,070 --> 01:16:46,260
+ Parameters, just write something here.
+
+617
+01:16:50,080 --> 01:16:51,640
+ Let me just, so yeah.
+
+618
+01:16:52,040 --> 01:17:00,270
+ So parameters, actually, without default values, most normally come before parameters with default values.
+
+619
+01:17:01,470 --> 01:17:02,510
+ I can show you something.
+
+620
+01:17:02,770 --> 01:17:44,320
+ So let's say, um, um, def, def, ah, def, uh, uh, greet, for example, and greeting was, uh, well, the name and parameter, and then we can do some, I don't know, a simple print, uh, name.
+
+621
+01:17:45,740 --> 01:17:49,220
+ As you see, it is actually complaining, right?
+
+622
+01:17:51,380 --> 01:17:54,220
+ Non-default arguments follows default arguments, as you see here.
+
+623
+01:17:56,310 --> 01:17:58,570
+ So no, we don't do this.
+
+624
+01:18:00,490 --> 01:18:00,710
+ Right?
+
+625
+01:18:01,930 --> 01:18:03,510
+ So this is actually invalid.
+
+626
+01:18:04,630 --> 01:18:08,660
+ Python needs to, uh, the required parameters first.
+
+627
+01:18:10,020 --> 01:18:14,250
+ So in this case, it would be a name greeting.
+
+628
+01:18:14,530 --> 01:18:15,480
+ Hello, for example.
+
+629
+01:18:17,150 --> 01:18:17,450
+ All right.
+
+630
+01:18:21,310 --> 01:18:31,240
+ Um, let's take a look at keyword arguments and default values as well.
+
+631
+01:18:31,240 --> 01:18:50,590
+ So for example, uh, let's do this, uh, create user, for example, we have a name, we have a role, we're going to put, uh, the role, the default value as student.
+
+632
+01:18:50,590 --> 01:19:36,790
+ And I'm also going to do something like this, active equals print, uh, name, last but not least print.
+
+633
+01:19:40,850 --> 01:20:12,350
+ Now, when we create the, the user, the last, the least thing that we need is actually, uh, what, well, I mean, since we have a default value for, um, the role and we have a default value for active and that will be the string student and boolean true for active.
+
+634
+01:20:13,050 --> 01:20:20,710
+ So the last, the least thing that we need to create is actually the name in this case.
+
+635
+01:20:21,070 --> 01:20:21,960
+ And that will be ADA.
+
+636
+01:20:24,030 --> 01:20:24,930
+ Let's take a look.
+
+637
+01:20:25,290 --> 01:20:30,060
+ So when we run this name ADA role student active true.
+
+638
+01:20:30,530 --> 01:20:49,310
+ But what we can actually add here and also specify the role here to, for example, teacher, right?
+
+639
+01:20:50,790 --> 01:20:58,760
+ You run this and we will get name ADA role teacher and active.
+
+640
+01:21:00,270 --> 01:21:13,470
+ Obviously we could also do something like this, uh, oops, the role.
+
+641
+01:21:13,720 --> 01:21:15,900
+ Let's change it to active.
+
+642
+01:21:15,900 --> 01:21:20,670
+ For example, here we go active and put it as false instead.
+
+643
+01:21:20,910 --> 01:21:21,270
+ Sure.
+
+644
+01:21:21,750 --> 01:21:22,970
+ We could do that as well.
+
+645
+01:21:26,330 --> 01:21:29,810
+ And if we run this, yeah, we will get a name student ADA.
+
+646
+01:21:30,130 --> 01:21:32,450
+ The role will be student and active.
+
+647
+01:21:32,450 --> 01:21:33,750
+ It would be false this time.
+
+648
+01:21:37,070 --> 01:21:37,650
+ So yeah.
+
+649
+01:21:37,750 --> 01:21:46,880
+ Keyword arguments becomes, well, especially useful when, uh, a function has, um, several optional, um, parameters.
+
+650
+01:21:46,880 --> 01:21:57,560
+ So I can actually change, uh, uh, active here without having to provide a new role.
+
+651
+01:21:58,910 --> 01:22:00,310
+ Perfectly fine.
+
+652
+01:22:07,390 --> 01:22:07,950
+ Python.
+
+653
+01:22:08,250 --> 01:22:11,700
+ Let's talk about multiple values here.
+
+654
+01:22:12,020 --> 01:22:20,730
+ Well, uh, Python function can appear to return multiple values, values, right?
+
+655
+01:22:22,290 --> 01:22:23,740
+ Uh, there we go.
+
+656
+01:22:23,740 --> 01:22:37,690
+ So, uh, uh, let's take an example, um, let's mean and max, for example, um, let's have numbers here.
+
+657
+01:22:38,070 --> 01:22:59,520
+ Numbers return, uh, mean numbers, max results.
+
+658
+01:23:01,010 --> 01:23:23,820
+ Um, let's put a list here, uh, four, eight, one, um, to 12 and three, for example.
+
+659
+01:23:26,830 --> 01:23:35,970
+ So yeah, I went to do print result here, for example.
+
+660
+01:23:37,090 --> 01:23:43,760
+ Uh, and let's actually also look at what data type is actually returned.
+
+661
+01:23:44,480 --> 01:23:54,530
+ So I'm actually going to do print, uh, uh, on result, right?
+
+662
+01:23:55,610 --> 01:23:58,550
+ So let's actually run this and see what we see.
+
+663
+01:24:02,330 --> 01:24:05,330
+ And we see, well, we get a one and 12, right?
+
+664
+01:24:05,670 --> 01:24:08,610
+ Since that's our min and max, that's true.
+
+665
+01:24:09,020 --> 01:24:11,970
+ But what data type is actually returned here?
+
+666
+01:24:12,450 --> 01:24:14,190
+ Well, we see tuple.
+
+667
+01:24:14,190 --> 01:24:25,460
+ So what Python does here is it actually packs the, uh, packs the return values into a tuple.
+
+668
+01:24:27,180 --> 01:24:40,070
+ And since we learned tuple unpacking in, I think it was Wednesday's lesson, uh, we can actually do this as well.
+
+669
+01:24:44,020 --> 01:24:57,010
+ Print, uh, before, instead of writing result, min and max, we can actually do, uh, let's remember where we came from.
+
+670
+01:24:58,850 --> 01:25:03,640
+ I usually like to comment them out so we don't get confused, but I think you're with me.
+
+671
+01:25:04,030 --> 01:25:15,320
+ So instead of putting one variable here, we can do, as we saw on Wednesday's lesson, I presume, smallest and largest, for example.
+
+672
+01:25:17,940 --> 01:25:29,630
+ And now you can come out and print, smallest would be smallest.
+
+673
+01:25:31,050 --> 01:25:53,230
+ And obviously you can do the same thing with largest, largest, just like we did in one of the previous lessons.
+
+674
+01:25:54,200 --> 01:25:58,970
+ We can unpack the return values directly like this.
+
+675
+01:25:58,970 --> 01:26:05,080
+ And you saw where we came from since it was a tuple.
+
+676
+01:26:06,000 --> 01:26:24,230
+ We can actually unpack the question that I usually get is, uh, is, um, functions calling functions.
+
+677
+01:26:25,130 --> 01:26:25,710
+ Is that allowed?
+
+678
+01:26:26,660 --> 01:26:27,200
+ Let's see.
+
+679
+01:26:34,900 --> 01:26:39,500
+ And I can directly say that function can also call other function.
+
+680
+01:26:39,620 --> 01:26:47,020
+ Obviously, for example, you could do something good.
+
+681
+01:26:47,020 --> 01:26:47,600
+ Example here.
+
+682
+01:26:47,660 --> 01:26:56,330
+ My notes, I think let's use that one, uh, call q late.
+
+683
+01:26:57,150 --> 01:26:59,650
+ Um, let's take with our taxes here.
+
+684
+01:27:02,240 --> 01:27:12,510
+ Income rate, for example, something simpler.
+
+685
+01:27:12,710 --> 01:27:19,290
+ Return income multiplied by the tax rate.
+
+686
+01:27:19,290 --> 01:27:19,650
+ Right.
+
+687
+01:27:19,650 --> 01:27:38,100
+ And now I can create another function and let's start, call that one, call q late, um, income after tax.
+
+688
+01:27:38,100 --> 01:27:39,380
+ Let's make it super clear.
+
+689
+01:27:39,940 --> 01:27:54,810
+ Uh, and here I'm actually using income and tax tax rate here.
+
+690
+01:27:54,810 --> 01:28:03,750
+ Let's go to the variable where I actually call the previous, uh, previous, what?
+
+691
+01:28:03,750 --> 01:28:12,300
+ Well, the previous, uh, function that we created and with right parameters.
+
+692
+01:28:12,900 --> 01:28:18,940
+ So here would be income and of course, tax rate.
+
+693
+01:28:19,100 --> 01:28:23,230
+ And now we just need to return as well, right?
+
+694
+01:28:23,670 --> 01:28:25,480
+ Return income.
+
+695
+01:28:25,600 --> 01:28:28,450
+ And we would do something minus the tax, right?
+
+696
+01:28:31,150 --> 01:28:34,230
+ Now let's actually try this out.
+
+697
+01:28:34,230 --> 01:28:41,680
+ So we have a function, calculate tax, where we return the income times tax rate.
+
+698
+01:28:42,220 --> 01:28:51,310
+ And then we can use that return inside this function as well, since we're calling this function calculate tax when calculating the tax.
+
+699
+01:28:52,120 --> 01:28:56,580
+ So let's try it out with a variable here, result.
+
+700
+01:28:58,540 --> 01:29:02,250
+ What function should we call now?
+
+701
+01:29:02,490 --> 01:29:11,120
+ Well, of course, calculate income after tax, since we're already calling the other function, uh, at the same time here.
+
+702
+01:29:11,120 --> 01:29:19,330
+ And let's use 50,000 as the income and let's stick with 0.3 as the tax rate.
+
+703
+01:29:19,330 --> 01:29:26,060
+ And now we can actually print, uh, the results.
+
+704
+01:29:26,060 --> 01:29:36,820
+ And now let's run this and see if it actually works and we get our 35,000.
+
+705
+01:29:36,820 --> 01:29:46,230
+ So calculate income tax here does not need to duplicate the tax calculation as we did in the calculate tax, right?
+
+706
+01:29:46,860 --> 01:29:51,410
+ So it uses the function that already knows how to calculate the tax.
+
+707
+01:29:51,410 --> 01:29:58,610
+ So this is actually another example of reuse and separation of responsibility.
+
+708
+01:30:00,720 --> 01:30:01,580
+ Uh, yes, Gloria.
+
+709
+01:30:01,580 --> 01:30:18,170
+ And this, uh, works, uh, in other, uh, languages where the second function tool should be created or made before it is called.
+
+710
+01:30:18,490 --> 01:30:25,900
+ For example, if we move the calculate tax in, uh, at the line 100, 12, 15, for example.
+
+711
+01:30:26,380 --> 01:30:28,020
+ So it will work or not.
+
+712
+01:30:29,090 --> 01:30:31,590
+ So will it work?
+
+713
+01:30:32,150 --> 01:30:37,870
+ So what are you asking if I can move this to here instead like this?
+
+714
+01:30:38,010 --> 01:30:39,950
+ Yeah.
+
+715
+01:30:40,210 --> 01:30:40,690
+ Okay.
+
+716
+01:30:40,690 --> 01:30:42,110
+ Before showing, what do you guys say?
+
+717
+01:30:43,240 --> 01:30:45,400
+ What does the rest of the class say?
+
+718
+01:30:45,400 --> 01:30:55,380
+ Johanna?
+
+719
+01:30:58,940 --> 01:31:03,430
+ It's going to show how much, uh, tax you paid.
+
+720
+01:31:04,850 --> 01:31:07,190
+ Wait, wait, wait, no, sorry.
+
+721
+01:31:08,380 --> 01:31:10,080
+ So we can run this and see.
+
+722
+01:31:10,660 --> 01:31:11,860
+ So we get over 35,000.
+
+723
+01:31:12,200 --> 01:31:13,970
+ We get over 35,000.
+
+724
+01:31:15,560 --> 01:31:22,750
+ Uh, so this would actually work in this case, but, uh, what do we need to be careful with?
+
+725
+01:31:31,120 --> 01:31:31,300
+ Rania?
+
+726
+01:31:32,150 --> 01:31:32,860
+ Yeah.
+
+727
+01:31:32,880 --> 01:31:40,260
+ So the actual, um, using this calculate income tax, that method, that shouldn't be before defining these two methods.
+
+728
+01:31:40,260 --> 01:31:41,820
+ So that will show a matter.
+
+729
+01:31:42,700 --> 01:31:43,040
+ Yeah.
+
+730
+01:31:43,260 --> 01:31:52,000
+ So for example, if I were to move this, um, to here, maybe this would do something, I think.
+
+731
+01:31:52,210 --> 01:31:52,610
+ Right.
+
+732
+01:31:53,760 --> 01:31:54,790
+ There we go.
+
+733
+01:31:56,050 --> 01:32:00,560
+ So if you have functions in this way, that's all perfectly.
+
+734
+01:32:00,560 --> 01:32:00,980
+ All right.
+
+735
+01:32:02,550 --> 01:32:09,140
+ Since Python is reading everything from up and down, uh, you have to be a little bit careful.
+
+736
+01:32:09,540 --> 01:32:12,240
+ As I think we showed in the previous lesson.
+
+737
+01:32:12,240 --> 01:32:21,420
+ So this actually works since they're separated, uh, functions that will be read it before we get into the calculate actual calculations being done.
+
+738
+01:32:21,720 --> 01:32:23,100
+ So this will actually work.
+
+739
+01:32:23,160 --> 01:32:23,320
+ Right.
+
+740
+01:32:24,090 --> 01:32:24,570
+ No problem.
+
+741
+01:32:35,220 --> 01:32:36,480
+ Uh, no problem.
+
+742
+01:32:36,520 --> 01:32:36,800
+ No problem.
+
+743
+01:32:37,580 --> 01:32:39,830
+ I think somebody forgot the mic on.
+
+744
+01:32:39,910 --> 01:32:40,910
+ So make sure that you.
+
+745
+01:32:45,930 --> 01:32:46,410
+ Hmm.
+
+746
+01:32:51,690 --> 01:33:03,140
+ Um, this.
+
+747
+01:33:03,440 --> 01:33:04,480
+ Well, yeah, why not?
+
+748
+01:33:04,480 --> 01:33:11,500
+ So one, one, just, just to make sure that everybody is following along on the terminology here.
+
+749
+01:33:12,080 --> 01:33:16,050
+ So let's make a, well, one terminology.
+
+750
+01:33:16,070 --> 01:33:19,940
+ Uh, distinction before we actually continue here.
+
+751
+01:33:19,940 --> 01:33:27,410
+ Uh, because of course terminology is also important.
+
+752
+01:33:27,410 --> 01:33:27,710
+ Right.
+
+753
+01:33:27,990 --> 01:33:29,980
+ So let me just write numbers here.
+
+754
+01:33:30,620 --> 01:33:38,010
+ Equals, uh, five, two, oh, sorry.
+
+755
+01:33:38,340 --> 01:33:41,860
+ Five, two, nine, and one.
+
+756
+01:33:43,260 --> 01:33:45,910
+ Uh, let's do something like this.
+
+757
+01:33:46,070 --> 01:33:50,540
+ Print, uh, len numbers.
+
+758
+01:33:52,050 --> 01:33:59,120
+ And also, uh, let's do something like this numbers, that's a word.
+
+759
+01:33:59,540 --> 01:34:02,030
+ Right.
+
+760
+01:34:02,570 --> 01:34:07,440
+ And also print, uh, numbers.
+
+761
+01:34:08,810 --> 01:34:20,150
+ Also, uh, death get first item items.
+
+762
+01:34:20,150 --> 01:34:27,090
+ Let's return the first item here items.
+
+763
+01:34:29,190 --> 01:34:29,870
+ Be zero.
+
+764
+01:34:29,870 --> 01:34:30,210
+ Right.
+
+765
+01:34:32,900 --> 01:34:35,200
+ Uh, now let's also print that out.
+
+766
+01:34:35,320 --> 01:34:41,590
+ Print, um, first item, uh, with numbers.
+
+767
+01:34:43,760 --> 01:34:45,300
+ Right.
+
+768
+01:34:48,140 --> 01:34:51,410
+ What do we call this?
+
+769
+01:34:54,900 --> 01:34:58,230
+ You guys say, help me here.
+
+770
+01:35:04,650 --> 01:35:05,070
+ Uh, Gloria.
+
+771
+01:35:06,060 --> 01:35:06,880
+ Four.
+
+772
+01:35:08,170 --> 01:35:09,430
+ Sorry.
+
+773
+01:35:10,520 --> 01:35:12,520
+ Um, it will be four, right?
+
+774
+01:35:13,280 --> 01:35:14,240
+ Yeah, yeah, yeah, yeah, yeah, yeah.
+
+775
+01:35:14,240 --> 01:35:16,040
+ That, that would be what was printed out.
+
+776
+01:35:16,040 --> 01:35:16,260
+ Right.
+
+777
+01:35:16,380 --> 01:35:17,060
+ Uh, I'm with you.
+
+778
+01:35:17,140 --> 01:35:18,440
+ But, but what do we call it?
+
+779
+01:35:18,440 --> 01:35:20,060
+ I mean, in the terminology here.
+
+780
+01:35:20,580 --> 01:35:21,230
+ Okay.
+
+781
+01:35:21,230 --> 01:35:21,550
+ Okay.
+
+782
+01:35:21,800 --> 01:35:22,100
+ Sorry.
+
+783
+01:35:22,720 --> 01:35:32,170
+ So we would call this a built and it wants to continue built in functions.
+
+784
+01:35:32,390 --> 01:35:32,870
+ There we go.
+
+785
+01:35:32,990 --> 01:35:34,460
+ Built in function.
+
+786
+01:35:35,370 --> 01:35:39,240
+ Uh, let's try to remember to just raise your hands.
+
+787
+01:35:39,360 --> 01:35:41,380
+ So everybody has a chance to answer.
+
+788
+01:35:41,870 --> 01:35:53,840
+ Uh, and here we actually have a, what's critical method.
+
+789
+01:35:54,530 --> 01:35:55,010
+ There we go.
+
+790
+01:35:55,450 --> 01:36:03,140
+ A method belonging, uh, to the list object.
+
+791
+01:36:03,350 --> 01:36:03,670
+ Right.
+
+792
+01:36:05,220 --> 01:36:14,120
+ And here, um, is just a, what?
+
+793
+01:36:15,480 --> 01:36:18,580
+ You didn't all need to have this one.
+
+794
+01:36:19,330 --> 01:36:21,390
+ I should see the whole class raising hand.
+
+795
+01:36:21,630 --> 01:36:24,300
+ The old one.
+
+796
+01:36:24,420 --> 01:36:26,490
+ I can't, can't stand if you've forgotten.
+
+797
+01:36:27,690 --> 01:36:29,140
+ Come on guys.
+
+798
+01:36:29,200 --> 01:36:31,520
+ Are you with me over here?
+
+799
+01:36:31,810 --> 01:36:32,290
+ There we go.
+
+800
+01:36:32,770 --> 01:36:33,270
+ There we go.
+
+801
+01:36:33,970 --> 01:36:34,280
+ Perfect.
+
+802
+01:36:37,410 --> 01:36:37,590
+ Sure.
+
+803
+01:36:37,870 --> 01:36:38,230
+ Sarania.
+
+804
+01:36:48,950 --> 01:36:49,230
+ Marina.
+
+805
+01:36:49,870 --> 01:36:50,150
+ Okay.
+
+806
+01:36:50,310 --> 01:36:50,470
+ Okay.
+
+807
+01:36:50,470 --> 01:36:50,830
+ There we go.
+
+808
+01:36:51,260 --> 01:36:51,660
+ Parameters.
+
+809
+01:36:52,880 --> 01:36:55,520
+ Well, that would be the parameters, right?
+
+810
+01:36:55,860 --> 01:37:00,660
+ But, uh, Georgie.
+
+811
+01:37:02,410 --> 01:37:04,770
+ You mean like function or what?
+
+812
+01:37:04,770 --> 01:37:05,490
+ Yeah, there we go.
+
+813
+01:37:05,650 --> 01:37:06,010
+ Function.
+
+814
+01:37:06,230 --> 01:37:06,750
+ Thank you.
+
+815
+01:37:07,230 --> 01:37:11,910
+ It was so obvious that, that, that maybe you, you start overthinking stuff.
+
+816
+01:37:12,010 --> 01:37:12,190
+ Right.
+
+817
+01:37:12,190 --> 01:37:12,810
+ So yeah.
+
+818
+01:37:12,890 --> 01:37:13,730
+ Our function, right.
+
+819
+01:37:14,250 --> 01:37:15,690
+ That we just created ourselves.
+
+820
+01:37:15,890 --> 01:37:16,070
+ Right.
+
+821
+01:37:17,050 --> 01:37:26,580
+ And yeah, we will, of course, constantly, um, encounter all three of these along the way
+
+822
+01:37:26,580 --> 01:37:27,350
+ in Python.
+
+823
+01:37:29,440 --> 01:37:41,720
+ Uh, I think I saw some discussion, uh, in the chat about, um, data types.
+
+824
+01:37:42,380 --> 01:37:43,070
+ Right.
+
+825
+01:37:45,380 --> 01:37:51,430
+ And what you will see in, and we will just thread on this lightly.
+
+826
+01:37:51,610 --> 01:37:55,720
+ Uh, we're not, uh, going to this very deep, not yet.
+
+827
+01:37:55,720 --> 01:37:58,840
+ Uh, we will return to this a little bit later.
+
+828
+01:37:58,840 --> 01:37:59,680
+ We're doing the course.
+
+829
+01:37:59,680 --> 01:38:06,360
+ Um, so there's one thing that you will see in modern, and I'm emphasizing a modern, uh,
+
+830
+01:38:06,360 --> 01:38:10,780
+ Python code, and that is something called type hints.
+
+831
+01:38:11,160 --> 01:38:14,540
+ And that's what we have in, in, in, in, in, in type hints.
+
+832
+01:38:15,200 --> 01:38:18,720
+ So, uh, Python is still dynamically, uh, typed, right?
+
+833
+01:38:18,720 --> 01:38:26,040
+ But we can add, can actually add hints that describe what type we are actually expecting.
+
+834
+01:38:26,040 --> 01:38:27,380
+ And that's it.
+
+835
+01:38:27,380 --> 01:38:34,400
+ So, uh, depth, for example, add here, uh, an add function.
+
+836
+01:38:34,400 --> 01:38:44,080
+ And we have an a, we can actually put an int, uh, data right here, int, right?
+
+837
+01:38:44,420 --> 01:38:45,400
+ There we go.
+
+838
+01:38:45,400 --> 01:38:52,410
+ Uh, int, and we have a B, which is also supposed to be an int, right?
+
+839
+01:38:52,410 --> 01:39:09,120
+ And we can also do something like this, int, and return, return, uh, A plus A plus B, for
+
+840
+01:39:09,120 --> 01:39:09,340
+ example.
+
+841
+01:39:09,340 --> 01:39:19,330
+ And now, when we call our function, which is called add, we actually get a type hint, right?
+
+842
+01:39:19,890 --> 01:39:21,780
+ That A should be an integer.
+
+843
+01:39:22,080 --> 01:39:23,380
+ B should be an integer.
+
+844
+01:39:25,220 --> 01:39:33,620
+ So the call an int here actually says that we expect an A, expect A and B to be integers.
+
+845
+01:39:34,470 --> 01:39:41,090
+ And the arrow int here says that we expect the function to return an integer.
+
+846
+01:39:43,320 --> 01:39:55,600
+ And important here is that we call this type hints, but remember now, and let me just run
+
+847
+01:39:55,600 --> 01:39:57,780
+ it and see that everything works as it should.
+
+848
+01:39:57,920 --> 01:40:00,680
+ Uh, let me add something here, uh, five, two, three.
+
+849
+01:40:02,300 --> 01:40:05,670
+ So we actually take it step by step and we run this.
+
+850
+01:40:06,080 --> 01:40:06,200
+ Yeah.
+
+851
+01:40:06,240 --> 01:40:08,880
+ We got our eight since five plus three is actually eight.
+
+852
+01:40:08,980 --> 01:40:09,160
+ Right?
+
+853
+01:40:09,620 --> 01:40:15,840
+ So, but something that we need to emphasize on that we need to remember here, these are
+
+854
+01:40:15,840 --> 01:40:16,880
+ only type hints, right?
+
+855
+01:40:17,240 --> 01:40:24,890
+ Because Python itself does not, does not suddenly become statically typed because we add them.
+
+856
+01:40:29,030 --> 01:40:29,190
+ Right?
+
+857
+01:40:29,690 --> 01:40:41,710
+ So if we were to put instead of an integer, for example, let's say, um, add, so we're expecting
+
+858
+01:40:41,710 --> 01:40:42,570
+ an int, right?
+
+859
+01:40:42,790 --> 01:40:43,910
+ Well, I'm not going to put an int.
+
+860
+01:40:44,060 --> 01:40:46,020
+ I'm going to put hello.
+
+861
+01:40:47,230 --> 01:40:51,160
+ And for our B, I'm also not going to put an integer.
+
+862
+01:40:51,420 --> 01:40:54,270
+ I'm just going to put another string, world.
+
+863
+01:40:54,760 --> 01:40:58,610
+ So what do you say, guys?
+
+864
+01:40:58,610 --> 01:41:03,600
+ Do you think that Python will actually crash here because, uh, because we, we're adding
+
+865
+01:41:03,600 --> 01:41:12,860
+ two strings or will this actually run just offer?
+
+866
+01:41:13,860 --> 01:41:14,390
+ Yeah.
+
+867
+01:41:14,390 --> 01:41:18,430
+ I think it will run, but yeah, yeah, it will put them to get, put them together.
+
+868
+01:41:18,430 --> 01:41:18,810
+ Of course.
+
+869
+01:41:18,910 --> 01:41:19,030
+ Yeah.
+
+870
+01:41:19,350 --> 01:41:19,670
+ Yeah.
+
+871
+01:41:20,410 --> 01:41:21,300
+ And let's run this.
+
+872
+01:41:21,460 --> 01:41:22,700
+ And we actually get hello world.
+
+873
+01:41:23,980 --> 01:41:26,580
+ Let's do something like this, right?
+
+874
+01:41:26,660 --> 01:41:27,280
+ Hello world.
+
+875
+01:41:28,270 --> 01:41:29,050
+ Where's 14 find?
+
+876
+01:41:30,130 --> 01:41:33,530
+ So it will run just as Christopher mentioned.
+
+877
+01:41:33,530 --> 01:41:47,860
+ So the in hints here only, uh, improve readability and can also help, uh, editors and external
+
+878
+01:41:47,860 --> 01:41:55,520
+ tools, of course, but Python does not enforce them, does not enforce them here at runtime.
+
+879
+01:41:55,520 --> 01:41:55,880
+ Right.
+
+880
+01:41:55,880 --> 01:42:03,680
+ So we're not going to require typings everywhere in this course, of course.
+
+881
+01:42:04,410 --> 01:42:11,210
+ Um, so I just mainly just want you to recognize the syntax because, uh, you might see this in
+
+882
+01:42:11,210 --> 01:42:30,530
+ modern, uh, Python projects, uh, let's see here what else can just a small one here.
+
+883
+01:42:30,970 --> 01:42:37,210
+ Also something that we're going to look, uh, likely at, uh, is actually doc strings, uh,
+
+884
+01:42:40,550 --> 01:42:43,590
+ strings.
+
+885
+01:42:43,920 --> 01:42:48,650
+ So yeah, another useful Python convention is also doc strings, right?
+
+886
+01:42:49,070 --> 01:42:53,390
+ Uh, and the doc string just describes what a function actually does.
+
+887
+01:42:53,770 --> 01:43:01,570
+ So what I can do here is let's say that, uh, calculate, uh, calculate, uh, cause I don't
+
+888
+01:43:01,570 --> 01:43:07,870
+ think we have actually, um, mentioned this before.
+
+889
+01:43:08,440 --> 01:43:24,310
+ Um, let's use a, uh, with and a eight here don't don't don't.
+
+890
+01:43:25,150 --> 01:43:42,830
+ And now I can just write here, return, return, return the area of a works perfectly fine.
+
+891
+01:43:44,310 --> 01:43:55,640
+ And now we can actually do the creation as well with multiplied with, uh, height, right?
+
+892
+01:43:56,330 --> 01:43:57,400
+ If I'm not mistaken.
+
+893
+01:43:58,240 --> 01:44:19,470
+ And now we can of course print out, click the area and let's a width and a three.
+
+894
+01:44:20,080 --> 01:44:20,950
+ Let's try it out.
+
+895
+01:44:21,520 --> 01:44:21,770
+ Yeah.
+
+896
+01:44:21,770 --> 01:44:24,180
+ We get our 15 works perfectly fine.
+
+897
+01:44:24,180 --> 01:44:27,210
+ So this doesn't interfere at all doc string here.
+
+898
+01:44:27,900 --> 01:44:33,930
+ So yeah, triple quotes here, um, uh, uh, directly before, uh, below this function.
+
+899
+01:44:34,050 --> 01:44:40,310
+ Well, that actually defines the, what the function, um, creates, right.
+
+900
+01:44:40,510 --> 01:44:41,070
+ And yeah.
+
+901
+01:44:41,170 --> 01:44:42,790
+ And it creates a doc string.
+
+902
+01:44:43,410 --> 01:44:50,090
+ And this is of course, maybe more useful when you get into larger projects and when other
+
+903
+01:44:50,290 --> 01:44:57,170
+ people need to use your code, of course, uh, and let's do this as well.
+
+904
+01:44:57,790 --> 01:45:11,280
+ Uh, print lit area dot, uh, right.
+
+905
+01:45:11,910 --> 01:45:18,610
+ If I remember correctly and let's run this and I can actually see return.
+
+906
+01:45:18,610 --> 01:45:21,480
+ My dog string here returns the area for dog rectangle.
+
+907
+01:45:23,380 --> 01:45:25,540
+ And there you go guys.
+
+908
+01:45:29,860 --> 01:45:31,970
+ Fabian.
+
+909
+01:45:33,330 --> 01:45:33,850
+ Uh, yeah.
+
+910
+01:45:33,850 --> 01:45:41,210
+ I was just, uh, wondering, uh, as a followup question regarding type hints, if, um, the,
+
+911
+01:45:41,370 --> 01:45:49,440
+ it is uncommon that you like check the type, uh, or like if you use like type of this variable,
+
+912
+01:45:49,440 --> 01:45:54,360
+ do this or do that, is it like, when do you check it in Python?
+
+913
+01:45:54,600 --> 01:45:55,120
+ Does it happen?
+
+914
+01:45:55,120 --> 01:45:55,260
+ Yeah.
+
+915
+01:45:55,260 --> 01:45:56,200
+ You can, you can do that.
+
+916
+01:45:56,200 --> 01:46:01,770
+ For example, that example that she just said, uh, so it's definitely, uh, it's, it's like,
+
+917
+01:46:01,830 --> 01:46:07,130
+ like I mentioned earlier, it's, it's, it's to actually providing with information of what
+
+918
+01:46:07,130 --> 01:46:08,070
+ we're actually expecting.
+
+919
+01:46:08,730 --> 01:46:13,030
+ Uh, and we're going to use some, uh, when we move into a larger projects, for example,
+
+920
+01:46:13,030 --> 01:46:18,230
+ when we're going to work with, uh, um, looking up data and so on, we will actually put some
+
+921
+01:46:18,230 --> 01:46:21,150
+ type hints as well so we can see them in action as well.
+
+922
+01:46:21,150 --> 01:46:31,620
+ Uh, Gloria.
+
+923
+01:46:34,530 --> 01:46:34,690
+ Yeah.
+
+924
+01:46:34,850 --> 01:46:42,400
+ So I can say that these, uh, dog streams are different from notes for the developer.
+
+925
+01:46:42,780 --> 01:46:46,500
+ Those are more similar, like a swagger documentation.
+
+926
+01:46:46,810 --> 01:46:49,910
+ Sorry.
+
+927
+01:46:50,050 --> 01:46:50,790
+ Say that again.
+
+928
+01:46:51,560 --> 01:46:57,710
+ So this, uh, dog stream, uh, those are no comments for the developers.
+
+929
+01:46:58,990 --> 01:47:00,310
+ This is more documentation.
+
+930
+01:47:00,710 --> 01:47:00,910
+ Yeah.
+
+931
+01:47:00,910 --> 01:47:10,730
+ You can print in some way and then get a, yeah, something similar to swagger that the, oh yes.
+
+932
+01:47:10,730 --> 01:47:12,050
+ If I remember correctly.
+
+933
+01:47:12,050 --> 01:47:12,310
+ Yes.
+
+934
+01:47:12,810 --> 01:47:13,160
+ Okay.
+
+935
+01:47:13,580 --> 01:47:26,430
+ So yeah, that was actually it for today, um, when it comes to functions, but some good thing
+
+936
+01:47:26,430 --> 01:47:34,860
+ to remember, uh, as we have seen during throughout the lesson to today's lesson, well, uh, things
+
+937
+01:47:34,860 --> 01:47:40,180
+ to, to remember to good things to remember that would be, uh, well, of course you need
+
+938
+01:47:40,180 --> 01:47:46,710
+ to define, uh, when you define the function, you need to actually call it as well in order
+
+939
+01:47:46,710 --> 01:47:47,430
+ to see it.
+
+940
+01:47:47,430 --> 01:47:47,750
+ Right.
+
+941
+01:47:49,220 --> 01:47:55,950
+ Uh, when we call the function, don't forget the parentheses, right.
+
+942
+01:47:57,700 --> 01:48:11,800
+ Uh, for example, uh, just a simple, just a simple, uh, function there, uh, the, uh,
+
+943
+01:48:12,370 --> 01:48:24,300
+ great, um, let's use a print.
+
+944
+01:48:26,830 --> 01:48:30,360
+ This will not show anything.
+
+945
+01:48:30,360 --> 01:48:34,200
+ If we run this, of course, as we mentioned at the beginning of the lesson, we need to
+
+946
+01:48:34,200 --> 01:48:35,320
+ actually call the function.
+
+947
+01:48:36,970 --> 01:48:44,950
+ And when we do, don't forget the parentheses, um, mistakes, if we run this, nothing.
+
+948
+01:48:45,260 --> 01:48:45,800
+ Right.
+
+949
+01:48:46,440 --> 01:48:50,920
+ So we don't forget the parentheses in order to see the print here.
+
+950
+01:48:50,920 --> 01:49:00,480
+ Um, yeah, try not to confuse print and return, as we mentioned before, the difference between
+
+951
+01:49:00,480 --> 01:49:12,280
+ print and return, um, because if we don't return, well, uh, we will get the problem with none.
+
+952
+01:49:12,280 --> 01:49:18,770
+ Uh, the number of arguments needs to also match, right.
+
+953
+01:49:20,030 --> 01:49:34,680
+ Uh, so for example, if we have a name, um, name, let's also put an age name and age here.
+
+954
+01:49:34,760 --> 01:49:37,250
+ Great.
+
+955
+01:49:37,500 --> 01:49:47,430
+ Uh, hello, you know, this will actually crash because we're missing, uh, one required position
+
+956
+01:49:47,430 --> 01:49:48,850
+ argument, which is age.
+
+957
+01:49:48,990 --> 01:49:49,450
+ Right.
+
+958
+01:49:51,140 --> 01:49:54,040
+ Uh, think about the order, as we mentioned before.
+
+959
+01:49:54,160 --> 01:49:56,290
+ Uh, what else?
+
+960
+01:49:57,320 --> 01:49:59,790
+ Yeah, that's pretty much it.
+
+961
+01:50:01,790 --> 01:50:10,630
+ It will probably, uh, if we were to put, it will accept it, but it will be semantically wrong.
+
+962
+01:50:10,630 --> 01:50:10,930
+ Right.
+
+963
+01:50:11,440 --> 01:50:15,980
+ If we don't think about the order, hello, 36 ADA, doesn't make any sense.
+
+964
+01:50:15,980 --> 01:50:16,200
+ Right.
+
+965
+01:50:17,770 --> 01:50:25,490
+ So these are some key points to think about, but as mentioned, we are actually, uh, going
+
+966
+01:50:25,490 --> 01:50:29,340
+ to do a lab where you can actually try everything out.
+
+967
+01:50:30,050 --> 01:50:38,220
+ And I think you will fall into those, uh, things that you probably were thinking, uh, uh,
+
+968
+01:50:39,420 --> 01:50:46,630
+ that you might fall into, you know, this usual question, uh, does this work?
+
+969
+01:50:46,650 --> 01:50:47,330
+ And does that work?
+
+970
+01:50:48,120 --> 01:50:49,390
+ Uh, yeah.
+
+971
+01:50:49,550 --> 01:50:54,430
+ If you, if you fall on something that you don't understand and you need to, uh, check out,
+
+972
+01:50:54,470 --> 01:50:57,450
+ just, just write to me or item.
+
+973
+01:50:57,450 --> 01:50:59,060
+ We can take it from there.
+
+974
+01:51:02,070 --> 01:51:03,490
+ And yeah, that was pretty much it.
+
+975
+01:51:04,410 --> 01:51:09,890
+ We'll actually stop the recording here and shortly you will also be.
+

@@ -1,0 +1,975 @@
+All right, where did we leave?
+Well, last week, or last lesson when it comes to fundamentals,
+because I know you took a little break on Monday.
+You went into GitHub and, yeah, talked a little bit about commits and so on.
+But if we go back to Thursday's lesson,
+the last thing we spoke about was, well, controlling the flow, right?
+Controlling the flow of our programs.
+Well, we used if statements, and, yeah, we used loops.
+We used comparisons.
+And, of course, Boolean logic, right?
+Yeah, and since we have already spoken about this,
+now when it comes to the labs,
+maybe you saw that we can actually make decisions and process collections, right?
+For example, this collection here.
+But there is still one problem, right?
+Well, most of our code is written from top to bottom in one large script, right?
+And, for example, if we look at this example that I just wrote,
+well, this works perfectly fine, doesn't it?
+But what if, let's say, I need this logic in several different places?
+Well, I could copy and paste the code, right?
+But copying the code, well, creates another problem.
+Because if I later need to change the logic,
+I may need to change it in several places, right?
+And this is one of the problems that we can solve now after this lesson.
+Because what do you think is that I'm getting at?
+What are we going to talk about today?
+Do you think?
+Classes?
+Something like that?
+Functions.
+Yeah, there we go.
+We're actually going to talk about functions today.
+All right, may I interrupt?
+Could it make the text a bit bigger?
+Yeah, sure.
+Yeah, thanks.
+Go.
+All right.
+Well, a function, well, you might know this, or you should already know this.
+But anyways, a small reminder.
+Well, a function is just reusable code, right?
+I can actually write that there.
+Reu code, right?
+Or reusable, I can even say, let's say, like this, block code.
+Well, it's designed to perform a task, right?
+And, well, we have already been using functions since lesson one, to be honest, right?
+For example, this function, right?
+Or this function, or I don't know, maybe this function, right?
+So the difference today is that instead of only using functions that Python actually gives us, built-in functions, well, we're going actually to start to create our own functions and how we do it in Python.
+That's basically the idea of the lesson.
+So let's begin.
+In Python, we actually create a function using the keyword def, and def is short for define.
+So that's how you begin a function in Python.
+So def, and let's name it to, for example, greet.
+Let me move that.
+And let me just do something here.
+And maybe, whoops, right?
+So let's take a look at the syntax here.
+So we have a def here, define, and then we have the function's name.
+In this case, greet.
+So I chose the name greet, right?
+After that, we have parentheses and a colon.
+And then we have some indented code block, right?
+So notice again that indentation here actually defines the block.
+So if I were to run this, will this actually print hello?
+Well, let's take a look.
+Well, obviously not, right?
+So what we have done here is only to define the function, but we have not called it yet, right?
+So in order to call the function, I would do something like this, greet.
+And now Python actually executes the code inside the function.
+And we get our hello, since we have print hello here.
+So what we can do is actually call the function again and again and again.
+No problem at all.
+So this would be the first benefit, right?
+So we get our three hellos over here.
+We can reuse our code.
+So we define the behavior once and can actually execute it many times, as we see here.
+When it comes to function names, well, they would follow the same convention as variables, as naming variables, lowercase and snakecase.
+For example, let's do something easier.
+Print or name.
+There we go.
+And then we can call it say good morning.
+There we go.
+So try to choose names that would actually describe what the function actually does.
+For example, I don't know.
+I'm not good mot name, but you get the point.
+Well, we could use names, for example, as calculate the average, validate email, get student score, and so on.
+Rather than function one, function two, function three, or do stuff, or something like that.
+So our greet function over here, if we take that back, let me just reuse that one.
+So our greet function always prints the exact same thing, right?
+But we could make it more flexible.
+We can actually give a function parameters like this.
+I would write name over here, and then maybe hello to the name.
+And now name is actually a parameter.
+It acts like a variable inside the function.
+So when I'm supposed to call it here, it will actually ask for a name.
+And I can actually use a name.
+For example, Ada.
+So I'm actually providing a value for our variable.
+So I can run this, and I will get hello, Ada.
+Therefore, I can use the same function again and again and again, since I can do with a different name.
+For example, I don't know, Grace, for example.
+So if I were to run this, hello, Ada.
+Hello, Grace.
+And I can't keep on going.
+Cannot get the point, right?
+Hello, Ada.
+Hello, Grace.
+Hello, Guida.
+So same function, different inputs.
+So this actually makes the function reusable, as you see here.
+Well, we have two words that are often mixed up, and that is parameters and arguments.
+So in this particular example, name is actually the parameter.
+It is the variable defined by the function.
+And Ada, over here, for example, is the argument.
+So here we have our parameter, and here we have our argument, right?
+So that's the actual value that we pass into the function.
+So yeah, people usually or sometimes use words interchangeably, right, in normal conversations.
+But technically, there is a difference.
+We can also have multiple parameters.
+Let's take an example.
+How would that look?
+Let's see here.
+For example, def introduce.
+Let's take to name and age, for example.
+And then I can do a print here.
+Name is age years.
+Something like that.
+So when I'm calling the function here, and you will notice, in introduce, in my parentheses, I see that I need a name, an age, right?
+Since this function has multiple parameters, a name and an age.
+And they are separated by commas.
+Important to remember, separated by commas.
+So I will provide a name, for example, Grace, for example.
+And we need an age.
+Let Grace be 85.
+85 years young.
+All right.
+Let's try it out.
+And this actually works.
+Grace is 85 years old.
+And it's good to remember that, by default, these arguments are actually positional.
+So Python would actually match them based on their position.
+So let's actually take a look at that.
+Let's see an example, for example.
+I can actually get rid of that as well.
+So we have a name and age.
+So I can do something like this.
+Print name.
+Be name, right?
+Print age.
+Age, right?
+And let's also call the function.
+Introduce.
+I need to provide a name.
+Let's change to Ada this time.
+And let's give her an age.
+For example, 36.
+All right.
+So what happens here is that the first argument will go to name.
+And the second argument will actually go to age.
+So if I were to put instead of Ada 36, let's just try it.
+So we get name, Ada, age 36, right?
+But if I were to write like this, 36, Ada, will Python actually stop us?
+Let's check.
+No, it doesn't.
+So Python accepts the values, 36 and Ada.
+But semantically, this would be wrong, right?
+So the name is 36 and age is Ada.
+That makes no sense, right?
+So the order matters when we use positional arguments, okay?
+But what I can do here, let me just keep that one so we know where we came from.
+But what we can do here is something like this, age equals.
+And here we can do name equals, right?
+And if we run this, we get our name, Ada, age 36.
+So what we did here is using the word arguments.
+So we explicitly say which parameter each value actually belongs to.
+And because of that, order no longer matters.
+Pretty cool.
+Hopefully, you're able to follow along.
+Let's see here.
+Johanna?
+Yes.
+Does that also mean that you don't, that some arguments can be like voluntary?
+If you just want to send a name, is that possible?
+Is that like okay to do?
+So I think what you're trying to say here.
+So your question is, could I have a default name, for example, or default age, right?
+Yeah, or just not necessary to send in all the parameters or, yeah.
+Very good.
+We will actually see in a minute or so.
+Okay.
+So just give it five minutes and we will see.
+We will get there.
+So let's take one step by step.
+But that's a great question because it is relevant, right?
+So we're actually going to see that in a while.
+Great question.
+So let me just give you a, let me just give you one thing here.
+We're going to create a calculate tax and let's say income over here and let's give it another one.
+Tax rate, for example.
+Then we can do something like this.
+Tax equals income multiplied by tax.
+Let's just take a small step before we move to the next part where Johanna is talking about.
+Call this one calculate tax with 5,000, for example, or 50,000 maybe.
+And 0.3, for example, or 0.3, right?
+So this function actually reveals, or rather, say it like this.
+It actually receives two values, right?
+And it performs actually a calculation as well.
+And it also prints out the result.
+Let's actually see.
+Yes, it does.
+Or did it?
+Yeah, 15,000, right?
+So it did the calculation and it also printed out the result.
+But there is one thing, or I could say something at least, about this function that I don't really like.
+So the function actually calculates a useful value, right?
+But then it only prints it.
+Let's say another part of my program actually needs to use this calculated tax.
+This wouldn't be possible with this function, right?
+Since we're only printing out the tax, right?
+What would I do then?
+All right, Noisa, go for it.
+Sorry, I didn't hear me.
+Titika?
+To print in the value.
+Yes, exactly.
+So I'm actually going to do a little change here.
+Instead of writing print here, I'm actually going to put return tax without any parentheses, right?
+So this is actually an important concept, right?
+Return actually sends a value back to the place where the function was actually called.
+So the function is no longer responsible for deciding what I do with the result.
+Since I now, instead of doing that, I would rather do something like this.
+So the result equals calculate tax, for example, just to make it a little bit clearer, 50,000 and 0.3.
+And now I would actually just print out the what?
+Well, the result, obviously.
+I can print it.
+I can actually save it.
+I can use it in another calculation and I can pass it to another function, right?
+So a little bit of difference between return and print.
+So let's actually make the print and return very clear, clearer example.
+Let's do something like this.
+Let me think.
+Let's do this.
+Def add with print and B, print plus B, right?
+And the result equals print, numbers here, 5 and 3, that's it.
+And then we can do print, result, result.
+So what do you guys think that the result contains, Fabian?
+Here, I'm going to be honest that I'm not entirely sure because we haven't specified the types of A and B.
+So, oh, never mind.
+No, no, no, no.
+You did it.
+It should be 8, never mind.
+All right.
+It should be 8, right?
+So let's actually see here, all right?
+Let's take a look.
+As you see here, look at that.
+We get an 8 and then we have result none, right?
+Result none.
+So the function actually printed out 8.
+So far, so good, right?
+But it did not return 8 because we don't have an explicit return value.
+Therefore, Python will return none.
+We were able to follow that one.
+Let me say that again.
+So the function printed out 8, but it did not return 8.
+Don't, I don't know, return 8 or doesn't, all right, turn 8.
+You get the point.
+Return 8, right?
+Because why?
+Well, because we don't have a return value.
+And since we don't, well, Python returns none.
+So if we want to actually change this, one would do what?
+Well, here, first of all, we would say return a plus b.
+And now let's try it out.
+To run this, we actually get our result 8.
+So now the value 8 comes back from the function, and it's actually stored in result.
+And it's a usual beginner mistake, right?
+That you can see, people would say, or somebody who's new to programming would maybe say, well, I actually get an 8, right?
+I can see the value in the terminal, but somebody more experienced would rather say the function actually returned the value 8, right?
+And that's not the same thing, right?
+Take another example, just to make sure.
+Another return example.
+Say def calculate.
+It's a tax, right?
+Income here.
+And we need a tax rate return multiplied by tax rate.
+So what I can do here is actually do something like this.
+Tax equals, calculate tax, 2,000, multiplied by 0.3.
+Now I can actually use that tax in another variable.
+Let's make income, what should we call that?
+After tax, maybe?
+Equals 50,000 minus the tax that we just calculated over here at line 1016.
+And now we can actually print a lot of things here.
+For example, we can start up by printing out tax.
+That would be our tax, right?
+That we calculate over here.
+Sorry.
+That we calculate over here.
+And then we can also do another print with the income after tax.
+Income tax.
+And that would be income after tax.
+Something like that.
+Let's run this and see.
+Maybe I missed something.
+Can you find it?
+Sure.
+Gloria.
+Yeah.
+I think in the line 1016, you are passing just one parameter, one argument, because you
+are multiplying.
+Yeah.
+There we go.
+There we go.
+That looks much better.
+Right?
+Thank you for that one.
+Monday morning.
+So, there we go.
+We get our tax, 15,000, and we get our income after tax, right?
+Because calculate tax actually returns a value.
+And because it does that, well, then the rest of our program can continue working with that
+value, right?
+We don't actually always need an extra variable inside the function.
+We don't actually need that.
+We could do something like this and take, let's do this.
+Let me use that one separate here.
+There we go.
+And what we can do here is actually, we can do something like this.
+Print is perfectly fine.
+Calculate tax, 5,000 or 50,000 multiplied, sorry, 0.8.
+For example, you could do that.
+So, both versions are actually correct.
+No problem at all.
+So, sometimes this, and what we call it, an intermediate variable actually improves maybe
+the readability, right?
+As we saw here.
+But sometimes returning the expression directly is maybe perfectly clear.
+So, this would be valid.
+All right.
+Now, let's take another small step here.
+We're actually going to look at code after the return.
+Let's see here.
+We can do something like this.
+Def example.
+And let's do something like this.
+Print before return.
+Let's return 10.
+And then actually do another print.
+Print after return, right?
+And then, let me just do result.
+Result equals example.
+And then, let's actually print the result.
+There we go.
+So, the question is actually, will this print be printed out?
+Will we actually see after return in Terminal when I run this code?
+What do you guys say?
+If you haven't tried it on your computers, of course.
+Daniel?
+The function ends at return.
+Very good.
+It actually does.
+So, let's run this as Daniel suspected here.
+Or he said, print.
+We will get our print, first print, before return.
+We will get our 10.
+But as we see here, is that return immediately ends the function call.
+So, any code after that return in the same execution will not run.
+So, the print after return will never run.
+Therefore, let me see if I will answer your question, Maxime.
+Let me save that question for a little bit.
+So, this actually means that return works very naturally with, of course, conditions.
+For example, let's take an example here.
+Def and check grade.
+Let's say score here.
+Oops.
+Excuse me.
+So, let's do an if here.
+If the score is greater than or equal to, let's say, 70.
+I can return a pass.
+I can also use an else here.
+Else return fail.
+Let's see here.
+Call it.
+Try it out.
+Print, check, check grade.
+Let's do it with 85.
+We can do another one.
+Instead of 85, let's use 60.
+Let's try it out.
+We get a pass and a fail.
+It's 85 and 62 over 70, under 70.
+Right?
+So far, so good.
+But since return here, since return actually ends the function, we can actually write this in a more simpler way.
+So, let me just save that one so we remember where we came from to something like this.
+So, instead of writing else and all that, let me just write.
+I can just put return.
+This will actually work as well.
+So, if the score is 70 or higher, the first return will actually end the function.
+But if it's lower, so if Python actually reaches the second return, well, we already know that the first condition was actually false.
+Or it would have never have come to this pretty good, right?
+Yeah.
+Actually, one question, one comment.
+So, for the above one where you were showing me.
+Do you hear me, right?
+Yeah.
+So, the above one, even if you have a brain fart, the compiler will usually tell you that if you put something after return, it's grayed out, meaning that it will not be called.
+But in this function, can you do it in an enhanced if statement?
+Like in all the scores, let's say more this, return true, tell us false?
+Yes.
+Yes, we can.
+Or is it a bit too soon?
+No, I think we're going to come there very shortly.
+Yeah.
+We will get there, very good.
+But we will also look at it from another perspective as well.
+But we will get there, we will get there.
+Good question.
+Let's see here, I had an idea here.
+Or maybe I will skip down one.
+What time do we have 9.42?
+Okay.
+Let me take another small step.
+And hopefully, all the steps by the end will actually answer all your questions.
+And, of course, the lab as well.
+We're actually going to look at, well, let's see.
+Parameters can actually receive more than simple integers and strings, as we have seen so far.
+We can actually pass collections into functions.
+So what we can do here, something like this.
+Get first item, items, return here.
+Let's take the first item.
+Since we said first item, right?
+And it's not item, it's items.
+And let's create a list here.
+Languages equals.
+Let's put up a bunch of things.
+Languages, Python, Java, C, Sharp, for example.
+And then we can do something like this, print, well, get first item, and that will be with languages.
+Let's run this, see what happens.
+Python.
+So the parameters, the parameter items, refers, well, what, to the list that we have passed into the function.
+So a little bit different from what we saw before.
+We can also create a function that actually loops through a list.
+Let's try that out.
+Let's say, let's call it something simpler, print languages, languages, and our parameter will actually be languages.
+All right.
+So we can actually do a loop here, or language in languages, perfectly fine.
+As we have seen before, print language.
+Excuse me.
+My language, or my languages, right?
+We're creating a list here.
+Let me just use that one.
+There we go.
+There we go.
+There we go.
+Something like that.
+And let's see if we can loop through that.
+Print languages.
+Languages.
+So we can actually combine functions.
+We can actually combine functions with loops from what we saw in the previous lesson.
+Python, Java, C Sharp.
+We can even make our functions even more useful.
+Take an example.
+Instead of only printing values, let's actually calculate something.
+And return the result with a loop, a list, for example.
+We could actually do that.
+So let's call it count.
+Let's make it super clear.
+Passing.
+Scores, maybe.
+Past.
+Zero.
+You see what I'm trying to get to now, right?
+I'm putting past a zero.
+All right.
+I have four in a loop for score in scores.
+And let's do an if statement.
+If score is greater than or equal to, let's take it to 70.
+Well, then we will say just past plus equals to one, right?
+Instead of writing else, I would just put return, oh, it's not here.
+Here, right?
+Return past.
+And let's create a little list here.
+Scores equals 85, I don't know, 62, 91, exactly 70, and 48, for example.
+And then do a result variable.
+Count passing scores.
+And that will be with scores.
+And let's do a print, a little nice print here.
+Print passed, the result that actually passed.
+Let's run this.
+So now this function now combines several things that we have learned, right?
+What that we have spoken about throughout this course.
+Covers functions, obviously, parameters, lists, loops, additions, variables, of course.
+And also the return that we spoke about.
+And this is much closer to how, of course, programming concepts are actually used together.
+Could we use a dictionary?
+Well, yes.
+Let's take a look.
+Just tell me if it's going too fast.
+So let's take a look at dictionaries, and then we can actually take a little break, of course.
+Let's see here.
+Do that.
+Status.
+Do that.
+So if student created the start of here.
+So let me just erase that so it makes some sense because I actually see the whole example in front of me, but you don't, right?
+So let me actually create the dictionary here.
+Student equals to, there we go.
+The student actually has a name.
+That would be, let's take Ada, and also score, right?
+And let's give her an 85, right?
+And of course, it's complaining since we haven't closed the function here.
+We could do that with a simple pass, but we will get there later.
+So we have a dictionary called student containing key and values.
+The first key is name, value Ada, key score, and value 85, right?
+So let's create a function, so if student, the score here, so if the score is greater than or equal to 70, well, then we want to return a pass.
+Instead of writing else, I will just directly write return.
+We have our dictionary, and let's try it out.
+Let's create a variable, and we can call it status, equals to get student status, the student, right?
+Print, print student name, and of course, the status.
+Let me not forget that.
+Status.
+There we go.
+Let's run this and see if it works.
+Ada pass.
+There you go.
+So this actually works as well.
+Could I do this with a list of dictionaries?
+Yes, of course I can.
+Add a lesson.
+Write it again here.
+Let's use a list of dictionaries.
+How about with students?
+Now, the score of 85.
+Bob with the score of 62.
+Charlie with the score of 91, right?
+And then we'll go here.
+We can do f, get student, collect the same thing.
+Student status, student.
+Let's do an if statement.
+If student, it's the same thing here.
+Score is greater than or equal to 70, then we will return a pass.
+Else, instead of things we will do directly in the return here, fail.
+And then let's make a loop here.
+So for student in students, this equals get student status, student status.
+Think I missed something?
+No, I want to ask you if you can go through this one again, like explaining.
+Sure.
+It's funny.
+Yeah, yeah, yeah.
+Thank you.
+So let's actually run this just to see.
+Pass, Bob fail, Charlie pass, right?
+Since Anna has score grade in 1070, Bob doesn't, but Charlie does, right?
+So we can actually compare this to the last lesson we had or lesson three, Thursday's lesson.
+So here, the loop is actually responsible for going through students, right?
+The loop here is responsible for going through the students, right?
+But the function itself is, well, responsible for deciding status only.
+So we have actually separated the responsibilities.
+So here, we have the responsibility of getting the status, whilst here, we're actually doing the loop as we did in the last lesson.
+And this, of course, is very important to know, as programs always get larger and larger and larger, usually.
+Right?
+Gloria, did that make some sense?
+Yeah, it makes sense.
+Of course, I think you guys also need to try it out just to get the feel of it.
+Now you're just watching, right?
+But when you try it yourself from memory, for example, you will remember what did what and so on.
+And it will be easier to grasp.
+Now, let's answer another question.
+But before we do that, we need to take some break.
+I see it's almost 10 o'clock.
+So let's take a well-deserved break here.
+And then we will move one more step.
+So I will leave you with a little cliffhanger here.
+So let's say, well, we can take 10.15, right?
+So I'm just going to write it back 10.15.
+There's a lot going on in the chat.
+Okay, back 10.15, and then we can continue.
+There we go.
+All right, guys, back.
+Perfect, perfect, as well.
+All right, let's continue here.
+Where did we go exactly with dictionaries and so on?
+The next part that we're going to look at, and the rest is actually something that you will explore,
+also in the labs, because, yeah, we could always end up in endless, can we do this and can we do that?
+So let's actually explore that in the lab.
+And then something that's not covered, of course, you can always ask about it.
+Just write to me or anything.
+I can call you up, and we can have a little discussion about it, of course.
+But what we're also going to look at is something I think was a question before, and that is that Python actually allows parameters to have default values.
+So, for example, I'll do something like this.
+Let's create something simple.
+That's greet name and greeting, right?
+But this time, I'm actually not going to just do that.
+I'm actually going to put the default here.
+For example, hello.
+All right.
+If I were to do a simple print here, greet with the name, I can actually just call the function and just write by just writing greet.
+When I put my parentheses, I actually see here that we have a name.
+We need the name, right?
+Specify name.
+And then we have a default value for our greeting here, which is actually hello.
+So let's just provide a name here, Ada, for example, and nothing else.
+So here I'll only provide a name.
+Let's run this.
+We actually get hello Ada, right?
+Because, and I get my hello since I did not provide a greeting.
+Since I did not provide the greeting, Python will use the default value, which I have specified as hello.
+But I could also do, no, there we go.
+So what I can also do is Ada, but here also put, for example, good morning.
+So if I were to provide a value, then the value will actually replace the default value, which was hello.
+So now we actually get good morning Ada instead of hello Ada, as we saw previously.
+So yes, we can actually provide the default value.
+Parameters, just write something here.
+Let me just, so yeah.
+So parameters, actually, without default values, most normally come before parameters with default values.
+I can show you something.
+So let's say, um, um, def, def, ah, def, uh, uh, greet, for example, and greeting was, uh, well, the name and parameter, and then we can do some, I don't know, a simple print, uh, name.
+As you see, it is actually complaining, right?
+Non-default arguments follows default arguments, as you see here.
+So no, we don't do this.
+Right?
+So this is actually invalid.
+Python needs to, uh, the required parameters first.
+So in this case, it would be a name greeting.
+Hello, for example.
+All right.
+Um, let's take a look at keyword arguments and default values as well.
+So for example, uh, let's do this, uh, create user, for example, we have a name, we have a role, we're going to put, uh, the role, the default value as student.
+And I'm also going to do something like this, active equals print, uh, name, last but not least print.
+Now, when we create the, the user, the last, the least thing that we need is actually, uh, what, well, I mean, since we have a default value for, um, the role and we have a default value for active and that will be the string student and boolean true for active.
+So the last, the least thing that we need to create is actually the name in this case.
+And that will be ADA.
+Let's take a look.
+So when we run this name ADA role student active true.
+But what we can actually add here and also specify the role here to, for example, teacher, right?
+You run this and we will get name ADA role teacher and active.
+Obviously we could also do something like this, uh, oops, the role.
+Let's change it to active.
+For example, here we go active and put it as false instead.
+Sure.
+We could do that as well.
+And if we run this, yeah, we will get a name student ADA.
+The role will be student and active.
+It would be false this time.
+So yeah.
+Keyword arguments becomes, well, especially useful when, uh, a function has, um, several optional, um, parameters.
+So I can actually change, uh, uh, active here without having to provide a new role.
+Perfectly fine.
+Python.
+Let's talk about multiple values here.
+Well, uh, Python function can appear to return multiple values, values, right?
+Uh, there we go.
+So, uh, uh, let's take an example, um, let's mean and max, for example, um, let's have numbers here.
+Numbers return, uh, mean numbers, max results.
+Um, let's put a list here, uh, four, eight, one, um, to 12 and three, for example.
+So yeah, I went to do print result here, for example.
+Uh, and let's actually also look at what data type is actually returned.
+So I'm actually going to do print, uh, uh, on result, right?
+So let's actually run this and see what we see.
+And we see, well, we get a one and 12, right?
+Since that's our min and max, that's true.
+But what data type is actually returned here?
+Well, we see tuple.
+So what Python does here is it actually packs the, uh, packs the return values into a tuple.
+And since we learned tuple unpacking in, I think it was Wednesday's lesson, uh, we can actually do this as well.
+Print, uh, before, instead of writing result, min and max, we can actually do, uh, let's remember where we came from.
+I usually like to comment them out so we don't get confused, but I think you're with me.
+So instead of putting one variable here, we can do, as we saw on Wednesday's lesson, I presume, smallest and largest, for example.
+And now you can come out and print, smallest would be smallest.
+And obviously you can do the same thing with largest, largest, just like we did in one of the previous lessons.
+We can unpack the return values directly like this.
+And you saw where we came from since it was a tuple.
+We can actually unpack the question that I usually get is, uh, is, um, functions calling functions.
+Is that allowed?
+Let's see.
+And I can directly say that function can also call other function.
+Obviously, for example, you could do something good.
+Example here.
+My notes, I think let's use that one, uh, call q late.
+Um, let's take with our taxes here.
+Income rate, for example, something simpler.
+Return income multiplied by the tax rate.
+Right.
+And now I can create another function and let's start, call that one, call q late, um, income after tax.
+Let's make it super clear.
+Uh, and here I'm actually using income and tax tax rate here.
+Let's go to the variable where I actually call the previous, uh, previous, what?
+Well, the previous, uh, function that we created and with right parameters.
+So here would be income and of course, tax rate.
+And now we just need to return as well, right?
+Return income.
+And we would do something minus the tax, right?
+Now let's actually try this out.
+So we have a function, calculate tax, where we return the income times tax rate.
+And then we can use that return inside this function as well, since we're calling this function calculate tax when calculating the tax.
+So let's try it out with a variable here, result.
+What function should we call now?
+Well, of course, calculate income after tax, since we're already calling the other function, uh, at the same time here.
+And let's use 50,000 as the income and let's stick with 0.3 as the tax rate.
+And now we can actually print, uh, the results.
+And now let's run this and see if it actually works and we get our 35,000.
+So calculate income tax here does not need to duplicate the tax calculation as we did in the calculate tax, right?
+So it uses the function that already knows how to calculate the tax.
+So this is actually another example of reuse and separation of responsibility.
+Uh, yes, Gloria.
+And this, uh, works, uh, in other, uh, languages where the second function tool should be created or made before it is called.
+For example, if we move the calculate tax in, uh, at the line 100, 12, 15, for example.
+So it will work or not.
+So will it work?
+So what are you asking if I can move this to here instead like this?
+Yeah.
+Okay.
+Before showing, what do you guys say?
+What does the rest of the class say?
+Johanna?
+It's going to show how much, uh, tax you paid.
+Wait, wait, wait, no, sorry.
+So we can run this and see.
+So we get over 35,000.
+We get over 35,000.
+Uh, so this would actually work in this case, but, uh, what do we need to be careful with?
+Rania?
+Yeah.
+So the actual, um, using this calculate income tax, that method, that shouldn't be before defining these two methods.
+So that will show a matter.
+Yeah.
+So for example, if I were to move this, um, to here, maybe this would do something, I think.
+Right.
+There we go.
+So if you have functions in this way, that's all perfectly.
+All right.
+Since Python is reading everything from up and down, uh, you have to be a little bit careful.
+As I think we showed in the previous lesson.
+So this actually works since they're separated, uh, functions that will be read it before we get into the calculate actual calculations being done.
+So this will actually work.
+Right.
+No problem.
+Uh, no problem.
+No problem.
+I think somebody forgot the mic on.
+So make sure that you.
+Hmm.
+Um, this.
+Well, yeah, why not?
+So one, one, just, just to make sure that everybody is following along on the terminology here.
+So let's make a, well, one terminology.
+Uh, distinction before we actually continue here.
+Uh, because of course terminology is also important.
+Right.
+So let me just write numbers here.
+Equals, uh, five, two, oh, sorry.
+Five, two, nine, and one.
+Uh, let's do something like this.
+Print, uh, len numbers.
+And also, uh, let's do something like this numbers, that's a word.
+Right.
+And also print, uh, numbers.
+Also, uh, death get first item items.
+Let's return the first item here items.
+Be zero.
+Right.
+Uh, now let's also print that out.
+Print, um, first item, uh, with numbers.
+Right.
+What do we call this?
+You guys say, help me here.
+Uh, Gloria.
+Four.
+Sorry.
+Um, it will be four, right?
+Yeah, yeah, yeah, yeah, yeah, yeah.
+That, that would be what was printed out.
+Right.
+Uh, I'm with you.
+But, but what do we call it?
+I mean, in the terminology here.
+Okay.
+Okay.
+Sorry.
+So we would call this a built and it wants to continue built in functions.
+There we go.
+Built in function.
+Uh, let's try to remember to just raise your hands.
+So everybody has a chance to answer.
+Uh, and here we actually have a, what's critical method.
+There we go.
+A method belonging, uh, to the list object.
+Right.
+And here, um, is just a, what?
+You didn't all need to have this one.
+I should see the whole class raising hand.
+The old one.
+I can't, can't stand if you've forgotten.
+Come on guys.
+Are you with me over here?
+There we go.
+There we go.
+Perfect.
+Sure.
+Sarania.
+Marina.
+Okay.
+Okay.
+There we go.
+Parameters.
+Well, that would be the parameters, right?
+But, uh, Georgie.
+You mean like function or what?
+Yeah, there we go.
+Function.
+Thank you.
+It was so obvious that, that, that maybe you, you start overthinking stuff.
+Right.
+So yeah.
+Our function, right.
+That we just created ourselves.
+Right.
+And yeah, we will, of course, constantly, um, encounter all three of these along the way
+in Python.
+Uh, I think I saw some discussion, uh, in the chat about, um, data types.
+Right.
+And what you will see in, and we will just thread on this lightly.
+Uh, we're not, uh, going to this very deep, not yet.
+Uh, we will return to this a little bit later.
+We're doing the course.
+Um, so there's one thing that you will see in modern, and I'm emphasizing a modern, uh,
+Python code, and that is something called type hints.
+And that's what we have in, in, in, in, in, in type hints.
+So, uh, Python is still dynamically, uh, typed, right?
+But we can add, can actually add hints that describe what type we are actually expecting.
+And that's it.
+So, uh, depth, for example, add here, uh, an add function.
+And we have an a, we can actually put an int, uh, data right here, int, right?
+There we go.
+Uh, int, and we have a B, which is also supposed to be an int, right?
+And we can also do something like this, int, and return, return, uh, A plus A plus B, for
+example.
+And now, when we call our function, which is called add, we actually get a type hint, right?
+That A should be an integer.
+B should be an integer.
+So the call an int here actually says that we expect an A, expect A and B to be integers.
+And the arrow int here says that we expect the function to return an integer.
+And important here is that we call this type hints, but remember now, and let me just run
+it and see that everything works as it should.
+Uh, let me add something here, uh, five, two, three.
+So we actually take it step by step and we run this.
+Yeah.
+We got our eight since five plus three is actually eight.
+Right?
+So, but something that we need to emphasize on that we need to remember here, these are
+only type hints, right?
+Because Python itself does not, does not suddenly become statically typed because we add them.
+Right?
+So if we were to put instead of an integer, for example, let's say, um, add, so we're expecting
+an int, right?
+Well, I'm not going to put an int.
+I'm going to put hello.
+And for our B, I'm also not going to put an integer.
+I'm just going to put another string, world.
+So what do you say, guys?
+Do you think that Python will actually crash here because, uh, because we, we're adding
+two strings or will this actually run just offer?
+Yeah.
+I think it will run, but yeah, yeah, it will put them to get, put them together.
+Of course.
+Yeah.
+Yeah.
+And let's run this.
+And we actually get hello world.
+Let's do something like this, right?
+Hello world.
+Where's 14 find?
+So it will run just as Christopher mentioned.
+So the in hints here only, uh, improve readability and can also help, uh, editors and external
+tools, of course, but Python does not enforce them, does not enforce them here at runtime.
+Right.
+So we're not going to require typings everywhere in this course, of course.
+Um, so I just mainly just want you to recognize the syntax because, uh, you might see this in
+modern, uh, Python projects, uh, let's see here what else can just a small one here.
+Also something that we're going to look, uh, likely at, uh, is actually doc strings, uh,
+strings.
+So yeah, another useful Python convention is also doc strings, right?
+Uh, and the doc string just describes what a function actually does.
+So what I can do here is let's say that, uh, calculate, uh, calculate, uh, cause I don't
+think we have actually, um, mentioned this before.
+Um, let's use a, uh, with and a eight here don't don't don't.
+And now I can just write here, return, return, return the area of a works perfectly fine.
+And now we can actually do the creation as well with multiplied with, uh, height, right?
+If I'm not mistaken.
+And now we can of course print out, click the area and let's a width and a three.
+Let's try it out.
+Yeah.
+We get our 15 works perfectly fine.
+So this doesn't interfere at all doc string here.
+So yeah, triple quotes here, um, uh, uh, directly before, uh, below this function.
+Well, that actually defines the, what the function, um, creates, right.
+And yeah.
+And it creates a doc string.
+And this is of course, maybe more useful when you get into larger projects and when other
+people need to use your code, of course, uh, and let's do this as well.
+Uh, print lit area dot, uh, right.
+If I remember correctly and let's run this and I can actually see return.
+My dog string here returns the area for dog rectangle.
+And there you go guys.
+Fabian.
+Uh, yeah.
+I was just, uh, wondering, uh, as a followup question regarding type hints, if, um, the,
+it is uncommon that you like check the type, uh, or like if you use like type of this variable,
+do this or do that, is it like, when do you check it in Python?
+Does it happen?
+Yeah.
+You can, you can do that.
+For example, that example that she just said, uh, so it's definitely, uh, it's, it's like,
+like I mentioned earlier, it's, it's, it's to actually providing with information of what
+we're actually expecting.
+Uh, and we're going to use some, uh, when we move into a larger projects, for example,
+when we're going to work with, uh, um, looking up data and so on, we will actually put some
+type hints as well so we can see them in action as well.
+Uh, Gloria.
+Yeah.
+So I can say that these, uh, dog streams are different from notes for the developer.
+Those are more similar, like a swagger documentation.
+Sorry.
+Say that again.
+So this, uh, dog stream, uh, those are no comments for the developers.
+This is more documentation.
+Yeah.
+You can print in some way and then get a, yeah, something similar to swagger that the, oh yes.
+If I remember correctly.
+Yes.
+Okay.
+So yeah, that was actually it for today, um, when it comes to functions, but some good thing
+to remember, uh, as we have seen during throughout the lesson to today's lesson, well, uh, things
+to, to remember to good things to remember that would be, uh, well, of course you need
+to define, uh, when you define the function, you need to actually call it as well in order
+to see it.
+Right.
+Uh, when we call the function, don't forget the parentheses, right.
+Uh, for example, uh, just a simple, just a simple, uh, function there, uh, the, uh,
+great, um, let's use a print.
+This will not show anything.
+If we run this, of course, as we mentioned at the beginning of the lesson, we need to
+actually call the function.
+And when we do, don't forget the parentheses, um, mistakes, if we run this, nothing.
+Right.
+So we don't forget the parentheses in order to see the print here.
+Um, yeah, try not to confuse print and return, as we mentioned before, the difference between
+print and return, um, because if we don't return, well, uh, we will get the problem with none.
+Uh, the number of arguments needs to also match, right.
+Uh, so for example, if we have a name, um, name, let's also put an age name and age here.
+Great.
+Uh, hello, you know, this will actually crash because we're missing, uh, one required position
+argument, which is age.
+Right.
+Uh, think about the order, as we mentioned before.
+Uh, what else?
+Yeah, that's pretty much it.
+It will probably, uh, if we were to put, it will accept it, but it will be semantically wrong.
+Right.
+If we don't think about the order, hello, 36 ADA, doesn't make any sense.
+Right.
+So these are some key points to think about, but as mentioned, we are actually, uh, going
+to do a lab where you can actually try everything out.
+And I think you will fall into those, uh, things that you probably were thinking, uh, uh,
+that you might fall into, you know, this usual question, uh, does this work?
+And does that work?
+Uh, yeah.
+If you, if you fall on something that you don't understand and you need to, uh, check out,
+just, just write to me or item.
+We can take it from there.
+And yeah, that was pretty much it.
+We'll actually stop the recording here and shortly you will also be.
