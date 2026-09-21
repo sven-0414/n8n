@@ -1,0 +1,1170 @@
+Today's lesson is very interesting.
+I hope you find all lessons interesting.
+I don't know.
+Usually, this lesson usually lands well.
+So yeah, yesterday, what did we talk about?
+Well, we introduced functions, right?
+Or syntax for fun things when it comes to Python, right?
+But let's just make a quick, just a very quick recap.
+So yesterday, we said something like this.
+Calculate total, maybe?
+Total what?
+Well, price.
+And we're going to put maybe a quantity, something like that.
+And then we can do something like this.
+Return price times quantity.
+And then we can create a variable with the result, maybe, equals.
+And we call our function, and then some numbers here.
+293, maybe.
+And then let's also print the result, right?
+In this example, let's see.
+So in this example that you see right now, what would you say are the parameters?
+Raise your hand.
+What are the parameters here?
+Just a recap from yesterday.
+Hmm, let's see here.
+Actually, I'm going to check with the guys who haven't spoken so much.
+Oh, there we go.
+Okay.
+Kristoffer.
+Yeah.
+So the parameters there could be the price and quantity, right?
+Price and quantity.
+I will give you 10 points.
+Yeah, that's actually correct.
+Great.
+So the parameters are price and quantity over here, right?
+And what would be the arguments?
+Give it that one to Gloria.
+Yeah, the arguments are the ones that you pass when you call the function.
+It would be 199 and 3.
+Yeah, there you go.
+Does the order matter?
+What do you say, guys?
+Johanna?
+Yes, it does.
+Because if you don't write like price or 199, then you can write in different orders.
+There you go.
+There you go.
+So in this case, this would matter.
+But you can't go around it, as Johanna said, right?
+And what does return do in this case?
+Return, what does that do?
+Maxims?
+Yeah, return returns the multiplication so that you start in the value.
+But I had a question about your previous statement.
+So my answer is correct.
+Can you say the answer again?
+Yeah, return is you return the multiplication of those two values, and then you store it in
+the result and then you print it.
+All right.
+There you go.
+I had a question when you said that the order matters, though.
+In this case, since the function doesn't have any default values, the order does not
+matter because it's simple in multiplication.
+Like six times six will be the same, six times six, right?
+That's true.
+That's true.
+That's true.
+Yeah, it is.
+But still, we would like the price to be the price, right?
+And the quantity to be the quantity.
+That is true.
+That is true.
+But you're actually correct when it comes to what we're actually doing, the operation
+area.
+Yeah, that's true.
+So, yeah.
+So return would be that we send this calculated value, right, back to the caller.
+That's true.
+A little bit different from print, right?
+So good.
+So we're actually going to continue with functions today.
+Let me just get you guys so I can actually see if somebody's raising that.
+There we go.
+So, yeah, we're going to continue with functions, like I mentioned, but we're going to focus
+on a few, you could say, well, Python features maybe that makes these functions more flexible.
+But before we do that, we actually need to understand something that's important.
+And that's where I will put it like this.
+Where do variables actually exist, right?
+So what we're going to talk about right now is actually scope, right?
+We're not going to do a deep dive, at least mention it, right?
+So let's start with a very simple function.
+Something like this, maybe.
+We saw that one yesterday.
+So greet function that has a message.
+All right.
+Something like this.
+Hello from the function.
+And then we have a print here and we want to print a message.
+Then maybe we can also call the function here.
+Greet.
+All right.
+If we run this code, we get hello from the function, obviously, right?
+So the variable message was created inside the function.
+And this makes it a, what we call a, a what?
+Well, a local variable.
+All right.
+So it belongs to the local scope of this function.
+So local variable in the local scope.
+But what if I come and do this?
+Something like this.
+Well, you see already that it's kind of complaining, right?
+So would this actually work?
+What do you guys say?
+Kritika, you can take that one.
+Yeah, it doesn't work.
+Because message is a local variable, right?
+Yeah.
+Yeah.
+So, so yeah.
+The simple answer would be actually that the message here is actually a local variable, right?
+So when we run this, we actually get a name error, right?
+Name message is not defined.
+Because outside the function, Python actually doesn't know about this local variable.
+Therefore, we get a name error, right?
+Therefore, we get a name error, right?
+And we're going to build on this.
+So what if I come and do something like, okay, you start again, like this in the building.
+There we go.
+Instead of having this message, what if I do this message equals, equals, well, hello from global.
+And let's also call the function as well.
+Great.
+So in this time, let's actually run it to see that it works.
+Get hello from global scope, right?
+So the function here did not actually create the message, right?
+So how can it actually still print it?
+Well, Python actually looks outside the local scope here and finds the variable in a global scope, in a global scope, right?
+So what if we come and start mixing it up and doing something like this, just to make it super clear here.
+What if I come here and say message equals, well, let's say global message, right?
+And then let's create this function again.
+It takes one second, sorry.
+Message.
+And then I come and say, this time, instead of saying global message, I will say local message message.
+And then let's actually call that function.
+And let's also at the same time look at this.
+So if I run, if I were to run this, I'm not going to do that quite yet.
+But if I were to run this, I would do messages.
+And what's important here is what message will I actually get from greed?
+And what message will I get from my print, right?
+And what will the function actually print?
+And what will the final print outside the function actually print out?
+What do you guys say?
+Hey, Fabian, you can take that one.
+I think that greed will temporarily overwrite what the global content is.
+So when we use the function greed, it will say local message.
+And then the value will sort of be, I don't know, detached.
+And then we will write the global message out.
+Local then global.
+And I'm not going to say that you're wrong.
+Because if you were to run this, we actually end up having exactly what you said.
+So we get a local message for our greed.
+And we get our global message for our print here, right?
+So inside the function, Python actually finds the local variable first.
+And outside the function, the global variable is still unchanged, right?
+So these are actually two different variables in two different scopes.
+That's important to remember.
+Let's build on that a little bit more.
+But if I do something like this, I'm going to add a parameter here.
+Let's just check how actually parameters behave.
+Hello.
+Plus name, maybe.
+Now, let's actually say greed.
+Now we need the name.
+We put Ada.
+Let's actually run this.
+So hello, hello Ada, right?
+So the parameter name here also exists in the function's local scope, right?
+So parameters behave, actually behave like variables inside the function.
+So if I were to come and do something like this, print, print, name, what would actually happen?
+Well, name, will this work?
+What do you say, guys?
+I'm not trying to reveal anything yet, this work.
+No.
+And let's actually check.
+Yeah, you see that it's already complaining, right?
+Name error as well.
+So name does not automatically, what we see here is that it does not automatically actually exist outside the function, right?
+So it behaves as the same thing as we saw previously when it comes to local scope.
+That's the same thing when it comes to our parameters.
+So that's why I wanted to show that.
+So why is actually scope useful?
+Well, well, this might sound a little bit restrictive here, but scope is actually extremely useful, right?
+And you can imagine a large program with 50, maybe 50 functions, right?
+So we don't, we wouldn't want to, we don't want every temporary variable inside every function to interfere with every other variable, right?
+We wouldn't want that.
+So local scope lets a function work with its own internal variables without polluting the rest of the program.
+So that's basically the idea here.
+And Python actually follows a, what could you say, a lot, a lookup rule, actually write that, look, lookup rule, right?
+So, and it's often summarized as L-E-G-B, anybody knows what it stands for?
+So L-E-G-B, well, actually stands for, say, local, closing, G stands for, well, obviously global, and B actually stands for built.
+And you don't need to memorize this or anything like that.
+The useful idea here is that Python searches for a name starting close to where it actually is being used, right?
+And then moves actually outwards if it cannot find it.
+And this is what we're going to look at a little bit right now.
+So if I were to write something like this, name equals global data, and then I put something like this, greet, something that was similar to what we just saw, name, let's call it local grace, for example.
+And then I put something like this, print name, and then I call the function as well, greet.
+So what Python does here is actually find the name locally, right?
+So it does not need to continue looking for the global scope.
+Then we got something called built-in, right?
+So we have also been using names from Python's built-in scope since, well, our first lesson, right?
+Haven't we?
+For example, if I were to put something like this, an example that we previously did in one of our first lessons, at least one, two, three in our list.
+And then I put something like this, print len numbers, right?
+So here, we actually never created print.
+We never created len, right?
+Because Python actually provides them as built-in.
+This would be built-in, right?
+Yeah, built-ins, something like that.
+Just on this, we have three, because since we have three items, three objects in our list here.
+And this also gives us a useful naming warning, right?
+We can technically create variables with names that Python already use, right?
+But it's usually a bad idea, right?
+So if I were to come and do something like this, let's keep that one.
+If I were to come to do something like this, and let's call that one list, this wouldn't be a great idea, right?
+Because if I were to do something like this, print list, sure, this works, right?
+We get our list, one, two, three, no problem so far.
+But what if I want to list something?
+Let's create a new list, new list.
+And then I want to make a list with, for example, this.
+I'm later on in the code, and I want to put this in the list.
+Python, we get a problem, right?
+Because here we have overwritten the name list in my current scope, right?
+So when I later now try to actually use Python built-in list function, we will get an unexpected problem, right?
+Type error in this case.
+Let's hope it's not callable.
+But what if I do just see that listing?
+I don't know.
+So now this would work, right?
+So avoid, to try to avoid variable names such as, for example, list, str, void list, str, right?
+Avoid int, of course.
+Avoid print, avoid sum, for example.
+You can avoid max as well, of course, right?
+Especially when you intend to use those built-in later on in your program, as we saw here.
+That's very important to remember.
+I also mentioned enclosing scope, right?
+Because, as I mentioned, E stands for enclosing, right?
+In the LGB rule.
+And this appears when we have a function inside a function.
+So we're not going to use nested function heavily yet.
+But I want you to understand just the lookup behavior, and that's it.
+So we're not going to do any deep dive here.
+But let's just mention it at least.
+So what if I do something like this?
+Let's just create a function inside a function.
+So def outer, right?
+And we've got a variable called message here.
+Equals hello from outer, right?
+This is our outer function.
+And then I do something like this.
+Def inner.
+Then I can actually print and try to print the outer message.
+Then I need to actually call the function as well in our outer function.
+And then I need to then also call the outer function, right?
+So let's see if this works.
+And there you go.
+Hello from outer, right?
+So as we see here, the inner function, well, it does not have a variable called message.
+So Python looks one level outwards and finds it in the enclosing function, which would be the outer function, right?
+So like I said, we're not going to make a deep dive here.
+But for this part, what is important is the log scope and the global scope.
+But now you also know what LGB refers to when you actually see the term.
+I think somebody forgot their mic on.
+We're also going to modify a little bit.
+We're still going to play around with this a little bit more.
+But let's see here.
+Maxime.
+Yeah, I was just curious.
+Maybe my knowledge is slightly outdated.
+But wouldn't that be considered bad coding structure to make a method within a method?
+Yeah, very good.
+We're actually going to mention that a little bit at the end.
+Okay.
+So now, yeah, like I said, we're going to do some extreme examples and so on.
+But we're going to discuss what is actually better, what is actually cleaner, all right?
+So I won't forget that I actually put it in my notes.
+So we seem to think alike.
+But let's take it step by step.
+And then we can get to that later.
+So what if I do something like this?
+Counter.
+We create a counter.
+Get a zero here.
+And then put something like this.
+Def crease counter, right?
+Then I'm actually going to do, let's actually put counter as equals to one.
+And then here, we're going to do kind of did the same thing.
+But just to make sure that everybody got that.
+So print.
+Let's see here.
+Inside.
+Inside.
+Inside.
+Counter.
+Right.
+All increase counter.
+And we're also going to do print here.
+Print.
+Inside.
+Counter.
+So what's interesting here.
+See if you picked that up already.
+So what's interesting here.
+Did we actually change the global.
+Excuse me.
+Did we actually change the global counter here when we did this?
+What do you say guys?
+Did we change this global counter when doing this?
+Marina?
+No.
+No, we will not change global counter, I think.
+Exactly.
+And I agree with you, right?
+So we see that our inside, the increase counter is still the inside, which is one.
+But the global one outside is still zero, right?
+So the assignment inside the function just created a local variable called counter.
+And that's it.
+But what's good to remember is we're going to do this example again.
+Take this example again.
+Is that Python actually has a keyword called global.
+So what I can do here is, let me just come here and then change that a little bit at least.
+So I can put my global keyword here and write global counter.
+And then I can come down here and put counter plus equals one.
+Increase counter.
+And then we can just print the counter, right?
+And let's see what actually happens to the counter here now when we use the global keyword.
+Let's actually run this and see.
+And we get a one.
+Interesting, right?
+So what the global keyword does is to actually tell Python here that I kind of want to modify the variable from the global scope.
+And especially when it comes to, I would say, beginner, when they see this global keyword, they kind of start overusing it, right?
+So this actually does not mean that we should start using global everywhere, right?
+Because functions, well, that consistently change global state, well, becomes in the end harder to understand, right?
+It becomes harder to test and, of course, easier to break, right?
+So in many cases, I would say returning a value is much cleaner, right?
+Christian, to add something there.
+Okay, now you can hear me.
+Okay.
+Yeah, yeah, yeah.
+Well, in C#, they often define fields outside of the methods, as I remember it.
+Maybe I'm wrong about that.
+But is that kind of a similar thing?
+Kind of.
+I would say, yeah.
+I think so.
+If I remember correctly, yes.
+Okay.
+That is actually for security reasons, I guess.
+Mm-hmm.
+But I would need to remind myself.
+It was a little wild since I sat with C#, to be honest.
+Okay.
+As I remember it, it's worked.
+Yeah, yeah.
+I kind of remember the same thing.
+Some kind of making the code more secure.
+And then you use, like, get and set accessors.
+Exactly.
+Get and set accessors.
+Yes, yes, yes, yes, yes.
+Stuff like that.
+But is there a similar concept in Python?
+Yes.
+And we will talk about that in kind of, what would that be?
+Let's say, I think it's three lessons from now.
+Something like that.
+Okay.
+Especially when we move to classes.
+So, yeah.
+Interesting.
+So, yeah.
+But it's a little bit different from C#, but you can see some resemblance.
+Okay, okay.
+Yeah.
+All right?
+Oh, thanks.
+So, I said actually, it's kind of better to sometimes, to return the value.
+That would be considered as much cleaner.
+So, something, maybe something like this.
+So, counter equals zero, increase counter.
+And I would just put a two here.
+And counter, or let me call it a current count, maybe.
+Counter.
+And then, we can just return current counter.
+And put it plus one.
+Right?
+And just turn the counter one here.
+Or counter two, maybe.
+Just to see the difference here.
+If we get a difference.
+And then, counter two.
+Two.
+We did increase counter two.
+Counter.
+Something like this.
+Print.
+I think I got it right.
+And let's just run this.
+And see.
+We get the same thing.
+Right?
+Because they're pretty much the same thing.
+So, here we're using the global keyword.
+And here we're just returning.
+Right?
+Which one is better?
+As I said, this would be considered cleaner in much cases.
+This is actually possible.
+So, I'm not saying that you're not allowed to use this.
+But just think about it at least.
+And yeah.
+You could say that this makes the flow of data much clearer in a sense.
+Right?
+Hmm.
+So, there you go.
+Let's actually do this.
+If you're coding along.
+Try not to run it.
+Try to wait a little bit.
+For the sake of the exercise.
+So, we put an x equals to 10 here.
+And then we do maybe example.
+Function called example.
+And no parameters.
+It was 20 maybe.
+Print to make sure that everybody is following along.
+Inside.
+Right?
+And then we have our example here.
+And we have print outside.
+Something like that.
+And then it's here.
+All right.
+So, before running this.
+Let's just see here.
+Well, what do you guys say?
+What do you think it will print out?
+Print out.
+Oh, Anna.
+Yeah.
+It will print out inside 20.
+And outside 10.
+Maybe.
+Okay.
+And the follow up question would be.
+Why?
+And you're actually correct.
+So.
+Maybe it's a.
+Local scope.
+And.
+Yeah.
+Yeah.
+Since x is inside the function.
+Is actually.
+Yeah.
+Local.
+Right?
+Yes.
+And it does not.
+Well, replace.
+The global x.
+Perfect.
+Imagine.
+Because you're with me today.
+Imagine.
+That we got.
+Piece of code here.
+It looks something like this.
+Total.
+Equals.
+100.
+And then we do.
+Something like this.
+Add.
+Tax.
+And we're going to put.
+Total.
+Equals.
+Total.
+Multiplied by.
+1.25.
+And then I'm just going to put.
+Return.
+Return.
+Total.
+No.
+Return.
+Total.
+There we go.
+Let me just think.
+Okay.
+So.
+If I were to call.
+This.
+If I were to call.
+This function.
+I will get a problem.
+Right?
+I will get something like.
+I don't know.
+I don't remember.
+Unbound.
+Unbound error.
+Or.
+Unbound.
+Local error.
+Something like that.
+Right?
+So.
+Why will this function.
+Actually.
+Cause a problem.
+And we can actually try it.
+As well.
+Unbound.
+Local error.
+Exactly.
+So.
+It's an error.
+Sorry.
+Sorry.
+The microphone.
+All right.
+Yeah.
+This.
+Maybe it's wrong.
+But.
+Is there.
+There is no.
+Parameter.
+In the.
+In the function.
+There is no.
+Okay.
+There's no parameter.
+Anything more.
+Okay.
+Yet.
+Can you fill in?
+Because.
+This.
+Python.
+Three.
+Total.
+As.
+Local.
+Variable.
+Yes.
+Exactly.
+So.
+Python.
+Sees.
+That we assign.
+Total.
+Inside.
+The function.
+Right?
+And.
+Therefore.
+It will.
+Treat it.
+This.
+Total.
+As.
+Local.
+The value.
+So.
+Therefore.
+We will get a problem.
+Right?
+So.
+What I want you to do now.
+As a.
+Small exercise.
+Is.
+To.
+Actually.
+Rewrite.
+The.
+Function.
+I would say.
+Without.
+Without.
+Without.
+Using.
+This.
+Global.
+Keyword.
+So.
+Without.
+Using.
+Global.
+I want you to rewrite.
+The function.
+So.
+It actually works.
+You should be able to.
+To solve the question.
+So.
+Yeah.
+Take.
+Maybe.
+Five minutes.
+And try to do that one.
+So.
+We can.
+Try to do this again.
+At.
+9:50.
+And then we look at the answer.
+Then we take a little break.
+All right.
+So.
+Try.
+To take five minutes.
+And.
+To solve this one.
+Right.
+So.
+Yeah.
+I kind of.
+My computer restarted.
+And got kicked out of my.
+Of teams.
+I don't know what just happened.
+And you can see my screen.
+Right.
+It's another.
+Thumbs up if you can see my screen.
+Okay.
+Perfect.
+Perfect.
+All right.
+Yeah.
+You got an exercise.
+Right.
+Let's hear it.
+So.
+Anybody wants to give it a.
+A go.
+Let's hear it.
+Novita.
+Hi.
+Well.
+Here we have an example.
+That.
+That we have a global and local.
+Global and local.
+Wherever.
+And we need.
+To change.
+In size.
+Total.
+Is total.
+We need.
+To write down.
+For example.
+Total one.
+Total one.
+To change.
+Local.
+Just here.
+Total one.
+Total dash one.
+And.
+Return.
+Total dash one.
+To return local.
+So we.
+We don't.
+Change.
+Global.
+And then.
+In that case.
+It.
+It's going to work.
+So that's it.
+This is all.
+I need to do.
+Yes.
+And we.
+We need.
+To write down.
+For example.
+After total.
+Before.
+Return.
+We can.
+Write down.
+Print.
+Total one.
+After this.
+New.
+New.
+Line.
+And.
+Print.
+Total one.
+Okay.
+And then.
+You can.
+Yeah.
+Sure.
+Let's try it.
+Okay.
+We get our.
+125.
+Is not actually.
+Wrong.
+So sure.
+We get our.
+Total one.
+Interesting.
+So.
+Yeah.
+I would say.
+You're getting it.
+See the difference.
+Between the local.
+And the global.
+Sure.
+But.
+If.
+I were to say.
+Don't change.
+The variable names.
+All right.
+Gonna put this.
+So.
+Don't.
+Change the variable names.
+Just to lock you up a little bit.
+To tie your hands a little bit here.
+What can we do.
+Then.
+But that was a way.
+Sure.
+Let's see here.
+Anastasia.
+Right.
+So.
+The function gets confused.
+Because it doesn't know.
+What total.
+We're going.
+We're talking about.
+So we need to.
+Make the.
+Modify the function.
+So it takes.
+An.
+Argument.
+And then.
+We have to parse.
+Or.
+It takes a perimeter.
+And then.
+We have to parse that.
+Argument.
+When we call this function.
+Here we go.
+So.
+Like.
+Did you choose.
+Any specific.
+Or can I just.
+I actually just use.
+The exact same words.
+And it works fine.
+Because they're local.
+And global variables.
+Are.
+Separate.
+Yeah.
+Sure.
+Sure.
+Sure.
+Sure.
+So I just called it total.
+In both places.
+All right.
+All right.
+But what if I do something like this.
+And I'm not saying that you're wrong.
+Or something like that.
+But what if I just do.
+A very clean way.
+That would be.
+Just to add this parameter.
+Called amount.
+For example.
+By the way.
+But then you have to instruct the function.
+To work with the amount.
+And not with the total.
+Exactly.
+Exactly.
+And do something.
+Like this.
+Or 25.
+For example.
+Oh sorry.
+Or 25.
+Something like that.
+And then.
+Here.
+And write total.
+Or equals.
+And then I call my function.
+Just a clean way.
+And that would be.
+Total.
+That we are.
+And now here.
+We can actually just.
+Print.
+Our total.
+I'm not saying that this is the ultimate way.
+As we see.
+We have different ways.
+Different ideas.
+Right.
+This would be a way.
+I would.
+I would solve them.
+Not using global.
+Using our return.
+It's much clean.
+I can see the workflow.
+And so on.
+But like I said.
+It's.
+It's different ways.
+Of doing it.
+The main point.
+Is to actually see the difference.
+Between.
+The local variable.
+And the global variable.
+Right.
+Let's hear.
+Murtaza.
+Yes.
+I had a question.
+Because.
+When you had.
+In the beginning.
+Like.
+Total.
+As it was.
+In the beginning.
+When you gave us.
+This task.
+Why didn't.
+That one.
+Work.
+And the other one.
+Before.
+Worked.
+Because.
+It was.
+It looked the same.
+For me.
+At least.
+Here.
+We had.
+Total.
+Total.
+We got.
+We did not have this.
+Just try to.
+Recreate.
+What we had.
+So we had something like this.
+Right?
+Yes.
+And this worked for you?
+No.
+I mean.
+This.
+Doesn't work.
+All right.
+In the previous example.
+It was.
+The same.
+But it worked.
+The previous example.
+It worked.
+Did it?
+Like in this one.
+Right?
+What is the difference between this example.
+And this example.
+You're using the same.
+Total.
+Again.
+Sort of.
+Well.
+The same variable name is mentioned.
+But.
+We are signing a little bit difference here.
+Right?
+So.
+We have.
+Yeah.
+Gloria.
+Go ahead.
+x is being defined inside of the function exactly so here we're actually defining the func the x
+with 20 but gloria continue but here yeah there we are not if we are we're not defining um the local
+exactly variable yeah yeah so this is actually not known so we're trying to use something a total
+that we assume is 100 right but we have never assigned what total is actually so here i need to
+create a a local variable and that could be total on this for example and now i can play around with
+the total for example okay i see now thank you uh anastasia do you want to add something um yeah i
+think i to the question is i think the problem is in the fact that what happens inside the function
+cannot affect the outside of the function unless we tell it to do that yeah so while it can find the
+global total it cannot actually just go ahead and change it to total times 125 yeah which is why it
+fails exactly correct unless we use the global keyword right very good very good guys all right i think it's
+perfect time to take a little break uh and then we can move to the next part and that's what we're gonna
+talk about well um problem with fixed let's say with fixed number of parameters something like that so
+we're gonna jump into that and i think you'll find it pretty interesting all right so yeah uh take
+uh let's take uh let's take 15 minutes uh so 10 15 uh and then we can continue i'm gonna talk to myself
+here all right guys can you hear me this again yes perfect perfect perfect perfect all right let's uh
+continue from where we left off so let's move to another function uh function problem uh imagine and we're
+gonna build this step by step all right so imagine that um we create a function that actually uh adds
+numbers add number and i'm just gonna put an a and b here uh return uh we said add right a plus b
+and now let's print um add number 10 and 20 for example so let's run this and we see that works
+perfectly fine right this is 10 plus 20 is actually 30 right but what if we want to add three numbers
+if we want to add three numbers how would one do that do you say guys it's pretty obvious i'm just
+looking for an obvious answer here fabian uh maybe we would use the function within one of the arguments
+so it would be like a plus b and then b plus no wait fuck no wait never mind never mind
+i was i was just looking for a simple answer here yeah okay good job but uh let's see yeah gloria
+yeah you can add another parameter c here we go so another parameter i would add a c and then i would
+come here and do plus c right yeah there we go right and then maybe and then i need to add something
+here as well uh maybe at 30 let's say right let's say tomorrow i want to add four numbers well then i
+need to do this i need to come back to the code and do something like this and then add parameter here
+b right and then add a number here i don't know maybe 40 and then the next day another number and then
+maybe i want to add 10 more numbers and so on and so on and so on and so on and so on no one and let's
+say or even say i don't even know how many numbers uh i want to add or i don't know how many numbers the user
+will actually provide and this is what i'm trying to get to here and this is where python provides something for us
+and that's something called arcs with a little nice uh sorry we don't write it like that right
+like that there we go so uh python actually provides us with arcs with the star here or asterisk so arcs
+i'm just going to show it in action and then we can take it from there so uh let's say create a function
+here show uh let's call it show numbers right so i'm thinking of something that actually shows us the
+numbers that we have and i don't even know how many numbers that we're gonna show so here i can actually
+use arcs and then i can just print my arcs right and now i can call the function and then write how many
+numbers i want for example let's add let's write three numbers one 20 10 20 and 30. so as you see
+here okay right how many i want since i'm using arcs and what data type let's start with that what data
+type do you think arcs is well let's see if we were to run this we actually see that it is a what gloria
+a tuple yes it's a tuple you're you're perfectly right so it's a tuple right so what we see here is
+that this star or asterisk collects these positional arguments into a tuple therefore we can do show
+numbers one we can do with uh one and two we can do one two three and so on no problem so the function
+can now receive can now receive a variable uh well a variable uh number of positional arguments no
+problem an important detail here is that actually is that um arcs itself the word arcs is only a
+conventional name it is the star uh is what gives uh us the behavior so we could have said instead of
+saying uh arcs here we could have printed out um numbers numbers numbers here and it will still work
+it will still work let's run this and yeah it still works same behavior so this actually works too but
+arcs is actually the standard convention so yeah i would say i would say use that unless another name
+makes the function significantly clearer but yeah stick to arcs now let's dive a little bit more into arcs
+uh for example we can do that with for example another example uh names uh and let's say we want at the
+end now and we're going to call our function show names and then we're going to have a bunch of names
+ada grace oh sorry uh grace uh guido so here we have a bunch of names and since this arcs is a tuple
+then we can actually iterate over it just like we have done previously with our tuples and list which
+you already know so here we can come now and write like this or name in what well arcs right print name
+and there you go ada grace so we can actually iterate over the tuple and with any number of position position
+uh uh gloria i will let you in in in a while let me see if i already answer your question okay because
+we're going to do some more examples with the arcs uh but you can keep your hands up if you want
+that's no problem all right uh so we can actually even take it a bit further what we can do here
+let's create another function um where we actually add numbers with our arcs as we saw before so let's see here
+depth add numbers right just to get back to the previous example the first example that we looked
+at so here we can do something like this arcs and then maybe some kind of counter here so total
+equals zero and then we can do a little loop here uh for number in arcs total plus equals number return
+total there you go you can try it out you can try it out with maybe and add numbers uh 10 and 20 maybe
+you can take another one let's say with one 10 20 and 30 and we can take another one with just maybe
+simply writing one two maybe something like that right let's try it out and see if it actually works
+and yeah it seems to work 10 plus 20 30 10 plus 20 plus 30 60 1 plus 2 plus 3 plus 4 plus 5 is 15 right
+so the same function works with different numbers arguments no problem and now we have solved this
+problem using arcs so let's twist and turn this a little bit more because what if i come and write
+something like this um because we can actually use parameters and arcs as well so if i were to do
+something like this to relate and i'm just guessing here but this could be your question gloria i'm
+just guessing uh so i'm just going to put some arguments here uh oh parameters sorry uh this count
+and then an arcs here but i'm actually going to call it price system just to throw you off a little
+bit we can have a total here equals zero right let's make a for loop or price in uh prices total plus
+equals facts return uh total i mean multiplied by one minus uh discount something like that right and
+now let's look at this print what if i do this now since i'm using arcs what if i do something like this
+0.1 or that's not 0.1 that's 1.1 so let's do 0.10 for example uh 100 and uh 200
+and uh 200 and 300 all right so this is interesting what actually goes into discount here what actually
+goes to discount here what do you say guys yeah i haven't worked with these but i guess that the
+first one the 0.10 does is that the only one i think so yes yeah and i and i agree with you so 0.10 is
+actually our discount now so what actually goes into prices uh johanna uh the rest the rest exactly
+packed into a list a tuple no right yeah very good so it so 0.10 would be our discount and the rest just
+like johanna said would be our uh our prices and they will be packed into a tuple and if we were to run
+this we get our 540. so and what we also see is that the required position of parameters can actually
+come before our arcs here so when is actually arcs uh useful well i would say arcs are useful when
+i can write a little bit useful uh when the function should accept of course several
+positional values right and i would say that the exact number of values is not known in advance an
+important thing to remember is that well i would say when when of course when introduced to arcs it is
+also a very beginner a classical beginner mistake and i won't call it a mistake but
+what happens usually is that we start overusing it just because it looks advanced right so if a function
+logically requires exactly two values well then there's no point of using arcs right so here i would
+say two named parameters would be much clearer right so i would say the better um better just in this case
+um if we would if we had something let's say um def calculate calculate uh for example area here width and
+height and then just return just something simpler um width uh would be multiplied by height right
+and i would say it's less less less uh clearer maybe less clearer if we were to write def um
+calculate area uh let's say to start then doing something like this um and then return because we could
+have done that but yeah arcs zero times one right here i wouldn't say this flexible uh version is
+automatically the better one well it's using arcs that could be nice but in this case i would say stick
+to that one all right something to think about here uh gloria jump in yeah so from the beginning i didn't
+understand the first example so the thing is i didn't catch what is the difference because one can print
+the numbers but the other one we need to use the for loop to go through the elements so why is that
+different which one were you thinking about this one yeah um yeah that one and the next example so yeah
+so what is the difference between this yeah because this yeah so so here i'm just showing you that since it
+is a tuple that we can actually use a for loop inside our uh our functions since uh if we if we would
+want to iterate right here we're just doing a little print right so uh we could have done uh just print
+the arcs here and then we could have printed them out in a straight line but just wanted to show it
+just build up on uh built up on what we know about arcs here is that it is since it is a tuple we can
+actually do this as well depending on what we want to do right at the end so yeah uh good question uh but
+what's important here as well since uh what what gloria mentions here uh since we're talking about
+arcs being a tuple we can actually try to look at it from the other way so we saw that arcs actually
+packs packs packs right uh several arguments into a tuple right but the star was the thing that actually
+did it right but the star can also be used in the opposite direction to also unpack a collection into
+separate arguments so let's say i have something like this add uh since i'm going to use three numbers
+i'm just going to call it at three so here we have a and b and c all right so we have a b and c and here i'm just
+going to do a return a plus b plus c right uh let me also write a set of numbers here uh equals a list of numbers
+um 10 20 and 30 right now my question is can i come now and write it's going to comment it out so i don't actually
+reveal anything can i actually write something like this add uh three and then use my numbers here this
+is work what do you say guys what this work and why why yes and or why not dimitri i think that yes
+can use unpacking here don't agree but you're on to something at least what do you say uh christopher
+yeah i would guess no because like it's it's one object it's uh exactly yes so this would actually be
+pass as this would be passed as one argument right right the whole list will be passed as one argument
+but the function actually expects what well three separate arguments right so we're missing some kind
+of arguments here okay so if we run this missing two required positional arguments we're missing a b
+and the c so a would be the whole list right so what can we actually do well yes we can actually pack it up
+using our magic star here so what the star here does is to actually unpack the list so you could say
+uh when we do this what we're actually doing conceptually um conceptually i would say we're doing
+something uh like this at uh what did we call it three right at three um 10 20 and 30 when using the
+star it would be as writing this and the same thing goes also as you saw here this was a list right
+but the same thing goes also for a tuple so if i were to do values equals let's use something else
+here 5 10 and 15 and let's see if we get a 5 plus 10 15 plus 15 that's 30 let's see if we actually get
+a 30 so print uh add 3 but this time on our values right so this wouldn't work since this would be sent
+as a the whole tuple but adding the asterix here would actually unpack the tuple as well just as we did
+with the list and let's try it out yes we get 60 and we get 30 60 for our numbers and 30 for our values
+and there you go guys that was a little bit about args args solves the problem
+of an unknown number of positional arguments right what if i want unknown number of instead of not
+positional argument but this time i want a number of name arguments now args wouldn't work right for
+example imagine that we have function that creates a user okay so this user might have a name of course
+course and then age right so the the the user has a name and the age great but then we have other users
+that has a little bit more maybe they have a city maybe they have an email maybe they have a role
+maybe they have a i don't know uh department right or maybe they have only a city or maybe they have only a
+name age city and email and no role of department right so we might not know all the possible fields in
+but we might not know all of them and we might not know all of them in advance and here python actually
+provides us what well it provides us with something called works and not arcs all right so let's take a
+look at our first quark and then shortly we will take a little short break and then we can continue for
+the end so we don't have much left here let's take our first example of quarks let's say we write
+something like this show um show um show user for example and then works print quarks we're taking
+step by step just like we did with arcs and here let's come and write shall we show user and here
+now we can actually create name equals ada we can add a little bit more if we want maybe an age as well
+equals uh 36 for example we can also um for a city if we want and we can go on and on and on let's put
+london right before running this what do you say guys what data type do you think quarks is so
+that arcs was a tuple what do you say about quarks just offer give it a shot uh yeah it has to be
+dictionaries right it has to be dictionaries and you're perfectly right it is a dictionary so the double
+star here uh uh well collects keyword arguments into dictionary into a dictionary and just like we
+said with arcs quarks is just a conventional name we could use something else we could have written
+for example information here it would have worked perfectly fine it is conventional to use quarks and
+as you see here when we run the code we get actually a dictionary with key and values key and value and
+value packed into one dictionary yes alessandro yeah use orgs for tuples this uh quarks dictionary but
+in this case if you pass a list of dictionary if this instead of you're just passing a dictionary you
+pass a list of dictionary yeah but we're gonna build on it we're gonna build on it okay and
+that might even be one of your questions in the lab if i remember correctly but yeah that's a great
+question but we will get it we will get or at least you will get the tools to be able to solve that
+question uh let's take it step by step so what we can do here is to actually access values from our quarks
+for example let's say show user quarks now let's just print here let's print for example name no name
+quarks right just like we have learned to do with our dictionaries and that would be name and here
+instead of name we can put uh h for example and here we can just write h and what we can do here is to
+call our function and say show user with the name uh equals eta and with an age equals to 36. so since
+quarks is a dictionary normal dictionary rules actually apply and let's just run this and see if that
+everything works fine and we see name ada age 36 but what if i never provided an age here that cause a
+problem well let's actually try and see we actually get a key error right since we haven't provided an
+age it is looking for an age since we're looking for a print we want to print an age here and it's looking
+for a key age and it can't find it here let's see what we can do about that um so what we can do is uh
+let's say uh just that again i think somebody forgot the mic um uh so what we can do here is use
+what we have learned previously we can actually use re-write that so what we can do here is actually to
+write quarks and then we can use get method here oops we can use get and here name or we can write
+unknown we can do the same thing with our age and we can do the same thing if we want to take it even
+further then maybe put a city here just for the sake of example so in order for it to make sense we will
+add a city here uh so now let's say just like we saw previously that i actually call the function i
+actually give a name ada and now i actually give an age 36 but i never provide a city let's actually try
+it out and see if we get the same problem if we actually get a um keyboard a key error let's see
+let's run it and when i run it it actually works no problems because quarks is a dictionary we can use
+dictionary methods such as for example get so uh in this case we will get unknown instead of this the
+actual city and since we have a dictionary you can even move a bit further here since we have a
+dictionary and just like we saw with our arts we can do things to it right we can for example loop
+through it absolutely uh let's try it uh let's create something here uh maybe call it show information
+maybe and quarks and uh we said that we can loop right so if you remember the loop for the dictionary
+we write key and value right in what well that will be in our quarks and also we need to write
+items in this case and then can do a nice little print uh a key and that maybe colon and also the
+lesson of get the value right and since that is a dictionary we could loop through something for
+example um so information on um name equals uh we can take eight again uh we have an age equals 36 uh we
+have a city of course maybe london right or we can even make it super clear here uh oh we can even add
+more here uh now we can put let's stick to python right this works perfectly fine let's try it and as you see
+well there's nothing magical happening here uh the course has been created right it is simply a
+dictionary so everything we have learned about dictionaries still applies as we saw but just like
+like we saw with the uh with our arcs we can also have mixed normal parameters with our quarks works
+perfectly fine and for example create a user with a user name but we also have another parameters called
+quarks here that works perfectly fine that's quite all right and we can have our username before our quarks
+that works perfectly fine just as we saw with our arcs and let's add something here print uh maybe
+the username username right uh and then maybe do a for loop here for a key uh and value in quarks uh item
+right uh and then let's just print it out uh print key and of course value and then let's use something here
+uh we let's create uh we let's create a user and i'm gonna write it like this just like previously as we
+saw here just to make it a little bit clearer what we're actually writing so um first of all we need
+a username for example ada123 and then we can start filling up our quark so the first one would be for
+our first parameter and the rest would be for our quarks so let's add something here for example the
+same thing as we saw over here so this is perfectly fine this is something is there a question are you
+are you calling the function create user right yeah you are assigning something to that in the line 1621
+there you go thank you uh perfect so just as we saw with our orgs before the first one will actually
+jump into our first parameter and the rest will be for our quarks if we run this we get our username
+ada123 we get our age we get our city we get our language um let's see here we have left thinking if
+we should take a break or can take a break and then take the last part of the quarks and then
+we can call it a day all right let's take a little bit shorter break this time um maybe 10 minutes i
+had a small exercise but it is actually included in the the lab that you're gonna get so let's take 10
+minutes and then we can continue with the end all right guys see you back in in all right guys i'll be
+back the thumbs up perfect i know that you also can hear me and i see that i'm sharing my screen
+so perfect all right uh let's uh continue here we don't have much left the last part here can go the
+exercises um so uh just like we saw with our arcs uh we can actually unpack we can go the other way
+and start unpack into a function call let's for example do uh something like this uh def introduce
+get some parameters here uh name uh age uh city for example and let's say i want to print print right
+name we said city right and now let's say we have a person generic called person and person has some
+keys and values uh first key is name value is ada here and then we have age 36 maybe and then we have
+city here we have uh london right uh so we have a dictionary whose keys actually uh uh match the
+parameter names so far so good so what we can do here is to manually write we could have done something
+like this introduce and then uh just write let me do it like this just make it clear name equals person
+and then come here and then write age oh sorry age uh that would be a name right and then we can uh
+continue here with age uh person age and then do the same thing for our city city uh person city right
+this works right ada 36 london no problem but what we can also do what python allows us to do is to
+unpack this dictionary using these double stars that we have learned so instead of writing all of this
+we can actually just write introduce person but our double stars here and let's try it and we get ada
+36 london with a single line so conceptually python actually turns uh the dictionary into well name
+equals ada age equals 36 city equals london so this would be the same thing as writing um produce
+juice name you get the point i think named ada 36 and of course uh city equals uh london right yeah
+london there you go something that is important is that the keys need to match uh parameter names for
+this example okay so the keys here need to match the parameter names now for the last absolute last part
+is combined just make a little bigger example where we can actually combine our arcs and quarks plus so
+you will sometimes see functions that actually combine all of these concepts that we have spoken about
+for example let's call it example uh and then let's write required as one pyramid just to make the
+example very clear arcs and you can do print right and that would be wired right and instead of required
+here uh we can put our arts that would be first last last but not least and then let's call this
+function sample and now keep on adding for example hello for example for example 20 30 you can put name
+equals data you can put uh active so the question here before we we we we run the code here with where
+will the where does each value actually go would be the question here let's just run it and see and see
+what actually happens and we see that required hello was actually the record will all into required
+our first one we'll go to the first one and 10 20 30 will be arcs tuple and the name and active will be
+actually actually our quarks dictionary and functions like this well can look maybe intimidating when you
+first encounter them for example in a library but now you actually know what that syntax means right so
+the library author here is actually allowing the function to accept flexible arguments and this is why
+this is one of the reasons i want you to understand what the arcs and quarks are before we move into well
+talking about libraries for example which we're going to do later on in this sub course and like i mentioned
+before don't overuse uh so flexible doesn't automatically mean better we saw an example before with arcs for
+example uh so yeah something to think about to keep in mind after this lesson yeah that was pretty much it
+i would say for today i think that's enough so we covered scope we talked about arcs and we talked a
+little bit about quirks so what i would maybe recommend now well of course take a little break i'm gonna
+write the lab you will get it shortly in in in the group chat just like always and yeah uh try to do your best and
