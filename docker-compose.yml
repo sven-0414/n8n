@@ -1,0 +1,19 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - GENERIC_TIMEZONE=Europe/Stockholm
+      - TZ=Europe/Stockholm
+      - N8N_SECURE_COOKIE=false
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
+      - N8N_RESTRICT_FILE_ACCESS_TO=/data
+    volumes:
+      - ${HOME}/Documents/n8n/data:/home/node/.n8n
+      - ${HOME}/Documents/n8n/inbox:/data/inbox
+      - ${HOME}/Documents/n8n/done:/data/done
+      - ${HOME}/Documents/n8n/out:/data/out
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

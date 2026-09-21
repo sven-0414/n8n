@@ -1,0 +1,4391 @@
+I hope you enjoyed yesterday's lesson.
+I think you enjoyed the lab.
+But like I said yesterday, I think, well, I mentioned it, right?
+That the labs right now, when it comes to fundamentals,
+especially the two first lessons,
+I think it's going to be a little bit better today.
+But for the first two lessons, you know,
+since we haven't gone through loops and so on,
+therefore, and you're supposed to do the exercise
+without doing things that we haven't learned, right?
+Or at least I don't expect you to do things
+with things that we haven't learned yet, right?
+And the exercises will, of course, be very repetitive, right?
+So things that you would use, where you would probably use a loop,
+well, if you don't, you will just repeat the code
+over and over again, right?
+So I can imagine that the exercises
+has been a little bit repetitive.
+And yeah, I kind of understand that.
+But of course, it's going to get better.
+And like I promised you guys,
+yeah, well, we're going to turn it up a notch, of course.
+And since we are taking a step today,
+I think, at least I hope,
+we will enjoy it a little bit more.
+Or it's not going to be too repetitive.
+And like we also said,
+you can pick and choose from the exercises.
+I mean, pick and choose,
+but you need to have something to do, right?
+And if you don't have something to do,
+well, then you write to us, right?
+And then we'll fix that.
+So, and as mentioned,
+because we got that question yesterday again,
+but as mentioned, no turn-ins right now.
+We kind of talk about that at the end of the week.
+All right.
+Well, let's go on.
+So, last lesson,
+we worked with,
+well, collections, right?
+Python collections.
+It was lists,
+tuples,
+sets,
+dictionaries,
+and so on, right?
+We spoke about,
+well,
+storing multiple values.
+But,
+yeah,
+but so far,
+as I've mentioned,
+when it comes to the lab,
+for example,
+so let's,
+let's just create a,
+a list here.
+Okay,
+that was not like,
+lang,
+where,
+lang,
+where,
+just,
+equals.
+For example,
+if we have Python,
+we have Java,
+and we have,
+sorry,
+if I'm putting capital letters,
+C sharp,
+for example,
+here.
+So,
+if we want to access all of them,
+for now,
+well,
+we would do something like this,
+right?
+Print,
+languages,
+zero,
+right?
+We would start there.
+We would do the same thing,
+over and over,
+the one,
+then we would access number two,
+right?
+But this would be zero,
+one,
+and two.
+If we run this,
+sure,
+we get Python,
+Java,
+C sharp written out for us.
+But,
+normally,
+we don't want to do this,
+right?
+We don't want to repeat our code like this,
+over and over and over and over again.
+This works,
+but let's say that less than a thousand of values,
+that will be catastrophic,
+but so we don't want to write a thousand print statements.
+So,
+therefore,
+today,
+we're going to start controlling the flow of our program,
+and at least,
+just get familiar with the syntax in Python.
+So,
+we're going to make decisions using conditions,
+and,
+yeah,
+and repeat operations using loops.
+But we're going to take it step by step,
+just like usual,
+erase that.
+So,
+let's start with a little bit of comparisons.
+I can actually write that as a title,
+comp,
+present.
+So,
+a comparison,
+or a comparison expression,
+rather,
+evaluates to a what?
+Well,
+to a Boolean,
+right?
+True or false.
+For example,
+we got,
+could be a little different from where you're coming from.
+So,
+five is greater than two.
+We,
+of course,
+have five is less than two.
+We have,
+of course,
+five,
+does that equal to two?
+And as you notice,
+there are two equal signs,
+not three,
+and not one.
+we have,
+in Python,
+we also have,
+of course,
+not equal to,
+and,
+yeah,
+we have the usual ones,
+of course.
+We also have,
+equal,
+greater than,
+or equal,
+or equal to,
+right?
+Or less than,
+less than,
+or equal to.
+So,
+yeah,
+let's actually check,
+what we get,
+if we run this.
+And,
+of course,
+we should get a Boolean,
+right?
+Since,
+five is greater than two,
+this is true.
+Five is not.
+Less than two,
+two is not greater than five,
+right?
+So,
+false.
+Five is not equal to two,
+so,
+false.
+Five is not two,
+well,
+true.
+Five is greater than,
+or equal to two,
+true.
+And this is,
+of course,
+false.
+I'm on silent here,
+but it doesn't disturb us.
+There we go.
+So,
+yeah,
+that's basically the idea here,
+for comparisons.
+And this is,
+how you write them in Python,
+the Pythonic way.
+One important distinction to make,
+well,
+let's look at this.
+So,
+if I were to write number equals 10,
+and also print number,
+let me see,
+print number equals 10.
+So,
+there's a little distinction here,
+of course.
+So,
+this is not the same thing as this,
+right?
+So,
+here,
+I'm actually,
+a single,
+a single equal sign,
+well,
+means assignment,
+right?
+And double equal sign,
+would mean comparison.
+So,
+here,
+we're actually assigning 10 to number.
+So,
+we're assigning 10 to number here.
+But,
+here,
+we are asking whether number is equal to 10,
+right?
+It's a little bit different,
+but not the same thing,
+and therefore,
+why we have one single equal sign,
+and double equal sign.
+And,
+of course,
+it is true.
+Another thing to,
+also,
+another thing that's great to be familiar with,
+when it comes to Python,
+well,
+let's take a look at these.
+One equals one.
+One,
+and you could correct me if I'm wrong.
+We can do all of them at the same time.
+One equals one,
+and then we have print equals one.
+Right.
+So,
+yeah,
+here,
+let's,
+let's,
+let's look at this.
+What do you say,
+guys?
+What do you think?
+I think just to find you guys.
+There we go.
+So,
+what do you think,
+guys?
+What will I get?
+Yeah,
+you can raise your hand.
+Perfect.
+Yes,
+Johanna?
+True on the first one,
+I'm not sure.
+The last one,
+maybe true as well,
+not false,
+definitely on the middle,
+in the,
+the one in the middle.
+Yeah,
+yeah,
+yeah,
+yeah.
+Let's actually take a look at it,
+and it's very,
+I think that's,
+so this actually says true,
+and this actually says false,
+and this actually says true.
+So,
+Python,
+therefore,
+we could say we could determine now that Python actually says,
+or does not consider an integer,
+an integer one,
+and a string one to be equal.
+So,
+so if you're coming,
+and you can correct me if I'm wrong,
+but if you're coming from JavaScript,
+this may be worth noticing,
+right?
+Because I think it's a little bit different there,
+right?
+Yeah,
+you're right.
+In JavaScript,
+we have three equals,
+so it means like a strict comparison.
+Yeah.
+Yeah.
+Yeah.
+So,
+like someone said,
+in another class,
+Java has loose equality behavior.
+I don't know.
+So,
+yeah,
+that's,
+I think that's important to notice,
+especially if you're coming from another language.
+Any questions so far?
+All right.
+Let's keep on moving.
+Let's see here.
+We often need to combine multiple conditions,
+right?
+So,
+Python uses,
+I can actually write them here,
+and they use or,
+and they use not.
+But if you're coming from,
+if you're coming from another language,
+you would rather see symbols,
+well,
+symbols like this,
+something like that,
+right?
+And also,
+something like that,
+right?
+And also,
+I think,
+right?
+So,
+a little bit different,
+right?
+We can take a look.
+For example,
+age equals,
+let's say,
+25,
+has,
+I don't know,
+picket,
+maybe,
+equals,
+let's put it as true,
+right?
+So,
+print age
+greater than or equal to 18,
+and has picket,
+right?
+So,
+this is how you would use and.
+So,
+what we could ask ourselves,
+what has to be true?
+Well,
+what has to,
+what was,
+what must be true
+in order for the and expression
+to actually become true?
+So,
+let's take a look at this
+and let's see what we get.
+Well,
+we actually get true
+since,
+in order for and to,
+to,
+to spit out true,
+both conditions has to be true.
+So,
+this has to be true
+and this has to be true.
+So,
+if I were to put 16 here,
+I would actually get a false.
+This is false
+and this is true,
+but both has to be true
+in order for it to write.
+That's and,
+and if you're coming from another language,
+you probably are familiar with that.
+So,
+that was and.
+Let's take a look at or.
+So,
+is
+admin,
+put it false
+for the sake of the example,
+is
+teacher,
+maybe,
+equals,
+let's put it to true.
+All right.
+And then,
+you can do a print statement here.
+Print
+is
+admin
+or
+is
+teacher,
+right?
+So,
+here we can ask ourselves
+what is actually required
+for or
+to return
+true.
+So,
+what is required for
+or
+to return
+true?
+Well,
+we can try it out
+and see if we get a true
+or a false.
+Well,
+we actually get a true,
+right?
+Because
+at least
+one
+of the conditions
+where
+so if
+at least
+one,
+at least
+one condition
+is true,
+it will spit out
+true.
+Got that?
+All right.
+So,
+that would be
+this one,
+right?
+Let's
+take a look
+at the third one
+that I want to show here
+and that would be
+not
+not
+which would be
+equivalent to the
+exclamation.
+You can take a look
+at that one as well.
+So,
+not
+and
+how does not work?
+Well,
+let's take an example.
+Is
+is
+logged.
+Let's put it as
+false.
+All right.
+Print
+is
+logged in.
+Okay.
+So,
+this would be
+if we run this,
+we should get a
+false,
+right?
+Since
+is logged in
+false.
+But if I
+come here and write
+print
+not
+is
+logged in,
+what will actually
+happen?
+True,
+right?
+This time.
+Sorry,
+Christian.
+So,
+here I will actually
+get a true.
+So,
+not
+actually
+reverses
+the
+boolean value.
+So,
+since we had
+false before,
+it reversed
+false to
+true.
+That's basically
+the idea.
+What can we write?
+Let's write a little
+note here.
+This is true.
+This is true.
+It will give us
+true.
+At least
+at least
+one
+condition.
+We'll get
+not
+say
+we can
+put
+reverse
+boolean value.
+So,
+in the last
+lesson,
+we actually
+used,
+was it the last
+lesson?
+It doesn't matter.
+It doesn't matter.
+We used
+in.
+Okay?
+We used the
+keyword in.
+And because
+in returns
+true or false,
+we can use it
+directly as
+a condition.
+So,
+for example,
+languages,
+let's reuse,
+we can go to
+the top here.
+Oh,
+no,
+no,
+no.
+Let's say
+please.
+All right,
+forget that.
+Languages
+equals
+my little list
+here.
+For example,
+Python,
+Java,
+and
+C sharp
+print.
+So,
+what we can do
+here is,
+for example,
+Python,
+then in
+languages,
+we can do
+maybe
+Rust
+in languages.
+And we can
+wait with this
+one.
+If we run
+this,
+we should
+actually get
+a true
+for the first
+one and a
+false for the
+second one,
+right?
+Yeah,
+we do.
+We can use
+it directly
+as a
+condition.
+And we
+could also
+take a look
+at this
+one.
+So,
+instead of
+writing Python
+in languages,
+I can actually
+write not
+in languages.
+Thus,
+this should
+do what?
+Let's see.
+It will
+actually get us
+a false.
+But I
+didn't want
+to write
+Python here,
+so that's
+why I got
+a little bit
+confused when I
+saw that it's
+false.
+Let's try it
+again.
+There we go,
+with Rust instead.
+Makes it a little
+bit clearer.
+So,
+yeah,
+Rust in languages,
+well,
+obviously,
+we will get a
+false since Rust
+does not exist
+here.
+But if I say
+Rust not in
+languages,
+well,
+then I will get
+a true,
+because it's
+actually true.
+Rust does not
+exist in the
+list of
+languages.
+And this,
+of course,
+will become
+very useful
+when we combine
+it with
+if statements,
+which we're
+going to do
+shortly.
+All right.
+Any questions
+so far?
+Yeah.
+Oh,
+Gloria.
+Yeah,
+so,
+in the
+and,
+it means
+that both
+conditions
+have to be
+true to
+pass it,
+right?
+Okay,
+that's the
+same as in
+other languages
+as well.
+Yes,
+yes,
+yes.
+We don't use,
+we don't write
+and write,
+we would write
+something like
+that,
+right?
+Okay,
+thank you.
+So,
+yeah,
+like I said,
+most of you guys
+already know this,
+it's just rather
+all about the
+syntax that it's
+a little bit
+different.
+That's why we're
+going through it
+so fast.
+Any more
+questions?
+No?
+Okay,
+now we,
+okay,
+let's see.
+Yes,
+Gloria.
+Does it work
+if we use
+a lowercase
+for true
+or false?
+For example,
+you mean
+if I put
+a small
+P instead
+of a capital
+P,
+right?
+Well,
+that's another
+one,
+but I was
+most like
+always we
+write true
+with capital
+T.
+Oh,
+okay,
+yeah,
+yeah,
+yeah,
+yes,
+yes,
+yes,
+yes,
+you have
+to put
+it in
+capitals.
+Yes,
+you can
+see how
+it will
+look.
+So,
+if I forget
+that I'm coming
+from another
+language,
+I put a
+small f,
+yeah,
+you can see
+that it's
+already
+complaining,
+right?
+Okay,
+yes.
+And I can
+imagine
+that the other
+one,
+since this
+is a
+sensitive,
+how is
+that called?
+Yeah,
+sensitive,
+so it's
+deeper.
+Exactly.
+Let's check.
+Lightning
+languages,
+well,
+obviously this
+will be
+true since
+we have
+a capital,
+but let's
+see here
+and get a
+false.
+And I
+think I
+mentioned
+that in the
+first lesson,
+just like
+you observed
+here,
+that it
+is quite
+quick,
+case
+sensitive,
+right?
+All right,
+let's move
+on to some
+more fun
+stuff.
+And if you
+have more
+questions,
+just tell
+me.
+Let's see
+here.
+Yes,
+a very
+important,
+important
+part here.
+So,
+we're actually
+going to
+write our
+if statements
+in a minute,
+but before
+we talk
+about if
+statements,
+we need
+to talk
+about,
+well,
+I would
+say one
+of the
+most
+important
+syntactical
+differences
+in Python.
+That is
+then an
+indentation.
+In languages
+such as,
+and you can
+correct me
+if I'm
+wrong,
+but such
+as Java,
+C Sharp,
+JavaScript,
+and many
+other
+languages,
+well,
+code blocks
+are
+heavily
+surrounded
+by
+curly braces
+or something
+like this.
+So,
+you write
+on a
+column that
+actually
+belongs to
+this part,
+right?
+Or to
+this block.
+Yes.
+Python does
+not use
+curly braces.
+Well,
+it uses
+curly braces,
+but not to
+define normal
+code blocks.
+Okay?
+I'm going to
+say that again.
+Python does
+not use
+curly braces
+to define
+normal code
+blocks.
+So,
+what does
+Python use?
+Well,
+Python instead,
+indentation,
+is part
+of the
+syntax,
+right?
+So,
+indentation
+in Python
+is crucial.
+And,
+yeah,
+we can
+try something
+out.
+For example,
+an if statement.
+So,
+let's say
+age equals
+20,
+and then I
+say if
+age is
+greater than
+or equal
+to 18,
+okay?
+And then let's
+say I want
+to print
+something,
+right?
+And look
+carefully now.
+When I press
+enter here,
+it actually
+taps in
+print
+adjunct,
+okay?
+First of
+all,
+you notice
+the colon,
+right?
+After the
+condition,
+that is
+important.
+And you
+also noticed
+that this
+code actually
+automatically
+indents the
+next line.
+So,
+the indentation
+here tells,
+well,
+Python,
+that this
+print actually
+belongs to
+this if
+statement.
+So,
+if I run
+this,
+we will get
+adult.
+Yeah,
+exactly,
+we will get
+adult.
+So,
+if we
+were not,
+if we
+didn't put
+our indentation,
+we had
+something like
+this,
+well,
+you will see
+that it's
+already
+complaining,
+right?
+This will
+not work,
+right?
+What if I
+wanted to
+write two
+things here?
+Let's say
+I wanted to
+print adult
+and I also
+want to
+print,
+I don't
+know,
+test,
+for example.
+So,
+if I run
+this,
+it will
+actually
+print adult
+and test,
+right?
+But if I
+take this
+out,
+well,
+this will
+actually,
+okay,
+this was not
+good.
+Yeah,
+and then
+take something
+younger here,
+let's say
+10,
+this will
+only print
+test,
+right?
+Since this
+does not
+belong
+anymore to
+this code
+block,
+to this
+if statement.
+So,
+indentation
+here is
+crucial.
+In VS Code,
+as you saw,
+it automatically
+indent tense
+for us.
+Sometimes you
+need to keep
+track of it,
+especially when
+you're doing
+an indentation
+to an indentation
+or you're
+moving back
+again.
+sometimes it
+automatically
+intents.
+So,
+yeah,
+be careful
+there.
+Sometimes you
+want to get
+out,
+sometimes you
+want to
+stay in,
+right?
+There is
+a
+Pythonic
+way,
+you could
+say.
+So,
+the indentation
+here is
+one,
+two,
+three,
+four,
+actually,
+four spaces.
+But,
+what if I
+do only
+one?
+It will
+actually,
+oh no,
+I'll put it
+as 10,
+it should be
+20.
+So,
+let's try it
+again.
+Yeah,
+it actually
+works,
+right?
+So,
+one space
+actually works,
+two space
+will actually
+work as
+well.
+So,
+three will
+work,
+and obviously
+four will
+work,
+because we
+looked at
+it already.
+Four will
+work,
+five will
+work,
+right?
+But,
+so which one
+should I
+use?
+Should I
+use one,
+two,
+three,
+four,
+five?
+Use four,
+because that's
+the
+so if
+you bring
+a code
+from somewhere
+or whatever,
+you will
+always find
+what V is
+called,
+like I said
+mentioned,
+does it
+for us
+automatically,
+right?
+Yes,
+Fabian?
+Yeah,
+I was just
+having a short
+question,
+if you know,
+when you press
+tab,
+is it
+during that
+case when
+it does
+the indentation
+for you
+at exact
+length
+for space?
+Yeah,
+so it
+does it
+even if
+I press
+enter
+from here
+but also
+if I
+want to
+go back
+here,
+if I
+let's
+say I
+accidentally
+press on
+backspace
+here,
+but I
+can just
+press the
+tab and
+it will
+move
+directly
+for me,
+right?
+And also
+if I
+want to
+indent
+again,
+just press
+tab
+and then
+we can
+continue
+from here
+and this
+will of
+course
+happen
+sometimes,
+right?
+Mm-hmm,
+I'm gonna
+get there
+later.
+All right,
+we saw
+also if
+we remove
+the indentation
+then Python
+does not
+know what
+code
+belongs to
+the if
+block,
+right?
+And also
+let's run
+this.
+If I do
+this and
+run this,
+we will
+actually get
+an indentation
+error.
+So expected
+and intended
+block after
+if statements
+on line
+645,
+right?
+So it
+actually throws
+out an indentation
+error.
+So if
+you get
+strange
+errors
+in Python,
+I usually
+always say
+check your
+indentation,
+especially when
+we're gonna
+come to
+machine learning
+and so
+on.
+Yes,
+Saranya?
+Yes,
+I have one
+question.
+If we are
+having only
+one statement,
+can we
+have that
+within the
+same line
+of condition?
+So you
+want to
+build on
+this?
+Yeah,
+we're actually
+gonna do it.
+You're gonna
+see in a while.
+So we're
+gonna build
+on this,
+of course.
+So let's
+just take
+it step
+by step
+so we
+go in
+order.
+But great
+question,
+of course.
+Yetna yet?
+Did you have
+a question?
+If you're
+talking,
+we can't
+hear you.
+We can't
+hear you.
+Maybe you
+can write
+your question
+and I
+can look
+at it
+later on.
+Okay,
+let's
+slowly move
+forward.
+Sorry,
+my microphone
+was weird,
+but she
+asked it
+already.
+Okay,
+I've already
+answered.
+Yeah,
+yeah.
+All right,
+all right.
+So let's
+take another
+one.
+Let's
+put this
+to age.
+We can
+change that
+one to
+16.
+And let's
+say if
+age is
+18,
+we can
+state
+it as
+that.
+But we
+have
+something
+called
+else
+print
+under
+18,
+for example.
+Not a
+level.
+What will
+this print?
+obviously
+since
+age is
+16.
+And if
+age is
+greater or
+equals to
+18,
+well,
+then it
+should
+print out
+adult.
+But since
+age is
+not
+something
+that meets
+this
+condition,
+well,
+then it
+will move
+into the
+else
+statement.
+Right?
+Let's run
+this and
+we get
+actually under
+18,
+right?
+Under
+18.
+And we
+can change
+this to,
+for example,
+10.5 and
+we will get
+adult this
+time.
+So Python
+evaluates
+the
+condition.
+If it's
+true,
+the first
+block
+runs.
+Otherwise,
+the else
+block
+runs.
+If and
+else.
+But we're
+also going
+to look
+at the
+third one
+that we
+have.
+So now
+we have
+talked about
+if and
+else
+and we're
+also talking
+about
+I think
+somebody
+forgot the
+mic on.
+If and
+else,
+right?
+But we're
+also going
+to mention
+instead of
+if else,
+we're also
+going to
+mention
+something
+called
+elif.
+If you're
+coming from
+another
+language,
+you can
+see it
+as
+else
+if.
+Same
+thing.
+So let's
+take an
+example here.
+Let's
+move from
+the age.
+We can
+take a
+score
+instead
+this
+time.
+So
+score
+equals
+80.
+If
+score
+is
+greater
+than or
+equal
+to 90
+than
+print
+grade,
+you can
+create
+a,
+right?
+Elif
+score
+is
+greater
+than or
+equal
+to 80
+will
+print
+grade.
+Let's put
+a B,
+right?
+And
+elif,
+second elif
+here,
+elif
+score
+is
+greater
+than or
+equal
+to
+70
+print
+grade,
+right?
+And then
+last but
+not least,
+else
+print.
+So what
+will this
+print?
+Just by
+taking a
+quick look
+here,
+well,
+we're at
+score
+80,
+score
+equals
+80,
+therefore it
+should
+grade
+B,
+right?
+Let's
+actually
+check it
+out,
+and we'll
+get our
+grade B.
+Well,
+perfect.
+So Python
+actually checks
+the condition
+from top
+to bottom,
+right?
+But I'll
+emphasize on
+this one.
+As soon
+as one
+condition
+is true,
+that block
+runs and
+the remaining
+branch are
+skipped.
+So it
+will run
+this and
+the rest
+will be
+skipped.
+So if
+the score
+is,
+for example,
+95,
+so we'll
+never run
+two elifs,
+so to say.
+It will never
+run an
+elif and
+an else,
+right?
+So score
+95,
+we will get
+a grade A,
+of course,
+and if we
+change it
+to 65,
+for example,
+we will
+actually get
+LOC,
+right?
+Yeah.
+And here,
+and what I'm
+trying to
+emphasize here,
+and I'm
+going to
+actually show
+it,
+we can
+keep that
+one,
+maybe we
+can change
+it a little
+bit.
+What if I
+do something
+like this,
+because I want
+to show the
+importance here,
+that the
+order of
+our conditions
+actually matter,
+super important.
+So if we
+were to look
+at this
+version,
+for example,
+so instead
+of 65,
+we can put
+95 for
+our example
+here.
+So if
+score is
+under or
+equal to,
+let me put
+70 instead,
+and let's,
+let me put
+grade,
+let's say
+I say
+grade C
+or higher,
+for example,
+and here
+I say,
+yeah,
+grade B
+or higher,
+right?
+I have my
+elif,
+and I also
+have another
+elif,
+score
+greater than
+or equals
+to 90,
+90 grade
+A,
+right?
+and I
+can
+actually
+just
+remove
+my
+L's
+here.
+So if
+I run
+this,
+since we
+have a
+score
+95,
+somebody
+who is
+not
+reading the
+code
+carefully
+would
+automatically
+maybe
+think
+that,
+well,
+he will
+get the
+grade A
+since,
+well,
+his
+grade 95
+is,
+the score
+is graded
+at 90,
+right?
+But will
+it print
+out the
+grade A?
+What do
+you guys
+say?
+Any
+suggestions?
+It should
+print all
+three,
+I think.
+Yes.
+Say that
+again.
+It should
+print all
+three.
+All
+three?
+Okay.
+Or actually,
+no,
+it should
+print the
+first
+statement
+because it
+goes for the
+first,
+if it matches,
+it will
+grade C or
+higher.
+There we
+go.
+There we
+go.
+And this
+is what I
+tried to
+emphasize
+when we
+talked
+over here,
+right?
+So if
+we run
+this,
+we actually
+get
+grade C
+or
+higher.
+So since
+the first
+condition is
+already true,
+Python does
+not continue
+checking the
+elif conditions.
+So the
+conditions need
+to be
+ordered
+logically in
+this case.
+Super important.
+And here we
+were talking
+about order.
+Order matters,
+maybe?
+The order
+actually matters.
+All right?
+It's important
+to remember.
+Now,
+before
+I can take
+that as
+you know what?
+we're going
+to take
+a little
+break.
+Yeah,
+it's a
+perfect place
+to take
+a break.
+And then
+we're going
+to continue
+after the
+break.
+And then
+we're actually
+going to do
+what somebody
+asked in the
+class.
+I kind of
+forgot who
+it was.
+And that's
+when we're
+going to
+talk about
+combining
+conditions.
+So yes,
+of course,
+we can
+combine
+conditions.
+So we're
+going to
+talk about
+that after
+the break.
+9.50,
+let's say
+10.05.
+Back at
+back.
+10.05,
+go and
+grab some
+coffee.
+Yeah.
+And then
+we can
+continue.
+Have a
+nice one
+for now.
+Let's see
+since we're
+lagging.
+Yes,
+Christian,
+did I
+miss
+question?
+Yeah,
+no,
+just the
+raised hands
+like in
+the app
+in Teams.
+all right.
+Did I
+miss
+your
+question
+maybe?
+Yeah,
+several
+times
+actually.
+Yes.
+Really?
+Oh,
+okay,
+but write
+your
+questions
+in the
+chat.
+It's
+pretty hard
+sometimes
+to say
+that.
+Yeah,
+okay,
+okay.
+All right.
+But I
+will keep
+my eye
+open.
+Yeah,
+yeah,
+yeah.
+If I
+miss
+anything,
+yeah,
+just don't
+put down
+your hand,
+keep it
+up.
+because we
+have taken
+the questions
+during the
+whole lesson,
+so yeah,
+I wouldn't
+ignore yours.
+Yeah,
+yeah,
+it was
+touched on
+yesterday,
+so I
+just thought
+that maybe
+we should
+continue with
+the raised
+hands or
+just speak
+out.
+No,
+no,
+no,
+continue with
+the raised
+hands.
+Okay,
+thanks.
+So everybody
+gets a chance.
+Yeah.
+All right.
+Yeah,
+where did we
+leave to order
+matters?
+Yes,
+exactly.
+So we
+spoke about
+order matters,
+but we
+promised that
+we're going
+to talk
+about
+combining
+conditions,
+right?
+So let's
+put a,
+we can go
+back to
+the age
+here,
+equals
+25,
+for example,
+and then
+the year
+has
+ticket,
+maybe,
+equals
+true.
+If
+age
+is
+greater than
+or equal
+to,
+let's say,
+18,
+and has
+ticket,
+we can
+actually print
+something.
+Print,
+you may
+enter,
+maybe,
+or something
+like that.
+Now,
+if I want
+to go
+to my
+else here,
+I need to
+remember,
+so now it's
+auto-indents,
+go back,
+else.
+So I move
+away from
+my if block,
+else,
+print something,
+print,
+entry,
+denied,
+maybe,
+entry denied.
+So this
+is where
+So this is where
+the logical
+operators
+becomes useful
+in real
+control flow,
+right?
+We can
+run this
+and we say,
+we see,
+you may enter
+since both
+conditions are
+met,
+right?
+We're using
+add here.
+If we were to
+change,
+well,
+let's take
+false here,
+and if we run
+this,
+we will actually
+get entry denied
+since we don't
+have a ticket
+and both
+conditions have
+to be met.
+This has to be
+true and this
+has to be true
+in order
+for this
+print statement
+to be
+printed out,
+all right?
+I'm not going
+to go deep
+into this,
+but it's just
+to show you
+and you're
+going to play
+around,
+you can play
+around with
+this how much
+you want,
+but is that
+we can also
+put an if
+statement
+inside another
+if statement,
+obviously.
+For example,
+I can reuse
+this one,
+I think.
+So let me
+put an if
+and,
+okay,
+we can remove
+the and here.
+if age
+and also
+put something
+like this.
+So if
+has ticket,
+then look
+what I'm
+doing here.
+Boom,
+another indentation,
+right?
+Because this
+print,
+I forgot the
+word,
+belongs to
+this if
+statement,
+right?
+And then
+I can put
+an else
+here,
+of course.
+Else,
+so super
+careful with
+my indentations.
+Print
+you
+get.
+And then
+this else,
+well,
+yeah,
+this should be
+outside,
+just like
+or maybe
+this
+instead of
+entry denied,
+entry denied,
+you are
+too young,
+for example.
+That would make
+more sense,
+right?
+So we can
+actually have
+something called
+nesting,
+right?
+So it works.
+Let's actually
+run this.
+You need a ticket.
+Since we have
+false has ticket,
+but if we put this
+as true,
+this will actually
+work.
+You may enter,
+but if we were
+to be 16
+and we have
+a ticket,
+it will jump
+into this
+else statement.
+Entry denied,
+you are too
+young,
+right?
+So here,
+it works.
+It's called
+nesting,
+no problem,
+but we need
+to be a little
+bit careful,
+right?
+So too much
+nesting can
+make code
+harder to
+read.
+And this,
+in this
+particular
+example,
+combining
+conditions may
+be simpler,
+right?
+Do it
+this way.
+So the usual
+question,
+should I write
+it like this
+or like this?
+Well,
+as soon as you
+see that the
+code is too
+hard to
+read,
+then use
+combined
+statements
+instead of
+using an
+if or else
+inside an
+if or else.
+All right,
+let's move
+on.
+Okay,
+so Python
+conditions
+do not
+always need
+an explicit
+comparison to
+true or
+false.
+Well,
+some values
+are
+treated
+as
+truthy
+or
+falsy,
+you could
+say.
+So let's
+say name
+equals
+something like
+this,
+right?
+If name
+print,
+and here
+I can
+come
+and write
+else
+print
+the name
+is
+empty.
+And let's
+try this out.
+So what will
+happen actually
+with this
+empty string
+here?
+So the name
+is empty,
+right?
+But if I
+were to
+change this
+to any
+name,
+we have
+a name,
+right?
+So empty
+values as
+empty strings,
+for example,
+empty strings,
+empty list,
+zero,
+and none
+are generally
+treated as
+falsy.
+So we do
+not need to
+memorize all
+of them,
+of course,
+right now.
+I just want
+you to
+recognize this
+Python pattern.
+So let's
+actually take
+another one.
+So this
+was about
+just put
+a title
+here and
+then we
+can take
+another
+example.
+Falsy.
+I think
+it's always
+funny to
+say
+falsy.
+Okay.
+So for
+example,
+empty,
+you said
+empty
+string,
+empty,
+let me put it
+like this,
+empty string,
+empty list,
+zero,
+and
+none.
+We can
+take
+another
+example.
+For
+example,
+let's
+see here.
+Okay.
+Items
+equals
+an empty,
+this is just
+an empty
+list,
+right?
+And if
+items
+print,
+well,
+the list
+contains,
+right?
+Contains
+data,
+else
+the list.
+So since
+this is
+falsy,
+because it's
+a list,
+we said
+it is
+falsy,
+we actually
+will get
+the list
+is empty,
+right?
+Since the
+list is
+actually
+empty.
+Let's
+see.
+Yeah,
+the list
+is empty.
+So you
+don't always
+have to
+compare them
+with true
+and false.
+We can
+move on
+here to
+the last
+part of
+the lesson
+here.
+Alessandro.
+Yeah,
+I was just
+wondering,
+since if
+you have
+space,
+for instance,
+if it's
+but no
+string,
+just empty
+space.
+Yeah,
+let's actually
+try that one.
+That's a good
+question.
+let's actually
+try it and
+see what
+happens.
+And we get
+the list
+is empty
+still.
+I mean,
+I mean for
+string.
+Okay,
+yeah,
+we can try
+that one as
+well.
+Yeah,
+this would
+be a little
+bit different.
+So let's
+try it and
+we actually
+get,
+we have
+a name.
+So it
+is a
+character,
+right?
+Isn't
+it?
+And I
+think we
+spoke about
+that when
+we talked
+about
+len,
+right?
+So black
+space here
+would be
+considered
+something
+inside the
+string.
+But thank
+you for that
+question,
+Alessandro.
+that was
+a great
+question.
+All right.
+Christophe?
+Yeah,
+this might
+be a weird
+one,
+but if
+there are
+false
+statements,
+are there
+also
+truthy
+statements?
+I can't
+think of
+anyone right
+now.
+I don't
+think so.
+No,
+I would
+say no.
+No,
+but I
+can actually
+just double
+check that
+later on
+just to
+make sure.
+But my
+gut tells
+me no.
+Yeah,
+it intrigues
+me if there
+is something
+that is
+truthy,
+right?
+Yeah.
+But I
+just can't
+double check
+that later
+on.
+I would
+say no.
+Thank you.
+No,
+no,
+no problem.
+Great
+question.
+Sorry,
+I didn't
+understand the
+question.
+Ah,
+yeah.
+So do
+we have
+anything
+that is
+instead of
+being,
+let's see
+here,
+these,
+instead of
+falsy,
+do we have
+anything that
+is,
+so the
+question was,
+do we have
+anything that
+is true?
+So something
+that always
+gives us
+a true,
+right?
+And,
+all right.
+Okay,
+let's actually
+move on.
+And one of
+the most
+useful parts,
+especially when
+it comes to
+apps,
+if you don't
+want to repeat
+yourself anymore,
+it is now
+time for
+some
+loops.
+And I
+believe that
+you already
+know the
+concept,
+but let's
+just look at
+the Pythonic
+way of doing
+things,
+right?
+So I
+kind of
+give you
+an example
+before.
+I kind of
+did one
+before the
+lesson,
+during the
+break,
+I wrote
+one,
+so you
+don't have
+to see me
+writing it
+again.
+So
+what I
+previously
+we did
+something like
+this,
+right?
+This is
+something that
+we're not
+going to do
+anymore,
+right?
+So this
+actually works,
+right?
+One,
+two,
+three,
+four,
+one,
+two,
+three,
+four,
+zero,
+one,
+two,
+three,
+right?
+So if I
+run this,
+yeah,
+sure,
+we write
+out everything
+on the
+list,
+but we
+don't want
+to do
+this.
+We would
+rather use
+a loop.
+Yes,
+Gloria?
+Sorry,
+again.
+Before going
+to loops,
+I have a
+question about
+indentation.
+I think
+Sarah
+made a
+question
+that I
+have
+as
+well.
+Is
+if we
+can do
+one line
+like a
+method
+or
+if
+statement,
+use one
+line
+after the
+colon,
+just
+continue
+with
+if
+something
+or
+that's
+the...
+Maybe I
+can look
+at it.
+Yeah,
+sure.
+Did she
+get it?
+If this
+is possible,
+let me
+just write
+this first.
+Sure.
+Something like
+that.
+Let's
+take a
+look at
+the
+question
+here.
+Great
+question.
+Let's
+see here.
+Like this.
+Okay.
+Let's
+try it
+out.
+And
+yeah,
+it seems
+to work.
+But it's
+like a...
+But you
+don't.
+You don't.
+Exactly.
+That's not
+like a
+good
+practice
+to do
+that.
+Exactly.
+Yeah.
+So it
+works,
+but it's
+not a
+good
+practice.
+Yeah.
+Okay.
+It would
+be rather
+confusing
+when we
+kind of
+come into
+else and
+else as
+well,
+right?
+But yes,
+you can
+technically.
+It's like
+the
+indentation
+just with
+one.
+Yeah,
+that works
+as well,
+right?
+But we
+use four.
+So,
+yeah.
+Right.
+Let's go
+back to
+loops.
+So,
+yeah,
+we said
+that we
+can do
+this.
+It works,
+no problems,
+but let's
+actually,
+oops,
+let's
+actually look
+at how
+we're
+going to
+do it
+from now
+on.
+Let's
+remove this.
+So we're
+not going
+to do that
+anymore,
+but let's
+remember where
+we're coming
+from.
+So we
+have our
+languages,
+and so
+what I'm
+going to
+use here
+is actually
+a forward
+loop.
+Okay,
+let's try
+that out.
+So for
+language,
+language,
+in
+languages,
+print
+language.
+So this
+is how
+our forward
+loop would
+look like
+in Python.
+So for
+language,
+in
+languages,
+print
+languages,
+print
+language,
+of course.
+So we
+can run
+this,
+see that it
+actually works.
+So it
+prints out
+everything in
+the list,
+right?
+Python,
+Java,
+C Sharp,
+JavaScript.
+But this
+is actually
+an important
+difference if
+you're coming
+from another
+language where
+a traditional
+for loop
+often uses
+a counter,
+right?
+So in
+Python,
+we commonly
+iterate
+directly over
+the element.
+So language
+here is
+simply a
+variable name.
+So during
+each iteration
+here,
+it refers
+to the
+current element.
+So language
+was first
+Python,
+printed out
+the language
+Python,
+and then
+language is
+now Java,
+prints out
+Java,
+and now
+language is
+C Sharp,
+it prints
+out C Sharp,
+and then
+language becomes
+JavaScript,
+it prints
+out JavaScript,
+and then
+it actually
+moves back
+here,
+and language
+sees that
+it has
+nothing left
+to become
+or whatever,
+so it
+has nothing
+to print,
+therefore the
+loop stops,
+right?
+So I could
+have used
+any variable
+here,
+for example,
+I works
+perfectly fine,
+right?
+I could even
+write banana,
+no problem
+at all.
+I would
+rather say,
+of course,
+let's practice
+to actually
+write something,
+choose a variable
+name that
+makes sense,
+right,
+for this,
+what we're
+doing,
+right?
+So don't
+use i,
+don't use x,
+don't use y,
+and so on.
+In these
+kind of examples,
+of course,
+we will use x
+and y
+later on,
+but for now,
+we try to keep
+them as
+equivalent to
+what we're doing
+as possible,
+right?
+So if we're
+talking about
+bananas,
+well,
+then use
+banana,
+but since
+we're talking
+about languages,
+well,
+then use
+language,
+all right?
+That's a little
+bit about
+variable names
+in a for loop.
+Can we loop
+through a string?
+Yes,
+we can.
+I'm going to show
+that as well.
+Let's take an
+example.
+Let's say we have
+a word instead,
+word equals,
+well,
+let's choose
+Python to
+600.
+Then we would
+do something
+like this,
+for,
+I need to
+choose a
+variable name,
+and in this
+case,
+I would use
+maybe a
+character,
+makes sense,
+in our
+word,
+right?
+So for
+character in
+word,
+well,
+print,
+print what?
+Well,
+character,
+right?
+Print out our
+variable that
+will be assigned
+to each one
+of these
+characters for
+each iteration.
+So if we run
+this,
+well,
+we get our
+first character
+was P,
+and then character
+was Y,
+character was T,
+and then H,
+and then O,
+and then N.
+So Python can
+actually give us
+one character
+at a time,
+because a string
+is actually
+iterable.
+Also good to
+know.
+So let's
+actually start
+to combine,
+well,
+today's concepts
+with the
+collections
+from lesson,
+well,
+what can we say,
+lesson two,
+right?
+So numbers,
+let's take numbers
+here,
+for example,
+with a list,
+for example,
+three,
+eight,
+oops,
+12,
+five,
+maybe,
+and let's
+say 20,
+and yeah,
+we can take
+the last one,
+seven,
+for example.
+Here we have
+some numbers
+in our list,
+so what I can
+do here is
+create a for loop
+for number
+in numbers,
+right?
+And then I
+can actually use
+a nip statement
+here.
+If number
+is greater than
+or equals
+to 10,
+well then,
+print.
+So let me
+ask you guys,
+raise your hand,
+what numbers
+will actually
+be printed?
+say guys,
+Pritika.
+Yeah,
+so the numbers
+greater than
+10?
+Yeah,
+the numbers
+that are
+greater than
+10 or
+equals to
+10,
+right?
+Yeah,
+we don't
+have any
+number,
+yeah,
+and since we
+don't have
+any number
+that is
+equals to
+10,
+so therefore
+10 would
+not be
+written,
+yeah,
+you're
+actually
+correct.
+So let's
+actually try
+it and see
+if it actually
+works,
+and yeah,
+you are
+perfectly
+right,
+it is
+actually 12
+and 20,
+which are
+greater than
+10,
+that is
+actually
+printed up.
+So now
+we're no
+longer just
+storing data,
+we're actually
+processing it,
+right?
+We could
+turn it up
+a notch,
+change these
+numbers a
+little bit.
+So we have
+our numbers,
+1, 2,
+3, 4,
+5,
+6.
+So what I
+can do
+here,
+just to
+show you,
+just to
+turn it
+up a
+little bit.
+So for
+number in
+numbers,
+see if you
+remember from
+the first
+lesson,
+if number,
+I'm not
+going to
+reveal
+2,
+0,
+I want you
+to print
+the number.
+So what
+am I
+trying to
+do here?
+Do you
+remember,
+guys?
+What's
+this?
+And what
+am I
+doing here?
+And which
+numbers are
+going to
+actually be
+printed out?
+So that's
+actually my
+question.
+Let me
+see.
+Fabian,
+you can
+take this
+one.
+Yeah,
+so we
+will take
+modulo
+2 on
+each
+number,
+so we'll
+see which
+ones have
+no rest
+remaining,
+and it'll
+be all
+even numbers,
+so I
+presume it
+will be
+2,
+4,
+and 6.
+Great.
+Let me
+just break
+that down.
+It's just
+exactly
+what
+you
+said
+here.
+So what
+Fabian
+is saying,
+so first
+of all,
+modulo,
+right?
+So we're
+dividing the
+number by
+2,
+and we're
+checking if
+we're getting
+a rest or
+not.
+If we're
+not getting
+a rest,
+since we
+get a
+rest 0,
+then we're
+not getting
+a rest,
+right?
+Then we
+will print
+the actual
+number,
+and anything
+that's divided
+by 2 and
+does not
+give us a
+rest would
+be even,
+right?
+But if
+we get a
+rest,
+right?
+If we get
+a rest,
+then it will
+not be
+equal to
+0,
+therefore it
+will not
+print out
+the number.
+So it
+will only
+print out
+the even
+numbers,
+2,
+4,
+6.
+If a
+number
+divided by
+2 has a
+remainder 0,
+the number
+is actually
+even.
+Great,
+you remember
+this.
+Faisat,
+do you have
+a question?
+No,
+I was just,
+you said
+that anybody
+can answer,
+so I'm
+trying to
+answer.
+Gloria,
+was it the
+same thing?
+No,
+I have
+a question.
+Is 0
+taken as
+an even?
+That's
+correct?
+Sorry?
+0,
+if I have
+in the
+numbers list
+0,
+it will
+take it
+as an
+even
+number,
+right?
+You can
+try it.
+0,
+let's run
+this,
+and we
+actually
+print out
+the 0,
+yes,
+because 0
+divided by
+2 will
+actually not
+give us
+a remainder.
+What about
+the negative
+numbers?
+We can
+try that
+as well.
+And these
+are the
+things that
+you're
+supposed to
+try out
+later on
+with
+lab,
+but it's
+all right.
+So minus
+6,
+for example,
+and we
+actually
+print out
+minus 6
+because it
+is actually
+even though
+it's negative.
+And we're
+done.
+We did
+the homework.
+Yeah.
+All right.
+So that
+was a little
+bit about
+Motulou,
+just a little
+repetition.
+But let's
+look through
+a dictionary.
+We haven't
+done that
+yet.
+So we're
+taking lists,
+and I think
+we understand
+the concept
+here now,
+but let's
+actually take
+a look
+at a
+dictionary.
+So let's
+take a
+student.
+The student
+has a
+name,
+for example,
+and we
+can put,
+I don't
+know,
+let's take
+an age.
+And we
+have an
+age.
+Let's put
+25,
+for example,
+and we
+have maybe
+a course,
+AI.
+Then if
+we were
+to loop
+directly over
+a dictionary,
+Python actually
+gives us
+the keys.
+So therefore,
+I'm going
+to choose
+a suitable
+variable here.
+I'm going
+to use
+key,
+since I
+already know
+that it's
+the key
+that is going
+to be
+printed out.
+So for
+key in
+student,
+or maybe
+let's
+stick with
+I here for
+now,
+for I,
+I will
+actually change
+that in a
+while.
+So in a
+minute.
+So for
+I in
+student,
+let's run
+this and see
+what actually
+happens.
+Well,
+the keys are
+printed out,
+right?
+and therefore
+actually change
+my variable
+here to a
+more suitable
+one,
+since we
+already know
+it is actually
+the keys
+that's going
+to be
+printed out.
+So the
+keys will
+be printed
+out if
+we loop
+directly over
+a dictionary.
+This is good
+to remember.
+Of course,
+could we
+access the
+value?
+Well,
+yes,
+but then
+we actually
+use the
+key to
+access
+whatever
+corresponding
+value that
+they have.
+So that
+would look
+something
+like this.
+Let me
+comment that
+one out
+and another
+print here.
+Print key
+and I'll
+put a comma
+and then I'll
+write
+student.
+So this
+will actually
+access the
+value of
+each key.
+Let's actually
+run this and
+see how it
+looks like.
+And there
+we go.
+Get the
+name since
+we're printing
+out the
+key,
+but also
+the value
+since we
+are writing
+student and
+key.
+Each key
+for
+student.
+Each value
+for each
+student.
+So look
+at the
+key and
+print out
+the value.
+And we
+kind of
+looked at
+this yesterday
+when we
+talked about
+dictionaries,
+why this
+actually works.
+Right?
+In case you
+have kind
+of nested
+dictionary
+inside the
+dictionary,
+like course
+instead of
+being my
+string would
+be another
+dictionary,
+let's say
+with AI
+developer or
+hours and
+then the
+value of
+the hours.
+So for
+example,
+if I
+have two
+courses,
+something like
+that,
+you mean
+like this
+maybe?
+I
+routine
+this
+one.
+Do you
+mean like
+this?
+Like that?
+Yes.
+Of course
+two, what
+could that
+be?
+Maybe
+they'll
+take some
+language as
+well.
+English.
+All right.
+So how
+would this
+work,
+right?
+Is that
+what you
+meant?
+Yes.
+I will
+give that
+as a
+challenge
+to you
+guys.
+Try that
+one out.
+Take a
+minute and
+try it out.
+See what
+happens.
+Try just
+this.
+All right,
+guys.
+And the
+reflections,
+what did
+you find
+out?
+Yeah, so
+after the
+student of
+key, like
+student of
+course,
+come a
+course one,
+again, another
+square brackets,
+course one.
+Yeah.
+So you
+mean, so I
+put another
+bracket here.
+Yes.
+Yeah.
+And then I
+write what?
+Course one.
+Course one.
+So it's
+like a
+student of
+course and
+another course
+one.
+Something like
+that.
+So instead
+of key, I
+just used
+the course.
+So something
+like this.
+Course and
+then course
+one, right?
+Yes.
+There you
+go.
+Of course, it
+will say a
+developer for
+all of these,
+of course.
+So yeah, you
+can play around
+with this a
+little bit and
+see what
+different things
+actually print
+out.
+I think we
+can try them
+all right now
+because it
+would take a
+little bit too
+much time.
+You also
+need to have
+something to
+do as well,
+right?
+Great question.
+But yes, you
+can actually
+access the
+dictionary inside
+the dictionary
+when it's nested
+right.
+No problem
+at all.
+All right.
+Let's see here.
+What do we have
+left to actually
+take a look at
+this as well.
+At the last
+lesson, we
+actually saw a
+method.
+I think it was
+last lesson.
+We saw a
+method called
+item, right?
+And if you
+remember, item
+actually gave us
+the key value
+pairs, right?
+It gave us
+the key and
+value pairs,
+right?
+It actually
+allows us to
+write this more
+cleanly.
+So how we can
+do now, let's
+reuse this
+example here.
+we can actually
+write for key
+value in
+student and
+then use
+items.
+The items
+method.
+There we go.
+This will actually
+print out.
+And we can write
+our print very
+cleanly, of course,
+as well here.
+So print key
+value.
+Much cleaner way
+of doing it.
+So if I were to
+run this, I
+will actually get
+name, Ada,
+age, 25,
+course, AI
+developer.
+And there you
+go.
+So since each
+item contains a
+key and a
+value, then
+Python kind of
+unpacks them into
+these two
+variables, key and
+value.
+We could actually
+take a nested
+example as well.
+Since you asked
+about nested
+example, so we
+can take one.
+Think of one
+something like
+this.
+Students
+equals a list
+here and then
+a list with
+dictionaries to
+make it a little
+bit different from
+previous example.
+So we have a
+list and in our
+list, we actually
+have some
+dictionaries.
+Let's say three
+dictionaries.
+All right.
+And each
+dictionary has a
+key and value.
+And I'm going to
+put them in a
+straight line since
+they're very short
+ones, which is
+perfectly allowed.
+It's all about
+readability and
+that's it.
+So name.
+Let's put Anna
+and also another
+one, which would
+be another key
+score, a score.
+Let's put a
+score of 85, for
+example.
+All right.
+So just to make
+sure that everybody
+got that, this is
+the same thing as
+writing like this.
+Same thing.
+Fill a
+dictionary, just
+about readability
+if you want to
+put it like I
+just did.
+But you can put
+it in a straight
+line like this.
+That works
+perfectly fine.
+And then we
+have another
+student in its
+own dictionary,
+instead of Anna.
+Let's put Bob
+and Bob has a
+score of 62
+maybe.
+And then we
+have another
+student who's
+called Charlie
+maybe.
+Something we'll
+see.
+Charlie and
+Charlie has a
+score of 91.
+All right.
+So here we have
+a nested structure,
+right?
+And loops will
+make it much
+more useful,
+right?
+So for
+right, for
+student in
+student, right?
+Print
+student, right?
+That will
+work perfectly
+fine.
+If we were
+to run this,
+which is
+perfectly fine,
+right?
+We get Anna,
+Bob, and
+Charlie.
+We get all
+the names.
+Anna, Bob,
+and Charlie.
+That works.
+No problem.
+But we could
+also add a
+condition here.
+So let me
+actually add it.
+So I'm going to
+keep that
+separated like
+this.
+Just to add a
+little bit of
+condition here as
+well.
+So here I
+can actually
+put an
+if student
+actually also
+works.
+If student
+score, right?
+If student
+score is
+greater than
+or equal to
+70, well,
+then I want
+to print
+student, for
+example.
+And I want
+to add
+something as
+well.
+I can do
+that as
+well.
+Let's try
+that one
+out.
+So I can
+put a
+condition
+inside my
+for loop,
+no problem
+at all
+with my
+nested
+collection.
+And there
+we go.
+Anna passed,
+Charlie passed
+since they
+have a
+greater score
+than 70,
+right?
+But Bob
+did not
+pass as we
+see here.
+So just a
+small example
+of a
+nested
+collection here
+and how
+we use
+a for loop
+with a
+condition as
+well.
+Let's see
+here.
+Sometimes
+we might
+want, let's
+say, a
+sequence of
+numbers.
+So yeah,
+Python actually
+has a built-in
+function called
+range, which
+we're going
+to take a
+look at.
+So we
+use a
+for loop
+as well
+or number
+in, now
+we can use
+something called
+range here.
+Then put, for
+example, a
+five here.
+And how does
+range work
+here?
+So let's
+take a look.
+Paint
+number, right?
+What numbers
+do you actually
+expect here?
+Since I put a
+five here, what
+do you guys
+say?
+What do you
+guys think?
+Raise your
+hand.
+Somebody who
+hasn't spoken.
+Oh, maybe
+Dimitri.
+Dimitri.
+Hi, so I
+think from
+zero to
+four.
+Great.
+Zero to
+four.
+Let's
+actually try it
+out.
+Dimitri is
+correct.
+And Dimitri is
+of course
+correct.
+Zero, one,
+two, three,
+four.
+So up to
+five, but the
+stop value is
+actually excluded.
+So when number
+becomes five,
+well then, it
+will actually
+stop the
+loop.
+It's right.
+You can also do something like this, number in range.
+So instead of having a 5 here, I could put a 2, 10 here.
+Now think about it.
+You don't have to answer.
+Just think about it.
+What will it actually print out?
+Well, let's take a look.
+So it will go from the starting value, which is 2.
+So same rules applied here as previously explained.
+So it will start at 2, but it will quit at 9, right?
+Not at 10.
+And let's actually check.
+So from 2 to 2 to 9, right?
+I could also add third value here, but 1 as well.
+I think you remember what this was.
+So think about it.
+What will it actually print out?
+Think about it.
+Just think.
+Well, yeah, the third argument, if you remember, the third argument was step, right?
+So we will step by 2.
+Therefore, we will print out 2, 4, 6, 8.
+And of course, not 10, since it's our stop value.
+But it will step with 2.
+And of course, we can step with 3 and so on.
+A typical thing that I see or that we have seen is, well, if you come from another language,
+you may be tempted to write Python loops using indexes all the time, right?
+So for example, let's say we have languages, let's say Python, let's say Java, let's say the sharp.
+And then this is what we usually see people coming from another language, and I understand that, but it's probably because you're used to it, right?
+So it's doing something like this for I in range, and then maybe do something like this, len, and then like this, languages, and then print.
+Let me think, yeah, that would be languages, I, right?
+But this kind of reminds of different other languages, right?
+So if I run this, this will actually work, sure, sure thing, no problem.
+It will actually write out Python, Java, C sharp.
+This works.
+But if I only need the languages, Python gives us a simpler solution in this case.
+So that would be for language in languages, just like we saw before, language, just print.
+So same thing here, but much shorter, much cleaner way of doing it, okay?
+So try to prefer this direct version when you do not actually need the index.
+So if you don't need the index, skip this.
+This, it also works.
+This is kind of a habit, but try to try out the cleaner way.
+Important, Python habit.
+But what if we need, let's say, let's take this back a little bit of sense here.
+So what if we need both the index and the value?
+Well, Python has a useful built-in function called enumerate, which actually works.
+So here we could do for index and language in, now I'm going to use enumerate.
+Enumerate on what?
+Well, languages.
+Then we can print, what would that be?
+Well, index, our variables that we just created, right?
+Language.
+And when we run this, we see that we actually get both, right?
+So enumerate actually gives us both the position and the value.
+We will actually return to functions like enumerate later on when we talk more about the Pythonic Python.
+But for now, just to recognize the pattern, that is plenty enough for now, okay?
+We're going to look at the last part here, and then that will be the end.
+So, yeah, sorry for not giving you a break now.
+So let me just finish this, and then you can take your break.
+And that's actually, so instead of for loops, we're just going to introduce while loops as well at the end of today.
+So while loops, while loops.
+So, yeah, we said for loop is useful when we iterate over something, right?
+A while loop is a little bit different.
+So it will keep on running as long as the condition remains true, right?
+So, for example, we could have count was 1, and then we can do something like this.
+While count is less than or equal to 5, then print the count, right?
+But we also need it to change.
+We want the count to change, right?
+So we can do something like this.
+Count equals count plus 1, all right?
+So let's actually run this and see what happens.
+We get 1, 2, 3, 4, 5, right?
+So we started off with 1.
+It was checked here.
+If it's less than or equal to 5, which is actually true, it will actually print it out.
+Now count is actually 2 since we add it with 1.
+So count is actually 2 now.
+We compare it with 5.
+Is it less?
+Yes, it is.
+Well, let's print it out.
+And then with 3, because count now becomes 3 since we add 1.
+So we increase the count for each time we go through the loop, right?
+And therefore, it will stop at 5 since 5 is equal to 5.
+And therefore, print will actually be 5.
+And then our count will actually increase with 1.
+We will get a count that is 6.
+So if you try to debug this, you will actually see that the count actually becomes 6 and then moves up here and sees with the condition here, is this condition met?
+No, it's false.
+So the while loop actually stops, right?
+But somebody might be reacting on what I'm writing here at line 859.
+Let me see if that's your question, Christian, or else I will let you in.
+So here we can do it in a cleaner way, a shorter way.
+And we can write it like this instead.
+Let me just keep it so you know where we're coming from.
+So instead of writing the long way, count equals count plus 1, we can actually write count plus equals 1.
+Same thing.
+Just a shorter way of writing it.
+Same thing.
+Shorten me.
+So if we run this, we actually get the same print here.
+1, 2, 3, 4, 5.
+Was that your question, Christian?
+Yeah, Christian, go ahead.
+You're talking, Christian.
+We can't hear you.
+Sorry.
+You can't write like plus plus.
+Oh, okay.
+Let's try that out.
+Like this?
+It doesn't seem to work.
+It's complaining, really.
+So no.
+Like this as well?
+No.
+Right?
+So yeah.
+That's fine.
+But great question.
+Of course, we have a warning.
+And what is that?
+Well, that would be infinite loop, right?
+We don't like those, right?
+We can create one just for the heck of it.
+So what if I did something like this?
+While count is less than or equal to 5.
+Print.
+Print count.
+And since I'm not changing my count here, therefore count will always be 1, right?
+So it will check 1.
+Is 1 less than 5?
+Yes, it is.
+We'll print it out.
+Then it will go back again.
+Since it's true, right?
+Is 1 less than 5?
+Yes, it is.
+It will print out 1.
+And then we'll go on and on and on and on and on and on.
+We have created an infinitive loop.
+So since count never changes, right?
+If this happens, don't panic.
+You can try it out.
+You see, infinite loop.
+Oh my God.
+Don't panic.
+Can we do something about it?
+Yes, we can.
+Just click on Control C and then it will stop.
+Infinitive loop.
+If you have a Mac, I'm not 100% sure.
+I think it's something Command C or something like that.
+We'll just Google it if you're coming from a Mac, if you're using a Mac.
+Anastasia.
+Yeah, sorry.
+A little bit off topic, but I remember reading something about recursion not really being used
+in Python.
+Is that correct?
+Recursion are not used in Python.
+No, I've seen it in Python.
+Okay, so it is something that people do use.
+Yeah, sure.
+All right.
+For sure.
+Yeah, I think I'm also going to show that to you guys in like lesson six or something
+like that.
+But good question.
+So the absolute last thing before letting you go, guys, that would be just something called
+break and continue.
+And that would be it.
+So let's take last part here.
+That would be break, renew.
+And that will be.
+So we can actually, well, Python actually provides a way to control.
+A loop from inside the loop.
+And the first one is actually break.
+So we can take, for example, a set of numbers here in a list.
+For example, two, four, six, seven, eight, and ten.
+So what I can do here is create a for loop or number in numbers.
+And I can do something like this.
+If number, and we can do modulus again, modulus two, is not equal to zero this time, we can do something
+like this.
+Print, found, and number.
+And since we don't want to print all the odd numbers, and let's actually print out the number
+as well.
+So let's put number over here.
+And since we don't want to print all the odd numbers, if we just have this, it will actually
+found an odd number.
+Except we found an odd number.
+Whatever.
+Oh, no.
+Okay.
+We just have one.
+And that would be add one other.
+11, for example.
+Found another odd number.
+11.
+And so on.
+Right?
+But we don't want that.
+We just want the first odd number, and then that's it.
+Then we can use something called break.
+So if we were to run this, found an odd number, which is actually seven.
+That's better.
+So break immediately exits the loop when the condition is met, right?
+So once we found seven, there's no reason to continue searching in this example.
+That's how break works.
+And when it comes to continue, we can take an example as well.
+So numbers equals one, two, three, four, five.
+You can do something like this.
+Four, number, number, and numbers.
+Something like this.
+If number is three, so if it's three, then I actually want to continue.
+And I also want to print the numbers here.
+Okay?
+So print number, right?
+So what does actually continue do?
+Well, let's see.
+I keep it there.
+Without continue, without this, this would have print.
+Without all the numbers.
+One, two, three, four, five.
+Right?
+But when we run this, you will see here that we get one, two, four, five.
+So what continue does here is that continue skips the rest of the current iteration and moves on to the next one.
+So since three, we have a three, it will skip three and then continue with the loop.
+And three is never printed.
+And that's how continue works.
+And you will get a lab on break and continue, so you can try it out even more.
+But it's just to introduce it, that it actually exists and how it looks like.
+I can imagine that you want to try it out.
+All right.
+Well, that was it.
+So sorry, guys, for doing 10 minutes more than you usually get a break.
+And let me just see the chat here.
+Okay.
+I see that Hytem has been writing here.
+So I can imagine that he has answered all the questions.
+Just making sure it's significant.
+Ah, there we go.
+Let code sets over problems.
+Awesome.
+Thank you.
+Okay.
+Yeah.
+That was actually it for today's lesson.
+I hope you found it useful.
+So I'm going to stop the recording here.
+Do we?

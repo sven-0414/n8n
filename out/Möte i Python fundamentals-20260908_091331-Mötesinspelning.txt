@@ -1,0 +1,602 @@
+am i recording there we go yes i am recording okay so yeah uh like i said uh it's just the
+idea is that everybody here has some programming experience right but not necessarily in python
+right uh uh and so so the purpose of these lessons here is three weeks um is to really is is well i
+wouldn't i'd rather say it's not really to to learn from zero to hero or something like that you know
+uh from a to z or anything like that so instead the goal is to just to make sure that everybody
+has the same point of foundation uh before we move into the main part that wouldn't be a scale but
+rather uh data analysis and so on so i know that everybody is on the same page yeah so we're at the
+same level when when when we start using ai and machine learning sometimes we will move a little
+bit quickly um through concepts and and and yeah and concept that you may already know right such as
+variables conditions and loops and these are things that i expect you guys to already know right uh so
+so what i want you to focus on here is how does python express uh something that i may already know
+from another language so for somebody who has been writing code uh been writing python uh before well
+this could be a little bit slow uh it's just a reminder then for you um yeah and take you for what
+it is but i want you all guys to be on the same uh same page when we leave from this course uh from this
+this uh this sub course uh and yeah and sometimes if you come from another language well then uh this will be
+some some things will be a little bit completely new right and that's also perfectly fine yeah we're
+going to build on that foundation step by step and take it step by step and so on and at the end
+well as you see you have a project if i remember correctly i think we put it as a individual project
+for this first project over here and yeah and that's just to make sure that well everybody's on the same
+page right and every day you will have a a lab on today's lesson just to make sure that you actually
+understood the lesson and you have super amount of time just to ask questions and so on if you have
+any questions about the about the lesson so yeah any questions before i move on yeah so if you have any
+questions just raise your hand um and again just wait until i i call on you sometimes i don't answer
+questions directly sometimes i wait a little bit because from experience i might expect a question
+over here since i'm just going through this but i know that i'm going to answer the question in like
+10 minutes so just give it some time so whatever so sometimes i just wait for answering the questions but
+yeah just raise your hand and wait patiently if it's not something that i'm doing very crazy i'm not
+sharing screen or something like that you don't need to wait me to to to answer just stop me or
+interrupt right no no problems there um anything else before we start no i think that's pretty much it
+attendance super important and yeah and when we can talk more about the lab when we get there all right
+let's start with something like this let me just create something unless we can wait with that so
+i just created basically a folder lexicon 2627 uh just to to keep everything so i name everything so
+just to keep it separated from the rest of the classes that i've had uh yeah so let's start with
+some python and before we start coding let's talk a little bit of history uh a little bit of background
+story except we're not going to take it very deep or anything like that but short background story so
+python it was created by uh girovan rossum and uh yeah it was first released in like the early 1990s
+and and the main idea here uh well uh was i would say uh well the main idea behind the language was
+actually uh it's readability so what python tried to do here uh is try to reduce unnecessary syntax
+and make code uh relatively easy to read right and this is one of the reasons why python became super
+popular as a beginner language perfect beginning language right and also in advanced sectors such as
+automation automation data science artificial intelligence machine learning and you can ask
+yourself why do we use python when when writing code for modules and so on well i wouldn't say that it's
+because python is the most powerful language it's not right and the idea is that the people that came
+to write these algorithms and so on had a background as a mathematicians and since they were mathematicians
+um to make sure that i'm not pulling out the bug since they were mathematicians and not
+programmers as background well we needed a language that was easy to learn and therefore
+python and therefore all our libraries and so on are in python uh so yeah that could be an explanation also
+why we find so many uh or why the the ai branch and and python you know going hand in hand
+but we will see several examples especially if you're coming from another language and you have
+probably already seen it during these couple of days when working on hacker rank and so on
+but of course you will see uh several examples where python actually removes syntax that you may be used
+to uh if you're coming from another programming language all right uh so um yeah we can we can start
+off with creating a a file uh a python file um and they use the extension let me just write the demo maybe
+extension py python uh and yeah that's basically it uh and you already know this um and before
+we write code we write code in the file uh i just want to show you the interpreter um the terminal
+uh yeah you can use powersons uh no problem um and if if python is correctly installed we can simply type
+python and this should happen uh and yeah and this actually starts the python interpreter uh and this
+allows us to execute uh code directly without creating a file first uh so here we can actually write
+uh print let's go with a classic hello world let's try it out yeah it actually prints out hello world
+right so nothing surprisingly here uh so we just call the built-in print function
+and pass a string to it hello world we could also do something like this five plus two and we've got a
+seven with five divided by two we will actually get um yeah what do you think we will get just shout
+out what do you think we will get yeah we've got a two as an uh expected answer let's actually try it
+and we will not get a two we will actually get the 2.5 uh so that's that's interesting so the result
+here yeah uh so in python normal division uh with a single slash uh single slash uh gives us a floating
+point result so this is a floating point number and we can actually check it out uh let's just write
+type here if we write type and then a five so what is a five uh so this is a built-in type function
+that allows us to inspect um the data type of an object so let's see what five is uh and we see that
+it's a class int so as an integer but if i were to write type um 2.5 we will actually get a floating
+point number float right so with a single slash we will actually get normal division so 2.5 yeah um
+and if we want to exit the interpreter we can just exit over here and that's it and just clear the
+screen cls all right clear all right uh if you think that i'm going too quickly and i have a tendency
+of talking too fast as well uh and if you think if you think so uh just just just remind me guys just
+stop me you're going too fast or whatever no hard feelings at all just tell me and i will slow it down
+a little bit i'm just trying to find the level because each class is its own right uh with their
+own experiences and so on so sometimes we have classes with super with a great background and so
+on but maybe not so much in these kind of things yeah gloria yeah so i have just a question i don't
+load a python uh on my computer but i i am not able to run it in the terminal as you did and maybe i'm
+missing some step before uh running it okay uh and actually i don't have distinction in the left
+panel as you have it i have this yeah uh well i don't have the python um a logo there all right
+all right all right okay uh so what we're gonna do uh what i'm gonna do uh after the lesson uh whoever
+has any problem with their visual studio or python or whatever and we will try to fix that together
+all right so so the whole class doesn't need to wait and if you wanted to code along maybe you
+wanted to code along okay maybe it would be a little bit difficult for today if you can't write
+any python code uh but if you can then you can write uh i will actually not erase anything from
+today's lesson i usually do but today i'm not gonna do that and then i can send you all the code
+sounds good you can get it from me i can use as well uh something um online as well i i think i found
+something to write there perfect perfect perfect perfect and you can code along as well if you want
+yeah uh so if anyone has any troubles with their uh python or or or yeah with the visual studio code
+just yeah we can take it after the lesson one by one uh yeah so everybody gets a smooth start all right
+so we saw the interpreter we saw uh we saw some data types as well right uh but let's move into our
+python file right so if you're coming from a language such as java or c sharp uh one thing that you will
+immediately notice is that you don't need to explicitly um you don't need to explicitly declare
+uh the data type of a variable so for example i could write a variable like this number equals 10
+the number equals 10 right and i can actually print it out print number so if python is the only language
+that you have written in well you wouldn't you wouldn't feel anything about this but if coming
+from another language you would say what that's it so uh because if you're coming from another language
+you might be used to writing int number 10 and as you see it's even complaining here uh you don't even
+need to write var number equals 10. you just write number and that's it so you just assign a value to the
+variable and yeah no int no var no str string or something like that so but the python what it does
+is actually determines the type from the objects that i actually assign and we can actually check that out
+um so if i write that's this so grant type number what do you guys expect me to to write what do you
+expect the terminal to write out here yeah yeah and we can try it out uh class int perfect uh but
+actually here's something important about python as well is that if i were to uh let's just to save the
+note so yeah uh so if i were to write number equals uh number equals 10 and then we can write print type
+number then i can write uh let's have a new laptop so i'm not very used to the keyboard so just give me
+some days and i'll be more uh fluent with the keyboard we're getting there so 10.5 yeah and then uh also print
+type number and then here we're gonna put something else that's all number equals uh for example 10 like
+this and then yeah uh if we run this well let's actually see what happens when we run this so what
+i did was just writing simply same variable so this is what i want you to notice guys same variable number
+number number right and then printing out the type so if i run this you might notice something right so i'm
+using the same variable here and you see that the same variable uh refers to a string oh sorry to an int
+uh to begin with right and then a float and then it refers to a string right so what this prove is that
+python is actually uh i can actually write that down so python is um what do you call it dynamically typed
+uh so this this this this this does not mean and i want to emphasize or not uh that the python has no
+types uh the object absolutely have types uh it means just that the variable name itself is not locked
+to one data type as it might be in another language uh but let me hear from you if you're coming from
+another uh if you're coming from another language uh another program program program language is this
+allowed somebody who wants to share it with us no it is not allowed actually so it's something different
+here and also uh we need to explicitly check when we are doing some operations uh if you are expecting
+the data to be on some specific type right in python yeah yeah and that's true well you have to do cost
+costing uh you know to do costing yes yeah yeah yep yep yep and yeah and you see the python is super
+simple in that in that in that way um so the syntax is super lovely that's why i actually love python because i
+teach in different languages and yeah when we come to python i always like uh so yeah but uh it's a little
+bit of a choice some don't like it when it's this kind of hippie trolled way uh yeah let's continue
+and you have already promised me if you're going too fast uh you will tell me to slow down yes uh let's see
+phobia uh yes i was just wondering even if the language is uh dynamically typed if there is a
+if you know any case where you do have some sort of extension where you have um static typing is that
+something that ever occurs uh don't think so can actually double check if there's some in some place
+that you or is that even that even work i don't think so but i will i will actually i will actually
+i will actually look it up right we're gonna have a break in like 20 25 minutes i can look it up and
+just just to double check right yeah thank you no no no problem at all great question okay so we have
+established that that um that writing variables is super simple right uh no uh data type mentioned
+here or something like that but we have rules of course so yeah when naming a variable we have a set
+of rules so we cannot start a variable for example we can start a variable with a number we can't write
+like five name equals uh aladdin something like that that's not that that doesn't work and you see that
+it's complaining right um we we cannot have any spaces uh we can't have any spaces in our variable so we
+can't write like this first name equals aladdin that's not working at all not allowed uh in python we
+conventionally use by convention uh we normally use snake case meaning underscore first name equals aladdin
+right it's just uh what we usually do a snake case but i have seen this so many times so yeah
+people writing like this but if i were to follow the uh best practice kind of document or whatever you
+call it uh they usually use snakes yeah um so that would be like i said for for variables using snake case and
+also a standard convention when when creating a function but we will talk about functions in a
+couple of lessons a question that i usually get i'll wait with your question a little bit gloria
+maybe that that is your question uh so a question that i usually get uh you can keep your hand up so
+we don't forget uh so what a question that i usually get is is python case sensitive well let's take an
+example let's write name for example here name equals uh well we can't always watch my name so uh john
+maybe uh so name john but also i'm gonna create another variable or the same variable we don't know
+yet we will see and i'm gonna write name as well but this time i'm not gonna write john i'm gonna write
+jane all right so the question is have we done the same thing as we did here am i using the same variable
+and changing it along the way so name equals john name is switching well let's actually check uh print
+name but at the same time i'm gonna also print print name right before running this let's keep in mind
+if it's not case sensitive it will print jane two times right so this would be jane and this would be
+jane because the last variable would be name equals jane right but if it is case sensitive then line 42
+should print out john and line 43 would print out jane right so let's see if it's case sensitive or not
+and let's run this and we'll get a john and jane so are these the same variable what do you say guys
+are these the same variable yes or no no i don't know that's proven here right uh so python is case
+sensitive yes we had a question uh i think it was gloria yeah i i was going to ask if um when declaring
+a variable this is possible to start with um i don't know a question mark a half star no no no no no special
+characters uh so for example uh for example uh i don't know uh name equals as you see it's already
+complaining does not work right so no special characters good question i should have mentioned that i think it
+doesn't matter where we actually write it as you see here doesn't like it it's already complaining
+thank you okay very good question so this is no no all right good question thank you gloria uh
+all right uh so we have already seen integers uh we have already seen floats and we've already seen
+strings uh let's actually add another important data type uh let's see i think we can actually write
+here so we had age to begin with that would be our integer right we have a for example a price uh 1999 uh
+name um john uh also write um is students now we come to the good stuff here so true so also i could write
+print uh print uh type uh uh we started off with age right uh print writing without consent here type uh price
+uh print type name and last but not least uh print type is student so these are the uh data type that we
+have actually uh gone through now uh and the last one is our boolean let's just take a look uh if we run
+this we see that we got an integer right for the first one we got a float for the second one we got
+a string for the third one but we got a bool for the fourth one and this actually shows us that true and
+false in python we write it with capital letter to begin with super important it's not going to work for the
+small letter as you see and obviously if we want to write false we actually start with a capital letter
+as well all right so that's how we write true true or false uh so these are our four basic examples
+here uh yeah and as you see we're intentionally uh moving through this quickly uh so we're not going
+through what a bool is i kind of expect you guys to already know what a bool is what a string is
+what a floating point number is and what what an integer is but like i said if it's going too quickly
+you need to tell me then i will put a little bit of handbrake um so what is important here for me at
+least is that we actually recognize how python actually represent these the things that you already know
+all right uh let's actually move on uh yeah let's actually look at some uh um uh arithmetic syntax as
+well uh and this as well should be um uh uh you should already be familiar with this but uh yeah we
+can move into that so that would be operate operators operators so let's look at some arithmetic syntax uh
+so let's write print for example uh five plus two uh you have print um five you can use the same five
+minus two uh so the standard ones here so five multiplied by two you would write it with an asterix
+and we have already covered that division we said with a single slash so five divided by two
+right but i can show you a fifth one uh and what do you think this does so what is this might be less
+familiar if you're coming from another programming language power power yeah the power the power yeah
+exactly so so yeah uh explanations right uh so this would be uh just like our friend says here uh five
+to the power of two which should equal to if we remember our mathematics high school mathematics it is
+actually 25 right five times five uh so let's run this and see we get our seven five plus two seven
+five minus two three yeah everything's fine uh five times two ten perfect five divided by two yeah 2.5
+and five to the power of two meaning five times five well equals 25 perfect uh we can add two more uh
+let's actually try this these two as well uh they might be a little bit new if you're coming from another
+language something like that and something like so what are these two
+two what do these operators do low division yeah the first one is actually floor division very good
+and the second one would be would you know to get the reminder very good very good very good very good
+so let me just add that up and let's actually see what it does uh and just like somebody said we have
+floor division over here um i can actually write that uh floor division and for this one uh that would be um
+uh uh so uh floor division just uh does a division without the decimals just takes away the decimal doesn't
+round up around down it's just say removes the the decimals and then we have modulus that actually gives us
+um the the remainder so let's try them out so on the first one we get a two since it's 2.5 so remove the
+point five that would be two right uh and on the second one we get a one since we get a reminder
+one right uh and that would be perfect to use a modulo yeah that would be perfect to use
+uh a usual beginner thing to use modular one is to see if something is even or odd right so five seems
+to be odd since we get a reminder but if we had something that would not give us a reminder for
+example six six divided by two that would not give us a reminder since yeah we got a zero here and then
+we can yeah uh do a comparison whatever if we get a remainder uh one or if we get a remainder then it's
+odd and if we don't then it's even right or something like that um should we stop a little bit there and
+take a little break usually i take breaks at at uh well uh for example if it's 10 o'clock 11 o'clock
+or something like that um but let's take a break here because it perfectly fits so we're gonna take
+a break and then yeah we can say to should we say to see here let's take 15 minutes or something like
+that uh but do you have any questions before we we take a break any questions so something's written
+in the chat okay if i miss anything in the chat sometimes i don't see the chat because
+i'm using two screens i don't have a third screen for the chat that would be i would have been
+perfect i think two screens should be enough let's see here two 2.5 int no
+okay and java is not allowed i think i know where you're coming from
+in erlang it's allowed all right there are type ins yeah sure uh no power off module yeah
+so you're just answering questions there uh but it's a good thing that that happened because then
+you know that i actually don't see the chat live right but sometimes i go back and just
+double check all right guys uh let's take a 15 minute break uh so we will say um
+back 10 oh five sounds all right should we use this chat or the other one maybe you already
+touch on this by the way uh i mean uh the chat what do you mean if you have any questions during the
+lesson uh yeah yeah exactly exactly yeah yeah no no then use this chat yeah exactly do just okay
+yes yeah but sometimes if i if i don't see it then don't be angry with me it's just because i didn't
+see it all right no no problem no problem okay yeah thanks all right so i'm not ignoring
+right uh yeah no it's all good it's all good okay uh so uh there we go back at uh back at the
+10 10 10 10 10 10.05 all right grab some coffee awesome yeah see you soon guys thank you excuse me
+hello welcome back hello oh you actually have one minute left so yeah i will wait with the
+with the hello welcome back for one minute maybe everybody's not back and we said 10 or 5 and 10 or 5 is
+10 or 5. now it's 10 or 5. so hello welcome back uh yeah hello let's go hello hello let's continue for
+where we left off uh any questions that that appeared during the break no how's the tempo guys could i
+get a little reaction is tempo right who reaction yeah thumbs ups no thumbs down that's good thank you
+christian uh all right all right guys uh let's continue last thing we said was modulus
+so actually there we go um type conversion yeah we're gonna talk about the type conversion
+so since uh python is is is is strongly typed we sometimes need to explicitly convert values meaning
+let's take an example here a number uh as text for example and i'll put that as for example like this
+and before yeah okay number as text if i were to print this variable out number
+number as text it will actually write down the 10 and for the naked eye here we can't actually
+determine if it's an int or a string but we can do that by code and just write print uh use the type
+function here uh number as text and actually determine here that this it is actually a string right
+the 10 here is a string and not an integer right not a number what happens if we try to add
+uh the integer let's add a a integer for example five to this string so let's actually try this out uh let
+me just comment that out uh so if i were to do print a number as text plus five okay it doesn't complain
+necessarily over here right but uh if we run this we see that we get a type error right so python will not like
+like silently decide that this string 10 should become an integer 10 since we're doing addition we need to
+actually explicitly convert it all right so that's something important to remember so in this case we
+would do something like this so instead of that uh and we can use that or we can and we can keep that
+so we remember what we're coming from so what i would do here let's use the same example here here we go
+so i would actually convert it uh so i create a new variable number and then i will just write int
+and then the variable that i want to convert into an int so i actually want to convert number as text
+to an int and let it be number right and then now i can use that in an operation print number plus just
+like we did before and we can also at the same time just make sure that our what type is our variable
+number here uh let's run this and as you see we actually get a 15 that means that the conversion
+actually worked so what what was once a string 10 is now the type class int an integer and since it's an
+int we can actually do 10 plus five questions and there are other conversions as well of course another
+one uh let's say um yeah we can make a value and use 10 again so now it's an int and if we want to
+you make it a value as text we don't want it to be an int anymore so instead of writing int i would write
+string and what do i want to create a string with a well that would be value so i want value to become a
+string and now it will have the variable name value as text we can try to print it out print value as text
+and print um yeah let's look at the type as well uh value as text and let's find that and we see
+that we actually get a 10 perfect but we can't actually see if it's a string 10 or not just by
+looking at the first one right but since we're doing uh we try to we're looking at the type here
+we actually see that it is an actual it is a string and not an integer anymore and yeah and we can use
+like mentioned we have int uh which we convert with and we have string as you have seen right but we also
+have uh float and convert into and also we can also uh convert to a boot and we will see this of course
+again and again and again especially when we we start getting input from users uh and and and files
+but we will talk about that when we get there all right so that's a little bit about um conversion
+gloria can you give me an example when we need to convert to boolean uh okay anybody when would i want
+to convert to a boolean and why would i want to convert to a boolean can you repeat your question
+yeah so why would i the question was why would i ever use this why would i ever want to convert to a boolean
+okay we could see an example here where we wanted to convert to an int and here we saw an example where
+we converted to yeah so when we are seeing all the text as string maybe then if you are using it in
+application then we need to convert it to boolean or any specific field like for json x you're having
+all the data inside json and you need to convert it to specific things you say that again yeah let's say
+we are reading the json json format and if we need to pass the individual um fields inside the json then
+we need to convert it to the corresponding data types yeah yes yes that could be that could be that's
+a very good one uh and and for example another example would be a super simple example um just
+for example let's say x equals uh one and uh uh let's see here yeah we can do something like this
+print and boom that would be our x right and yeah uh and and then we can actually print out uh no uh yeah
+and then we can try it we actually get a true right and the same thing if we reduce zero here we actually
+can be false so just a simple simple simple example uh and we have some uh that would also gives us false
+i don't remember them by heart uh yes this is false uh i know that uh also gives us this also gives us
+false but if we were to use minus one here this should give us a true for example so yeah uh so we can use
+these kind of tricks here to just uh convert them into true false did i answer your question uh i think
+it was gloria yeah yeah very useful actually yeah uh all right um all right we're gonna spend a little
+bit more time on yeah we're gonna spend a little bit more time on strings actually because uh well this
+is there i would say very much some very useful uh python behavior is uh well where they start to become
+very visible right um so a string is a sequence of characters uh let's actually uh try this one uh text
+uh which actually text one equals hello uh text two actually equals hello all right uh so as you see here i'm
+using a single quote and here i'm using double quotes and just prove it um text one and text two
+here just to show that they actually are the same right so it doesn't matter if i'm using a single quote
+or double quote the usual question i get then is which one should we use all right guys what do you
+say anybody has a suggestion which one should i use so they use the line 117 or 118 should i use a single
+quote or double quote probably
+double quote okay we got suggestion double quote and we have another suggestion as well fabio go ahead
+uh i was thinking uh i was thinking uh i was more having a question like maybe there's something
+regarding format formatting that is different here i'm not sure yeah we're just learning here we're just
+trying uh anyone else anastasia um just a guess but i would say single so that we can add strings
+together and print them as a string interesting okay so we have suggestion single that we have actually
+this is just another double right so i would say it doesn't matter but it matters right
+so you will see me writing with single quotes you will see me writing with double quotes so many
+times i will mix it a lot uh that's because i think it's simpler to write single quotes but
+after a while i actually get used to writing double quotes and so on but you need to be aware of one
+thing at least so let's say uh i'm writing a message here so message uh that will be our variable here
+and then i'm gonna write i'm i'm not i am i'm learning python right let me try it with double quotes to begin
+with i'm learning item beautiful no problems right but if i were to write this in single quotes this
+would be catastrophic right it would be a problem and why is that as you see it's complaining right
+so here double quotes is convenient right because the apostrophe over here right inside the text does not
+uh well it does terminate the string right in this case but if we were to use double quotes it does not
+terminate the string so when i use the single quote over here it's actually the string from i and that's
+it so here i would say use double quotes but you are not wrong if you're using single quotes in any other
+example but here you need to be aware yeah that's simply it so you were all right right all of them
+work they're all right uh but it's more convenient to use double quotes when uh using apostrophes
+uh yeah that's just um i'm gonna move to some concatenation i'm just gonna put my subcharger in
+so i don't disappear second okay um concatenations uh let's write okay we can write this uh first first
+uh first name equals uh uh and last name equals uh i don't know my fantasy so addison so we got ada we
+got addison uh and what we can do here is something like this pull name first name plus and then
+we can put last name right uh and we can also add a little bit of space here uh something like this
+just to create space between the first name and the last name uh something like this right and then we
+can print out this full name and just to make sure that actually works so print uh full name let's run
+this and we actually get ada addison right so plus uh plus between strings both perform something called
+concatenation i think i spelled it right so concatenation right but what happens if i try to do
+something like this uh let's say um print uh a string like for example age and then say plus
+30 okay so it's not complaining per se right but uh yeah take a guess guys anybody wants to take a guess
+raise your hand anybody wants to take a guess on what's gonna happen but obviously don't run it on your
+computer before you before you answer yeah phobia i'm just guessing i have no idea but i think because
+we have no spacing the number will be attached to the first word the age thing i'm not sure yeah that's
+a good observation therefore i will do something like this so don't run into that what do you say now
+now actually it creates its own space and yeah so will this write out age 30 what do you say saranya i
+think it will throw value error like it will um we are we should convert it to string or should
+convert 30 to straight all right all right right uh good guess critica yes i guess it does type error yeah
+it will actually and you both are right here so so it will actually get us a a type error it will throw
+us a type error uh because cam only concatenate strings not integers to strings right so string to a
+string uh because it does not convert uh the integer into a string right so what we can do here just like
+something like somebody mentioned here so i could create a variable here uh as let's say age 30 and
+then convert it to a string uh so that would be str right and then age and if i run this this time we
+actually get age 30. so this works but it's not that clean right and later on we will talk about it not
+right now uh but we will talk about a solution for this kind of stuff uh and that would be something
+called an f string and i only want to tease that now uh we're not actually gonna spend any time with
+that but just a teaser of what's coming up uh so if we let's go back to the same example here
+uh so we have a name for example is uh well we can use the same name here adam and then we got
+an age right now which is actually 30 and as you see we have an integer a string and we've got an integer right
+and let's say we want to print that out together without concatenation without conversion
+without anything of that we can actually use something called the f string you don't need to
+memorize the f string quite yet and we will get into that so it looks looks something like this if
+you have not seen it before we actually start the string uh by writing f therefore f string and then
+the codes and now we can actually use both of these for all of your variables doesn't matter
+what data type they are meaning we can actually write something like this sorry we do not use currently
+we use actually curly brackets name is age years old and now i'm actually using both our variables
+i'm not converting any variable i have different data types of my variables and if i try to run it
+it will not give us any type error or anything like that it actually says ada which is the name right
+ada is age years old which age is actually 30 and it will get us 30 for us so ada is 30 years old
+like i mentioned earlier you don't need to memorize anything of this right now but
+uh we will talk more about the f strings as we move along for right uh gloria uh the f function only works in a print or it can be also assigned to a variable but variable
+uh we we will see that but yeah it's usually in a print but uh and we we can also use it in function
+with return and so on but we will get into that a little bit more later on yeah okay but a good
+question but we usually don't use it in a variable uh yeah we're going to spend a little bit more time
+on drinks put up so uh let's create a for example language equals python language equals python uh we will
+print what if i did this len uh i want to say language so what do you think len does it's just
+rhetorical question i don't need to answer so what len actually does is also a a built-in function just like
+print uh it actually returns the number of elements in an object and since this is a string it means
+that this will actually return the number of characters so if i were to run this uh we actually
+get six right uh one two three four five six so six characters right in python but what if i add another
+character here uh and let's say python i don't know python four what that means i'll leave that to your
+imagination but python four here so i actually added one character or did i so if i added one character
+which should say seven right now right but it actually says eight no that actually means somebody
+forgot the mic on i think so that means that it actually counts the this character as well as this
+white space here so the white space is also included in as a character of course so that's important to
+remember and here we will get seven and here we will get six right um that's a little bit about len
+very useful uh and we can use len on different things uh as we will see later on when we talk about
+lists something that reminds us of arrays but we will talk about that when we get there take it step by
+step uh and i think i mentioned but strings are a sequence and that means that the python actually
+keeps the the characters in order and we can access them using indexes so for example if i were to write
+text equals item right so uh just like many other programming languages python uses zero based indexing
+so just by mentioning that if i say text zero this will actually print out what yeah it will print out
+the p right since this is our first character so zero stands for the first and one would obviously be
+the second one not the first one which will be y zero is first one is second uh i could also use
+negative one and what does that mean in python that would be the last one so n so obviously if i use
+minus two it will go uh to the end and then go to the second also to the end and to the second
+character is the second left last so if i run that i will actually get a o with minus two that's a little
+bit about indexing and we're going to get back to index uh especially when we're talking about our lists
+uh let's take another uh we can use the same symbol here uh i'm gonna talk a little bit slicing index
+gives us one element right slicing allows us to take a section of a sequence so a little bit different
+right so let's for example write print uh text because we're doing a slicing on this text python and
+then instead of writing one character uh one number here we're actually going to write zero column three
+so what do we expect here well zero would be the first right and this is good that we pay attention
+here because it's not that obvious always but if we run this we actually get p y t and if you think
+about it p is actually zero y is actually one t is actually two and h here is actually three that
+actually means that the third or the fourth character which would represent by three right is not included
+so it will count up to the third not sorry to the index three but not include the character with index three
+as you see here it does not include h which has the character and the index three so it will go from
+zero to index two that's what is gonna actually gonna print out that's good to remember so up to not
+uh and and and this this this up to but not included behavior actually appears in in in many places in
+python so it's it's it's very good that we remember that uh what happens if i leave the starting uh the
+the starting number here the start the start index uh if i run this we actually get the same thing so
+yeah uh this uh we've if we don't put a a starting index here it will actually automatically go from
+zero from the first one and same thing here if i change this to uh if i move the column to the end
+here so three column nothing if i don't write anything here well it will start from three and it will run
+until the end so h o n so index three would be h that where it will start and it will go h o n so
+nothing at the end and if we were to write nothing at all column what will happen well it will write
+out the entire string we can actually add a third print and text zero two we can actually use a third
+uh a third um third value and that's when we get into slicing with step meaning we step so let's take
+a new text for example uh so the text is uh i don't know a b c d e f g uh h i right and if we were to use
+just to show this simple way print uh text uh so i'm actually going to start from zero uh and go to the
+end so i'm not going to write anything there and then i'm going to start with two and since we're
+starting from zero i actually don't need to write anything so so no number here no number here
+that means that we start from zero from the first from a until the end to j but then we're putting a
+third a third value here which is actually a two and what does that do will it write a b c d e f g
+h i j or not when we had without the two it would do that but let's check well it's actually right
+a c e g i does anybody see what actually happened here but just happened it takes a rather letter
+yes every other letter right so it actually takes every second character right since we put a two
+so it's stepping by two right but what if i what if i put instead of a two we can try minus one for
+example what would this do think about it sorry uh there was yeah let's actually try it out and we
+actually get a reverse so this is just uh just a nice little example of how compact python can sometimes
+be right any questions about slicing and stepping and of course like i mentioned earlier we're gonna
+get a lab on each one of this so if it's if it's like oh i want to try this out i want to try it out
+believe me you're gonna try it out right so you're gonna get a lab on each one of this so that you
+actually on each step that we have taken it during the course of today's lesson uh you will try it out
+and yeah uh dissect it and try it and left and right so so you get familiar with it then yeah that we also
+make sure that you have covered today's lesson all right uh what we're gonna talk about now yeah uh let
+let me put a variable here called word then i'm gonna put python uh here we have something important
+to understand here when it comes to strings in python and that is that strings are that they are
+in you right so we're talking a little bit about the mutability here that means that once a string object
+has been created well we cannot change the we can change an individual character over here yeah inside
+this object right uh let's say we have the word right let's say we want to change the first character
+of p to let's say a j and let's try that out word uh since it's the first character so i would do
+index zero and i will try to change that into a uh let's say a j here so instead of writing python
+i want to have jiten uh and and and let's actually try to run this uh print word and see if that
+actually works just to prove that it is actually mutable and it does not work and it should not work
+and we actually get type error string objects do not support item assignment right we cannot do this
+it is immutable can we do this in another way could we take a small step around yes of course we can
+uh we can assign it to a new uh we can create a new string that actually works so what i can do here
+is um something uh i can do something about this let me just take that one that's in there we go
+so remember that where we came from there we go okay so word is python but then i can go down here and
+and use the same variable no problem we've already proved that that's quite all right but this time we
+want the j um j plus uh word and um and then add from first character uh so index one which would be y
+until the rest because we're not writing anything at the end so j and then skip meaning skip p and take the rest
+here so python and if i write the right now print word sorry if i want to print the word now we will
+actually see that it works check on but what i did here is or or rather i would say this original string
+object was not edited that's important to remember so it was not edited character by character right
+we created actually a new string and assign the name word to this new value so we just use
+the same variable that's it but they are not the same and we have already proved this before right
+any questions about that about the immune immutability that strings are immutable all right
+and we're going to keep on mentioning mutable and immutable sometimes things are immutable in python
+and sometimes things are not immutable right um and we will get there step by step all right uh let's
+see what time is it uh a question question does that mean that uh it's um a value type no not the
+value type it's a reference type uh yes i would say all right yes exactly all right uh what do we have
+left let's see if we take the rest or should we take a break just give me one second just gonna double
+check if i have anything in front here see here i'm just gonna do this before yeah we don't have much
+left so i'm not actually gonna give you a break i am uh gonna wait with that since um second i do this
+like this that i just need to take the attendance here to be second sorry guys yeah as i mentioned
+we're not gonna take a break because we don't have much left so i don't miss anyone who is actually
+here today because i think we have missing one student who's not in the group be a little catastrophic
+right so i should say that there we go be all of you guys uh let's actually continue uh with the last
+part that we got left um the last thing we're gonna talk about for today is actually string methods uh
+because yeah python objects often come with methods of course uh and the method simply a function
+that belongs to an object right so strings have many useful built-in methods uh and of course we're not
+going to memorize all of them the important thing is is understanding how to use them the syntax right and
+knowing that they actually exist right let's just create the message here mass message and just to
+make the uh to make it super clear i'm actually going to create some white spaces here hello python
+something like that all right so as you see a double space here a double space over here uh and
+a capital h and a capital h and a capital p just to make sure that you actually observe this so let's
+try some uh some of these string methods on the variable message so we can try the first one that i want
+to show uh and if i were to write message and i write a dot here you can see all of the methods that we can
+use uh and you need to remember all that these sounds as well now i'm just joking uh so there are many you
+can try them out uh look them up and so on uh but the one that we're going to start with is lower and we
+need to end up with the parentheses since it's a method that's important to remember and if we try
+this method you will see that it actually writes everything in small characters so a lowercase version of the
+message but a thing to remember is that it has not cleared the white space over here right
+uh let's actually try another one print message and instead of lower we will use upper upper uh well
+it gives us uppercase version so a lowercase version of every character uppercase version of every
+letter letter right and then we got trained another one which is called strip try that one out uh strip
+and if we try that one out you will see the strip actually you know there we go so what it does is
+that it removes the uh the white space from the beginning and the end it's a little bit hard to see
+the end here that we have actually white space but we can see the beginning here if we see compare the
+first one and first one and second one to this third one where we actually use strip you can actually see
+that it you removed the white space at the front but it does actually remove the white spots at the
+end as well and we can prove that by just writing that that's not right yeah don't forget that there
+we go case lowercase uppercase and remove fight space uh we can use a third one or fourth one sorry a
+fourth one let's use another message for this one uh let's say message equals i don't know python is fun
+something like that right so what i can use here is something called the replace one method so let's
+try it out print print so it is the variable message right and what i want to use is replace right and i use
+my parenthesis and so that is a method and in here i can actually specify here what i want to do right
+so what i want to do is replace fun with for example i don't know how we're full if i were to run this
+i actually see that now it says python is powerful so what replace does is that it returns a new string
+where matching text where fun is the matching text has been actually replaced to a new text which is
+powerful that's it that's how uh place can be used question let's try another one uh one two three four
+a fifth one uh so let's create a variable here data for them let's just put i don't know apple uh banana
+and orange for example uh so this is actually believe it or not but this is only one string right i know
+that we have uh so this is only one string it doesn't matter if we're writing apples comma banana comma
+orange the string begins here and ends here that's it so if i were to count the number of characters i could
+do that right i could just do print len uh and that would be our data they will count every character
+in the string right 21 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 17 18 19 with the commas and 20 21 with
+white space right so python sees this as one as one as one string and nothing else and that's important
+to remember here right so what we can use in one string when we have data that looks like this could
+actually split it into separate strings so what we do there and what we do then is to use this method
+called not replace not lower not capitalize it's actually called split uh and where do i want to
+split whenever you see a comma so this is very practical very useful uh and if we run this you will
+actually see that we get one two three strings right so we don't we no longer have one string and that's
+important to remember no longer have one string uh we actually have three strings and we have these values
+these three values over here inside i can copy this just to show you clearly and as you see here we
+have these three values inside the square brackets right and these square brackets represent something that
+we have not talked about yet i think you have already stumbled upon it when when you were working on
+hack rank and so on this is actually a list and lists are one of the most important data structures in python
+and this is what we're gonna start off with on the next lesson uh so yeah let's see here if we have
+something that i want to show you no so uh yeah uh we're actually gonna uh start off with talking about
+lists on the next lesson and what the lists are and how we can compare them to another programming
+language other programming languages and so on so that we are on the same page when it comes to lists
+and how actually how powerful they are yeah and that was actually it for today all right guys
+any questions no questions so far no questions so far yeah but you know we're taking it from the
+beginning we're taking step by step i think you already know most of the things that we are going
+through and that's the idea here right and this is what the fundamentals lesson is and if you compare
+that to the first time you learned programming it wasn't in this tempo right so it is a little bit
+different from a normal fundamental class that i usually have i'm having actually one in another school
+and yeah it takes time and of course if you're not familiar if you haven't used computer in that way
+whatsoever of course this is super new um yeah let's make a question about the list is the list is
+the same thing as an array more or less yeah yeah yes right yeah see here tomorrow's lesson i'm just
+gonna double check it so yeah on tomorrow's lesson we're gonna talk more about lists uh we're gonna
+dissect and we're gonna look inside um and yeah we're gonna talk about tuples as well we're gonna
+talk about sets we're gonna talk about dictionaries yeah we'll get to know and to and to and tuples
+sorry to tuples tuples yeah yeah tuples tuples yes yes yes yeah okay i will i will i will shut up now
+no no no no of course you can ask of course um yeah uh and also
+uh we're gonna mention again mutability or is it mutable or is it immutable and yeah we can
+of course it is mutable actually but we're gonna talk more about that tomorrow any more questions
+something that i'm supposed to mention at the beginning of the lesson i actually forgot
+because it's a little bit new uh because the laws are changing along the way and so on
+uh i'm actually need to tell you if i have used any ai uh for this lesson and
+yes i actually have uh in what sense well i would say especially in examples so instead of creating
+examples from from scratch i would create one example and say could you create three more and then yeah
+sometimes i choose between the three the three which one i think would be most pedagogical
+for you guys so that's the idea um and in the lab i've also used some ai uh to make it a little
+bit cleaner and also to get some feedback uh so i like to do some role playing and so on uh so
+yeah uh if you were a student what would you think of this lab and sometimes i get it's super nice and
+sometimes you get well think about that that's not clear at all so it's better that ai sees it first
+before you see that uh have i used ai to anything else no i don't think so at least well i've had
+this course so many times now so i nearly know it by heart but i've actually changed a little bit for
+this this this time this group i think we have a super strong group so uh i've actually added some
+tempo into it yeah uh that was it for today so what's gonna happen now uh take break of course uh take
+a little break and your lab will be up in like 15 minutes or something like that so you have enough
+time to take break and yeah maybe take some coffee and so on uh so you're expected to sit with the lab
+until uh five o'clock of course uh what uh and and it's important that your teams is of course on on
+on online and not offline uh sometimes we do some random calls and and the calls is usually to to ask
+questions it could be something that we that we haven't seen because later on not right now but later on
+you're actually gonna hand in your work or you're gonna show us what you have done for today
+and not usually not really right now uh but we're gonna uh hold on that a little bit let's
+get into it first and then we can talk a little bit about that and the structure of it and how
+we're gonna show the work for each day sometimes we have questions sometimes maybe uh you're falling
+behind we just wanted we wanted to check sometimes it's just a simple thing that you know what uh
+i was sick and now i'm just trying to read up and so on and so on but everything is fine
+and sometimes it could be something right it could be that you haven't understood lesson and so on and
+you haven't asked and so on maybe and we want to try to catch that up as soon as possible of course
+so sometimes we will call up and it's important that you answer of course you could be in the bathroom
+you could be taking a break or something like that but you can't take like half an hour before you call us up
+again right so if you're on a break we expect that break to be maybe 10 minutes or something like
+that we do not call them during lunch of course because lunch is your lunch um yeah what else yeah
+and do the lab and that's it uh uh we have a question in the chat let me see type error no zero
+and one yeah that's true true and false true uh they cannot directly join strings signature can you
+allow that and explain one more time where is lab exercises on the platform perfect good question uh
+let me see here uh bomb uh you're gonna go take a break now right and and after a while you will see
+in this python info chat where we're not supposed to write uh so if you have any questions or anything
+write directly to us or if it's a student question if you want to ask students please write it in the
+student chat right but we're still learning uh so try not to write in this group at all uh since here is
+the important information from teachers and that's all so student chat or direct message to me for
+example or hide them or whatever it could be so they're not right you don't know back here uh so in like
+10 minutes 50 minutes you will get a message here that says today's lab and the lab is going to be a link
+and you're going to click on the link and it's actually going to take you to here python fundamentals
+and if we look at shared here you will find a folder i can actually put that right now a folder called
+please make it red it's actually called lab so inside here you will have your lab but you will not
+need to go all the way into this channel you will actually find a direct link and instructions over here
+did that answer your question novita i guess yes all right any more questions uh quick question aladdin
+if i may yes yes yes i'm guessing that at the end of the day we submit screen uh today you do not
+need to submit anything that's quite all right but save your work do not erase anything so your labs save
+them but today you're not going to show it up right uh it could be that we call you up or something like
+that and discuss maybe some questions or something like that or uh maybe at the end of the week you're
+gonna hand in all the labs uh in a way but i'm not gonna uh go into that right now uh let's take it
+step by step and yeah um so today just do the labs and that's it and the labs is not something that you
+got graded on or something like that it's for you right to to see that you actually understood the
+lesson right and you get some exercise on the lesson so it's actually for you right so we are making sure
+that when we start tomorrow's lesson we're already done with the last lesson that we had yesterday so
+that's basically the idea of the lab it's not a grade you or anything like that and also for us to
+see uh when you're going to start handing in the labs it is a good way for us to see that everybody is
+following along and sometimes we will notice in the lab maybe that i don't know uh half of the class is not
+not uh it's not up to date or whatever well then we can pull the handbrake right so that's important
+as well so sometimes if we see that the class is not following that the the labs the answers are not
+correct or uh they get only to the first part of the lab and that's it we don't they don't finish the
+second third fourth part well that means that we need to pull the handbrake and see what's happening
+right so this is good for us and good for you yes gloria do we have uh lessons or meetings every day
+nine or eight yeah very good uh so uh um let's see here uh the lesson starts at nine uh and what i've
+understood that you actually start at eight o'clock right so eight o'clock you're ready computer uh you get
+through the work that you have done uh last time uh that you've been working on uh get up to date
+the setup is ready and so on uh if we need to we can call you up at that time um and if somebody from
+lexicon needs you it could be something later on with internship and so on uh so it's very important
+that you're on time but the lessons always start at nine and do we have lessons every day uh depends
+depends for example uh when we get to the project work well then we'll not have lessons right uh maybe
+something in the morning five minutes or something like that and that's it and then you go on and work
+on your project for example so there is no lesson sometimes we need more time uh maybe we have a bigger
+lecture uh on something and then you get two days to work on the labs for example then you wouldn't have
+a new lecture the next day so it's different but now at the beginning uh you can count on the first two
+two weeks at least you will have a lecture every day especially in the python fundamental parts yeah
+more questions keep them coming lana yes yes i just have a question about the python version i saw
+that you had like on 14 or something

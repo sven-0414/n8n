@@ -1,0 +1,1666 @@
+A small recap. Well, yesterday we worked with variables, right? Variables, data types. We worked some strings indexing. We did some slicing as well, right? And what we did at the end of the lesson that was pretty nice was that we used something called split, right? On a string.
+And when we did that, we kind of returned something inside square brackets. Instead of having one single string, we kind of created three separate strings, right? And we put them inside these brackets. And that was kind of a cliffhanger from... I left you with a little cliffhanger. So we're going to talk about this tomorrow, right? So that's what we're going to do.
+So we're going to continue from where we left off. And we're going to try to explore what this is. Yeah. And then take it to there. From there.
+So these square brackets... Yeah. And today's lesson is going to be a little bit shorter than yesterday's. So sometimes they are short, sometimes they are longer. And hopefully it went well with the labs.
+I got some questions at least. But if you got any questions about the lab, just keep on coming.
+So these brackets, what do they represent? Well, they represent a list. I think you kind of figured that out, but we call it a list, right? That's what we're going to talk about today.
+Lists are actually just one of several important collection types in Python. So today we're going to talk about lists. We're going to work with them as well.
+And yeah, we're also going to move to tuples and sets and dictionaries. And if you have a programming background, which is not Python, you probably have already worked with arrays, lists, objects, maps or hash maps before, right?
+So these concepts should not be new to you guys. So what matters today is to understand, and this is what I emphasize on when it comes to this fundamental part, is to understand how Python actually represent these structures and when we choose one over another, right?
+So a list is an ordered collection, right? It can, well, contain multiple values, as you see here.
+And one very important thing to remember is that a list is actually mutable, mutable, meaning it means that we can change the content after the list has been created.
+So the opposite, so the opposite to immutable, which we said, we called something immutable yesterday. And what was that? Do you remember?
+Let me, I'm actually going to call out students today, just to make sure that you're awake, just to keep you on your toes.
+Okay, for this first one, a critica. All right, critica.
+String is immutable.
+Yeah, exactly. Strings were immutable. Correct. Very good. All right.
+So we got, let's see here, done, just going to move teams away so it doesn't bother me.
+There we go. There we go.
+So let's create a list and then take it from there.
+So let's say numbers, sorry, equals, and then our square brackets.
+We got 10, 10, 20, 30, 40, and 50, right?
+Let's just print them out, print numbers.
+There we go.
+Run this and we're putting out the list just as it is, right?
+So the square brackets actually create a list, right?
+Just like lists, they are actually ordered, as we see.
+We get the same print, right?
+As we, the same order as we have put them here.
+We get them in the terminal as well when we run the code, right?
+So they're ordered.
+That means that every element has an index.
+And we said that in Python, well, it starts from zero as many programming languages.
+So if we were to print, for example, print numbers, and we can put a zero or try something else,
+for example, one, or we can take one at a time.
+So we can run this and we see that we get a 10, of course, since it's the first object in the list.
+And if we try, for example, I don't know, one, that should print out a 20, right?
+We get our 10, 20.
+So 10 for the first one, 20 for the second one, right?
+And if we try third one, for example, minus one, we should get what?
+Well, the last one.
+We should grab the last one, right?
+So the last element.
+And there we go.
+50.
+So the last element, first element, and second element, all right?
+So the exact same index idea that we had with strings, right?
+Nothing new.
+We're going to try something else.
+Let's see.
+What if I print something like this?
+If I print numbers, and this time I will put 1, colon, 4.
+What do you guys expect to be?
+Don't try it yet.
+You tell me.
+What do you expect it to be right now?
+Let's hear.
+Fabio.
+I assume it will write out everything until the index 4.
+So it will be 20, 30, and 40.
+So it will start from 20, because that's index 1.
+30, that's index 2, just like Fabio said.
+And 40, and that's index 1, 2, 3, right?
+And this is index 4.
+And notice that Fabio says it is not going to take in 50, right?
+So this is the start index, right?
+Which would be the second element.
+So it's going to start from here.
+This is included, but the stop is excluded.
+So it's never included.
+But we kind of emphasized on that yesterday, right?
+We're going to try it out and see if Fabio is correct.
+And of course, it's correct.
+So 20, 30, and 40, right?
+So stop, start, and stop.
+Stop, not included.
+Important to remember.
+And a typical beginner mistake, of course.
+We can try some more.
+But if I put something like this, print.
+Try to be on your toes now, because I'm going to call out.
+Let's see here.
+What do you say about this one?
+What will it print out?
+Do you take out?
+Fourth.
+Fourth element.
+So it prints from the position 0 to 2.
+0 to 2?
+Yes, excluding 3.
+Excluding 3.
+Let's try it out.
+And you're correct.
+Because we didn't write anything.
+It will start from the index 0 from the first one.
+Perfect.
+Not including index 3, which would be the 40, right?
+0 from 1.
+Very good.
+All right.
+Let's try another one.
+What if I put something like this?
+What do you say, guys?
+Raise your hand.
+I think you're on a roll, but I'm going to take someone else this time.
+Johanna.
+From 30 end to the end.
+30 to the end.
+Let's try it out.
+And you're absolutely correct.
+30 to the end.
+So we have a start, which will be index 2, which will be 30, right?
+And since we didn't put anything, it will go under the end.
+Very good.
+You seem to have done the lab.
+Try another one.
+What if I do this?
+All right.
+What do you say, guys?
+You can match my hand up.
+Not Fabian.
+Someone else.
+Can I get it?
+Maxims?
+Yeah, it will print every second element until the end, from the beginning to the end.
+Right.
+Let's try it out.
+So every second element, and that's actually correct.
+Very good.
+So this was what we call step, right?
+And what if I put this one, this one, yet, not yet?
+I'll print reverse.
+The reverse.
+Let's try it out.
+Perfectly correct.
+So 50, 40, 30, 20, reverse.
+Very good.
+Yeah.
+And two things.
+I can see that you did the lab and that you paid attention yesterday, right?
+So this is the exact same slicing syntax that we used for strings, right?
+But therefore, we should know them.
+So very good, guys.
+Very good.
+All right.
+Let's move on.
+What I also want to show you when it comes to lists, that is also important to maybe know
+here is, let's see, I think someone has a question.
+Let's see before I move on.
+Yetnaya, did you have a question?
+Or is it your hand from before?
+It was from before.
+No problem.
+All right.
+So I'm going to actually create another list and we're going to notice something.
+Python is lovely in that way.
+Let's see here.
+So I'm going to put a 10 here and I'm also going to write Python and I'm also going to
+put true and I'm also going to put 3.14, for example.
+So what do you guys notice here?
+Multiple data types.
+Yeah, there you go.
+You said in the queue.
+I think shouting out, it is not working right now.
+So yeah, let's go with hands up so everybody gets a chance.
+I think that's better.
+It was me who said that we can just shout out yesterday.
+So yeah, just like the class is saying here, it allows us to mix different data types inside
+the same list, right?
+So technically, this is completely valid.
+But let me emphasize one thing.
+Just because we can't do it doesn't always mean that we should, right?
+So in real programs, of course, lists often contain values that belong together conceptually,
+right?
+But this actually works.
+So just to show it also, mixed, for example, this will actually work perfectly fine.
+No problem.
+No error, no nothing.
+Probably Python.
+But another thing Python actually also allows, a list here can actually also contain other lists.
+We also want to show, so we can call it matrix, like, something like that.
+And we can put, just make it a little bit clearer.
+So I'm just jumping here.
+Still a list, square bracket, square bracket, right?
+So here, inside, I can actually create a list, right?
+I can put a 1, and a 2, and a 3, right?
+And then, I can create my next element in the list.
+That will be a second list.
+So we have a 4, and a 5, and a 6.
+And then I can create my third element, which just happens to be a third list.
+A 7, and an 8, and a 9.
+And there you go.
+So what do I have here?
+Well, I have a 1 list containing 3 elements.
+And these 3 elements seem to be 3 lists.
+3 separate lists, right?
+Let's just print that out and see if that works.
+And of course, it will.
+So I've already promised you that.
+So let's run that.
+And we see that we get the list containing the square brackets outside, right?
+So the list containing 1, 2, 3 lists.
+Sorry, guys.
+Especially if you're wearing headphones.
+So what we want to see now is how we can actually access something particular inside the list.
+Let's see.
+I'm going to give you a little challenge here.
+Try to write out in the terminal, try to access number 5.
+And I want that to print out in the terminal.
+You can try it out right now.
+And I'll give you a minute or something like that to try it out.
+And then we can take it together.
+All right.
+I'm kind of talking to myself here.
+I forgot that I'm muted.
+Okay.
+What do you say, guys?
+Anybody wants to tackle the question?
+Just raise your hand.
+Georgi.
+Yeah.
+And you would just put like in square brackets 2 and 2 afterwards.
+Like matrix and square brackets inside 2.
+No.
+Which one is it?
+Okay.
+1 and 1.
+Good.
+Not too bad.
+You said actually 1, right?
+Very good.
+Yeah.
+So 1 and 1.
+Let's try it out.
+And we actually get the 5, right?
+So this is from the 5.
+Yeah.
+We get the 5.
+You're actually correct, right?
+So what we're doing here is, well, using the index.
+And that's it.
+And we can use indexes for the list to access something, right?
+So in this first list, this list would be index 0, index 1, right?
+And this would be index 2.
+So the first one says access this.
+And then the second square bracket would be inside this list.
+So this would be 0 for 4, index 1 for 5, and index 2 for 6.
+Thus, Georgi is saying use 1 again, all right?
+So try to play around with that later on if you want, if it was a little bit confusing.
+Questions before I move on?
+I think somebody's very familiar.
+Sarania.
+Yes, Aladdin.
+So I have one question.
+Like, you told, like, we can have multiple data types inside the list.
+So is there any use case we really use that?
+Or why it was?
+I think, I mean, it's not conventional.
+It's not normal.
+It's not something you usually do.
+Okay.
+I mean, I'm not going to raise my eyebrows if I see that.
+Maybe you're putting something temporarily there or something like that.
+You're maybe playing around with code or something like that.
+I don't know.
+But when you organize everything, you usually don't, right?
+You try to...
+It says itself, right?
+So usually you have a list of something, right?
+Maybe names.
+Well, that would be strings, right?
+It would be very strange if you have names and then a truth pops up.
+Or a set of numbers.
+It could be any kind of numbers, right?
+So it would be very crazy if a string just appeared there.
+So usually they used to have the same theme, right?
+But I wouldn't raise my eyebrows if it did something like that.
+But, I mean, no.
+I don't think I've seen it before.
+I'm going to put it that way.
+Yeah.
+Good question.
+Right.
+Let's see here.
+Yeah.
+I kind of mentioned at the beginning about mutability, right?
+Check that out.
+So let's create a new list.
+I'm going to put some names here.
+So let's put, I don't know, Aladdin.
+Second name, maybe Grace.
+And let's put the third name, I don't know, Aladdin.
+So like I mentioned before, we can actually replace one element directly.
+So what I can do here is I can do something like this.
+Names, square bracket one, and put equals to, well, let's take either.
+So what's actually going to happen now?
+What's actually going to happen?
+Well, let's try it out and see.
+And try to notice the list now.
+So what's actually changed?
+Well, we changed actually the name or the element that had index one, right?
+Index one would be grace here.
+So grace, index one, we kind of said, we'll take grace and change it to guido.
+We see that grace is replaced by guido.
+We change the element at index one.
+And this would not work on a string because strings are immutable.
+But since lists are immutable, we can actually do this.
+All right.
+So this just proves the mutability, as we said before.
+We got also some list methods as well that we should take a look at.
+Let's put some languages equals to, let's put Python, let's put Java, put language that is
+kind of there to me, C, C sharp, right?
+All right, and let's print them out.
+Just make sure.
+Languages.
+All right.
+So lists actually come with many useful methods.
+And we are just going to focus on a few common ones.
+Of course, we're not going to do all of them.
+But the first one that we're going to look at is actually pen.
+So what does a pen do?
+Well, let's actually try it and then let's see what actually happens.
+So I'm going to put languages here, name of the list, dot, and then you can see actually,
+I'm going to try append here.
+And then I'm going to put inside here, I'm going to put, well, let's say JavaScript, right?
+And now if I come here and let's print languages and let's see what happens.
+Well, Python, Java, C sharp, and JavaScript.
+And there you go.
+So what append does is to add one element to the end of the list.
+And that's important to remember, the end of the list.
+The second one, any questions about append to begin with?
+The second one that we're going to look at is not append, it is insert, just to see the difference here.
+So insert, we can actually put, let's try it out and see what it does.
+Languages, dot, this time we're going to put insert, right?
+And then I'm going to put my parentheses and it kind of says something here, right?
+Okay, something about the index and something about an object, okay?
+So I'm going to start with the index and I'm going to put a one, okay?
+And then I'm going to put an object here.
+I'm going to say go, for example.
+And now if I come here, try to print out my languages, let's run this.
+And we see that we added go, just like we did with append, but instead of putting it at the end of the list,
+we actually added it to a specific place, right?
+So we can specify an index and a value.
+So it's a usual question that I get when we try to do append.
+It doesn't happen this time, but usually when I go through append, the first question, I guess,
+well, can I put it somewhere else and not at the end of the list, right?
+And yes, we can with insert.
+That was a little bit about insert.
+And guys, of course, you're going to try all of this with lab that you're going to get later on.
+Okay, let's look at another one.
+Another one is called remove.
+So let's try it out and see what it actually does.
+And I think it says it in the name, but here's my list.
+I'm just going to move it down a little bit just so you can see it.
+Yeah, we're trying out remove.
+So languages.remove.
+And now we see, well, remove value string.
+Okay, okay.
+We need to put a string.
+Remove first of the current value.
+Raise it first if the value is not present, right?
+All right.
+So let's try it out.
+Let's actually put something to remove.
+And in this case, I'm going to put a Java, right?
+And then we're just going to print.
+Excuse me.
+Languages.
+There we go.
+We try to run this.
+And we see that Java was actually removed now.
+So Python and C sharp.
+That's it.
+Okay.
+Remove removes the value by the value itself, right?
+And we're going to take a, I don't remember what number we are on, but next one.
+And instead of remove, we're actually going to do something else.
+We're going to, with this list, we're actually going to look at something called pop.
+A little bit different from remove.
+They kind of remind of each other, but they're not completely the same, right?
+So let's take a look at the list here.
+It's called languages, right?
+So I'm going to actually create a new variable, removed language, removed language.
+And I'm going to put that equal to languages, the name of the list here, dot pop, all right?
+Then my parentheses, then I'm actually going to print out print.
+Let's actually look at the original list, languages, and also print removed language.
+So just to see the difference here.
+We have our list, right?
+Languages, which I actually can.
+So we've got our list, languages, Python, Java, C sharp.
+We created a new variable, removed language.
+We are doing pop to the, we're using pop to languages, the list.
+And then we're printing out languages.
+And we're also printing out removed language, just to see what actually happens.
+When I run this, something actually happened, right?
+Well, we removed Java.
+No, we did not remove Java.
+We removed C sharp, right?
+The end from the list, right?
+And then we could actually see what we actually removed.
+We're supposed to see sharp, right?
+So the question here is really, what is the difference between remove and pop?
+So what is the difference between remove and pop?
+Well, remove, as we saw earlier, removes remove by value, while pop actually removes by index or the last item if no index is specified.
+And also, returns the removed item.
+So let's actually specify, push on that a little bit more.
+So instead, this time, instead of saying removed language equals language pop, I'm going to save that for you guys.
+So we just remember where we were coming from.
+So instead of having an empty one, we're actually going to put an index this time.
+But notice something.
+So I'm going to put a one here, for example.
+I'm going to put a one.
+And that would be index one, meaning index one.
+And that would be Java, right?
+Before, we removed C sharp.
+But this time, I'm going to try to remove Java from the list and actually see the popped item.
+And let's see if that actually works.
+And yeah, it works.
+So before, we removed Java.
+Sorry, C sharp, when we have nothing inside the bracket here.
+And this time, we're actually removing Java when we have index one.
+So we actually removed the item with index one.
+And what we can notice here is that we don't write the index in the square brackets, actually.
+Right?
+So remember that.
+A normal mistake to actually try to write it in square brackets.
+And it actually doesn't complain.
+But if I run this, you will see that I actually, it will give you a type error.
+And since we have talked about this, you will kind of already know, okay, something's happening online.
+The subject cannot be interpreted as an integer.
+So this cannot be interpreted as an integer.
+Let's change it to a normal one.
+And let's try it out.
+And it actually works.
+There you go.
+That was a little bit about remove.
+Can we do more with our list?
+Yes, of course we can.
+I was just wondering what that command you wrote in the terminal was to remove everything you had written?
+In the terminal?
+It was something like CLS or something.
+Oh, yeah, yeah, yeah.
+You can either write clear or you can write CLS.
+Okay, all right.
+Nice.
+No, no problem.
+Or you can throw it in the garbage like this.
+So if you press the X, it's just hiding, right?
+But if you put it there, it's killing it.
+So, yeah, let's see some other stuff that we can do to our list.
+Let's see what time do we have.
+Yeah, we have some more time.
+Okay, so I'm going to put languages.
+Time.
+Languages.
+Yes.
+Equals.
+So we can, when we have to leave.
+So let's take that back.
+And Python, Java, C Sharp.
+And it's actually a JavaScript as well.
+Why not?
+So it doesn't feel excluded.
+Okay.
+JavaScript as well.
+So what I can do here is, well, first of all, let's try this one out.
+Print.
+And I kind of showed you this one yesterday.
+Lend.
+Ticket.
+Languages.
+Okay.
+What do you say, guys?
+What was Lend again?
+What does that mean?
+Let's see.
+Let's say Christopher.
+Yeah, so Lend returns the length of languages in this case.
+So it will be four.
+Very good.
+Yeah.
+Lend is kind of short for length.
+And yeah, the length of the list that we have here.
+And just as our friend says here, as Christopher says, we will get a four, right?
+Since we have four elements inside this list.
+One, two, three, four.
+Let's try another one.
+What if I write something like this?
+Print.
+Print.
+Python.
+Which is then instead of Python, I'm actually going to put Rust here.
+Data type.
+Does the in expression actually return?
+Well, what it does is that it actually returns a Boolean.
+I'm going to try it out.
+So when I run this, I actually get a Boolean in return.
+A true, and then I get a false, right?
+I think we saw in when we talked about strings.
+Last lesson, but we didn't.
+But as you see, it actually works with many collections in Python.
+So it works also with strings, but it also works with lists.
+So we can actually just check if the list actually contains something specific.
+For example, here we're checking if Python actually exists in the list,
+and we get a true, since it actually exists.
+Does Rust exist in our list?
+No, it does not, since we get a false.
+Pretty neat, right?
+If we imagine that we have a list with thousands of elements for it,
+that would be very useful to use if we just want to check something quickly.
+All right.
+Let's continue a little bit about lists.
+Yeah, we can do that.
+Okay.
+So let's create a new list.
+Let's leave the languages for now.
+Numbers.
+Let's go back to our numbers.
+And I'm going to put a, yeah, I'm going to put it like this.
+Five and a two and a, I don't know, a nine, maybe a one, maybe a seven.
+All right.
+So I think you know, guys, where I'm going with this.
+So we've got a five, two, nine, one, seven.
+And we want what?
+Well, let's sort this out.
+So we've got our numbers.
+Can we sort this out quickly?
+Well, yes, we can.
+So what we do is we use something called, well, sort.
+And, yeah, there you could read a little bit about sort.
+But let's try it out.
+Print numbers.
+Right.
+Let's run this and see if it sorts the list.
+And it actually does.
+So what it has actually done, and it's important to remember, it has actually changed the original list.
+Right.
+So this list is not five, two, nine, one, seven anymore.
+It is actually one, two, five, seven, nine.
+So if I continue the code, I need to remember that now the numbers list is actually sorted.
+Since I do that in like 322, sort actually changed the original list.
+We can do something else as well.
+Well, we can actually, instead of doing sort, well, not instead, but additional to that, we can actually also reverse.
+So numbers.reverse, not remove, reverse.
+And that also works.
+And if I do print numbers, and if I run this, it will reverse this part, right?
+So reverse also changes the original list.
+And if I were to take this back again, if I run the code,
+well, then you will see that I actually sorted it out first, and then I reverse it.
+Since I'm actually changing the original list, which was five, two, nine, one, seven.
+So no, we're not going into any sorting algorithms in that way,
+but it's just to show you guys that Python actually offers some methods, right, that we can use.
+There's also an important distinction in Python between the list method, sort, and the built-in function, which is called sorted.
+If I'm actually going to put a little title here.
+So we have sorted versus sort, right?
+They are not the same, right?
+There is a kind of a distinction here.
+Let me use the same list.
+All right, so we saw what sorted, but let's take a look at sorted.
+So for that, to make it super clear, I'm actually going to put a new variable here.
+So new numbers, numbers, equals sorted, this time, not sort, numbers, okay?
+And now since I created a new variable, I can actually compare them to each other.
+And now I can put print, number, right?
+And also, to compare it, I'm going to also print the new numbers, all right?
+Let's actually run this and see what happens.
+Here we go.
+What actually happened?
+Which one actually changed the original list, right?
+So sorted returns a new sorted result, and the original list actually stays unchanged.
+So I hope you notice the difference between the sort and sorted, right?
+Sorted never, kind of never changed the original list while sort actually does that.
+So there is another distinction, right?
+And as you see here, when I try to print out numbers, I actually see my original list,
+which I didn't do when I print it out after I used sort, right?
+Printed numbers, then I didn't see my original list anymore.
+Let's hear, Anastasia.
+Yeah, I'm just wondering, you've got new numbers equals sorted, but what would happen
+if we had numbers equals sorted numbers?
+Would that work?
+Numbers?
+You mean if I put numbers here, right?
+Yeah, but then I'm kind of changing.
+You see, that's not pretty much the same thing.
+We will get, of course, sorted, because now you have actually addressed something to this.
+Right, yeah, yeah, yeah.
+So you kind of change the list in that way, but that would work for anything, right?
+But basically, it would do the same thing as sort in this case.
+Yeah, yeah, yeah, in this case.
+Yeah, thank you.
+No problem.
+All right.
+Any more questions about sorted and sort?
+Yeah, if I remember correctly, in the lab, we have actually a specific question about
+sorted and sort, where you will actually try it out.
+Let's see here.
+Interesting.
+We're going to take...
+Ah, no.
+We're actually going to take a break now.
+It's one hour.
+Let's take a break.
+And...
+We're still at the beginning.
+And we're actually, let's say, back at 10.15.
+All right.
+So let's take a small break.
+And then we will actually continue.
+So one last thing about the list, and then we're going to move on.
+Then it's enough with lists, right?
+So back at 10.15.
+Try to be on time.
+Grab some coffee.
+Let's walk a little bit.
+And yeah, have a nice coffee.
+We are back.
+Let's see.
+I'm sharing the screen.
+No, no, actually.
+There we go.
+Okay.
+Let's continue from where we left off.
+I kind of mentioned that we have one last thing to go through when it comes to lists, right?
+Before we move on.
+Well, this is kind of a gotcha thing.
+But let's take a look at it.
+Let's create a list.
+Let's call it list A equals, say, one, two, three.
+And let's also say that list B equals list A, right?
+All right.
+We've got a list A, one, two, three.
+And we also say that list B equals list A.
+And then we're also going to put a list B.
+We're going to use append, which we used before, right?
+Append.
+And we're going to put a four here.
+We said add, right?
+And we add it to the end of the list, right?
+And if we want to specify, we could use, instead of append, we used insert, right?
+But we're going to use append.
+So it's going to end up at the end of the list.
+But we're actually saying that to list B, right?
+Let's actually print this out.
+If I put print, and this is important, print list in here, I'm going to put print list B, just to compare.
+All right?
+Let's throw this.
+So the question is actually, well, list B is kind of obvious.
+It's going to add to four, right?
+Since we say add four to the end of the list.
+The question is actually, what is going to be printed out when we run live 347?
+What's going to happen?
+We're going to print list A.
+So when we run this, we actually see what?
+Well, we see that list A also got a four inside it, right?
+And this is a very important thing to understand here, right?
+So list B did not become a completely independent copy just by doing this on line 343.
+All right?
+So that's important.
+Remember that.
+So it's not an independent list.
+But what if I actually wanted to make this shallow copy?
+Well, then I can actually do this.
+I'm just going to put this out, and I'm going to use this one again.
+Let me comment it out as well.
+So let's make it kind of separate here.
+So in order to make that shallow copy, then I would do something like this.
+I would put list B, not Lewis, list B equals.
+But this time, I'm going to write something like this.
+So list A dot copy.
+And then I'm going to put list B dot at the end.
+For example, let's take four.
+Since we used this, let's stick to four.
+And then I'm going to use my prints again.
+So print list A and see if we succeeded.
+And print list B.
+And when we run this, let's compare it to this one.
+They stay the same, right?
+Not an independent copy from A.
+And when we run this, we see that there are separate list objects, right?
+So this is how you use copy.
+Questions?
+Anybody's putting their hand up?
+Let's see here.
+Christian.
+Does this...
+Yeah, the microphone was...
+Is this related to, like, reference types or...
+If it's...
+Say that again.
+Is it related to reference types?
+Well, kind of.
+Yes.
+Yes, in a way.
+In a way, yes.
+I would say, yes.
+There is a distinction at the end.
+Okay.
+Could you explain it a bit more, maybe, perhaps?
+The difference between this one and this one?
+Yeah.
+Why list B is...
+It's referencing to the same value in memory.
+That's what it is, I guess.
+Okay.
+You're talking about the first one, right?
+Yeah.
+That it did not become a independent...
+Yeah, exactly.
+Yeah, yeah.
+Okay.
+Okay.
+I could actually show that.
+Let me just remember.
+We can actually look at the reference type, actually.
+Let me see.
+I need to actually look into...
+Let me just get a reminder here.
+Because I can actually look at the...
+Give me one second.
+Well, can I take it afterwards so I don't create something just out of the blue?
+Let me think about it.
+I'm going to show it because I'm not actually...
+Yeah, sure.
+Absolutely, yeah.
+No problem.
+I just thought it looked the same.
+It's a good question, but I'm just going to put...
+It looks the same as with the problem, the problem with reference types, I guess.
+Yeah, yeah, yeah.
+Exactly, exactly.
+So I'm just going to show you how it's actually stored in memory.
+But let me just...
+Yeah, we can take it later if you...
+Yeah, yeah.
+No problem.
+No problem.
+Okay.
+So I don't confuse anyone by, you know, trying to remember.
+But yeah, I can actually show you how it looks like in memory.
+You can take it from there.
+So we'll get back to that one.
+But what was next on the menu?
+Let's see here on my notes.
+Yeah, okay.
+We can finish lists.
+Let's move to tuples.
+Well, tuples are also an ordered collection, right?
+They also, thus also support indexing as well.
+But there is a difference, of course.
+And the main difference, does anybody know what would be the difference between tuples and lists?
+Great difference here.
+Yeah, so it is immutable.
+Very good.
+Now we're back to the mute mode.
+We actually don't change that, right?
+So let's put some coordinates.
+Equals term and 20.
+And then we try to print out our coordinates.
+As you see, we're using brackets, right?
+Instead of square brackets.
+When we're going to create a tuple.
+So when I would try to print out my coordinates, let's just check here.
+Coordinates.
+If I run this, I actually get my tuple with my coordinates with 10 and 20, right?
+Perfect.
+But I also wanted to show you that we also can access a specific coordinate by their index.
+Works perfectly well.
+So let's actually try that out.
+I run this.
+I actually get my 10.
+I actually get to 20 since 10 is the first one, index zero, right?
+So parentheses to create a tuple.
+So the question that I usually get, and somebody might want to ask this question, the question that I usually get is, well, since, Aladin, you're saying that both lists and tuples are both ordered, right?
+They are both ordered, they are, you can access them by their index, right?
+So why do we need tuples, right?
+And what do you say?
+Why would I need a tuple then?
+Why don't I just stick to lists?
+I think somebody was raising their hand on this here.
+Dimitri, go ahead.
+Yes, I saw like a constant and I guess performance could be better.
+Could be.
+Could be.
+So yeah, you're kind of into it.
+But one reason at least is to communicate at least that the structure should not change, right?
+For example, coordinates are a good conceptual example, right?
+So we may want to treat this pair as one fixed value, just like you were mentioning there.
+Very good.
+But what does not work is to go here and do something like this, coordinate 0 equals 99, for example.
+This does not work.
+This would actually give us a type error.
+Should at least run this and we actually get a type error.
+So tuples does not support item assignment since they are immutable.
+Yes, Guftami, did you want to add anything or maybe you had a question?
+No, that's it.
+No, I'll ask it from before.
+All right, all right.
+I see, I see, I see.
+All right.
+Alessandro, same thing or do you have a question or an input?
+Yeah, why don't you have a compiler error?
+Why?
+Yes.
+In this case, when you try to put something in a tuple, should I have a compiler error, right?
+You mean, why do I get a type error or what?
+No, I mean, then you have an error when you try to execute the code, but should it have a compiler error.
+Oh, okay, okay, okay, okay.
+I understand.
+I understand.
+Okay.
+Good question.
+Can't look that up, actually.
+I don't know if it's something specific or why, actually.
+I don't know, to be honest.
+Can't actually look that up.
+Good question.
+I can look it up and get back to you.
+All right?
+If there is something specific there.
+Yeah, yeah, it's fine.
+But I think Victor answered because it's not a compiled language.
+Oh, okay, okay, okay.
+You mean it like that?
+Okay, okay.
+Yeah, yeah, yeah, yeah, yeah.
+It is not.
+Yeah, that's true.
+That's true.
+And, yeah, we have...
+Oh, okay, okay.
+Are you writing in the chat?
+Then we also got something else here.
+Tuples, faster execution.
+Yeah, sure.
+Lighter on memory.
+Sure.
+Tuples used for fixed data.
+Yeah, true.
+Yay.
+So we saw the type error.
+We saw the coordinates.
+But we can actually do something like this.
+This actually works.
+Let me reuse this one.
+Let me move it down a little bit.
+Let's see here.
+What if I do this?
+And, yeah, I can actually assign it at least to different variables.
+So, for example, x, y.
+I can do that in one line as well.
+Coordinates like that.
+That works perfectly fine.
+And then if I want to print x and I want to print y.
+And if I run this, it should actually work.
+Yeah, there we go.
+So, 10 and 20.
+And I can do that to anything.
+We can try something else as well.
+And, therefore, we can show a different thing.
+For example, what if I create another, let's say, a person here.
+Person equals, let's say, I'm going to create another tuple here.
+We can mix data types.
+No problem at all.
+Ada, that actually works as well, just to show that.
+And we can put London.
+So, this actually works as well.
+Name, age, city.
+We can put equal here to person, right?
+So, this actually works perfectly fine.
+Let's actually try it out as well.
+Print.
+That would be name first.
+Print.
+Age.
+Print.
+City, right?
+And if I run this, I actually get Ada 36.
+It works perfectly fine.
+But, the question that I need to ask you guys is, how many variables do I need to actually have here?
+Do you guys know?
+Maybe somebody's writing in the chat.
+I can't actually see the chat directly.
+I need to actually access.
+But, yeah.
+Okay.
+Kritika.
+So, we should have, based on the number of values we have in the tuple.
+Yeah.
+Is that a must?
+Well, let's try it out.
+Obviously, we need to take off the city.
+But, does this work?
+And, if we run this, we actually see a value error, right?
+Too many values to unpack.
+Expect the two got three, right?
+So, when it comes to tuple unpacking, what was this called as well?
+So, let's actually put that in the title so you can go back here.
+Tuple.
+Here we go.
+We need to have the equivalent amount of variables to match the number of unpacked values, right?
+So, important to remember.
+So, tuple, we could say tuple style unpacking also kind of gives us a neat, kind of a neat Python way of swapping values.
+So, this is very different from different kind of languages is that we could do something like this.
+So, let's say A equals 10.
+And then we have a B equals 20.
+We can do some kind of multiple assignment here.
+That's very Pythonic here.
+So, A and B equals B and C.
+No, sorry.
+B and C.
+B and A, of course.
+So, A and B equals B and A.
+And if I want to try that out, I can actually do print.
+Oops.
+Print A and B.
+And if we run this, this actually works.
+We will see that A is now...
+Let me clear that up.
+So, that's pretty neat.
+So, what we see now is that A is actually 20 and B is actually 10.
+And if you're coming from Python, well, you don't see anything here.
+Well, this is kind of obvious.
+It is quite clear.
+I understand that.
+But if you're coming from another language, then I will ask you, did we actually need a temporarily variable or not?
+Right?
+Especially if you're coming from, if I remember correctly, C sharp, right?
+You need some kind of temporary variable in order to do this, right?
+So, this is just a small example of Python's, what do you call it?
+Well, compact syntax.
+That was, I think that's enough of tuples.
+Let's actually move to the next part.
+And that would be, next in line is sets.
+So, next we have sets.
+And here, sets, well, the definition would be a collection where every value is actually unique.
+So, this is very useful when it comes to duplicates.
+So, sets would be very useful for this, right?
+So, let's put a set of numbers.
+Numbers, and I'm going to put equal.
+And I actually used square brackets here.
+Don't confuse it to a dictionary, which we're going to talk about later on.
+But, let's put one, two, and a three, and a four, right?
+If I print these numbers, numbers, we will see something, right?
+One, two, three, four.
+Very good.
+So, what we see here is that these curly brackets actually created a set, right?
+This works.
+So, it creates a set.
+But, like I mentioned earlier, be careful a little bit.
+It's not dictionary here.
+It is actually a set, since dictionary also uses curly braces.
+But, it is kind of different, right?
+But, we will get into dictionary soon, and then we can compare a set to a dictionary as well.
+So in order to see a good example of set, I'm going to put something else to our numbers.
+So let's actually not create it from scratch.
+So numbers equals, let's put a 1 and a 2 and a 2 and a 2 and a 3 and a 3 and a 4, something like that.
+If I were to print my numbers this time, what is actually going to happen?
+Well, let's actually try it.
+When I run this, I actually get 1, 2, 3, 4.
+So the unique values actually remain.
+A more practical example would be maybe names.
+Let's say we got some users, right?
+Oops, there'll be a list.
+Now we're moving to sets.
+Let's say we got Anna and we have Bob.
+We have Anna again, Charlie, and let's take Bob again, right?
+And let's not actually do that.
+Let's actually twist it up a little bit.
+Let's put it into a list instead, a little bit quicker.
+All right.
+So we've got a list now with names, right?
+So we've got a list of names since we're using square brackets here.
+So this is a list, not a set.
+So Anna, Bob, Anna, Charlie, Bob.
+So as we see here, we have names that are repeating, right?
+And let's say we want to get the unique elements here.
+That would be Anna, Bob, and Charlie, right?
+So let's skip the second Anna and also let's skip the second Bob here.
+We can actually do that to our list.
+So let's create another variable.
+We can put it as unique users.
+Let's call it unique users.
+And what I do is use set to our users.
+And then if I come out here and now print our unique users, we will actually get the unique users.
+Hopefully this actually works.
+So this is a very common pattern.
+So if we were to only care about the unique values, we can convert a list to a set.
+That could be super useful.
+Gloria.
+Yeah.
+Can we access each of the elements in our set with index as we do with the list?
+Interesting.
+Let me just see if I'm actually going to...
+I'll get back to that question.
+All right.
+Let me just do a little bit more on set and then you might answer that question.
+All right.
+Okay.
+Very.
+Yeah.
+So we don't give anything away right now.
+So, but a very good question.
+Now, let's say, let's say just play with, let's say languages here.
+Languages.
+And then we're going to create a set here.
+And we're just going to put unique elements.
+We're going to say Python.
+And we're going to put Java.
+Then we're going to put, I don't know, say C, C sharp.
+All right.
+And then I actually can do some set methods.
+I think this wasn't what Gloria was into, but yeah.
+So, so we can use some set methods here.
+So what we can do here is, for example, languages.
+We can also add a language, for example.
+In this case, add a language or add an element to the set.
+And let's try, add a go here.
+And then also print languages, right?
+And if we want to print this out, we will actually put go here, right?
+We can also remove languages dot remove.
+We can actually remove, for example, Java and then print line languages, right?
+And let's see if it actually removes.
+First of all, it's going to add go and then remove Java.
+And let's see if it actually does that.
+Well, yeah.
+We see that it actually, go was added, right?
+But, do you notice something?
+It just repairs.
+Sorry?
+It's like a random.
+Very good.
+So, therefore, I think we kind of answered your question, right?
+So, we can actually add, we can actually remove.
+But, as you noticed here, we do not normally think about, when it comes to sets,
+we don't think about elements as elements by their position.
+Yeah, they don't have like a fixed position then.
+Yeah, so sets are more about membership and uniqueness and not indexing.
+So, for example, if I come here and do this, let's say print with this,
+and then I'm going to print a zero, for example, and do that to that set.
+Well, if that would work, I would get Python, right?
+See what actually happens.
+When I run this, I actually get a type error, right?
+So, this does not work because sets are not indexed sequence or sequences.
+So, next question, how we can access each element in a set?
+Would you use a set then?
+Or would you have a set then?
+Probably not, right?
+That's not where you would use a set.
+So, let's actually look at what the next part that would be actually set variations.
+But this is more where you usually use sets.
+And we're not going to dive into that too much.
+But it's just mentioned that it exists and how it usually works.
+So, let's say we have...
+Let's say...
+Okay, I'm just going to put something like this.
+So, maybe you won't agree with me.
+But let's say, put backend languages.
+And I'm going to put, let's say, Python here.
+Python, right?
+And then I'm going to put...
+We got Python, but we also got, let's say, Java.
+And we got, let's say, C Sharp, right?
+So, this is classical backend language, right?
+But then I'm also going to put data languages.
+And this time, I'm actually going to put...
+Well, let's put Python, right?
+Python again here.
+But this time, I'm going to put, let's say, R.
+And also, something called Julia.
+You can look them up later if you want.
+So, now I have two unique sets, right?
+So, I got Python, Java, and C Sharp.
+And then in the other one, I got Python, R, and Julia.
+So, what I can do here is something like this.
+Print.
+And this is super normal to use when it comes to sets.
+What I can do is backend language.
+I'm going to put this symbol.
+And then I'm going to put data languages, right?
+And also, let's do another one instead of...
+Here, I'm going to use apply symbol.
+So, this is actually called ampersand, right?
+And this one would be pipe, right?
+So, what do these actually do?
+So, ampersand actually gives us the intersection.
+And when it comes to pipe, it gives us what we call the union, right?
+So, let's actually try them out and see what actually happens.
+And we see that we get Python here.
+And then we get Python, R, Java, Julia, and C Sharp.
+So, ampersand, with ampersand here, with intersection,
+we get the values that actually exist in both sets.
+While it's using union or pipe here, we get all the unique values from both sets.
+So, this is a classical way of using sets, right?
+And there's another one.
+I don't know what it's called, but it's a specific name.
+I can look that up during the break.
+But let's say backend languages, and I could put the minus here, data languages.
+And what do you think this does?
+Let's actually try it out.
+What it does...
+Yes, please.
+Yes, of course.
+Let me just comment that out.
+So, we get a layer here.
+So, we get Java and C Sharp, right?
+So, what this does, actually, is to give us the values that exist in the first one,
+in the first set, but does not exist in the second set.
+And then, if you want, you can also flip the script if you want.
+You can put data languages first, and then you can put backend languages afterwards.
+All right?
+Specific name, I don't remember.
+We can fill this out later.
+Yeah, there you go.
+So, this is how you would use...
+How you rather would use a set.
+Hmm.
+Let's also look at a different thing.
+Let's see if I answer your question, Moana.
+I'll get back to you.
+So, one usual question that I get, and if it's not, you will see,
+is this kind of Python dacha thing.
+So, let's say, what if I put, essentially, this empty collection, all right?
+And then, I'm going to put it as...
+So, somebody might call this as an empty set, right?
+But this does not actually create an empty set.
+And if we were to print this out, print, and then use type here, which we used yesterday,
+type, empty collection.
+Let's see what we get here.
+We actually get a dict.
+So, we did not get an empty set.
+We actually got an empty dictionary.
+So, this is not...
+Therefore, this is not a set.
+This is actually a dictionary.
+But Aladdin, I really want to create an empty set.
+How do I actually do that, right?
+That would be the next question in line here.
+And yeah, can we do that?
+And what do you say, guys?
+Can I actually create an empty set?
+Nobody was going to answer that one.
+Okay.
+I think Georgie.
+Yeah.
+Just put set in front of curly brackets, and it will create set instead of...
+Yeah.
+Yeah.
+So, what we can do is, just like you mentioned, let's just make it super clear.
+So, what we can do is, well, let's create a variable that is actually called empty set.
+So, just like I think it was Georgie.
+Like Georgie mentioned here, we can actually do a set, something like that, right?
+And then, if we come up here and then do print, just to check that it's actually an empty set,
+we can actually do type tset and see what it does.
+And when we run this, we will actually get a class set and not a dictionary anymore.
+So, this is how you would create an empty set.
+Yeah.
+That's basically the idea.
+Let's hear.
+Moana.
+It is called difference.
+For a backend language, minus data language, it's called difference.
+Not minus, right?
+Difference.
+Thank you for that one, Moana.
+You saved me some time.
+Georgie, did you have a question or is it from before?
+It was from before, sorry.
+Oh, right, right, right, right.
+Maybe somebody also write it in the, let's see here.
+Oh, the faster execution.
+I remember that was before, time was used to fix data.
+Python is a script-based language.
+Yes, that's true.
+No insertion order is not guaranteed in sets.
+So, that's removes duplicates.
+That's the last duplicates.
+Yeah, that's true.
+In set.
+Exactly.
+So, all right.
+Let's see here.
+Then we're going to move to the next part.
+And I think we should take a little break, at least.
+We're not going to take 15 minutes.
+This time we're going to just take 10.
+Yeah.
+And then we're going to move to the last part of the lesson.
+And then that will be dictionaries.
+So, if you have any questions about dictionaries, hopefully we'll answer them after the break.
+Let's see here.
+Gloria.
+Yeah, but let's see that I want to go through each element in the set.
+So, how can I print, for example, in the names?
+We have some names and then I want to say, hello, this is an invitation for name one, name two, name three.
+So, how can I print that?
+How can I use the elements in the set?
+You mean by using a loop or something to take them out one by one?
+Like an in or how can you use them?
+We will kind of cover that when we get to loops.
+And I think that's in tomorrow's lesson, actually.
+Okay.
+So, we're going to move a little bit into loops.
+So, let's not get ahead of ourselves.
+But it's a great question.
+And then we can actually specify where and in what.
+But I see what you're asking there.
+But, yeah, it would be a little bit far-fetched since you wouldn't use set for something like that.
+But, sure, we can take a look at that.
+Okay.
+Thank you.
+Oh, I see in the comments some people is commenting as well.
+So, I will take a look there.
+Free in my sense.
+Yeah, very good.
+We will do that in various ways.
+All right.
+Let's take a little break.
+And then, yeah, let's get back here at 11.05 or something like that.
+Yeah, 11.05.
+That's perfect.
+And then we will take the last part and then we can call it today.
+It was a little bit longer lesson than I expected, but that's all right.
+All right.
+Back at 11.05.
+All right, guys.
+Last run here.
+Before we move on.
+Well, we had a question, compiler.
+And I think Haidem answered it very well where he said, well, Python is a script-based language.
+And that's actually true.
+So, that could be confusing when coming from, well, if you're coming from another language, right?
+So, in Python, we usually talk about, well, the syntax error.
+We talk about runtime error rather than compilers, right?
+So, yeah, a syntax error is actually detected before the program can actually run, right?
+While a runtime error would occur while the program is running.
+So, yeah.
+And we had another great question, which was about the reference type, right?
+That example, where was it?
+When it came to lists, right?
+There we go.
+We kind of made a little difference here, right?
+So, here we saw that it actually did not change.
+It did not do unique lists, right?
+Whilst here, when we use copy, it actually created another list, right?
+So, we got a question about reference type here.
+And that is a usual question if you're coming from, let's say, another language.
+Especially, I think, C sharp, right?
+So, yes, of course, you can think of the terms of references.
+Absolutely.
+But in Python, well, variables, let's say, it kind of holds references to an object.
+So, when we write list B equals list A here, well, both variables here are referenced to the same list object.
+And since lists are mutable, so changing it just by changing the list through one variable will also visibly change through the other variable.
+So, the question actually could be is, is actually a list, a reference type in Python?
+Well, informally, I would say yes.
+But Python does not officially at least divide types into value types and reference types in the same way as languages in C sharp.
+So, yeah, in Python, all variables refers to objects, right?
+Okay, yeah, that was my question, Christian.
+Yeah, well, you know, objects are also reference types.
+Yeah.
+As I, yeah.
+Well, it's still a computer.
+I mean, even if it's a virtual machine, it's still a computer.
+So, it has to be a value type or a reference type, even if they don't want to use that jargon.
+And you're kind of correct here.
+So, both variables here refer to the same list in memory, of course.
+That's why it wouldn't affect, right?
+That's why we see list A and list B as the same thing.
+But when we use list A copy here, Python actually creates a new list object.
+So, the two variables now refer to different, actually different lists.
+But as I said, we don't usually classify Python types as value types and reference types like in some other programming language.
+Instead, kind of think of it, it's, well, you could say it's better to think of it as variables as names that refers to objects.
+I think that kind of clears things, hopefully.
+Or what do you say, Christian?
+Yeah, well, I can imagine there are heated discussions in online forums about this.
+But we don't have to go there.
+Okay, thanks.
+Thank you.
+Yeah, that's why I also needed some time to formulate this as well.
+But, yeah.
+All right.
+I don't really care.
+I just want to know how it works.
+It's good to clarify, right?
+Yeah.
+Okay, thanks.
+No, no, no problem at all.
+All right.
+Let's move on.
+Last part here.
+Let me see here.
+Yeah, we said dictionaries, right?
+And, of course, we need to cover dictionaries.
+No, that's not how we spell dictionaries.
+We spell it like this one.
+Dictionaries.
+So, a dictionary, well, they store, it stores things in a key value pairs.
+So, key value pairs is kind of limited here.
+And I'm going to show you, of course, the key value, right?
+So, if you're coming from JavaScript, you may think of objects.
+And if you're coming from Java or C Sharp, you may think of it as maps or maybe dictionaries as well.
+And the important concept here is instead of using a value by a numeric index, we access it by using a key.
+And I'm going to show you what I mean by that.
+So, let's create a dictionary here.
+Person equals.
+And just pop quiz.
+What am I creating now?
+What did I just create?
+Anybody?
+A dictionary.
+Yeah, exactly.
+A dictionary.
+Very good.
+You're observant.
+So, this is an empty dictionary.
+It's not an empty set, right?
+We kind of mentioned that already.
+So, just by doing this, we know that we're talking about the dictionary.
+But let's actually create some content inside it as well.
+So, let's say we're going to create the first name.
+And then I'm going to put...
+Well, let's stick to Ada.
+And we have an age of 36.
+And then we got a, let's say, 30.
+Sure.
+I think we used to London before.
+So, let's stick to London.
+Let's keep it there.
+So, what I've created now is three keys and three values.
+So, the key would be name.
+And the value of that key would be Ada.
+And the key age, the value would be 36.
+And the key city would be the value London.
+So, this is actually how you do it in Python.
+We can actually print this out.
+You can just see that everything works fine as well.
+And we get our dictionary just in a straight line.
+Just like we wrote here.
+It's the same thing.
+Name, Ada, age, 36, city, London.
+So far, so good, right?
+Of course, we can access them as well.
+We can access our values, right?
+With what?
+Well, what would we use?
+Well, we would use our keys in order to access our values.
+Excuse me.
+So, let's not print the whole dictionary here.
+Now, let's print a specific value.
+So, what I can put here is person.
+And now, instead of putting an index, I would put the key.
+And it actually helps me a little bit here.
+So, let's start with the name, for example.
+Sure.
+And if we were to print that out, we actually get Ada by using not the index, rather the key.
+The key name.
+Same thing if we want to do it with another key, person.
+And this time, let's get the age of Ada.
+And we actually get 36, as you see.
+So, we're not using an index.
+We're actually using keys, right?
+So, that's the first fundamental thing here.
+And we can build on that a little bit.
+We can actually change and add values, as well, which we're going to do now.
+We can use the same dictionary here that we just created.
+And what we can do here, if we want to change, let's say, for instance, we want to change the age.
+Instead of it to be 36, let's change it to 37.
+How would one do that?
+Well, just person.
+And what do we want to change?
+Well, that would be age.
+Now, we don't want it to be 36 anymore.
+We want it to be 37.
+And if I now go and print our dictionary, this person.
+And if we were to run this, we will see that the age has now changed to 37.
+So, we can actually change a value for an existing key, which we just proved.
+Could I do this?
+37.
+But what if I come here and do this person?
+And I'm going to add a key that does not exist.
+Let's say, language.
+That's a key that does not exist in my dictionary, right?
+And then I put language equals Python, for example, right?
+What happens now?
+If I come and print this out, it's now to our dictionary.
+You'll see what?
+Well, you see that the key languages did not exist before, right?
+But now it actually exists in our dictionary.
+We have actually added the language, the key language with the value Python, a new key value pair.
+No problems at all.
+And it will be put at the end, of course.
+A typical question would be, can I do this?
+Let's take a new dictionary for this example.
+So, something that's important to remember before you stumble upon it.
+Let's create a new dictionary.
+Let's do name here, for example.
+Name.
+I'm using the key name for Ada, right?
+And then let's say, I want to use the same key here.
+Name.
+Grace.
+So, it's not actually complaining, right?
+But, will this work?
+If this works, well, you would get a dictionary with a key value pair, two key values pairs.
+That would be name, Ada.
+Name.
+Grace, right?
+Let's actually run this and see what happens.
+We actually get name.
+Grace.
+It's good to remember that if I use the same key again, I'm actually not creating a second value for that key.
+I'm actually replacing it.
+So, I actually replaced Ada Grace.
+So, something to be careful with.
+Some more when it comes to our dictionary.
+We create a new dictionary here.
+But instead of, yeah, we can stick to the name Ada.
+But instead, we kind of do, let's say, yeah, age maybe.
+That would be 36 again.
+All right.
+What happens if I try to access a key that does not exist?
+Does that work?
+Well, obviously, it shouldn't, right?
+So, let's put print person.
+And let's put a key that does not exist.
+That would be city, for example.
+So, if I want to do this, we actually should get a key error.
+Let's see.
+Print.
+Oh, sorry.
+Let's try to print this.
+And we actually get a key error.
+City, right?
+Because city does not exist, right?
+So, what just happened is that our program just crashed, right?
+With the key error.
+But what if we don't want it to crash?
+What if we wanted to maybe return none, for example, when the key does not exist?
+Could we do that?
+Well, yes, we can.
+So, what we can do here is actually maybe do something like this.
+Let me leave that one so you see the difference.
+What I can use here is something called get, and then instead of putting it in square brackets, I actually put it in normal brackets, get, and then I try to get.
+We said city, right?
+And also, I can put something here as unknown, all right?
+And we try to run this.
+This time with get, we actually get unknown.
+So, we can also provide a default value, which would be unknown in this case.
+And if we didn't have unknown, we would get none, right?
+So, we can do it with the default, and without anything, and then we will get none.
+And the program doesn't crash.
+So, that's good to know.
+Just some tips and tricks.
+Let's look at some more things when it comes to our dictionary.
+Can we use that one?
+Let's add something else.
+Let's say, let's go back to our data.
+What we can do here, we can do some more things.
+So, we can actually use print, let's see, person, and we can do something like this, keys.
+Let's see what this prints out when I use keys here.
+It returns a set-like object providing a view on the dictionary, it takes keys.
+So, if I run this, I get name, age, city.
+So, keys actually gives us keys, and that's it.
+If I do something else, let's say print, and we can try another method, person.
+I can also, since I can also do keys, I can also put values here.
+That works perfectly fine as well.
+So, if I run this, I actually get all the values, which would be Ada, 36, and London.
+You can try a third method here.
+Method, and of course, there are more, but let's start with these ones.
+Person, and then let's put items.
+Let's see what this, what happens when we do that.
+We actually get all items.
+So, items gives us the key value pairs, right?
+So, the first key value pair, the second key value pair, the third key value pair.
+And we're not going to dive into this too much.
+We are going to cover this a little bit more later on, especially when we come to our, when we're going to expect data and so on.
+But we will get there, we will look into this even deeper later on.
+But it's just to introduce some methods.
+And these methods are going to be useful also when we're going to use loops later on as well.
+Now, small challenge like before, but let's create a new dictionary.
+But this time, I'm going to do it a little bit nested.
+And this is super common in real programs, of course.
+So, let's do this.
+Students, that, what am I creating?
+A list.
+Yeah, I'm actually creating a list.
+Very observant.
+So, now I'm actually creating a list, right?
+And in my list, I'm actually creating what?
+A dictionary, right?
+So, a list of dictionary, all right?
+So, in my dictionary, I'm going to have key values.
+So, my key, first my key will be name.
+And then I'm going to put, no.
+And here I can put a score, for example.
+Score, 85.
+So, that's my first dictionary.
+But I can actually create a second dictionary here.
+Let's not have Anna anymore.
+Let's have Bob.
+He has a different score.
+Let's say 72, something like that.
+That's too much.
+72 is enough for Bob.
+And then we have this next, with another dictionary.
+And instead of Bob, let's put Charlie.
+And Charlie has a point of, I don't know, 91, right?
+So, this works.
+So, what do I have here?
+Well, I got a variable, started with students, with a list.
+And this list contains three separate dictionaries, right?
+Three dictionaries in this list.
+So far, so good.
+Let's actually print it out.
+Print students.
+Yeah.
+Works perfectly fine.
+No errors, no errors, no nothing.
+I see that it's a list.
+And I see that I have three separate dictionaries inside that.
+All right.
+So far, so good.
+So, a list containing dictionaries.
+Works perfectly fine.
+But, let me give you a small challenge here.
+How would one print out, let's say, a specific score?
+And let's try to aim to a specific score.
+Let's try to aim at Bob's score, which would be 72.
+So, what I want to print here is actually 72.
+So, how would my prints look like?
+So, try that out.
+Take a second.
+A second.
+Okay.
+Takes a minute to try to actually print out 72.
+So, I'm going to highlight that one.
+Try that one.
+Right.
+I see that we got some answers.
+Some people have already written it in the chat.
+Yeah.
+Gloria.
+You want to take this one?
+No, no.
+I have a question, but it's not the solution for the exercise.
+I want to ask if a dictionary key could be a number or always it should be a string.
+Sure.
+We can try that one.
+We can try that one in a minute.
+All right.
+Okay.
+But, let's see here.
+Can we...
+Did you have an answer for this one?
+Okay.
+No, no, no problem.
+Mark, tell me.
+Yeah.
+It's student bracket one.
+Exactly.
+One, right?
+One, right?
+Bracket, like an apostrophe, and score.
+Score, right?
+Yeah.
+So, that will actually print out the score 72, perfectly fine.
+So, what we're showing here that we did not forget the rules that we have covered during
+today's lesson.
+So, when it comes to a list, it comes to index, right?
+So, when we're accessing this first, this list here, and then we're looking at index, well,
+this dictionary would have index zero, since we're still in a list, nothing changes, right?
+So, this has index zero.
+The second dictionary has index one, and the third dictionary has index two, right?
+We want to access this dictionary specifically.
+Therefore, we use one, index one, to go to this dictionary.
+And when we enter the dictionary, well, now we're not using index anymore, since we're inside
+the dictionary.
+And inside the dictionary, if we want to get a specific key, we would use the key name.
+And in this case, it's actually score.
+Therefore, we need to put score.
+So, this is something to, yeah, to be started with.
+So, first, we accessed a list index, which was one, and then we actually used the key score,
+which will give us a score, which is actually 72.
+And if I remember correctly, you're going to get in the lab more ness.
+No, you're not.
+Forget that.
+Anastasia?
+Yeah, I was just wondering if you could do it the other way around and use lists as values
+for the dictionary.
+So, yeah, can I use a list inside a dictionary?
+Right.
+Yeah.
+And that's actually true.
+Yes, sure, I can.
+Okay.
+Let's say, I don't know.
+Let's say that Bob has two scores.
+He has score 72, and he also got the score.
+I don't know why, but let's make it different from that one's score.
+So, 86.
+All right?
+I don't know why he has two scores, but let's just imagine that he does.
+All right?
+So, if I wanted to get the score now, what would I do?
+And I need to think about it a little bit.
+Well, first, I want to enter this dictionary.
+That would still be one.
+I still want to access the value of score.
+Therefore, I need to put score.
+But now, I'm actually entering a new list.
+And this list contains index 0 and index 1.
+And which one do I want to access?
+Well, index 1.
+Index 0, right?
+Therefore, I need to put index 0.
+And if I run this, I should get 72 as well.
+Did that answer your question, Anastasia?
+Yeah, I did.
+Can I ask another thing?
+Say you've got a class of people, and you want to...
+Each person has a bunch of information that basically belongs to them.
+What would be the best way to organize that?
+Would that be, like, a matrix or a list of dictionaries or a dictionary of lists?
+Or, like, what would you do?
+Oh, the best matrix, I think, depending on what.
+Usually, I'm talking about organizing it yourself.
+But usually, you will get, let's say, we are using an API or something like that.
+And we want to get a specific thing from the information there.
+And it's usually already a matrix.
+Yeah, I would say a matrix.
+How come?
+Because why I would guess that, well, that would be because they are usually written in that way.
+So that's why I would say that would be the most convenient one.
+Is it or is it not?
+Maybe we can look at that when we get there, to organizing ourselves, what would be the most useful way.
+It depends.
+All right.
+Thank you.
+I don't have a straight answer for that, to be honest.
+Yes.
+Yeah.
+And we've got another question.
+Can we use, let's not use this one.
+Can we use a key as an integer?
+Let's actually try that test.
+So we have a dictionary and let's put a one, column, and dictionary, there we go.
+All right.
+Let's try this out.
+So we can do print.
+We can start off with print test.
+So just by seeing this, it should actually work, right?
+We can try the one that we used to, a normal string.
+It will print out the two, right?
+But if I come here and a one, does this actually work?
+And it doesn't.
+So yes, a key can be an integer.
+I think that was your question, Gloria, if I remember correctly.
+Yeah.
+That was my question.
+All right.
+Yes.
+And that was actually the final part when it comes to dictionaries.
+So now we have looked at dictionaries, we have looked at lists, we have looked at tuples,
+we have looked at sets, right?
+And now it's time for you to try them out and let all this sink in.
+So what we're going to do in a minute or so, let's take a break, of course.
+Take a little break, maybe 10 minutes or 15 or something like that.
+And then grab some coffee and you will find today's lab, just like yesterday.
+But it's going to be, of course, a different plan, and I'm going to link it.
