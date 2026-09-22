@@ -1,0 +1,1246 @@
+So, yesterday we mentioned a little bit about the plan of the week.
+So, yeah, today, normal lesson, just as always.
+And we have a lap, just like always.
+And tomorrow, Thursday, we're going to have a small test
+that actually covers everything we have gone through this couple of days.
+And, yeah, just like I mentioned, the text is not going to be graded.
+So, it's not about prestige or something like that.
+So, it's more for you to know that you don't need to catch up on anything, right?
+And so, you get some pointers to what you need to actually dig into, right?
+And also, it's something for us to see if everybody's following along and so on.
+So, that's why we're doing the test.
+So, it's not going to be graded in that way,
+that you're going to go grade on your exam or something like that.
+And the rest of the day, and also Friday,
+we're not going to have any lessons that we have had.
+So, we're just going to have catch-up days.
+So, the idea is to catch up with the labs that you still haven't finished.
+Therefore, I expect all the labs that we have done so far to be done by Friday.
+By Friday.
+Pushed up to GitHub, committed, and so on.
+Yeah, that's basically the idea.
+Any questions about the plan?
+So, no confusions there.
+All right, we're going to continue with the, I would say, part one of the fundamentals.
+Part one is a little bit longer than part two, but still, I would divide it somewhere here.
+So, the last part of part one, fundamentals, and then next week, we're going to cover the rest.
+And that will be it when it comes to fundamentals.
+All right, so, what have we done so far?
+Well, I would say we have covered a lot of things, right?
+So, I just looked at our checklist.
+And, yeah, we have covered variables, strings, collections, also conditions, right?
+We've looked at loops, functions, scope, as we did yesterday, args and quarks.
+And today, well, we're not introducing anything new, no new programming concept in that way.
+So, it's more common Python patterns for expressing things that we probably already know.
+But you may hear the word Pythonic.
+So, yeah, Pythonic code generally, well, means a code that follows common Python, what can you say, Python conventions, and, well, and uses the language in a natural, readable way.
+And it does not mean that you always have to write the shortest code possible, because readability don't matter, right?
+I think we have stumbled on this dilemma sometimes, and we're also going to do that today.
+So, let's start with something we already know.
+Let's say I have a list of numbers.
+So, we have a list of numbers.
+1, 2, 3, and 5.
+And let's say I want to create a new list.
+And in this new list, it will contain these numbers for each number multiplied by 2.
+So, that's the basic idea here.
+So, we have a new list, doubled numbers, equals, well, an empty list, right?
+We could do this in the way that we have learned so far, or at least what we have spoken about so far, with a little forward loop for a number in numbers.
+And here we could use, well, we could use append, which we have also spoken about, number multiplied by 2, right?
+And then we can also print, right?
+A new list, which was called doubled numbers.
+All right.
+Let's run this and see if it works.
+And there you go.
+So, the double numbers have each number doubled, right?
+So, there's nothing new here.
+Nothing that we haven't covered yet.
+But, and there's nothing wrong with this code.
+I want to emphasize on that.
+There's nothing wrong with this code.
+It's clear.
+It works.
+And so on.
+But this pattern that we did just now is extremely common, right?
+Create an empty list, loop, transform value, append the result into this new list, right?
+This is extremely common.
+Therefore, Python actually gives us a compact syntax for this.
+And this is what we call a comprehension, or rather a list comprehension, excuse me, a list comprehension, right?
+And this is what we're going to start with today.
+So, list, so we're going to do the same thing using a list comprehension.
+So, I'm going to use, well, I can use the same numbers here.
+That will be, all right.
+So, what I could have done here is when I create the variable here, double numbers, I could have just created an empty list, right?
+And then I can actually start with my for loop.
+Some people like to do this in this way, or number in numbers, right?
+For number in numbers, and then come to the beginning here, and then write what we actually want to do.
+Number multiplied by 2.
+Or, some people would like to write from the beginning to the end, reading it something like, give me number times 2 for every number in numbers.
+Give me the number times 2 for every number in numbers.
+Or, if you want to think in a kind of loop way, you can start from there, and then think, well, what am I going to do with loop?
+Well, numbers times 2, and that's it.
+So, this would be equivalent to this.
+And, of course, we're going to build on this.
+So, we're going to see more and more of what we can do with our comprehensions.
+And then, at the end here, we can come and just print, just like we did with the double numbers.
+We'll actually print this out, just to prove that all of this is the same thing as this line, line 1688.
+And let's run this, and we'll see that we actually get the same answer.
+Pretty good, right?
+Yes.
+Gloria?
+Is it a good practice, or is it a good idea to use parentheses to separate things there?
+So, I will save that question a little bit.
+Why?
+Because we're going to build on this, and we're going to fall into the dilemma of best practice and so on.
+All right?
+Should I stick to this?
+Should I stick to that?
+And we will discuss it along the way, right?
+And what we can do to make things even clearer, as well.
+All right?
+Especially when we, well, I don't want to reveal anything, but we can also talk about dictionaries.
+All right?
+So, as we see here, well, the pieces are the same, right?
+Number times two, same thing.
+Number times two.
+The actual, what value do we want to the list?
+And remember that we have these square brackets here, as we're saying that we want to create the list.
+And this is how we created the list, just by putting the brackets here, right?
+And also, where do these values come from?
+Well, four numbers in numbers, right?
+Four number in numbers, just as we did over here.
+All right.
+Let's take a little bit more of examples, just to get the hang of it.
+So, we could take something else.
+Let's do another number example.
+So, numbers equals.
+Let's say we have a list of numbers.
+One, two, three.
+Sure.
+Let's take the same thing.
+One, two, three, four, five.
+All right?
+And let's say I want to square up all the numbers.
+All right?
+So, squares.
+Instead of just creating my empty list and then continue.
+Now, I've already created my empty list.
+And I could start from four, or I could say, what do I actually want?
+So, number to the power of two, right?
+Four, right?
+Number in numbers.
+There you go.
+That's it.
+And let's actually print squares.
+There we go.
+One, four, nine, 16, 25.
+Let's do this with another example.
+For example, let's say we have a set of names.
+Forget the hang of it.
+Nothing new.
+So, we have a list of names.
+Grace, let's say, usually using Guido.
+And then let's do some, let's use some methods here.
+So, let's say we want to create a new list with upper names, right?
+And so, I want to make an uppercase for these letters, for these names.
+So, we can actually mix methods here.
+No problem at all.
+So, what would I do?
+Well, I could start from for, for name in names.
+Just mixing it the ways of doing it just to satisfy anyone who wants to do it in either way.
+Well, it is pretty much the same result, right?
+So, for name in names.
+And what do I actually want to do with the names?
+Well, name, and I want to use a method here.
+And I will actually use, let's use, so let's use upper for this.
+Print, upper names.
+Let's run this and see.
+Ada, Grace, Guido.
+There you go.
+Let's build on this.
+I think you're getting the hang of it, right?
+Any questions so far?
+What we did?
+First, we're going to build on this.
+So, we could also filter values.
+Well, let's do that with the normal loop that we have already done before.
+Nothing new.
+And then we can use our comprehension to do the same thing.
+So, let's say we have our numbers here.
+Cool.
+Let's take some numbers.
+One, and two, and three, and four, and five, and six, and seven.
+Let's continue.
+Eight, nine, and why not?
+A ten as well.
+All right?
+And let's say I want all the even numbers in a list.
+Even numbers.
+So, the traditional way would be create an empty list, and then use a four loop.
+So, four, number in numbers, right?
+If number, we probably already done this example with lambda, lambda two, it does not give a
+rest, therefore it should be even, therefore it should be appended to that list, right?
+So, even numbers dot, and what should be appended?
+Well, the number, right?
+Right?
+So, if the number modulus two does not give a rest, therefore it should be even, right?
+Because two divided by two does not give a rest, while one divided by two actually gives
+a rest.
+So, it will not be appended.
+And then we can actually just print out and see if all the numbers got there that we wanted,
+all the even numbers.
+Let's see.
+Let's print the even numbers.
+And yeah, we get two, four, six, eight, ten.
+All the even numbers.
+So far, so good.
+Something we already know, something we've already done.
+But now, let's actually filter with a list comprehension.
+Or let's, not filter, sorry.
+Yeah, yeah, exactly.
+Filter.
+Or use a rather list comprehension with a condition, right?
+So, that's the idea here.
+So, the idea, what would we do?
+Well, with a single line, I would just do it.
+I would just do create the variable, even numbers, create the list.
+And now, let's think here.
+So, what do I want?
+Well, I want the number, right?
+Which number?
+Well, for number in numbers, right?
+And now, I can add my condition as well.
+If number lambda, lambda two equals, there we go.
+Let's actually print even numbers.
+Let me comment this out.
+This is the same thing, right?
+Let's see if I get the even numbers.
+Yes, I do.
+Two, four, six, eight, seven.
+So, we can read it and kind of give me a number for every number in numbers.
+The number is even too cool, isn't it?
+So, use a for loop.
+You can use it with a condition.
+Let's even do more.
+Let me ask you.
+Let me say we have a set of numbers.
+Let's use this one.
+List of numbers, sorry.
+Five, six, sure.
+Now, let me create a variable equals.
+Let me not reveal it while reading here.
+So, take a look at this one and try to...
+Try to read it and see what it actually will do.
+He should be able to do that with no problem since we have just done the same thing.
+We just...
+Anybody wants to go for it?
+What do we expect here?
+Sure, Fabian.
+We'll take each number by the power of two from numbers if it is even.
+Yeah.
+Something like that, right?
+So, the first...
+Let us run it and see.
+And yeah, as we see, we are correct, right?
+So, we get a four.
+This is two is even.
+Two to the power of two is four.
+And then we've got 16.
+This is four is even.
+And four to the power of two is 16.
+And then we get 36.
+Six is even.
+And six to the power of two is 36.
+And the rest is not even.
+Therefore, they're not in the list, right?
+So, first, the condition decides which values are included, right?
+And then the expression actually determines what goes into the list.
+That's basically the idea.
+We can do another one where we try to expect something.
+Where I can ask you what to expect better.
+Let's do it with some strings this time.
+Let's say we have names equals.
+Ada, today, this time.
+We got Bob.
+We got Alexander.
+We got Grace.
+And it was totally right.
+Now, I'm going to create a variable here.
+In order not to reveal, I'm going to use an X as a variable.
+Name, name, if, name, two, let's say five.
+Excellent.
+All right.
+What should I expect this time?
+Think about it.
+Look at it.
+Take a minute.
+Look at it.
+And then I will let you in.
+Who wants to give it a go?
+This will actually remain.
+Sure.
+Christian.
+If the length is above or equal to five, then it will be printed.
+Let's try it.
+And we see the only names that remain are actually.
+that got into the, well, the only names that remain were Alexander and Grace.
+So let me just change the variable name to maybe, I don't know, long names.
+Long names.
+All right.
+And there you go.
+Usually when we see a comprehension for the first time in Python, you could feel like,
+ta-da.
+But when it comes to list comprehension, well, it's pretty neat.
+It's great, right?
+When the transformation is simple, right?
+But let's say you got something to do.
+Let's say I want you to do something with a list of, maybe you got a student or something
+like that.
+I don't know.
+I want you to check several conditions.
+Maybe I want you to calculate several things as well.
+Maybe I want you to print something.
+Maybe I want you to update something, right?
+So trying to force all this into one single comprehension, well, can actually make the code much harder
+to read.
+Then I would say stick to the loop, right?
+So a normal loop is still perfectly ithonic in that way, especially when it's clearer, right?
+So you need to make kind of a balance, right, between the readability.
+So if a comprehension is still readable, then use the list comprehension.
+But if it makes it not readable anymore, well, stick to the loop then.
+Do not force comprehension.
+And since we can do this with lists, maybe you could already imagine, be determined that
+we can do this with also other collections.
+For example, the general idea or the same general idea exists also with dictionaries.
+We call it dictionary compression.
+So the same idea applies here as well.
+If we imagine that we want a dictionary, let's say, well, we want a dictionary where, let's
+say we have a set of numbers or a list of numbers.
+What's wrong with me?
+One, let's say two, let's say three, let's say four, and let's say five, right?
+So I want this all numbers to be my key, right?
+So the numbers are my key.
+And I also want a value for all these keys.
+And that would be the squares of these numbers.
+I'm just going to create an empty dictionary.
+So the value will actually be the numbers squared.
+Okay.
+So let's take just a loop to do this.
+So what we can do here is something like this.
+For number in numbers, right?
+Just like we have done before.
+For number in numbers, well, like the squares and where the number is actually the key, which
+will equal to, well, the number, let's say this works, right?
+Quares, right?
+Quares, squares, squares.
+There we go.
+And let's run this.
+And we see that we get our dictionary, right?
+1, 1, 2, 4, 3, 9, 4, 16, 5, 25, right?
+So we get the number as our key and the squares as our value.
+No problem.
+Nothing new.
+Something we know.
+It works.
+It's clean.
+So there's nothing wrong with the code, but we could do the same thing just by using
+a dictionary comprehension.
+So how would one do that?
+It would look something like this.
+I can keep this just so you can also read with me here and then we can.
+So we have our numbers, right?
+Let's keep them for now.
+I want my squares.
+I want it to be a dictionary, right?
+But now, could also here start from the end with the for loop or number in numbers and
+then come to the start here and then actually say, well, how would my dictionary look like?
+Well, I will have the key number and I will have the value number to the power of 2.
+And that's it.
+If you think that writing in my way, it's complicated, well, then we can do it like this.
+Number is the same thing, right?
+It's just a matter of how you read it, right?
+So the curly braces will actually create the dictionary.
+And before we start the loop, we just specify the key and value.
+So number is the key and the value would be number to the power of 2.
+For what?
+Well, for number in numbers.
+And there you go.
+Let's check if this actually works.
+Print and course.
+Let me just comment this out.
+And let's actually run this.
+We actually get our square numbers.
+2, 4, 3, 9, 4, 16, 5, 25.
+Pretty neat, right?
+We don't always need to use, or we don't necessarily only use dictionary comprehension just to create
+dictionaries.
+So we could also do dictionary comprehension existing dictionary.
+So let's actually take an example.
+Let's say we have a dictionary here with prices, all right?
+Equals to, sorry, that is not a dictionary.
+That is the dictionary, right?
+Our fruits.
+Yeah, let's take some fruits.
+Apple, for example.
+And we got maybe banana, banana, as, I don't know, five.
+And we got some oranges as well.
+Eight, all right?
+Now let's say we want to double the price, all right?
+So let's say we want to double the price using a dictionary comprehension from this existing dictionary.
+So how would that look like?
+Well, let me just create a variable.
+Let's call it double, double, double prices, right?
+Create our empty dictionary.
+We would write the key value, right?
+Just like we did.
+So this would be product, right?
+Product and price times this.
+We're doubling it, right?
+For what?
+Well, for product, product and price in sys.
+And then we can try to run this and see if that actually works.
+Print prices 20 now.
+Banana is 10.
+Orange is 16.
+So why did I use items here?
+You remember?
+See you guys.
+Sarani?
+Yeah, so do iterate as a key value, but...
+Since I want the key and value, right?
+So we use item here because we want both the key, the value.
+And there you go.
+As we saw earlier with our list comprehension, we can pretty much do the same thing.
+We could also filter dictionary by using dictionary comprehensions, of course.
+Let's actually do that.
+Let's take an example.
+Let's say we have some scores, both too.
+So we have Anna as a score.
+Let's give her an eight to five.
+And then we have Bob, 62 maybe.
+And then we have Charlie, 91.
+And we have Diana that's living on the edge, a 70.
+All right?
+Let's create a comprehension to actually filter the students who have passed the test, right?
+And let's put the test to minimum score to 70.
+So 70 and upwards, you actually passed the score.
+If you get 69 and so forth or less, you did not pass, right?
+And before I do that, I'm going to get back to this one.
+I'm just going to show you because I'm not going to write it in this way anymore.
+I'm actually going to write it like this.
+And this is perfectly fine to do.
+It's just like with the dictionary because I think it adds a little bit of readability.
+And it's nothing new.
+It's nothing that is strange or something like that.
+So what I'm going to do here, double price product, we can take each line for what it's actually doing.
+So take this, boom.
+And yeah, there we go.
+All right, same thing, nothing new.
+So I just wanted to show you that one because I'm going to write it in that way because I think it adds a little bit of readability.
+So let's take back the scores.
+And we said that only the people who have got over 70 or more actually has passed the test.
+So let's call the new dictionary to past equals.
+Let's start with an empty dictionary.
+Boom.
+Key and value, right?
+Name.
+And the value is actually score.
+Not scores.
+Score.
+Right?
+For what?
+Well, for name and score.
+Right?
+In what?
+Well, scores.
+And we want the key and value from that scores.
+So items, right?
+And do we have a condition?
+Yes, we do.
+If the score is greater than or equal to, we said 70, right?
+And this would be considered past.
+And there you go.
+That's it.
+Well, we could have done it in a single line, of course.
+No problem.
+We could have done that easily.
+But I think this adds a little bit of readability if I'm going to stick to that.
+And now we can print out all the past students and see if it actually worked.
+So let's run this.
+And we see that Anna makes the cut.
+Charlie makes the cut.
+And Diana makes the cut.
+So she's got 70.
+Bob needs to go home and study.
+All right.
+So that was actually our dictionary.
+Now the question is really, could we do this to our sets and tuples as well?
+Let me not reveal quite yet both of them.
+But let us first talk about sets.
+Sets, I would say, actually also support comprehensions.
+So let's try that out.
+So let me put some words here.
+Words equals, and we're going to create a set, right?
+But let's do it with a list.
+So we have a list here with Python, for example.
+We have Java.
+We have Python again, since we are trying to do a set, right?
+We have C Sharp.
+And we have, let's say, Java again, right?
+So how would one do that with a set comprehension?
+Let's correct the title.
+Set, right?
+We could call it length equals.
+Create our set here.
+And we can start with the end if we want.
+But the same, I'm not.
+So length, word, for, word, in.
+That's it.
+Let's actually print this out.
+So let's actually run this.
+Ah, okay, okay.
+Yeah, sure.
+So we got the length of every word in the words.
+But why do we only get two?
+Pretty interesting.
+Christophe?
+Yeah, it's because it's a set, right?
+It doesn't support multiples.
+Exactly.
+Exactly.
+It's only unique values.
+So set is nothing new there.
+But what we can look at here is something very interesting here is when it comes to our tuple.
+This is something I want you to take with you.
+So I'm going to actually do tuple, and this kind of reveals it, but I'm going to put tuple.
+Question mark, question mark, question mark.
+So you might kind of expect parentheses to actually create a tuple comprehension, just as we have done with the previous one, right?
+But let's say we have numbers equals to, okay, instead of creating, I will use range, all right?
+So number times two, four, number in range.
+And then let's print the numbers.
+And let's run this and see what happens.
+And we get what.
+What we see here is that it is not a tuple.
+It creates something called a generator.
+And generators, well, they are useful, especially when it comes to memory-efficient processing, right?
+But we're not going to go deep into that, this foundation course, at least.
+What I want you to take with you is, and I already prepared that one, is this.
+Just remember this.
+So when it comes to tuples, big no-no, only create generators.
+So when we have something like this, we've got a list comprehension.
+When we have a key value, and so on, we've got a dictionary comprehension.
+And when we do it like this, without key value, we're using the curly braces, but no key value.
+It will create a set comprehension.
+And when it comes to this one, it looks like a tuple, but it will actually create a generator expression.
+Or you actually created a generator expression, not a tuple comprehension.
+And yeah, that's pretty much it.
+And these are our comprehensions.
+I think you will find them very useful.
+But I can stress it more.
+Don't overuse comprehensions just because you can, or because it looks cooler or easier or whatever.
+Readability is always the most important.
+Yeah, and that's pretty much it.
+I think it's a perfect time to take a little break.
+And then we can continue with the rest of the lesson.
+I would say a little bit of part two of the lesson.
+Is that all right with you guys?
+Yeah, Christian?
+Yeah, this reminds me of Lambda functions.
+Is there any relation to that?
+Yes.
+No, no, sorry.
+We're actually going to talk Lambda.
+Sorry, they have them in Python as well?
+Yes.
+Okay.
+I said we do.
+Okay, that's...
+Since I'm team Python.
+Yeah, yes, yes, it does.
+All right.
+Yeah, let's take the break then.
+So let's take a break and then we're going to dive into Lambdas at the end of the lesson.
+Well, depending on where we reach, right?
+At the time and so on.
+So maybe we'll do it today or on Monday next week.
+All right.
+So let's take our break.
+We take our...
+In our first break, we usually take 15.
+So let's stick to that.
+So let's say...
+What would that be?
+10.
+10.
+All right.
+See you guys soon.
+We will come with some more fun stuff.
+All right, guys.
+Before we move forward, we're actually going to move a little bit back to something that
+we spoke about earlier.
+I believe it was Tuesday, Wednesday, Thursday last week.
+I could be wrong.
+Somewhere there.
+We kind of mentioned, or we briefly saw Enumerate, if you remember.
+But we're going to take that again if you have forgotten.
+No problem.
+So Enumerate.
+We kind of introduced it, but...
+We did not really dive into it.
+So we're actually going to dive a little bit more into Enumerate.
+More we can do with it.
+So what we saw briefly before is to actually...
+We just saw why it existed, right?
+Now let's say we have a list here of languages, and let's say Python, let's say Java, and let's
+say...
+I don't know.
+All right.
+And let's say I want the value of each value here, and also the index.
+So what we could do normal way of this actually works, this would not be using Enumerate.
+Now let's say we could do something like this for index, and we could use, for example, range, right?
+Look at the length of languages, right?
+And we want print index, and that would be languages index, right?
+Something like that.
+We could do that.
+Works.
+No problem.
+Let's run this.
+Zero, Python, one, Java, two, C-sharp.
+This works.
+But Python actually gives us a cleaner pattern for this.
+So we can actually do the same thing using Enumerate.
+So here we can come directly and do for index and languages, much cleaner, in Enumerate.
+With what?
+Well, languages, right?
+And then we just print it.
+Print index and languages.
+For index language in Enumerate.
+Print out the index and the language.
+Same thing, but much cleaner way, right?
+Using Enumerate.
+And let's see if it works.
+And yes, it does.
+So, yeah, we just unpacked the pairs directly in our for loop.
+But we could also, if we wanted to, we could have, let's keep the languages, but we could have chosen a starting number.
+So how would one do that?
+Well, for, for example, position, position.
+Language in Enumerate.
+And then we can do something like this.
+Languages.
+Now we can add a start.
+And we could say, start at one.
+And then we can just print, just as we did previously.
+Print position and language, of course.
+There you go.
+So it's pretty powerful in that way.
+Let's run this and see.
+We start at one, two, three.
+One, Python, two, Java, three, C sharp.
+So when do we use Enumerate?
+Well, let's say, let's say we only, if we only need the value, well, then use for lang, for lang, for lang, for, yes, language in languages, print language.
+Right?
+So here I would use just the direct loop.
+But if I also need both the position and the value, I would rather use Enumerate.
+So in this case, I would have done something like this.
+So maybe for, as we saw previously, for index language in, in what?
+Well, Enumerate.
+And then we would print out also the index.
+So, yeah.
+It's just to say that you can actually avoid manually, manually managing indexes when Python can actually do that for you.
+So that was a little bit about Enumerate.
+I'm also going to look at something called zip.
+So imagine that we have two lists and, for example, names here.
+So we have name, list, with, let's say, Anna, Bob.
+We got Charlie.
+All right?
+And we also have another list that has their scores.
+Say 85, 62, or 91.
+All right?
+So imagine these lists actually belong to each other, where Anna's score is 85, Bob's score is 62, and Charlie's score is 91.
+And one way of processing this list would be by using indexes.
+So I'm going to show that first, and then I'm going to use zip to show the same thing.
+So here I would do something like this for index, for index in, and here I would use maybe range, right?
+Names, right?
+And then I would do something like this, print names, index, right?
+And also, same thing for scores, right?
+And there, index.
+Something like that.
+That's right.
+Yeah.
+Anna, 85, Bob, 62, Charlie, 91.
+No problem.
+But Python actually has a function that does pretty much the same thing.
+And this function is actually designed for combining iterable position by position.
+We could use something called zip.
+So let me actually show that to you.
+So we could take for, for example, for name.
+So we have a name, and we have a score, right?
+In easy, easy peasy.
+So we have a name, and we have a score in each names and scores.
+So we want for every name and score.
+We want to what?
+Well, zip.
+What lists?
+Well, names, and, of course, easy peasy.
+And now we just can simply print the name and score.
+Much easier way than what we did before.
+So we're just zipping the pairs in the two different lists.
+Let's try it out.
+And yeah, it actually works as well.
+Anna gets 85.
+Bob gets a 62, and Charlie gets a 91.
+So the Tuple Unpacking here gives us a score.
+And we can convert it into a, with my phone here.
+Yeah, we can easily convert, we can convert it into a list to inspect the pairs.
+So what we can do here is to actually do something like this, just to inspect the pairs, which would be the list, zip, names, cores.
+And I think that was your question, Fabia.
+Let's see here.
+Print.
+Here's.
+So now we can actually clearly see the Tuples from where I was getting it.
+So here we've got the Tuples on a 85, Bob 62, Charlie 91.
+Therefore, I said that we actually do a Tuple Unpacking here.
+Yes, Fabia.
+When we do zipping with two lists of different lengths, will it simply just print out one of the bells?
+Yeah, and that's actually my, not my, in two examples you will see, different lengths, right?
+So we will get there.
+I have it actually in my notes.
+We're going to cover that.
+Just give it a second.
+So before I actually look at different lengths, I'm just going to take another thing that we can also do.
+So here we actually had what?
+Well, we have two lists.
+But what if I have three lists?
+So let's keep Anna, Bob, and Charlie, an 85, 62, 91, sure.
+But let's actually add a third list here.
+Let's say we have cities equals two.
+Let's say, I don't know, Stockhole.
+Got, of course, we need to get a boy.
+Since we have our students, we need to get a boy as well.
+And let's add something.
+Let's say Malma, right?
+So could we do this with three lists as well?
+Could we zip with three lists?
+Yes.
+We just add the third list when we zip.
+So for a name, so we have a name, we have a score, but now we also have a city, right?
+In what?
+Well, we're going to zip the three lists, which are names, which are scores, and also cities.
+And there you go.
+And now we simply just print, name, gore, and 85, Stockholm, Bob, 62, Göteborg, Charlie, 91, Malma.
+So zip can combine more than two intervals.
+No problem.
+To Fabian's question, what if they are in different length?
+All right.
+Let me just keep those to go.
+So we have Anna, Bob, Charlie, but this time we also have a fourth person whose name is Diana, right?
+But Diana doesn't have a score in the score list, right?
+So what will actually happen now?
+Let's actually take a look.
+For name, and we have a score.
+We said name and score, right?
+In zip the lists, names, and scores.
+Now let's actually print and see what happens.
+And that would probably just answer the question directly.
+So what will actually happen, Diana?
+Any guesses before I run the code?
+What will actually happen to Diana?
+What do you think?
+Yes, Johanna.
+I think she will be added, but without a score.
+That gives her name.
+Yeah.
+So you could imagine that.
+And I think that's pretty logical, of course.
+But if we run it, it doesn't actually.
+So a standard zip stops when the shortest iterable is, what can you say, done or exhausted, right?
+So this is actually important to know.
+So it will skip Diana.
+She says, Diana doesn't have a score.
+So it will stop at the shortest list, actually.
+Did that answer your question, Fabian?
+Yes.
+Ah, perfect.
+All right.
+We could also, let's do another thing with zip.
+The last thing with zip, and then we can move on.
+We could also, what was I thinking?
+Yeah, create a dictionary with a zip.
+Let's say we have our names here, and above Charlie.
+They have the scores, 85, 62, and 91.
+But this time, I actually want to create a dictionary directly.
+Yeah, we can actually do that.
+So let's create a variable here.
+Let's call it student scores, right?
+So normally, we said what?
+We said zip.
+We said zip, the names, and scores, right?
+So this is what we normally would do.
+But what we can do directly here is to actually add.
+That's it.
+Easy peasy.
+And now we can just print out the scores, or the dictionary that we just created, which will be called student scores.
+And this is a very convenient Python pattern.
+So as you see here, zip actually creates value pairs.
+And dict converts it to those pairs into a dictionary, as we see here.
+Pretty neat, right?
+You can nearly hear the woohoo somewhere far away.
+What was I thinking here?
+I'm thinking of how we did it.
+But yeah, we could actually take a little bit of unpacking here.
+So the next thing I wanted to speak about.
+Yeah, Gloria.
+Yeah.
+Can you go back to the example with the names when you add the cities, the tree list?
+Because I tried to run it, and I got the...
+Yeah, we have tree.
+Because I tried to run it, and I got the error.
+And I don't know where it's my error.
+But can you go through it again?
+Sorry.
+So we have three lists, right?
+With three objects here, three items.
+We have Anna, Bob, Charlie, 85, 62, 91, Stockholm, Jotaburi, and Monmouth.
+And then we did the for loop.
+With what?
+Well, the name, the score, the city.
+In what?
+Well, we want to zip the three lists.
+So just make sure that you're actually writing the lists here, and not name, score, city.
+Not the variables.
+And then we just print the variables.
+That's it.
+So just make sure that you didn't forget to put the S at the end here, and that you didn't put the S over here.
+Yeah.
+If you're using the same variable names.
+Yeah.
+For some reason, it prints the complete cities.
+It says, for example, Anna, 85, and then Stockholm, Jotaburi, Monmouth.
+Okay.
+But I will take a look later.
+Yeah, save that one, and we can call you up after the lesson, and we can take a look at it both of us.
+Thank you.
+Four eyes helps sometimes.
+It does.
+Probably just a small typo or something like that.
+Probably.
+Okay.
+So we have actually, of course, we said we're going to talk about unpacking, which is on King, right?
+So we have already covered unpacking several times, right?
+But I just want to collect the idea in pretty much one place.
+So let's say we have some coordinates.
+Coordinates.
+Let's take it step by step in order to get to my point here.
+10 to 20.
+All right.
+So what we can do is, we saw this earlier, is that we can do directly here, right?
+X and Y equals the coordinates.
+That actually works.
+And then we can print one coordinate at a time.
+So this will unpack it directly to the X, 10 to the X, and Y to the 20.
+10 to 20.
+Python actually takes the values from the collection and assigns them to the variables on the left.
+We could do this, of course, with a list as well.
+Let's say we have names equals Ada.
+We got, let's say, Grace.
+We got, for example, Vito.
+Then we could create three variables.
+So first, second, and third, right?
+And we want to do that with the names.
+No problems.
+And then we can just print first, for example.
+We could do the same thing with for our second, and, of course, our third, right?
+Let's run this.
+And we see Ada, Grace, and Guido.
+So unpacking is not limited to samples.
+We could also do this with lists, right?
+But what if I only hear about the first value?
+And let's say I want to collect everything else.
+So let's try to do that.
+So instead, let me just put some numbers here instead.
+I think it's clearer.
+So a list of numbers, we have 10, we have 20, we have 30, and we have 40, and we can stop at 50, all right?
+So what I can do is I want the first number, but I also want to pack the rest.
+And now, bearing yesterday's lesson in mind, what should I add to rest?
+What do you say, guys?
+Kritika?
+Yeah, so we should add a trick before rest.
+There we go.
+And I totally agree with you.
+Thank you, Kritika.
+Now let's see what actually happens.
+So print first, and print the rest.
+So when we run this, I wanted to actually ask you what data type will rest be.
+But anyways, it kind of already revealed it, right?
+So we get our 10 as first, but the rest will actually be a what?
+A list.
+What if we want to pack somewhere else?
+Let me get rid of that.
+With the same list of numbers.
+So what we could do is something like this.
+First, works perfectly fine.
+So first, we got middle, and we got last.
+But this time, with the middle, I want to pack everything there.
+Works perfectly fine.
+Numbers.
+And now, let's see what actually happens.
+Print, and just to make it super clear.
+First, and we got second, and we got second, not second, we said middle, right?
+And last but not least, we also have last, right?
+All right, see what happens.
+First, we pack the middle, 30, 40, and then we get our 50.
+So this is actually a very useful unpacking pattern.
+What if we want to ignore a value?
+Could we do that?
+Well, yes, we can.
+Let's take a look.
+For that, I'm going to do something like this, which you're going to see a lot of times when
+we talk about at the beginning of machine learning, and you will see that.
+So at least we have covered it then.
+Person.
+Let's say we have some info here.
+We have Ada, the name, and we have an age, 36, and we have city, all right?
+Let's say we want to ignore 36.
+So what we can do here, and this is very important that you listen here, so there's no confusions
+here.
+So what I can do here, name underscore, and then city equals to person, all right?
+And then I can actually print the name, right?
+And print the city, all right?
+So this actually works.
+Get Ada and London, no problem.
+So underscore here is, and now I'm going to push on this, is commonly used as conventional
+variable name when we, well, intentionally do not care about the value.
+Listen carefully.
+It is still a variable.
+It is still technically a variable.
+So Python doesn't actually give this underscore any magical ignoring behavior here or something
+like that.
+It just communicates the intent to, well, as humans, were you able to follow that?
+Yes, Gloria?
+So it means that I can still access 36 in some way.
+Yep, yep, yep, yep.
+It just tells me that you won't ignore it.
+That's it.
+And what was the output that you got from that?
+Here?
+Yeah, both.
+Yeah, that's just for city or is it both, okay?
+The name and city.
+Check here.
+I'm not getting that output at all.
+I will try it in a separate.
+I'm running interactive, so I...
+Ah, I understand.
+All right, all right.
+But if you want to save it, we can look at it after the lesson.
+I can look at your code, maybe.
+It's just a typo or something like that.
+Okay, okay.
+Yes.
+All right.
+Christoffer.
+Yeah, okay.
+So you could print the underscore, I suppose.
+Let's try.
+So no magic here.
+Right.
+Right.
+But since you know Python now, you will know that it's something that we're just ignoring.
+So we would do that in this way.
+Do I have anything more in here?
+Well, yeah, we have already been using inside loops without necessarily calling it unpacking,
+but it's still unpacking, right?
+For example, when we do that with the dictionary, we do variables, right?
+I've done it somewhere here before.
+So I don't think we need to cover that again.
+Something just to show, we could use more of what we spoke about yesterday.
+So let's say we have a list first called...
+I have a question before you continue.
+Sorry.
+Sorry, Gloria.
+No, it's okay.
+Is it possible in our multiple values?
+Multiple values?
+Yes.
+Ignore them.
+Is it possible in our multiple variables?
+Yeah, you can ignore how many you want because it doesn't really much do anything, right?
+So, yeah, sure.
+Something like this, right?
+No problem.
+We're just creating variables and that's it because we're not supposed to use them later on.
+So let's say we have a list here with one, two, and three, for example, and we have a second list.
+We have a second list, four, five, and six, right?
+So what we can do is we can actually combine collections with our stars.
+So, for example, I can do something like this, combine, and I want to combine what?
+Well, I want to create a new list with our first list and our second list, but in order to get all of them, I would ask, like Kritika mentioned, an asterisk here.
+And now we can just print, combine, this works as well, one, two, three, four, five, six.
+So the star actually unpacks the element from both lists into the new list combined.
+Of course, we can also do this with a dictionary.
+Let's say we have two dictionaries here.
+This is a good example, I think.
+Let's say we have defaults, for example.
+Getting sick.
+Let's see.
+All right.
+So we have some keys and values.
+Let's say we have the first key here, which is called theme, and it's going to be, well, let's say,
+light, right?
+And we have a, let's say, a language, and the language is actually, let's say, English.
+And then we have some, let's say, user settings.
+And here, we also have language, two things simultaneously.
+And this time, instead of English, I'm going to actually write Swedish.
+And we will also have notification, and let's put it as, all right?
+Here, create a new variable, empty dictionary.
+No, no, empty dictionary, sorry.
+With where we want the defaults, and we want the user settings.
+But since we want all of them, we will do not one asterisk, but two, right?
+If you remember from yesterday's lesson.
+So here, one question I would want to ask you guys is, before we run it, which language will
+actually remain, since we have language two times, the same key, right?
+So the idea is basically to combine everything here into settings, right?
+The settings dictionary.
+But since we have two keys with language, which language will actually remain?
+Because we can't have the same thing twice.
+Dimitri?
+I think from user settings.
+Hmm?
+I think from user settings.
+Ah, so you think actually Swedish, right?
+Yeah.
+So Swedish, right?
+Let's actually see.
+And Dimitri, I need to print it, right?
+Print settings.
+There we go.
+So let's see.
+And Dimitri is actually correct.
+Language.
+Swedish.
+So what we saw when we have a key overlap, the later value wins in the construction.
+So yeah, this pattern will actually be more common when we have defaults plus user-specific
+overwrites, for example.
+Did you guys have a question, Fabian?
+Or you just raised your hand from the last question?
+And now let's jump into the last part, which I think, let's see if we have time for that
+one.
+Yeah, we can take a break in 10 minutes.
+Let's just introduce what we want to talk about.
+I don't remember who actually mentioned it, but in Python, we of course have, or of course
+it's not of course, but we actually have Lambda functions.
+Lambda sometimes gets presented as, well, something very advanced, but the basic idea, at least,
+is actually pretty simple.
+Lambda is just a small anonymous function.
+So let's just create a simple function here, def double, say, a function that actually doubles
+a number.
+All right?
+So it actually returned number times two, since we want to double it, right?
+And now we can use it, for example, print double, and let's do it with a number, for example,
+five.
+All right?
+Run this here.
+We'll get out with 10.
+No problem.
+Can we express the same thing using Lambda?
+Yes, we can.
+And how would that look like in Python?
+Well, it would look like something like this.
+So double, and then we put equal, and then we actually write Lambda, then we'll do number.
+And what do we want to do with the number?
+Well, we want to do number times.
+So a little bit different from comprehension, right?
+But the idea is pretty similar.
+So I understand why one would react to comprehension, and I think it's pretty much the same, but it's
+really not very close.
+And now we can just print and use double or five, for example.
+And then let's run this.
+We actually get our 10.
+So the syntax here is Lambda, parameters, hola, and expression.
+And the result, as you see here, the result is actually returned automatically, where we
+don't need to write it as difference to what we did with the normal function.
+Yes, Gloria.
+Sorry, can you read again the line 2019?
+How can you read it?
+How can you read?
+Okay.
+So we created our variable, then we just wrote, we can even write it.
+So we wrote Lambda.
+So we wrote Lambda.
+And after Lambda, we wrote the parameters, right?
+And then after the parameters, we actually write colon.
+And after the colon, we always write the expression.
+And as I mentioned before, the return is returned.
+Well, the result of the expression is actually returned automatically.
+However, something important to remember, which one should I choose?
+It's pretty common, especially if you're a beginner, right?
+So just to emphasize on that, you probably already know this from before, but if I want to use, or let's say if I need reusable function, and this reusable function called double, the normal def version here is usually clearer.
+Actually, Lambda becomes more useful when we need a small function temporarily, often as an argument to another function, for example.
+So, yeah, that's important to remember.
+Yes, they're referred to as anonymous functions.
+I don't know if that's helpful, but it's the same thing here.
+Yeah, yeah, yeah, anonymous function, exactly, exactly.
+Okay, okay.
+Yeah.
+All right.
+We can dive into Lambda a little bit more before we can take a break here.
+We have some couple of minutes, I think, plenty enough.
+So let's say we have a list of names, for example.
+Names, just a practical example, that's it.
+Alexander, we got Lee, we got Grace, and we got Ada, right?
+And let's do this, print, sorted, names, for example.
+All right, let's run the code, let's see here.
+Yeah, we got Ada, Alexander, Grace, and Lee, right?
+So by default, strings are sorted alphabetically.
+What if I want their length, or what if I want to sort them by length?
+Well, in a normal function, I would do something like this, get length maybe, length, name, and
+return name, something like this, right?
+And then sorted names equals sorted names, key, get length, right?
+Something like this, print sorted names.
+So here, if we run this, we get sorted by their length, right?
+Lee, Ada, Grace, Alexander, with the longest name, right?
+So the key parameter here actually expects a function.
+So Python calls that function for each value in the list to actually determine what should
+be used for sorting, right?
+But what if we do the same thing using lambda?
+Well, let's actually do that.
+So instead of doing that, I will just, in this single line, just do sorted names equals something
+like this, sorted names.
+And now here at key, I could do lambda name, and then the expression len, and that's it.
+And now I can actually print the sorted names.
+And there we go.
+And if we run this, we see that we get the same thing, Lee, Ada, Grace, Alexander.
+So instead of passing a normal def function to our key, we can actually pass into the lambda
+function, no problem.
+Now, let's take a short break.
+And yeah, when we get back, we can look a little bit more at lambda, maybe 15 minutes,
+something like that, and then we can call it a day.
+And I think it's pretty much enough.
+All right.
+Let me see.
+I have a question here.
+Earlier today, you called the modulus thingy for lambda.
+Was this a slip or is it normal?
+Oh, no, no, no.
+Sorry.
+It might be a slip.
+Maybe I had lambda in the back of my head or something like that.
+I didn't even notice.
+Sorry, Grace.
+No, it was a slip.
+Good question.
+Yeah, so sorry.
+I'll be on.
+It's here.
+I can barely hear you.
+Ah, okay, okay.
+Not me.
+And we have to print it.
+Exactly.
+All right.
+Let's take 10 minutes or eight minutes, and then we can just continue with the end, and then
+we can call it a day.
+All right.
+So 11, 10.
+Don't grab some coffee.
+Are we guys back?
+So, yeah, I can compare this during the break so you didn't miss anything.
+So, let's sort a dictionary using lambda as well.
+So, we have a list of dictionaries containing key and values.
+Nana, score 85, name Bob, score 62, and so on.
+And name Charlie with a score of 91.
+All right.
+So, let's actually do something like this.
+Let me just write it, and then we can discuss it.
+So, here, can you sort it?
+Sure.
+Here, we actually need to specify students, and then we can use the key lambda and so on.
+And just for the sake of readability, I'm just going to do something like that.
+Not that.
+This, right?
+So, here, the key, we can use lambda, and here we can do student, and with the student.
+Core, right?
+And there we go.
+And now, we can actually print the sorted students.
+Let's try it out.
+So, now, as we see, we have sorted the dictionaries, right?
+By their scores.
+So, what we see here is that Python actually cannot automatically know which dictionary value we want to sort by, right?
+So, the lambda actually tells sorted here that for each student, well, use the student's score as the sorting key.
+So, we need to actually specify that.
+And if we wanted to, let's say, reverse that, we could have done that as well.
+Could have just added, for example, just written a reverse, for example, and then put true to that.
+That's not how you spell true.
+And let's try it out.
+That works as well.
+So, now, the highest score actually comes first.
+In function that you might stumble upon is something called map, and also filter.
+But let's begin with map.
+And they are worth actually recognizing because they appear in Python code and actually connect naturally to lambda as well.
+So, let's say we have numbers here, equals, we got 1, and 2, 3, 4, and 5.
+What we can do here, let's say we want to double the numbers, we can do something like this, double, equals, and then here we can use map.
+Then we can actually write a lambda expression here, lambda, with the number, we want what?
+Well, we want to take that number, multiply it by, we said multiply by 2, right?
+And we want to do this with our numbers, right?
+So, this actually works.
+So, let's actually run it and see what more output is.
+So, when we run this, oh, I actually need to print it out, right?
+Print, there we go.
+Now, let's see here.
+So, map actually returns an iterator-like map object.
+But what if we want to actually see the values as a list, we can actually do that, of course.
+So, what we can do here, let me just run here, and then what we do is just, if I remember correctly, we can do a list here.
+And that's it.
+And then, of course, we need to also print.
+And you see, we actually get our list doubled.
+We could compare this to our list comprehension, of course.
+For example, in this case, if we have used a list comprehension, we would do something like this.
+Doubled equals, we said number, what we want to do, right?
+Number multiplied by two, four, number in numbers.
+And then we would have printed out, we would have printed out, doubled, right?
+So, in Python, well, I would say developers find the list comprehension easier to read for very simple transformations, right?
+But you should still understand map, of course, because you will encounter a map.
+So, that was a little bit about map.
+And now, let's take the last part for today.
+And that would be, we said before, this was actually right.
+No, I didn't remember.
+Map.
+And the last part was actually, we said filter, right?
+Let's take an example, and then we will see, understand what it actually does.
+So, let's say we have numbers.
+Let's take our numbers again here.
+And I will actually add a six here, for the sake of the example.
+All right.
+So, let's say I want the even numbers, equals.
+And since I want to see the list, I'll write list.
+And for the sake of readability, I'm going to do something like that.
+So, here, I can use filter and my lambda expression.
+Lambda, number, and the expression is actually number, modulus, not lambda, modulus two equals zero.
+And we want to do that with it.
+Now, if we were to print our even numbers, we will see what filter actually does in action, right?
+So, let's run this and see.
+Two, four, six.
+So, what filter does here, well, filter keeps the values where the function actually returns.
+That's a useful way of using filter.
+Well, we could compare this to, of course, to our comprehension.
+So, here, I would write even numbers, start off with my empty list, and now, right here.
+So, number, no, number, no numbers.
+For number in numbers, right?
+And what if, to add a condition here, if number, modulus two, actually equals zero, print numbers.
+So, same thing, but just using a comprehension.
+So, again, for a simple condition, programmers would use, Python programmers at least, would prefer to use comprehension.
+So, yeah, I just want to emphasize, well, the goal for today is not to tell you, like, tell you guys, always use lambda or map and filters.
+So, the goal is just to understand them, right?
+And recognize them, of course.
+And, yeah, and always choose readable code.
+And now, we have a lot to choose on.
+Yeah, and that was really it.
+Well, we could have used conditional.
+No, I think that's enough.
+That's enough for you guys for today.
+Okay, so, choose.
+Sure, we could talk about it.
+Or maybe we can add it on Monday, but I think this is plenty enough for today.
+Yes, this also works.
+All right, I think that's pretty much enough.
+And just put my camera back.
+And also, maybe end the recording.
+All right, let's go.
