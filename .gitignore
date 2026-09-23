@@ -1,5 +1,30 @@
+# macOS
 .DS_Store
+._*
 
-/data
-/done
-/inbox
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Environment / secrets
+.env
+*.log
+
+data/
+done/
+inbox/
