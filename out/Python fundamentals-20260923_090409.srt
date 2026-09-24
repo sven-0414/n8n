@@ -1,0 +1,2248 @@
+1
+00:00:02,560 --> 00:00:09,910
+ But then we spoke about, well, let's say a course needs to contain many student objects, right?
+
+2
+00:00:10,430 --> 00:00:15,870
+ And we kind of combined the idea here in a list, right?
+
+3
+00:00:16,120 --> 00:00:19,520
+ But there's one thing that we have to be careful with.
+
+4
+00:00:20,980 --> 00:00:24,600
+ So before we can continue, let me just comment this out.
+
+5
+00:00:25,660 --> 00:00:26,950
+ I'm going to show you what I mean.
+
+6
+00:00:28,890 --> 00:00:47,480
+ Well, before we can continue, there's one important, well, Python-specific mistake that we need to look at.
+
+7
+00:00:49,160 --> 00:00:58,500
+ So, well, we have already worked kind of with, what can you say, multiple objects, like, for example, lists.
+
+8
+00:01:01,100 --> 00:01:08,400
+ But when we use them as, let's say, default arguments, we need to be very careful.
+
+9
+00:01:09,650 --> 00:01:12,190
+ So this is something that we should not write.
+
+10
+00:01:12,190 --> 00:01:16,720
+ So I'm actually going to comment that out after I write it.
+
+11
+00:01:17,140 --> 00:01:20,560
+ So just bear with me here if you're coding along.
+
+12
+00:01:21,640 --> 00:01:25,560
+ Class course, right?
+
+13
+00:01:26,100 --> 00:01:39,680
+ And then I come here and then I write that under init, self, and then we have name, right?
+
+14
+00:01:40,120 --> 00:01:48,320
+ And I come here and then I write student, like that.
+
+15
+00:01:49,380 --> 00:02:02,930
+ And now here, I write self.name equals name, self.student equals student.
+
+16
+00:02:02,930 --> 00:02:16,010
+ So this might look reasonable in a way, right?
+
+17
+00:02:16,190 --> 00:02:29,330
+ You might think that every, like, new course will get its own empty list, right?
+
+18
+00:02:30,060 --> 00:02:32,780
+ But this is not actually what happens.
+
+19
+00:02:35,400 --> 00:02:46,580
+ So default arguments or default argument values are actually created when the function is defined.
+
+20
+00:02:47,740 --> 00:02:50,680
+ Not every time it's actually called.
+
+21
+00:02:51,130 --> 00:02:52,710
+ So you have to be careful with that.
+
+22
+00:02:54,020 --> 00:03:00,550
+ So the same list can accidentally be actually shared between multiple objects.
+
+23
+00:03:01,860 --> 00:03:02,900
+ So this is a big no-no.
+
+24
+00:03:03,430 --> 00:03:17,700
+ And I'm actually going to try to demonstrate it in kind of a, let's say, I'm going to put here, so we remember, let's call it problem.
+
+25
+00:03:18,570 --> 00:03:18,790
+ All right?
+
+26
+00:03:21,970 --> 00:03:29,200
+ So let's take an example of this problem.
+
+27
+00:03:29,850 --> 00:03:31,610
+ Let's try to demonstrate it in a way.
+
+28
+00:03:31,810 --> 00:03:39,290
+ So class, let's call it bad, bad course, right?
+
+29
+00:03:39,290 --> 00:03:52,280
+ And then I come here and I write that limit, sorry, name.
+
+30
+00:03:53,520 --> 00:03:56,180
+ We said students, right?
+
+31
+00:03:57,680 --> 00:03:59,020
+ Equals, empty list.
+
+32
+00:04:01,350 --> 00:04:17,530
+ And here, self.name equals name, self.students equals students, right?
+
+33
+00:04:17,730 --> 00:04:22,470
+ Now let's make this kind of method here as well.
+
+34
+00:04:22,980 --> 00:04:39,490
+ The add student, self.student, like that.
+
+35
+00:04:41,630 --> 00:04:42,010
+ Self.
+
+36
+00:04:42,670 --> 00:04:48,960
+ I think that would be students, right?
+
+37
+00:04:49,920 --> 00:04:52,400
+ Students.end.
+
+38
+00:04:54,300 --> 00:04:56,380
+ And now we would like to append the student, right?
+
+39
+00:04:57,250 --> 00:04:59,530
+ Student, not students.
+
+40
+00:05:00,260 --> 00:05:00,900
+ Something like that.
+
+41
+00:05:01,470 --> 00:05:01,690
+ All right?
+
+42
+00:05:02,810 --> 00:05:04,000
+ Now let's try this out.
+
+43
+00:05:05,700 --> 00:05:06,140
+ Course.
+
+44
+00:05:06,490 --> 00:05:08,190
+ Let's say course one.
+
+45
+00:05:11,610 --> 00:05:11,850
+ Course.
+
+46
+00:05:13,080 --> 00:05:16,360
+ And we can put Python inside here.
+
+47
+00:05:18,240 --> 00:05:18,440
+ All right?
+
+48
+00:05:19,260 --> 00:05:20,800
+ And then we say course two.
+
+49
+00:05:27,100 --> 00:05:29,440
+ Bad course.
+
+50
+00:05:30,060 --> 00:05:31,260
+ Let's say AI.
+
+51
+00:05:32,460 --> 00:05:32,810
+ All right?
+
+52
+00:05:33,740 --> 00:05:37,030
+ Now, let's actually do something like this.
+
+53
+00:05:37,350 --> 00:05:38,250
+ Course.
+
+54
+00:05:39,470 --> 00:05:41,150
+ Let's say course one, for example.
+
+55
+00:05:41,920 --> 00:05:45,890
+ And then I use add student here.
+
+56
+00:05:48,950 --> 00:05:53,650
+ Let's say I try to add Ada.
+
+57
+00:05:55,110 --> 00:06:01,440
+ Let's do some prints here.
+
+58
+00:06:01,950 --> 00:06:02,250
+ Let's see.
+
+59
+00:06:10,910 --> 00:06:11,270
+ Print.
+
+60
+00:06:16,330 --> 00:06:17,810
+ Course one.
+
+61
+00:06:20,230 --> 00:06:20,690
+ Students.
+
+62
+00:06:21,410 --> 00:06:24,030
+ And then let's do the same thing for course two.
+
+63
+00:06:32,970 --> 00:06:37,650
+ Now, let's try to predict what's going to happen here.
+
+64
+00:06:40,400 --> 00:06:43,210
+ So, we try to add Ada to what?
+
+65
+00:06:44,130 --> 00:06:45,210
+ Come on, guys.
+
+66
+00:06:45,630 --> 00:06:47,020
+ Are you with me?
+
+67
+00:06:47,390 --> 00:06:53,950
+ We try to add Ada to course one, right?
+
+68
+00:06:54,620 --> 00:06:55,460
+ All right.
+
+69
+00:06:55,990 --> 00:06:57,170
+ Let's run this and see.
+
+70
+00:07:00,520 --> 00:07:04,490
+ We actually get Ada in course two.
+
+71
+00:07:06,250 --> 00:07:10,580
+ So, why does Ada end up in course two?
+
+72
+00:07:12,820 --> 00:07:15,620
+ What do you say, guys?
+
+73
+00:07:16,200 --> 00:07:16,900
+ Any suggestions?
+
+74
+00:07:27,890 --> 00:07:29,380
+ Just offer.
+
+75
+00:07:32,440 --> 00:07:41,820
+ Yeah, it will be because, did I think it's true now, the list itself becomes a default
+
+76
+00:07:41,820 --> 00:07:43,680
+ for creating the object.
+
+77
+00:07:47,380 --> 00:07:48,720
+ Yeah, I'm not sure.
+
+78
+00:07:49,210 --> 00:07:49,910
+ Yeah, exactly.
+
+79
+00:07:50,170 --> 00:07:51,990
+ No, you're in the right way here.
+
+80
+00:07:52,230 --> 00:07:58,600
+ Because both objects actually received the same default list, right?
+
+81
+00:07:59,100 --> 00:07:59,300
+ Yeah.
+
+82
+00:07:59,300 --> 00:08:08,480
+ So, when course one changes the list, then course two will see that change as well.
+
+83
+00:08:09,870 --> 00:08:11,350
+ Yeah, so it changes the default.
+
+84
+00:08:13,350 --> 00:08:15,430
+ Ooh, that's creepy.
+
+85
+00:08:16,900 --> 00:08:20,390
+ So, let's fix this.
+
+86
+00:08:24,480 --> 00:08:26,450
+ Thank you, Toffe.
+
+87
+00:08:28,710 --> 00:08:29,950
+ Excuse me.
+
+88
+00:08:30,110 --> 00:08:33,740
+ As you hear, my cold is still down there.
+
+89
+00:08:36,070 --> 00:08:44,980
+ So, the common solution, I wouldn't say this is the only solution, but the common solution,
+
+90
+00:08:44,980 --> 00:08:56,190
+ at least, is to use actually none as the default value, and then rather create a new list inside
+
+91
+00:08:56,190 --> 00:08:56,930
+ down there in it.
+
+92
+00:08:59,410 --> 00:09:02,180
+ Let me show you.
+
+93
+00:09:03,330 --> 00:09:11,260
+ Let's write at least the title here, maybe correct way or maybe pattern.
+
+94
+00:09:13,390 --> 00:09:22,790
+ So, we had class course, I'm not going to call it bad course, right?
+
+95
+00:09:26,660 --> 00:09:40,730
+ And, init, name, and this side of students, I'm actually going to put, as we said, none.
+
+96
+00:09:44,720 --> 00:09:52,460
+ And, of course, so, name equals name.
+
+97
+00:09:53,440 --> 00:09:55,420
+ And now I can come and do something like this.
+
+98
+00:09:55,560 --> 00:10:16,140
+ For example, if students is none, students equals, so we tried to create this over here instead.
+
+99
+00:10:16,480 --> 00:10:17,620
+ We decided on doing it.
+
+100
+00:10:18,800 --> 00:10:29,760
+ And now we can come and say, self, students equals students.
+
+101
+00:10:31,240 --> 00:10:33,490
+ And now let's create a method.
+
+102
+00:10:35,320 --> 00:10:38,490
+ Add something like this.
+
+103
+00:10:38,920 --> 00:10:53,470
+ Student, self, and pretty much the same as we did with self, but students.
+
+104
+00:10:56,050 --> 00:10:57,070
+ Append, right?
+
+105
+00:10:58,460 --> 00:11:00,650
+ And we want to append to student.
+
+106
+00:11:05,080 --> 00:11:08,650
+ Now, let's try the same thing here.
+
+107
+00:11:14,720 --> 00:11:19,830
+ We need to do some changes.
+
+108
+00:11:20,910 --> 00:11:22,530
+ We said course one, right?
+
+109
+00:11:24,710 --> 00:11:26,020
+ And we don't have that one.
+
+110
+00:11:26,490 --> 00:11:28,650
+ So, course, right?
+
+111
+00:11:28,870 --> 00:11:30,090
+ Then let's stick to Python.
+
+112
+00:11:31,160 --> 00:11:34,840
+ And instead of that course, we're going to say AI, right?
+
+113
+00:11:35,650 --> 00:11:37,510
+ Course one, add student ADA.
+
+114
+00:11:37,910 --> 00:11:38,940
+ I'm going to stick to that.
+
+115
+00:11:39,640 --> 00:11:41,800
+ And then score course one, students.
+
+116
+00:11:42,080 --> 00:11:42,670
+ Course two, students.
+
+117
+00:11:42,790 --> 00:11:42,990
+ Perfect.
+
+118
+00:11:43,920 --> 00:11:44,100
+ Okay.
+
+119
+00:11:46,110 --> 00:11:48,520
+ Now, let's run this this time.
+
+120
+00:11:50,350 --> 00:11:52,600
+ Now, what exactly happens?
+
+121
+00:11:53,970 --> 00:11:58,350
+ Now, each course actually gets its own list.
+
+122
+00:11:58,350 --> 00:12:08,470
+ So, changing the list in course one does not affect course.
+
+123
+00:12:10,670 --> 00:12:14,570
+ So, just a small fix.
+
+124
+00:12:15,020 --> 00:12:16,740
+ Maybe you can solve it in another way.
+
+125
+00:12:18,780 --> 00:12:19,240
+ Let's see.
+
+126
+00:12:19,400 --> 00:12:19,800
+ Anastasia.
+
+127
+00:12:22,460 --> 00:12:22,900
+ Yeah.
+
+128
+00:12:23,040 --> 00:12:25,660
+ I just had a question about the bad example.
+
+129
+00:12:27,860 --> 00:12:31,330
+ Are there any cases where that could actually be useful?
+
+130
+00:12:32,540 --> 00:12:45,950
+ I don't think so.
+
+131
+00:12:45,950 --> 00:12:49,380
+ No.
+
+132
+00:12:50,200 --> 00:12:50,560
+ Okay.
+
+133
+00:12:50,560 --> 00:13:04,630
+ Because you usually refer it as a hythonic kind of mistake.
+
+134
+00:13:07,420 --> 00:13:13,290
+ No, I'm just thinking, I'm looking into sprites right now.
+
+135
+00:13:13,510 --> 00:13:21,340
+ And it has a method for basically checking up all the entities that belong to a group.
+
+136
+00:13:21,950 --> 00:13:29,700
+ And I'm wondering if this sort of bad way essentially does the same thing, just ugly.
+
+137
+00:13:31,280 --> 00:13:32,840
+ Sorry, say that last word part.
+
+138
+00:13:33,580 --> 00:13:45,110
+ No, I'm just wondering if this bad way of doing classes basically can create a list that keeps track of all the entities.
+
+139
+00:13:45,930 --> 00:13:50,920
+ I didn't get the question.
+
+140
+00:13:51,670 --> 00:13:51,890
+ Sorry.
+
+141
+00:13:52,110 --> 00:13:52,270
+ Okay.
+
+142
+00:13:52,610 --> 00:13:52,950
+ It's fine.
+
+143
+00:13:53,030 --> 00:13:54,250
+ I'll write to you later on.
+
+144
+00:13:54,930 --> 00:13:55,950
+ Sure, sure.
+
+145
+00:13:57,840 --> 00:14:08,430
+ But no, I would say maybe avoid this kind of stuff.
+
+146
+00:14:11,480 --> 00:14:11,820
+ Let's see here.
+
+147
+00:14:12,420 --> 00:14:15,180
+ I think it was Fabio.
+
+148
+00:14:15,400 --> 00:14:15,560
+ No.
+
+149
+00:14:16,120 --> 00:14:16,480
+ Gloria.
+
+150
+00:14:18,390 --> 00:14:28,790
+ I just want to say if the question can be done in the open chat so all of us know the answer because it sounds like interesting.
+
+151
+00:14:29,230 --> 00:14:29,790
+ Sure, sure, sure.
+
+152
+00:14:30,490 --> 00:14:30,730
+ Sure.
+
+153
+00:14:32,050 --> 00:14:38,390
+ I just thought you could probably relate to the student chat or something like that and then I can answer in the student chat.
+
+154
+00:14:40,180 --> 00:14:40,540
+ No problem.
+
+155
+00:14:41,860 --> 00:14:47,400
+ Or maybe someone else sees a good idea as well.
+
+156
+00:14:47,500 --> 00:14:50,360
+ I'm currently Googling anti-pattern.
+
+157
+00:14:50,360 --> 00:14:55,910
+ All right.
+
+158
+00:14:56,230 --> 00:14:56,950
+ Let's see.
+
+159
+00:14:57,270 --> 00:15:00,030
+ So we spoke about the correct pattern here.
+
+160
+00:15:01,010 --> 00:15:04,080
+ What do we have left?
+
+161
+00:15:22,420 --> 00:15:27,230
+ Just because we have talked a little bit about classes here.
+
+162
+00:15:29,330 --> 00:15:34,570
+ Since this usually happens, I just want to mention it at least.
+
+163
+00:15:36,580 --> 00:15:40,050
+ Let's call it, what do we call it?
+
+164
+00:15:40,450 --> 00:15:49,270
+ Let's call it generis versus class.
+
+165
+00:15:50,620 --> 00:15:50,820
+ All right.
+
+166
+00:15:50,820 --> 00:15:56,580
+ I think you guys already know this, but just to make sure.
+
+167
+00:15:56,780 --> 00:16:02,130
+ So we have actually seen a lot of things that we can do with our classes, right?
+
+168
+00:16:02,410 --> 00:16:02,900
+ Obviously.
+
+169
+00:16:03,160 --> 00:16:11,370
+ But that doesn't actually mean that we should use a class every time we want to store some data, right?
+
+170
+00:16:13,350 --> 00:16:18,600
+ Sometimes a dictionary is perfectly enough.
+
+171
+00:16:18,600 --> 00:16:24,420
+ So let's say we have, I don't know.
+
+172
+00:16:24,420 --> 00:16:25,420
+ So let's keep it simple here.
+
+173
+00:16:25,420 --> 00:16:25,520
+ So let's keep it simple here.
+
+174
+00:16:25,420 --> 00:16:25,520
+ Let's keep it simple here.
+
+175
+00:16:25,420 --> 00:16:26,200
+ Let's keep it simple here.
+
+176
+00:16:26,200 --> 00:16:26,880
+ Student.
+
+177
+00:16:26,880 --> 00:16:27,740
+ Student.
+
+178
+00:16:27,740 --> 00:16:27,840
+ Student.
+
+179
+00:16:27,740 --> 00:16:27,840
+ Student.
+
+180
+00:16:27,740 --> 00:16:30,210
+ Student.
+
+181
+00:16:30,210 --> 00:16:30,310
+ Student.
+
+182
+00:16:30,210 --> 00:16:30,310
+ Student.
+
+183
+00:16:30,210 --> 00:16:31,340
+ Student.
+
+184
+00:16:31,340 --> 00:16:34,680
+ Student.
+
+185
+00:16:34,680 --> 00:16:34,780
+ Student.
+
+186
+00:16:34,680 --> 00:16:39,320
+ Student.
+
+187
+00:16:39,320 --> 00:16:42,530
+ Student.
+
+188
+00:16:42,530 --> 00:16:43,530
+ Student.
+
+189
+00:16:43,530 --> 00:16:47,860
+ Student.
+
+190
+00:16:47,860 --> 00:16:51,410
+ Student.
+
+191
+00:16:51,410 --> 00:16:52,410
+ Student.
+
+192
+00:16:52,410 --> 00:16:53,880
+ Student.
+
+193
+00:16:53,880 --> 00:17:00,220
+ Student.
+
+194
+00:17:00,220 --> 00:17:17,240
+ Student.
+
+195
+00:17:17,240 --> 00:17:18,240
+ Student.
+
+196
+00:17:18,240 --> 00:17:19,240
+ Student.
+
+197
+00:17:19,240 --> 00:17:19,340
+ Student.
+
+198
+00:17:19,240 --> 00:17:20,200
+ Student.
+
+199
+00:17:20,200 --> 00:17:21,710
+ Student.
+
+200
+00:17:21,710 --> 00:17:23,290
+ Student.
+
+201
+00:17:23,290 --> 00:17:24,980
+ Student.
+
+202
+00:17:24,980 --> 00:17:35,280
+ a score right and then we can come down here and write self.name equals name and then we need to
+
+203
+00:17:35,280 --> 00:17:47,110
+ write so the score equals score right and then out there and then kind of do something like this
+
+204
+00:17:47,110 --> 00:18:01,300
+ create a student object so student object right equals world student and now we need to create
+
+205
+00:18:01,300 --> 00:18:14,730
+ a name let's call her ada and she got a score of 91 right there we go so is there a difference here
+
+206
+00:18:14,730 --> 00:18:23,750
+ right so both examples would rather represent the same let's say basic information here right
+
+207
+00:18:23,750 --> 00:18:37,190
+ we have a student with a name and a score dictionary flexible and simple plus give us a
+
+208
+00:18:37,190 --> 00:18:49,500
+ defined type and a natural place for let's say related behavior so i would i would say the
+
+209
+00:18:49,500 --> 00:18:59,980
+ dictionary can be well a good choice uh when when when we mainly need the simple key value data right
+
+210
+00:18:59,980 --> 00:19:06,500
+ the structure is simple and we don't need much behavior connected to the data right
+
+211
+00:19:06,500 --> 00:19:13,180
+ while a class could be more useful when well we have many objects that share the same structure
+
+212
+00:19:13,180 --> 00:19:23,730
+ each object has their own behavior or their own state maybe changes over time right so the important
+
+213
+00:19:23,730 --> 00:19:33,050
+ point here is just don't turn every dictionary into a class so object-oriented programming is
+
+214
+00:19:33,050 --> 00:19:47,530
+ just a tool right not a requirement and yeah there you go and there you go let's see what time do we have
+
+215
+00:19:47,530 --> 00:20:01,900
+ 9 30 to 23 hmm uh let me see uh do we have anything left for this part okay so we have some common mistakes
+
+216
+00:20:01,900 --> 00:20:13,340
+ and so on i i think i'm gonna save those it was something i used before but it was more for a beginner
+
+217
+00:20:13,340 --> 00:20:22,230
+ class and i think you already kind of know this but you know uh class versus object to not forget
+
+218
+00:20:22,230 --> 00:20:32,840
+ parentheses that's something important but i think you know this kind of stuff guys getting the self
+
+219
+00:20:32,840 --> 00:20:43,180
+ attribute is a common mistake uh but instead we can do something like this actually gonna do something
+
+220
+00:20:43,180 --> 00:20:54,780
+ like this i'm gonna come here and let's see we have some hands all right um fabian uh yeah i was just uh
+
+221
+00:20:54,780 --> 00:21:01,260
+ wondering about a question yesterday where you have an initially empty list in the course there's no
+
+222
+00:21:01,260 --> 00:21:11,550
+ necessity to go back and edit it so it follows what you showed today about shared lists say that again
+
+223
+00:21:11,550 --> 00:21:18,950
+ there is no uh you know how you showed how if you insert an empty list it will be shared across like both
+
+224
+00:21:18,950 --> 00:21:26,470
+ courses yesterday there was an assignment where you inserted an empty list uh do you have to go back
+
+225
+00:21:26,470 --> 00:21:32,670
+ and fix it so it works or is it just keep it as it is no you can keep it as it is that's all right
+
+226
+00:21:32,670 --> 00:21:36,670
+ that's all right you don't need all right well if you have extra time of writing you can do something
+
+227
+00:21:36,670 --> 00:21:42,400
+ like that if you want that's all right thank you so like i said you know when it comes to the
+
+228
+00:21:42,400 --> 00:21:48,030
+ the the they are not graded right it's it's a learning tool right if you have learned it then
+
+229
+00:21:48,030 --> 00:21:52,830
+ you have success right so it doesn't matter for me if you have everything correct or everything wrong
+
+230
+00:21:53,340 --> 00:21:59,560
+ as as long as you have learned uh what to do and that you can understand the future classes that
+
+231
+00:21:59,560 --> 00:22:07,740
+ we're gonna have and of course you don't need to know everything by heart to to understand the next
+
+232
+00:22:07,740 --> 00:22:17,280
+ but you kind of have an idea right and as you see i don't even know every single line sometimes i forget
+
+233
+00:22:17,280 --> 00:22:23,870
+ jump between languages doing different stuff you don't need all of this that we're talking about
+
+234
+00:22:24,640 --> 00:22:33,540
+ sometimes i fall into the pitfalls as well so this is it's normal all right but at least we will
+
+235
+00:22:33,540 --> 00:22:39,460
+ have the tools to at least understand future lessons for example machine learning part or the deep
+
+236
+00:22:39,460 --> 00:22:49,730
+ learning part that you're gonna have with height them it's here uh what's that uh an answer for a
+
+237
+00:22:49,730 --> 00:23:00,420
+ question uh yes uh it was sufficient thank you all right uh who was next uh moana uh now then you
+
+238
+00:23:00,420 --> 00:23:13,600
+ have a quote wrongly like a self dot a score it's comma yeah i was just trying to see if you're paying
+
+239
+00:23:13,600 --> 00:23:26,120
+ attention guys uh all right uh i'm gonna do an oop two just as a part two and i'm gonna try to not
+
+240
+00:23:26,120 --> 00:23:36,720
+ forget to to actually also add this to but you know what i can do that right away so i don't forget
+
+241
+00:23:36,720 --> 00:23:43,770
+ let me move that part because this is the only thing that we have written today right problem a
+
+242
+00:23:43,770 --> 00:23:58,220
+ cracked pattern yeah so let's move it over here and and actually now you can write something like this
+
+243
+00:23:58,720 --> 00:24:18,730
+ and let's say i'm the op part two because this belongs to part one i would say but since we didn't
+
+244
+00:24:18,730 --> 00:24:30,360
+ finish it yesterday you understand all right let's see here um let's just do a quick quick quick quick
+
+245
+00:24:30,360 --> 00:24:40,150
+ recap before we actually move on uh i'm just gonna put an example here i've actually prepared an example
+
+246
+00:24:41,060 --> 00:24:58,950
+ let's see what if i do this let's see if this works there you go so take a look at this quickly quickly
+
+247
+00:24:58,950 --> 00:25:04,630
+ quickly quickly quickly i'm just gonna call out some students here and if you want to pass you can
+
+248
+00:25:04,630 --> 00:25:18,270
+ pass there's no prestige here uh so just uh ask you guys all right uh let's take um daniel alexandre
+
+249
+00:25:18,270 --> 00:25:56,620
+ what is this it's a class thank you okay um what is a uh student uh it's an object an object or an
+
+250
+00:25:56,620 --> 00:26:25,700
+ instance thank you uh what does um self refer to of tami what does self refer to when you've written
+
+251
+00:26:25,700 --> 00:26:50,150
+ in the chat right uh let's try someone else um victor victor sagu yes it refers to the instant instance the
+
+252
+00:26:50,230 --> 00:27:07,500
+ thank you thank you the current instance yeah um um yet not yet what does uh init do mariette is marina
+
+253
+00:27:08,060 --> 00:27:20,020
+ oh no no i said yet uh what did you say again what does uh uh what does uh dunder init do at this
+
+254
+00:27:20,020 --> 00:27:29,460
+ point uh it's run uh creating on the object yeah something like initialize the uh a new a newly
+
+255
+00:27:29,460 --> 00:27:39,080
+ created object very good thank you guys you're with me you're awake thank you uh let's see maxims i
+
+256
+00:27:39,080 --> 00:27:46,530
+ actually didn't have a question i actually had a question so back in the day i know the result back
+
+257
+00:27:46,530 --> 00:27:51,840
+ in the day but one friend told me that init is sort of like a constructor means that as soon as you create
+
+258
+00:27:51,840 --> 00:27:57,790
+ an object uh then of course the constructor is called so would it be wrong if i say that the init is the
+
+259
+00:27:57,790 --> 00:28:02,760
+ the constructor that is called to assign those values as soon as you make an object like for instance
+
+260
+00:28:02,760 --> 00:28:07,800
+ there when you make student on line 103 right and since you make an object of that then this
+
+261
+00:28:07,800 --> 00:28:14,680
+ constructor by default is initialized hence the init would that be wrong i think that way no it sounds
+
+262
+00:28:14,680 --> 00:28:26,140
+ correct okay yeah thank you okay sounds great uh let's see here uh christian movement yes about the
+
+263
+00:28:26,140 --> 00:28:32,440
+ constructor it's it's not the same as in c sharp actually it's not exactly the same thing yeah but
+
+264
+00:28:32,440 --> 00:28:39,590
+ but uh yeah because the construction if you want to compare it to the constructor it's more like new
+
+265
+00:28:39,590 --> 00:28:46,810
+ uh new in yeah yeah yeah yeah in c sharp right yeah it's not exactly the same thing if you want if you
+
+266
+00:28:46,810 --> 00:28:55,580
+ want to uh compare correct answer okay thank you so but you can look it up of course uh i i think uh
+
+267
+00:28:55,580 --> 00:29:07,860
+ there are better explanations if you look it up yeah yeah let's see alessandro yeah just a quick question
+
+268
+00:29:07,860 --> 00:29:22,750
+ because i've i kind of did differently when you have let's say uh lists i don't pass uh in the as a
+
+269
+00:29:22,750 --> 00:29:32,470
+ parameter i just create a empty list inside the init method instead of passing as a parameter i just
+
+270
+00:29:32,470 --> 00:29:40,270
+ yeah i i know it works because it worked but uh is it a good way to do it as well yeah yeah but that's
+
+271
+00:29:40,270 --> 00:29:45,900
+ i think that's what we did in a previous example yesterday right so so compare it to the yesterday's
+
+272
+00:29:45,900 --> 00:29:51,940
+ example and uh yeah you will probably find it there and if you don't just write to me and we can
+
+273
+00:29:51,940 --> 00:29:59,090
+ we can look at it a little bit more okay perfect but i think i think i actually put it out yesterday
+
+274
+00:29:59,090 --> 00:30:17,060
+ okay cool no problem all right um now these are the building blocks we need today right uh we know how
+
+275
+00:30:17,060 --> 00:30:24,980
+ how to create a class perfect uh we know how to create an object from it very good we know how to
+
+276
+00:30:24,980 --> 00:30:39,900
+ store um data in those objects and actually give them behavior right uh now we're kind of gonna build on that
+
+277
+00:30:39,900 --> 00:30:54,640
+ idea we're gonna look at how one class can reuse another class so let's start with a different example
+
+278
+00:30:54,640 --> 00:31:11,720
+ here that was just where it started um guys uh imagine and we're gonna keep it very simple
+
+279
+00:31:11,720 --> 00:31:21,940
+ to begin with and then we're gonna turn it up a notch right uh imagine that we have or imagine that we
+
+280
+00:31:21,940 --> 00:31:29,750
+ want to let's say represent different types of animals all right uh we could start by creating one class
+
+281
+00:31:29,750 --> 00:31:37,220
+ for a dog and then we could create another class for example for cats and so on right let's actually do
+
+282
+00:31:37,220 --> 00:31:59,020
+ that so let's say class dog uh that down there in it um self uh let's see her name uh age uh self dot uh let's say
+
+283
+00:31:59,020 --> 00:32:18,260
+ name equals name uh self dot age uh we said age right it was age then let's create something here uh
+
+284
+00:32:18,260 --> 00:32:47,520
+ but let's say eat now just print something um so that name um it's eating right something like that
+
+285
+00:32:47,520 --> 00:33:03,040
+ and then we have another class uh we said uh cats right cats uh in it um and we have name
+
+286
+00:33:03,900 --> 00:34:01,780
+ an age right uh then let's say uh exact same thing i think i don't want to create a dog dog and we have
+
+287
+00:34:01,780 --> 00:34:32,450
+ let's say rex five cats cats called let's say luna let's say three right let's use the eat here dog
+
+288
+00:34:32,450 --> 00:34:46,420
+ eat and but this time uh happy it's right if we take a look at these two classes they are a different
+
+289
+00:34:46,420 --> 00:34:55,380
+ type right but they have what well they have duplicated behavior and attributes so
+
+290
+00:34:55,380 --> 00:35:04,260
+ both have name and age and both have eats right so we could keep duplicating the code but dog and cat
+
+291
+00:35:05,420 --> 00:35:14,060
+ also have something in common they're both animals right so instead of repeating the same code in both
+
+292
+00:35:14,060 --> 00:35:23,800
+ classes we can represent that relationship using what so what am i what am i trying to get to what
+
+293
+00:35:23,800 --> 00:35:35,490
+ do you think guys let me see dimitri inheritance yeah inheritance so this is what we're actually
+
+294
+00:35:35,490 --> 00:35:47,200
+ going to talk about now so let's wait with these guys a little bit and then let's just write a little
+
+295
+00:35:47,200 --> 00:36:08,010
+ title aim and i hope so we said in this example that we just saw we saw that dog and cat repeated the
+
+296
+00:36:08,010 --> 00:36:19,990
+ same attributes right and the same um uh eat method right uh so now let's say see how um inheritors can help us
+
+297
+00:36:19,990 --> 00:36:30,180
+ use well to avoid this duplication uh so we will move all the shared parts into one class let's call
+
+298
+00:36:30,180 --> 00:36:43,880
+ it animal and then we can take it from there so now we can just say class uh animal and in it uh
+
+299
+00:36:48,480 --> 00:37:05,370
+ name and name and age and we have self dot name equals name self what's wrong with my keyboard
+
+300
+00:37:05,370 --> 00:37:24,650
+ self dot age equals age right and also uh the method it method uh eat um self uh we had a print and we
+
+301
+00:37:24,650 --> 00:37:42,330
+ said self dot name um is eating or something like that right and now we can create dog class as well
+
+302
+00:37:42,330 --> 00:37:52,590
+ any python if we want to inherit from animal we simply just spread and over here and now we can actually
+
+303
+00:37:52,590 --> 00:38:05,030
+ for now we can just put a pass here and of course one for our cat which is also inheriting from animal
+
+304
+00:38:05,030 --> 00:38:17,470
+ and we can put a palace here so as you notice here uh dog and cats are almost empty right they don't
+
+305
+00:38:17,470 --> 00:38:25,660
+ have their own boundary init method they don't have their own eat method but because they inherit from
+
+306
+00:38:25,660 --> 00:39:03,140
+ animal they can use both well um the problem actually also add um but just to look cat's name as well you
+
+307
+00:39:03,140 --> 00:39:13,690
+ could add this as well and let's run this and see if it works of course it does luna which rex rex
+
+308
+00:39:13,690 --> 00:39:25,470
+ is eating luna is eating luna is eating so even though dog and cats uh don't actually define uh
+
+309
+00:39:25,470 --> 00:39:38,160
+ these things themselves the objects still use them through animal so when we write class dog animal
+
+310
+00:39:38,160 --> 00:39:46,160
+ in this parentheses right so this means that dog inherits from animal and we would say that dog is a
+
+311
+00:39:46,160 --> 00:40:12,200
+ subclass from or is a subclass of actually a subclass of animal and animal is base class so just to
+
+312
+00:40:13,430 --> 00:40:19,570
+ be clear with each other here uh something that is important is a little bit of terminology um
+
+313
+00:40:19,570 --> 00:40:36,370
+ uh so that we agree with each other so we uh so you you might hear about several terms uh for the same
+
+314
+00:40:36,370 --> 00:40:54,480
+ relationship so for example for animal here i would say uh you can call it a parent class you can also
+
+315
+00:40:54,480 --> 00:41:11,580
+ call it a base class what's that of course and super class right and when it comes to a dog or cat
+
+316
+00:41:12,700 --> 00:41:19,830
+ let's just stick with dog here uh when it comes to our dog we would call it a what a child class
+
+317
+00:41:23,600 --> 00:41:43,840
+ the rivet uh the class right and also a not super class but a subclass and i usually say um base
+
+318
+00:41:43,840 --> 00:41:56,520
+ class and and and subclass right sorry in the line 179 should be the capital d or the small d no it's
+
+319
+00:41:56,520 --> 00:42:07,130
+ just so so it's just what we the terminology for what we call these these classes in this case so
+
+320
+00:42:07,130 --> 00:42:13,520
+ it's not always a dog class will always be a a child class but if it's inheriting from animal then we
+
+321
+00:42:13,520 --> 00:42:20,780
+ can call it either a child class we can call it a derivative class or we can call it a subclass so if
+
+322
+00:42:20,780 --> 00:42:26,500
+ you hear me say subclass sometimes or you might hear me say child class you know that we're talking
+
+323
+00:42:26,500 --> 00:42:35,620
+ about the same thing here so cat in this case is for example a child class while animal is a parent
+
+324
+00:42:35,620 --> 00:42:42,010
+ class or a base class or a super class you will usually hear me say base class so we don't get
+
+325
+00:42:42,010 --> 00:43:01,720
+ confused along the way right maybe i missed something uh either way yeah maxims yeah question there uh so
+
+326
+00:43:01,720 --> 00:43:07,400
+ is it common practice in python that classes inherit classes instead of making an object of a class
+
+327
+00:43:07,400 --> 00:43:17,810
+ inside of a class if it's uh common to to inherit yeah yeah yeah okay uh so for instance uh does it work
+
+328
+00:43:17,810 --> 00:43:25,120
+ if you make an object instead of inheriting a class would that be more safe yeah we're actually gonna do
+
+329
+00:43:25,120 --> 00:43:31,470
+ some inherits right now uh and and we're gonna build on that and let's see if if i actually kind of answer
+
+330
+00:43:31,470 --> 00:43:37,470
+ your question along the way i think i'm actually gonna do that and if i don't uh save it for later
+
+331
+00:43:37,470 --> 00:43:42,670
+ and then we can actually take a look at that because it was an interesting tip i think i'm actually gonna
+
+332
+00:43:42,670 --> 00:44:06,490
+ answer that if i remember correctly all right uh so uh and actually uh the next part is um okay
+
+333
+00:44:07,390 --> 00:44:29,700
+ usually i always say a good thing to start off with is something called the is a but you can put it in
+
+334
+00:44:29,700 --> 00:44:43,540
+ capital letter is a uh test something like that okay so what do i mean by that well before using
+
+335
+00:44:43,540 --> 00:44:58,500
+ inheritance is to to say to yourself can i naturally say is a dog an animal oh yes is cat an animal oh yes so
+
+336
+00:44:58,500 --> 00:45:05,640
+ that would make inheritance conceptually reasonable but we could compare it to what we have talked about
+
+337
+00:45:05,640 --> 00:45:15,280
+ before for example a course is a student well no a course has students of course but the relationship
+
+338
+00:45:15,280 --> 00:45:22,460
+ is better uh moduled through i would say composition in that way uh which we already used in the last
+
+339
+00:45:22,460 --> 00:45:29,760
+ lesson yeah if you forgot you can always go back to the last lesson uh so that's something that you can
+
+340
+00:45:29,760 --> 00:45:47,790
+ always do there is a test uh now that we may know that we know the inheritance actually makes sense uh we
+
+341
+00:45:47,790 --> 00:45:56,920
+ can look a little bit closely at what a subclass actually inherits all right so we're going to talk a
+
+342
+00:45:56,920 --> 00:46:05,560
+ little bit about inherited methods and then and then we're gonna add some subclass specific behavior
+
+343
+00:46:06,200 --> 00:46:13,620
+ you're gonna come into something called duck typing and yeah polymorphism and so on but let's take it
+
+344
+00:46:13,620 --> 00:46:30,860
+ step by step let's take back our uh dog class here uh oh sorry our class animal then we can take a break
+
+345
+00:46:30,860 --> 00:46:56,450
+ after this example so class animal right uh we said dunder in it have a name um dot name equals name right eat self um
+
+346
+00:46:56,450 --> 00:47:22,360
+ let's return and then self that would be name right self name is eating right and let's also do something
+
+347
+00:47:22,360 --> 00:47:56,700
+ else left sleep for example self return self uh name is sleeping we write let's create a uh a dog class
+
+348
+00:47:56,700 --> 00:48:13,830
+ is inheriting from animal right i'm just gonna put a pause here then let's create the dog uh let's call him
+
+349
+00:48:16,340 --> 00:48:48,620
+ rex again let's actually print uh dog eat print dog what we see here is what what we see that dog and
+
+350
+00:48:48,620 --> 00:49:01,250
+ and and the dog do not actually uh define eat or sleep itself right but because dog inherits from
+
+351
+00:49:01,250 --> 00:49:19,480
+ animal here it can actually use both these methods so python actually looks at dog then finds the method and
+
+352
+00:49:19,480 --> 00:49:40,720
+ pretty easy and we could add a subclass specific behavior of course uh we could uh let's see here
+
+353
+00:49:40,720 --> 00:49:49,780
+ uh let's keep eat uh can remove sleep we don't need that for now or let me actually do this so we don't
+
+354
+00:49:49,780 --> 00:50:04,540
+ erase anything to another example something like that there we go and let's get rid of sleeping ah so
+
+355
+00:50:04,540 --> 00:50:24,480
+ so instead of having a pass here i'm actually going to do something here that uh said bark so uh let's
+
+356
+00:50:24,480 --> 00:50:47,100
+ return uh and we can do enough stream um so dot name uh says or something like that right now we have
+
+357
+00:50:47,100 --> 00:50:57,680
+ our uh uh uh dog rex uh we want him to eat but we also want him to bark so of course this actually
+
+358
+00:50:57,680 --> 00:51:12,540
+ works as well rex is eating rex says wolf right so dog will of course inherit the general animal
+
+359
+00:51:12,540 --> 00:51:24,640
+ behavior as we see but it can also as we see here obviously uh define specifics or behavior specifics
+
+360
+00:51:24,640 --> 00:51:43,150
+ to our dog here so as you see here dog can actually use both uh eat and bark now if i ask you can
+
+361
+00:51:43,150 --> 00:52:07,020
+ an animal call bark do you guys think juana let's let's try you should always trust your gut feeling
+
+362
+00:52:07,020 --> 00:52:16,440
+ right so let's do something here let's say animal uh animal right and let's do something like this
+
+363
+00:52:16,440 --> 00:52:29,900
+ animal and let's call in let's be some mysterious here unknown unknown right uh now in order to not give
+
+364
+00:52:29,900 --> 00:52:39,200
+ give it away i'm gonna do print uh it would look something like this right uh animal uh let's think
+
+365
+00:52:39,200 --> 00:52:52,990
+ here animal dot bark right so this is what we asked will this work or not uh and johanna said no
+
+366
+00:52:52,990 --> 00:53:01,300
+ and i told her to trust her gut feeling and let's actually try it out we will get an attribute error
+
+367
+00:53:01,300 --> 00:53:13,300
+ so dog inherits from animal sure but animal does not inherit from dog so the base class that does not
+
+368
+00:53:13,300 --> 00:53:25,570
+ automatically receive methods from its subclasses just to make sure that everybody uh follows on that uh
+
+369
+00:53:25,570 --> 00:53:45,110
+ i could add something here um all right uh maybe something like this no no all right i think it's a
+
+370
+00:53:45,110 --> 00:53:57,190
+ perfect time to take a little break let's actually do that let's take uh uh 15 and then we can continue
+
+371
+00:53:57,190 --> 00:54:07,580
+ with r2 of object-oriented programming we can continue a little bit and build on everything so
+
+372
+00:54:07,580 --> 00:54:11,680
+ yeah we're gonna build on this step by step just as we're doing i know it's a little bit slow now
+
+373
+00:54:11,680 --> 00:54:14,080
+ in the beginning especially if you have done this before
+
+374
+00:54:17,530 --> 00:54:24,170
+ or maybe um or if you're coming from another language at least you you will see a little bit of
+
+375
+00:54:24,170 --> 00:54:31,620
+ difference right so yeah we're taking it from the beginning so we don't miss anything all right guys so
+
+376
+00:54:31,620 --> 01:12:25,800
+ let's take 15 minutes um see you guys back here at 10 15 all right um 15. see you guys all right guys
+
+377
+01:12:26,820 --> 01:12:37,150
+ are we back thumbs up so i know that everybody's okay okay you can hear me and you can still see the
+
+378
+01:12:37,150 --> 01:13:11,350
+ screen um continue uh here uh uh christopher do you have a question or just yeah yeah i was wondering about the uh
+
+379
+01:13:11,350 --> 01:13:21,520
+ uh on line 233 we have the no no for creating an uh animal ah okay here i would say yeah i was just
+
+380
+01:13:21,520 --> 01:13:27,370
+ wondering because i don't know if it's maybe uh yeah yeah sorry convention or something but yeah yeah
+
+381
+01:13:27,370 --> 01:13:37,070
+ yeah no no of course of course create an animal but don't use the method from subclass right uh okay so
+
+382
+01:13:37,070 --> 01:13:52,210
+ so but you could create something that is not defined as a uh subclass okay yeah um all right uh let's see
+
+383
+01:13:52,210 --> 01:14:24,170
+ here so a subclass with its own thunder in it yeah that's where we were okay so so far uh the dog
+
+384
+01:14:26,170 --> 01:14:35,120
+ has actually been able to use the down their image method from animal right but let's say the dog
+
+385
+01:14:35,120 --> 01:14:45,780
+ um needs some additional information uh that that a general animal does not have for example uh uh let's
+
+386
+01:14:45,780 --> 01:14:53,340
+ let's start here and and bear with me uh uh you don't have to raise your hand for this one yeah i'm
+
+387
+01:14:53,340 --> 01:15:00,550
+ gonna make a uh probably a mistake here uh a little bit on purpose for the sake of the example all right
+
+388
+01:15:01,020 --> 01:15:17,790
+ um let's say our the dog has a breed for example all right let's do something like this class
+
+389
+01:15:18,110 --> 01:15:39,680
+ animal right and let's reuse a little bit here animal go go name and i'm actually gonna add the age
+
+390
+01:15:39,680 --> 01:16:01,230
+ here and um self age equals age right and uh and now let's create our new class here uh a dog class
+
+391
+01:16:01,230 --> 01:16:22,090
+ just just inheriting from animal right in it uh name age and breed and no let me get things away
+
+392
+01:16:22,090 --> 01:16:35,960
+ here but okay uh let's say breed all right and here i'm gonna say self the name equals name right and
+
+393
+01:16:37,000 --> 01:17:06,490
+ so the age equals uh age self dot um breed equals breed let's create our dog here we need the name
+
+394
+01:17:06,490 --> 01:17:21,780
+ stick to rex uh still five and uh what is it okay labrador those are cute all right labrador right uh
+
+395
+01:17:21,780 --> 01:17:38,750
+ so we can print our dog name we can uh age we can print out the breed all right let's let's actually
+
+396
+01:17:38,750 --> 01:17:51,690
+ try this and as you see this actually works so far so good right dog actually has its own boundary in it
+
+397
+01:17:55,670 --> 01:18:08,720
+ and it can store uh the additional breed attributes no problem notice what happened we actually had to
+
+398
+01:18:08,720 --> 01:18:21,930
+ write name and self name equals name and self age equals age again so we're kind of we're duplicating the
+
+399
+01:18:21,930 --> 01:18:32,240
+ uh the color initialization uh logic from animal right so if animal later changes we now have
+
+400
+01:18:33,360 --> 01:18:44,820
+ multiple places to actually maintain right so the question is actually can we reuse animals down their
+
+401
+01:18:44,820 --> 01:18:58,620
+ init method and only add what is specific for our dog here and this is what i kind of gave away uh just a
+
+402
+01:18:58,620 --> 01:19:11,190
+ second ago yes we can actually so instead of repeating the initialization from animal the dog can
+
+403
+01:19:11,190 --> 01:19:31,900
+ actually recall animals down their image method and for this we use what anybody knows we use something
+
+404
+01:19:31,900 --> 01:19:44,750
+ called super oh sorry we use actually super and i'm just going to show it in action here so instead of
+
+405
+01:19:44,750 --> 01:20:01,730
+ writing uh all of this what we can do is print this and here we just write super and a little dot here
+
+406
+01:20:01,730 --> 01:20:13,410
+ and we write down oh sorry down there in it and then we just write name and h and that's it and now we can
+
+407
+01:20:13,410 --> 01:20:25,650
+ actually add just uh what is specific for uh the dog and that would be self not breed equals breed there you
+
+408
+01:20:25,650 --> 01:20:43,180
+ go and this should also write there we go so let's try to follow what actually happens here uh so when
+
+409
+01:20:43,180 --> 01:20:58,090
+ we create a dog object uh python enters the dog's down there in it method uh right then super actually
+
+410
+01:20:58,090 --> 01:21:11,470
+ calls uh yeah exactly so super actually calls the down there in it method from animal the animal then
+
+411
+01:21:11,470 --> 01:21:18,840
+ initializes name and age and then the dog continues or the dog class here
+
+412
+01:21:21,030 --> 01:21:34,610
+ excuse me continues and the dog continues and adds what well adds breed right so we kind of reuse
+
+413
+01:21:34,610 --> 01:21:44,100
+ but not kind of we actually do reuse the initialization from animal and only add what is specific to dog
+
+414
+01:21:44,100 --> 01:21:57,090
+ before i take any questions just an important detail uh so the the important detail that i want to say
+
+415
+01:21:57,090 --> 01:22:09,020
+ here is notice that we don't actually write might be a question that we don't actually write self here
+
+416
+01:22:09,020 --> 01:22:22,760
+ something you might have noticed right we actually just write the name and age because the current
+
+417
+01:22:22,760 --> 01:22:31,110
+ instance here is handled automatically therefore we don't need to write any self here and there you go
+
+418
+01:22:41,580 --> 01:22:52,550
+ we're going to do a little bit more before let's see here if if it's a question uh of can you do can
+
+419
+01:22:52,550 --> 01:22:57,670
+ you do i might think about that i'm gonna add a little bit more stuff we're going to do some method
+
+420
+01:22:57,670 --> 01:23:03,190
+ overriding and so on uh so that might answer some questions but if it's something that i missed or
+
+421
+01:23:03,190 --> 01:23:12,540
+ something like that uh please go ahead uh gloria no i just want to ask it um what happens if a
+
+422
+01:23:13,850 --> 01:23:23,850
+ the parent class has a new attribute then we need to update one by one of all the child classes uh in
+
+423
+01:23:23,850 --> 01:23:36,660
+ a kind of way yes uh but um uh for now yes okay so there is a way to to do it like automatically but
+
+424
+01:23:36,660 --> 01:23:45,790
+ okay yeah i think it is a normal you had the question the same question right no i don't understand the
+
+425
+01:23:45,790 --> 01:23:52,110
+ difference i don't understand the difference from the previous examples examples uh why we use uh why
+
+426
+01:23:52,110 --> 01:24:00,910
+ we initialize because that's what we're doing between we're always doing that when uh even when
+
+427
+01:24:00,910 --> 01:24:08,410
+ inheriting let's hear i'm just gonna double check here so i don't uh reveal anything that we're actually
+
+428
+01:24:08,410 --> 01:24:16,670
+ gonna um what what's the difference between super and the pre previous examples uh so what is the
+
+429
+01:24:16,670 --> 01:24:30,050
+ difference between uh uh what we had before right and and this right just give me one second
+
+430
+01:24:33,180 --> 01:24:40,420
+ so so we have we have to if we don't use super we have to uh write the properties in in in the
+
+431
+01:24:40,420 --> 01:24:49,900
+ subclass sure sure in in in this case yes uh if we were to add something right uh so for example a let's
+
+432
+01:24:49,900 --> 01:25:04,130
+ say um i don't know um uh color maybe something like that right so i if i understand the question
+
+433
+01:25:04,130 --> 01:25:15,500
+ correctly is if we were to do something like this color equals color uh do we need to uh add also color
+
+434
+01:25:15,500 --> 01:25:30,150
+ over here right is that the question uh well we shouldn't have to i mean we're inheriting so
+
+435
+01:25:30,150 --> 01:25:39,600
+ what does super actually do what like why are we using it we are we don't we shouldn't have to like
+
+436
+01:25:39,600 --> 01:25:48,270
+ write everything again like because we're reusing it when we're inheriting so so what's the difference
+
+437
+01:25:50,720 --> 01:26:01,590
+ so let's see here uh just double check that i didn't do anything wrong here no i haven't give me one
+
+438
+01:26:01,590 --> 01:26:09,880
+ second i'll just i don't know maybe everyone else because maybe no no no it's a valid question i'm just
+
+439
+01:26:09,880 --> 01:26:15,700
+ i'm just thinking of an angle here uh no one else is asking so no no no no no it's a valid question
+
+440
+01:26:15,700 --> 01:26:20,020
+ it's a very good question nothing wrong with the question at all because we want to see actually the
+
+441
+01:26:20,020 --> 01:26:30,480
+ magic of of super right uh and it kind of feels please yeah exactly uh just give me one uh so i don't
+
+442
+01:26:30,480 --> 01:26:39,940
+ say it wrong here i'm just going to try it out uh let's you know what guys i'm actually going to take
+
+443
+01:26:39,940 --> 01:26:46,490
+ let's take five minutes uh i'm just gonna try one thing uh on my own here so i don't confuse anyone
+
+444
+01:26:46,490 --> 01:26:55,820
+ uh i'm just gonna try if we can actually do one thing um yes go tell me you're kind of right uh
+
+445
+01:26:55,820 --> 01:27:00,460
+ or you're not kind of right you're actually right uh but just just give me one five minutes and then
+
+446
+01:27:00,460 --> 01:29:35,080
+ i will actually give you a good uh answer here uh let us try something i think that will answer the
+
+447
+01:29:35,080 --> 01:29:46,290
+ the question that we had uh i think it's a good example here uh i think we're kind of uh thinking of it
+
+448
+01:29:46,290 --> 01:29:57,490
+ in a wrong way if we look at what uh let's see here now more let's see properties yes but this is not
+
+449
+01:29:57,490 --> 01:30:07,970
+ always the case when inheriting without using super uh yeah something that is a good question we didn't
+
+450
+01:30:07,970 --> 01:30:15,740
+ use anything in child class before but now we're using it as a difference or is it same just in writing
+
+451
+01:30:15,740 --> 01:30:25,940
+ way yes uh all right so let me let me let me let me show you something what if we come here and add some new
+
+452
+01:30:25,940 --> 01:30:38,400
+ logic to animal right uh let's say instead of adding a parameter here uh let's actually add a
+
+453
+01:30:38,400 --> 01:31:01,400
+ a logic here let's say we put self harsh but is alive all right let's put it to and just for
+
+454
+01:31:02,210 --> 01:31:16,180
+ value error here so if age uh is is uh less than zero open oh sorry uh then uh we want to kind of raise
+
+455
+01:31:16,180 --> 01:31:38,050
+ say something here raise uh value error age cannot negative right something like that now what we see
+
+456
+01:31:38,050 --> 01:31:59,430
+ here is no let's add something here print look at this dog okay is alive if we were to run this we'll
+
+457
+01:31:59,430 --> 01:32:07,970
+ see that it actually works so what do we notice here think about it for a second here what do we actually
+
+458
+01:32:07,970 --> 01:32:21,290
+ notice here well what we notice is that we actually changed the initialization logic inside animal but we
+
+459
+01:32:21,290 --> 01:32:34,080
+ didn't have to come down here and change the dog right so dog actually gets its new this is alive um
+
+460
+01:32:34,080 --> 01:32:42,050
+ what do you call it attribute right and and and the age uh validation uh because because it it kind of calls
+
+461
+01:32:42,050 --> 01:32:55,690
+ uh the um let's say uh animals uh down there in it right um but super does not mean that dog will actually
+
+462
+01:32:55,690 --> 01:33:01,630
+ never change uh because if we were to change the interface of animal for example by adding a new
+
+463
+01:33:01,630 --> 01:33:10,810
+ required parameter uh then the dog also needs to be updated so maybe a kind of a slip from me or was kind of
+
+464
+01:33:10,810 --> 01:33:20,030
+ was kind of confusing so that would change but not in this case so if we were to look at it the the
+
+465
+01:33:20,030 --> 01:33:30,640
+ the benefits is just that we we do not need to um duplicate the implementation that we have added
+
+466
+01:33:30,640 --> 01:33:41,110
+ here for animal inside every well subclass that we might create dog cat or whatever so you can actually
+
+467
+01:33:41,110 --> 01:33:51,750
+ think about that to try to without super here uh how would it actually look like well if we didn't have
+
+468
+01:33:51,750 --> 01:34:00,510
+ super and i'm gonna get rid of that uh so it doesn't confuse you if you were to come back to the notes
+
+469
+01:34:00,510 --> 01:34:08,630
+ if we were to remove super and i'm gonna try to do this without uh making a mistake here uh you can also
+
+470
+01:34:08,630 --> 01:34:15,410
+ pay attention with me here i might uh so i don't slip uh that would be well of course we need to put
+
+471
+01:34:15,410 --> 01:34:35,310
+ self dot name equals what name right we need to put uh self dot age equals age so far so good
+
+472
+01:34:38,080 --> 01:34:58,550
+ and would this be enough to say guys would this be enough christian no i i i actually have a
+
+473
+01:34:58,550 --> 01:35:07,610
+ previous question you mentioned the interfaces uh it does this mean that there there is another layer
+
+474
+01:35:07,610 --> 01:35:17,700
+ here to this problematic uh problem like we have to we have to implement the uh the properties in
+
+475
+01:35:17,700 --> 01:35:24,930
+ like it works like no that's it no i was actually talking about the properties in this case uh uh yeah
+
+476
+01:35:27,550 --> 01:35:32,590
+ but but not nothing uh nothing the it wasn't in a deep meaning with that but okay
+
+477
+01:35:34,140 --> 01:35:42,360
+ but would you say that this is enough um maybe i can switch it to maybe gloria i don't think so
+
+478
+01:35:42,360 --> 01:35:48,610
+ because now you are like uh overwriting the need if i understood correctly okay so what if i come here
+
+479
+01:35:48,610 --> 01:36:09,050
+ and say self that um is alive it was true would that be enough gloria i can uh keep up that be enough yes
+
+480
+01:36:09,050 --> 01:36:38,620
+ yes though that could work that's right uh yes uh it did uh it did kind of work right uh but i would
+
+481
+01:36:38,620 --> 01:36:52,460
+ actually hmm yes it does that would be enough uh interesting i thought it was i think if you remove it
+
+482
+01:36:52,460 --> 01:37:00,550
+ from the line 285 it will not work yeah yeah yeah obviously well yeah i actually thought that i also need
+
+483
+01:37:00,550 --> 01:37:10,690
+ to add this uh should have tried it myself uh so my point was gonna show you that i need to actually
+
+484
+01:37:10,690 --> 01:37:17,150
+ add this as well but it seems that it doesn't need i need to just look into it again uh just to be sure
+
+485
+01:37:17,150 --> 01:37:33,890
+ but as you see here uh so with our super um we don't actually need to change dog right and now think about
+
+486
+01:37:33,890 --> 01:37:40,220
+ it if we had a dog and we had a cat and we had a cow and we had a horse and so on then we had to change
+
+487
+01:37:40,220 --> 01:37:49,230
+ on all of these right but with our um down there in it or super uh we kind of don't if we were to add
+
+488
+01:37:49,230 --> 01:38:09,920
+ some new logic so any change any uh if there is some kind of shared initialization logic it stays
+
+489
+01:38:09,920 --> 01:38:29,110
+ just in one place and we don't have to worry about that do you kind of see why super is super nice uh
+
+490
+01:38:29,110 --> 01:38:37,540
+ christian yes well uh are there rules of uh to inheritance maybe there are some rules that we missed
+
+491
+01:38:37,540 --> 01:38:46,430
+ because uh like with an interface for instance you have to you're like forced to implement uh
+
+492
+01:38:47,870 --> 01:38:55,000
+ some properties of the the interface and of course we're gonna dive more into inheritance and we're
+
+493
+01:38:55,000 --> 01:39:02,350
+ gonna build on this okay as you will see yeah i would i would read up on it i would read up on it
+
+494
+01:39:02,350 --> 01:39:08,950
+ because yeah it seems it seems really powerful and i want to understand it so yeah and hopefully we will
+
+495
+01:39:08,950 --> 01:39:17,390
+ actually uh answer your question along the way but uh yeah and some pitfalls and so on so yeah just
+
+496
+01:39:17,390 --> 01:39:25,110
+ let's keep it um let's keep the red line as we say in swedish i don't know how to say that in english
+
+497
+01:39:28,420 --> 01:39:40,080
+ no yeah exactly the red thread not the red line yeah uh all right uh we can actually keep this let's
+
+498
+01:39:40,080 --> 01:39:53,690
+ keep this so you can see the uh what we what we came from right dimitri yes i just wanted to add that
+
+499
+01:39:53,690 --> 01:40:03,900
+ uh in this case uh if we omit super we will miss uh h validation as well so we can for example
+
+500
+01:40:03,900 --> 01:40:10,780
+ create the duck with a negative age yeah yes yes thank you thank you thank you thank you thank you
+
+501
+01:40:10,780 --> 01:40:17,540
+ thank you of course yeah just like if we were to that's why we need to add this right of course
+
+502
+01:40:17,540 --> 01:40:23,400
+ it will work but at the same time if we had an age that is negative we wouldn't have this logic thank
+
+503
+01:40:23,400 --> 01:40:38,680
+ you for that one dimitri i don't know might be my cold uh all right right all right all right let's
+
+504
+01:40:39,940 --> 01:40:52,020
+ move uh carefully forward what was next uh we spoke about a little bit of super talk about a little
+
+505
+01:40:52,020 --> 01:41:04,530
+ bit of self that will be an exercise uh i'm gonna save that for you guys uh for the lab uh let's see
+
+506
+01:41:04,530 --> 01:41:26,510
+ here okay so uh we save polymorphism for tomorrow perfect all right uh so we're just gonna talk a little
+
+507
+01:41:26,510 --> 01:41:35,270
+ bit about uh method overriding and that would be uh probably the end of the day uh so what we have seen
+
+508
+01:41:35,270 --> 01:41:50,550
+ so far is uh take care uh so what we have seen so far well uh uh subclasses have either inherited a
+
+509
+01:41:50,550 --> 01:41:59,870
+ method and maybe need needs a different version of that method right a subclass can actually replace
+
+510
+01:41:59,870 --> 01:42:08,310
+ an inherited method with its own implementation and this is what we call method overriding uh let me just
+
+511
+01:42:08,310 --> 01:42:26,140
+ put it as a title here method overriding uh so uh let's just create a just to show it in a very simple
+
+512
+01:42:26,140 --> 01:42:44,410
+ example here and then we can build on that a little bit um in it super simple name is enough and name
+
+513
+01:42:44,410 --> 01:43:24,830
+ equals name right uh yeah let's also make sound let's put self return some animal class dog animal animal
+
+514
+01:43:24,830 --> 01:43:44,200
+ death sound and i'm not gonna use super here uh actually i'm gonna do return just so we get the
+
+515
+01:43:44,200 --> 01:44:02,160
+ point here woof all right and then for our cat cat makes sounds of uh that would be wolf right uh let's
+
+516
+01:44:02,160 --> 01:44:36,730
+ say uh yeah right now let's create our animal why did i do that uh dog rex and then we have our cat
+
+517
+01:44:36,730 --> 01:44:49,300
+ equals cat and let's call her lula all right and now that we have created them we can actually do some
+
+518
+01:44:49,300 --> 01:45:12,730
+ prints here print uh animal make sound right and then we can do another print uh dog make sound and also
+
+519
+01:45:12,730 --> 01:45:28,220
+ cat make sound right just to show you uh even though they inherit from animal we see that in our terminal
+
+520
+01:45:28,220 --> 01:45:36,890
+ we will see some uh yeah exactly some animal sound we see meow woof and then we see meow right so dog and
+
+521
+01:45:36,890 --> 01:45:44,360
+ cat can either even though they they both inherit from animal but they actually define their own version
+
+522
+01:45:44,360 --> 01:45:52,740
+ cat and then we see a cat or cat we see that in the cat or cat we see the cat version of what well uh this method makes sound so when we call make sound uh on the dog
+
+523
+01:45:52,740 --> 01:46:04,520
+ python will actually use dogs version and when we call it on cat well python we use the cat version right uh so the subclass
+
+524
+01:46:04,520 --> 01:46:14,800
+ implementation actually will override the inherited one and that's important to remember but of course overriding does not always mean that we want to completely ignore the paragon
+
+525
+01:46:14,800 --> 01:46:36,210
+ the parent method sometimes maybe we want to use the parent method uh or the or use the parent behavior and then add
+
+526
+01:46:36,210 --> 01:46:49,820
+ maybe something to it here we can actually use what guys what do you say something that we discussed previously
+
+527
+01:46:49,820 --> 01:47:12,040
+ previously with me guys last part fabian no never mind of my i thought i thought about it i thought
+
+528
+01:47:12,040 --> 01:47:18,370
+ if it was you called something on the class directly but i can't explain it so never mind no no no no
+
+529
+01:47:18,370 --> 01:47:29,600
+ saranya yeah some of the uh methods like sleeping or eating those things it can be a common one
+
+530
+01:47:29,600 --> 01:47:37,230
+ well i was actually thank you but i was actually thinking of super so we can use super for this as well
+
+531
+01:47:38,140 --> 01:47:50,940
+ all right so let's make super super uh so let's use them let's use a different example let's save this one
+
+532
+01:47:50,940 --> 01:47:59,600
+ so we want to still override but we want to keep something maybe or add something and so on all right
+
+533
+01:47:59,600 --> 01:48:18,220
+ so let's say we have a class uh employee all right and then uh we we we uh get uh information or something
+
+534
+01:48:18,220 --> 01:48:38,090
+ like that all right uh self uh return let's say employee uh uh information all right um
+
+535
+01:48:38,090 --> 01:48:52,730
+ um now let's create another class uh let's say a developer developer who's also an employee right
+
+536
+01:48:52,730 --> 01:49:08,610
+ um and now we do something like this get information ah perfect uh but i'm just gonna make it a little bit clearer
+
+537
+01:49:08,610 --> 01:49:15,480
+ make it a little bit clearer so let's keep that uh let's do it like that so uh here get information
+
+538
+01:49:15,480 --> 01:49:24,730
+ right so what we can do just keep it in a variable here so base let's say base information right just
+
+539
+01:49:24,730 --> 01:49:37,020
+ to make it super clear uh you can write something like that super and then uh get uh what was it get in or
+
+540
+01:49:37,020 --> 01:49:55,380
+ right and then let's do it right and then let's actually return uh base information uh something like this
+
+541
+01:49:55,380 --> 01:50:05,160
+ right base information plus equal no not that plus equals i would say uh uh just about this
+
+542
+01:50:05,160 --> 01:50:22,690
+ let's keep it simple roll i don't know say developer this is a developer class all right now uh let's create a developer
+
+543
+01:50:22,690 --> 01:50:38,040
+ developer developer developer is a developer let's take a look at this now let's print out our uh developer
+
+544
+01:50:38,040 --> 01:51:08,000
+ where we get actually information let's see what actually will be printed out here uh employee information
+
+545
+01:51:08,000 --> 01:51:22,830
+ role developer and there you go so what did we see that the developer actually overrides get information
+
+546
+01:51:22,830 --> 01:51:34,720
+ here right inside its own actually its own version so it first calls of course the parent the parent
+
+547
+01:51:34,720 --> 01:51:48,480
+ version uh using the super and then it actually adds some information here so we're kind of extending
+
+548
+01:51:48,480 --> 01:51:58,310
+ the parent behavior rather than just completely replacing it right so there you go a little bit
+
+549
+01:51:58,310 --> 01:52:12,730
+ more about super and since super was discussed i think this was a perfect place to actually end the
+
+550
+01:52:12,730 --> 01:52:21,520
+ lesson uh yeah and tomorrow we're gonna talk a little bit more polymorphism so if you were looking for
+
+551
+01:52:21,520 --> 01:52:27,750
+ that uh we will talk about it tomorrow we will talk a little bit of polymorphism with inheritance as
+
+552
+01:52:27,750 --> 01:52:40,690
+ well uh if you're familiar with duck typing we will talk about python and duck typing um maybe jump
+
+553
+01:52:40,690 --> 01:52:48,240
+ depending on the time something that we will also talk about is another another dunder method uh down
+
+554
+01:52:48,240 --> 01:52:57,000
+ the string uh just to add another um just another method and a little bit with inheritance as well
+
+555
+01:52:58,150 --> 01:53:05,740
+ we have a lot to talk about tomorrow now that that will be actually it okay and maybe discuss like we
+
+556
+01:53:05,740 --> 01:53:14,030
+ did in the last in the beginning here uh where we discussed class versus uh dictionary we will do
+
+557
+01:53:14,030 --> 01:53:22,880
+ kind of the same thing uh we will uh look at inheritance versus composition so yeah uh
+
+558
+01:53:22,880 --> 01:53:28,540
+ which one is better and in what in what sense and so on but we will start off with polymorphism
+
+559
+01:53:28,540 --> 01:53:32,540
+ and take it from there and see where we actually land and if we need more days we will take more
+
+560
+01:53:32,540 --> 01:53:39,520
+ days for for the fundamental part but i think tomorrow will be the last the last day we actually uh
+
+561
+01:53:39,520 --> 01:53:52,600
+ talk uh the last lesson for fundamentals i hope i have answered your questions uh if i have missed any
+
+562
+01:53:52,600 --> 01:54:02,560
+ question i mean uh we're doing our best here uh with the questions and uh with the call that i'm having i can't
+

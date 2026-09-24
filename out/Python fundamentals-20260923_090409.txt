@@ -1,0 +1,562 @@
+But then we spoke about, well, let's say a course needs to contain many student objects, right?
+And we kind of combined the idea here in a list, right?
+But there's one thing that we have to be careful with.
+So before we can continue, let me just comment this out.
+I'm going to show you what I mean.
+Well, before we can continue, there's one important, well, Python-specific mistake that we need to look at.
+So, well, we have already worked kind of with, what can you say, multiple objects, like, for example, lists.
+But when we use them as, let's say, default arguments, we need to be very careful.
+So this is something that we should not write.
+So I'm actually going to comment that out after I write it.
+So just bear with me here if you're coding along.
+Class course, right?
+And then I come here and then I write that under init, self, and then we have name, right?
+And I come here and then I write student, like that.
+And now here, I write self.name equals name, self.student equals student.
+So this might look reasonable in a way, right?
+You might think that every, like, new course will get its own empty list, right?
+But this is not actually what happens.
+So default arguments or default argument values are actually created when the function is defined.
+Not every time it's actually called.
+So you have to be careful with that.
+So the same list can accidentally be actually shared between multiple objects.
+So this is a big no-no.
+And I'm actually going to try to demonstrate it in kind of a, let's say, I'm going to put here, so we remember, let's call it problem.
+All right?
+So let's take an example of this problem.
+Let's try to demonstrate it in a way.
+So class, let's call it bad, bad course, right?
+And then I come here and I write that limit, sorry, name.
+We said students, right?
+Equals, empty list.
+And here, self.name equals name, self.students equals students, right?
+Now let's make this kind of method here as well.
+The add student, self.student, like that.
+Self.
+I think that would be students, right?
+Students.end.
+And now we would like to append the student, right?
+Student, not students.
+Something like that.
+All right?
+Now let's try this out.
+Course.
+Let's say course one.
+Course.
+And we can put Python inside here.
+All right?
+And then we say course two.
+Bad course.
+Let's say AI.
+All right?
+Now, let's actually do something like this.
+Course.
+Let's say course one, for example.
+And then I use add student here.
+Let's say I try to add Ada.
+Let's do some prints here.
+Let's see.
+Print.
+Course one.
+Students.
+And then let's do the same thing for course two.
+Now, let's try to predict what's going to happen here.
+So, we try to add Ada to what?
+Come on, guys.
+Are you with me?
+We try to add Ada to course one, right?
+All right.
+Let's run this and see.
+We actually get Ada in course two.
+So, why does Ada end up in course two?
+What do you say, guys?
+Any suggestions?
+Just offer.
+Yeah, it will be because, did I think it's true now, the list itself becomes a default
+for creating the object.
+Yeah, I'm not sure.
+Yeah, exactly.
+No, you're in the right way here.
+Because both objects actually received the same default list, right?
+Yeah.
+So, when course one changes the list, then course two will see that change as well.
+Yeah, so it changes the default.
+Ooh, that's creepy.
+So, let's fix this.
+Thank you, Toffe.
+Excuse me.
+As you hear, my cold is still down there.
+So, the common solution, I wouldn't say this is the only solution, but the common solution,
+at least, is to use actually none as the default value, and then rather create a new list inside
+down there in it.
+Let me show you.
+Let's write at least the title here, maybe correct way or maybe pattern.
+So, we had class course, I'm not going to call it bad course, right?
+And, init, name, and this side of students, I'm actually going to put, as we said, none.
+And, of course, so, name equals name.
+And now I can come and do something like this.
+For example, if students is none, students equals, so we tried to create this over here instead.
+We decided on doing it.
+And now we can come and say, self, students equals students.
+And now let's create a method.
+Add something like this.
+Student, self, and pretty much the same as we did with self, but students.
+Append, right?
+And we want to append to student.
+Now, let's try the same thing here.
+We need to do some changes.
+We said course one, right?
+And we don't have that one.
+So, course, right?
+Then let's stick to Python.
+And instead of that course, we're going to say AI, right?
+Course one, add student ADA.
+I'm going to stick to that.
+And then score course one, students.
+Course two, students.
+Perfect.
+Okay.
+Now, let's run this this time.
+Now, what exactly happens?
+Now, each course actually gets its own list.
+So, changing the list in course one does not affect course.
+So, just a small fix.
+Maybe you can solve it in another way.
+Let's see.
+Anastasia.
+Yeah.
+I just had a question about the bad example.
+Are there any cases where that could actually be useful?
+I don't think so.
+No.
+Okay.
+Because you usually refer it as a hythonic kind of mistake.
+No, I'm just thinking, I'm looking into sprites right now.
+And it has a method for basically checking up all the entities that belong to a group.
+And I'm wondering if this sort of bad way essentially does the same thing, just ugly.
+Sorry, say that last word part.
+No, I'm just wondering if this bad way of doing classes basically can create a list that keeps track of all the entities.
+I didn't get the question.
+Sorry.
+Okay.
+It's fine.
+I'll write to you later on.
+Sure, sure.
+But no, I would say maybe avoid this kind of stuff.
+Let's see here.
+I think it was Fabio.
+No.
+Gloria.
+I just want to say if the question can be done in the open chat so all of us know the answer because it sounds like interesting.
+Sure, sure, sure.
+Sure.
+I just thought you could probably relate to the student chat or something like that and then I can answer in the student chat.
+No problem.
+Or maybe someone else sees a good idea as well.
+I'm currently Googling anti-pattern.
+All right.
+Let's see.
+So we spoke about the correct pattern here.
+What do we have left?
+Just because we have talked a little bit about classes here.
+Since this usually happens, I just want to mention it at least.
+Let's call it, what do we call it?
+Let's call it generis versus class.
+All right.
+I think you guys already know this, but just to make sure.
+So we have actually seen a lot of things that we can do with our classes, right?
+Obviously.
+But that doesn't actually mean that we should use a class every time we want to store some data, right?
+Sometimes a dictionary is perfectly enough.
+So let's say we have, I don't know.
+So let's keep it simple here.
+So let's keep it simple here.
+Let's keep it simple here.
+Let's keep it simple here.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+Student.
+a score right and then we can come down here and write self.name equals name and then we need to
+write so the score equals score right and then out there and then kind of do something like this
+create a student object so student object right equals world student and now we need to create
+a name let's call her ada and she got a score of 91 right there we go so is there a difference here
+right so both examples would rather represent the same let's say basic information here right
+we have a student with a name and a score dictionary flexible and simple plus give us a
+defined type and a natural place for let's say related behavior so i would i would say the
+dictionary can be well a good choice uh when when when we mainly need the simple key value data right
+the structure is simple and we don't need much behavior connected to the data right
+while a class could be more useful when well we have many objects that share the same structure
+each object has their own behavior or their own state maybe changes over time right so the important
+point here is just don't turn every dictionary into a class so object-oriented programming is
+just a tool right not a requirement and yeah there you go and there you go let's see what time do we have
+9 30 to 23 hmm uh let me see uh do we have anything left for this part okay so we have some common mistakes
+and so on i i think i'm gonna save those it was something i used before but it was more for a beginner
+class and i think you already kind of know this but you know uh class versus object to not forget
+parentheses that's something important but i think you know this kind of stuff guys getting the self
+attribute is a common mistake uh but instead we can do something like this actually gonna do something
+like this i'm gonna come here and let's see we have some hands all right um fabian uh yeah i was just uh
+wondering about a question yesterday where you have an initially empty list in the course there's no
+necessity to go back and edit it so it follows what you showed today about shared lists say that again
+there is no uh you know how you showed how if you insert an empty list it will be shared across like both
+courses yesterday there was an assignment where you inserted an empty list uh do you have to go back
+and fix it so it works or is it just keep it as it is no you can keep it as it is that's all right
+that's all right you don't need all right well if you have extra time of writing you can do something
+like that if you want that's all right thank you so like i said you know when it comes to the
+the the they are not graded right it's it's a learning tool right if you have learned it then
+you have success right so it doesn't matter for me if you have everything correct or everything wrong
+as as long as you have learned uh what to do and that you can understand the future classes that
+we're gonna have and of course you don't need to know everything by heart to to understand the next
+but you kind of have an idea right and as you see i don't even know every single line sometimes i forget
+jump between languages doing different stuff you don't need all of this that we're talking about
+sometimes i fall into the pitfalls as well so this is it's normal all right but at least we will
+have the tools to at least understand future lessons for example machine learning part or the deep
+learning part that you're gonna have with height them it's here uh what's that uh an answer for a
+question uh yes uh it was sufficient thank you all right uh who was next uh moana uh now then you
+have a quote wrongly like a self dot a score it's comma yeah i was just trying to see if you're paying
+attention guys uh all right uh i'm gonna do an oop two just as a part two and i'm gonna try to not
+forget to to actually also add this to but you know what i can do that right away so i don't forget
+let me move that part because this is the only thing that we have written today right problem a
+cracked pattern yeah so let's move it over here and and actually now you can write something like this
+and let's say i'm the op part two because this belongs to part one i would say but since we didn't
+finish it yesterday you understand all right let's see here um let's just do a quick quick quick quick
+recap before we actually move on uh i'm just gonna put an example here i've actually prepared an example
+let's see what if i do this let's see if this works there you go so take a look at this quickly quickly
+quickly quickly quickly i'm just gonna call out some students here and if you want to pass you can
+pass there's no prestige here uh so just uh ask you guys all right uh let's take um daniel alexandre
+what is this it's a class thank you okay um what is a uh student uh it's an object an object or an
+instance thank you uh what does um self refer to of tami what does self refer to when you've written
+in the chat right uh let's try someone else um victor victor sagu yes it refers to the instant instance the
+thank you thank you the current instance yeah um um yet not yet what does uh init do mariette is marina
+oh no no i said yet uh what did you say again what does uh uh what does uh dunder init do at this
+point uh it's run uh creating on the object yeah something like initialize the uh a new a newly
+created object very good thank you guys you're with me you're awake thank you uh let's see maxims i
+actually didn't have a question i actually had a question so back in the day i know the result back
+in the day but one friend told me that init is sort of like a constructor means that as soon as you create
+an object uh then of course the constructor is called so would it be wrong if i say that the init is the
+the constructor that is called to assign those values as soon as you make an object like for instance
+there when you make student on line 103 right and since you make an object of that then this
+constructor by default is initialized hence the init would that be wrong i think that way no it sounds
+correct okay yeah thank you okay sounds great uh let's see here uh christian movement yes about the
+constructor it's it's not the same as in c sharp actually it's not exactly the same thing yeah but
+but uh yeah because the construction if you want to compare it to the constructor it's more like new
+uh new in yeah yeah yeah yeah in c sharp right yeah it's not exactly the same thing if you want if you
+want to uh compare correct answer okay thank you so but you can look it up of course uh i i think uh
+there are better explanations if you look it up yeah yeah let's see alessandro yeah just a quick question
+because i've i kind of did differently when you have let's say uh lists i don't pass uh in the as a
+parameter i just create a empty list inside the init method instead of passing as a parameter i just
+yeah i i know it works because it worked but uh is it a good way to do it as well yeah yeah but that's
+i think that's what we did in a previous example yesterday right so so compare it to the yesterday's
+example and uh yeah you will probably find it there and if you don't just write to me and we can
+we can look at it a little bit more okay perfect but i think i think i actually put it out yesterday
+okay cool no problem all right um now these are the building blocks we need today right uh we know how
+how to create a class perfect uh we know how to create an object from it very good we know how to
+store um data in those objects and actually give them behavior right uh now we're kind of gonna build on that
+idea we're gonna look at how one class can reuse another class so let's start with a different example
+here that was just where it started um guys uh imagine and we're gonna keep it very simple
+to begin with and then we're gonna turn it up a notch right uh imagine that we have or imagine that we
+want to let's say represent different types of animals all right uh we could start by creating one class
+for a dog and then we could create another class for example for cats and so on right let's actually do
+that so let's say class dog uh that down there in it um self uh let's see her name uh age uh self dot uh let's say
+name equals name uh self dot age uh we said age right it was age then let's create something here uh
+but let's say eat now just print something um so that name um it's eating right something like that
+and then we have another class uh we said uh cats right cats uh in it um and we have name
+an age right uh then let's say uh exact same thing i think i don't want to create a dog dog and we have
+let's say rex five cats cats called let's say luna let's say three right let's use the eat here dog
+eat and but this time uh happy it's right if we take a look at these two classes they are a different
+type right but they have what well they have duplicated behavior and attributes so
+both have name and age and both have eats right so we could keep duplicating the code but dog and cat
+also have something in common they're both animals right so instead of repeating the same code in both
+classes we can represent that relationship using what so what am i what am i trying to get to what
+do you think guys let me see dimitri inheritance yeah inheritance so this is what we're actually
+going to talk about now so let's wait with these guys a little bit and then let's just write a little
+title aim and i hope so we said in this example that we just saw we saw that dog and cat repeated the
+same attributes right and the same um uh eat method right uh so now let's say see how um inheritors can help us
+use well to avoid this duplication uh so we will move all the shared parts into one class let's call
+it animal and then we can take it from there so now we can just say class uh animal and in it uh
+name and name and age and we have self dot name equals name self what's wrong with my keyboard
+self dot age equals age right and also uh the method it method uh eat um self uh we had a print and we
+said self dot name um is eating or something like that right and now we can create dog class as well
+any python if we want to inherit from animal we simply just spread and over here and now we can actually
+for now we can just put a pass here and of course one for our cat which is also inheriting from animal
+and we can put a palace here so as you notice here uh dog and cats are almost empty right they don't
+have their own boundary init method they don't have their own eat method but because they inherit from
+animal they can use both well um the problem actually also add um but just to look cat's name as well you
+could add this as well and let's run this and see if it works of course it does luna which rex rex
+is eating luna is eating luna is eating so even though dog and cats uh don't actually define uh
+these things themselves the objects still use them through animal so when we write class dog animal
+in this parentheses right so this means that dog inherits from animal and we would say that dog is a
+subclass from or is a subclass of actually a subclass of animal and animal is base class so just to
+be clear with each other here uh something that is important is a little bit of terminology um
+uh so that we agree with each other so we uh so you you might hear about several terms uh for the same
+relationship so for example for animal here i would say uh you can call it a parent class you can also
+call it a base class what's that of course and super class right and when it comes to a dog or cat
+let's just stick with dog here uh when it comes to our dog we would call it a what a child class
+the rivet uh the class right and also a not super class but a subclass and i usually say um base
+class and and and subclass right sorry in the line 179 should be the capital d or the small d no it's
+just so so it's just what we the terminology for what we call these these classes in this case so
+it's not always a dog class will always be a a child class but if it's inheriting from animal then we
+can call it either a child class we can call it a derivative class or we can call it a subclass so if
+you hear me say subclass sometimes or you might hear me say child class you know that we're talking
+about the same thing here so cat in this case is for example a child class while animal is a parent
+class or a base class or a super class you will usually hear me say base class so we don't get
+confused along the way right maybe i missed something uh either way yeah maxims yeah question there uh so
+is it common practice in python that classes inherit classes instead of making an object of a class
+inside of a class if it's uh common to to inherit yeah yeah yeah okay uh so for instance uh does it work
+if you make an object instead of inheriting a class would that be more safe yeah we're actually gonna do
+some inherits right now uh and and we're gonna build on that and let's see if if i actually kind of answer
+your question along the way i think i'm actually gonna do that and if i don't uh save it for later
+and then we can actually take a look at that because it was an interesting tip i think i'm actually gonna
+answer that if i remember correctly all right uh so uh and actually uh the next part is um okay
+usually i always say a good thing to start off with is something called the is a but you can put it in
+capital letter is a uh test something like that okay so what do i mean by that well before using
+inheritance is to to say to yourself can i naturally say is a dog an animal oh yes is cat an animal oh yes so
+that would make inheritance conceptually reasonable but we could compare it to what we have talked about
+before for example a course is a student well no a course has students of course but the relationship
+is better uh moduled through i would say composition in that way uh which we already used in the last
+lesson yeah if you forgot you can always go back to the last lesson uh so that's something that you can
+always do there is a test uh now that we may know that we know the inheritance actually makes sense uh we
+can look a little bit closely at what a subclass actually inherits all right so we're going to talk a
+little bit about inherited methods and then and then we're gonna add some subclass specific behavior
+you're gonna come into something called duck typing and yeah polymorphism and so on but let's take it
+step by step let's take back our uh dog class here uh oh sorry our class animal then we can take a break
+after this example so class animal right uh we said dunder in it have a name um dot name equals name right eat self um
+let's return and then self that would be name right self name is eating right and let's also do something
+else left sleep for example self return self uh name is sleeping we write let's create a uh a dog class
+is inheriting from animal right i'm just gonna put a pause here then let's create the dog uh let's call him
+rex again let's actually print uh dog eat print dog what we see here is what what we see that dog and
+and and the dog do not actually uh define eat or sleep itself right but because dog inherits from
+animal here it can actually use both these methods so python actually looks at dog then finds the method and
+pretty easy and we could add a subclass specific behavior of course uh we could uh let's see here
+uh let's keep eat uh can remove sleep we don't need that for now or let me actually do this so we don't
+erase anything to another example something like that there we go and let's get rid of sleeping ah so
+so instead of having a pass here i'm actually going to do something here that uh said bark so uh let's
+return uh and we can do enough stream um so dot name uh says or something like that right now we have
+our uh uh uh dog rex uh we want him to eat but we also want him to bark so of course this actually
+works as well rex is eating rex says wolf right so dog will of course inherit the general animal
+behavior as we see but it can also as we see here obviously uh define specifics or behavior specifics
+to our dog here so as you see here dog can actually use both uh eat and bark now if i ask you can
+an animal call bark do you guys think juana let's let's try you should always trust your gut feeling
+right so let's do something here let's say animal uh animal right and let's do something like this
+animal and let's call in let's be some mysterious here unknown unknown right uh now in order to not give
+give it away i'm gonna do print uh it would look something like this right uh animal uh let's think
+here animal dot bark right so this is what we asked will this work or not uh and johanna said no
+and i told her to trust her gut feeling and let's actually try it out we will get an attribute error
+so dog inherits from animal sure but animal does not inherit from dog so the base class that does not
+automatically receive methods from its subclasses just to make sure that everybody uh follows on that uh
+i could add something here um all right uh maybe something like this no no all right i think it's a
+perfect time to take a little break let's actually do that let's take uh uh 15 and then we can continue
+with r2 of object-oriented programming we can continue a little bit and build on everything so
+yeah we're gonna build on this step by step just as we're doing i know it's a little bit slow now
+in the beginning especially if you have done this before
+or maybe um or if you're coming from another language at least you you will see a little bit of
+difference right so yeah we're taking it from the beginning so we don't miss anything all right guys so
+let's take 15 minutes um see you guys back here at 10 15 all right um 15. see you guys all right guys
+are we back thumbs up so i know that everybody's okay okay you can hear me and you can still see the
+screen um continue uh here uh uh christopher do you have a question or just yeah yeah i was wondering about the uh
+uh on line 233 we have the no no for creating an uh animal ah okay here i would say yeah i was just
+wondering because i don't know if it's maybe uh yeah yeah sorry convention or something but yeah yeah
+yeah no no of course of course create an animal but don't use the method from subclass right uh okay so
+so but you could create something that is not defined as a uh subclass okay yeah um all right uh let's see
+here so a subclass with its own thunder in it yeah that's where we were okay so so far uh the dog
+has actually been able to use the down their image method from animal right but let's say the dog
+um needs some additional information uh that that a general animal does not have for example uh uh let's
+let's start here and and bear with me uh uh you don't have to raise your hand for this one yeah i'm
+gonna make a uh probably a mistake here uh a little bit on purpose for the sake of the example all right
+um let's say our the dog has a breed for example all right let's do something like this class
+animal right and let's reuse a little bit here animal go go name and i'm actually gonna add the age
+here and um self age equals age right and uh and now let's create our new class here uh a dog class
+just just inheriting from animal right in it uh name age and breed and no let me get things away
+here but okay uh let's say breed all right and here i'm gonna say self the name equals name right and
+so the age equals uh age self dot um breed equals breed let's create our dog here we need the name
+stick to rex uh still five and uh what is it okay labrador those are cute all right labrador right uh
+so we can print our dog name we can uh age we can print out the breed all right let's let's actually
+try this and as you see this actually works so far so good right dog actually has its own boundary in it
+and it can store uh the additional breed attributes no problem notice what happened we actually had to
+write name and self name equals name and self age equals age again so we're kind of we're duplicating the
+uh the color initialization uh logic from animal right so if animal later changes we now have
+multiple places to actually maintain right so the question is actually can we reuse animals down their
+init method and only add what is specific for our dog here and this is what i kind of gave away uh just a
+second ago yes we can actually so instead of repeating the initialization from animal the dog can
+actually recall animals down their image method and for this we use what anybody knows we use something
+called super oh sorry we use actually super and i'm just going to show it in action here so instead of
+writing uh all of this what we can do is print this and here we just write super and a little dot here
+and we write down oh sorry down there in it and then we just write name and h and that's it and now we can
+actually add just uh what is specific for uh the dog and that would be self not breed equals breed there you
+go and this should also write there we go so let's try to follow what actually happens here uh so when
+we create a dog object uh python enters the dog's down there in it method uh right then super actually
+calls uh yeah exactly so super actually calls the down there in it method from animal the animal then
+initializes name and age and then the dog continues or the dog class here
+excuse me continues and the dog continues and adds what well adds breed right so we kind of reuse
+but not kind of we actually do reuse the initialization from animal and only add what is specific to dog
+before i take any questions just an important detail uh so the the important detail that i want to say
+here is notice that we don't actually write might be a question that we don't actually write self here
+something you might have noticed right we actually just write the name and age because the current
+instance here is handled automatically therefore we don't need to write any self here and there you go
+we're going to do a little bit more before let's see here if if it's a question uh of can you do can
+you do i might think about that i'm gonna add a little bit more stuff we're going to do some method
+overriding and so on uh so that might answer some questions but if it's something that i missed or
+something like that uh please go ahead uh gloria no i just want to ask it um what happens if a
+the parent class has a new attribute then we need to update one by one of all the child classes uh in
+a kind of way yes uh but um uh for now yes okay so there is a way to to do it like automatically but
+okay yeah i think it is a normal you had the question the same question right no i don't understand the
+difference i don't understand the difference from the previous examples examples uh why we use uh why
+we initialize because that's what we're doing between we're always doing that when uh even when
+inheriting let's hear i'm just gonna double check here so i don't uh reveal anything that we're actually
+gonna um what what's the difference between super and the pre previous examples uh so what is the
+difference between uh uh what we had before right and and this right just give me one second
+so so we have we have to if we don't use super we have to uh write the properties in in in the
+subclass sure sure in in in this case yes uh if we were to add something right uh so for example a let's
+say um i don't know um uh color maybe something like that right so i if i understand the question
+correctly is if we were to do something like this color equals color uh do we need to uh add also color
+over here right is that the question uh well we shouldn't have to i mean we're inheriting so
+what does super actually do what like why are we using it we are we don't we shouldn't have to like
+write everything again like because we're reusing it when we're inheriting so so what's the difference
+so let's see here uh just double check that i didn't do anything wrong here no i haven't give me one
+second i'll just i don't know maybe everyone else because maybe no no no it's a valid question i'm just
+i'm just thinking of an angle here uh no one else is asking so no no no no no it's a valid question
+it's a very good question nothing wrong with the question at all because we want to see actually the
+magic of of super right uh and it kind of feels please yeah exactly uh just give me one uh so i don't
+say it wrong here i'm just going to try it out uh let's you know what guys i'm actually going to take
+let's take five minutes uh i'm just gonna try one thing uh on my own here so i don't confuse anyone
+uh i'm just gonna try if we can actually do one thing um yes go tell me you're kind of right uh
+or you're not kind of right you're actually right uh but just just give me one five minutes and then
+i will actually give you a good uh answer here uh let us try something i think that will answer the
+the question that we had uh i think it's a good example here uh i think we're kind of uh thinking of it
+in a wrong way if we look at what uh let's see here now more let's see properties yes but this is not
+always the case when inheriting without using super uh yeah something that is a good question we didn't
+use anything in child class before but now we're using it as a difference or is it same just in writing
+way yes uh all right so let me let me let me let me show you something what if we come here and add some new
+logic to animal right uh let's say instead of adding a parameter here uh let's actually add a
+a logic here let's say we put self harsh but is alive all right let's put it to and just for
+value error here so if age uh is is uh less than zero open oh sorry uh then uh we want to kind of raise
+say something here raise uh value error age cannot negative right something like that now what we see
+here is no let's add something here print look at this dog okay is alive if we were to run this we'll
+see that it actually works so what do we notice here think about it for a second here what do we actually
+notice here well what we notice is that we actually changed the initialization logic inside animal but we
+didn't have to come down here and change the dog right so dog actually gets its new this is alive um
+what do you call it attribute right and and and the age uh validation uh because because it it kind of calls
+uh the um let's say uh animals uh down there in it right um but super does not mean that dog will actually
+never change uh because if we were to change the interface of animal for example by adding a new
+required parameter uh then the dog also needs to be updated so maybe a kind of a slip from me or was kind of
+was kind of confusing so that would change but not in this case so if we were to look at it the the
+the benefits is just that we we do not need to um duplicate the implementation that we have added
+here for animal inside every well subclass that we might create dog cat or whatever so you can actually
+think about that to try to without super here uh how would it actually look like well if we didn't have
+super and i'm gonna get rid of that uh so it doesn't confuse you if you were to come back to the notes
+if we were to remove super and i'm gonna try to do this without uh making a mistake here uh you can also
+pay attention with me here i might uh so i don't slip uh that would be well of course we need to put
+self dot name equals what name right we need to put uh self dot age equals age so far so good
+and would this be enough to say guys would this be enough christian no i i i actually have a
+previous question you mentioned the interfaces uh it does this mean that there there is another layer
+here to this problematic uh problem like we have to we have to implement the uh the properties in
+like it works like no that's it no i was actually talking about the properties in this case uh uh yeah
+but but not nothing uh nothing the it wasn't in a deep meaning with that but okay
+but would you say that this is enough um maybe i can switch it to maybe gloria i don't think so
+because now you are like uh overwriting the need if i understood correctly okay so what if i come here
+and say self that um is alive it was true would that be enough gloria i can uh keep up that be enough yes
+yes though that could work that's right uh yes uh it did uh it did kind of work right uh but i would
+actually hmm yes it does that would be enough uh interesting i thought it was i think if you remove it
+from the line 285 it will not work yeah yeah yeah obviously well yeah i actually thought that i also need
+to add this uh should have tried it myself uh so my point was gonna show you that i need to actually
+add this as well but it seems that it doesn't need i need to just look into it again uh just to be sure
+but as you see here uh so with our super um we don't actually need to change dog right and now think about
+it if we had a dog and we had a cat and we had a cow and we had a horse and so on then we had to change
+on all of these right but with our um down there in it or super uh we kind of don't if we were to add
+some new logic so any change any uh if there is some kind of shared initialization logic it stays
+just in one place and we don't have to worry about that do you kind of see why super is super nice uh
+christian yes well uh are there rules of uh to inheritance maybe there are some rules that we missed
+because uh like with an interface for instance you have to you're like forced to implement uh
+some properties of the the interface and of course we're gonna dive more into inheritance and we're
+gonna build on this okay as you will see yeah i would i would read up on it i would read up on it
+because yeah it seems it seems really powerful and i want to understand it so yeah and hopefully we will
+actually uh answer your question along the way but uh yeah and some pitfalls and so on so yeah just
+let's keep it um let's keep the red line as we say in swedish i don't know how to say that in english
+no yeah exactly the red thread not the red line yeah uh all right uh we can actually keep this let's
+keep this so you can see the uh what we what we came from right dimitri yes i just wanted to add that
+uh in this case uh if we omit super we will miss uh h validation as well so we can for example
+create the duck with a negative age yeah yes yes thank you thank you thank you thank you thank you
+thank you of course yeah just like if we were to that's why we need to add this right of course
+it will work but at the same time if we had an age that is negative we wouldn't have this logic thank
+you for that one dimitri i don't know might be my cold uh all right right all right all right let's
+move uh carefully forward what was next uh we spoke about a little bit of super talk about a little
+bit of self that will be an exercise uh i'm gonna save that for you guys uh for the lab uh let's see
+here okay so uh we save polymorphism for tomorrow perfect all right uh so we're just gonna talk a little
+bit about uh method overriding and that would be uh probably the end of the day uh so what we have seen
+so far is uh take care uh so what we have seen so far well uh uh subclasses have either inherited a
+method and maybe need needs a different version of that method right a subclass can actually replace
+an inherited method with its own implementation and this is what we call method overriding uh let me just
+put it as a title here method overriding uh so uh let's just create a just to show it in a very simple
+example here and then we can build on that a little bit um in it super simple name is enough and name
+equals name right uh yeah let's also make sound let's put self return some animal class dog animal animal
+death sound and i'm not gonna use super here uh actually i'm gonna do return just so we get the
+point here woof all right and then for our cat cat makes sounds of uh that would be wolf right uh let's
+say uh yeah right now let's create our animal why did i do that uh dog rex and then we have our cat
+equals cat and let's call her lula all right and now that we have created them we can actually do some
+prints here print uh animal make sound right and then we can do another print uh dog make sound and also
+cat make sound right just to show you uh even though they inherit from animal we see that in our terminal
+we will see some uh yeah exactly some animal sound we see meow woof and then we see meow right so dog and
+cat can either even though they they both inherit from animal but they actually define their own version
+cat and then we see a cat or cat we see that in the cat or cat we see the cat version of what well uh this method makes sound so when we call make sound uh on the dog
+python will actually use dogs version and when we call it on cat well python we use the cat version right uh so the subclass
+implementation actually will override the inherited one and that's important to remember but of course overriding does not always mean that we want to completely ignore the paragon
+the parent method sometimes maybe we want to use the parent method uh or the or use the parent behavior and then add
+maybe something to it here we can actually use what guys what do you say something that we discussed previously
+previously with me guys last part fabian no never mind of my i thought i thought about it i thought
+if it was you called something on the class directly but i can't explain it so never mind no no no no
+saranya yeah some of the uh methods like sleeping or eating those things it can be a common one
+well i was actually thank you but i was actually thinking of super so we can use super for this as well
+all right so let's make super super uh so let's use them let's use a different example let's save this one
+so we want to still override but we want to keep something maybe or add something and so on all right
+so let's say we have a class uh employee all right and then uh we we we uh get uh information or something
+like that all right uh self uh return let's say employee uh uh information all right um
+um now let's create another class uh let's say a developer developer who's also an employee right
+um and now we do something like this get information ah perfect uh but i'm just gonna make it a little bit clearer
+make it a little bit clearer so let's keep that uh let's do it like that so uh here get information
+right so what we can do just keep it in a variable here so base let's say base information right just
+to make it super clear uh you can write something like that super and then uh get uh what was it get in or
+right and then let's do it right and then let's actually return uh base information uh something like this
+right base information plus equal no not that plus equals i would say uh uh just about this
+let's keep it simple roll i don't know say developer this is a developer class all right now uh let's create a developer
+developer developer developer is a developer let's take a look at this now let's print out our uh developer
+where we get actually information let's see what actually will be printed out here uh employee information
+role developer and there you go so what did we see that the developer actually overrides get information
+here right inside its own actually its own version so it first calls of course the parent the parent
+version uh using the super and then it actually adds some information here so we're kind of extending
+the parent behavior rather than just completely replacing it right so there you go a little bit
+more about super and since super was discussed i think this was a perfect place to actually end the
+lesson uh yeah and tomorrow we're gonna talk a little bit more polymorphism so if you were looking for
+that uh we will talk about it tomorrow we will talk a little bit of polymorphism with inheritance as
+well uh if you're familiar with duck typing we will talk about python and duck typing um maybe jump
+depending on the time something that we will also talk about is another another dunder method uh down
+the string uh just to add another um just another method and a little bit with inheritance as well
+we have a lot to talk about tomorrow now that that will be actually it okay and maybe discuss like we
+did in the last in the beginning here uh where we discussed class versus uh dictionary we will do
+kind of the same thing uh we will uh look at inheritance versus composition so yeah uh
+which one is better and in what in what sense and so on but we will start off with polymorphism
+and take it from there and see where we actually land and if we need more days we will take more
+days for for the fundamental part but i think tomorrow will be the last the last day we actually uh
+talk uh the last lesson for fundamentals i hope i have answered your questions uh if i have missed any
+question i mean uh we're doing our best here uh with the questions and uh with the call that i'm having i can't
