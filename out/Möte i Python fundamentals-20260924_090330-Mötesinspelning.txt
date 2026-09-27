@@ -1,0 +1,305 @@
+All right. The last time we spoke, or the last thing that we spoke about yesterday, well, we did some method overriding, right?
+So, yeah. Yeah, exactly. Yeah. So we had, exactly. So the developers overrides this get information, right?
+But inside its own, what do you call it? Its own version, right? So it calls the parent by super, but then it adds its own information.
+So we were kind of extending the parent behavior, right? And not replacing it that way.
+And we're going to continue on that idea a little bit.
+So method overriding, well, actually leads us to another important OP idea.
+But the basic idea is polymorphism. You might already be familiar with the idea, like I said.
+Sounds complicated, but it's not. But we're not going to do any deep dives or anything like that.
+It's just a little bit of introduction to it.
+If we would say in practical terms, polymorphism, well, it's just simply different objects can actually respond to the same method call, but in their own way, so to speak.
+I'm going to show you an example. Let's say we have a class dog, right?
+Let's keep it super simple. And then we can do something like this, make some, uh, return, uh, woof, right?
+And then something like this, instead of dog, let's have a cat, make sound, but meow.
+And then let's also add the same move, right?
+Uh, sorry guys. Uh, animals, let me just put it in list, uh, animals, we had dog, right?
+Cat, and we had a cat, uh, and just look through it for animals, animal in animals, um, print animal, make sound, make, right?
+Let's try this out. I missed something. Does anybody see anything? Uh, let's see here.
+Uh, make sound, uh, return, woof, class, cat, eagle. That's no problem. Animals list, I have a dog, I have a cat.
+I guess it's because you're returning. Maybe that's why. Uh, no, no, that should also work with return.
+It works on mine. Try it again.
+It was also morning for Visual Studio. Uh, I don't know. Uh, uh, woof, meow, moo. There we go.
+So, uh, I can notice something interesting here, um, about this loop, right?
+So the loop, well, it actually doesn't separate logic for dog, cat, and cat, right?
+It simply just asks each object to make sound, right?
+And each object actually provides its own behavior, as we see here, right?
+Same method call, different behavior, depending on the, depending on the object, right?
+And this is actually the basic idea of polymorphism.
+And in, in this example, uh, well, we could take it, take it, uh, move a little bit forward.
+So in this example, as we see here, um, the objects, they do not actually inherit anything, right?
+Uh, from maybe a common class or something like that, right?
+Uh, so we could actually combine polymorphism with inheritors, which is perfectly fine.
+Let me make it as an own example.
+Uh, uh, uh, if I share the code, it's a little bit easier to follow along.
+Uh, let's see here.
+Okay.
+But let's just add, uh, let's start with a class animal, right?
+Um, no, and it, uh, a name, something like that.
+So name equals name, and then, uh, let's also add a, let's also make, make sound here.
+Make sound, um, self, uh, and then return, uh, we can write unknown self, right?
+So we always, always have something to lean back to, uh, and now take back our animals and
+inherit from, uh, animal, uh, yeah, also inherit from animal, and now let's just get rid of
+the cow.
+All right.
+Uh, yeah, we need some names, right?
+Uh, let's do dog, uh, we need, uh, maybe Rex, Luna, and we want to print, uh, animal name,
+right?
+There we go.
+That should work.
+So here, the dog and cat also shares this common base class, right?
+So both are animals, uh, yeah, both are animal jigs through inheritance, but each provides,
+should provide its own, uh, version of make sound.
+Let's try it.
+Yeah.
+Rex, both, Luna, and Miao.
+So the calling code can work with them through the same interface.
+I think you get the basic idea here.
+Excuse me.
+Uh, let me move a little bit more.
+The previous example, or this example, actually showed us something interesting, right?
+In Python, objects, well, they do not always need to inherit from the same base class this
+kind of code to work.
+So Python, how do you say, well, often carries more, um, um, I think, uh, well, Python would
+want an object, uh, that it, that it, that it actually can do, um, it looks more at the object
+rather than, uh, uh, about its exact class.
+I'm going to try to show you guys what I mean.
+It's, I think it's clear with an example here.
+So let's say class, uh, robot, all right?
+Um, and then we have, uh, the make, uh, sound, all right?
+Uh, self, all right?
+Super simple example, but I think it's going to tear it up, uh, uh, let's say beep.
+And now we have another class, uh, that is a dog down, um, return, uh, woof, uh, uh, thing
+equals robot, right?
+And, and we had our dog here, there's four thing, in, thing, in, things, um, uh, uh, print
+thing here, uh, just, just like a previous example that we looked at, well, the robot and
+dog, well, they do not share the same base class here, right?
+Uh, exactly.
+So, so they're not, they do not share the same base class or anything like that.
+Uh, but, but, but they provide at least make sound, right?
+So, so the loop can actually use, uh, both exactly the same way, even if they weren't
+sharing, uh, anything with a base class or anything like that.
+So you might hear the phrase duck typing and the practical idea is simple.
+So if an object provides, um, provides the behavior our code needs, Python can often use
+it without requiring an explicit shared type hierarchy.
+So let's not spend too much time on the phrase itself, but the important lesson is Python
+is often flexible about exact object types.
+So that's the basic idea here.
+And you can mix it up with, with what we spoke about before.
+So that's just basic idea of duck typing.
+Uh, and most of the time we can simply use the behavior an object actually provides.
+Uh, but sometimes we kind of genuinely need to check what type of object we're working with
+or whether it belongs to an inheritance hierarchy.
+And for that Python actually gives us what?
+Well, they give us instances.
+And let me also do something similar here.
+So, uh, is instance what we're going to talk about now.
+So, uh, let's do something like this.
+Uh, class, uh, class, class, class here, right?
+Uh, dog equals dog, um, print instance, um, dog, dog.
+And let's also do this, um, dog, animal.
+Let's see what we get.
+True, true, true, true, true.
+Right?
+Why is dog also an instance of animal?
+Well, dog inherits from animal, right?
+So if I were to add a little print here, print, uh, is instance, uh, dog, uh, string.
+Okay.
+And if we run, if we run this, we actually get a false, right?
+So is instance actually understands, uh, inheritance relationship as we see here.
+So dog is dog, right?
+But because dog inherits from animal, it is also considered an instance of animal.
+I hope that wasn't confusing.
+Uh, so is instance, this can actually be useful when we genuinely need to, to expect in my
+expect, inspect, inspect, inspect an, an object type relationship.
+Right?
+But I wouldn't say that you, you shouldn't like, um, build every program around hue chains.
+Like, uh, uh, if is instance, uh, blah, blah, blah, blah, blah, blah, blah, blah, blah.
+Right?
+Uh, or, or something, uh, elif, uh, elif and so on.
+Right?
+Uh, because, well, if all, uh,
+if, if, if all object provides the same useful method, polymorphism may let us avoid that.
+Right?
+So that was just a quick walkthrough, um, polymorphism and, well, duct typing.
+And like I said, you're going to have a little lab on this as well, just to, uh, to clarify
+any question marks as well.
+And I think you're already familiar with a little bit of, uh, polymorphism.
+Hmm.
+And one thing, well, uh, let's actually finish with another useful feature, uh, of classes.
+Uh, so we have actually printed attributes and methods, uh, uh, method results many times,
+right?
+But what happens if we were to print the object itself?
+So let's, let's do something like this.
+Um, class, um, student, and I'm going to lean, lead up to something here.
+Uh, so class student, uh, death, uh, under in it, uh, let's add a, let's go back to our usual
+example, name and score.
+Uh, self.name equals name, self.core equals score, right?
+Student plus student, uh, Ada 91 and print student.
+Sorry.
+One second.
+So if we were to run this, let me just show you what I'm writing here.
+Uh, so this is nothing new or anything.
+Like, I'm going to give, uh, so what do we get here?
+Yeah.
+So by default, uh, printing our, uh, custom object, uh, it is not actually very human friendly,
+right?
+So we see information about the class and the object identity, right?
+Uh, but not the useful, uh, what can you say, uh, the useful student information, right?
+And we can actually control this using another special method that I need to show you.
+Uh, and that's what we call, uh, thunder string, right?
+So let's take it step-by-step, uh, this is where we came from where we're going.
+Let's add here.
+Here, we're actually going to return self, um, name, score.
+That's cool.
+Then we have a student, student.
+Yeah, perfect.
+Okay.
+Let's run this this time and see if we see any difference from what we had before.
+Oh, what do you say guys?
+What's better, right?
+So the, down the string actually defines, uh, a human readable string representation, the object.
+So when we print the object, Python can use this method to decide what to actually display here.
+And of course we can, uh, let me show you one thing.
+Uh, if I did something.
+Something like this, uh, or let me take that back.
+Sorry.
+There we go.
+Uh, what if I did something like this, uh, text, uh, equals, um, student, right?
+And then just print the text.
+And so we can also explicitly, um, as you see, we can actually explicitly, uh, call, uh, string on students, right?
+So, and this uses actually the down the string and, and gives us back just a normal string as you see.
+But one important rule is that down the string must return a string.
+Uh, so don't print inside the down the string.
+Uh, you need to return, uh, you need to return, uh, you need to return actually the representation and everything we have learned so far about inheritance and overriding actually also applies to, well, special methods.
+So a subclass can actually have its own version of the string.
+So what could that be, uh, let's say, uh, with something like that.
+Take an example.
+Let's see here.
+All right.
+This, this could work fine.
+Class employee.
+Not employee.
+That's employee.
+Um, let's add a name.
+Let's add a salary, right?
+Uh, self dot name equals name.
+Uh, self dot, uh, salary equals salary.
+Uh, on the string as well.
+And here we're going to return.
+Turned, um, do an F string here.
+He had here, um, self dot name.
+Um, that makes it F salary dot salary, right?
+Something like that.
+Hmm.
+And now let's add another class here.
+That actually inherits from the law.
+Uh, that actually inherits from employee law.
+He, uh, and here we can say the, um, they're in it, right?
+Uh, we have name salary.
+And let's also add a language.
+Okay.
+No, I'm not there.
+Language.
+Excuse me.
+And then we have their super, right?
+Uh, looks good.
+And then we have, uh, self.
+Uh, let's not forget that self language equals, uh, language.
+Right.
+And also, uh, uh, down the string.
+And we're not going to use any super here.
+It's not quite the, uh, there we go.
+Uh, return.
+Turn, uh, self name, right?
+Uh, developer, developer.
+Oh, look at that.
+Now, create some employees.
+Some, let's at least create one.
+Employ, employee, employee equals, employee, right?
+And now let's create grace.
+Grace earns maybe 45,000.
+Uh, yeah, that's quite enough.
+And then we actually have a developer, right?
+The, the, the developer equals developer.
+And we need a name for our developer.
+Ada.
+Ada is the developer or it's a little bit more.
+Uh, of course, we're going to favor our developers here.
+Uh, and of course, their language is Python.
+All right.
+Let's print this out.
+Print, uh, employee.
+And let's print, um, now let's take a look at the whole thing here.
+There we go.
+Employee has its own down the string method, right?
+Developer actually inherits from employee, but actually defines its own version.
+So just like we saw make sound earlier, down the string should also be able to be, uh, over, over, overwritten.
+And let's see.
+And it actually is not the same, right?
+But we kind of override for its own, right?
+So grace salary, 45,000.
+Ada developer, Python.
+And there you go, guys.
+So something I actually mentioned yesterday, I'm going to continue a little bit forward here.
+Well, we have, we have seen several examples of inheritance, right?
+And if you remember from last lesson, we, we actually, uh, we said that object can also contain other objects, right?
+So that kind of gives us an important design, design question, right?
+Well, should one class inherit from another or should one object contain another object, right?
+And we spoke a little bit.
+Well, a useful way to think about inheritance is with, we said, uh, is a, right?
+So dog is an animal, developer is an employee, uh, electric car is a vehicle or et cetera, et cetera.
+But in these cases, inheritance can actually, it can represent a natural relationship between the classes.
+So sometimes the relationship could be different, right?
+One object can simply contain or contains or uses another object.
+We can think about it as, as, as a car has an engine, course has a student, shopping cart has a product and so on.
+So this is composition, right?
+So we said, uh, inheritance and, uh, and, uh, composition.
+Okay.
+And this is the composition that we actually used last lesson.
+Uh, we, we, we can take a simple example, uh, to always have reminders.
+So class, let's say engine, uh, the, uh, in it, uh, self dot, course, uh, equals, of course, power, right?
+And then we have another class, uh, maybe R, right?
+The, uh, in it self, we have brand, we have, let's say engine, right?
+Uh, self dot, uh, uh, brand, right?
+Equals brand and self dot engine engine, engine, engine, engine, right?
+Hmm.
+Now let's create something here.
+And Jen equals, uh, engine.
+And we need some kind of horsepower.
+Let's say 200.
+I don't know if, even if that's good or bad.
+Uh, uh, I like cars, but I don't, I know nothing about them.
+Uh, so car, uh, let's see here.
+Volvo, maybe engine, something like that.
+Now let's print brand and print engine, uh, horsepower, right?
+And there we go.
+What we see here is that, uh, let me just run this and see.
+So what we see here is that the car object actually contains an engine object, right?
+But a car is not an engine, right?
+A car, as an engine.
+So composition is actually a natural relationship here.
+So yeah, uh, just to show you the natural first question that we have, that will be therefore
+is a, or as a, right?
+And one last thing is, is just to say, you know, well, inheritance can be very useful, right?
+But we should not use it simply because two classes happen to contain similar code.
+So inheritance, well, creates a relationship between classes, fine.
+A subclass, well, depends on behavior and assumptions from its base class.
+So a bad inheritance often, I would say, begins with, well, these classes happens to have similar methods,
+but similar code alone does not mean that we, that the concepts have a real inheritance relationship.
+So it's something just to, to think about.
+So maybe a printer and a student might both have, let's say, get data, right?
+But that does not, that does not mean printer is a student, right?
+Or a student is a printer, right?
+So, so, so, so, so don't choose inheritance only to remove duplicate code, uh, just, just a reminder, right?
+So first actually ask yourself whether the relationship makes sense.
+Uh, so yeah, kind of model the relationship, not just duplicate lines, right?
+And this is something that I want you to think about and have in the back of your brain when, when, when you're, uh, creating your, when you're going to work with your project.
+Right.
+So yeah, that was actually it.
+I don't think I have anything more.
+I want you guys to dive, dive into this, uh, with the lab that you're going to get, um, just to clear up things.
+If there are any question marks along the way and so on.
+Uh, yeah.
+If you stumble on something, I, uh, I will actually call you up and yeah, we can discuss it.
+Uh, let's see here.
+Uh, let me just do this and do that and that.

@@ -1,0 +1,1220 @@
+1
+00:00:04,160 --> 00:00:16,540
+ All right. The last time we spoke, or the last thing that we spoke about yesterday, well, we did some method overriding, right?
+
+2
+00:00:24,440 --> 00:00:42,900
+ So, yeah. Yeah, exactly. Yeah. So we had, exactly. So the developers overrides this get information, right?
+
+3
+00:00:42,900 --> 00:01:01,900
+ But inside its own, what do you call it? Its own version, right? So it calls the parent by super, but then it adds its own information.
+
+4
+00:01:04,720 --> 00:01:13,460
+ So we were kind of extending the parent behavior, right? And not replacing it that way.
+
+5
+00:01:13,460 --> 00:01:17,870
+ And we're going to continue on that idea a little bit.
+
+6
+00:01:18,560 --> 00:01:30,030
+ So method overriding, well, actually leads us to another important OP idea.
+
+7
+00:01:32,620 --> 00:01:52,680
+ But the basic idea is polymorphism. You might already be familiar with the idea, like I said.
+
+8
+00:01:53,830 --> 00:01:59,950
+ Sounds complicated, but it's not. But we're not going to do any deep dives or anything like that.
+
+9
+00:02:00,660 --> 00:02:03,470
+ It's just a little bit of introduction to it.
+
+10
+00:02:05,420 --> 00:02:26,240
+ If we would say in practical terms, polymorphism, well, it's just simply different objects can actually respond to the same method call, but in their own way, so to speak.
+
+11
+00:02:26,240 --> 00:02:37,090
+ I'm going to show you an example. Let's say we have a class dog, right?
+
+12
+00:02:38,820 --> 00:02:59,890
+ Let's keep it super simple. And then we can do something like this, make some, uh, return, uh, woof, right?
+
+13
+00:03:02,120 --> 00:03:19,890
+ And then something like this, instead of dog, let's have a cat, make sound, but meow.
+
+14
+00:03:22,090 --> 00:03:36,490
+ And then let's also add the same move, right?
+
+15
+00:03:36,490 --> 00:03:55,900
+ Uh, sorry guys. Uh, animals, let me just put it in list, uh, animals, we had dog, right?
+
+16
+00:03:58,770 --> 00:04:41,880
+ Cat, and we had a cat, uh, and just look through it for animals, animal in animals, um, print animal, make sound, make, right?
+
+17
+00:04:42,950 --> 00:05:10,860
+ Let's try this out. I missed something. Does anybody see anything? Uh, let's see here.
+
+18
+00:05:12,100 --> 00:05:29,050
+ Uh, make sound, uh, return, woof, class, cat, eagle. That's no problem. Animals list, I have a dog, I have a cat.
+
+19
+00:05:29,050 --> 00:05:56,540
+ I guess it's because you're returning. Maybe that's why. Uh, no, no, that should also work with return.
+
+20
+00:05:57,070 --> 00:06:01,100
+ It works on mine. Try it again.
+
+21
+00:06:04,660 --> 00:06:11,640
+ It was also morning for Visual Studio. Uh, I don't know. Uh, uh, woof, meow, moo. There we go.
+
+22
+00:06:12,480 --> 00:06:21,490
+ So, uh, I can notice something interesting here, um, about this loop, right?
+
+23
+00:06:21,490 --> 00:06:30,040
+ So the loop, well, it actually doesn't separate logic for dog, cat, and cat, right?
+
+24
+00:06:31,070 --> 00:06:36,910
+ It simply just asks each object to make sound, right?
+
+25
+00:06:37,570 --> 00:06:42,250
+ And each object actually provides its own behavior, as we see here, right?
+
+26
+00:06:43,070 --> 00:06:49,850
+ Same method call, different behavior, depending on the, depending on the object, right?
+
+27
+00:06:50,760 --> 00:06:53,530
+ And this is actually the basic idea of polymorphism.
+
+28
+00:07:01,200 --> 00:07:08,790
+ And in, in this example, uh, well, we could take it, take it, uh, move a little bit forward.
+
+29
+00:07:09,130 --> 00:07:17,240
+ So in this example, as we see here, um, the objects, they do not actually inherit anything, right?
+
+30
+00:07:17,900 --> 00:07:21,020
+ Uh, from maybe a common class or something like that, right?
+
+31
+00:07:21,020 --> 00:07:29,020
+ Uh, so we could actually combine polymorphism with inheritors, which is perfectly fine.
+
+32
+00:07:30,170 --> 00:07:31,930
+ Let me make it as an own example.
+
+33
+00:07:31,930 --> 00:07:49,310
+ Uh, uh, uh, if I share the code, it's a little bit easier to follow along.
+
+34
+00:07:50,960 --> 00:07:51,900
+ Uh, let's see here.
+
+35
+00:07:52,000 --> 00:07:52,280
+ Okay.
+
+36
+00:07:52,620 --> 00:08:00,330
+ But let's just add, uh, let's start with a class animal, right?
+
+37
+00:08:02,860 --> 00:08:14,910
+ Um, no, and it, uh, a name, something like that.
+
+38
+00:08:16,070 --> 00:08:29,890
+ So name equals name, and then, uh, let's also add a, let's also make, make sound here.
+
+39
+00:08:30,240 --> 00:08:46,900
+ Make sound, um, self, uh, and then return, uh, we can write unknown self, right?
+
+40
+00:08:47,340 --> 00:08:57,470
+ So we always, always have something to lean back to, uh, and now take back our animals and
+
+41
+00:08:57,470 --> 00:09:09,130
+ inherit from, uh, animal, uh, yeah, also inherit from animal, and now let's just get rid of
+
+42
+00:09:09,130 --> 00:09:09,710
+ the cow.
+
+43
+00:09:12,710 --> 00:09:13,680
+ All right.
+
+44
+00:09:14,780 --> 00:09:19,310
+ Uh, yeah, we need some names, right?
+
+45
+00:09:20,400 --> 00:10:02,920
+ Uh, let's do dog, uh, we need, uh, maybe Rex, Luna, and we want to print, uh, animal name,
+
+46
+00:10:02,980 --> 00:10:03,180
+ right?
+
+47
+00:10:05,090 --> 00:10:07,200
+ There we go.
+
+48
+00:10:07,960 --> 00:10:09,570
+ That should work.
+
+49
+00:10:09,570 --> 00:10:19,500
+ So here, the dog and cat also shares this common base class, right?
+
+50
+00:10:20,220 --> 00:10:29,590
+ So both are animals, uh, yeah, both are animal jigs through inheritance, but each provides,
+
+51
+00:10:30,150 --> 00:10:34,360
+ should provide its own, uh, version of make sound.
+
+52
+00:10:35,880 --> 00:10:38,560
+ Let's try it.
+
+53
+00:10:39,950 --> 00:10:40,110
+ Yeah.
+
+54
+00:10:40,580 --> 00:10:41,640
+ Rex, both, Luna, and Miao.
+
+55
+00:10:42,250 --> 00:10:48,560
+ So the calling code can work with them through the same interface.
+
+56
+00:10:54,750 --> 00:11:02,300
+ I think you get the basic idea here.
+
+57
+00:11:06,660 --> 00:11:07,450
+ Excuse me.
+
+58
+00:11:11,080 --> 00:11:15,290
+ Uh, let me move a little bit more.
+
+59
+00:11:17,610 --> 00:11:26,700
+ The previous example, or this example, actually showed us something interesting, right?
+
+60
+00:11:27,900 --> 00:11:40,160
+ In Python, objects, well, they do not always need to inherit from the same base class this
+
+61
+00:11:40,160 --> 00:11:41,160
+ kind of code to work.
+
+62
+00:11:42,350 --> 00:12:05,600
+ So Python, how do you say, well, often carries more, um, um, I think, uh, well, Python would
+
+63
+00:12:05,600 --> 00:12:17,840
+ want an object, uh, that it, that it, that it actually can do, um, it looks more at the object
+
+64
+00:12:17,840 --> 00:12:21,760
+ rather than, uh, uh, about its exact class.
+
+65
+00:12:21,900 --> 00:12:24,250
+ I'm going to try to show you guys what I mean.
+
+66
+00:12:24,630 --> 00:12:26,650
+ It's, I think it's clear with an example here.
+
+67
+00:12:26,650 --> 00:12:31,180
+ So let's say class, uh, robot, all right?
+
+68
+00:12:31,180 --> 00:12:38,530
+ Um, and then we have, uh, the make, uh, sound, all right?
+
+69
+00:12:38,530 --> 00:12:43,550
+ Uh, self, all right?
+
+70
+00:12:43,550 --> 00:12:50,330
+ Super simple example, but I think it's going to tear it up, uh, uh, let's say beep.
+
+71
+00:12:50,330 --> 00:13:30,790
+ And now we have another class, uh, that is a dog down, um, return, uh, woof, uh, uh, thing
+
+72
+00:13:30,790 --> 00:13:41,050
+ equals robot, right?
+
+73
+00:13:41,050 --> 00:14:07,520
+ And, and we had our dog here, there's four thing, in, thing, in, things, um, uh, uh, print
+
+74
+00:14:07,520 --> 00:14:26,950
+ thing here, uh, just, just like a previous example that we looked at, well, the robot and
+
+75
+00:14:26,950 --> 00:14:30,320
+ dog, well, they do not share the same base class here, right?
+
+76
+00:14:31,160 --> 00:14:49,850
+ Uh, exactly.
+
+77
+00:14:50,010 --> 00:14:53,950
+ So, so they're not, they do not share the same base class or anything like that.
+
+78
+00:14:53,950 --> 00:14:58,500
+ Uh, but, but, but they provide at least make sound, right?
+
+79
+00:14:58,500 --> 00:15:09,770
+ So, so the loop can actually use, uh, both exactly the same way, even if they weren't
+
+80
+00:15:09,770 --> 00:15:12,610
+ sharing, uh, anything with a base class or anything like that.
+
+81
+00:15:12,610 --> 00:15:21,970
+ So you might hear the phrase duck typing and the practical idea is simple.
+
+82
+00:15:21,970 --> 00:15:32,350
+ So if an object provides, um, provides the behavior our code needs, Python can often use
+
+83
+00:15:32,350 --> 00:15:37,420
+ it without requiring an explicit shared type hierarchy.
+
+84
+00:15:37,420 --> 00:15:46,160
+ So let's not spend too much time on the phrase itself, but the important lesson is Python
+
+85
+00:15:46,160 --> 00:15:49,640
+ is often flexible about exact object types.
+
+86
+00:15:49,640 --> 00:15:51,650
+ So that's the basic idea here.
+
+87
+00:15:51,650 --> 00:15:55,110
+ And you can mix it up with, with what we spoke about before.
+
+88
+00:15:55,670 --> 00:16:02,340
+ So that's just basic idea of duck typing.
+
+89
+00:16:03,820 --> 00:16:16,980
+ Uh, and most of the time we can simply use the behavior an object actually provides.
+
+90
+00:16:18,180 --> 00:16:24,770
+ Uh, but sometimes we kind of genuinely need to check what type of object we're working with
+
+91
+00:16:24,770 --> 00:16:29,490
+ or whether it belongs to an inheritance hierarchy.
+
+92
+00:16:29,490 --> 00:16:35,960
+ And for that Python actually gives us what?
+
+93
+00:16:35,960 --> 00:16:38,050
+ Well, they give us instances.
+
+94
+00:16:38,050 --> 00:16:42,920
+ And let me also do something similar here.
+
+95
+00:16:42,920 --> 00:16:54,260
+ So, uh, is instance what we're going to talk about now.
+
+96
+00:16:54,260 --> 00:16:58,540
+ So, uh, let's do something like this.
+
+97
+00:16:58,540 --> 00:17:16,920
+ Uh, class, uh, class, class, class here, right?
+
+98
+00:17:16,920 --> 00:17:38,010
+ Uh, dog equals dog, um, print instance, um, dog, dog.
+
+99
+00:17:38,010 --> 00:17:51,050
+ And let's also do this, um, dog, animal.
+
+100
+00:17:51,050 --> 00:17:54,200
+ Let's see what we get.
+
+101
+00:17:54,200 --> 00:17:56,700
+ True, true, true, true, true.
+
+102
+00:17:56,700 --> 00:17:56,800
+ Right?
+
+103
+00:17:56,700 --> 00:18:05,090
+ Why is dog also an instance of animal?
+
+104
+00:18:05,090 --> 00:18:11,790
+ Well, dog inherits from animal, right?
+
+105
+00:18:11,790 --> 00:18:27,850
+ So if I were to add a little print here, print, uh, is instance, uh, dog, uh, string.
+
+106
+00:18:27,850 --> 00:18:30,370
+ Okay.
+
+107
+00:18:31,230 --> 00:18:34,900
+ And if we run, if we run this, we actually get a false, right?
+
+108
+00:18:35,240 --> 00:18:44,330
+ So is instance actually understands, uh, inheritance relationship as we see here.
+
+109
+00:18:44,330 --> 00:18:49,130
+ So dog is dog, right?
+
+110
+00:18:49,130 --> 00:18:59,590
+ But because dog inherits from animal, it is also considered an instance of animal.
+
+111
+00:18:59,590 --> 00:19:02,810
+ I hope that wasn't confusing.
+
+112
+00:19:03,710 --> 00:19:12,390
+ Uh, so is instance, this can actually be useful when we genuinely need to, to expect in my
+
+113
+00:19:12,390 --> 00:19:17,010
+ expect, inspect, inspect, inspect an, an object type relationship.
+
+114
+00:19:17,010 --> 00:19:18,280
+ Right?
+
+115
+00:19:18,280 --> 00:19:29,490
+ But I wouldn't say that you, you shouldn't like, um, build every program around hue chains.
+
+116
+00:19:29,490 --> 00:19:37,540
+ Like, uh, uh, if is instance, uh, blah, blah, blah, blah, blah, blah, blah, blah, blah.
+
+117
+00:19:37,540 --> 00:19:39,820
+ Right?
+
+118
+00:19:39,820 --> 00:19:52,970
+ Uh, or, or something, uh, elif, uh, elif and so on.
+
+119
+00:19:54,790 --> 00:19:56,550
+ Right?
+
+120
+00:19:56,550 --> 00:20:02,750
+ Uh, because, well, if all, uh,
+
+121
+00:20:02,750 --> 00:20:11,880
+ if, if, if all object provides the same useful method, polymorphism may let us avoid that.
+
+122
+00:20:11,880 --> 00:20:12,100
+ Right?
+
+123
+00:20:12,100 --> 00:20:23,420
+ So that was just a quick walkthrough, um, polymorphism and, well, duct typing.
+
+124
+00:20:23,540 --> 00:20:28,570
+ And like I said, you're going to have a little lab on this as well, just to, uh, to clarify
+
+125
+00:20:28,570 --> 00:20:30,050
+ any question marks as well.
+
+126
+00:20:33,150 --> 00:20:37,080
+ And I think you're already familiar with a little bit of, uh, polymorphism.
+
+127
+00:20:40,280 --> 00:20:40,440
+ Hmm.
+
+128
+00:20:42,270 --> 00:20:50,680
+ And one thing, well, uh, let's actually finish with another useful feature, uh, of classes.
+
+129
+00:20:50,680 --> 00:21:00,070
+ Uh, so we have actually printed attributes and methods, uh, uh, method results many times,
+
+130
+00:21:00,070 --> 00:21:00,250
+ right?
+
+131
+00:21:00,250 --> 00:21:07,180
+ But what happens if we were to print the object itself?
+
+132
+00:21:09,110 --> 00:21:12,130
+ So let's, let's do something like this.
+
+133
+00:21:12,130 --> 00:21:20,970
+ Um, class, um, student, and I'm going to lean, lead up to something here.
+
+134
+00:21:20,970 --> 00:21:30,790
+ Uh, so class student, uh, death, uh, under in it, uh, let's add a, let's go back to our usual
+
+135
+00:21:30,790 --> 00:21:32,290
+ example, name and score.
+
+136
+00:21:32,290 --> 00:21:51,210
+ Uh, self.name equals name, self.core equals score, right?
+
+137
+00:21:54,790 --> 00:22:17,200
+ Student plus student, uh, Ada 91 and print student.
+
+138
+00:22:18,480 --> 00:22:19,700
+ Sorry.
+
+139
+00:22:19,820 --> 00:22:20,240
+ One second.
+
+140
+00:22:23,190 --> 00:22:38,050
+ So if we were to run this, let me just show you what I'm writing here.
+
+141
+00:22:39,230 --> 00:22:44,200
+ Uh, so this is nothing new or anything.
+
+142
+00:22:44,200 --> 00:22:48,180
+ Like, I'm going to give, uh, so what do we get here?
+
+143
+00:22:48,180 --> 00:22:48,380
+ Yeah.
+
+144
+00:22:48,380 --> 00:22:58,590
+ So by default, uh, printing our, uh, custom object, uh, it is not actually very human friendly,
+
+145
+00:22:58,590 --> 00:22:58,810
+ right?
+
+146
+00:22:59,030 --> 00:23:05,020
+ So we see information about the class and the object identity, right?
+
+147
+00:23:05,160 --> 00:23:12,200
+ Uh, but not the useful, uh, what can you say, uh, the useful student information, right?
+
+148
+00:23:12,780 --> 00:23:19,490
+ And we can actually control this using another special method that I need to show you.
+
+149
+00:23:19,910 --> 00:23:28,520
+ Uh, and that's what we call, uh, thunder string, right?
+
+150
+00:23:29,660 --> 00:23:46,720
+ So let's take it step-by-step, uh, this is where we came from where we're going.
+
+151
+00:23:49,660 --> 00:23:52,240
+ Let's add here.
+
+152
+00:23:57,750 --> 00:24:19,030
+ Here, we're actually going to return self, um, name, score.
+
+153
+00:24:23,040 --> 00:24:25,910
+ That's cool.
+
+154
+00:24:27,410 --> 00:24:29,770
+ Then we have a student, student.
+
+155
+00:24:30,010 --> 00:24:30,470
+ Yeah, perfect.
+
+156
+00:24:32,680 --> 00:24:33,730
+ Okay.
+
+157
+00:24:33,770 --> 00:24:37,900
+ Let's run this this time and see if we see any difference from what we had before.
+
+158
+00:24:40,660 --> 00:24:41,810
+ Oh, what do you say guys?
+
+159
+00:24:41,950 --> 00:24:42,530
+ What's better, right?
+
+160
+00:24:42,530 --> 00:24:55,220
+ So the, down the string actually defines, uh, a human readable string representation, the object.
+
+161
+00:24:57,320 --> 00:25:04,940
+ So when we print the object, Python can use this method to decide what to actually display here.
+
+162
+00:25:07,810 --> 00:25:13,720
+ And of course we can, uh, let me show you one thing.
+
+163
+00:25:15,230 --> 00:25:19,530
+ Uh, if I did something.
+
+164
+00:25:19,530 --> 00:25:23,810
+ Something like this, uh, or let me take that back.
+
+165
+00:25:24,160 --> 00:25:24,650
+ Sorry.
+
+166
+00:25:26,380 --> 00:25:27,100
+ There we go.
+
+167
+00:25:28,260 --> 00:25:41,130
+ Uh, what if I did something like this, uh, text, uh, equals, um, student, right?
+
+168
+00:25:41,130 --> 00:25:46,270
+ And then just print the text.
+
+169
+00:25:46,270 --> 00:26:18,740
+ And so we can also explicitly, um, as you see, we can actually explicitly, uh, call, uh, string on students, right?
+
+170
+00:26:18,740 --> 00:26:32,470
+ So, and this uses actually the down the string and, and gives us back just a normal string as you see.
+
+171
+00:26:32,470 --> 00:26:39,670
+ But one important rule is that down the string must return a string.
+
+172
+00:26:39,670 --> 00:26:44,620
+ Uh, so don't print inside the down the string.
+
+173
+00:26:44,620 --> 00:27:07,220
+ Uh, you need to return, uh, you need to return, uh, you need to return actually the representation and everything we have learned so far about inheritance and overriding actually also applies to, well, special methods.
+
+174
+00:27:07,220 --> 00:27:14,320
+ So a subclass can actually have its own version of the string.
+
+175
+00:27:14,320 --> 00:27:43,570
+ So what could that be, uh, let's say, uh, with something like that.
+
+176
+00:27:46,490 --> 00:27:49,130
+ Take an example.
+
+177
+00:27:49,550 --> 00:27:50,530
+ Let's see here.
+
+178
+00:27:50,790 --> 00:27:51,450
+ All right.
+
+179
+00:27:51,570 --> 00:27:53,110
+ This, this could work fine.
+
+180
+00:27:53,970 --> 00:27:56,300
+ Class employee.
+
+181
+00:27:57,260 --> 00:27:58,820
+ Not employee.
+
+182
+00:27:59,210 --> 00:27:59,710
+ That's employee.
+
+183
+00:28:01,140 --> 00:28:14,020
+ Um, let's add a name.
+
+184
+00:28:14,140 --> 00:28:19,720
+ Let's add a salary, right?
+
+185
+00:28:20,180 --> 00:28:24,580
+ Uh, self dot name equals name.
+
+186
+00:28:25,690 --> 00:28:33,130
+ Uh, self dot, uh, salary equals salary.
+
+187
+00:28:36,450 --> 00:28:40,680
+ Uh, on the string as well.
+
+188
+00:28:42,700 --> 00:28:44,340
+ And here we're going to return.
+
+189
+00:28:46,950 --> 00:28:51,500
+ Turned, um, do an F string here.
+
+190
+00:28:51,800 --> 00:29:00,420
+ He had here, um, self dot name.
+
+191
+00:29:00,420 --> 00:29:44,880
+ Um, that makes it F salary dot salary, right?
+
+192
+00:29:45,460 --> 00:29:46,620
+ Something like that.
+
+193
+00:29:47,960 --> 00:29:48,180
+ Hmm.
+
+194
+00:29:48,710 --> 00:29:52,280
+ And now let's add another class here.
+
+195
+00:29:52,280 --> 00:29:56,770
+ That actually inherits from the law.
+
+196
+00:29:58,240 --> 00:30:01,770
+ Uh, that actually inherits from employee law.
+
+197
+00:30:02,230 --> 00:30:12,360
+ He, uh, and here we can say the, um, they're in it, right?
+
+198
+00:30:13,150 --> 00:30:14,590
+ Uh, we have name salary.
+
+199
+00:30:14,590 --> 00:30:17,740
+ And let's also add a language.
+
+200
+00:30:17,920 --> 00:30:19,260
+ Okay.
+
+201
+00:30:20,700 --> 00:30:24,300
+ No, I'm not there.
+
+202
+00:30:28,060 --> 00:30:29,490
+ Language.
+
+203
+00:30:33,450 --> 00:30:34,190
+ Excuse me.
+
+204
+00:30:34,570 --> 00:30:37,700
+ And then we have their super, right?
+
+205
+00:30:38,260 --> 00:30:39,920
+ Uh, looks good.
+
+206
+00:30:40,040 --> 00:30:44,780
+ And then we have, uh, self.
+
+207
+00:30:45,530 --> 00:30:51,350
+ Uh, let's not forget that self language equals, uh, language.
+
+208
+00:30:51,490 --> 00:30:53,580
+ Right.
+
+209
+00:30:53,580 --> 00:30:59,730
+ And also, uh, uh, down the string.
+
+210
+00:31:02,710 --> 00:31:04,630
+ And we're not going to use any super here.
+
+211
+00:31:05,770 --> 00:31:09,230
+ It's not quite the, uh, there we go.
+
+212
+00:31:10,530 --> 00:31:11,790
+ Uh, return.
+
+213
+00:31:14,430 --> 00:31:39,300
+ Turn, uh, self name, right?
+
+214
+00:31:40,720 --> 00:31:57,510
+ Uh, developer, developer.
+
+215
+00:31:58,270 --> 00:31:58,850
+ Oh, look at that.
+
+216
+00:31:58,970 --> 00:32:20,740
+ Now, create some employees.
+
+217
+00:32:22,670 --> 00:32:25,590
+ Some, let's at least create one.
+
+218
+00:32:25,590 --> 00:32:37,450
+ Employ, employee, employee equals, employee, right?
+
+219
+00:32:38,620 --> 00:32:41,400
+ And now let's create grace.
+
+220
+00:32:41,600 --> 00:32:47,190
+ Grace earns maybe 45,000.
+
+221
+00:32:49,000 --> 00:32:52,480
+ Uh, yeah, that's quite enough.
+
+222
+00:32:53,250 --> 00:32:55,270
+ And then we actually have a developer, right?
+
+223
+00:32:56,980 --> 00:33:01,680
+ The, the, the developer equals developer.
+
+224
+00:33:02,040 --> 00:33:06,180
+ And we need a name for our developer.
+
+225
+00:33:07,470 --> 00:33:07,750
+ Ada.
+
+226
+00:33:08,690 --> 00:33:11,480
+ Ada is the developer or it's a little bit more.
+
+227
+00:33:12,640 --> 00:33:18,760
+ Uh, of course, we're going to favor our developers here.
+
+228
+00:33:19,180 --> 00:33:22,950
+ Uh, and of course, their language is Python.
+
+229
+00:33:23,890 --> 00:33:24,710
+ All right.
+
+230
+00:33:24,770 --> 00:33:26,410
+ Let's print this out.
+
+231
+00:33:26,800 --> 00:33:29,000
+ Print, uh, employee.
+
+232
+00:33:29,470 --> 00:33:49,040
+ And let's print, um, now let's take a look at the whole thing here.
+
+233
+00:33:49,440 --> 00:33:50,220
+ There we go.
+
+234
+00:33:54,540 --> 00:34:00,430
+ Employee has its own down the string method, right?
+
+235
+00:34:01,700 --> 00:34:09,660
+ Developer actually inherits from employee, but actually defines its own version.
+
+236
+00:34:09,660 --> 00:34:20,640
+ So just like we saw make sound earlier, down the string should also be able to be, uh, over, over, overwritten.
+
+237
+00:34:21,700 --> 00:34:22,160
+ And let's see.
+
+238
+00:34:22,810 --> 00:34:27,660
+ And it actually is not the same, right?
+
+239
+00:34:28,090 --> 00:34:34,000
+ But we kind of override for its own, right?
+
+240
+00:34:34,830 --> 00:34:36,520
+ So grace salary, 45,000.
+
+241
+00:34:36,820 --> 00:34:38,270
+ Ada developer, Python.
+
+242
+00:34:42,000 --> 00:34:43,080
+ And there you go, guys.
+
+243
+00:34:58,880 --> 00:35:10,600
+ So something I actually mentioned yesterday, I'm going to continue a little bit forward here.
+
+244
+00:35:18,680 --> 00:35:25,610
+ Well, we have, we have seen several examples of inheritance, right?
+
+245
+00:35:25,930 --> 00:35:33,540
+ And if you remember from last lesson, we, we actually, uh, we said that object can also contain other objects, right?
+
+246
+00:35:33,540 --> 00:35:41,360
+ So that kind of gives us an important design, design question, right?
+
+247
+00:35:42,520 --> 00:35:49,130
+ Well, should one class inherit from another or should one object contain another object, right?
+
+248
+00:35:49,760 --> 00:35:52,080
+ And we spoke a little bit.
+
+249
+00:35:52,220 --> 00:36:00,460
+ Well, a useful way to think about inheritance is with, we said, uh, is a, right?
+
+250
+00:36:00,940 --> 00:36:08,620
+ So dog is an animal, developer is an employee, uh, electric car is a vehicle or et cetera, et cetera.
+
+251
+00:36:08,620 --> 00:36:16,520
+ But in these cases, inheritance can actually, it can represent a natural relationship between the classes.
+
+252
+00:36:18,360 --> 00:36:23,080
+ So sometimes the relationship could be different, right?
+
+253
+00:36:23,780 --> 00:36:32,320
+ One object can simply contain or contains or uses another object.
+
+254
+00:36:33,050 --> 00:36:50,760
+ We can think about it as, as, as a car has an engine, course has a student, shopping cart has a product and so on.
+
+255
+00:36:50,760 --> 00:36:53,210
+ So this is composition, right?
+
+256
+00:36:56,420 --> 00:37:13,220
+ So we said, uh, inheritance and, uh, and, uh, composition.
+
+257
+00:37:14,690 --> 00:37:15,090
+ Okay.
+
+258
+00:37:15,910 --> 00:37:21,020
+ And this is the composition that we actually used last lesson.
+
+259
+00:37:22,350 --> 00:37:32,690
+ Uh, we, we, we can take a simple example, uh, to always have reminders.
+
+260
+00:37:32,690 --> 00:38:06,320
+ So class, let's say engine, uh, the, uh, in it, uh, self dot, course, uh, equals, of course, power, right?
+
+261
+00:38:06,320 --> 00:38:12,960
+ And then we have another class, uh, maybe R, right?
+
+262
+00:38:16,160 --> 00:38:32,410
+ The, uh, in it self, we have brand, we have, let's say engine, right?
+
+263
+00:38:33,680 --> 00:38:38,930
+ Uh, self dot, uh, uh, brand, right?
+
+264
+00:38:40,760 --> 00:38:52,310
+ Equals brand and self dot engine engine, engine, engine, engine, right?
+
+265
+00:38:54,140 --> 00:38:54,660
+ Hmm.
+
+266
+00:38:55,540 --> 00:38:57,560
+ Now let's create something here.
+
+267
+00:38:57,720 --> 00:39:03,350
+ And Jen equals, uh, engine.
+
+268
+00:39:03,510 --> 00:39:06,670
+ And we need some kind of horsepower.
+
+269
+00:39:06,990 --> 00:39:08,550
+ Let's say 200.
+
+270
+00:39:09,160 --> 00:39:11,770
+ I don't know if, even if that's good or bad.
+
+271
+00:39:11,770 --> 00:39:19,470
+ Uh, uh, I like cars, but I don't, I know nothing about them.
+
+272
+00:39:20,030 --> 00:39:22,570
+ Uh, so car, uh, let's see here.
+
+273
+00:39:23,690 --> 00:39:29,830
+ Volvo, maybe engine, something like that.
+
+274
+00:39:32,170 --> 00:39:49,250
+ Now let's print brand and print engine, uh, horsepower, right?
+
+275
+00:39:50,240 --> 00:39:51,060
+ And there we go.
+
+276
+00:39:54,110 --> 00:39:57,790
+ What we see here is that, uh, let me just run this and see.
+
+277
+00:39:57,790 --> 00:40:10,460
+ So what we see here is that the car object actually contains an engine object, right?
+
+278
+00:40:11,560 --> 00:40:15,070
+ But a car is not an engine, right?
+
+279
+00:40:15,740 --> 00:40:18,310
+ A car, as an engine.
+
+280
+00:40:19,190 --> 00:40:23,680
+ So composition is actually a natural relationship here.
+
+281
+00:40:26,100 --> 00:40:34,800
+ So yeah, uh, just to show you the natural first question that we have, that will be therefore
+
+282
+00:40:34,800 --> 00:40:39,140
+ is a, or as a, right?
+
+283
+00:40:41,840 --> 00:40:56,360
+ And one last thing is, is just to say, you know, well, inheritance can be very useful, right?
+
+284
+00:40:56,360 --> 00:41:07,210
+ But we should not use it simply because two classes happen to contain similar code.
+
+285
+00:41:08,660 --> 00:41:15,300
+ So inheritance, well, creates a relationship between classes, fine.
+
+286
+00:41:15,300 --> 00:41:21,530
+ A subclass, well, depends on behavior and assumptions from its base class.
+
+287
+00:41:23,170 --> 00:41:32,900
+ So a bad inheritance often, I would say, begins with, well, these classes happens to have similar methods,
+
+288
+00:41:33,440 --> 00:41:43,500
+ but similar code alone does not mean that we, that the concepts have a real inheritance relationship.
+
+289
+00:41:43,500 --> 00:41:45,960
+ So it's something just to, to think about.
+
+290
+00:41:48,190 --> 00:41:59,420
+ So maybe a printer and a student might both have, let's say, get data, right?
+
+291
+00:41:59,420 --> 00:42:07,770
+ But that does not, that does not mean printer is a student, right?
+
+292
+00:42:08,390 --> 00:42:10,270
+ Or a student is a printer, right?
+
+293
+00:42:10,740 --> 00:42:19,210
+ So, so, so, so, so don't choose inheritance only to remove duplicate code, uh, just, just a reminder, right?
+
+294
+00:42:19,210 --> 00:42:25,550
+ So first actually ask yourself whether the relationship makes sense.
+
+295
+00:42:25,550 --> 00:42:32,160
+ Uh, so yeah, kind of model the relationship, not just duplicate lines, right?
+
+296
+00:42:32,160 --> 00:42:43,740
+ And this is something that I want you to think about and have in the back of your brain when, when, when you're, uh, creating your, when you're going to work with your project.
+
+297
+00:42:43,740 --> 00:42:44,740
+ Right.
+
+298
+00:42:44,740 --> 00:42:46,630
+ So yeah, that was actually it.
+
+299
+00:42:46,630 --> 00:42:47,630
+ I don't think I have anything more.
+
+300
+00:42:47,630 --> 00:43:11,130
+ I want you guys to dive, dive into this, uh, with the lab that you're going to get, um, just to clear up things.
+
+301
+00:43:11,130 --> 00:43:14,540
+ If there are any question marks along the way and so on.
+
+302
+00:43:14,540 --> 00:43:16,400
+ Uh, yeah.
+
+303
+00:43:16,400 --> 00:43:22,430
+ If you stumble on something, I, uh, I will actually call you up and yeah, we can discuss it.
+
+304
+00:43:22,430 --> 00:43:25,340
+ Uh, let's see here.
+
+305
+00:43:25,340 --> 00:43:32,860
+ Uh, let me just do this and do that and that.
+
