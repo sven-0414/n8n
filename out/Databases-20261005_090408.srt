@@ -1,0 +1,3492 @@
+1
+00:00:02,310 --> 00:00:03,770
+ Anyone knows what the database is?
+
+2
+00:00:04,050 --> 00:00:05,190
+ I guess most of you know.
+
+3
+00:00:05,630 --> 00:00:06,800
+ Most of you guys, at least.
+
+4
+00:00:08,360 --> 00:00:11,970
+ You're not that much of a beginner.
+
+5
+00:00:12,890 --> 00:00:15,670
+ Okay, who is trying to join us?
+
+6
+00:00:15,830 --> 00:00:16,570
+ This is strange.
+
+7
+00:00:20,970 --> 00:00:27,810
+ Govtami, hello?
+
+8
+00:00:29,130 --> 00:00:32,880
+ Govtami, can you hear us?
+
+9
+00:00:36,610 --> 00:00:37,860
+ Hold on.
+
+10
+00:00:48,970 --> 00:00:50,350
+ Govtami, can you say something?
+
+11
+00:00:51,430 --> 00:00:54,070
+ If you don't say something, then I have to kick you out.
+
+12
+00:01:14,620 --> 00:01:15,240
+ That's strange.
+
+13
+00:01:26,110 --> 00:01:28,210
+ Never seen that anyone...
+
+14
+00:01:28,210 --> 00:01:30,770
+ I mean, all of you guys are guests.
+
+15
+00:01:31,820 --> 00:01:41,210
+ But it's asking me if I want Govtami to...
+
+16
+00:01:41,210 --> 00:02:29,110
+ Sorry about that.
+
+17
+00:02:31,040 --> 00:02:34,100
+ Shouldn't ask me to...
+
+18
+00:02:34,100 --> 00:02:41,620
+ What happened on my side is it's asking me if I want to allow Govtami in the meeting or not.
+
+19
+00:02:41,820 --> 00:02:42,880
+ Which shouldn't.
+
+20
+00:02:44,700 --> 00:02:46,380
+ That's why we're reacting like that.
+
+21
+00:02:51,840 --> 00:02:52,720
+ Exactly.
+
+22
+00:02:53,590 --> 00:02:54,860
+ So it's a bit suspicious.
+
+23
+00:02:55,910 --> 00:02:57,670
+ I see that Govtami is in here.
+
+24
+00:03:04,460 --> 00:03:05,730
+ Something has happened there.
+
+25
+00:03:07,010 --> 00:03:07,410
+ Continue.
+
+26
+00:03:22,840 --> 00:03:23,920
+ Reshare the screen again.
+
+27
+00:03:23,920 --> 00:03:33,630
+ The reason why I'm so suspicious about everything is because we've heard...
+
+28
+00:03:33,630 --> 00:03:35,080
+ Hi, Govtami.
+
+29
+00:03:35,100 --> 00:03:36,280
+ Are you able to hear me?
+
+30
+00:03:36,840 --> 00:03:37,280
+ Yes.
+
+31
+00:03:37,340 --> 00:03:37,660
+ Yeah, yeah.
+
+32
+00:03:39,940 --> 00:03:43,920
+ All right.
+
+33
+00:03:44,990 --> 00:03:52,510
+ It's because, well, attacks on schools and stuff like that is very common.
+
+34
+00:03:53,440 --> 00:03:54,740
+ And it has actually increased.
+
+35
+00:03:55,360 --> 00:04:00,660
+ So we are a bit suspicious on every strange misbehavior.
+
+36
+00:04:02,210 --> 00:04:02,870
+ All right.
+
+37
+00:04:03,110 --> 00:04:05,170
+ To go back to what is a database.
+
+38
+00:04:06,200 --> 00:04:09,720
+ Hopefully most of you guys already know what the database is.
+
+39
+00:04:11,530 --> 00:04:13,280
+ But we're going to go through it anyway.
+
+40
+00:04:14,650 --> 00:04:15,950
+ Have some fun with it.
+
+41
+00:04:20,900 --> 00:04:26,040
+ So our learning goals for today would be...
+
+42
+00:04:26,040 --> 00:04:28,230
+ Well, let me see if I can open up.
+
+43
+00:04:29,500 --> 00:04:31,720
+ You can already start to download this.
+
+44
+00:04:31,800 --> 00:04:34,680
+ And it's called DB Browser for SQLite.
+
+45
+00:04:35,390 --> 00:04:37,790
+ I'm going to explain later why we're using SQLite.
+
+46
+00:04:37,970 --> 00:04:40,350
+ I'm going to show you where you can find that.
+
+47
+00:04:41,050 --> 00:04:42,630
+ DB Browser.
+
+48
+00:04:44,640 --> 00:04:45,480
+ And it's free.
+
+49
+00:04:46,490 --> 00:04:48,400
+ So you don't have to pay for it.
+
+50
+00:04:50,260 --> 00:04:55,880
+ SQLite is DB Browser.
+
+51
+00:04:56,000 --> 00:04:56,640
+ There it is.
+
+52
+00:04:57,550 --> 00:05:02,190
+ And this works if you have Mac, Linux, Windows.
+
+53
+00:05:02,590 --> 00:05:03,120
+ Doesn't matter.
+
+54
+00:05:03,320 --> 00:05:05,800
+ Should work on every operating system out there.
+
+55
+00:05:09,330 --> 00:05:12,860
+ But we're mainly using Windows and Mac here.
+
+56
+00:05:13,100 --> 00:05:14,860
+ So that wouldn't be any problem.
+
+57
+00:05:15,480 --> 00:05:19,180
+ For Linux, it might be...
+
+58
+00:05:19,180 --> 00:05:21,050
+ I mean, it's not all of the versions.
+
+59
+00:05:21,630 --> 00:05:23,520
+ I think Ubuntu might work.
+
+60
+00:05:24,560 --> 00:05:25,120
+ Okay.
+
+61
+00:05:25,280 --> 00:05:28,250
+ So I'm going to share the link to you guys.
+
+62
+00:05:28,390 --> 00:05:29,770
+ Because I haven't done that yet.
+
+63
+00:05:30,230 --> 00:05:31,350
+ So you can download it.
+
+64
+00:05:33,350 --> 00:05:34,310
+ There we go.
+
+65
+00:05:41,150 --> 00:05:48,130
+ Awesome.
+
+66
+00:05:49,060 --> 00:05:49,360
+ Okay.
+
+67
+00:05:50,520 --> 00:05:51,620
+ Let's bring...
+
+68
+00:05:51,620 --> 00:05:53,140
+ So we're going to come back to this.
+
+69
+00:05:53,140 --> 00:05:55,600
+ I'm going to explain what all of this is as well.
+
+70
+00:05:56,900 --> 00:05:59,020
+ But let's minimize that for a moment.
+
+71
+00:06:00,270 --> 00:06:03,450
+ Sorry.
+
+72
+00:06:08,570 --> 00:06:14,190
+ So today...
+
+73
+00:06:14,190 --> 00:06:15,960
+ So the plan for today, at least.
+
+74
+00:06:16,420 --> 00:06:19,660
+ So after today, you will be able to do these things.
+
+75
+00:06:20,570 --> 00:06:25,210
+ I mean, explain what a database is and why we use one.
+
+76
+00:06:26,420 --> 00:06:33,840
+ I mean, we also need to know what words like table, row, column, data type, primary key, for example.
+
+77
+00:06:36,560 --> 00:06:41,420
+ Also, find our way around DB Browser for SQLite.
+
+78
+00:06:43,600 --> 00:06:48,940
+ Basically, ask database questions with select, where, order by, and limit, for example.
+
+79
+00:06:50,510 --> 00:06:52,110
+ But we'll have the theory first.
+
+80
+00:06:52,350 --> 00:06:53,670
+ And then maybe we can code together.
+
+81
+00:06:54,480 --> 00:06:57,100
+ Hopefully until lunch or maybe before lunch.
+
+82
+00:06:57,140 --> 00:06:59,060
+ I think it's not going to take that long today.
+
+83
+00:07:00,520 --> 00:07:05,600
+ And I have a schedule, but I don't like this schedule.
+
+84
+00:07:05,740 --> 00:07:07,060
+ So I'm not going to show it to you.
+
+85
+00:07:07,720 --> 00:07:20,700
+ Because the schedule was made a few weeks ago before we actually learned to know you guys.
+
+86
+00:07:21,890 --> 00:07:26,210
+ But as I've heard, some of you are, you guys are pretty good.
+
+87
+00:07:26,850 --> 00:07:31,130
+ So what is a database?
+
+88
+00:07:31,230 --> 00:07:33,250
+ If we go back to that, let's start simple.
+
+89
+00:07:34,040 --> 00:07:40,900
+ A database is basically a place where computer keeps information in an organized way.
+
+90
+00:07:41,020 --> 00:07:48,600
+ So think of it like a giant, super tidy cupboard, if you want to think of it like that.
+
+91
+00:07:50,320 --> 00:07:52,720
+ So everything has its own shelf.
+
+92
+00:07:54,640 --> 00:07:57,560
+ And you can always find it again.
+
+93
+00:07:58,930 --> 00:08:04,220
+ The information, of course, stays there, even when the computer is turned off.
+
+94
+00:08:05,810 --> 00:08:10,280
+ And so every app on your phone has basically a database behind it.
+
+95
+00:08:11,200 --> 00:08:16,890
+ So for example, if you open up Spotify, it looks up your playlists in a database, for example.
+
+96
+00:08:17,390 --> 00:08:22,600
+ Or when you log in with BankID, a database checks who you are.
+
+97
+00:08:28,740 --> 00:08:32,550
+ So why not use Excel?
+
+98
+00:08:33,050 --> 00:08:36,140
+ I mean, Excel is great, but it has limits.
+
+99
+00:08:37,730 --> 00:08:41,540
+ I mean, if you have a million of rows, it gets pretty slow.
+
+100
+00:08:43,100 --> 00:08:48,270
+ For example, if 10 people edit the same file, it becomes basically a mess.
+
+101
+00:08:48,270 --> 00:08:59,890
+ And in Excel, you can type a phone number in the price column, for example, and nobody would
+
+102
+00:08:59,890 --> 00:09:00,470
+ stop you.
+
+103
+00:09:01,310 --> 00:09:05,240
+ But the database has rules, so wrong data can't get in.
+
+104
+00:09:07,470 --> 00:09:12,390
+ And to find something, you just ask the question in basically one line.
+
+105
+00:09:18,950 --> 00:09:24,750
+ So table, you can see a table is like class list.
+
+106
+00:09:25,360 --> 00:09:30,250
+ I mean, a database is made of tables.
+
+107
+00:09:30,740 --> 00:09:35,880
+ So think of a class list your teacher had in school, okay?
+
+108
+00:09:37,000 --> 00:09:40,550
+ And one list for one class.
+
+109
+00:09:41,220 --> 00:09:47,400
+ And each table in a database is about one kind of a thing.
+
+110
+00:09:48,920 --> 00:09:53,150
+ So here we have, for example, table of customers.
+
+111
+00:09:54,030 --> 00:09:55,760
+ Another table could be products.
+
+112
+00:09:56,360 --> 00:09:57,980
+ And another could be orders.
+
+113
+00:09:59,040 --> 00:10:02,940
+ So we keep different things in different tables, basically.
+
+114
+00:10:06,360 --> 00:10:10,300
+ Sorry, need to take a sip of coffee here.
+
+115
+00:10:10,300 --> 00:10:13,050
+ Rows and columns.
+
+116
+00:10:13,490 --> 00:10:14,680
+ Two important words.
+
+117
+00:10:16,200 --> 00:10:18,440
+ A row is one thing.
+
+118
+00:10:19,150 --> 00:10:25,050
+ And also, one row is one customer.
+
+119
+00:10:25,250 --> 00:10:28,340
+ For example, Anna here that we have.
+
+120
+00:10:30,690 --> 00:10:35,790
+ Column is one piece of information that every row has, like a city, for example.
+
+121
+00:10:36,880 --> 00:10:43,160
+ A good way to remember it is basically a row is one person.
+
+122
+00:10:43,760 --> 00:10:48,410
+ Column is one question you ask about everyone.
+
+123
+00:10:48,830 --> 00:10:50,480
+ So what's your city, for example?
+
+124
+00:10:51,520 --> 00:10:56,080
+ Every customer answers in the same column.
+
+125
+00:11:04,460 --> 00:11:06,330
+ Okay, data types.
+
+126
+00:11:06,750 --> 00:11:09,560
+ So every column has a data type.
+
+127
+00:11:10,520 --> 00:11:13,410
+ That's the kind of information it holds.
+
+128
+00:11:13,730 --> 00:11:16,610
+ For example, an integer is a whole number.
+
+129
+00:11:20,460 --> 00:11:25,240
+ Real here is a number with decimals, like prices.
+
+130
+00:11:26,380 --> 00:11:31,580
+ And text, in this case, is words.
+
+131
+00:11:32,770 --> 00:11:35,170
+ And null is special.
+
+132
+00:11:36,270 --> 00:11:38,250
+ Null means we don't know, basically.
+
+133
+00:11:38,870 --> 00:11:41,830
+ It's not zero and it's not empty text.
+
+134
+00:11:42,070 --> 00:11:43,330
+ Empty text, sorry.
+
+135
+00:11:44,190 --> 00:11:47,670
+ It's like an empty box with a question mark on it.
+
+136
+00:11:49,350 --> 00:11:51,430
+ We'll come back to null later, maybe.
+
+137
+00:11:52,160 --> 00:11:54,190
+ Because it can actually trick us.
+
+138
+00:11:55,790 --> 00:12:07,000
+ Primary key.
+
+139
+00:12:07,120 --> 00:12:08,900
+ This is very important.
+
+140
+00:12:09,740 --> 00:12:17,950
+ Question for us is, could we use the name to tell customers apart?
+
+141
+00:12:21,090 --> 00:12:23,740
+ Could we do that?
+
+142
+00:12:24,650 --> 00:12:27,400
+ It's a yes or no question, of course.
+
+143
+00:12:28,630 --> 00:12:29,210
+ Let me see.
+
+144
+00:12:29,770 --> 00:12:30,790
+ Someone is raising hands.
+
+145
+00:12:30,870 --> 00:12:32,490
+ Oh, I missed raising hands here.
+
+146
+00:12:32,570 --> 00:12:33,110
+ Sorry, guys.
+
+147
+00:12:38,590 --> 00:12:40,710
+ Yeah, someone wants to answer that question.
+
+148
+00:12:42,910 --> 00:12:45,850
+ Could you use a name to tell customers apart?
+
+149
+00:12:46,900 --> 00:12:49,170
+ Answer is no, like Sven said here.
+
+150
+00:12:49,520 --> 00:12:51,340
+ Because two people can have the same name.
+
+151
+00:12:52,580 --> 00:12:56,320
+ There might be two Anna Lindqvist here, for example.
+
+152
+00:12:57,800 --> 00:13:00,930
+ So every table has a primary key.
+
+153
+00:13:01,990 --> 00:13:08,690
+ It's a column where every row has a different value, like a personal number.
+
+154
+00:13:09,970 --> 00:13:15,620
+ So in our table, I mean, in our table, it's customer ID.
+
+155
+00:13:15,620 --> 00:13:22,370
+ I mean, Anna is number one, and nobody else can ever be number one.
+
+156
+00:13:23,370 --> 00:13:29,260
+ Because we have said that the primary key is for Anna, number one.
+
+157
+00:13:31,090 --> 00:13:36,180
+ So what is SQL then?
+
+158
+00:13:37,790 --> 00:13:40,170
+ Talk about databases.
+
+159
+00:13:40,310 --> 00:13:45,980
+ We use the language called SQL, same as SQL, I've heard.
+
+160
+00:13:46,560 --> 00:13:48,100
+ And both are fine.
+
+161
+00:13:48,590 --> 00:13:53,550
+ The cool thing about SQL is that it reads almost like English.
+
+162
+00:13:55,470 --> 00:14:02,410
+ So if you look at this, we say here, select first name, city.
+
+163
+00:14:02,760 --> 00:14:11,760
+ From customers, where city is equal to Uppsala, in this case.
+
+164
+00:14:11,760 --> 00:14:18,070
+ So you actually don't tell the computer how to search.
+
+165
+00:14:18,250 --> 00:14:19,670
+ You just say what you want.
+
+166
+00:14:20,350 --> 00:14:22,740
+ And the database figures out the rest.
+
+167
+00:14:24,330 --> 00:14:31,490
+ Our database in this course is going to be a web shop.
+
+168
+00:14:32,620 --> 00:14:36,170
+ For the whole course, we will use one database, a small web shop.
+
+169
+00:14:36,910 --> 00:14:40,230
+ Today, it has actually only two tables, customer and products.
+
+170
+00:14:41,190 --> 00:14:47,340
+ Hopefully, by later this week, you will build more tables yourself, for example, for orders.
+
+171
+00:14:50,510 --> 00:14:53,930
+ And we use the same web shop every day.
+
+172
+00:14:53,930 --> 00:14:56,090
+ It means you get to know the data really well.
+
+173
+00:14:56,450 --> 00:14:59,670
+ And that makes learning SQL much easier, of course.
+
+174
+00:15:00,910 --> 00:15:04,920
+ And our tool is going to be, like I showed you, DB Browser.
+
+175
+00:15:07,180 --> 00:15:12,060
+ So SQL Lite is a small database that lives in just one file.
+
+176
+00:15:13,020 --> 00:15:17,630
+ And our file is called, I'll show it to you in a second.
+
+177
+00:15:17,970 --> 00:15:20,060
+ But it's called webshop.db.
+
+178
+00:15:20,060 --> 00:15:26,640
+ You can basically email this or put it in a USB stick.
+
+179
+00:15:27,900 --> 00:15:34,770
+ And DB Browser for SQL Lite is a program that lets us look inside that file and write SQL.
+
+180
+00:15:35,270 --> 00:15:37,200
+ It's free and simple.
+
+181
+00:15:39,200 --> 00:15:41,360
+ And in a minute, we'll open it together again.
+
+182
+00:15:44,600 --> 00:15:48,330
+ But before we do that, we need to talk about the select recipe.
+
+183
+00:15:49,390 --> 00:15:51,890
+ Let's see, maybe I'm missing, raising hands here.
+
+184
+00:15:52,980 --> 00:15:57,500
+ And teams is pretty bad.
+
+185
+00:15:58,730 --> 00:15:59,500
+ There we go.
+
+186
+00:16:01,800 --> 00:16:11,590
+ So select, I mean, which columns do we want when we use the keyword select?
+
+187
+00:16:11,980 --> 00:16:19,370
+ And when we use the from is which table and where is which row?
+
+188
+00:16:20,860 --> 00:16:25,030
+ And order by is in, well, in which order?
+
+189
+00:16:25,930 --> 00:16:27,490
+ And limit is how many?
+
+190
+00:16:28,520 --> 00:16:31,170
+ So the order here matters.
+
+191
+00:16:31,790 --> 00:16:32,830
+ It's like a recipe.
+
+192
+00:16:33,170 --> 00:16:36,510
+ You can't bake the cake before mixing a dough.
+
+193
+00:16:37,350 --> 00:16:40,790
+ So only select and from are required.
+
+194
+00:16:40,970 --> 00:16:42,370
+ And the rest is basically optional.
+
+195
+00:16:47,070 --> 00:16:50,050
+ And the golden rules for today, four golden rules for today.
+
+196
+00:16:50,050 --> 00:16:55,030
+ Text always goes in single quotes.
+
+197
+00:16:56,140 --> 00:16:57,020
+ Numbers don't.
+
+198
+00:16:58,820 --> 00:17:01,180
+ Finish each query with a semicolon.
+
+199
+00:17:01,570 --> 00:17:02,230
+ Very important.
+
+200
+00:17:03,760 --> 00:17:05,580
+ And when you get an error, don't panic.
+
+201
+00:17:06,000 --> 00:17:06,520
+ Read it.
+
+202
+00:17:06,760 --> 00:17:12,600
+ Error messages are like a friend telling you where you went wrong, basically.
+
+203
+00:17:14,380 --> 00:17:18,230
+ We'll probably make some mistakes, I hope, today.
+
+204
+00:17:18,510 --> 00:17:20,160
+ But we'll figure it out.
+
+205
+00:17:28,590 --> 00:17:32,840
+ And remember, let's sum up here the theory part here before we start coding.
+
+206
+00:17:33,660 --> 00:17:37,240
+ A database keeps organized information in tables.
+
+207
+00:17:38,320 --> 00:17:40,140
+ So row equals one thing.
+
+208
+00:17:40,320 --> 00:17:42,100
+ Column equals one piece of information.
+
+209
+00:17:42,740 --> 00:17:45,830
+ And a primary key gives every row a unique ID.
+
+210
+00:17:46,170 --> 00:17:48,530
+ So select from where order by limit.
+
+211
+00:17:49,520 --> 00:17:51,320
+ And no means unknown.
+
+212
+00:17:53,350 --> 00:17:56,980
+ Use is no.
+
+213
+00:17:58,100 --> 00:18:03,100
+ Okay, I can't remember that.
+
+214
+00:18:03,420 --> 00:18:05,090
+ I'll come back to that later.
+
+215
+00:18:05,090 --> 00:18:10,780
+ Okay, so our turn here.
+
+216
+00:18:12,270 --> 00:18:13,770
+ Let's open up DB Browser.
+
+217
+00:18:17,720 --> 00:18:21,990
+ And it should look the same when you open this up as well.
+
+218
+00:18:22,400 --> 00:18:24,200
+ Now, if you go to Teams.
+
+219
+00:18:24,660 --> 00:18:27,680
+ Let me see if I can open up Teams here and show you guys.
+
+220
+00:18:27,840 --> 00:18:29,820
+ Sorry, I shouldn't be able to see that.
+
+221
+00:18:30,970 --> 00:18:37,930
+ Go to the channel databases.
+
+222
+00:18:39,490 --> 00:18:46,660
+ And in databases, you should have a file called webshop.db.
+
+223
+00:18:46,660 --> 00:18:51,450
+ Okay, so you can download that and import it in here.
+
+224
+00:18:51,960 --> 00:18:55,860
+ I'll show you later how you import that.
+
+225
+00:18:56,770 --> 00:19:03,130
+ So if you open up DB Browser here.
+
+226
+00:19:04,100 --> 00:19:06,680
+ And basically, I mean, you can just.
+
+227
+00:19:10,540 --> 00:19:11,000
+ Yeah, you can.
+
+228
+00:19:11,200 --> 00:19:11,720
+ Okay, okay.
+
+229
+00:19:11,800 --> 00:19:12,780
+ Let's do it together.
+
+230
+00:19:13,210 --> 00:19:14,620
+ Click open database.
+
+231
+00:19:16,460 --> 00:19:17,300
+ And find the file.
+
+232
+00:19:18,160 --> 00:19:21,110
+ Okay, the webshop.db that you don't download it.
+
+233
+00:19:22,700 --> 00:19:23,460
+ And click open.
+
+234
+00:19:27,210 --> 00:19:28,930
+ Okay.
+
+235
+00:19:29,490 --> 00:19:31,250
+ And then it should open up.
+
+236
+00:19:31,390 --> 00:19:34,190
+ And then you should have stuff like this.
+
+237
+00:19:34,330 --> 00:19:36,950
+ I think it's going to show you this in the beginning.
+
+238
+00:19:37,110 --> 00:19:39,150
+ But you could just go to execute SQL.
+
+239
+00:19:39,800 --> 00:19:42,210
+ And here we can actually execute SQL.
+
+240
+00:19:42,430 --> 00:19:43,650
+ Exactly what it says here.
+
+241
+00:19:43,690 --> 00:19:45,910
+ So if I click on play here.
+
+242
+00:19:47,670 --> 00:19:48,070
+ Maybe.
+
+243
+00:19:48,780 --> 00:19:49,100
+ Hold on.
+
+244
+00:19:49,890 --> 00:19:50,850
+ What happened here?
+
+245
+00:19:53,970 --> 00:19:55,590
+ Okay, because I already done it.
+
+246
+00:19:55,630 --> 00:19:56,690
+ So it already exists.
+
+247
+00:19:57,550 --> 00:19:59,330
+ So the table is already there.
+
+248
+00:20:00,170 --> 00:20:01,770
+ Our database is working.
+
+249
+00:20:02,830 --> 00:20:06,230
+ Okay, so the first tab here.
+
+250
+00:20:06,430 --> 00:20:07,650
+ We have database structure.
+
+251
+00:20:08,580 --> 00:20:12,260
+ Here we actually see our two tables.
+
+252
+00:20:13,120 --> 00:20:15,360
+ So we have customer and product.
+
+253
+00:20:18,130 --> 00:20:18,270
+ Okay.
+
+254
+00:20:21,100 --> 00:20:24,940
+ If we click on.
+
+255
+00:20:25,100 --> 00:20:25,660
+ Let me see.
+
+256
+00:20:28,590 --> 00:20:29,950
+ Yeah, if you click on the little arrow here.
+
+257
+00:20:30,090 --> 00:20:33,010
+ You should be able to see the stuff I see here.
+
+258
+00:20:36,530 --> 00:20:40,930
+ If we look at customer ID.
+
+259
+00:20:42,580 --> 00:20:44,840
+ We see that it's an integer.
+
+260
+00:20:49,090 --> 00:20:50,650
+ And it should also say.
+
+261
+00:21:02,790 --> 00:21:11,320
+ That's strange.
+
+262
+00:21:11,540 --> 00:21:11,760
+ Okay.
+
+263
+00:21:11,900 --> 00:21:13,100
+ It should say primary key.
+
+264
+00:21:13,180 --> 00:21:14,460
+ But it's not doing that.
+
+265
+00:21:14,860 --> 00:21:15,380
+ Let me see.
+
+266
+00:21:15,440 --> 00:21:15,940
+ Refresh.
+
+267
+00:21:25,080 --> 00:21:25,380
+ No, yeah.
+
+268
+00:21:25,500 --> 00:21:25,740
+ Okay.
+
+269
+00:21:26,600 --> 00:21:27,720
+ It probably is.
+
+270
+00:21:29,500 --> 00:21:31,640
+ But this should, of course, be a primary key.
+
+271
+00:21:31,820 --> 00:21:35,470
+ And that's also product ID integer.
+
+272
+00:21:35,650 --> 00:21:35,870
+ Yes.
+
+273
+00:21:37,170 --> 00:21:39,630
+ Yeah, we see actually a small little.
+
+274
+00:21:40,490 --> 00:21:40,930
+ Okay.
+
+275
+00:21:40,970 --> 00:21:41,890
+ In the icon there.
+
+276
+00:21:42,850 --> 00:21:45,830
+ You see a little key in the icon.
+
+277
+00:21:46,030 --> 00:21:48,230
+ That's our primary key.
+
+278
+00:21:48,370 --> 00:21:49,010
+ There it is.
+
+279
+00:21:49,430 --> 00:21:51,360
+ I was looking for it.
+
+280
+00:21:52,050 --> 00:21:52,230
+ Okay.
+
+281
+00:21:52,980 --> 00:21:54,140
+ And second tab here.
+
+282
+00:21:54,220 --> 00:21:55,650
+ We have browse data.
+
+283
+00:21:55,650 --> 00:22:01,470
+ We can, of course, pick customers here in the drop down.
+
+284
+00:22:02,710 --> 00:22:05,850
+ So we have, it's just, it's no real customers.
+
+285
+00:22:06,070 --> 00:22:07,530
+ It's just some dummy data here.
+
+286
+00:22:09,720 --> 00:22:13,480
+ This looks a lot like Excel, right?
+
+287
+00:22:13,690 --> 00:22:16,880
+ And this is basically the data itself.
+
+288
+00:22:17,530 --> 00:22:20,070
+ If we count the rows here, it should be 10.
+
+289
+00:22:21,720 --> 00:22:25,080
+ And here we don't type anything in here today.
+
+290
+00:22:25,140 --> 00:22:26,040
+ We only look here.
+
+291
+00:22:28,320 --> 00:22:31,120
+ Now, if we go to, let me see, execute SQL.
+
+292
+00:22:32,290 --> 00:22:36,220
+ Now, this is the most important tab, execute SQL.
+
+293
+00:22:37,760 --> 00:22:39,200
+ The big white box here.
+
+294
+00:22:41,760 --> 00:22:54,970
+ At the top, we should have, let me see, save this.
+
+295
+00:22:56,570 --> 00:22:56,690
+ Okay.
+
+296
+00:22:57,720 --> 00:23:03,780
+ So at the top, we should have, well, we can, I mean, I can delete all of this.
+
+297
+00:23:03,780 --> 00:23:06,100
+ Because I have already done this.
+
+298
+00:23:10,160 --> 00:23:10,920
+ Sorry, Hayden.
+
+299
+00:23:11,820 --> 00:23:13,330
+ I have a question.
+
+300
+00:23:13,490 --> 00:23:15,330
+ Where can I find the database?
+
+301
+00:23:16,350 --> 00:23:23,470
+ It should be, yeah, it should be in, in the channel databases.
+
+302
+00:23:23,850 --> 00:23:25,990
+ We have a new channel called databases here.
+
+303
+00:23:26,620 --> 00:23:27,590
+ Sorry.
+
+304
+00:23:27,900 --> 00:23:28,300
+ Not that.
+
+305
+00:23:28,700 --> 00:23:33,240
+ So here is our meeting that we are in, in, in right now.
+
+306
+00:23:33,920 --> 00:23:37,330
+ And here, you should have a webshop.db.
+
+307
+00:23:38,310 --> 00:23:38,930
+ Okay.
+
+308
+00:23:39,130 --> 00:23:42,110
+ So you can just right click on it and download it.
+
+309
+00:23:42,110 --> 00:23:45,150
+ You need to download this somehow.
+
+310
+00:23:45,410 --> 00:23:46,470
+ There it is, Ladanias.
+
+311
+00:23:50,550 --> 00:23:52,210
+ I interrupted you.
+
+312
+00:23:52,250 --> 00:23:53,330
+ Did you say anything else?
+
+313
+00:23:53,870 --> 00:23:54,170
+ No, no.
+
+314
+00:23:54,190 --> 00:23:54,390
+ Sorry.
+
+315
+00:23:54,990 --> 00:23:55,870
+ I just found it.
+
+316
+00:23:55,970 --> 00:23:56,390
+ Thank you.
+
+317
+00:23:56,950 --> 00:23:57,240
+ Okay.
+
+318
+00:23:58,250 --> 00:23:59,470
+ All right.
+
+319
+00:24:01,220 --> 00:24:07,580
+ So this big white box is where we write our SQL code.
+
+320
+00:24:08,790 --> 00:24:10,650
+ This shows us the answers.
+
+321
+00:24:10,850 --> 00:24:16,120
+ Of course, in this case, it's going to show me an error because I've already run the database
+
+322
+00:24:16,120 --> 00:24:18,260
+ and the table is already created.
+
+323
+00:24:18,500 --> 00:24:19,820
+ So that's why it gave us an error.
+
+324
+00:24:20,160 --> 00:24:31,020
+ You can either press this to run the code, but you can see here,
+
+325
+00:24:31,080 --> 00:24:34,310
+ it says also F5 or CTRL R.
+
+326
+00:24:34,660 --> 00:24:35,820
+ So we can have some shortcuts.
+
+327
+00:24:36,100 --> 00:24:40,340
+ So you can press F5 and it runs our actual code.
+
+328
+00:24:43,170 --> 00:24:50,510
+ Maybe let's write some code.
+
+329
+00:24:50,810 --> 00:24:58,040
+ You can type select star, which is a wild card here.
+
+330
+00:24:58,140 --> 00:24:58,660
+ Where is star?
+
+331
+00:24:59,190 --> 00:24:59,790
+ There it is.
+
+332
+00:24:59,910 --> 00:25:09,400
+ Star from customers.
+
+333
+00:25:10,620 --> 00:25:12,350
+ It already shows me.
+
+334
+00:25:12,350 --> 00:25:15,930
+ So I can press either F5 or just press this one.
+
+335
+00:25:16,750 --> 00:25:18,450
+ And it's going to show us the result here.
+
+336
+00:25:18,530 --> 00:25:20,770
+ Let me see if I can make this a little bit bigger.
+
+337
+00:25:21,560 --> 00:25:24,670
+ So this is our customers in that database.
+
+338
+00:25:26,250 --> 00:25:27,210
+ And we have no error.
+
+339
+00:25:27,770 --> 00:25:29,630
+ Execution finished without errors.
+
+340
+00:25:29,910 --> 00:25:32,170
+ Result 10 rows returned in 12 milliseconds.
+
+341
+00:25:32,510 --> 00:25:33,030
+ Yeah, sure.
+
+342
+00:25:36,030 --> 00:25:39,930
+ Now we can choose only the columns we want.
+
+343
+00:25:40,220 --> 00:25:46,770
+ For example, we can write column names with a comma between them.
+
+344
+00:25:47,150 --> 00:25:53,730
+ So for example, if I want only maybe you, you guys can help me here.
+
+345
+00:25:54,530 --> 00:25:57,460
+ Can I, yeah, I can zoom in so you guys can see.
+
+346
+00:25:57,560 --> 00:25:57,960
+ There we go.
+
+347
+00:25:58,630 --> 00:25:59,790
+ I'll remove this.
+
+348
+00:26:01,090 --> 00:26:04,550
+ Or actually I'll remove everything except that.
+
+349
+00:26:05,290 --> 00:26:13,340
+ But if I want the first name and the last name and the city from customers, what do I write here?
+
+350
+00:26:14,180 --> 00:26:15,420
+ Anyone wants to help me?
+
+351
+00:26:18,280 --> 00:26:26,810
+ Maybe you can raise my hand.
+
+352
+00:26:27,630 --> 00:26:29,210
+ You can write it as well.
+
+353
+00:26:29,210 --> 00:26:31,490
+ If you want to write it in the chat, you can do that as well.
+
+354
+00:26:31,930 --> 00:26:38,940
+ So I want the first name, the last name and the city from our customers.
+
+355
+00:26:41,600 --> 00:26:46,930
+ Okay, Jakob said something here.
+
+356
+00:26:47,110 --> 00:26:47,490
+ Interesting.
+
+357
+00:26:49,300 --> 00:26:55,440
+ So select first name, last name, city from customers.
+
+358
+00:26:55,580 --> 00:26:56,440
+ Yeah, that's actually correct.
+
+359
+00:26:56,640 --> 00:26:58,000
+ Okay, so we can do that together.
+
+360
+00:26:58,700 --> 00:27:03,430
+ First name, and remember the comma here.
+
+361
+00:27:03,950 --> 00:27:04,490
+ Very important.
+
+362
+00:27:04,790 --> 00:27:15,220
+ Last name and city from customers.
+
+363
+00:27:18,340 --> 00:27:19,420
+ Customers, yeah.
+
+364
+00:27:20,240 --> 00:27:21,100
+ And let's run this.
+
+365
+00:27:22,230 --> 00:27:22,810
+ And there we go.
+
+366
+00:27:22,810 --> 00:27:25,230
+ So we got the first name and the last name and city.
+
+367
+00:27:25,710 --> 00:27:27,690
+ With no errors, of course.
+
+368
+00:27:28,800 --> 00:27:30,950
+ And we expected around 10 rows.
+
+369
+00:27:31,110 --> 00:27:31,390
+ Perfect.
+
+370
+00:27:34,660 --> 00:27:39,840
+ Okay, now I'm going to make a mistake here on purpose.
+
+371
+00:27:41,390 --> 00:27:46,680
+ I will spell, for example, first name here.
+
+372
+00:27:48,570 --> 00:27:48,870
+ Wrong.
+
+373
+00:27:51,970 --> 00:27:53,850
+ I will tell it first name.
+
+374
+00:27:54,050 --> 00:27:55,670
+ Let's run this and see if that helps.
+
+375
+00:27:55,910 --> 00:27:56,050
+ Oh.
+
+376
+00:27:56,670 --> 00:28:02,270
+ And it says here, no such column, first name.
+
+377
+00:28:03,490 --> 00:28:13,760
+ So if we write it wrong, it's going to show you, well, it's going to basically show you that's wrong.
+
+378
+00:28:14,230 --> 00:28:14,740
+ Hopefully.
+
+379
+00:28:16,950 --> 00:28:23,370
+ Another mistake is, for example, if we, let's reverse this.
+
+380
+00:28:23,790 --> 00:28:28,840
+ If I, for example, do not remember a comma here.
+
+381
+00:28:28,840 --> 00:28:34,220
+ And if I run that, it's going to look a bit strange.
+
+382
+00:28:34,220 --> 00:28:35,760
+ We run it.
+
+383
+00:28:35,760 --> 00:28:38,120
+ We run it and it's no errors.
+
+384
+00:28:38,680 --> 00:28:40,960
+ But look at the result here.
+
+385
+00:28:41,630 --> 00:28:44,000
+ We got last name and the city.
+
+386
+00:28:47,590 --> 00:28:49,730
+ So why is this?
+
+387
+00:28:50,080 --> 00:28:50,980
+ What happened here?
+
+388
+00:28:52,190 --> 00:28:56,240
+ See if I can raise some hands.
+
+389
+00:28:58,030 --> 00:29:00,700
+ What happened here?
+
+390
+00:29:00,960 --> 00:29:02,820
+ Why is it not showing an error?
+
+391
+00:29:02,820 --> 00:29:07,240
+ Because I wrote first name, last name, then a comma, city from customers.
+
+392
+00:29:13,210 --> 00:29:14,830
+ Someone is raising hands.
+
+393
+00:29:14,930 --> 00:29:15,190
+ Yes.
+
+394
+00:29:16,740 --> 00:29:22,500
+ I'm not sure, but I assume that last name will sort of overwrite first name.
+
+395
+00:29:22,660 --> 00:29:24,480
+ You have to separate it by commas.
+
+396
+00:29:24,620 --> 00:29:28,920
+ So I just guess it will cancel out first name as if it didn't exist.
+
+397
+00:29:31,140 --> 00:29:31,420
+ Yeah.
+
+398
+00:29:32,880 --> 00:29:41,530
+ So without a comma, SQL thinks last name is a new name for the column, basically.
+
+399
+00:29:43,210 --> 00:29:46,820
+ So no error does not mean correct.
+
+400
+00:29:47,960 --> 00:29:50,520
+ Always look at the results here.
+
+401
+00:29:54,010 --> 00:29:54,590
+ Okay.
+
+402
+00:29:56,470 --> 00:29:59,070
+ What if I do it like this then?
+
+403
+00:29:59,070 --> 00:30:12,900
+ I say, for example, select.
+
+404
+00:30:13,120 --> 00:30:13,860
+ Let's make it easy.
+
+405
+00:30:14,020 --> 00:30:14,500
+ Select.
+
+406
+00:30:15,870 --> 00:30:17,250
+ Star.
+
+407
+00:30:18,190 --> 00:30:18,640
+ From.
+
+408
+00:30:20,120 --> 00:30:21,660
+ And always big letters.
+
+409
+00:30:22,590 --> 00:30:25,010
+ And products.
+
+410
+00:30:31,840 --> 00:30:38,350
+ Okay.
+
+411
+00:30:38,390 --> 00:30:41,140
+ So if you look at here, we selected the product.
+
+412
+00:30:41,480 --> 00:30:42,240
+ We have product ID.
+
+413
+00:30:42,780 --> 00:30:45,640
+ We have names, category, price, and stock.
+
+414
+00:30:47,490 --> 00:30:51,330
+ The stock is basically how many we have in the warehouse.
+
+415
+00:30:58,140 --> 00:31:15,290
+ I was thinking something, but it wasn't the way I was thinking.
+
+416
+00:31:17,410 --> 00:31:23,460
+ Okay.
+
+417
+00:31:23,680 --> 00:31:27,590
+ Maybe it's better if we, I'm trying to do some filtering here.
+
+418
+00:31:28,560 --> 00:31:43,850
+ So for example, if I want to filter, if you remember when we, if I can go back, run this
+
+419
+00:31:43,850 --> 00:31:44,150
+ again.
+
+420
+00:31:44,860 --> 00:31:56,000
+ Now I have customers all, all over the, all over Sweden here, maybe not exactly all over, but many different cities here.
+
+421
+00:31:56,400 --> 00:32:05,730
+ But what if I want to only see customers that are from Uppsala?
+
+422
+00:32:06,800 --> 00:32:09,760
+ Now we know we only have one, two.
+
+423
+00:32:10,500 --> 00:32:14,350
+ I want to filter only from Uppsala.
+
+424
+00:32:14,450 --> 00:32:15,470
+ How do I do that?
+
+425
+00:32:16,110 --> 00:32:17,760
+ An open question here to you guys.
+
+426
+00:32:18,460 --> 00:32:29,210
+ It's better to raise hands instead of writing the answer.
+
+427
+00:32:29,210 --> 00:32:31,160
+ Let me see.
+
+428
+00:32:31,160 --> 00:32:34,700
+ Someone is raising hand and it's Kritika was first.
+
+429
+00:32:36,390 --> 00:32:36,590
+ Yeah.
+
+430
+00:32:37,270 --> 00:32:46,050
+ So the query is select first name, last name, city from customers where city is equal to Uppsala.
+
+431
+00:32:47,900 --> 00:32:53,980
+ Yeah, you can do it that way as well, but I would do it in a different way.
+
+432
+00:32:53,980 --> 00:32:58,650
+ Actually, I'll show you what I was thinking.
+
+433
+00:32:59,250 --> 00:33:14,810
+ Select from customers where city is equal to, well, Uppsala.
+
+434
+00:33:14,950 --> 00:33:16,890
+ So it's, you were, you were, you were right.
+
+435
+00:33:17,050 --> 00:33:20,200
+ You were kind of right, Uppsala.
+
+436
+00:33:20,740 --> 00:33:22,120
+ And don't forget semicolon here.
+
+437
+00:33:22,750 --> 00:33:25,180
+ And there we go.
+
+438
+00:33:25,380 --> 00:33:27,140
+ We got, oh, we actually got three of them.
+
+439
+00:33:27,390 --> 00:33:27,970
+ We missed that.
+
+440
+00:33:29,150 --> 00:33:30,100
+ Okay.
+
+441
+00:33:31,770 --> 00:33:34,830
+ What if I forget the quotes here?
+
+442
+00:33:34,890 --> 00:33:35,650
+ What happened then?
+
+443
+00:33:36,140 --> 00:33:37,410
+ I'm just curious.
+
+444
+00:33:39,200 --> 00:33:42,110
+ No such column as Uppsala.
+
+445
+00:33:43,850 --> 00:33:48,480
+ So without quotes, SQL would think Uppsala is the name of the column.
+
+446
+00:33:48,480 --> 00:33:52,070
+ So text, text always needs quotes.
+
+447
+00:33:52,270 --> 00:33:52,870
+ Remember that.
+
+448
+00:33:53,510 --> 00:33:55,770
+ I think you can do it with double quotes as well.
+
+449
+00:33:57,510 --> 00:33:57,890
+ Try that.
+
+450
+00:33:59,470 --> 00:34:06,050
+ So double quote or single quotes works, but you can't use, you can't do it like this.
+
+451
+00:34:12,240 --> 00:34:17,440
+ Let's try to filter, because I showed you the products earlier.
+
+452
+00:34:18,630 --> 00:34:26,860
+ Let's maybe try to filter, let's do it like this.
+
+453
+00:34:26,940 --> 00:34:43,390
+ Select name, price, from, sorry, from product where.
+
+454
+00:34:43,390 --> 00:34:54,660
+ Price is less, less than 500.
+
+455
+00:34:55,800 --> 00:35:07,960
+ So we got every product here that is less than 500 crowns.
+
+456
+00:35:08,560 --> 00:35:09,080
+ Hopefully.
+
+457
+00:35:09,240 --> 00:35:10,060
+ Yeah, it's correct.
+
+458
+00:35:10,300 --> 00:35:13,920
+ So we should have around, yeah, seven results here.
+
+459
+00:35:14,580 --> 00:35:24,820
+ Now we can combine two rules with and, and both must be true.
+
+460
+00:35:25,180 --> 00:35:31,410
+ It must be clothing, for example, and and must cost less than 500.
+
+461
+00:35:31,410 --> 00:35:33,650
+ So we can, we can keep filtering here.
+
+462
+00:35:33,650 --> 00:36:15,930
+ So, select name, and we can add one more here, category from products, where category, no, we just, we can actually say, I remove all of this, where category is equal to clothing and price is less than 500.
+
+463
+00:36:15,930 --> 00:36:20,530
+ So, so a little longer query here for our filtering.
+
+464
+00:36:21,530 --> 00:36:28,420
+ Yeah, let's run that.
+
+465
+00:36:28,420 --> 00:36:33,110
+ And we see, hopefully this is correct.
+
+466
+00:36:33,110 --> 00:36:33,610
+ Let me see.
+
+467
+00:36:34,210 --> 00:36:34,330
+ Yeah.
+
+468
+00:36:34,490 --> 00:36:37,850
+ Category clothing and the price under 500 crowns.
+
+469
+00:36:37,850 --> 00:36:40,310
+ So, yeah, we can keep continuing filtering.
+
+470
+00:36:40,470 --> 00:36:41,610
+ So this is basically filtering.
+
+471
+00:36:41,810 --> 00:36:43,070
+ That's what I want to show you.
+
+472
+00:36:43,070 --> 00:36:55,670
+ We can also use the or instead of the and, because and will, what we, what we're saying here is both of these must be true.
+
+473
+00:36:55,770 --> 00:36:57,570
+ Then show us the results.
+
+474
+00:36:58,460 --> 00:37:13,920
+ But if we use or here, where category could be shoes, shoes, and, and instead of price, we can have another one.
+
+475
+00:37:13,920 --> 00:37:23,330
+ You can have category equals accessories.
+
+476
+00:37:23,810 --> 00:37:29,310
+ So, accessories, hopefully I spelled that right.
+
+477
+00:37:30,560 --> 00:37:31,440
+ Don't forget semicolon.
+
+478
+00:37:32,780 --> 00:37:34,130
+ And what does this mean?
+
+479
+00:37:35,490 --> 00:37:44,270
+ If I put the or in here, open question here.
+
+480
+00:37:45,460 --> 00:37:46,400
+ You can raise your hands.
+
+481
+00:37:49,500 --> 00:37:50,100
+ Yes, Fabian.
+
+482
+00:37:51,340 --> 00:37:55,420
+ It will take everything from both of those categories.
+
+483
+00:37:55,420 --> 00:37:58,700
+ So, whenever it finds either shoes or accessories.
+
+484
+00:37:59,620 --> 00:38:00,060
+ Exactly.
+
+485
+00:38:02,480 --> 00:38:04,030
+ And this was actually wrong.
+
+486
+00:38:04,430 --> 00:38:05,150
+ Let me see.
+
+487
+00:38:06,060 --> 00:38:07,220
+ What did I do wrong here?
+
+488
+00:38:17,900 --> 00:38:19,720
+ Category equals accessories.
+
+489
+00:38:23,060 --> 00:38:26,560
+ I can't see it.
+
+490
+00:38:26,640 --> 00:38:27,860
+ Maybe I need to get my glasses.
+
+491
+00:38:28,920 --> 00:38:41,310
+ Why is this not working?
+
+492
+00:38:41,680 --> 00:38:41,860
+ Hmm.
+
+493
+00:38:46,590 --> 00:38:49,070
+ Is this wrong?
+
+494
+00:38:50,130 --> 00:38:51,920
+ There we go.
+
+495
+00:38:55,250 --> 00:38:56,750
+ So, this works.
+
+496
+00:38:57,290 --> 00:39:02,900
+ So, we have accessories and shoes from the category accessories and shoes.
+
+497
+00:39:02,980 --> 00:39:05,240
+ And we can see it's water bottle, backpack, whatever.
+
+498
+00:39:10,020 --> 00:39:16,050
+ But there is actually a short way of writing this because this was pretty long.
+
+499
+00:39:17,110 --> 00:39:21,510
+ We can actually do it this way.
+
+500
+00:39:21,650 --> 00:39:23,160
+ So, I'll remove this.
+
+501
+00:39:24,720 --> 00:39:25,080
+ Start over.
+
+502
+00:39:26,460 --> 00:39:51,270
+ And we can say select name, category, from, products, category, in.
+
+503
+00:39:51,680 --> 00:39:52,960
+ This is new.
+
+504
+00:39:53,160 --> 00:39:53,340
+ In.
+
+505
+00:39:55,830 --> 00:40:05,290
+ I will say, shoes, accessories.
+
+506
+00:40:06,570 --> 00:40:07,350
+ Sorry.
+
+507
+00:40:07,570 --> 00:40:08,310
+ Don't forget these.
+
+508
+00:40:09,700 --> 00:40:13,020
+ Accessories.
+
+509
+00:40:14,690 --> 00:40:16,210
+ There we go.
+
+510
+00:40:17,380 --> 00:40:20,170
+ And we get the same results.
+
+511
+00:40:20,170 --> 00:40:26,200
+ So, same answer.
+
+512
+00:40:26,440 --> 00:40:26,980
+ Less typing.
+
+513
+00:40:27,500 --> 00:40:30,320
+ In is great when you have basically many values.
+
+514
+00:40:36,380 --> 00:40:40,300
+ Let's do another one because this was so much fun.
+
+515
+00:40:40,940 --> 00:40:54,500
+ If I want to, for example, I'll ask this as a question.
+
+516
+00:40:54,940 --> 00:40:59,080
+ So, if I want to, you know, we can, if I do it like this.
+
+517
+00:40:59,140 --> 00:40:59,720
+ So, select.
+
+518
+00:41:00,970 --> 00:41:03,430
+ So, this is going to be correct.
+
+519
+00:41:03,650 --> 00:41:08,510
+ And price from product.
+
+520
+00:41:13,670 --> 00:41:16,050
+ There we go.
+
+521
+00:41:18,550 --> 00:41:23,680
+ What if I want to only see the price between $200 and $600?
+
+522
+00:41:24,180 --> 00:41:25,500
+ What do I write after this?
+
+523
+00:41:28,630 --> 00:41:34,470
+ You can raise your hand if you want.
+
+524
+00:41:42,480 --> 00:41:43,060
+ Yes, Kritika.
+
+525
+00:41:45,820 --> 00:41:51,510
+ So, select name, price, from products.
+
+526
+00:41:52,040 --> 00:41:56,360
+ Wear price between $200 and $600.
+
+527
+00:41:56,880 --> 00:41:58,890
+ Yeah, that's correct, actually.
+
+528
+00:41:59,360 --> 00:42:00,040
+ Good job.
+
+529
+00:42:01,120 --> 00:42:15,170
+ Wear price between $200 and $600.
+
+530
+00:42:16,330 --> 00:42:18,590
+ Run it.
+
+531
+00:42:19,650 --> 00:42:20,090
+ There we go.
+
+532
+00:42:20,670 --> 00:42:22,390
+ We got the name and the price.
+
+533
+00:42:23,120 --> 00:42:24,800
+ And it's between $200 and $600.
+
+534
+00:42:25,020 --> 00:42:26,660
+ And it's showing us four results here.
+
+535
+00:42:26,800 --> 00:42:27,140
+ Perfect.
+
+536
+00:42:30,110 --> 00:42:31,420
+ Okay.
+
+537
+00:42:31,420 --> 00:42:41,390
+ But sometimes, sometimes you just want to search for patterns in a database.
+
+538
+00:42:42,330 --> 00:42:44,270
+ How do we do that?
+
+539
+00:42:47,360 --> 00:42:54,450
+ There we go.
+
+540
+00:42:54,950 --> 00:42:57,030
+ And we can remove the price here.
+
+541
+00:42:59,080 --> 00:43:01,050
+ So, select name from products.
+
+542
+00:43:01,310 --> 00:43:14,990
+ I only want anything that starts with an S in the product list.
+
+543
+00:43:17,790 --> 00:43:20,330
+ What would I do?
+
+544
+00:43:24,000 --> 00:43:24,500
+ Yes, Gloria.
+
+545
+00:43:27,100 --> 00:43:31,500
+ Actually, I have a question before you ask.
+
+546
+00:43:32,160 --> 00:43:32,260
+ Sure.
+
+547
+00:43:32,260 --> 00:43:38,580
+ So, I was wondering if you have to remove all the filters that you did.
+
+548
+00:43:38,700 --> 00:43:42,940
+ Or you can just write down the next filter.
+
+549
+00:43:43,240 --> 00:43:45,510
+ It affects the result?
+
+550
+00:43:46,340 --> 00:43:48,640
+ I didn't quite understand your question here.
+
+551
+00:43:49,290 --> 00:43:54,530
+ For example, we have a filter in the line one.
+
+552
+00:43:54,730 --> 00:43:56,510
+ You have select name from products.
+
+553
+00:43:56,830 --> 00:43:58,270
+ Let's say that you filter that.
+
+554
+00:43:58,630 --> 00:44:00,490
+ And then you want to do another filter.
+
+555
+00:44:01,280 --> 00:44:02,760
+ Do you have to remove?
+
+556
+00:44:02,760 --> 00:44:03,480
+ You don't have to.
+
+557
+00:44:03,480 --> 00:44:04,680
+ No, you don't have to remove.
+
+558
+00:44:04,800 --> 00:44:05,800
+ You can keep it.
+
+559
+00:44:05,900 --> 00:44:09,800
+ I remove it because I don't want it to be cluttering everything.
+
+560
+00:44:09,940 --> 00:44:13,860
+ It's easier for me to explain to you guys.
+
+561
+00:44:13,980 --> 00:44:14,840
+ But no, we don't have.
+
+562
+00:44:14,940 --> 00:44:16,020
+ We can try it.
+
+563
+00:44:16,060 --> 00:44:16,960
+ We can try it right now.
+
+564
+00:44:17,550 --> 00:44:18,150
+ So, you can see it.
+
+565
+00:44:18,850 --> 00:44:28,260
+ So, let's try to search for the products that only starts with an S.
+
+566
+00:44:28,260 --> 00:44:30,370
+ What do I write here?
+
+567
+00:44:30,760 --> 00:44:32,160
+ How do I filter that?
+
+568
+00:44:32,910 --> 00:44:33,980
+ That was the question.
+
+569
+00:44:36,670 --> 00:44:37,270
+ Yet, not yet.
+
+570
+00:44:39,480 --> 00:44:41,900
+ Select start from customers.
+
+571
+00:44:42,220 --> 00:44:43,960
+ Where first name like is.
+
+572
+00:44:44,300 --> 00:44:46,800
+ And then the symbol of percent.
+
+573
+00:44:49,060 --> 00:44:50,080
+ Yeah, but it wasn't customers.
+
+574
+00:44:50,220 --> 00:44:52,840
+ Select name from products.
+
+575
+00:44:53,280 --> 00:44:55,570
+ Yeah, from symbol S, right?
+
+576
+00:44:56,580 --> 00:44:57,420
+ Yeah, exactly.
+
+577
+00:44:57,960 --> 00:44:58,140
+ Yeah.
+
+578
+00:44:58,560 --> 00:45:05,390
+ So, where, name, like, exactly, like.
+
+579
+00:45:06,140 --> 00:45:07,940
+ And we want it to start with an S.
+
+580
+00:45:08,690 --> 00:45:10,570
+ And then you have this, a percent.
+
+581
+00:45:10,930 --> 00:45:11,610
+ Yeah, percent.
+
+582
+00:45:11,690 --> 00:45:12,530
+ Symbol and that.
+
+583
+00:45:12,690 --> 00:45:13,790
+ And then semicolon.
+
+584
+00:45:14,700 --> 00:45:15,180
+ Exactly.
+
+585
+00:45:17,250 --> 00:45:18,110
+ And let's run that.
+
+586
+00:45:22,900 --> 00:45:23,740
+ What happened here?
+
+587
+00:45:25,190 --> 00:45:26,850
+ We forget the first name.
+
+588
+00:45:27,510 --> 00:45:32,410
+ There is a comma without anything separating it.
+
+589
+00:45:33,330 --> 00:45:33,930
+ Oh, yeah.
+
+590
+00:45:33,990 --> 00:45:34,690
+ Now I see it.
+
+591
+00:45:35,250 --> 00:45:35,670
+ There we go.
+
+592
+00:45:36,590 --> 00:45:37,270
+ Select name.
+
+593
+00:45:37,680 --> 00:45:38,210
+ There we go.
+
+594
+00:45:38,790 --> 00:45:41,680
+ So, we got sneakers, socks, sandals.
+
+595
+00:45:41,880 --> 00:45:44,120
+ Okay, let's try another one.
+
+596
+00:45:44,280 --> 00:45:49,590
+ Just to show you the question you guys asked earlier.
+
+597
+00:45:50,130 --> 00:45:51,930
+ Okay, but let's go to dates.
+
+598
+00:45:52,630 --> 00:45:53,800
+ Let's go to dates.
+
+599
+00:45:53,800 --> 00:45:58,420
+ So, we store dates as text like year, month, day.
+
+600
+00:45:59,940 --> 00:46:03,480
+ And because the year comes first, we can compare them like normal.
+
+601
+00:46:04,450 --> 00:46:09,930
+ So, basically, we can check, for example, who became a customer in 2025 or later.
+
+602
+00:46:10,740 --> 00:46:17,180
+ So, we would do that by saying select first name.
+
+603
+00:46:20,000 --> 00:46:30,520
+ And then we can actually say joined date from customers.
+
+604
+00:46:33,730 --> 00:46:35,060
+ And let's have an entry there.
+
+605
+00:46:35,240 --> 00:46:37,160
+ Where, sorry.
+
+606
+00:46:37,400 --> 00:46:56,500
+ Where joined date is greater or equal to 2025.01.01.
+
+607
+00:46:56,500 --> 00:46:59,400
+ And semicolon.
+
+608
+00:47:00,740 --> 00:47:01,780
+ Okay, let's run that.
+
+609
+00:47:07,560 --> 00:47:09,060
+ So, where is the result?
+
+610
+00:47:09,180 --> 00:47:10,820
+ Oh, it's only showing me one result.
+
+611
+00:47:12,930 --> 00:47:15,940
+ Why is it not showing this?
+
+612
+00:47:16,360 --> 00:47:20,990
+ Ah, let me see if I can remove that.
+
+613
+00:47:22,500 --> 00:47:23,110
+ No.
+
+614
+00:47:23,370 --> 00:47:24,900
+ Okay, let's just remove it.
+
+615
+00:47:31,470 --> 00:47:39,390
+ Actually, we can, if I just want to try something here.
+
+616
+00:47:39,660 --> 00:47:43,820
+ We can actually do it this way or that way.
+
+617
+00:47:45,620 --> 00:47:47,770
+ And execute selected.
+
+618
+00:47:48,270 --> 00:47:50,820
+ So, now I can execute the selected one.
+
+619
+00:47:51,330 --> 00:47:53,670
+ And we can execute maybe both.
+
+620
+00:47:53,770 --> 00:47:54,190
+ Let me see.
+
+621
+00:47:54,700 --> 00:47:56,400
+ It's not showing me both for some reason.
+
+622
+00:47:59,520 --> 00:47:59,760
+ Hmm.
+
+623
+00:48:00,200 --> 00:48:00,550
+ Okay.
+
+624
+00:48:02,730 --> 00:48:07,750
+ Okay.
+
+625
+00:48:07,810 --> 00:48:12,020
+ So, we got what we wanted.
+
+626
+00:48:12,160 --> 00:48:23,630
+ So, everyone who joined date after 1st January is these four customers here in this case.
+
+627
+00:48:23,630 --> 00:48:27,360
+ So, we have four, four, results is four rows.
+
+628
+00:48:32,200 --> 00:48:34,000
+ Fused here.
+
+629
+00:48:34,200 --> 00:48:36,020
+ Maybe some of you guys can help me with this.
+
+630
+00:48:36,140 --> 00:49:00,530
+ Now, if I, let's see if I can try, let's not do the filtering stuff.
+
+631
+00:49:00,670 --> 00:49:01,690
+ Let me just see here.
+
+632
+00:49:02,550 --> 00:49:08,360
+ Select first name, like we did earlier.
+
+633
+00:49:15,080 --> 00:49:20,220
+ Last name, city.
+
+634
+00:49:22,580 --> 00:49:24,930
+ From customers.
+
+635
+00:49:31,350 --> 00:49:34,210
+ Don't put a semicolon there.
+
+636
+00:49:36,270 --> 00:49:40,650
+ It's going to give us that.
+
+637
+00:49:40,900 --> 00:49:41,230
+ Okay.
+
+638
+00:49:50,830 --> 00:49:57,370
+ Sorry.
+
+639
+00:50:03,420 --> 00:50:03,820
+ Misspelled.
+
+640
+00:50:24,460 --> 00:50:24,800
+ Both.
+
+641
+00:50:26,240 --> 00:50:27,360
+ It should show me both.
+
+642
+00:50:27,480 --> 00:50:28,820
+ I don't know what's going on here.
+
+643
+00:50:29,680 --> 00:50:30,700
+ You did that yesterday.
+
+644
+00:50:32,640 --> 00:50:40,050
+ But, I mean, we can keep continuing writing and just do it like we do.
+
+645
+00:50:40,250 --> 00:50:43,500
+ So, you don't, so you get the history of it at least.
+
+646
+00:50:43,920 --> 00:50:45,840
+ If that's what you're looking for.
+
+647
+00:50:48,930 --> 00:50:51,070
+ Okay.
+
+648
+00:50:51,090 --> 00:50:52,950
+ We have a couple of more to go through.
+
+649
+00:50:52,950 --> 00:50:58,120
+ So, we have this where we can actually filter the joint date in this case.
+
+650
+00:51:02,560 --> 00:51:06,470
+ We can also sort by something, a keyword called order by.
+
+651
+00:51:08,860 --> 00:51:26,130
+ So, if I say, for example, select him and price products, order by, order by.
+
+652
+00:51:26,150 --> 00:51:30,770
+ Order by, order by, price.
+
+653
+00:51:31,530 --> 00:51:34,510
+ And I also want to order by descending.
+
+654
+00:51:35,450 --> 00:51:39,080
+ And the keyword for that is DSC.
+
+655
+00:51:43,510 --> 00:51:44,410
+ Run that part.
+
+656
+00:51:47,290 --> 00:51:52,270
+ So, that's descending.
+
+657
+00:51:52,530 --> 00:52:00,000
+ But we can also use, I think, I think, I can't remember exactly, but I think it was ASC.
+
+658
+00:52:00,170 --> 00:52:00,810
+ So, ascending.
+
+659
+00:52:01,660 --> 00:52:03,750
+ And this should give us a different result.
+
+660
+00:52:05,480 --> 00:52:09,510
+ So, we start with the smallest one until the highest price here.
+
+661
+00:52:10,230 --> 00:52:13,450
+ So, that's ascending and descending for you.
+
+662
+00:52:13,450 --> 00:52:22,100
+ This, and now we should have the price, this price above.
+
+663
+00:52:27,650 --> 00:52:33,380
+ If I don't write anything in here, what would, what, what would happen then?
+
+664
+00:52:34,690 --> 00:52:36,990
+ I don't write either ascending or descending.
+
+665
+00:52:38,530 --> 00:52:39,620
+ What's going to happen?
+
+666
+00:52:44,420 --> 00:52:44,920
+ Yes, Christian?
+
+667
+00:52:47,100 --> 00:52:50,790
+ The default, default value.
+
+668
+00:52:52,000 --> 00:52:52,360
+ Ha ha.
+
+669
+00:52:53,790 --> 00:52:56,830
+ Yeah, that's actually correct.
+
+670
+00:52:57,990 --> 00:52:58,810
+ I was going to say ascending.
+
+671
+00:52:59,910 --> 00:53:00,310
+ Okay.
+
+672
+00:53:00,590 --> 00:53:01,430
+ That was a good guess.
+
+673
+00:53:01,990 --> 00:53:03,610
+ It's actually, I think it's actually true.
+
+674
+00:53:04,110 --> 00:53:04,800
+ It's ascending.
+
+675
+00:53:05,240 --> 00:53:05,360
+ Yeah.
+
+676
+00:53:05,670 --> 00:53:11,260
+ So, if you don't tell it, it's going to have the defaults, like Christian said here, ascending.
+
+677
+00:53:12,020 --> 00:53:12,270
+ Yeah.
+
+678
+00:53:12,390 --> 00:53:12,770
+ Good job.
+
+679
+00:53:12,810 --> 00:53:14,370
+ I didn't want to say it, of course, but yeah.
+
+680
+00:53:15,660 --> 00:53:16,960
+ Default is enough.
+
+681
+00:53:17,610 --> 00:53:17,890
+ Yeah.
+
+682
+00:53:18,910 --> 00:53:19,990
+ Okay.
+
+683
+00:53:20,110 --> 00:53:20,710
+ Enough jokes.
+
+684
+00:53:21,620 --> 00:53:22,520
+ Thank you.
+
+685
+00:53:23,560 --> 00:53:24,570
+ Thank you.
+
+686
+00:53:24,590 --> 00:53:24,910
+ Thank you.
+
+687
+00:53:24,930 --> 00:53:25,190
+ Thank you.
+
+688
+00:53:25,190 --> 00:53:25,470
+ Okay.
+
+689
+00:53:25,950 --> 00:53:27,090
+ Let's continue with that.
+
+690
+00:53:27,590 --> 00:53:35,990
+ We also have, let's just say, I write it, I write query like this.
+
+691
+00:53:36,150 --> 00:53:40,790
+ So, select, actually, I'm going to just be lazy here and copy all of this.
+
+692
+00:53:41,790 --> 00:53:56,360
+ Place that in here and order by, we will have that order by price ending.
+
+693
+00:53:57,930 --> 00:54:02,570
+ And we can say limit with three.
+
+694
+00:54:05,590 --> 00:54:11,370
+ I mean, it's English, so we should know what this would mean.
+
+695
+00:54:12,010 --> 00:54:19,190
+ But what we're doing here is we order by and we get top three, three most expensive products
+
+696
+00:54:19,190 --> 00:54:20,130
+ in this case.
+
+697
+00:54:20,350 --> 00:54:24,650
+ So, if we run this, then it should give us the three most expensive products, which is
+
+698
+00:54:24,650 --> 00:54:27,870
+ running shoes, rain jacket and sneakers.
+
+699
+00:54:31,800 --> 00:54:33,990
+ Okay.
+
+700
+00:54:35,060 --> 00:54:48,140
+ There is one more, or not actually, actually a couple of more, but one more I want you to
+
+701
+00:54:48,140 --> 00:54:49,040
+ know about as well.
+
+702
+00:54:51,320 --> 00:54:58,060
+ And it's when I write select and then say distinct.
+
+703
+00:54:58,420 --> 00:54:59,040
+ What's this?
+
+704
+00:55:07,760 --> 00:55:10,510
+ Yes, Christoffer?
+
+705
+00:55:12,190 --> 00:55:12,510
+ Yeah.
+
+706
+00:55:12,510 --> 00:55:17,450
+ That's like when you, so you can only have one of each, right?
+
+707
+00:55:18,650 --> 00:55:19,740
+ Yeah.
+
+708
+00:55:19,920 --> 00:55:20,360
+ Yeah.
+
+709
+00:55:20,460 --> 00:55:22,850
+ You're in the right, the right way here.
+
+710
+00:55:23,610 --> 00:55:24,230
+ Right place.
+
+711
+00:55:24,850 --> 00:55:27,600
+ Basically, we remove duplicates.
+
+712
+00:55:28,820 --> 00:55:37,910
+ So, for example, I say select distinct city from customers, like we did earlier.
+
+713
+00:55:39,580 --> 00:55:40,060
+ Customers.
+
+714
+00:55:40,690 --> 00:55:41,260
+ There we go.
+
+715
+00:55:44,190 --> 00:55:49,780
+ And let's run this, and it should show us all of the cities, but last time we did it,
+
+716
+00:55:49,780 --> 00:55:52,800
+ it shows us maybe three people from Uppsala or whatever.
+
+717
+00:55:53,610 --> 00:55:59,300
+ But if I run this now, it's going to give me only the cities in this case.
+
+718
+00:55:59,760 --> 00:56:02,750
+ And we have Uppsala, Stockholm, Göteborg, Malmö, Västerås.
+
+719
+00:56:03,010 --> 00:56:15,430
+ But if I didn't have distinct, if I just say select bar, yeah, this is, yeah, it's not going
+
+720
+00:56:15,430 --> 00:56:17,240
+ to, yeah, okay, you get it.
+
+721
+00:56:17,540 --> 00:56:22,880
+ So, if I only select the cities from customers, it's going to show me all of the cities, even
+
+722
+00:56:22,880 --> 00:56:23,600
+ duplicates.
+
+723
+00:56:24,240 --> 00:56:26,960
+ But in this case, we only want to see which cities.
+
+724
+00:56:27,420 --> 00:56:29,340
+ And we see that we have five results here.
+
+725
+00:56:29,840 --> 00:56:31,880
+ And also want null.
+
+726
+00:56:32,060 --> 00:56:32,460
+ Null.
+
+727
+00:56:32,860 --> 00:56:37,460
+ And the null is because the customer didn't actually put in any value in it.
+
+728
+00:56:37,660 --> 00:56:39,340
+ So, but it is a value.
+
+729
+00:56:41,140 --> 00:56:46,560
+ It's not actually a value, but it's going to be there because he missed writing it.
+
+730
+00:56:59,010 --> 00:57:07,210
+ So, what if I'm going to use another keyword here that we haven't seen?
+
+731
+00:57:08,190 --> 00:57:34,700
+ Select name as product, sorry, price as price, the score, sec, from, pro.
+
+732
+00:57:36,000 --> 00:57:46,370
+ So, what happened here?
+
+733
+00:57:46,710 --> 00:57:51,490
+ As columns, I mean, it gives a column a new name in the result.
+
+734
+00:57:52,260 --> 00:57:59,730
+ So, the table doesn't change, actually, only how the answer looks.
+
+735
+00:58:01,310 --> 00:58:03,740
+ So, we have here, we have price sec.
+
+736
+00:58:03,740 --> 00:58:07,990
+ So, yeah, Swedish crown here, for those that doesn't know.
+
+737
+00:58:10,250 --> 00:58:14,610
+ So, we didn't actually change the table, but only what we want to see here changed.
+
+738
+00:58:16,120 --> 00:58:22,220
+ Okay, well, we haven't talked about null that much.
+
+739
+00:58:23,110 --> 00:58:43,090
+ So, what if I say select star from customers, where city, sorry, city is equal to null.
+
+740
+00:58:48,450 --> 00:58:49,650
+ What's going to happen here?
+
+741
+00:58:50,310 --> 00:58:54,990
+ Because we have a customer without a city, if you remember that.
+
+742
+00:58:54,990 --> 00:59:01,150
+ Let's run it and see together.
+
+743
+00:59:02,970 --> 00:59:07,790
+ It's showing us zero rows.
+
+744
+00:59:08,580 --> 00:59:11,520
+ But we know that someone has no city.
+
+745
+00:59:14,600 --> 00:59:16,360
+ Well, null means unknown.
+
+746
+00:59:18,650 --> 00:59:20,870
+ Is unknown equal to unknown?
+
+747
+00:59:21,930 --> 00:59:23,340
+ We don't know.
+
+748
+00:59:24,400 --> 00:59:26,310
+ So, SQL says no.
+
+749
+00:59:27,360 --> 00:59:34,700
+ So, the right way to do this is actually, let's change this.
+
+750
+00:59:34,700 --> 00:59:37,900
+ Maybe I can write a new, for those that may be coding along here.
+
+751
+00:59:40,870 --> 00:59:41,690
+ Just copy this.
+
+752
+00:59:42,840 --> 00:59:50,720
+ And in here, I'm going to change this to say, where city is null.
+
+753
+00:59:50,880 --> 00:59:52,310
+ That's a different thing.
+
+754
+00:59:55,270 --> 01:00:00,660
+ And we can see that Lucas here, he didn't write any city.
+
+755
+01:00:01,160 --> 01:00:02,050
+ And the value is null.
+
+756
+01:00:04,280 --> 01:00:06,430
+ So, remember that.
+
+757
+01:00:06,550 --> 01:00:13,690
+ I mean, this, not allowed.
+
+758
+01:00:13,990 --> 01:00:15,270
+ It's not going to show you anything.
+
+759
+01:00:21,990 --> 01:00:23,570
+ Basically, null means unknown.
+
+760
+01:00:24,070 --> 01:00:26,830
+ Is unknown equal to unknown?
+
+761
+01:00:27,090 --> 01:00:29,440
+ We don't know.
+
+762
+01:00:31,130 --> 01:00:37,150
+ So, this is the correct way of finding the null values, basically, if you want to do that.
+
+763
+01:00:43,340 --> 01:00:43,720
+ So, okay.
+
+764
+01:00:43,920 --> 01:00:47,450
+ To save all of this, let's just say we want to save all of this.
+
+765
+01:00:47,740 --> 01:00:49,400
+ We can click on the floppy disk here.
+
+766
+01:00:49,900 --> 01:00:51,250
+ Where is the floppy disk?
+
+767
+01:00:51,310 --> 01:00:51,730
+ There it is.
+
+768
+01:00:53,390 --> 01:00:59,890
+ We can save this as, let me see.
+
+769
+01:01:00,030 --> 01:01:00,830
+ You can save this.
+
+770
+01:01:00,950 --> 01:01:04,300
+ I'm just going to put it in documents here, for example.
+
+771
+01:01:05,060 --> 01:01:12,090
+ And I will save this to SQL, I don't know.
+
+772
+01:01:13,600 --> 01:01:14,720
+ Maybe it's day one.
+
+773
+01:01:16,060 --> 01:01:18,020
+ Day one dot SQL.
+
+774
+01:01:20,040 --> 01:01:21,190
+ There we go.
+
+775
+01:01:21,590 --> 01:01:25,310
+ So, I have saved all of this stuff as day one dot SQL.
+
+776
+01:01:25,510 --> 01:01:29,510
+ And when you upload stuff to GitHub, that's how you basically need to do it.
+
+777
+01:01:30,210 --> 01:01:32,500
+ Okay.
+
+778
+01:01:32,640 --> 01:01:34,900
+ So, I have a couple of exercises for you guys.
+
+779
+01:01:36,620 --> 01:01:39,020
+ Which I'm going to upload for you.
+
+780
+01:01:40,000 --> 01:01:46,210
+ And tomorrow, we'll continue with some other stuff as well that you guys need to know.
+
+781
+01:01:47,070 --> 01:01:53,110
+ So, basically, today we asked questions to tables.
+
+782
+01:01:53,770 --> 01:01:54,990
+ Someone else built.
+
+783
+01:01:55,910 --> 01:02:00,310
+ Tomorrow, hopefully, we will build our tables ourselves.
+
+784
+01:02:03,100 --> 01:02:06,450
+ But before we do that, let's just play around.
+
+785
+01:02:06,570 --> 01:02:07,330
+ I'm going to send you some.
+
+786
+01:02:07,450 --> 01:02:12,050
+ For those that this is new, because I know some people, maybe this is new for you guys.
+
+787
+01:02:12,470 --> 01:02:18,510
+ And some people have some experience with SQL, so this might be really easy for you.
+
+788
+01:02:20,140 --> 01:02:24,280
+ If that's the case, just write to me or Aladin that you're done with the lab.
+
+789
+01:02:25,010 --> 01:02:27,530
+ And we can give you something else to do in the meantime.
+
+790
+01:02:29,120 --> 01:02:32,260
+ But I want us to slowly learn this.
+
+791
+01:02:34,120 --> 01:02:34,260
+ Okay.
+
+792
+01:02:35,550 --> 01:02:36,820
+ Do you have any questions?
+
+793
+01:02:56,600 --> 01:02:59,600
+ Actually, tried the comment.
+
+794
+01:02:59,740 --> 01:02:59,880
+ Okay.
+
+795
+01:03:00,910 --> 01:03:01,440
+ Yeah.
+
+796
+01:03:01,540 --> 01:03:02,600
+ That's how you comment.
+
+797
+01:03:02,960 --> 01:03:04,100
+ Someone said it in the chat.
+
+798
+01:03:04,180 --> 01:03:04,600
+ Thank you.
+
+799
+01:03:04,760 --> 01:03:05,640
+ I was looking for it.
+
+800
+01:03:06,660 --> 01:03:07,830
+ So, yeah.
+
+801
+01:03:07,930 --> 01:03:11,650
+ Double dash for commenting out whatever you want to comment out here.
+
+802
+01:03:17,230 --> 01:03:17,370
+ Okay.
+
+803
+01:03:21,330 --> 01:03:24,340
+ Hey, is there a way to check history?
+
+804
+01:03:25,180 --> 01:03:27,720
+ History of what?
+
+805
+01:03:29,020 --> 01:03:30,820
+ The script that we are executing.
+
+806
+01:03:36,680 --> 01:03:41,540
+ Find it under show SQL submitted by.
+
+807
+01:03:42,010 --> 01:03:43,710
+ I don't know if that's what you're asking.
+
+808
+01:03:44,370 --> 01:03:47,350
+ Oh, you mean the history of whatever I have wrote in here?
+
+809
+01:03:48,370 --> 01:03:49,250
+ Yeah.
+
+810
+01:03:49,390 --> 01:03:49,950
+ Is that what you mean?
+
+811
+01:03:50,410 --> 01:03:53,790
+ Yeah, whatever we are executing in the browser.
+
+812
+01:03:53,790 --> 01:03:54,510
+ The results.
+
+813
+01:03:55,210 --> 01:03:55,880
+ Yeah, the results.
+
+814
+01:03:56,100 --> 01:03:58,460
+ You can find them in SQL log.
+
+815
+01:03:59,110 --> 01:03:59,900
+ SQL log.
+
+816
+01:04:00,000 --> 01:04:00,260
+ Okay.
+
+817
+01:04:01,940 --> 01:04:11,450
+ You can have it as a separate section, like a small window within the application.
+
+818
+01:04:15,510 --> 01:04:19,670
+ I changed the under view or V.
+
+819
+01:04:20,170 --> 01:04:24,620
+ You can change the window layout and then you can find it there.
+
+820
+01:04:24,960 --> 01:04:25,540
+ It's easier.
+
+821
+01:04:25,560 --> 01:04:27,260
+ It's not actually showing me.
+
+822
+01:04:29,430 --> 01:04:30,660
+ No, no.
+
+823
+01:04:30,720 --> 01:04:40,980
+ If you go to V again, then you go to the bottom window layout and you can change the entire layout.
+
+824
+01:04:41,340 --> 01:04:49,480
+ Then you will find it like to the left side, dock windows at the left side.
+
+825
+01:04:49,860 --> 01:04:50,160
+ That's fine.
+
+826
+01:04:50,950 --> 01:04:55,710
+ And there you have down in the left corner.
+
+827
+01:04:56,390 --> 01:05:03,590
+ Yeah, that one is a little bit different.
+
+828
+01:05:04,030 --> 01:05:06,140
+ Okay.
+
+829
+01:05:06,970 --> 01:05:07,710
+ Yeah, cool.
+
+830
+01:05:08,620 --> 01:05:09,240
+ You learn.
+
+831
+01:05:14,750 --> 01:05:15,230
+ Yeah, that's it.
+
+832
+01:05:15,370 --> 01:05:15,790
+ We'll order.
+
+833
+01:05:15,790 --> 01:05:16,470
+ Okay.
+
+834
+01:05:16,630 --> 01:05:17,550
+ Man, it looks...
+
+835
+01:05:17,550 --> 01:05:19,250
+ I can see the SQL log there.
+
+836
+01:05:19,870 --> 01:05:22,970
+ Yeah, I don't know why it's not showing me.
+
+837
+01:05:23,330 --> 01:05:26,330
+ I'll check it out and see if I can.
+
+838
+01:05:26,430 --> 01:05:34,610
+ But if you want whatever I wrote here, I can actually give you a file in the chat later.
+
+839
+01:05:35,230 --> 01:05:44,060
+ So, you can try this stuff out if you want to watch the recording because I have recorded this session.
+
+840
+01:05:46,270 --> 01:05:46,390
+ Yeah.
+
+841
+01:05:46,390 --> 01:05:47,230
+ Any other questions?
+
+842
+01:05:51,990 --> 01:05:54,120
+ Yeah, Dimitri, you're raising hands?
+
+843
+01:05:54,180 --> 01:05:57,610
+ Yes, you can turn it on in views section.
+
+844
+01:05:57,990 --> 01:05:59,290
+ I mean, SQL log.
+
+845
+01:06:00,460 --> 01:06:02,140
+ Yeah, we tried that.
+
+846
+01:06:02,140 --> 01:06:04,260
+ Yeah, it's turned off now.
+
+847
+01:06:05,400 --> 01:06:06,900
+ It should be in blue.
+
+848
+01:06:08,510 --> 01:06:11,760
+ And now you can see it in the left bottom corner.
+
+849
+01:06:13,020 --> 01:06:14,160
+ Ah, there you go.
+
+850
+01:06:14,610 --> 01:06:15,360
+ Thank you.
+
+851
+01:06:16,210 --> 01:06:17,500
+ Okay, perfect.
+
+852
+01:06:19,010 --> 01:06:20,480
+ That's perfect, actually.
+
+853
+01:06:21,040 --> 01:06:21,640
+ Didn't know this.
+
+854
+01:06:21,760 --> 01:06:22,120
+ Thank you.
+
+855
+01:06:22,950 --> 01:06:24,820
+ Whatever idea that was.
+
+856
+01:06:29,450 --> 01:06:30,270
+ Maybe I can...
+
+857
+01:06:30,270 --> 01:06:31,570
+ Can I copy all of this by...
+
+858
+01:06:31,570 --> 01:06:31,750
+ Yeah?
+
+859
+01:06:31,830 --> 01:06:32,530
+ Okay, perfect.
+
+860
+01:06:32,890 --> 01:06:33,230
+ Copy.
+
+861
+01:06:34,590 --> 01:06:37,170
+ And we put it in here.
+
+862
+01:06:42,600 --> 01:07:06,220
+ Okay, so it should pop up right about now.
+
+863
+01:07:06,430 --> 01:07:06,890
+ There we go.
+
+864
+01:07:12,410 --> 01:07:14,860
+ Okay.
+
+865
+01:07:15,980 --> 01:07:16,860
+ Anyone else?
+
+866
+01:07:24,220 --> 01:07:28,140
+ We have been talking for one hour here anyway.
+
+867
+01:07:28,260 --> 01:07:29,260
+ So, you can take some break.
+
+868
+01:07:29,520 --> 01:07:33,960
+ You can leave the meeting, take break, and I'll upload a simple lab for you.
+
+869
+01:07:33,960 --> 01:07:40,270
+ If the lab is too easy, just write to me or Aladin, and we'll give you something else to do as well in the meantime.
+
+870
+01:07:40,490 --> 01:07:41,430
+ But we start slowly.
+
+871
+01:07:43,140 --> 01:07:43,320
+ Okay?
+
+872
+01:07:44,610 --> 01:07:47,230
+ Yeah, you can leave the meeting if you don't have any questions.
+
+873
+01:07:47,610 --> 01:07:50,630
+ If you have any questions, you can, of course, stay and ask your question.
+

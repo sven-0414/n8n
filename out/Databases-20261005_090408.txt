@@ -1,0 +1,873 @@
+Anyone knows what the database is?
+I guess most of you know.
+Most of you guys, at least.
+You're not that much of a beginner.
+Okay, who is trying to join us?
+This is strange.
+Govtami, hello?
+Govtami, can you hear us?
+Hold on.
+Govtami, can you say something?
+If you don't say something, then I have to kick you out.
+That's strange.
+Never seen that anyone...
+I mean, all of you guys are guests.
+But it's asking me if I want Govtami to...
+Sorry about that.
+Shouldn't ask me to...
+What happened on my side is it's asking me if I want to allow Govtami in the meeting or not.
+Which shouldn't.
+That's why we're reacting like that.
+Exactly.
+So it's a bit suspicious.
+I see that Govtami is in here.
+Something has happened there.
+Continue.
+Reshare the screen again.
+The reason why I'm so suspicious about everything is because we've heard...
+Hi, Govtami.
+Are you able to hear me?
+Yes.
+Yeah, yeah.
+All right.
+It's because, well, attacks on schools and stuff like that is very common.
+And it has actually increased.
+So we are a bit suspicious on every strange misbehavior.
+All right.
+To go back to what is a database.
+Hopefully most of you guys already know what the database is.
+But we're going to go through it anyway.
+Have some fun with it.
+So our learning goals for today would be...
+Well, let me see if I can open up.
+You can already start to download this.
+And it's called DB Browser for SQLite.
+I'm going to explain later why we're using SQLite.
+I'm going to show you where you can find that.
+DB Browser.
+And it's free.
+So you don't have to pay for it.
+SQLite is DB Browser.
+There it is.
+And this works if you have Mac, Linux, Windows.
+Doesn't matter.
+Should work on every operating system out there.
+But we're mainly using Windows and Mac here.
+So that wouldn't be any problem.
+For Linux, it might be...
+I mean, it's not all of the versions.
+I think Ubuntu might work.
+Okay.
+So I'm going to share the link to you guys.
+Because I haven't done that yet.
+So you can download it.
+There we go.
+Awesome.
+Okay.
+Let's bring...
+So we're going to come back to this.
+I'm going to explain what all of this is as well.
+But let's minimize that for a moment.
+Sorry.
+So today...
+So the plan for today, at least.
+So after today, you will be able to do these things.
+I mean, explain what a database is and why we use one.
+I mean, we also need to know what words like table, row, column, data type, primary key, for example.
+Also, find our way around DB Browser for SQLite.
+Basically, ask database questions with select, where, order by, and limit, for example.
+But we'll have the theory first.
+And then maybe we can code together.
+Hopefully until lunch or maybe before lunch.
+I think it's not going to take that long today.
+And I have a schedule, but I don't like this schedule.
+So I'm not going to show it to you.
+Because the schedule was made a few weeks ago before we actually learned to know you guys.
+But as I've heard, some of you are, you guys are pretty good.
+So what is a database?
+If we go back to that, let's start simple.
+A database is basically a place where computer keeps information in an organized way.
+So think of it like a giant, super tidy cupboard, if you want to think of it like that.
+So everything has its own shelf.
+And you can always find it again.
+The information, of course, stays there, even when the computer is turned off.
+And so every app on your phone has basically a database behind it.
+So for example, if you open up Spotify, it looks up your playlists in a database, for example.
+Or when you log in with BankID, a database checks who you are.
+So why not use Excel?
+I mean, Excel is great, but it has limits.
+I mean, if you have a million of rows, it gets pretty slow.
+For example, if 10 people edit the same file, it becomes basically a mess.
+And in Excel, you can type a phone number in the price column, for example, and nobody would
+stop you.
+But the database has rules, so wrong data can't get in.
+And to find something, you just ask the question in basically one line.
+So table, you can see a table is like class list.
+I mean, a database is made of tables.
+So think of a class list your teacher had in school, okay?
+And one list for one class.
+And each table in a database is about one kind of a thing.
+So here we have, for example, table of customers.
+Another table could be products.
+And another could be orders.
+So we keep different things in different tables, basically.
+Sorry, need to take a sip of coffee here.
+Rows and columns.
+Two important words.
+A row is one thing.
+And also, one row is one customer.
+For example, Anna here that we have.
+Column is one piece of information that every row has, like a city, for example.
+A good way to remember it is basically a row is one person.
+Column is one question you ask about everyone.
+So what's your city, for example?
+Every customer answers in the same column.
+Okay, data types.
+So every column has a data type.
+That's the kind of information it holds.
+For example, an integer is a whole number.
+Real here is a number with decimals, like prices.
+And text, in this case, is words.
+And null is special.
+Null means we don't know, basically.
+It's not zero and it's not empty text.
+Empty text, sorry.
+It's like an empty box with a question mark on it.
+We'll come back to null later, maybe.
+Because it can actually trick us.
+Primary key.
+This is very important.
+Question for us is, could we use the name to tell customers apart?
+Could we do that?
+It's a yes or no question, of course.
+Let me see.
+Someone is raising hands.
+Oh, I missed raising hands here.
+Sorry, guys.
+Yeah, someone wants to answer that question.
+Could you use a name to tell customers apart?
+Answer is no, like Sven said here.
+Because two people can have the same name.
+There might be two Anna Lindqvist here, for example.
+So every table has a primary key.
+It's a column where every row has a different value, like a personal number.
+So in our table, I mean, in our table, it's customer ID.
+I mean, Anna is number one, and nobody else can ever be number one.
+Because we have said that the primary key is for Anna, number one.
+So what is SQL then?
+Talk about databases.
+We use the language called SQL, same as SQL, I've heard.
+And both are fine.
+The cool thing about SQL is that it reads almost like English.
+So if you look at this, we say here, select first name, city.
+From customers, where city is equal to Uppsala, in this case.
+So you actually don't tell the computer how to search.
+You just say what you want.
+And the database figures out the rest.
+Our database in this course is going to be a web shop.
+For the whole course, we will use one database, a small web shop.
+Today, it has actually only two tables, customer and products.
+Hopefully, by later this week, you will build more tables yourself, for example, for orders.
+And we use the same web shop every day.
+It means you get to know the data really well.
+And that makes learning SQL much easier, of course.
+And our tool is going to be, like I showed you, DB Browser.
+So SQL Lite is a small database that lives in just one file.
+And our file is called, I'll show it to you in a second.
+But it's called webshop.db.
+You can basically email this or put it in a USB stick.
+And DB Browser for SQL Lite is a program that lets us look inside that file and write SQL.
+It's free and simple.
+And in a minute, we'll open it together again.
+But before we do that, we need to talk about the select recipe.
+Let's see, maybe I'm missing, raising hands here.
+And teams is pretty bad.
+There we go.
+So select, I mean, which columns do we want when we use the keyword select?
+And when we use the from is which table and where is which row?
+And order by is in, well, in which order?
+And limit is how many?
+So the order here matters.
+It's like a recipe.
+You can't bake the cake before mixing a dough.
+So only select and from are required.
+And the rest is basically optional.
+And the golden rules for today, four golden rules for today.
+Text always goes in single quotes.
+Numbers don't.
+Finish each query with a semicolon.
+Very important.
+And when you get an error, don't panic.
+Read it.
+Error messages are like a friend telling you where you went wrong, basically.
+We'll probably make some mistakes, I hope, today.
+But we'll figure it out.
+And remember, let's sum up here the theory part here before we start coding.
+A database keeps organized information in tables.
+So row equals one thing.
+Column equals one piece of information.
+And a primary key gives every row a unique ID.
+So select from where order by limit.
+And no means unknown.
+Use is no.
+Okay, I can't remember that.
+I'll come back to that later.
+Okay, so our turn here.
+Let's open up DB Browser.
+And it should look the same when you open this up as well.
+Now, if you go to Teams.
+Let me see if I can open up Teams here and show you guys.
+Sorry, I shouldn't be able to see that.
+Go to the channel databases.
+And in databases, you should have a file called webshop.db.
+Okay, so you can download that and import it in here.
+I'll show you later how you import that.
+So if you open up DB Browser here.
+And basically, I mean, you can just.
+Yeah, you can.
+Okay, okay.
+Let's do it together.
+Click open database.
+And find the file.
+Okay, the webshop.db that you don't download it.
+And click open.
+Okay.
+And then it should open up.
+And then you should have stuff like this.
+I think it's going to show you this in the beginning.
+But you could just go to execute SQL.
+And here we can actually execute SQL.
+Exactly what it says here.
+So if I click on play here.
+Maybe.
+Hold on.
+What happened here?
+Okay, because I already done it.
+So it already exists.
+So the table is already there.
+Our database is working.
+Okay, so the first tab here.
+We have database structure.
+Here we actually see our two tables.
+So we have customer and product.
+Okay.
+If we click on.
+Let me see.
+Yeah, if you click on the little arrow here.
+You should be able to see the stuff I see here.
+If we look at customer ID.
+We see that it's an integer.
+And it should also say.
+That's strange.
+Okay.
+It should say primary key.
+But it's not doing that.
+Let me see.
+Refresh.
+No, yeah.
+Okay.
+It probably is.
+But this should, of course, be a primary key.
+And that's also product ID integer.
+Yes.
+Yeah, we see actually a small little.
+Okay.
+In the icon there.
+You see a little key in the icon.
+That's our primary key.
+There it is.
+I was looking for it.
+Okay.
+And second tab here.
+We have browse data.
+We can, of course, pick customers here in the drop down.
+So we have, it's just, it's no real customers.
+It's just some dummy data here.
+This looks a lot like Excel, right?
+And this is basically the data itself.
+If we count the rows here, it should be 10.
+And here we don't type anything in here today.
+We only look here.
+Now, if we go to, let me see, execute SQL.
+Now, this is the most important tab, execute SQL.
+The big white box here.
+At the top, we should have, let me see, save this.
+Okay.
+So at the top, we should have, well, we can, I mean, I can delete all of this.
+Because I have already done this.
+Sorry, Hayden.
+I have a question.
+Where can I find the database?
+It should be, yeah, it should be in, in the channel databases.
+We have a new channel called databases here.
+Sorry.
+Not that.
+So here is our meeting that we are in, in, in right now.
+And here, you should have a webshop.db.
+Okay.
+So you can just right click on it and download it.
+You need to download this somehow.
+There it is, Ladanias.
+I interrupted you.
+Did you say anything else?
+No, no.
+Sorry.
+I just found it.
+Thank you.
+Okay.
+All right.
+So this big white box is where we write our SQL code.
+This shows us the answers.
+Of course, in this case, it's going to show me an error because I've already run the database
+and the table is already created.
+So that's why it gave us an error.
+You can either press this to run the code, but you can see here,
+it says also F5 or CTRL R.
+So we can have some shortcuts.
+So you can press F5 and it runs our actual code.
+Maybe let's write some code.
+You can type select star, which is a wild card here.
+Where is star?
+There it is.
+Star from customers.
+It already shows me.
+So I can press either F5 or just press this one.
+And it's going to show us the result here.
+Let me see if I can make this a little bit bigger.
+So this is our customers in that database.
+And we have no error.
+Execution finished without errors.
+Result 10 rows returned in 12 milliseconds.
+Yeah, sure.
+Now we can choose only the columns we want.
+For example, we can write column names with a comma between them.
+So for example, if I want only maybe you, you guys can help me here.
+Can I, yeah, I can zoom in so you guys can see.
+There we go.
+I'll remove this.
+Or actually I'll remove everything except that.
+But if I want the first name and the last name and the city from customers, what do I write here?
+Anyone wants to help me?
+Maybe you can raise my hand.
+You can write it as well.
+If you want to write it in the chat, you can do that as well.
+So I want the first name, the last name and the city from our customers.
+Okay, Jakob said something here.
+Interesting.
+So select first name, last name, city from customers.
+Yeah, that's actually correct.
+Okay, so we can do that together.
+First name, and remember the comma here.
+Very important.
+Last name and city from customers.
+Customers, yeah.
+And let's run this.
+And there we go.
+So we got the first name and the last name and city.
+With no errors, of course.
+And we expected around 10 rows.
+Perfect.
+Okay, now I'm going to make a mistake here on purpose.
+I will spell, for example, first name here.
+Wrong.
+I will tell it first name.
+Let's run this and see if that helps.
+Oh.
+And it says here, no such column, first name.
+So if we write it wrong, it's going to show you, well, it's going to basically show you that's wrong.
+Hopefully.
+Another mistake is, for example, if we, let's reverse this.
+If I, for example, do not remember a comma here.
+And if I run that, it's going to look a bit strange.
+We run it.
+We run it and it's no errors.
+But look at the result here.
+We got last name and the city.
+So why is this?
+What happened here?
+See if I can raise some hands.
+What happened here?
+Why is it not showing an error?
+Because I wrote first name, last name, then a comma, city from customers.
+Someone is raising hands.
+Yes.
+I'm not sure, but I assume that last name will sort of overwrite first name.
+You have to separate it by commas.
+So I just guess it will cancel out first name as if it didn't exist.
+Yeah.
+So without a comma, SQL thinks last name is a new name for the column, basically.
+So no error does not mean correct.
+Always look at the results here.
+Okay.
+What if I do it like this then?
+I say, for example, select.
+Let's make it easy.
+Select.
+Star.
+From.
+And always big letters.
+And products.
+Okay.
+So if you look at here, we selected the product.
+We have product ID.
+We have names, category, price, and stock.
+The stock is basically how many we have in the warehouse.
+I was thinking something, but it wasn't the way I was thinking.
+Okay.
+Maybe it's better if we, I'm trying to do some filtering here.
+So for example, if I want to filter, if you remember when we, if I can go back, run this
+again.
+Now I have customers all, all over the, all over Sweden here, maybe not exactly all over, but many different cities here.
+But what if I want to only see customers that are from Uppsala?
+Now we know we only have one, two.
+I want to filter only from Uppsala.
+How do I do that?
+An open question here to you guys.
+It's better to raise hands instead of writing the answer.
+Let me see.
+Someone is raising hand and it's Kritika was first.
+Yeah.
+So the query is select first name, last name, city from customers where city is equal to Uppsala.
+Yeah, you can do it that way as well, but I would do it in a different way.
+Actually, I'll show you what I was thinking.
+Select from customers where city is equal to, well, Uppsala.
+So it's, you were, you were, you were right.
+You were kind of right, Uppsala.
+And don't forget semicolon here.
+And there we go.
+We got, oh, we actually got three of them.
+We missed that.
+Okay.
+What if I forget the quotes here?
+What happened then?
+I'm just curious.
+No such column as Uppsala.
+So without quotes, SQL would think Uppsala is the name of the column.
+So text, text always needs quotes.
+Remember that.
+I think you can do it with double quotes as well.
+Try that.
+So double quote or single quotes works, but you can't use, you can't do it like this.
+Let's try to filter, because I showed you the products earlier.
+Let's maybe try to filter, let's do it like this.
+Select name, price, from, sorry, from product where.
+Price is less, less than 500.
+So we got every product here that is less than 500 crowns.
+Hopefully.
+Yeah, it's correct.
+So we should have around, yeah, seven results here.
+Now we can combine two rules with and, and both must be true.
+It must be clothing, for example, and and must cost less than 500.
+So we can, we can keep filtering here.
+So, select name, and we can add one more here, category from products, where category, no, we just, we can actually say, I remove all of this, where category is equal to clothing and price is less than 500.
+So, so a little longer query here for our filtering.
+Yeah, let's run that.
+And we see, hopefully this is correct.
+Let me see.
+Yeah.
+Category clothing and the price under 500 crowns.
+So, yeah, we can keep continuing filtering.
+So this is basically filtering.
+That's what I want to show you.
+We can also use the or instead of the and, because and will, what we, what we're saying here is both of these must be true.
+Then show us the results.
+But if we use or here, where category could be shoes, shoes, and, and instead of price, we can have another one.
+You can have category equals accessories.
+So, accessories, hopefully I spelled that right.
+Don't forget semicolon.
+And what does this mean?
+If I put the or in here, open question here.
+You can raise your hands.
+Yes, Fabian.
+It will take everything from both of those categories.
+So, whenever it finds either shoes or accessories.
+Exactly.
+And this was actually wrong.
+Let me see.
+What did I do wrong here?
+Category equals accessories.
+I can't see it.
+Maybe I need to get my glasses.
+Why is this not working?
+Hmm.
+Is this wrong?
+There we go.
+So, this works.
+So, we have accessories and shoes from the category accessories and shoes.
+And we can see it's water bottle, backpack, whatever.
+But there is actually a short way of writing this because this was pretty long.
+We can actually do it this way.
+So, I'll remove this.
+Start over.
+And we can say select name, category, from, products, category, in.
+This is new.
+In.
+I will say, shoes, accessories.
+Sorry.
+Don't forget these.
+Accessories.
+There we go.
+And we get the same results.
+So, same answer.
+Less typing.
+In is great when you have basically many values.
+Let's do another one because this was so much fun.
+If I want to, for example, I'll ask this as a question.
+So, if I want to, you know, we can, if I do it like this.
+So, select.
+So, this is going to be correct.
+And price from product.
+There we go.
+What if I want to only see the price between $200 and $600?
+What do I write after this?
+You can raise your hand if you want.
+Yes, Kritika.
+So, select name, price, from products.
+Wear price between $200 and $600.
+Yeah, that's correct, actually.
+Good job.
+Wear price between $200 and $600.
+Run it.
+There we go.
+We got the name and the price.
+And it's between $200 and $600.
+And it's showing us four results here.
+Perfect.
+Okay.
+But sometimes, sometimes you just want to search for patterns in a database.
+How do we do that?
+There we go.
+And we can remove the price here.
+So, select name from products.
+I only want anything that starts with an S in the product list.
+What would I do?
+Yes, Gloria.
+Actually, I have a question before you ask.
+Sure.
+So, I was wondering if you have to remove all the filters that you did.
+Or you can just write down the next filter.
+It affects the result?
+I didn't quite understand your question here.
+For example, we have a filter in the line one.
+You have select name from products.
+Let's say that you filter that.
+And then you want to do another filter.
+Do you have to remove?
+You don't have to.
+No, you don't have to remove.
+You can keep it.
+I remove it because I don't want it to be cluttering everything.
+It's easier for me to explain to you guys.
+But no, we don't have.
+We can try it.
+We can try it right now.
+So, you can see it.
+So, let's try to search for the products that only starts with an S.
+What do I write here?
+How do I filter that?
+That was the question.
+Yet, not yet.
+Select start from customers.
+Where first name like is.
+And then the symbol of percent.
+Yeah, but it wasn't customers.
+Select name from products.
+Yeah, from symbol S, right?
+Yeah, exactly.
+Yeah.
+So, where, name, like, exactly, like.
+And we want it to start with an S.
+And then you have this, a percent.
+Yeah, percent.
+Symbol and that.
+And then semicolon.
+Exactly.
+And let's run that.
+What happened here?
+We forget the first name.
+There is a comma without anything separating it.
+Oh, yeah.
+Now I see it.
+There we go.
+Select name.
+There we go.
+So, we got sneakers, socks, sandals.
+Okay, let's try another one.
+Just to show you the question you guys asked earlier.
+Okay, but let's go to dates.
+Let's go to dates.
+So, we store dates as text like year, month, day.
+And because the year comes first, we can compare them like normal.
+So, basically, we can check, for example, who became a customer in 2025 or later.
+So, we would do that by saying select first name.
+And then we can actually say joined date from customers.
+And let's have an entry there.
+Where, sorry.
+Where joined date is greater or equal to 2025.01.01.
+And semicolon.
+Okay, let's run that.
+So, where is the result?
+Oh, it's only showing me one result.
+Why is it not showing this?
+Ah, let me see if I can remove that.
+No.
+Okay, let's just remove it.
+Actually, we can, if I just want to try something here.
+We can actually do it this way or that way.
+And execute selected.
+So, now I can execute the selected one.
+And we can execute maybe both.
+Let me see.
+It's not showing me both for some reason.
+Hmm.
+Okay.
+Okay.
+So, we got what we wanted.
+So, everyone who joined date after 1st January is these four customers here in this case.
+So, we have four, four, results is four rows.
+Fused here.
+Maybe some of you guys can help me with this.
+Now, if I, let's see if I can try, let's not do the filtering stuff.
+Let me just see here.
+Select first name, like we did earlier.
+Last name, city.
+From customers.
+Don't put a semicolon there.
+It's going to give us that.
+Okay.
+Sorry.
+Misspelled.
+Both.
+It should show me both.
+I don't know what's going on here.
+You did that yesterday.
+But, I mean, we can keep continuing writing and just do it like we do.
+So, you don't, so you get the history of it at least.
+If that's what you're looking for.
+Okay.
+We have a couple of more to go through.
+So, we have this where we can actually filter the joint date in this case.
+We can also sort by something, a keyword called order by.
+So, if I say, for example, select him and price products, order by, order by.
+Order by, order by, price.
+And I also want to order by descending.
+And the keyword for that is DSC.
+Run that part.
+So, that's descending.
+But we can also use, I think, I think, I can't remember exactly, but I think it was ASC.
+So, ascending.
+And this should give us a different result.
+So, we start with the smallest one until the highest price here.
+So, that's ascending and descending for you.
+This, and now we should have the price, this price above.
+If I don't write anything in here, what would, what, what would happen then?
+I don't write either ascending or descending.
+What's going to happen?
+Yes, Christian?
+The default, default value.
+Ha ha.
+Yeah, that's actually correct.
+I was going to say ascending.
+Okay.
+That was a good guess.
+It's actually, I think it's actually true.
+It's ascending.
+Yeah.
+So, if you don't tell it, it's going to have the defaults, like Christian said here, ascending.
+Yeah.
+Good job.
+I didn't want to say it, of course, but yeah.
+Default is enough.
+Yeah.
+Okay.
+Enough jokes.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Okay.
+Let's continue with that.
+We also have, let's just say, I write it, I write query like this.
+So, select, actually, I'm going to just be lazy here and copy all of this.
+Place that in here and order by, we will have that order by price ending.
+And we can say limit with three.
+I mean, it's English, so we should know what this would mean.
+But what we're doing here is we order by and we get top three, three most expensive products
+in this case.
+So, if we run this, then it should give us the three most expensive products, which is
+running shoes, rain jacket and sneakers.
+Okay.
+There is one more, or not actually, actually a couple of more, but one more I want you to
+know about as well.
+And it's when I write select and then say distinct.
+What's this?
+Yes, Christoffer?
+Yeah.
+That's like when you, so you can only have one of each, right?
+Yeah.
+Yeah.
+You're in the right, the right way here.
+Right place.
+Basically, we remove duplicates.
+So, for example, I say select distinct city from customers, like we did earlier.
+Customers.
+There we go.
+And let's run this, and it should show us all of the cities, but last time we did it,
+it shows us maybe three people from Uppsala or whatever.
+But if I run this now, it's going to give me only the cities in this case.
+And we have Uppsala, Stockholm, Göteborg, Malmö, Västerås.
+But if I didn't have distinct, if I just say select bar, yeah, this is, yeah, it's not going
+to, yeah, okay, you get it.
+So, if I only select the cities from customers, it's going to show me all of the cities, even
+duplicates.
+But in this case, we only want to see which cities.
+And we see that we have five results here.
+And also want null.
+Null.
+And the null is because the customer didn't actually put in any value in it.
+So, but it is a value.
+It's not actually a value, but it's going to be there because he missed writing it.
+So, what if I'm going to use another keyword here that we haven't seen?
+Select name as product, sorry, price as price, the score, sec, from, pro.
+So, what happened here?
+As columns, I mean, it gives a column a new name in the result.
+So, the table doesn't change, actually, only how the answer looks.
+So, we have here, we have price sec.
+So, yeah, Swedish crown here, for those that doesn't know.
+So, we didn't actually change the table, but only what we want to see here changed.
+Okay, well, we haven't talked about null that much.
+So, what if I say select star from customers, where city, sorry, city is equal to null.
+What's going to happen here?
+Because we have a customer without a city, if you remember that.
+Let's run it and see together.
+It's showing us zero rows.
+But we know that someone has no city.
+Well, null means unknown.
+Is unknown equal to unknown?
+We don't know.
+So, SQL says no.
+So, the right way to do this is actually, let's change this.
+Maybe I can write a new, for those that may be coding along here.
+Just copy this.
+And in here, I'm going to change this to say, where city is null.
+That's a different thing.
+And we can see that Lucas here, he didn't write any city.
+And the value is null.
+So, remember that.
+I mean, this, not allowed.
+It's not going to show you anything.
+Basically, null means unknown.
+Is unknown equal to unknown?
+We don't know.
+So, this is the correct way of finding the null values, basically, if you want to do that.
+So, okay.
+To save all of this, let's just say we want to save all of this.
+We can click on the floppy disk here.
+Where is the floppy disk?
+There it is.
+We can save this as, let me see.
+You can save this.
+I'm just going to put it in documents here, for example.
+And I will save this to SQL, I don't know.
+Maybe it's day one.
+Day one dot SQL.
+There we go.
+So, I have saved all of this stuff as day one dot SQL.
+And when you upload stuff to GitHub, that's how you basically need to do it.
+Okay.
+So, I have a couple of exercises for you guys.
+Which I'm going to upload for you.
+And tomorrow, we'll continue with some other stuff as well that you guys need to know.
+So, basically, today we asked questions to tables.
+Someone else built.
+Tomorrow, hopefully, we will build our tables ourselves.
+But before we do that, let's just play around.
+I'm going to send you some.
+For those that this is new, because I know some people, maybe this is new for you guys.
+And some people have some experience with SQL, so this might be really easy for you.
+If that's the case, just write to me or Aladin that you're done with the lab.
+And we can give you something else to do in the meantime.
+But I want us to slowly learn this.
+Okay.
+Do you have any questions?
+Actually, tried the comment.
+Okay.
+Yeah.
+That's how you comment.
+Someone said it in the chat.
+Thank you.
+I was looking for it.
+So, yeah.
+Double dash for commenting out whatever you want to comment out here.
+Okay.
+Hey, is there a way to check history?
+History of what?
+The script that we are executing.
+Find it under show SQL submitted by.
+I don't know if that's what you're asking.
+Oh, you mean the history of whatever I have wrote in here?
+Yeah.
+Is that what you mean?
+Yeah, whatever we are executing in the browser.
+The results.
+Yeah, the results.
+You can find them in SQL log.
+SQL log.
+Okay.
+You can have it as a separate section, like a small window within the application.
+I changed the under view or V.
+You can change the window layout and then you can find it there.
+It's easier.
+It's not actually showing me.
+No, no.
+If you go to V again, then you go to the bottom window layout and you can change the entire layout.
+Then you will find it like to the left side, dock windows at the left side.
+That's fine.
+And there you have down in the left corner.
+Yeah, that one is a little bit different.
+Okay.
+Yeah, cool.
+You learn.
+Yeah, that's it.
+We'll order.
+Okay.
+Man, it looks...
+I can see the SQL log there.
+Yeah, I don't know why it's not showing me.
+I'll check it out and see if I can.
+But if you want whatever I wrote here, I can actually give you a file in the chat later.
+So, you can try this stuff out if you want to watch the recording because I have recorded this session.
+Yeah.
+Any other questions?
+Yeah, Dimitri, you're raising hands?
+Yes, you can turn it on in views section.
+I mean, SQL log.
+Yeah, we tried that.
+Yeah, it's turned off now.
+It should be in blue.
+And now you can see it in the left bottom corner.
+Ah, there you go.
+Thank you.
+Okay, perfect.
+That's perfect, actually.
+Didn't know this.
+Thank you.
+Whatever idea that was.
+Maybe I can...
+Can I copy all of this by...
+Yeah?
+Okay, perfect.
+Copy.
+And we put it in here.
+Okay, so it should pop up right about now.
+There we go.
+Okay.
+Anyone else?
+We have been talking for one hour here anyway.
+So, you can take some break.
+You can leave the meeting, take break, and I'll upload a simple lab for you.
+If the lab is too easy, just write to me or Aladin, and we'll give you something else to do as well in the meantime.
+But we start slowly.
+Okay?
+Yeah, you can leave the meeting if you don't have any questions.
+If you have any questions, you can, of course, stay and ask your question.
