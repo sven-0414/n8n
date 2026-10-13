@@ -1,0 +1,5216 @@
+1
+00:00:02,470 --> 00:00:13,760
+ Then we code together and then after lunch you have some labs where you can work on your exercises on your own pace there.
+
+2
+00:00:13,760 --> 00:00:39,220
+ So today, hopefully after today, you will be able to explain what NoSQL is and what MongoDB are and how they differ from SQL.
+
+3
+00:00:41,090 --> 00:00:49,440
+ No words like documents, collections, fields, ID and stuff like that.
+
+4
+00:00:49,440 --> 00:00:58,370
+ We look at your data using only Python with print and stuff.
+
+5
+00:00:59,990 --> 00:01:06,150
+ Connect to MongoDB from Python with a library called PyMongo.
+
+6
+00:01:07,100 --> 00:01:09,920
+ We insert and find documents.
+
+7
+00:01:11,430 --> 00:01:14,490
+ And don't worry if some of these words are new right now.
+
+8
+00:01:15,360 --> 00:01:22,250
+ We'll go through them each one by one, here in Therial at least.
+
+9
+00:01:22,430 --> 00:01:26,130
+ Then you will see it in action as usual.
+
+10
+00:01:26,130 --> 00:01:45,280
+ So for almost one week at least, we worked with SQL and data lives in tables.
+
+11
+00:01:46,670 --> 00:01:54,880
+ Every row had exactly the same columns and we used join to put pieces together.
+
+12
+00:01:56,910 --> 00:02:02,370
+ This week, we will look at another family of databases called NoSQL.
+
+13
+00:02:03,740 --> 00:02:07,780
+ The name means actually not only SQL.
+
+14
+00:02:09,030 --> 00:02:11,510
+ So it's not that SQL is bad.
+
+15
+00:02:12,380 --> 00:02:14,520
+ NoSQL is just a different tool.
+
+16
+00:02:15,370 --> 00:02:17,530
+ Some jobs are easier with it.
+
+17
+00:02:17,530 --> 00:02:32,430
+ If you think back for a second, in SQL, before we could save a single customer, we had to write create table, if you remember that.
+
+18
+00:02:33,040 --> 00:02:35,240
+ And then decide every column in advance.
+
+19
+00:02:35,880 --> 00:02:39,880
+ So we need to know the first name, the last name, email, city and so on.
+
+20
+00:02:40,420 --> 00:02:45,300
+ And every customer had to fit into exactly those columns.
+
+21
+00:02:46,420 --> 00:02:51,760
+ So if a customer had two phone numbers, we needed a new table.
+
+22
+00:02:53,370 --> 00:02:56,990
+ And that's a very safe way to actually work.
+
+23
+00:02:58,890 --> 00:03:02,590
+ And this is why banks and booking systems love SQL.
+
+24
+00:03:04,100 --> 00:03:08,200
+ But it's also, if you ask me, it's also a bit stiff.
+
+25
+00:03:09,950 --> 00:03:16,470
+ And this week, hopefully, you will see a database where you don't have to decide everything in advance.
+
+26
+00:03:19,910 --> 00:03:23,130
+ Has anyone heard the word NoSQL before?
+
+27
+00:03:24,760 --> 00:03:27,280
+ Before you heard me saying it?
+
+28
+00:03:27,650 --> 00:03:29,030
+ You can raise your hands.
+
+29
+00:03:34,850 --> 00:03:35,470
+ Okay, okay.
+
+30
+00:03:36,800 --> 00:03:39,650
+ Almost half of you, at least.
+
+31
+00:03:40,240 --> 00:03:40,900
+ All right.
+
+32
+00:03:41,640 --> 00:03:42,750
+ Thank you.
+
+33
+00:03:42,810 --> 00:03:43,950
+ You can bring down your hands.
+
+34
+00:03:44,130 --> 00:03:54,230
+ Hopefully, in the future, many of you will meet this at your future job.
+
+35
+00:03:55,010 --> 00:04:00,370
+ Because a lot of modern apps use both SQL and NoSQL side by side.
+
+36
+00:04:01,480 --> 00:04:03,650
+ So this isn't instead of SQL.
+
+37
+00:04:03,790 --> 00:04:05,190
+ You shouldn't think of it like that.
+
+38
+00:04:05,550 --> 00:04:08,310
+ It's just one more tool in your toolbox.
+
+39
+00:04:14,690 --> 00:04:15,510
+ That's a question.
+
+40
+00:04:16,920 --> 00:04:19,580
+ Why would anyone use something other than SQL?
+
+41
+00:04:21,110 --> 00:04:23,220
+ And here are actually four common reasons.
+
+42
+00:04:24,750 --> 00:04:29,330
+ Sometimes the data changes shape all the time.
+
+43
+00:04:29,330 --> 00:04:36,720
+ For example, a new product type with new properties every week.
+
+44
+00:04:38,380 --> 00:04:41,440
+ In SQL, you need to change the tables each time.
+
+45
+00:04:42,790 --> 00:04:50,510
+ And sometimes the program thinks in objects like Python dictionaries.
+
+46
+00:04:51,320 --> 00:04:53,630
+ And we can turn them into tables.
+
+47
+00:04:56,590 --> 00:04:59,550
+ Yeah, that would be pretty hard work.
+
+48
+00:05:03,360 --> 00:05:09,150
+ NoSQL databases are built to basically spread over many servers.
+
+49
+00:05:11,890 --> 00:05:14,230
+ Let's take each row with an example.
+
+50
+00:05:14,390 --> 00:05:20,870
+ So row one, imagine our web shop starts selling phones, for example.
+
+51
+00:05:21,720 --> 00:05:31,210
+ Phones have screen sizes, storage, color, or for example, shoes also have sizes, or t-shirt, or anything.
+
+52
+00:05:31,210 --> 00:05:39,500
+ In SQL, you would need an extra table, extra tables, or lots of empty columns, actually.
+
+53
+00:05:39,940 --> 00:05:46,430
+ In NoSQL, each product just has basically the fields it needs.
+
+54
+00:05:49,200 --> 00:05:57,200
+ So row two, in Python, we would already think in dictionaries and lists, when we say row two.
+
+55
+00:05:57,200 --> 00:06:06,680
+ With SQL, we translate that, translate basically a dictionary into rows and back again every time.
+
+56
+00:06:07,410 --> 00:06:12,800
+ With MongoDB, we just have, we just save that basically to dictionaries.
+
+57
+00:06:17,180 --> 00:06:39,410
+ If you remember the recipe with three joins, which we did, in NoSQL, we can keep the whole recipe together.
+
+58
+00:06:40,270 --> 00:06:42,960
+ So we don't have to use joins in the same way.
+
+59
+00:06:43,900 --> 00:06:52,520
+ I mean, in really big companies, have sometimes so much data that it doesn't fit in one computer.
+
+60
+00:06:53,210 --> 00:06:58,050
+ So NoSQL databases were built from the start to spread the data over many servers.
+
+61
+00:07:00,890 --> 00:07:03,250
+ Of course, you won't need to do that this week.
+
+62
+00:07:04,170 --> 00:07:08,050
+ But this is one of the main reasons NoSQL exists.
+
+63
+00:07:10,800 --> 00:07:11,320
+ MongoDB.
+
+64
+00:07:12,160 --> 00:07:14,680
+ The NoSQL database we'll use is MongoDB.
+
+65
+00:07:15,310 --> 00:07:16,640
+ I'm going to take some coffee.
+
+66
+00:07:17,330 --> 00:07:17,550
+ Hold on.
+
+67
+00:07:20,050 --> 00:07:25,420
+ And the reason is basically, yeah, it's the most popular one.
+
+68
+00:07:25,960 --> 00:07:29,100
+ And it's used by many big companies.
+
+69
+00:07:32,630 --> 00:07:35,130
+ MongoDB is a document database.
+
+70
+00:07:35,270 --> 00:07:39,670
+ We call it, which means it stores data as documents.
+
+71
+00:07:41,500 --> 00:07:46,800
+ There is actually a community server, which is free and runs on your own computer here.
+
+72
+00:07:47,230 --> 00:07:49,410
+ Just like our SQLite file did.
+
+73
+00:07:50,720 --> 00:07:57,120
+ We will talk to it from Python with a library called PyMongo.
+
+74
+00:07:58,000 --> 00:08:04,320
+ So there are several kinds of NoSQL databases, but we will focus on one.
+
+75
+00:08:04,900 --> 00:08:06,610
+ And it's going to be MongoDB.
+
+76
+00:08:07,430 --> 00:08:13,880
+ The name actually comes from the word, can't remember.
+
+77
+00:08:13,880 --> 00:08:19,640
+ It was from a word called humongoose or something like that.
+
+78
+00:08:19,700 --> 00:08:20,300
+ I can't remember.
+
+79
+00:08:20,850 --> 00:08:26,600
+ Which means basically huge because it was built to handle a lot of data.
+
+80
+00:08:30,420 --> 00:08:36,200
+ And it's the most widely used NoSQL database, for example, in job ads.
+
+81
+00:08:37,540 --> 00:08:38,980
+ So this is a good one to know.
+
+82
+00:08:40,250 --> 00:08:58,720
+ MongoDB is, I mean, each piece of data, for example, one product is stored as one document.
+
+83
+00:08:59,200 --> 00:09:01,710
+ Because remember, MongoDB is a document database.
+
+84
+00:09:01,710 --> 00:09:12,130
+ Because you can install this on your own computer for free, which you hopefully will do today.
+
+85
+00:09:17,760 --> 00:09:18,960
+ A document.
+
+86
+00:09:19,180 --> 00:09:20,020
+ What is a document?
+
+87
+00:09:20,240 --> 00:09:23,350
+ Well, this is a document that you see in front of you.
+
+88
+00:09:23,800 --> 00:09:25,260
+ And it looks pretty familiar.
+
+89
+00:09:26,000 --> 00:09:28,430
+ It looks exactly like a Python dictionary.
+
+90
+00:09:29,070 --> 00:09:30,690
+ It's made of pairs.
+
+91
+00:09:32,230 --> 00:09:33,700
+ Field name and a value.
+
+92
+00:09:34,730 --> 00:09:36,190
+ The name is hoodie black here.
+
+93
+00:09:37,300 --> 00:09:39,500
+ Price is $599.
+
+94
+00:09:40,040 --> 00:09:43,750
+ But look at the last two lines.
+
+95
+00:09:46,470 --> 00:09:50,910
+ Tags is a list inside this document.
+
+96
+00:09:51,820 --> 00:09:55,900
+ And details is a small dictionary inside the dictionary.
+
+97
+00:09:58,370 --> 00:10:06,450
+ So in SQL, a list like tags would need its own table.
+
+98
+00:10:08,000 --> 00:10:10,920
+ But here it just lives inside the product.
+
+99
+00:10:14,600 --> 00:10:20,290
+ So if you read this document line by line here together.
+
+100
+00:10:22,170 --> 00:10:24,930
+ Underscore ID is one.
+
+101
+00:10:26,660 --> 00:10:27,780
+ That's the product ID.
+
+102
+00:10:29,470 --> 00:10:31,540
+ The name is hoodie black.
+
+103
+00:10:33,520 --> 00:10:35,020
+ And then we have category here.
+
+104
+00:10:36,220 --> 00:10:38,180
+ Which is, yeah, well, we say it's clothing.
+
+105
+00:10:39,050 --> 00:10:40,730
+ And the price is $599.
+
+106
+00:10:41,030 --> 00:10:42,850
+ A number without quotes.
+
+107
+00:10:42,850 --> 00:10:53,410
+ And then we have tags, square brackets.
+
+108
+00:10:56,100 --> 00:11:00,170
+ So it's a list with three, with basically three words in it.
+
+109
+00:11:02,120 --> 00:11:05,710
+ And then we have details here with curly brackets.
+
+110
+00:11:06,470 --> 00:11:09,110
+ So it's a small dictionary inside a big one.
+
+111
+00:11:09,700 --> 00:11:13,990
+ With basically color and material and stuff like that.
+
+112
+00:11:15,780 --> 00:11:19,800
+ So if I ask a question here to you guys.
+
+113
+00:11:21,010 --> 00:11:27,940
+ How many tables would we need in SQL to store this one hoodie with tags?
+
+114
+00:11:31,360 --> 00:11:32,860
+ Raise your hand.
+
+115
+00:11:32,860 --> 00:11:42,840
+ And I would say at least two.
+
+116
+00:11:44,280 --> 00:11:48,880
+ Products and products tags table.
+
+117
+00:11:49,700 --> 00:11:50,480
+ Maybe more.
+
+118
+00:11:52,710 --> 00:11:54,430
+ But here it's all in one place.
+
+119
+00:11:55,550 --> 00:11:57,910
+ The format you see is called JSON.
+
+120
+00:11:58,820 --> 00:12:02,580
+ Which stands for JavaScript Object Notation.
+
+121
+00:12:03,520 --> 00:12:07,570
+ It's the most common way to send data on the internet, actually.
+
+122
+00:12:08,340 --> 00:12:09,700
+ So you will see it everywhere.
+
+123
+00:12:09,940 --> 00:12:11,060
+ Not just in MongoDB.
+
+124
+00:12:17,920 --> 00:12:24,100
+ So here is a dictionary from SQL words to MongoDB words.
+
+125
+00:12:24,100 --> 00:12:27,210
+ So a database is still a database.
+
+126
+00:12:27,210 --> 00:12:27,910
+ So a database is still a database.
+
+127
+00:12:27,910 --> 00:12:31,520
+ A table is called a collection.
+
+128
+00:12:31,520 --> 00:12:35,930
+ A row is a document.
+
+129
+00:12:35,930 --> 00:12:38,740
+ A column is a field.
+
+130
+00:12:38,740 --> 00:12:44,370
+ The primary key is always called underscore ID.
+
+131
+00:12:44,370 --> 00:12:54,570
+ Instead of join, we usually put things that belong together inside the same document, which we call embedding.
+
+132
+00:12:55,720 --> 00:13:04,520
+ And instead of SQL, we ask questions with filters, which are just Python dictionaries.
+
+133
+00:13:04,520 --> 00:13:09,850
+ So keep this slide in mind for all week.
+
+134
+00:13:09,850 --> 00:13:10,930
+ I would save this.
+
+135
+00:13:13,360 --> 00:13:18,940
+ Okay, let me say it as a story.
+
+136
+00:13:19,570 --> 00:13:26,950
+ In SQL, we had a database called Webshop with a table called Customers.
+
+137
+00:13:27,370 --> 00:13:30,310
+ And each customer was a row with columns.
+
+138
+00:13:30,990 --> 00:13:38,560
+ In MongoDB, we have a database called Webshop with a collection called Customers.
+
+139
+00:13:38,840 --> 00:13:41,780
+ And each customer is a document with fields.
+
+140
+00:13:42,950 --> 00:13:45,230
+ Same idea, just new words.
+
+141
+00:13:46,010 --> 00:13:47,860
+ The underscore ID is special.
+
+142
+00:13:48,220 --> 00:13:53,140
+ Every document must have one, just like every row needs a primary key.
+
+143
+00:13:54,080 --> 00:13:58,680
+ And the last two rows are where the real difference is.
+
+144
+00:13:58,680 --> 00:14:04,880
+ In SQL, we split data into many tables and join it back together.
+
+145
+00:14:05,420 --> 00:14:09,600
+ In MongoDB, we usually keep things together from the start.
+
+146
+00:14:10,540 --> 00:14:21,580
+ And there is a way to join called Lookup, which we'll look into maybe not tomorrow, maybe the day after it.
+
+147
+00:14:21,620 --> 00:14:21,940
+ I don't know.
+
+148
+00:14:22,080 --> 00:14:24,200
+ We'll see how much time we have.
+
+149
+00:14:24,640 --> 00:14:26,480
+ But we will try to look into that as well.
+
+150
+00:14:31,080 --> 00:14:34,990
+ Take a photo, if you want, of the slide and keep it open.
+
+151
+00:14:35,150 --> 00:14:37,150
+ You will see these words all week.
+
+152
+00:14:40,200 --> 00:14:41,100
+ Flexible schema.
+
+153
+00:14:41,100 --> 00:14:44,300
+ Okay, in SQL, every row had the same columns.
+
+154
+00:14:44,760 --> 00:14:48,900
+ In MongoDB, documents in the same collection can look different.
+
+155
+00:14:49,610 --> 00:14:54,690
+ Shoes have sizes, but a t-shirt in our shop doesn't, for example.
+
+156
+00:14:55,290 --> 00:14:57,240
+ That's called a flexible schema.
+
+157
+00:14:58,100 --> 00:15:00,640
+ It's great when your data changes a lot.
+
+158
+00:15:00,640 --> 00:15:02,720
+ But there is a catch.
+
+159
+00:15:02,720 --> 00:15:06,170
+ The database doesn't check anything by default.
+
+160
+00:15:06,170 --> 00:15:15,330
+ So if you write price with an S instead of with a C, MongoDB happily saves it.
+
+161
+00:15:16,070 --> 00:15:19,470
+ So with more freedom comes more responsibility.
+
+162
+00:15:22,440 --> 00:15:25,900
+ Maybe throughout the week we will look how to add these rules.
+
+163
+00:15:27,140 --> 00:15:31,100
+ Schema means the plan or structure of the data.
+
+164
+00:15:31,570 --> 00:15:33,630
+ In SQL, the schema is strict.
+
+165
+00:15:33,890 --> 00:15:38,570
+ I mean, when we use create table, that's when it's decided.
+
+166
+00:15:39,290 --> 00:15:43,590
+ In MongoDB, by default, there is no fixed schema.
+
+167
+00:15:45,150 --> 00:15:54,640
+ If you look at the two documents here, both are products.
+
+168
+00:15:55,200 --> 00:15:59,980
+ Both are in the same collection, but only the sneakers have size.
+
+169
+00:16:01,280 --> 00:16:04,570
+ And MongoDB is fine with that.
+
+170
+00:16:13,120 --> 00:16:28,120
+ So every document has a field called underscore ID.
+
+171
+00:16:28,120 --> 00:16:32,450
+ It works like the primary key.
+
+172
+00:16:34,490 --> 00:16:35,530
+ It must be unique.
+
+173
+00:16:37,360 --> 00:16:43,270
+ If you don't give one, MongoDB actually creates one for you called an object ID.
+
+174
+00:16:44,140 --> 00:16:48,510
+ It's basically a long code that is unique, even across many computers.
+
+175
+00:16:50,040 --> 00:16:54,220
+ So in our web shop, we choose our own IDs.
+
+176
+00:16:55,060 --> 00:16:56,060
+ One, two, three.
+
+177
+00:16:57,190 --> 00:17:00,990
+ So it's easy to compare with the SQL web shop, for example.
+
+178
+00:17:03,030 --> 00:17:11,540
+ But new things you add without an ID will get an object ID, like you see in front of you here.
+
+179
+00:17:12,490 --> 00:17:14,180
+ It's going to look something like that.
+
+180
+00:17:17,180 --> 00:17:20,440
+ Underscore ID is always the first field in the document.
+
+181
+00:17:21,530 --> 00:17:29,470
+ And MongoDB won't let two documents in the same collection have the same one.
+
+182
+00:17:29,730 --> 00:17:35,700
+ So if you try, you're going to get an error called duplicate key, I think the error is.
+
+183
+00:17:38,250 --> 00:17:42,570
+ I will try to show it to you when we code along.
+
+184
+00:17:42,570 --> 00:17:48,600
+ But when you don't give it an ID, MongoDB makes an object ID.
+
+185
+00:17:48,920 --> 00:17:53,910
+ It looks like a random jumble of 24 letters and numbers.
+
+186
+00:17:54,410 --> 00:18:01,540
+ But it's actually built from the time it was created, plus some unique parts.
+
+187
+00:18:02,620 --> 00:18:07,880
+ So two computers can create IDs at the same time without ever colliding.
+
+188
+00:18:09,240 --> 00:18:12,150
+ And that's very useful for big systems with many servers.
+
+189
+00:18:12,480 --> 00:18:21,520
+ So in our web shop, we choose simple numbers to make it easy to compare with the SQL web shop.
+
+190
+00:18:21,620 --> 00:18:23,300
+ So customer one is still Anna.
+
+191
+00:18:23,860 --> 00:18:28,690
+ But when you insert a new document without an ID, you will see object's ID appear.
+
+192
+00:18:29,370 --> 00:18:34,090
+ And that's basically completely normal if that's going to happen with you.
+
+193
+00:18:34,550 --> 00:18:35,650
+ Okay, data types.
+
+194
+00:18:36,830 --> 00:18:41,590
+ These are the data types, you see.
+
+195
+00:18:42,290 --> 00:18:45,490
+ You have strings, numbers, booleans, and dates.
+
+196
+00:18:45,810 --> 00:18:46,370
+ You know that.
+
+197
+00:18:47,250 --> 00:18:48,970
+ Array is a list.
+
+198
+00:18:50,760 --> 00:18:53,280
+ And object is a dictionary inside the document.
+
+199
+00:18:54,130 --> 00:18:57,000
+ Null is nothing, like none in Python.
+
+200
+00:18:57,540 --> 00:19:05,530
+ The nice thing here is PyMongo translates this automatically.
+
+201
+00:19:06,290 --> 00:19:13,690
+ So Python list becomes an array, a dictionary becomes an object, and a date time becomes a date.
+
+202
+00:19:18,860 --> 00:19:26,980
+ So let's connect this maybe to Python here, because that's how you will write the data.
+
+203
+00:19:27,770 --> 00:19:35,170
+ Python string becomes a string, an int becomes an int, a float becomes a double, true and false
+
+204
+00:19:35,170 --> 00:19:42,020
+ becomes booleans, a Python list becomes an array, and a dictionary becomes an object, and
+
+205
+00:19:42,020 --> 00:19:45,540
+ also sometimes called embedded documents.
+
+206
+00:19:46,490 --> 00:19:53,650
+ For dates, we use Python's date time, and MongoDB store it as a real date, actually.
+
+207
+00:19:53,830 --> 00:19:58,840
+ So we can sort and compare dates properly here.
+
+208
+00:20:00,820 --> 00:20:05,900
+ And one thing to watch, in JSON, you will see lowercase true and false, and null.
+
+209
+00:20:06,580 --> 00:20:13,080
+ In Python, it's capital true, as you know, false, true, false, and none is capital.
+
+210
+00:20:13,790 --> 00:20:19,330
+ So some values, different spellings, I mean, same values, different spellings, basically.
+
+211
+00:20:21,130 --> 00:20:23,990
+ And if you write true in Python, you're going to get an error, of course.
+
+212
+00:20:25,410 --> 00:20:31,550
+ That's actually one of the most common small mistakes you will probably encounter this week.
+
+213
+00:20:31,830 --> 00:20:34,920
+ Maybe, I don't know, just a heads up.
+
+214
+00:20:37,570 --> 00:20:42,710
+ So remember, if you remember the full recipe we built with three joins in SQL, and I don't
+
+215
+00:20:42,710 --> 00:20:45,590
+ know, that day was pretty confusing, even for me.
+
+216
+00:20:46,830 --> 00:20:49,310
+ Here is the same order in MongoDB.
+
+217
+00:20:49,310 --> 00:20:55,400
+ The items are inside the order as a list.
+
+218
+00:20:56,500 --> 00:21:07,580
+ And each item even has a product name and price copied into it.
+
+219
+00:21:08,060 --> 00:21:12,880
+ To show the receipt, we just read one document.
+
+220
+00:21:14,330 --> 00:21:15,490
+ No join at all.
+
+221
+00:21:16,220 --> 00:21:18,750
+ And that's the big idea of document databases.
+
+222
+00:21:19,530 --> 00:21:23,270
+ Data that is read together is stored together as well.
+
+223
+00:21:23,270 --> 00:21:40,690
+ So if you look at the items list here, each item has the name and the price copied into
+
+224
+00:21:40,690 --> 00:21:41,050
+ it.
+
+225
+00:21:42,950 --> 00:21:43,690
+ So why copy them?
+
+226
+00:21:44,450 --> 00:21:54,540
+ Because if the hoodie costs, for example, 649 next month, this old receipt must still say
+
+227
+00:21:54,540 --> 00:21:55,420
+ 599.
+
+228
+00:21:56,990 --> 00:21:59,710
+ The price Anna actually paid.
+
+229
+00:22:00,900 --> 00:22:06,180
+ We did the same thing in SQL with unit price.
+
+230
+00:22:08,860 --> 00:22:15,850
+ So to show this receipt in SQL, we needed orders, order items, some products, and basically
+
+231
+00:22:15,850 --> 00:22:16,690
+ three joins.
+
+232
+00:22:18,430 --> 00:22:21,550
+ But here we only...
+
+233
+00:22:22,420 --> 00:22:24,440
+ This gives us everything.
+
+234
+00:22:31,910 --> 00:22:34,940
+ Okay, but if I ask you one question here to the class.
+
+235
+00:22:35,430 --> 00:22:36,400
+ What is...
+
+236
+00:22:36,400 --> 00:22:40,060
+ What's still not inside this document?
+
+237
+00:22:41,620 --> 00:22:43,260
+ What do we don't see here?
+
+238
+00:22:50,110 --> 00:22:58,170
+ Well, the customer's name.
+
+239
+00:22:58,840 --> 00:23:01,350
+ There is only customer ID, as you can see here.
+
+240
+00:23:03,190 --> 00:23:04,710
+ And that's on purpose.
+
+241
+00:23:05,340 --> 00:23:11,540
+ Hopefully, by tomorrow or after tomorrow, maybe, we'll talk about when to put things inside
+
+242
+00:23:11,540 --> 00:23:14,440
+ a document and when to just point to them.
+
+243
+00:23:15,050 --> 00:23:23,500
+ For now, one order equals one document with its items, of course, inside it.
+
+244
+00:23:23,500 --> 00:23:31,960
+ So our tools this week, well, they're going to be three tools.
+
+245
+00:23:33,140 --> 00:23:38,610
+ The MongoDB server is the database itself, unlike SQLite, which has just one file.
+
+246
+00:23:39,450 --> 00:23:42,810
+ MongoDB is a program that runs in the background all the time.
+
+247
+00:23:43,400 --> 00:23:44,940
+ So think of it as a kitchen.
+
+248
+00:23:46,130 --> 00:23:46,230
+ Okay.
+
+249
+00:23:46,850 --> 00:23:55,700
+ PyMongo is how Python talks to MongoDB, like SQLite did for SQLite 3, did for SQLite.
+
+250
+00:23:56,260 --> 00:24:01,010
+ And we write and run everything in VS code.
+
+251
+00:24:01,010 --> 00:24:09,630
+ And the server lives at this address.
+
+252
+00:24:10,630 --> 00:24:14,770
+ So MongoDB localhost 27, this can be different.
+
+253
+00:24:15,060 --> 00:24:16,660
+ We'll see.
+
+254
+00:24:17,970 --> 00:24:23,840
+ But localhost here means this computer, my local computer.
+
+255
+00:24:25,320 --> 00:24:27,100
+ So let me explain the kitchen picture here.
+
+256
+00:24:27,520 --> 00:24:29,800
+ The MongoDB server is the kitchen.
+
+257
+00:24:30,720 --> 00:24:41,640
+ It does the real work, it stores and finds the data, and it runs in the background, even when you don't see it.
+
+258
+00:24:42,510 --> 00:24:46,510
+ You never talk to the kitchen directly.
+
+259
+00:24:47,810 --> 00:24:54,350
+ PyMongo is like the waiter, and your Python program gives orders to the waiter.
+
+260
+00:24:55,070 --> 00:24:59,250
+ The waiter takes them to the kitchen and brings back the answer.
+
+261
+00:24:59,250 --> 00:25:05,500
+ And the address here, MongoDB localhost, is where the kitchen is.
+
+262
+00:25:06,230 --> 00:25:08,090
+ So localhost means this computer.
+
+263
+00:25:08,450 --> 00:25:14,480
+ And this 27017 is just the door number, which is called the port.
+
+264
+00:25:16,740 --> 00:25:23,080
+ So every program that wants to talk to MongoDB on your computer must use this address.
+
+265
+00:25:27,970 --> 00:25:29,990
+ PyMongo in four lines.
+
+266
+00:25:32,280 --> 00:25:37,970
+ Well, this is all you need to talk to MongoDB from Python.
+
+267
+00:25:38,840 --> 00:25:49,350
+ Basically, import Mongo client, connect to the server, pick the database, in this case, web shop, then ask it a question.
+
+268
+00:25:50,670 --> 00:25:59,030
+ Find one gives us one document, and then basically we print it.
+
+269
+00:25:59,870 --> 00:26:00,850
+ What comes back?
+
+270
+00:26:00,930 --> 00:26:02,070
+ A normal Python dictionary.
+
+271
+00:26:02,330 --> 00:26:04,530
+ No cursor, no tuples, just a dictionary.
+
+272
+00:26:06,110 --> 00:26:10,650
+ So if you go through these slowly here.
+
+273
+00:26:10,790 --> 00:26:15,540
+ So line one, imports Mongo client.
+
+274
+00:26:18,010 --> 00:26:22,390
+ Line two, connects to the server at our address, as you can see.
+
+275
+00:26:25,610 --> 00:26:31,030
+ And nothing is downloaded yet.
+
+276
+00:26:31,640 --> 00:26:36,490
+ Just like a dialing, basically just like a dialing a phone number.
+
+277
+00:26:37,810 --> 00:26:45,480
+ Line three here, picks the web shop database with square brackets here.
+
+278
+00:26:49,590 --> 00:26:55,370
+ The same way you take something out of a dictionary.
+
+279
+00:26:55,980 --> 00:27:01,680
+ And line four, ask the product collection for one document.
+
+280
+00:27:02,600 --> 00:27:04,730
+ And line five, prints it, basically.
+
+281
+00:27:10,630 --> 00:27:14,650
+ But notice this db.products here.
+
+282
+00:27:15,970 --> 00:27:23,370
+ You can also write db square brackets products.
+
+283
+00:27:23,610 --> 00:27:24,510
+ Both work, actually.
+
+284
+00:27:25,840 --> 00:27:29,940
+ And the answer is plain Python dictionary.
+
+285
+00:27:30,570 --> 00:27:33,510
+ So everything you know about dictionaries works.
+
+286
+00:27:34,070 --> 00:27:42,390
+ Square brackets to get a value, dot get for a safe lookup, or a for loop over the keys.
+
+287
+00:27:43,430 --> 00:27:45,130
+ That's the beauty of PyMongo.
+
+288
+00:27:45,270 --> 00:27:47,150
+ It feels just like normal Python.
+
+289
+00:27:47,810 --> 00:27:52,790
+ Find and insert five commands for today.
+
+290
+00:27:52,970 --> 00:27:58,090
+ Find one gives one document, or none if nothing matches.
+
+291
+00:28:02,860 --> 00:28:09,710
+ Find, only find, gives many documents, and we loop over them with a for loop, for example.
+
+292
+00:28:18,150 --> 00:28:21,490
+ Insert one adds one document.
+
+293
+00:28:21,920 --> 00:28:23,920
+ Insert many adds a list of documents.
+
+294
+00:28:25,200 --> 00:28:27,980
+ And notice here, there is no create table.
+
+295
+00:28:28,670 --> 00:28:36,420
+ If the collection doesn't exist, MongoDB creates it when you insert the first document automatically.
+
+296
+00:28:37,120 --> 00:28:43,360
+ So if you compare that to SQL, find one is like select with limit one.
+
+297
+00:28:43,360 --> 00:29:02,260
+ Find is select, yeah, find would be, only find, so only this.
+
+298
+00:29:03,170 --> 00:29:07,760
+ Find would be select star with a where.
+
+299
+00:29:12,240 --> 00:29:23,820
+ And count documents would be, let me think, that would be select count star.
+
+300
+00:29:29,080 --> 00:29:34,390
+ And insert one, and insert many are insert into in SQL.
+
+301
+00:29:35,570 --> 00:29:43,120
+ So what's missing, basically, compared to SQL, well, yeah, create table.
+
+302
+00:29:43,280 --> 00:29:51,850
+ In MongoDB, you can insert into a collection that doesn't exist yet, and it will create it there on the spot.
+
+303
+00:29:51,850 --> 00:30:03,180
+ And that's handy, but it also means a typo in the collection name, like db.customers, silently creates a new one, an empty collection, instead of giving an error.
+
+304
+00:30:03,560 --> 00:30:05,560
+ So that could be a problem.
+
+305
+00:30:08,920 --> 00:30:16,050
+ And one more thing about find, it doesn't give you the document straight away.
+
+306
+00:30:16,380 --> 00:30:18,000
+ It gives you a cursor.
+
+307
+00:30:18,670 --> 00:30:23,600
+ The same idea is in SQLite 3, and you loop over it.
+
+308
+00:30:24,950 --> 00:30:29,380
+ We will see exactly what that looks like, hopefully, in the code along.
+
+309
+00:30:30,210 --> 00:30:36,950
+ But how do we say where with a dictionary?
+
+310
+00:30:37,770 --> 00:30:41,910
+ An empty dictionary means everything.
+
+311
+00:30:43,080 --> 00:30:56,260
+ City, Uppsala, I mean, city colon Uppsala means where city is Uppsala.
+
+312
+00:30:57,180 --> 00:30:59,640
+ Yeah, you have to think in a different way here.
+
+313
+00:31:03,280 --> 00:31:10,060
+ And if you put two fields in a dictionary, both must match like and.
+
+314
+00:31:17,110 --> 00:31:22,260
+ Nowhere.
+
+315
+00:31:25,900 --> 00:31:27,290
+ And here we have the and.
+
+316
+00:31:33,360 --> 00:31:42,100
+ Look into that as well.
+
+317
+00:31:42,560 --> 00:31:45,820
+ But let's sum up this theory before we start any coding.
+
+318
+00:31:46,980 --> 00:31:49,440
+ MongoDB stores documents in a collection.
+
+319
+00:31:50,540 --> 00:31:55,120
+ Document is like a Python dictionary, with lists and objects inside it.
+
+320
+00:31:56,270 --> 00:31:58,190
+ Every document has a unique ID.
+
+321
+00:31:59,370 --> 00:32:03,510
+ PyMongo will talk to MongoDB from Python.
+
+322
+00:32:04,530 --> 00:32:05,130
+ Filters.
+
+323
+00:32:06,170 --> 00:32:07,710
+ Filter are dictionaries.
+
+324
+00:32:08,910 --> 00:32:10,230
+ Example, city colon Uppsala.
+
+325
+00:32:12,380 --> 00:32:19,150
+ These are the points to keep in your head when we code along this week.
+
+326
+00:32:19,150 --> 00:32:27,290
+ I think it's easiest to just start coding.
+
+327
+00:32:29,000 --> 00:32:31,780
+ But before we do that, I need to actually run to the toilet.
+
+328
+00:32:32,000 --> 00:32:33,850
+ So let's take a break.
+
+329
+00:32:34,340 --> 00:32:37,720
+ Take a 10 minutes break and we'll come back.
+
+330
+00:32:39,230 --> 00:32:39,630
+ Code along.
+
+331
+00:32:40,760 --> 00:32:44,570
+ If you don't, if you have any questions, of course, you can ask them as well.
+
+332
+00:32:45,420 --> 00:32:46,530
+ You can take them now.
+
+333
+00:33:04,710 --> 00:33:05,690
+ Okay, 10 minutes break.
+
+334
+00:39:47,020 --> 00:41:27,900
+ The guy's back.
+
+335
+00:41:36,350 --> 00:41:36,890
+ All right.
+
+336
+00:41:37,050 --> 00:41:53,320
+ Give me a second here.
+
+337
+00:42:20,570 --> 00:42:24,440
+ Is it not sharing?
+
+338
+00:42:29,470 --> 00:42:34,580
+ There we go.
+
+339
+00:42:34,680 --> 00:42:35,400
+ Do you see the screen?
+
+340
+00:42:39,480 --> 00:42:40,280
+ All right.
+
+341
+00:42:40,340 --> 00:42:44,800
+ So what you see in front of you is a program called MongoDB Compass.
+
+342
+00:42:45,420 --> 00:42:48,990
+ And I'm actually going to show you where you can download this.
+
+343
+00:42:50,160 --> 00:42:55,220
+ And I'll go on.
+
+344
+00:42:55,300 --> 00:42:56,340
+ Just give me a second here.
+
+345
+00:42:57,240 --> 00:42:58,660
+ I'll give you a direct link as well.
+
+346
+00:43:19,510 --> 00:43:28,950
+ It should be, let me see, MongoDB Compass.
+
+347
+00:43:32,800 --> 00:43:36,430
+ Okay.
+
+348
+00:43:36,510 --> 00:43:41,910
+ So this works for Mac, Linux, Windows, whatever operating system you're using.
+
+349
+00:43:42,480 --> 00:43:43,150
+ And it's free.
+
+350
+00:43:43,270 --> 00:43:44,250
+ You can download it here.
+
+351
+00:43:51,830 --> 00:43:51,990
+ Yep.
+
+352
+00:43:51,990 --> 00:43:54,930
+ You can use it in the shell if you want.
+
+353
+00:43:55,250 --> 00:43:56,570
+ But I'm not going to do that.
+
+354
+00:43:56,850 --> 00:43:57,850
+ So basically the terminal.
+
+355
+00:43:58,650 --> 00:43:59,650
+ You don't need Atlas.
+
+356
+00:44:00,450 --> 00:44:01,430
+ So you can skip that.
+
+357
+00:44:02,620 --> 00:44:03,820
+ And MongoDB Compass.
+
+358
+00:44:04,140 --> 00:44:07,360
+ This is their GUI, basically.
+
+359
+00:44:08,610 --> 00:44:09,250
+ You can just download.
+
+360
+00:44:09,370 --> 00:44:10,750
+ Choose the operating system here.
+
+361
+00:44:11,450 --> 00:44:12,970
+ Whatever operating system you're using.
+
+362
+00:44:13,430 --> 00:44:15,250
+ Click download and just install it.
+
+363
+00:44:15,330 --> 00:44:17,070
+ So it's not harder than that, actually.
+
+364
+00:44:18,030 --> 00:44:21,950
+ I'll give you this link in the chat.
+
+365
+00:44:21,950 --> 00:44:25,460
+ And then when you open it, it's going to look something like this.
+
+366
+00:44:26,530 --> 00:44:27,950
+ This is not the newest version.
+
+367
+00:44:28,270 --> 00:44:32,170
+ I have a little older version, but it should look quite the same.
+
+368
+00:44:37,990 --> 00:44:39,800
+ And there you have the link.
+
+369
+00:44:42,560 --> 00:44:51,860
+ So the first thing we need to do here is actually create a new, it says add a new connection here.
+
+370
+00:44:51,920 --> 00:44:53,100
+ And we can click on that.
+
+371
+00:44:53,930 --> 00:44:58,870
+ And here it says the URI is, well, we have already spoke about.
+
+372
+00:44:58,950 --> 00:45:01,310
+ This is localhost, basically mean this computer.
+
+373
+00:45:02,210 --> 00:45:03,930
+ We can just click here, save and connect.
+
+374
+00:45:06,790 --> 00:45:08,090
+ End of life of MongoDB.
+
+375
+00:45:08,210 --> 00:45:08,470
+ What?
+
+376
+00:45:08,690 --> 00:45:13,430
+ Servers and localhost appears to be running a version MongoDB is no longer supported.
+
+377
+00:45:13,750 --> 00:45:14,530
+ Server version.
+
+378
+00:45:15,600 --> 00:45:18,340
+ Now you can consider upgrading to get the latest features.
+
+379
+00:45:18,600 --> 00:45:18,920
+ Okay.
+
+380
+00:45:20,240 --> 00:45:22,220
+ I don't need that now.
+
+381
+00:45:22,480 --> 00:45:22,750
+ Okay.
+
+382
+00:45:22,830 --> 00:45:24,900
+ So we have our database here.
+
+383
+00:45:25,230 --> 00:45:26,420
+ We have some stuff in it.
+
+384
+00:45:26,790 --> 00:45:28,390
+ Nothing in it right now, actually.
+
+385
+00:45:28,470 --> 00:45:30,370
+ Some config files, some admin stuff.
+
+386
+00:45:30,370 --> 00:45:32,840
+ We haven't talked about this.
+
+387
+00:45:32,980 --> 00:45:33,980
+ Okay, this is students.
+
+388
+00:45:34,380 --> 00:45:36,200
+ Okay, this is old stuff.
+
+389
+00:45:38,110 --> 00:45:39,350
+ Ah, this is some old stuff.
+
+390
+00:45:39,410 --> 00:45:40,770
+ Maybe we can delete that.
+
+391
+00:45:44,830 --> 00:45:45,170
+ Cool.
+
+392
+00:45:46,140 --> 00:45:46,580
+ Drop.
+
+393
+00:45:48,080 --> 00:45:49,700
+ And then we have another one.
+
+394
+00:45:49,920 --> 00:45:50,320
+ Library.
+
+395
+00:45:50,490 --> 00:45:51,770
+ We can drop this as well.
+
+396
+00:45:53,450 --> 00:45:53,810
+ Library.
+
+397
+00:45:58,210 --> 00:45:58,690
+ It's this.
+
+398
+00:45:59,960 --> 00:46:01,950
+ Some testing stuff here.
+
+399
+00:46:03,010 --> 00:46:06,520
+ We can actually remove it as well.
+
+400
+00:46:06,720 --> 00:46:08,820
+ So yours should look like this.
+
+401
+00:46:08,960 --> 00:46:10,300
+ So it's admin, config, and local.
+
+402
+00:46:10,730 --> 00:46:14,160
+ Nothing in it that we actually need right now.
+
+403
+00:46:15,040 --> 00:46:16,490
+ I'll explain what this is later.
+
+404
+00:46:17,190 --> 00:46:20,670
+ So that's the only thing we need to do.
+
+405
+00:46:20,790 --> 00:46:22,150
+ Just start the server here.
+
+406
+00:46:26,080 --> 00:46:28,240
+ Let's click refresh here.
+
+407
+00:46:29,400 --> 00:46:31,610
+ And show connection info.
+
+408
+00:46:32,050 --> 00:46:33,570
+ And that is the info we need.
+
+409
+00:46:33,750 --> 00:46:34,810
+ The host is that.
+
+410
+00:46:35,160 --> 00:46:36,150
+ Only thing we need.
+
+411
+00:46:37,330 --> 00:46:37,800
+ Cool.
+
+412
+00:46:37,920 --> 00:46:38,980
+ Now we can leave this.
+
+413
+00:46:39,490 --> 00:46:40,500
+ Don't need more than that.
+
+414
+00:46:40,580 --> 00:46:42,560
+ We can actually do this from the terminal as well.
+
+415
+00:46:42,980 --> 00:46:45,020
+ I think it's easier just to do it from here.
+
+416
+00:46:45,850 --> 00:46:47,820
+ Now we can open up Visual Studio Code.
+
+417
+00:46:48,340 --> 00:46:49,020
+ Let's start coding.
+
+418
+00:46:49,020 --> 00:46:51,540
+ So I've already created a folder called NoSQL here.
+
+419
+00:46:52,500 --> 00:46:54,540
+ I will create one file.
+
+420
+00:46:57,360 --> 00:47:04,160
+ And we can call this webshop again, .py.
+
+421
+00:47:06,710 --> 00:47:07,460
+ Okay.
+
+422
+00:47:07,840 --> 00:47:09,400
+ And now we need to write some code.
+
+423
+00:47:09,800 --> 00:47:12,450
+ So we need to import Mongo client.
+
+424
+00:47:12,770 --> 00:47:13,290
+ So from.
+
+425
+00:47:13,870 --> 00:47:14,170
+ And yeah.
+
+426
+00:47:14,470 --> 00:47:17,090
+ You actually need to do a couple of pip installs.
+
+427
+00:47:18,020 --> 00:47:21,020
+ I'll give you the exact commands in a second.
+
+428
+00:47:23,170 --> 00:47:27,010
+ Install Mongo.
+
+429
+00:47:27,010 --> 00:47:30,480
+ I think it's as easy as pip install pymongo.
+
+430
+00:47:32,550 --> 00:47:44,390
+ But I'll give you a link to it directly in the chat.
+
+431
+00:47:44,390 --> 00:47:52,360
+ And while we're here, let's open up the terminal.
+
+432
+00:47:54,600 --> 00:47:56,830
+ View terminal.
+
+433
+00:47:56,970 --> 00:47:57,950
+ Control plus O.
+
+434
+00:47:58,150 --> 00:47:59,110
+ That's really strange.
+
+435
+00:48:02,220 --> 00:48:02,940
+ And we can do.
+
+436
+00:48:03,740 --> 00:48:04,930
+ I think it's just.
+
+437
+00:48:05,170 --> 00:48:08,570
+ It's going to tell me that I already have installed it.
+
+438
+00:48:08,650 --> 00:48:11,500
+ Pip install pymongo.
+
+439
+00:48:12,450 --> 00:48:16,770
+ Not show again.
+
+440
+00:48:17,850 --> 00:48:19,270
+ Requirement already satisfied.
+
+441
+00:48:19,570 --> 00:48:20,050
+ So yeah.
+
+442
+00:48:20,190 --> 00:48:22,030
+ We have this already installed.
+
+443
+00:48:22,470 --> 00:48:24,750
+ And now it wants me to update and stuff like that.
+
+444
+00:48:24,770 --> 00:48:25,770
+ But I'm not going to do that.
+
+445
+00:48:25,810 --> 00:48:27,070
+ I'm going to clear the screen here.
+
+446
+00:48:27,770 --> 00:48:31,250
+ If you want to double check if this is installed, you can do pip list.
+
+447
+00:48:32,460 --> 00:48:35,660
+ And it's going to list everything I have installed here.
+
+448
+00:48:36,540 --> 00:48:39,590
+ So we should have pymongo installed somewhere.
+
+449
+00:48:41,800 --> 00:48:43,180
+ Py, py, py, py.
+
+450
+00:48:43,790 --> 00:48:44,720
+ Where is it?
+
+451
+00:48:44,980 --> 00:48:45,560
+ There it is.
+
+452
+00:48:45,640 --> 00:48:48,630
+ Pymongo 4.15.3.
+
+453
+00:48:50,590 --> 00:48:53,650
+ So that's how you double check if it's installed.
+
+454
+00:48:54,530 --> 00:48:55,490
+ Clear the screen again.
+
+455
+00:48:57,160 --> 00:48:58,720
+ And bring this down.
+
+456
+00:48:58,920 --> 00:49:01,270
+ And maybe remove this agent part here.
+
+457
+00:49:01,920 --> 00:49:03,210
+ So we see everything.
+
+458
+00:49:03,390 --> 00:49:03,910
+ There we go.
+
+459
+00:49:04,730 --> 00:49:06,510
+ Maybe we can collapse this as well.
+
+460
+00:49:06,730 --> 00:49:06,870
+ Yeah.
+
+461
+00:49:07,050 --> 00:49:07,230
+ Yeah.
+
+462
+00:49:07,370 --> 00:49:07,630
+ Perfect.
+
+463
+00:49:10,850 --> 00:49:11,550
+ All right.
+
+464
+00:49:12,040 --> 00:49:21,030
+ So the first thing we need to do here is basically import pymongo.
+
+465
+00:49:21,190 --> 00:49:30,650
+ So from pymongo import mongo client.
+
+466
+00:49:33,080 --> 00:49:37,530
+ And then we say client equals mongo client.
+
+467
+00:49:39,780 --> 00:49:48,470
+ And now in quotes, we need to give it mongo, the address basically, mongodb, colon, slash,
+
+468
+00:49:48,470 --> 00:49:59,240
+ slash, local, host, colon, and the port number, 27, 0, 17.
+
+469
+00:49:59,620 --> 00:50:01,320
+ Let me just double check that.
+
+470
+00:50:03,270 --> 00:50:07,240
+ That is correct.
+
+471
+00:50:07,880 --> 00:50:08,360
+ Perfect.
+
+472
+00:50:10,110 --> 00:50:11,870
+ All right.
+
+473
+00:50:15,170 --> 00:50:23,260
+ Then we can say d, so db equals client.
+
+474
+00:50:24,650 --> 00:50:33,070
+ And in here with brackets, square brackets, we say web shop.
+
+475
+00:50:33,250 --> 00:50:37,280
+ Should be good enough.
+
+476
+00:50:51,430 --> 00:51:14,940
+ So maybe we can see, maybe I can just type print client.list for database names.
+
+477
+00:51:16,390 --> 00:51:18,050
+ See what that gives us.
+
+478
+00:51:19,280 --> 00:51:25,310
+ And to start this file would be Python web shop.
+
+479
+00:51:26,190 --> 00:51:26,430
+ All right.
+
+480
+00:51:26,530 --> 00:51:28,370
+ And there we go.
+
+481
+00:51:28,510 --> 00:51:30,890
+ Now we can confirm that we have connected.
+
+482
+00:51:31,030 --> 00:51:35,500
+ So we have admin config local in the database, which we have here.
+
+483
+00:51:35,760 --> 00:51:37,710
+ So we are actually connected.
+
+484
+00:51:38,380 --> 00:51:40,080
+ That's how we can try it out.
+
+485
+00:51:40,080 --> 00:52:16,730
+ What if we say, instead of printing that, we can say, for example, just give me a second here.
+
+486
+00:52:17,210 --> 00:52:18,320
+ I'm going to try something.
+
+487
+00:52:42,510 --> 00:52:45,400
+ Okay.
+
+488
+00:52:46,560 --> 00:52:52,300
+ Maybe just say one thing here.
+
+489
+00:52:53,400 --> 00:52:54,780
+ Give me a second, guys.
+
+490
+00:52:55,600 --> 00:52:56,000
+ Oops.
+
+491
+00:52:56,260 --> 00:52:58,090
+ That's the old one.
+
+492
+00:52:58,210 --> 00:52:58,330
+ Okay.
+
+493
+00:52:58,350 --> 00:52:59,150
+ That's the SQL.
+
+494
+00:52:59,930 --> 00:53:14,770
+ I'm planning to already made a big list here.
+
+495
+00:53:15,070 --> 00:53:19,480
+ So I'm going to take that in here and do it this way instead.
+
+496
+00:53:21,280 --> 00:53:24,290
+ So I'm going to remove all of this and paste this in.
+
+497
+00:53:25,150 --> 00:53:26,790
+ And you see it's a long, long list.
+
+498
+00:53:28,150 --> 00:53:29,590
+ Customers and stuff like that.
+
+499
+00:53:29,810 --> 00:53:30,910
+ I'm going to remove that.
+
+500
+00:53:31,050 --> 00:53:33,740
+ That's just dummy data here.
+
+501
+00:53:35,620 --> 00:53:35,780
+ Okay.
+
+502
+00:53:35,820 --> 00:53:40,340
+ Client, web shop, collection called customers.
+
+503
+00:53:40,740 --> 00:53:43,860
+ And this is basically the same customers we had in our SQL.
+
+504
+00:53:44,100 --> 00:53:45,240
+ And this is products.
+
+505
+00:53:45,840 --> 00:53:47,080
+ This is orders.
+
+506
+00:53:48,030 --> 00:53:50,280
+ And then we do some loops here.
+
+507
+00:53:52,310 --> 00:53:57,240
+ Maybe let's just run this and see if it will give us.
+
+508
+00:54:00,980 --> 00:54:10,260
+ I think this might work.
+
+509
+00:54:11,230 --> 00:54:13,410
+ And we can go to compax.
+
+510
+00:54:14,710 --> 00:54:18,280
+ Hopefully, just refresh here.
+
+511
+00:54:18,830 --> 00:54:20,130
+ And yeah, we see another one.
+
+512
+00:54:20,520 --> 00:54:22,830
+ So we have web shop, customers.
+
+513
+00:54:23,390 --> 00:54:24,550
+ And here's our customers.
+
+514
+00:54:25,360 --> 00:54:26,970
+ Here's our orders.
+
+515
+00:54:28,500 --> 00:54:29,470
+ And the product.
+
+516
+00:54:29,910 --> 00:54:30,790
+ So we filled it in.
+
+517
+00:54:33,240 --> 00:54:33,860
+ Perfect.
+
+518
+00:54:54,320 --> 00:55:03,530
+ Now, you can basically see here.
+
+519
+00:55:05,310 --> 00:55:07,790
+ Well, what's missing here is create table.
+
+520
+00:55:08,170 --> 00:55:11,010
+ There is no create table or anything like that.
+
+521
+00:55:12,440 --> 00:55:13,580
+ We run this.
+
+522
+00:55:17,250 --> 00:55:26,990
+ Whenever it's messy, you can rerun this.
+
+523
+00:55:27,090 --> 00:55:30,000
+ And I'm going to share this with you in a second.
+
+524
+00:55:30,680 --> 00:55:45,410
+ But I was thinking maybe we can actually create a new file.
+
+525
+00:55:45,410 --> 00:55:45,770
+ Okay.
+
+526
+00:55:46,090 --> 00:55:47,490
+ And work on that file.
+
+527
+00:55:47,610 --> 00:55:53,150
+ So we create a new file and call it here.
+
+528
+00:55:53,520 --> 00:55:54,050
+ That's pi.
+
+529
+00:55:55,320 --> 00:56:00,040
+ And in here, we can create all the stuff I did earlier.
+
+530
+00:56:00,160 --> 00:56:07,510
+ So from pi-mongo, import, mongo-client.
+
+531
+00:56:08,830 --> 00:56:13,790
+ And then we had client equals mongo-client.
+
+532
+00:56:14,430 --> 00:56:16,670
+ And then we need to give it the address.
+
+533
+00:56:16,670 --> 00:56:28,260
+ mongo-db localhost, localhost, poland 27.017.
+
+534
+00:56:29,630 --> 00:56:39,320
+ And now we can do db equals client web shop.
+
+535
+00:56:40,530 --> 00:56:40,730
+ Okay.
+
+536
+00:56:44,230 --> 00:56:52,350
+ Now if we print, for example, earlier we printed the client, we listed the database names.
+
+537
+00:56:52,650 --> 00:56:57,150
+ So we print, you can do that again, just for fun.
+
+538
+00:56:58,310 --> 00:57:02,800
+ Client list database names.
+
+539
+00:57:02,940 --> 00:57:03,160
+ Yes.
+
+540
+00:57:03,870 --> 00:57:06,030
+ Don't forget that.
+
+541
+00:57:06,860 --> 00:57:13,780
+ And now if I run it, so this would be python day one pi.
+
+542
+00:57:14,450 --> 00:57:16,550
+ And we can see we have our web shop there.
+
+543
+00:57:16,550 --> 00:57:18,490
+ Earlier we only had these three.
+
+544
+00:57:20,480 --> 00:57:20,640
+ Okay.
+
+545
+00:57:26,180 --> 00:57:32,470
+ What if we print, let me see, maybe we can print something else here.
+
+546
+00:57:33,260 --> 00:57:50,880
+ We can print, print db.list collection names.
+
+547
+00:57:53,550 --> 00:57:56,570
+ Clear this.
+
+548
+00:57:57,100 --> 00:57:57,280
+ Oops.
+
+549
+00:57:58,190 --> 00:58:02,620
+ Clear and run that file again.
+
+550
+00:58:02,620 --> 00:58:09,100
+ And we can see our collection names are products, customer and orders.
+
+551
+00:58:09,620 --> 00:58:18,260
+ So we can either use, of course, mongo, sorry, compass to see this, or we can just print it here directly in Python.
+
+552
+00:58:18,400 --> 00:58:19,600
+ And that's what's cool with it.
+
+553
+00:58:21,380 --> 00:58:21,800
+ Okay.
+
+554
+00:58:21,860 --> 00:58:26,180
+ Let's, let's do something else.
+
+555
+00:58:26,420 --> 00:58:32,380
+ Let's try, for example, find one that we had talked about earlier.
+
+556
+00:58:34,350 --> 00:58:46,200
+ So we could do product equals db.products, product, there we go.
+
+557
+00:58:47,700 --> 00:58:50,870
+ Find underscore one.
+
+558
+00:58:52,220 --> 00:58:58,560
+ And then we can just print product.
+
+559
+00:58:59,500 --> 00:59:02,890
+ Let's run this, see what result we get.
+
+560
+00:59:04,330 --> 00:59:06,310
+ And this is a little bigger result.
+
+561
+00:59:07,250 --> 00:59:17,150
+ And we can see that we have a product.
+
+562
+00:59:17,810 --> 00:59:19,130
+ It's not harder than that.
+
+563
+00:59:19,210 --> 00:59:20,230
+ But we find it one.
+
+564
+00:59:20,610 --> 00:59:20,980
+ Okay.
+
+565
+00:59:22,030 --> 00:59:31,420
+ Let's try something else here.
+
+566
+00:59:33,130 --> 00:59:44,850
+ What if I say products, sort canaries.
+
+567
+00:59:45,610 --> 00:59:47,210
+ I don't know if this still works.
+
+568
+00:59:47,410 --> 00:59:48,420
+ It used to work.
+
+569
+00:59:48,560 --> 00:59:48,960
+ False.
+
+570
+00:59:51,630 --> 00:59:52,950
+ And let's put a P in there.
+
+571
+00:59:57,080 --> 00:59:57,480
+ Oh, sorry.
+
+572
+00:59:57,480 --> 01:00:02,360
+ I'm just trying some stuff here in real time.
+
+573
+01:00:03,590 --> 01:00:04,370
+ Yeah, it's not working.
+
+574
+01:00:04,650 --> 01:00:04,870
+ Okay.
+
+575
+01:00:05,380 --> 01:00:07,000
+ Let's just forget that.
+
+576
+01:00:11,060 --> 01:00:15,280
+ Okay.
+
+577
+01:00:15,360 --> 01:00:16,940
+ Let's try another one then.
+
+578
+01:00:17,660 --> 01:00:22,180
+ Let's, for example, how many documents are in each collection.
+
+579
+01:00:23,720 --> 01:00:24,040
+ Okay.
+
+580
+01:00:24,100 --> 01:00:30,960
+ So we can loop over the collection names and basically count each one.
+
+581
+01:00:30,960 --> 01:00:33,450
+ Maybe we can do that.
+
+582
+01:00:33,450 --> 01:00:36,090
+ So we can loop over them and count to them.
+
+583
+01:00:38,430 --> 01:00:46,450
+ So what we can do is I'll comment that out.
+
+584
+01:00:47,190 --> 01:00:56,460
+ And I'll say for name in db.list collection names.
+
+585
+01:00:56,460 --> 01:00:59,720
+ So that's our loop.
+
+586
+01:00:59,720 --> 01:01:11,400
+ And we want to print name and db name in brackets.
+
+587
+01:01:11,400 --> 01:01:18,720
+ And then we say count documents.
+
+588
+01:01:18,720 --> 01:01:21,300
+ So you see, it's already there in the library.
+
+589
+01:01:22,320 --> 01:01:23,650
+ Just press dot there.
+
+590
+01:01:23,870 --> 01:01:24,010
+ Okay.
+
+591
+01:01:24,130 --> 01:01:25,960
+ So I clear this screen here.
+
+592
+01:01:26,120 --> 01:01:26,360
+ Clear.
+
+593
+01:01:27,420 --> 01:01:28,890
+ And let's run this.
+
+594
+01:01:32,060 --> 01:01:33,500
+ And what happened here?
+
+595
+01:01:33,840 --> 01:01:35,150
+ We're missing something.
+
+596
+01:01:35,990 --> 01:01:37,050
+ What are we missing?
+
+597
+01:01:37,290 --> 01:01:39,190
+ Oh, count documents.
+
+598
+01:01:39,470 --> 01:01:39,610
+ Yeah.
+
+599
+01:01:39,610 --> 01:01:42,070
+ We need to put that in there.
+
+600
+01:01:42,760 --> 01:01:44,850
+ So it knows.
+
+601
+01:01:48,140 --> 01:01:50,130
+ There we go.
+
+602
+01:01:50,610 --> 01:01:54,410
+ So we have 12 products, 10 customers, and 15 orders.
+
+603
+01:01:57,370 --> 01:02:04,840
+ So that's how we can count our, basically, collections.
+
+604
+01:02:05,570 --> 01:02:11,950
+ Let's make it even more interesting.
+
+605
+01:02:13,870 --> 01:02:15,100
+ Let's do another loop.
+
+606
+01:02:15,100 --> 01:02:30,840
+ So for customer in db.customers.
+
+607
+01:02:32,370 --> 01:02:33,070
+ Find.
+
+608
+01:02:41,670 --> 01:02:45,420
+ Yeah.
+
+609
+01:02:45,640 --> 01:02:46,360
+ Find.
+
+610
+01:02:47,490 --> 01:02:49,410
+ Let's just do a print here.
+
+611
+01:02:49,760 --> 01:02:51,750
+ And then we say customer.
+
+612
+01:02:52,130 --> 01:02:55,410
+ First name.
+
+613
+01:02:55,780 --> 01:02:58,250
+ First, let's go name.
+
+614
+01:02:59,400 --> 01:03:04,980
+ We can also list the customer keys.
+
+615
+01:03:09,980 --> 01:03:12,970
+ Customer dot keys.
+
+616
+01:03:17,800 --> 01:03:22,560
+ Okay.
+
+617
+01:03:22,620 --> 01:03:23,280
+ Let's run that.
+
+618
+01:03:25,160 --> 01:03:26,570
+ Okay.
+
+619
+01:03:28,010 --> 01:03:38,630
+ So each customer, we print the name and the list of fields that customer has.
+
+620
+01:03:38,630 --> 01:03:55,310
+ So if you look closely here, Eric, even Maria, also Fatima, have one phone field.
+
+621
+01:03:58,140 --> 01:03:59,760
+ There and there and there.
+
+622
+01:04:00,900 --> 01:04:07,610
+ Some have newsletters and some don't.
+
+623
+01:04:08,200 --> 01:04:09,440
+ And Lucas here.
+
+624
+01:04:09,540 --> 01:04:10,420
+ Let me see Lucas.
+
+625
+01:04:11,920 --> 01:04:14,650
+ He has no city at all.
+
+626
+01:04:16,170 --> 01:04:20,430
+ So in SQL, he had null in the city, if you remember that.
+
+627
+01:04:21,790 --> 01:04:24,510
+ But here, the field just isn't there.
+
+628
+01:04:25,170 --> 01:04:28,170
+ Same collection, different fields, basically.
+
+629
+01:04:32,800 --> 01:04:34,850
+ Okay.
+
+630
+01:04:34,850 --> 01:04:37,700
+ Maybe let's try to insert something.
+
+631
+01:04:39,440 --> 01:04:39,790
+ Okay.
+
+632
+01:04:40,750 --> 01:04:42,880
+ So I'll comment this out for now.
+
+633
+01:04:43,290 --> 01:04:45,600
+ And I clear the screen here as well.
+
+634
+01:04:46,880 --> 01:04:49,080
+ And let me see here, what we have here.
+
+635
+01:04:50,880 --> 01:04:53,760
+ We can leave that as is.
+
+636
+01:04:54,180 --> 01:05:10,900
+ So what I'm going to do is maybe we can do, yeah, from p print, import, print.
+
+637
+01:05:11,960 --> 01:05:15,460
+ Yeah, that's, I think, how we can, let's try this.
+
+638
+01:05:16,800 --> 01:05:24,680
+ Let's say result equals db.products.
+
+639
+01:05:27,780 --> 01:05:29,640
+ Insert one.
+
+640
+01:05:29,800 --> 01:05:31,120
+ Yeah, we see we have insert many.
+
+641
+01:05:31,360 --> 01:05:31,900
+ Insert one.
+
+642
+01:05:32,380 --> 01:05:35,580
+ We have much other stuff as well in this library.
+
+643
+01:05:35,700 --> 01:05:36,880
+ But we will use insert one.
+
+644
+01:05:38,000 --> 01:05:40,620
+ And in here, we're going to make this a little bit interesting.
+
+645
+01:05:41,380 --> 01:05:44,660
+ In here, we're going to say name.
+
+646
+01:05:46,000 --> 01:05:47,540
+ We're going to insert one product.
+
+647
+01:05:47,660 --> 01:05:48,940
+ And what's the name from that product?
+
+648
+01:05:49,200 --> 01:05:52,160
+ We can say it's gloves.
+
+649
+01:05:53,980 --> 01:05:54,180
+ Okay.
+
+650
+01:05:55,240 --> 01:05:56,360
+ And what category?
+
+651
+01:06:01,220 --> 01:06:01,620
+ Category.
+
+652
+01:06:02,890 --> 01:06:05,970
+ And notice that I'm putting colons here.
+
+653
+01:06:06,090 --> 01:06:06,850
+ So it's a dictionary.
+
+654
+01:06:07,520 --> 01:06:08,280
+ So key and value.
+
+655
+01:06:10,830 --> 01:06:11,390
+ Accessories.
+
+656
+01:06:11,970 --> 01:06:13,600
+ Let's see, but just accessories here.
+
+657
+01:06:15,040 --> 01:06:17,420
+ I have so hard time to spell this.
+
+658
+01:06:17,920 --> 01:06:18,560
+ Accessories.
+
+659
+01:06:19,220 --> 01:06:19,800
+ There we go.
+
+660
+01:06:20,310 --> 01:06:21,370
+ Hopefully, that was correct.
+
+661
+01:06:24,280 --> 01:06:25,960
+ And don't forget the comma.
+
+662
+01:06:26,470 --> 01:06:27,890
+ We're going to put some more stuff.
+
+663
+01:06:28,250 --> 01:06:28,770
+ Price.
+
+664
+01:06:29,430 --> 01:06:30,220
+ Sorry.
+
+665
+01:06:31,400 --> 01:06:31,960
+ Price.
+
+666
+01:06:34,170 --> 01:06:36,430
+ Could be an int.
+
+667
+01:06:36,860 --> 01:06:37,630
+ 199.
+
+668
+01:06:38,920 --> 01:06:41,730
+ And we can also have another one called stock.
+
+669
+01:06:42,160 --> 01:06:42,810
+ Stock.
+
+670
+01:06:46,670 --> 01:06:47,190
+ 20.
+
+671
+01:06:48,370 --> 01:06:48,780
+ Okay.
+
+672
+01:06:50,700 --> 01:06:53,130
+ And here, now we can say print.
+
+673
+01:06:55,780 --> 01:06:56,350
+ Result.
+
+674
+01:07:02,000 --> 01:07:02,920
+ Inserted ID.
+
+675
+01:07:06,060 --> 01:07:07,480
+ Then we can also say p.
+
+676
+01:07:08,130 --> 01:07:08,490
+ Print.
+
+677
+01:07:10,630 --> 01:07:14,710
+ db.products.
+
+678
+01:07:14,710 --> 01:07:15,190
+ Product.
+
+679
+01:07:15,190 --> 01:07:19,070
+ Find 1.
+
+680
+01:07:19,070 --> 01:07:23,470
+ We want to find the one we actually created here.
+
+681
+01:07:23,650 --> 01:07:34,080
+ So we'll say name b.
+
+682
+01:07:35,760 --> 01:07:36,320
+ Gloves.
+
+683
+01:07:37,820 --> 01:07:40,750
+ And now I can think I can run this sort.
+
+684
+01:07:41,090 --> 01:07:43,210
+ Let's see.
+
+685
+01:07:46,020 --> 01:07:52,920
+ And I can say sort equals false.
+
+686
+01:07:54,990 --> 01:07:56,960
+ Let's run this.
+
+687
+01:08:04,080 --> 01:08:04,700
+ What did I do here?
+
+688
+01:08:04,780 --> 01:08:05,580
+ What did I miss?
+
+689
+01:08:06,920 --> 01:08:11,230
+ The print it is was double P.
+
+690
+01:08:11,230 --> 01:08:19,850
+ No, it's not complaining about that.
+
+691
+01:08:19,930 --> 01:08:20,610
+ It's complaining.
+
+692
+01:08:23,510 --> 01:08:24,190
+ Insert one.
+
+693
+01:08:24,670 --> 01:08:26,190
+ Ah, I'm missing.
+
+694
+01:08:26,410 --> 01:08:29,680
+ I'm missing these.
+
+695
+01:08:31,030 --> 01:08:32,810
+ Sorry.
+
+696
+01:08:38,170 --> 01:08:38,430
+ No.
+
+697
+01:08:40,420 --> 01:08:44,010
+ There we go.
+
+698
+01:08:45,150 --> 01:08:45,390
+ Okay.
+
+699
+01:08:46,410 --> 01:08:47,980
+ Can I ask you?
+
+700
+01:08:47,980 --> 01:08:51,300
+ What is this pprint doing?
+
+701
+01:08:52,080 --> 01:08:52,540
+ What is that?
+
+702
+01:08:54,290 --> 01:09:05,420
+ Pprint is basically, let's say this, stands for pretty print.
+
+703
+01:09:05,990 --> 01:09:07,270
+ It's built into Python.
+
+704
+01:09:08,850 --> 01:09:11,880
+ So you need to actually import it to get this.
+
+705
+01:09:13,850 --> 01:09:34,650
+ It basically prints big dictionaries and lists and it spreads those basically over several lines instead of one long line, which makes MongoDB documents much easier to read like we see it here.
+
+706
+01:09:35,100 --> 01:09:36,380
+ So it's pretty print.
+
+707
+01:09:38,810 --> 01:09:42,720
+ It's more complicated than that, actually.
+
+708
+01:09:46,850 --> 01:09:47,570
+ That's it.
+
+709
+01:09:47,770 --> 01:09:48,130
+ Thank you.
+
+710
+01:09:48,650 --> 01:09:49,190
+ You're welcome.
+
+711
+01:09:50,990 --> 01:09:58,010
+ But we can see here that we have this ID, object ID, because we didn't give it any ID.
+
+712
+01:09:58,070 --> 01:09:59,370
+ So it created one for us.
+
+713
+01:10:00,110 --> 01:10:02,070
+ And every object ID is unique.
+
+714
+01:10:02,070 --> 01:10:15,350
+ So if I had another one, which is called students, for example, that would be every student would be unique.
+
+715
+01:10:23,030 --> 01:10:25,190
+ Okay.
+
+716
+01:10:26,010 --> 01:10:31,890
+ Let's just say, okay, we have created one object.
+
+717
+01:10:34,160 --> 01:10:37,600
+ Let's just say I want to delete.
+
+718
+01:10:39,220 --> 01:10:41,400
+ Do I do that?
+
+719
+01:10:43,170 --> 01:10:57,210
+ So I will actually just, because we already have that object in the database stored now.
+
+720
+01:10:57,440 --> 01:10:58,900
+ So we should be able to delete it.
+
+721
+01:11:01,420 --> 01:11:05,800
+ So we could either continue working on this, but I will save that.
+
+722
+01:11:05,860 --> 01:11:07,780
+ So maybe some of you want to try it.
+
+723
+01:11:07,900 --> 01:11:09,240
+ But I will create a new one.
+
+724
+01:11:09,440 --> 01:11:17,180
+ Result equals db.product.
+
+725
+01:11:18,230 --> 01:11:26,820
+ And now instead of saying insert one, we can say, if we can find it here, delete one.
+
+726
+01:11:29,940 --> 01:11:35,330
+ Here we will delete.
+
+727
+01:11:35,930 --> 01:11:37,850
+ Yeah, whatever we created was name.
+
+728
+01:11:37,910 --> 01:11:39,030
+ Not Bain.
+
+729
+01:11:39,410 --> 01:11:39,970
+ Name.
+
+730
+01:11:41,460 --> 01:11:41,800
+ Colon.
+
+731
+01:11:42,360 --> 01:11:42,960
+ Gloves.
+
+732
+01:11:43,330 --> 01:11:44,300
+ If you remember that.
+
+733
+01:11:44,970 --> 01:11:45,810
+ Gloves.
+
+734
+01:11:47,170 --> 01:11:47,910
+ Okay.
+
+735
+01:11:48,840 --> 01:12:03,340
+ And then we can do a print here that said something like deleted result deleted count.
+
+736
+01:12:03,550 --> 01:12:06,840
+ You can leave it as is.
+
+737
+01:12:06,940 --> 01:12:22,220
+ And then we can do another print that says db.products count documents.
+
+738
+01:12:29,240 --> 01:12:31,100
+ Yeah, don't forget these as well.
+
+739
+01:12:33,450 --> 01:12:34,580
+ Okay.
+
+740
+01:12:34,890 --> 01:12:39,190
+ Let's clear this and run the file again.
+
+741
+01:12:39,190 --> 01:12:41,250
+ I misspelled that.
+
+742
+01:12:41,250 --> 01:12:41,490
+ I misspelled that.
+
+743
+01:12:41,670 --> 01:12:44,330
+ Delted deleted, you should say.
+
+744
+01:12:44,890 --> 01:12:49,280
+ And then we told it to count the documents.
+
+745
+01:12:49,440 --> 01:12:50,280
+ And now we have 12.
+
+746
+01:12:50,420 --> 01:12:51,560
+ So we had 12 earlier.
+
+747
+01:12:52,940 --> 01:12:54,620
+ What is all of this popping up?
+
+748
+01:12:55,760 --> 01:13:05,040
+ So MongoDB has basically no pending changes.
+
+749
+01:13:05,040 --> 01:13:10,030
+ So every insert or update or delete is saved immediately, directly.
+
+750
+01:13:15,880 --> 01:13:27,470
+ So if you make a mistake, how do you roll back?
+
+751
+01:13:30,450 --> 01:13:33,130
+ Well, it depends on what you mean on mistake here.
+
+752
+01:13:33,730 --> 01:13:36,610
+ I mean, if you insert something by mistake, is that what you're saying?
+
+753
+01:13:38,010 --> 01:13:39,670
+ Yeah, or delete, for example.
+
+754
+01:13:40,700 --> 01:13:41,790
+ Then it's deleted.
+
+755
+01:13:43,540 --> 01:13:44,840
+ You can't revert back.
+
+756
+01:13:44,980 --> 01:13:45,100
+ Yeah.
+
+757
+01:13:45,280 --> 01:13:45,520
+ Yeah.
+
+758
+01:13:45,520 --> 01:13:49,030
+ You have to make sure you don't do any mistakes.
+
+759
+01:13:50,470 --> 01:13:55,200
+ That's the problem.
+
+760
+01:14:00,390 --> 01:14:02,690
+ Okay.
+
+761
+01:14:02,690 --> 01:14:06,680
+ Let's make another example because this is so much fun.
+
+762
+01:14:06,920 --> 01:14:10,630
+ So let's just put it that way.
+
+763
+01:14:11,500 --> 01:14:17,520
+ And now we can say, let's find something with a filter.
+
+764
+01:14:18,160 --> 01:14:18,280
+ Okay.
+
+765
+01:14:18,280 --> 01:14:19,140
+ Let's filter it.
+
+766
+01:14:19,680 --> 01:14:21,440
+ So we can do product here.
+
+767
+01:14:21,640 --> 01:14:27,830
+ So product, product, product, product equals.
+
+768
+01:14:29,050 --> 01:14:30,980
+ Let me just put my glasses on.
+
+769
+01:14:31,160 --> 01:14:32,640
+ I have a hard time seeing right now.
+
+770
+01:14:32,840 --> 01:14:33,120
+ Hold on.
+
+771
+01:14:36,650 --> 01:14:39,170
+ There we go.
+
+772
+01:14:39,230 --> 01:14:39,630
+ Oh, wow.
+
+773
+01:14:39,910 --> 01:14:41,030
+ Like a different world.
+
+774
+01:14:43,630 --> 01:14:46,670
+ DB dot products.
+
+775
+01:14:48,820 --> 01:14:49,300
+ Products.
+
+776
+01:14:51,010 --> 01:14:52,790
+ And we say, find one.
+
+777
+01:14:52,990 --> 01:14:53,870
+ We know this one.
+
+778
+01:14:55,570 --> 01:15:01,220
+ And this time, let me just check one thing here.
+
+779
+01:15:06,550 --> 01:15:07,250
+ Okay.
+
+780
+01:15:07,250 --> 01:15:08,370
+ Let's find Beanie here.
+
+781
+01:15:08,370 --> 01:15:09,780
+ Cool name.
+
+782
+01:15:11,010 --> 01:15:15,190
+ Name.
+
+783
+01:15:15,520 --> 01:15:16,070
+ Sorry.
+
+784
+01:15:16,310 --> 01:15:16,730
+ Name.
+
+785
+01:15:19,280 --> 01:15:27,290
+ And yeah, don't forget these.
+
+786
+01:15:27,450 --> 01:15:28,430
+ I always do that.
+
+787
+01:15:29,900 --> 01:15:33,600
+ Otherwise, this wouldn't work.
+
+788
+01:15:39,650 --> 01:15:42,500
+ Okay.
+
+789
+01:15:42,500 --> 01:15:43,840
+ Let's just do a simple print.
+
+790
+01:15:44,020 --> 01:15:44,460
+ So print.
+
+791
+01:15:46,210 --> 01:15:49,480
+ Product.
+
+792
+01:15:56,520 --> 01:15:56,940
+ Want.
+
+793
+01:16:03,850 --> 01:16:04,800
+ Take.
+
+794
+01:16:04,940 --> 01:16:05,100
+ Yeah.
+
+795
+01:16:05,140 --> 01:16:08,080
+ We can take out values just like we do.
+
+796
+01:16:09,290 --> 01:16:10,350
+ I'm going to say costs.
+
+797
+01:16:14,670 --> 01:16:16,400
+ This should be in.
+
+798
+01:16:16,560 --> 01:16:16,700
+ Yeah.
+
+799
+01:16:17,460 --> 01:16:19,130
+ Don't forget that.
+
+800
+01:16:20,470 --> 01:16:21,700
+ Let's say product.
+
+801
+01:16:23,800 --> 01:16:26,000
+ Let's take out the price.
+
+802
+01:16:27,760 --> 01:16:28,280
+ Price.
+
+803
+01:16:31,010 --> 01:16:34,230
+ This could be in kronor.
+
+804
+01:16:38,140 --> 01:16:39,960
+ Okay.
+
+805
+01:16:40,920 --> 01:16:41,850
+ Run that.
+
+806
+01:16:41,850 --> 01:16:45,130
+ So Beanie costs 179 kronor.
+
+807
+01:16:47,310 --> 01:16:53,630
+ So that's basically filter.
+
+808
+01:16:53,810 --> 01:16:54,830
+ You can call it a filter.
+
+809
+01:16:55,460 --> 01:16:57,460
+ The product whose name is Beanie.
+
+810
+01:16:58,210 --> 01:17:03,210
+ Because it's a dictionary, we take out values with square brackets like any other dictionary.
+
+811
+01:17:04,680 --> 01:17:13,650
+ Now, let's just say we want to.
+
+812
+01:17:18,080 --> 01:17:20,070
+ Okay.
+
+813
+01:17:20,070 --> 01:17:22,360
+ Let's do another one with a filter.
+
+814
+01:17:22,740 --> 01:17:39,620
+ So we can say, for example, print DB dot product products count documents.
+
+815
+01:17:45,990 --> 01:18:02,520
+ We can also do print DB product documents.
+
+816
+01:18:02,520 --> 01:18:16,240
+ And this time, we're going to say, I want the category shoes.
+
+817
+01:18:22,710 --> 01:18:28,420
+ And let's remove those.
+
+818
+01:18:28,800 --> 01:18:30,260
+ We don't need that for now.
+
+819
+01:18:30,880 --> 01:18:32,160
+ Let's clear the screen here.
+
+820
+01:18:32,810 --> 01:18:35,430
+ We already saw the result, but I like to keep it clean.
+
+821
+01:18:36,030 --> 01:18:40,300
+ So we can see that we have 12 documents.
+
+822
+01:18:40,680 --> 01:18:46,520
+ But if we can filter it, but by just saying, I want to see how many documents that has the category shoes.
+
+823
+01:18:46,840 --> 01:18:48,320
+ And it gave us three back.
+
+824
+01:18:55,650 --> 01:18:58,330
+ So what if I do it this way as well?
+
+825
+01:18:58,590 --> 01:19:08,130
+ So print DB customers, customers dot find.
+
+826
+01:19:08,350 --> 01:19:12,390
+ What do you think is going to happen now?
+
+827
+01:19:17,260 --> 01:19:21,420
+ It gave us an error.
+
+828
+01:19:21,420 --> 01:19:31,400
+ Now find for many documents.
+
+829
+01:19:31,580 --> 01:19:35,400
+ If I just print it like we did, we get something called a cursor.
+
+830
+01:19:37,720 --> 01:19:40,320
+ And find doesn't give us the documents directly.
+
+831
+01:19:40,460 --> 01:19:43,060
+ It gives us something we call, we can loop over.
+
+832
+01:19:43,200 --> 01:19:46,070
+ So we can't do this.
+
+833
+01:19:47,920 --> 01:19:55,900
+ So if we loop it, let's do a loop.
+
+834
+01:19:57,410 --> 01:20:05,760
+ We'll say instead for customers, a customer, it must be.
+
+835
+01:20:05,760 --> 01:20:20,910
+ Yeah, for a customer in db dot customers, customers underscore find, there we go.
+
+836
+01:20:21,450 --> 01:20:22,340
+ Work with me.
+
+837
+01:20:23,620 --> 01:20:33,780
+ Now we can say print customer brackets.
+
+838
+01:20:34,330 --> 01:20:39,550
+ And we can say, for example, first underscore name.
+
+839
+01:20:39,550 --> 01:20:51,460
+ And then we can also do customer, customer, last name as well, just for convenient here.
+
+840
+01:20:52,610 --> 01:20:56,060
+ Last underscore name.
+
+841
+01:21:03,080 --> 01:21:04,560
+ And that didn't work at all.
+
+842
+01:21:05,630 --> 01:21:06,680
+ Let's see.
+
+843
+01:21:06,780 --> 01:21:10,940
+ For customer in db, customers find, print customer.
+
+844
+01:21:12,080 --> 01:21:16,790
+ Oh, that should work here.
+
+845
+01:21:20,610 --> 01:21:29,850
+ Why are you using underscore find instead of dot find?
+
+846
+01:21:30,520 --> 01:21:33,140
+ Oh, that's wrong.
+
+847
+01:21:33,760 --> 01:21:34,520
+ There we go.
+
+848
+01:21:34,520 --> 01:21:35,540
+ Thank you.
+
+849
+01:21:37,920 --> 01:21:39,100
+ All right.
+
+850
+01:21:39,950 --> 01:21:47,730
+ So here we loop through them and then we're going to get a much better list.
+
+851
+01:21:58,180 --> 01:22:04,060
+ So this is basically where, if you compare this to, for example, SQL we did last week,
+
+852
+01:22:04,650 --> 01:22:15,540
+ this would be first name from customers.
+
+853
+01:22:20,430 --> 01:22:22,210
+ We can basically do it.
+
+854
+01:22:22,430 --> 01:22:26,940
+ Okay, let's just say, let's go back to SQL here.
+
+855
+01:22:27,450 --> 01:22:32,610
+ We can say select, let me do this as a comment.
+
+856
+01:22:32,610 --> 01:22:41,790
+ Select first name from customers.
+
+857
+01:22:41,790 --> 01:22:56,630
+ Then we can actually do another one where we can say where city is equal to, if you remember, we did this last week, Uppsala.
+
+858
+01:22:57,760 --> 01:22:59,280
+ Uppsala.
+
+859
+01:23:00,440 --> 01:23:00,700
+ Okay.
+
+860
+01:23:00,700 --> 01:23:09,590
+ So if we're going to do this with Mongo, we would do, well, we would copy this first.
+
+861
+01:23:09,790 --> 01:23:12,650
+ I'm going to copy, just copy this here.
+
+862
+01:23:12,650 --> 01:23:29,690
+ So for customers in DB customers find, and in here, we would say find city Uppsala.
+
+863
+01:23:32,070 --> 01:23:32,250
+ Okay.
+
+864
+01:23:32,550 --> 01:23:35,100
+ But we're not done yet because this is a loop.
+
+865
+01:23:35,330 --> 01:23:51,530
+ We need to print customer first name as well.
+
+866
+01:23:51,690 --> 01:23:53,050
+ So we don't get any gibberish.
+
+867
+01:23:53,450 --> 01:23:54,690
+ So basically this is what we do.
+
+868
+01:23:54,810 --> 01:23:59,430
+ So select first name from customers where city is equal to Uppsala, and then we get the result.
+
+869
+01:23:59,890 --> 01:24:01,350
+ But here we will loop through them.
+
+870
+01:24:01,450 --> 01:24:10,240
+ So for customer in DB customers find everyone that has the city Uppsala, print that customer with only his first name.
+
+871
+01:24:10,820 --> 01:24:12,270
+ So that's what we're saying here.
+
+872
+01:24:12,270 --> 01:24:18,980
+ And we can see we only have Anna, Johan, and Oscar that are from Uppsala.
+
+873
+01:24:20,610 --> 01:24:20,810
+ Okay.
+
+874
+01:24:20,870 --> 01:24:26,460
+ So it's a bit different, but yeah, it's quite, quite the same here.
+
+875
+01:24:28,840 --> 01:24:30,550
+ Okay.
+
+876
+01:24:30,610 --> 01:24:41,160
+ So what if I say, if I do Uppsala with, for example, with the wrong misspelling here, W-Sala.
+
+877
+01:24:43,320 --> 01:24:44,190
+ I don't know.
+
+878
+01:24:45,380 --> 01:24:46,560
+ Uppsala with O.
+
+879
+01:24:48,400 --> 01:24:49,700
+ Let's see.
+
+880
+01:24:51,480 --> 01:24:54,070
+ Nothing.
+
+881
+01:24:54,070 --> 01:24:55,530
+ We don't have that.
+
+882
+01:24:55,790 --> 01:24:57,030
+ So it's not going to give us anything.
+
+883
+01:25:00,680 --> 01:25:05,690
+ So text is case sensitive in MongoDB, just like SQL.
+
+884
+01:25:08,270 --> 01:25:14,910
+ I think if I spell it with small U, it wouldn't work as well.
+
+885
+01:25:15,590 --> 01:25:15,770
+ No.
+
+886
+01:25:16,490 --> 01:25:21,630
+ But if I have a big U, then it should work.
+
+887
+01:25:22,020 --> 01:25:31,010
+ So you can see it's just the capital U would break the whole thing without the capital U.
+
+888
+01:25:31,070 --> 01:25:31,230
+ Sorry.
+
+889
+01:25:32,890 --> 01:25:39,990
+ Because this is not the same as small letter of Oppsala.
+
+890
+01:25:42,950 --> 01:25:51,300
+ What if I do, for example, city with two T's?
+
+891
+01:25:51,520 --> 01:25:52,310
+ What would happen now?
+
+892
+01:25:53,160 --> 01:26:04,670
+ Why do I not see your, yeah, I see your questions here.
+
+893
+01:26:04,670 --> 01:26:15,310
+ I had the same, I guess this port has already been used, so we need to choose another one.
+
+894
+01:26:15,490 --> 01:26:16,130
+ But I'm not sure.
+
+895
+01:26:16,310 --> 01:26:18,320
+ Yeah, you can change port number.
+
+896
+01:26:19,420 --> 01:26:24,470
+ I don't know to do it in Windows.
+
+897
+01:26:26,250 --> 01:26:27,560
+ Yeah, you can start.
+
+898
+01:26:27,820 --> 01:26:32,080
+ But you should be able to only start MongoCompass.
+
+899
+01:26:32,860 --> 01:26:35,400
+ And this should do it automatically for you.
+
+900
+01:26:36,620 --> 01:26:37,980
+ Are we watching an old recording?
+
+901
+01:26:38,200 --> 01:26:38,560
+ No.
+
+902
+01:26:39,560 --> 01:26:42,440
+ This is real, real time, live.
+
+903
+01:26:45,680 --> 01:26:49,170
+ Do you have any other questions before I move on here?
+
+904
+01:26:55,340 --> 01:26:56,160
+ Yes, Fabian.
+
+905
+01:26:57,560 --> 01:27:03,380
+ Well, yeah, it's not really like a question, but it's sort of like it does an immediate refusal.
+
+906
+01:27:03,380 --> 01:27:09,480
+ So I guess, like, if there is no server downloaded, you need to have that, because I just tried to press it.
+
+907
+01:27:09,480 --> 01:27:09,860
+ Oh, yeah, maybe.
+
+908
+01:27:10,660 --> 01:27:14,950
+ Okay, so back in the days, it installed everything for you.
+
+909
+01:27:15,090 --> 01:27:18,940
+ Maybe you, I'll take, I'll, after this, don't worry, guys.
+
+910
+01:27:19,400 --> 01:27:24,280
+ I'll give you a PDF where, how you can install and download everything.
+
+911
+01:27:25,340 --> 01:27:26,160
+ A small guide.
+
+912
+01:27:26,160 --> 01:27:30,660
+ Okay, so just watch me here is good enough.
+
+913
+01:27:32,050 --> 01:27:35,120
+ So don't sit with something right now.
+
+914
+01:27:35,220 --> 01:27:36,140
+ I want you to focus.
+
+915
+01:27:37,260 --> 01:27:38,480
+ Okay, but we continue.
+
+916
+01:27:38,620 --> 01:27:43,440
+ So what if I misspell city like this?
+
+917
+01:27:43,540 --> 01:27:44,460
+ What's going to happen then?
+
+918
+01:27:44,970 --> 01:27:45,490
+ Anyone knows?
+
+919
+01:28:07,020 --> 01:28:07,400
+ No one?
+
+920
+01:28:07,640 --> 01:28:09,100
+ No one want to take a guess?
+
+921
+01:28:10,000 --> 01:28:11,800
+ Yes, let me see.
+
+922
+01:28:12,460 --> 01:28:14,700
+ I can take, I can, I can humiliate myself.
+
+923
+01:28:15,560 --> 01:28:15,720
+ Yeah.
+
+924
+01:28:16,100 --> 01:28:17,240
+ Yeah, it's going to be created.
+
+925
+01:28:18,110 --> 01:28:19,340
+ I don't know, actually.
+
+926
+01:28:20,240 --> 01:28:21,720
+ Let's try it.
+
+927
+01:28:21,780 --> 01:28:22,400
+ Let's try it.
+
+928
+01:28:22,400 --> 01:28:22,780
+ Let's see.
+
+929
+01:28:22,780 --> 01:28:24,780
+ It's going to be created.
+
+930
+01:28:25,240 --> 01:28:27,870
+ Let's look into compass, maybe.
+
+931
+01:28:29,820 --> 01:28:35,940
+ And let me see if I can refresh database.
+
+932
+01:28:37,680 --> 01:28:56,670
+ No, actually not.
+
+933
+01:28:57,390 --> 01:29:00,700
+ What's going to happen is city, go back here.
+
+934
+01:29:01,820 --> 01:29:04,920
+ It's going to give us nothing.
+
+935
+01:29:05,020 --> 01:29:06,080
+ No error, just nothing.
+
+936
+01:29:06,280 --> 01:29:10,060
+ In SQL, we get no such column as an error.
+
+937
+01:29:11,040 --> 01:29:16,040
+ And MongoDB doesn't know which field, which fields should exist.
+
+938
+01:29:16,580 --> 01:29:22,370
+ So it just looks for documents with a field called city with a two T.
+
+939
+01:29:23,130 --> 01:29:25,320
+ And there is none.
+
+940
+01:29:25,370 --> 01:29:31,740
+ So this is the same thing as we misspelling Uppsala.
+
+941
+01:29:34,960 --> 01:29:36,490
+ Let's take another one.
+
+942
+01:29:37,830 --> 01:29:43,730
+ If I forget, let's just bring this back and remove the quotes here.
+
+943
+01:29:45,210 --> 01:29:46,990
+ What would happen now?
+
+944
+01:29:53,330 --> 01:29:57,300
+ Someone wants to take a guess?
+
+945
+01:30:05,500 --> 01:30:05,980
+ Get my head.
+
+946
+01:30:09,060 --> 01:30:11,080
+ You may miss colon.
+
+947
+01:30:12,090 --> 01:30:14,660
+ Sorry, miss, miss color.
+
+948
+01:30:15,810 --> 01:30:16,050
+ Colon.
+
+949
+01:30:16,570 --> 01:30:20,240
+ It's like your syntax here or like that.
+
+950
+01:30:21,130 --> 01:30:24,340
+ Yeah, you're not, you're not too far from the right answer.
+
+951
+01:30:25,320 --> 01:30:26,190
+ Let's run it.
+
+952
+01:30:26,470 --> 01:30:27,830
+ Sorry, let's run that.
+
+953
+01:30:28,360 --> 01:30:29,640
+ And yeah, you're going to get an error.
+
+954
+01:30:29,640 --> 01:30:35,540
+ Because the city, Python thinks city is a variable.
+
+955
+01:30:37,440 --> 01:30:38,460
+ Field names are strings.
+
+956
+01:30:39,720 --> 01:30:41,400
+ So they always need quotes.
+
+957
+01:30:47,250 --> 01:30:51,700
+ Do another one then.
+
+958
+01:30:53,720 --> 01:31:01,670
+ Let's maybe like this.
+
+959
+01:31:01,810 --> 01:31:02,250
+ Customer.
+
+960
+01:31:06,970 --> 01:31:16,370
+ Let's print basically everyone's city.
+
+961
+01:31:23,990 --> 01:31:24,510
+ Is that correct?
+
+962
+01:31:29,540 --> 01:31:31,620
+ If I, hold on.
+
+963
+01:31:31,740 --> 01:31:41,320
+ If I say remove this.
+
+964
+01:31:42,690 --> 01:31:46,550
+ Now let's run it again.
+
+965
+01:31:47,410 --> 01:31:48,770
+ What is going to happen now?
+
+966
+01:31:49,830 --> 01:31:51,280
+ What do you think is going to happen?
+
+967
+01:31:57,640 --> 01:32:00,420
+ Who wants to take a guess maybe?
+
+968
+01:32:02,960 --> 01:32:03,860
+ Yes, Saranjo?
+
+969
+01:32:06,000 --> 01:32:11,140
+ Yeah, so I think for some of the field city would be null.
+
+970
+01:32:11,460 --> 01:32:12,450
+ So by then we'll show.
+
+971
+01:32:14,220 --> 01:32:19,140
+ Okay, let's run it.
+
+972
+01:32:19,220 --> 01:32:19,940
+ Let's run this.
+
+973
+01:32:22,250 --> 01:32:31,020
+ Kind of worked for around one, two, three, four, five, six, seven, nine.
+
+974
+01:32:31,200 --> 01:32:32,080
+ Nine customers.
+
+975
+01:32:32,550 --> 01:32:34,560
+ And then it crashes.
+
+976
+01:32:35,570 --> 01:32:39,610
+ And it says key error city.
+
+977
+01:32:40,420 --> 01:32:47,040
+ What happened here?
+
+978
+01:32:47,220 --> 01:32:47,930
+ Key error city.
+
+979
+01:32:48,700 --> 01:32:52,550
+ Let's go to a web shop here.
+
+980
+01:32:53,470 --> 01:32:58,210
+ And let's look at customers.
+
+981
+01:32:58,530 --> 01:32:59,230
+ Let's see if I can.
+
+982
+01:33:01,970 --> 01:33:04,140
+ We see that we have 10 customers.
+
+983
+01:33:04,920 --> 01:33:07,160
+ So it showed us all of those.
+
+984
+01:33:09,200 --> 01:33:14,650
+ But it didn't show Lucas.
+
+985
+01:33:15,120 --> 01:33:15,670
+ Why?
+
+986
+01:33:17,410 --> 01:33:21,030
+ Why didn't it show Lucas?
+
+987
+01:33:22,920 --> 01:33:26,400
+ Because Lucas didn't.
+
+988
+01:33:26,740 --> 01:33:28,000
+ Lucas don't have a city.
+
+989
+01:33:29,510 --> 01:33:31,080
+ So that's why it's crashed.
+
+990
+01:33:31,080 --> 01:33:35,650
+ So this would be Lucas had null.
+
+991
+01:33:35,940 --> 01:33:37,400
+ A null value in the city.
+
+992
+01:33:37,870 --> 01:33:38,190
+ In SQL.
+
+993
+01:33:49,950 --> 01:33:50,850
+ Okay, this.
+
+994
+01:33:51,070 --> 01:33:54,580
+ The fix is a normal Python trick here.
+
+995
+01:33:56,220 --> 01:34:01,240
+ So what we can do, instead of saying this, customer city,
+
+996
+01:34:02,300 --> 01:34:06,300
+ we could say customer.get.
+
+997
+01:34:07,070 --> 01:34:16,470
+ And in city, we can say, instead of that, we can say unknown.
+
+998
+01:34:17,700 --> 01:34:23,760
+ So now if I run it, it should give us everyone's.
+
+999
+01:34:24,300 --> 01:34:25,890
+ Hold on.
+
+1000
+01:34:25,950 --> 01:34:26,730
+ What did I do here?
+
+1001
+01:34:29,630 --> 01:34:30,750
+ I'm going to get there.
+
+1002
+01:34:30,830 --> 01:34:31,490
+ That is correct.
+
+1003
+01:34:32,540 --> 01:34:34,070
+ The brackets?
+
+1004
+01:34:36,480 --> 01:34:38,660
+ Am I missing something?
+
+1005
+01:34:38,800 --> 01:34:38,900
+ Where?
+
+1006
+01:34:38,980 --> 01:34:39,440
+ Which brackets?
+
+1007
+01:34:39,520 --> 01:34:40,460
+ Oh, hold on.
+
+1008
+01:34:40,880 --> 01:34:41,740
+ Yeah, yeah, yeah.
+
+1009
+01:34:41,740 --> 01:34:43,680
+ This should be exactly.
+
+1010
+01:34:43,920 --> 01:34:44,340
+ Thank you.
+
+1011
+01:34:44,730 --> 01:34:47,020
+ Thank you, thank you, thank you.
+
+1012
+01:34:47,220 --> 01:34:47,760
+ There we go.
+
+1013
+01:34:50,060 --> 01:34:51,990
+ Please don't mess that up.
+
+1014
+01:34:53,250 --> 01:34:54,490
+ Okay.
+
+1015
+01:34:54,840 --> 01:34:56,830
+ Let's look into these results.
+
+1016
+01:34:58,820 --> 01:35:01,460
+ We can see we have all of them.
+
+1017
+01:35:01,730 --> 01:35:03,230
+ Eric, Anna, and Fatima.
+
+1018
+01:35:03,410 --> 01:35:04,650
+ But Lucas, it says unknown.
+
+1019
+01:35:05,110 --> 01:35:06,460
+ So that's a trick you can do.
+
+1020
+01:35:06,640 --> 01:35:09,580
+ Instead of getting a, instead of letting the program crash.
+
+1021
+01:35:09,750 --> 01:35:13,540
+ Whenever it doesn't, doesn't, when it has a null value.
+
+1022
+01:35:15,570 --> 01:35:18,990
+ That's cool.
+
+1023
+01:35:20,880 --> 01:35:25,160
+ I'll do another example.
+
+1024
+01:35:27,510 --> 01:35:31,730
+ Now let's maybe insert.
+
+1025
+01:35:32,180 --> 01:35:32,930
+ Let's do that.
+
+1026
+01:35:33,090 --> 01:35:34,710
+ Maybe insert one with the dictionary.
+
+1027
+01:35:36,590 --> 01:35:37,710
+ And we don't give an ID.
+
+1028
+01:35:38,290 --> 01:35:39,650
+ So we skip giving in ID.
+
+1029
+01:35:40,490 --> 01:35:43,410
+ So MongoDB is going to create an object ID then.
+
+1030
+01:35:45,150 --> 01:35:45,270
+ Okay.
+
+1031
+01:35:45,450 --> 01:35:56,990
+ So we can say result equals DB.customers insert one.
+
+1032
+01:35:58,530 --> 01:36:00,300
+ And here we need to be careful here.
+
+1033
+01:36:00,420 --> 01:36:02,100
+ So we do everything correct here from the beginning.
+
+1034
+01:36:04,270 --> 01:36:05,580
+ Key values.
+
+1035
+01:36:05,900 --> 01:36:10,240
+ First, first name.
+
+1036
+01:36:11,320 --> 01:36:13,730
+ Let's come up with someone.
+
+1037
+01:36:15,100 --> 01:36:17,200
+ We can say Noah.
+
+1038
+01:36:21,410 --> 01:36:27,240
+ And last name.
+
+1039
+01:36:30,800 --> 01:36:33,520
+ Could be Svensson.
+
+1040
+01:36:34,130 --> 01:36:35,010
+ Svensson.
+
+1041
+01:36:37,100 --> 01:36:38,470
+ Forget the comma.
+
+1042
+01:36:39,960 --> 01:36:40,520
+ Email.
+
+1043
+01:36:41,370 --> 01:36:42,000
+ Sorry.
+
+1044
+01:36:43,430 --> 01:36:44,070
+ Email.
+
+1045
+01:36:45,550 --> 01:36:47,870
+ I have fat fingers today as well.
+
+1046
+01:36:49,950 --> 01:36:52,960
+ And that could be no.
+
+1047
+01:36:58,300 --> 01:36:59,620
+ Gmail.com.
+
+1048
+01:37:00,850 --> 01:37:03,390
+ And let's have one more.
+
+1049
+01:37:04,360 --> 01:37:05,600
+ And that would be this city.
+
+1050
+01:37:09,220 --> 01:37:14,260
+ And the city could be in shopping.
+
+1051
+01:37:22,220 --> 01:37:22,760
+ That's how we.
+
+1052
+01:37:22,900 --> 01:37:23,880
+ Let me see if I can.
+
+1053
+01:37:24,250 --> 01:37:26,430
+ We see all of it.
+
+1054
+01:37:26,900 --> 01:37:27,260
+ All right.
+
+1055
+01:37:28,450 --> 01:37:29,330
+ Let's print.
+
+1056
+01:37:29,760 --> 01:37:32,720
+ Print the results.
+
+1057
+01:37:35,880 --> 01:37:39,210
+ Result inserted ID.
+
+1058
+01:37:41,250 --> 01:37:42,250
+ That should be good enough.
+
+1059
+01:37:42,350 --> 01:37:42,770
+ Let me see.
+
+1060
+01:37:44,770 --> 01:37:48,680
+ Then we get the ID of that inserted.
+
+1061
+01:37:49,060 --> 01:37:50,220
+ New inserted customer.
+
+1062
+01:37:53,710 --> 01:37:59,420
+ And this happens like I said before.
+
+1063
+01:38:00,480 --> 01:38:04,890
+ I mean if I run this again.
+
+1064
+01:38:04,890 --> 01:38:06,380
+ Then we're going to have another Noah.
+
+1065
+01:38:06,930 --> 01:38:10,210
+ Because we're going to get a new ID for every insert.
+
+1066
+01:38:12,190 --> 01:38:17,540
+ Because every run inserts a new document with a new object ID.
+
+1067
+01:38:20,350 --> 01:38:25,810
+ And we basically clean up with this seed script at the end here.
+
+1068
+01:38:28,190 --> 01:38:28,350
+ Okay.
+
+1069
+01:38:28,470 --> 01:38:34,770
+ So let's just check that we have this guy in our database.
+
+1070
+01:38:34,930 --> 01:38:35,970
+ We can actually go here.
+
+1071
+01:38:37,330 --> 01:38:37,850
+ Customers.
+
+1072
+01:38:38,980 --> 01:38:41,500
+ And I think I need to refresh here.
+
+1073
+01:38:43,730 --> 01:38:49,170
+ There it is.
+
+1074
+01:38:49,170 --> 01:38:52,150
+ So we can see the other ones have ID 9, ID 10.
+
+1075
+01:38:52,290 --> 01:38:54,490
+ But we didn't give an ID to Noah here.
+
+1076
+01:38:56,400 --> 01:38:58,380
+ And we see we have one document.
+
+1077
+01:38:58,640 --> 01:38:59,840
+ So if I run this again.
+
+1078
+01:38:59,920 --> 01:39:00,960
+ We're going to get another Noah.
+
+1079
+01:39:01,270 --> 01:39:02,500
+ With a different ID.
+
+1080
+01:39:03,690 --> 01:39:04,210
+ Object ID.
+
+1081
+01:39:12,080 --> 01:39:15,720
+ Maybe we can also do insert many.
+
+1082
+01:39:16,270 --> 01:39:18,270
+ Because we have only insert one now.
+
+1083
+01:39:18,390 --> 01:39:19,430
+ We insert one customer.
+
+1084
+01:39:21,400 --> 01:39:24,000
+ Let's do insert many one time as well.
+
+1085
+01:39:24,120 --> 01:39:25,540
+ Let me see what time is it right now.
+
+1086
+01:39:25,600 --> 01:39:25,740
+ Okay.
+
+1087
+01:39:25,740 --> 01:39:26,640
+ We can do this.
+
+1088
+01:39:26,800 --> 01:39:29,630
+ And then we can end the session.
+
+1089
+01:39:30,640 --> 01:39:32,900
+ I know there is a faster way of doing this.
+
+1090
+01:39:33,080 --> 01:39:38,870
+ But that's fast as well.
+
+1091
+01:39:39,770 --> 01:39:40,130
+ Okay.
+
+1092
+01:39:40,250 --> 01:39:41,070
+ So result.
+
+1093
+01:39:41,720 --> 01:39:42,360
+ Result.
+
+1094
+01:39:43,200 --> 01:39:44,060
+ Equals.
+
+1095
+01:39:44,260 --> 01:39:45,260
+ DB dot.
+
+1096
+01:39:45,970 --> 01:39:46,760
+ Products.
+
+1097
+01:39:47,180 --> 01:39:47,860
+ Products.
+
+1098
+01:39:49,460 --> 01:39:51,710
+ And we do insert many.
+
+1099
+01:39:52,700 --> 01:39:54,780
+ So we're going to insert some products here.
+
+1100
+01:39:54,900 --> 01:39:55,080
+ Okay.
+
+1101
+01:39:56,050 --> 01:39:57,750
+ And don't forget these.
+
+1102
+01:39:59,660 --> 01:40:01,200
+ And now we have these.
+
+1103
+01:40:02,790 --> 01:40:09,060
+ And we will say ID.
+
+1104
+01:40:10,400 --> 01:40:12,600
+ We want to set the ID here.
+
+1105
+01:40:12,780 --> 01:40:14,320
+ So ID is going to be 13.
+
+1106
+01:40:16,390 --> 01:40:17,660
+ Name.
+
+1107
+01:40:18,540 --> 01:40:23,470
+ We can call this scarf.
+
+1108
+01:40:24,110 --> 01:40:24,970
+ Scarf.
+
+1109
+01:40:26,060 --> 01:40:26,280
+ Okay.
+
+1110
+01:40:28,010 --> 01:40:28,410
+ Category.
+
+1111
+01:40:29,820 --> 01:40:30,540
+ Oh, sorry.
+
+1112
+01:40:38,980 --> 01:40:45,420
+ It will be accessories.
+
+1113
+01:40:48,670 --> 01:40:49,310
+ Accessories.
+
+1114
+01:40:51,760 --> 01:40:53,890
+ And price.
+
+1115
+01:40:54,580 --> 01:40:59,750
+ Could be an int.
+
+1116
+01:41:02,080 --> 01:41:02,280
+ Okay.
+
+1117
+01:41:04,280 --> 01:41:05,200
+ And a comma there.
+
+1118
+01:41:05,320 --> 01:41:06,560
+ And I'm going to press enter here.
+
+1119
+01:41:07,540 --> 01:41:13,160
+ And keep adding some stuff.
+
+1120
+01:41:13,340 --> 01:41:13,940
+ So stock.
+
+1121
+01:41:14,680 --> 01:41:15,920
+ Be a good idea to have.
+
+1122
+01:41:16,580 --> 01:41:17,720
+ 15.
+
+1123
+01:41:19,720 --> 01:41:22,480
+ And we can also have tags.
+
+1124
+01:41:29,730 --> 01:41:30,970
+ Winter.
+
+1125
+01:41:34,460 --> 01:41:37,020
+ Overcomplicating this on purpose.
+
+1126
+01:41:37,760 --> 01:41:38,360
+ Details.
+
+1127
+01:41:39,290 --> 01:41:47,790
+ Another dictionary in here.
+
+1128
+01:41:48,050 --> 01:41:48,630
+ That would say.
+
+1129
+01:41:51,350 --> 01:41:51,830
+ Oops.
+
+1130
+01:41:53,380 --> 01:41:53,620
+ Car.
+
+1131
+01:41:54,360 --> 01:41:56,150
+ What's going on here?
+
+1132
+01:41:58,070 --> 01:41:59,370
+ This is too much.
+
+1133
+01:41:59,750 --> 01:42:00,170
+ There we go.
+
+1134
+01:42:00,960 --> 01:42:01,520
+ Color.
+
+1135
+01:42:03,980 --> 01:42:16,170
+ Now we close the brackets there.
+
+1136
+01:42:18,380 --> 01:42:19,680
+ Comma there.
+
+1137
+01:42:19,740 --> 01:42:20,620
+ We're going to add another one.
+
+1138
+01:42:22,210 --> 01:42:23,470
+ So what I actually can do.
+
+1139
+01:42:23,570 --> 01:42:24,310
+ Because I'm lazy.
+
+1140
+01:42:24,760 --> 01:42:26,060
+ I'm going to copy this.
+
+1141
+01:42:27,710 --> 01:42:28,830
+ And put it down here.
+
+1142
+01:42:29,640 --> 01:42:31,860
+ And we change only the values here.
+
+1143
+01:42:31,860 --> 01:42:34,790
+ So we would say this is 14s.
+
+1144
+01:42:36,570 --> 01:42:37,750
+ And instead of scarf.
+
+1145
+01:42:37,830 --> 01:42:38,930
+ We can say gloves.
+
+1146
+01:42:41,000 --> 01:42:41,400
+ Categories.
+
+1147
+01:42:41,520 --> 01:42:42,000
+ Accessories.
+
+1148
+01:42:42,460 --> 01:42:42,840
+ Fine.
+
+1149
+01:42:43,080 --> 01:42:45,100
+ And we can change the price to 199.
+
+1150
+01:42:46,340 --> 01:42:46,900
+ Stock.
+
+1151
+01:42:47,060 --> 01:42:50,130
+ Could be another number here.
+
+1152
+01:42:50,130 --> 01:42:50,710
+ 20.
+
+1153
+01:42:51,420 --> 01:42:51,910
+ Tags.
+
+1154
+01:42:51,950 --> 01:42:52,210
+ Winter.
+
+1155
+01:42:52,290 --> 01:42:52,990
+ We can leave it.
+
+1156
+01:42:53,130 --> 01:42:53,650
+ Details.
+
+1157
+01:42:53,830 --> 01:42:54,130
+ Color.
+
+1158
+01:42:54,530 --> 01:42:55,890
+ Maybe have black here.
+
+1159
+01:43:01,110 --> 01:43:03,590
+ Looks good enough.
+
+1160
+01:43:03,790 --> 01:43:04,170
+ Hold on.
+
+1161
+01:43:05,050 --> 01:43:05,550
+ Yeah.
+
+1162
+01:43:05,550 --> 01:43:06,130
+ There it is.
+
+1163
+01:43:06,350 --> 01:43:07,090
+ I was looking for that.
+
+1164
+01:43:08,300 --> 01:43:09,530
+ Let's print.
+
+1165
+01:43:10,120 --> 01:43:10,480
+ Print.
+
+1166
+01:43:13,500 --> 01:43:14,010
+ Result.
+
+1167
+01:43:16,580 --> 01:43:17,540
+ Inserted IDs.
+
+1168
+01:43:19,400 --> 01:43:21,080
+ And then we can do another print.
+
+1169
+01:43:22,920 --> 01:43:23,800
+ And we can print it.
+
+1170
+01:43:23,980 --> 01:43:25,220
+ DB products.
+
+1171
+01:43:27,350 --> 01:43:28,160
+ Products.
+
+1172
+01:43:28,840 --> 01:43:30,370
+ Count.
+
+1173
+01:43:32,600 --> 01:43:32,960
+ Documents.
+
+1174
+01:43:37,230 --> 01:43:37,510
+ And yeah.
+
+1175
+01:43:37,570 --> 01:43:38,010
+ Don't forget.
+
+1176
+01:43:38,390 --> 01:43:38,910
+ These.
+
+1177
+01:43:41,390 --> 01:43:41,810
+ Clear.
+
+1178
+01:43:43,190 --> 01:43:44,670
+ And run the file.
+
+1179
+01:43:45,850 --> 01:43:46,740
+ Okay.
+
+1180
+01:43:47,830 --> 01:43:49,830
+ So the output was 13.
+
+1181
+01:43:49,980 --> 01:43:52,420
+ No.
+
+1182
+01:43:52,480 --> 01:43:52,840
+ 14.
+
+1183
+01:43:55,510 --> 01:43:58,000
+ This is something here.
+
+1184
+01:44:06,340 --> 01:44:06,640
+ Oh yeah.
+
+1185
+01:44:06,760 --> 01:44:07,120
+ Because.
+
+1186
+01:44:07,280 --> 01:44:07,520
+ Oh.
+
+1187
+01:44:07,600 --> 01:44:08,060
+ Hold on.
+
+1188
+01:44:08,220 --> 01:44:09,120
+ But we gave it ID.
+
+1189
+01:44:09,620 --> 01:44:10,000
+ Ah.
+
+1190
+01:44:10,400 --> 01:44:11,300
+ Look what we did.
+
+1191
+01:44:11,950 --> 01:44:12,370
+ Look what we.
+
+1192
+01:44:12,430 --> 01:44:12,890
+ What did.
+
+1193
+01:44:12,990 --> 01:44:14,010
+ What did I miss here?
+
+1194
+01:44:14,010 --> 01:44:19,010
+ Why did it give us an object ID instead of ID 13 and 14?
+
+1195
+01:44:20,630 --> 01:44:24,400
+ This is a good mistake that I did here.
+
+1196
+01:44:24,940 --> 01:44:26,500
+ Is it underscore something?
+
+1197
+01:44:26,860 --> 01:44:27,340
+ Exactly.
+
+1198
+01:44:27,580 --> 01:44:29,260
+ We need to put underscore here.
+
+1199
+01:44:29,420 --> 01:44:31,680
+ Otherwise this will not work.
+
+1200
+01:44:33,480 --> 01:44:35,430
+ So let's try to run it again.
+
+1201
+01:44:35,670 --> 01:44:36,050
+ Hopefully.
+
+1202
+01:44:36,680 --> 01:44:37,250
+ Yeah.
+
+1203
+01:44:37,350 --> 01:44:37,790
+ There we go.
+
+1204
+01:44:37,990 --> 01:44:39,550
+ It should look something like this.
+
+1205
+01:44:39,610 --> 01:44:43,950
+ Now we probably have a lot of gibberish in our database.
+
+1206
+01:44:43,950 --> 01:44:44,890
+ But it doesn't matter.
+
+1207
+01:44:44,890 --> 01:44:56,060
+ So let's just check compass here.
+
+1208
+01:44:57,310 --> 01:44:58,730
+ And do a small refresh.
+
+1209
+01:45:00,120 --> 01:45:00,640
+ Products.
+
+1210
+01:45:02,830 --> 01:45:04,550
+ And here we see the gloves.
+
+1211
+01:45:05,230 --> 01:45:06,630
+ It says actually ID 14.
+
+1212
+01:45:06,870 --> 01:45:07,490
+ It gave it.
+
+1213
+01:45:07,530 --> 01:45:10,070
+ It gave it another key and value appear here.
+
+1214
+01:45:10,270 --> 01:45:11,030
+ This is wrong.
+
+1215
+01:45:11,150 --> 01:45:12,210
+ It shouldn't be like this.
+
+1216
+01:45:12,250 --> 01:45:13,590
+ It should be like this.
+
+1217
+01:45:13,830 --> 01:45:14,910
+ So this is a good mistake.
+
+1218
+01:45:14,910 --> 01:45:17,630
+ Because this shows what could actually happen here.
+
+1219
+01:45:17,880 --> 01:45:20,400
+ I can actually delete it directly from here.
+
+1220
+01:45:20,600 --> 01:45:21,320
+ Remove document.
+
+1221
+01:45:23,160 --> 01:45:24,370
+ Delete.
+
+1222
+01:45:25,370 --> 01:45:26,950
+ And remove that as well.
+
+1223
+01:45:26,950 --> 01:45:27,470
+ Delete.
+
+1224
+01:45:28,250 --> 01:45:29,750
+ So now it looks correct.
+
+1225
+01:45:31,530 --> 01:45:33,530
+ Let's refresh this just in case.
+
+1226
+01:45:35,630 --> 01:45:36,950
+ Click here and there.
+
+1227
+01:45:37,190 --> 01:45:37,730
+ And go back.
+
+1228
+01:45:37,850 --> 01:45:37,950
+ Yeah.
+
+1229
+01:45:38,170 --> 01:45:39,690
+ So we have our ID 13.
+
+1230
+01:45:39,990 --> 01:45:41,630
+ scarf, accessories, blah, blah, blah.
+
+1231
+01:45:42,920 --> 01:45:43,320
+ Details.
+
+1232
+01:45:43,860 --> 01:45:44,750
+ Color red.
+
+1233
+01:45:46,230 --> 01:45:47,200
+ Same thing here.
+
+1234
+01:45:47,520 --> 01:45:47,880
+ Details.
+
+1235
+01:45:48,490 --> 01:45:49,310
+ So this is an object.
+
+1236
+01:45:49,610 --> 01:45:50,510
+ Color black.
+
+1237
+01:45:56,500 --> 01:46:00,600
+ Okay.
+
+1238
+01:46:00,640 --> 01:46:02,440
+ What if I want to reset all of this?
+
+1239
+01:46:02,480 --> 01:46:04,000
+ Now we have put some data into here.
+
+1240
+01:46:04,040 --> 01:46:04,920
+ But I want to reset.
+
+1241
+01:46:05,380 --> 01:46:06,550
+ What do I do to reset?
+
+1242
+01:46:07,390 --> 01:46:08,150
+ Any ideas?
+
+1243
+01:46:11,080 --> 01:46:16,500
+ So whenever the data gets messy.
+
+1244
+01:46:16,960 --> 01:46:18,180
+ I'm going to give you this file.
+
+1245
+01:46:18,180 --> 01:46:20,270
+ You can just run this file again.
+
+1246
+01:46:22,730 --> 01:46:23,150
+ There we go.
+
+1247
+01:46:23,330 --> 01:46:24,920
+ And then we go double check that.
+
+1248
+01:46:27,390 --> 01:46:27,790
+ I don't think.
+
+1249
+01:46:27,950 --> 01:46:28,370
+ Hold on.
+
+1250
+01:46:28,410 --> 01:46:28,590
+ Maybe.
+
+1251
+01:46:29,500 --> 01:46:30,550
+ Let me see.
+
+1252
+01:46:31,210 --> 01:46:31,650
+ Refresh.
+
+1253
+01:46:32,150 --> 01:46:34,320
+ Product is still there.
+
+1254
+01:46:35,490 --> 01:46:38,540
+ Maybe I need to remove the whole database and then restart.
+
+1255
+01:46:38,700 --> 01:46:38,800
+ Okay.
+
+1256
+01:46:38,840 --> 01:46:40,480
+ So maybe I will do this.
+
+1257
+01:46:41,640 --> 01:46:42,940
+ Web shop.
+
+1258
+01:46:43,740 --> 01:46:45,200
+ Drop the database.
+
+1259
+01:46:45,460 --> 01:46:46,040
+ There we go.
+
+1260
+01:46:46,890 --> 01:46:49,810
+ And then now the database is dropped.
+
+1261
+01:46:49,970 --> 01:46:51,550
+ Now I can run this file again.
+
+1262
+01:46:53,870 --> 01:46:55,450
+ Oh, that's the wrong file.
+
+1263
+01:46:59,050 --> 01:47:00,760
+ Let me see what happened here.
+
+1264
+01:47:02,400 --> 01:47:02,880
+ Refresh.
+
+1265
+01:47:03,140 --> 01:47:04,040
+ Yeah, it started.
+
+1266
+01:47:04,240 --> 01:47:05,240
+ Let's remove that.
+
+1267
+01:47:06,130 --> 01:47:06,890
+ Web shop.
+
+1268
+01:47:07,980 --> 01:47:11,790
+ I think it's good you're seeing me doing these mistakes.
+
+1269
+01:47:11,790 --> 01:47:13,110
+ So you don't have to do that.
+
+1270
+01:47:14,410 --> 01:47:15,010
+ Python.
+
+1271
+01:47:16,620 --> 01:47:20,300
+ Maybe it would work if I just web shop.py.
+
+1272
+01:47:20,720 --> 01:47:21,600
+ There we go.
+
+1273
+01:47:22,300 --> 01:47:23,330
+ And go back.
+
+1274
+01:47:24,910 --> 01:47:30,140
+ And now we should have everything just as normal.
+
+1275
+01:47:30,440 --> 01:47:33,280
+ So let's double check that because we know the products.
+
+1276
+01:47:33,400 --> 01:47:37,400
+ Yeah, we still have the default values here.
+
+1277
+01:47:37,600 --> 01:47:38,020
+ Perfect.
+
+1278
+01:47:39,970 --> 01:47:44,250
+ So you can just drop it and then add it again if the data gets messy.
+
+1279
+01:47:45,590 --> 01:47:48,220
+ I'll actually copy this.
+
+1280
+01:47:48,220 --> 01:47:53,260
+ I'll put this in a file as well under files later.
+
+1281
+01:47:53,360 --> 01:47:58,490
+ But I can put it in the chat here if you want to have it now.
+
+1282
+01:48:00,620 --> 01:48:07,040
+ Block and see if no SQL exists here.
+
+1283
+01:48:10,210 --> 01:48:10,850
+ Python.
+
+1284
+01:48:15,050 --> 01:48:17,160
+ There we go.
+
+1285
+01:48:17,860 --> 01:48:21,080
+ So you can run that and see if that works on your end as well.
+
+1286
+01:48:22,640 --> 01:48:24,080
+ I'm actually going to...
+
+1287
+01:48:24,080 --> 01:48:25,720
+ We have some break.
+
+1288
+01:48:26,120 --> 01:48:31,930
+ But I'm going to end the session now and give you some labs.
+
+1289
+01:48:32,360 --> 01:48:35,280
+ So you can get your hands a little bit dirty.
+
+1290
+01:48:39,040 --> 01:48:39,580
+ Okay.
+
+1291
+01:48:40,530 --> 01:48:42,470
+ Do you have any questions?
+
+1292
+01:48:49,870 --> 01:48:53,120
+ Okay.
+
+1293
+01:48:53,180 --> 01:48:56,080
+ If you don't have any questions, you can of course leave the meeting.
+
+1294
+01:48:57,220 --> 01:48:59,600
+ Me and Aladin will be here all day as usual.
+
+1295
+01:49:00,820 --> 01:49:01,840
+ And take some break.
+
+1296
+01:49:02,230 --> 01:49:03,250
+ Go grab some coffee.
+
+1297
+01:49:03,940 --> 01:49:04,860
+ Maybe open the window.
+
+1298
+01:49:05,700 --> 01:49:07,950
+ Grab some fresh new air to the brain.
+
+1299
+01:49:09,850 --> 01:49:12,740
+ Or whatever you want to do.
+
+1300
+01:49:12,900 --> 01:49:14,480
+ Just do something else for a while.
+
+1301
+01:49:16,040 --> 01:49:17,320
+ Yes, someone raising hands?
+
+1302
+01:49:17,380 --> 01:49:17,560
+ No?
+
+1303
+01:49:17,950 --> 01:49:18,560
+ False alarm?
+
+1304
+01:49:20,450 --> 01:49:23,820
+ You can leave the meeting if you don't have any questions.
+

@@ -1,0 +1,1304 @@
+Then we code together and then after lunch you have some labs where you can work on your exercises on your own pace there.
+So today, hopefully after today, you will be able to explain what NoSQL is and what MongoDB are and how they differ from SQL.
+No words like documents, collections, fields, ID and stuff like that.
+We look at your data using only Python with print and stuff.
+Connect to MongoDB from Python with a library called PyMongo.
+We insert and find documents.
+And don't worry if some of these words are new right now.
+We'll go through them each one by one, here in Therial at least.
+Then you will see it in action as usual.
+So for almost one week at least, we worked with SQL and data lives in tables.
+Every row had exactly the same columns and we used join to put pieces together.
+This week, we will look at another family of databases called NoSQL.
+The name means actually not only SQL.
+So it's not that SQL is bad.
+NoSQL is just a different tool.
+Some jobs are easier with it.
+If you think back for a second, in SQL, before we could save a single customer, we had to write create table, if you remember that.
+And then decide every column in advance.
+So we need to know the first name, the last name, email, city and so on.
+And every customer had to fit into exactly those columns.
+So if a customer had two phone numbers, we needed a new table.
+And that's a very safe way to actually work.
+And this is why banks and booking systems love SQL.
+But it's also, if you ask me, it's also a bit stiff.
+And this week, hopefully, you will see a database where you don't have to decide everything in advance.
+Has anyone heard the word NoSQL before?
+Before you heard me saying it?
+You can raise your hands.
+Okay, okay.
+Almost half of you, at least.
+All right.
+Thank you.
+You can bring down your hands.
+Hopefully, in the future, many of you will meet this at your future job.
+Because a lot of modern apps use both SQL and NoSQL side by side.
+So this isn't instead of SQL.
+You shouldn't think of it like that.
+It's just one more tool in your toolbox.
+That's a question.
+Why would anyone use something other than SQL?
+And here are actually four common reasons.
+Sometimes the data changes shape all the time.
+For example, a new product type with new properties every week.
+In SQL, you need to change the tables each time.
+And sometimes the program thinks in objects like Python dictionaries.
+And we can turn them into tables.
+Yeah, that would be pretty hard work.
+NoSQL databases are built to basically spread over many servers.
+Let's take each row with an example.
+So row one, imagine our web shop starts selling phones, for example.
+Phones have screen sizes, storage, color, or for example, shoes also have sizes, or t-shirt, or anything.
+In SQL, you would need an extra table, extra tables, or lots of empty columns, actually.
+In NoSQL, each product just has basically the fields it needs.
+So row two, in Python, we would already think in dictionaries and lists, when we say row two.
+With SQL, we translate that, translate basically a dictionary into rows and back again every time.
+With MongoDB, we just have, we just save that basically to dictionaries.
+If you remember the recipe with three joins, which we did, in NoSQL, we can keep the whole recipe together.
+So we don't have to use joins in the same way.
+I mean, in really big companies, have sometimes so much data that it doesn't fit in one computer.
+So NoSQL databases were built from the start to spread the data over many servers.
+Of course, you won't need to do that this week.
+But this is one of the main reasons NoSQL exists.
+MongoDB.
+The NoSQL database we'll use is MongoDB.
+I'm going to take some coffee.
+Hold on.
+And the reason is basically, yeah, it's the most popular one.
+And it's used by many big companies.
+MongoDB is a document database.
+We call it, which means it stores data as documents.
+There is actually a community server, which is free and runs on your own computer here.
+Just like our SQLite file did.
+We will talk to it from Python with a library called PyMongo.
+So there are several kinds of NoSQL databases, but we will focus on one.
+And it's going to be MongoDB.
+The name actually comes from the word, can't remember.
+It was from a word called humongoose or something like that.
+I can't remember.
+Which means basically huge because it was built to handle a lot of data.
+And it's the most widely used NoSQL database, for example, in job ads.
+So this is a good one to know.
+MongoDB is, I mean, each piece of data, for example, one product is stored as one document.
+Because remember, MongoDB is a document database.
+Because you can install this on your own computer for free, which you hopefully will do today.
+A document.
+What is a document?
+Well, this is a document that you see in front of you.
+And it looks pretty familiar.
+It looks exactly like a Python dictionary.
+It's made of pairs.
+Field name and a value.
+The name is hoodie black here.
+Price is $599.
+But look at the last two lines.
+Tags is a list inside this document.
+And details is a small dictionary inside the dictionary.
+So in SQL, a list like tags would need its own table.
+But here it just lives inside the product.
+So if you read this document line by line here together.
+Underscore ID is one.
+That's the product ID.
+The name is hoodie black.
+And then we have category here.
+Which is, yeah, well, we say it's clothing.
+And the price is $599.
+A number without quotes.
+And then we have tags, square brackets.
+So it's a list with three, with basically three words in it.
+And then we have details here with curly brackets.
+So it's a small dictionary inside a big one.
+With basically color and material and stuff like that.
+So if I ask a question here to you guys.
+How many tables would we need in SQL to store this one hoodie with tags?
+Raise your hand.
+And I would say at least two.
+Products and products tags table.
+Maybe more.
+But here it's all in one place.
+The format you see is called JSON.
+Which stands for JavaScript Object Notation.
+It's the most common way to send data on the internet, actually.
+So you will see it everywhere.
+Not just in MongoDB.
+So here is a dictionary from SQL words to MongoDB words.
+So a database is still a database.
+So a database is still a database.
+A table is called a collection.
+A row is a document.
+A column is a field.
+The primary key is always called underscore ID.
+Instead of join, we usually put things that belong together inside the same document, which we call embedding.
+And instead of SQL, we ask questions with filters, which are just Python dictionaries.
+So keep this slide in mind for all week.
+I would save this.
+Okay, let me say it as a story.
+In SQL, we had a database called Webshop with a table called Customers.
+And each customer was a row with columns.
+In MongoDB, we have a database called Webshop with a collection called Customers.
+And each customer is a document with fields.
+Same idea, just new words.
+The underscore ID is special.
+Every document must have one, just like every row needs a primary key.
+And the last two rows are where the real difference is.
+In SQL, we split data into many tables and join it back together.
+In MongoDB, we usually keep things together from the start.
+And there is a way to join called Lookup, which we'll look into maybe not tomorrow, maybe the day after it.
+I don't know.
+We'll see how much time we have.
+But we will try to look into that as well.
+Take a photo, if you want, of the slide and keep it open.
+You will see these words all week.
+Flexible schema.
+Okay, in SQL, every row had the same columns.
+In MongoDB, documents in the same collection can look different.
+Shoes have sizes, but a t-shirt in our shop doesn't, for example.
+That's called a flexible schema.
+It's great when your data changes a lot.
+But there is a catch.
+The database doesn't check anything by default.
+So if you write price with an S instead of with a C, MongoDB happily saves it.
+So with more freedom comes more responsibility.
+Maybe throughout the week we will look how to add these rules.
+Schema means the plan or structure of the data.
+In SQL, the schema is strict.
+I mean, when we use create table, that's when it's decided.
+In MongoDB, by default, there is no fixed schema.
+If you look at the two documents here, both are products.
+Both are in the same collection, but only the sneakers have size.
+And MongoDB is fine with that.
+So every document has a field called underscore ID.
+It works like the primary key.
+It must be unique.
+If you don't give one, MongoDB actually creates one for you called an object ID.
+It's basically a long code that is unique, even across many computers.
+So in our web shop, we choose our own IDs.
+One, two, three.
+So it's easy to compare with the SQL web shop, for example.
+But new things you add without an ID will get an object ID, like you see in front of you here.
+It's going to look something like that.
+Underscore ID is always the first field in the document.
+And MongoDB won't let two documents in the same collection have the same one.
+So if you try, you're going to get an error called duplicate key, I think the error is.
+I will try to show it to you when we code along.
+But when you don't give it an ID, MongoDB makes an object ID.
+It looks like a random jumble of 24 letters and numbers.
+But it's actually built from the time it was created, plus some unique parts.
+So two computers can create IDs at the same time without ever colliding.
+And that's very useful for big systems with many servers.
+So in our web shop, we choose simple numbers to make it easy to compare with the SQL web shop.
+So customer one is still Anna.
+But when you insert a new document without an ID, you will see object's ID appear.
+And that's basically completely normal if that's going to happen with you.
+Okay, data types.
+These are the data types, you see.
+You have strings, numbers, booleans, and dates.
+You know that.
+Array is a list.
+And object is a dictionary inside the document.
+Null is nothing, like none in Python.
+The nice thing here is PyMongo translates this automatically.
+So Python list becomes an array, a dictionary becomes an object, and a date time becomes a date.
+So let's connect this maybe to Python here, because that's how you will write the data.
+Python string becomes a string, an int becomes an int, a float becomes a double, true and false
+becomes booleans, a Python list becomes an array, and a dictionary becomes an object, and
+also sometimes called embedded documents.
+For dates, we use Python's date time, and MongoDB store it as a real date, actually.
+So we can sort and compare dates properly here.
+And one thing to watch, in JSON, you will see lowercase true and false, and null.
+In Python, it's capital true, as you know, false, true, false, and none is capital.
+So some values, different spellings, I mean, same values, different spellings, basically.
+And if you write true in Python, you're going to get an error, of course.
+That's actually one of the most common small mistakes you will probably encounter this week.
+Maybe, I don't know, just a heads up.
+So remember, if you remember the full recipe we built with three joins in SQL, and I don't
+know, that day was pretty confusing, even for me.
+Here is the same order in MongoDB.
+The items are inside the order as a list.
+And each item even has a product name and price copied into it.
+To show the receipt, we just read one document.
+No join at all.
+And that's the big idea of document databases.
+Data that is read together is stored together as well.
+So if you look at the items list here, each item has the name and the price copied into
+it.
+So why copy them?
+Because if the hoodie costs, for example, 649 next month, this old receipt must still say
+599.
+The price Anna actually paid.
+We did the same thing in SQL with unit price.
+So to show this receipt in SQL, we needed orders, order items, some products, and basically
+three joins.
+But here we only...
+This gives us everything.
+Okay, but if I ask you one question here to the class.
+What is...
+What's still not inside this document?
+What do we don't see here?
+Well, the customer's name.
+There is only customer ID, as you can see here.
+And that's on purpose.
+Hopefully, by tomorrow or after tomorrow, maybe, we'll talk about when to put things inside
+a document and when to just point to them.
+For now, one order equals one document with its items, of course, inside it.
+So our tools this week, well, they're going to be three tools.
+The MongoDB server is the database itself, unlike SQLite, which has just one file.
+MongoDB is a program that runs in the background all the time.
+So think of it as a kitchen.
+Okay.
+PyMongo is how Python talks to MongoDB, like SQLite did for SQLite 3, did for SQLite.
+And we write and run everything in VS code.
+And the server lives at this address.
+So MongoDB localhost 27, this can be different.
+We'll see.
+But localhost here means this computer, my local computer.
+So let me explain the kitchen picture here.
+The MongoDB server is the kitchen.
+It does the real work, it stores and finds the data, and it runs in the background, even when you don't see it.
+You never talk to the kitchen directly.
+PyMongo is like the waiter, and your Python program gives orders to the waiter.
+The waiter takes them to the kitchen and brings back the answer.
+And the address here, MongoDB localhost, is where the kitchen is.
+So localhost means this computer.
+And this 27017 is just the door number, which is called the port.
+So every program that wants to talk to MongoDB on your computer must use this address.
+PyMongo in four lines.
+Well, this is all you need to talk to MongoDB from Python.
+Basically, import Mongo client, connect to the server, pick the database, in this case, web shop, then ask it a question.
+Find one gives us one document, and then basically we print it.
+What comes back?
+A normal Python dictionary.
+No cursor, no tuples, just a dictionary.
+So if you go through these slowly here.
+So line one, imports Mongo client.
+Line two, connects to the server at our address, as you can see.
+And nothing is downloaded yet.
+Just like a dialing, basically just like a dialing a phone number.
+Line three here, picks the web shop database with square brackets here.
+The same way you take something out of a dictionary.
+And line four, ask the product collection for one document.
+And line five, prints it, basically.
+But notice this db.products here.
+You can also write db square brackets products.
+Both work, actually.
+And the answer is plain Python dictionary.
+So everything you know about dictionaries works.
+Square brackets to get a value, dot get for a safe lookup, or a for loop over the keys.
+That's the beauty of PyMongo.
+It feels just like normal Python.
+Find and insert five commands for today.
+Find one gives one document, or none if nothing matches.
+Find, only find, gives many documents, and we loop over them with a for loop, for example.
+Insert one adds one document.
+Insert many adds a list of documents.
+And notice here, there is no create table.
+If the collection doesn't exist, MongoDB creates it when you insert the first document automatically.
+So if you compare that to SQL, find one is like select with limit one.
+Find is select, yeah, find would be, only find, so only this.
+Find would be select star with a where.
+And count documents would be, let me think, that would be select count star.
+And insert one, and insert many are insert into in SQL.
+So what's missing, basically, compared to SQL, well, yeah, create table.
+In MongoDB, you can insert into a collection that doesn't exist yet, and it will create it there on the spot.
+And that's handy, but it also means a typo in the collection name, like db.customers, silently creates a new one, an empty collection, instead of giving an error.
+So that could be a problem.
+And one more thing about find, it doesn't give you the document straight away.
+It gives you a cursor.
+The same idea is in SQLite 3, and you loop over it.
+We will see exactly what that looks like, hopefully, in the code along.
+But how do we say where with a dictionary?
+An empty dictionary means everything.
+City, Uppsala, I mean, city colon Uppsala means where city is Uppsala.
+Yeah, you have to think in a different way here.
+And if you put two fields in a dictionary, both must match like and.
+Nowhere.
+And here we have the and.
+Look into that as well.
+But let's sum up this theory before we start any coding.
+MongoDB stores documents in a collection.
+Document is like a Python dictionary, with lists and objects inside it.
+Every document has a unique ID.
+PyMongo will talk to MongoDB from Python.
+Filters.
+Filter are dictionaries.
+Example, city colon Uppsala.
+These are the points to keep in your head when we code along this week.
+I think it's easiest to just start coding.
+But before we do that, I need to actually run to the toilet.
+So let's take a break.
+Take a 10 minutes break and we'll come back.
+Code along.
+If you don't, if you have any questions, of course, you can ask them as well.
+You can take them now.
+Okay, 10 minutes break.
+The guy's back.
+All right.
+Give me a second here.
+Is it not sharing?
+There we go.
+Do you see the screen?
+All right.
+So what you see in front of you is a program called MongoDB Compass.
+And I'm actually going to show you where you can download this.
+And I'll go on.
+Just give me a second here.
+I'll give you a direct link as well.
+It should be, let me see, MongoDB Compass.
+Okay.
+So this works for Mac, Linux, Windows, whatever operating system you're using.
+And it's free.
+You can download it here.
+Yep.
+You can use it in the shell if you want.
+But I'm not going to do that.
+So basically the terminal.
+You don't need Atlas.
+So you can skip that.
+And MongoDB Compass.
+This is their GUI, basically.
+You can just download.
+Choose the operating system here.
+Whatever operating system you're using.
+Click download and just install it.
+So it's not harder than that, actually.
+I'll give you this link in the chat.
+And then when you open it, it's going to look something like this.
+This is not the newest version.
+I have a little older version, but it should look quite the same.
+And there you have the link.
+So the first thing we need to do here is actually create a new, it says add a new connection here.
+And we can click on that.
+And here it says the URI is, well, we have already spoke about.
+This is localhost, basically mean this computer.
+We can just click here, save and connect.
+End of life of MongoDB.
+What?
+Servers and localhost appears to be running a version MongoDB is no longer supported.
+Server version.
+Now you can consider upgrading to get the latest features.
+Okay.
+I don't need that now.
+Okay.
+So we have our database here.
+We have some stuff in it.
+Nothing in it right now, actually.
+Some config files, some admin stuff.
+We haven't talked about this.
+Okay, this is students.
+Okay, this is old stuff.
+Ah, this is some old stuff.
+Maybe we can delete that.
+Cool.
+Drop.
+And then we have another one.
+Library.
+We can drop this as well.
+Library.
+It's this.
+Some testing stuff here.
+We can actually remove it as well.
+So yours should look like this.
+So it's admin, config, and local.
+Nothing in it that we actually need right now.
+I'll explain what this is later.
+So that's the only thing we need to do.
+Just start the server here.
+Let's click refresh here.
+And show connection info.
+And that is the info we need.
+The host is that.
+Only thing we need.
+Cool.
+Now we can leave this.
+Don't need more than that.
+We can actually do this from the terminal as well.
+I think it's easier just to do it from here.
+Now we can open up Visual Studio Code.
+Let's start coding.
+So I've already created a folder called NoSQL here.
+I will create one file.
+And we can call this webshop again, .py.
+Okay.
+And now we need to write some code.
+So we need to import Mongo client.
+So from.
+And yeah.
+You actually need to do a couple of pip installs.
+I'll give you the exact commands in a second.
+Install Mongo.
+I think it's as easy as pip install pymongo.
+But I'll give you a link to it directly in the chat.
+And while we're here, let's open up the terminal.
+View terminal.
+Control plus O.
+That's really strange.
+And we can do.
+I think it's just.
+It's going to tell me that I already have installed it.
+Pip install pymongo.
+Not show again.
+Requirement already satisfied.
+So yeah.
+We have this already installed.
+And now it wants me to update and stuff like that.
+But I'm not going to do that.
+I'm going to clear the screen here.
+If you want to double check if this is installed, you can do pip list.
+And it's going to list everything I have installed here.
+So we should have pymongo installed somewhere.
+Py, py, py, py.
+Where is it?
+There it is.
+Pymongo 4.15.3.
+So that's how you double check if it's installed.
+Clear the screen again.
+And bring this down.
+And maybe remove this agent part here.
+So we see everything.
+There we go.
+Maybe we can collapse this as well.
+Yeah.
+Yeah.
+Perfect.
+All right.
+So the first thing we need to do here is basically import pymongo.
+So from pymongo import mongo client.
+And then we say client equals mongo client.
+And now in quotes, we need to give it mongo, the address basically, mongodb, colon, slash,
+slash, local, host, colon, and the port number, 27, 0, 17.
+Let me just double check that.
+That is correct.
+Perfect.
+All right.
+Then we can say d, so db equals client.
+And in here with brackets, square brackets, we say web shop.
+Should be good enough.
+So maybe we can see, maybe I can just type print client.list for database names.
+See what that gives us.
+And to start this file would be Python web shop.
+All right.
+And there we go.
+Now we can confirm that we have connected.
+So we have admin config local in the database, which we have here.
+So we are actually connected.
+That's how we can try it out.
+What if we say, instead of printing that, we can say, for example, just give me a second here.
+I'm going to try something.
+Okay.
+Maybe just say one thing here.
+Give me a second, guys.
+Oops.
+That's the old one.
+Okay.
+That's the SQL.
+I'm planning to already made a big list here.
+So I'm going to take that in here and do it this way instead.
+So I'm going to remove all of this and paste this in.
+And you see it's a long, long list.
+Customers and stuff like that.
+I'm going to remove that.
+That's just dummy data here.
+Okay.
+Client, web shop, collection called customers.
+And this is basically the same customers we had in our SQL.
+And this is products.
+This is orders.
+And then we do some loops here.
+Maybe let's just run this and see if it will give us.
+I think this might work.
+And we can go to compax.
+Hopefully, just refresh here.
+And yeah, we see another one.
+So we have web shop, customers.
+And here's our customers.
+Here's our orders.
+And the product.
+So we filled it in.
+Perfect.
+Now, you can basically see here.
+Well, what's missing here is create table.
+There is no create table or anything like that.
+We run this.
+Whenever it's messy, you can rerun this.
+And I'm going to share this with you in a second.
+But I was thinking maybe we can actually create a new file.
+Okay.
+And work on that file.
+So we create a new file and call it here.
+That's pi.
+And in here, we can create all the stuff I did earlier.
+So from pi-mongo, import, mongo-client.
+And then we had client equals mongo-client.
+And then we need to give it the address.
+mongo-db localhost, localhost, poland 27.017.
+And now we can do db equals client web shop.
+Okay.
+Now if we print, for example, earlier we printed the client, we listed the database names.
+So we print, you can do that again, just for fun.
+Client list database names.
+Yes.
+Don't forget that.
+And now if I run it, so this would be python day one pi.
+And we can see we have our web shop there.
+Earlier we only had these three.
+Okay.
+What if we print, let me see, maybe we can print something else here.
+We can print, print db.list collection names.
+Clear this.
+Oops.
+Clear and run that file again.
+And we can see our collection names are products, customer and orders.
+So we can either use, of course, mongo, sorry, compass to see this, or we can just print it here directly in Python.
+And that's what's cool with it.
+Okay.
+Let's, let's do something else.
+Let's try, for example, find one that we had talked about earlier.
+So we could do product equals db.products, product, there we go.
+Find underscore one.
+And then we can just print product.
+Let's run this, see what result we get.
+And this is a little bigger result.
+And we can see that we have a product.
+It's not harder than that.
+But we find it one.
+Okay.
+Let's try something else here.
+What if I say products, sort canaries.
+I don't know if this still works.
+It used to work.
+False.
+And let's put a P in there.
+Oh, sorry.
+I'm just trying some stuff here in real time.
+Yeah, it's not working.
+Okay.
+Let's just forget that.
+Okay.
+Let's try another one then.
+Let's, for example, how many documents are in each collection.
+Okay.
+So we can loop over the collection names and basically count each one.
+Maybe we can do that.
+So we can loop over them and count to them.
+So what we can do is I'll comment that out.
+And I'll say for name in db.list collection names.
+So that's our loop.
+And we want to print name and db name in brackets.
+And then we say count documents.
+So you see, it's already there in the library.
+Just press dot there.
+Okay.
+So I clear this screen here.
+Clear.
+And let's run this.
+And what happened here?
+We're missing something.
+What are we missing?
+Oh, count documents.
+Yeah.
+We need to put that in there.
+So it knows.
+There we go.
+So we have 12 products, 10 customers, and 15 orders.
+So that's how we can count our, basically, collections.
+Let's make it even more interesting.
+Let's do another loop.
+So for customer in db.customers.
+Find.
+Yeah.
+Find.
+Let's just do a print here.
+And then we say customer.
+First name.
+First, let's go name.
+We can also list the customer keys.
+Customer dot keys.
+Okay.
+Let's run that.
+Okay.
+So each customer, we print the name and the list of fields that customer has.
+So if you look closely here, Eric, even Maria, also Fatima, have one phone field.
+There and there and there.
+Some have newsletters and some don't.
+And Lucas here.
+Let me see Lucas.
+He has no city at all.
+So in SQL, he had null in the city, if you remember that.
+But here, the field just isn't there.
+Same collection, different fields, basically.
+Okay.
+Maybe let's try to insert something.
+Okay.
+So I'll comment this out for now.
+And I clear the screen here as well.
+And let me see here, what we have here.
+We can leave that as is.
+So what I'm going to do is maybe we can do, yeah, from p print, import, print.
+Yeah, that's, I think, how we can, let's try this.
+Let's say result equals db.products.
+Insert one.
+Yeah, we see we have insert many.
+Insert one.
+We have much other stuff as well in this library.
+But we will use insert one.
+And in here, we're going to make this a little bit interesting.
+In here, we're going to say name.
+We're going to insert one product.
+And what's the name from that product?
+We can say it's gloves.
+Okay.
+And what category?
+Category.
+And notice that I'm putting colons here.
+So it's a dictionary.
+So key and value.
+Accessories.
+Let's see, but just accessories here.
+I have so hard time to spell this.
+Accessories.
+There we go.
+Hopefully, that was correct.
+And don't forget the comma.
+We're going to put some more stuff.
+Price.
+Sorry.
+Price.
+Could be an int.
+199.
+And we can also have another one called stock.
+Stock.
+20.
+Okay.
+And here, now we can say print.
+Result.
+Inserted ID.
+Then we can also say p.
+Print.
+db.products.
+Product.
+Find 1.
+We want to find the one we actually created here.
+So we'll say name b.
+Gloves.
+And now I can think I can run this sort.
+Let's see.
+And I can say sort equals false.
+Let's run this.
+What did I do here?
+What did I miss?
+The print it is was double P.
+No, it's not complaining about that.
+It's complaining.
+Insert one.
+Ah, I'm missing.
+I'm missing these.
+Sorry.
+No.
+There we go.
+Okay.
+Can I ask you?
+What is this pprint doing?
+What is that?
+Pprint is basically, let's say this, stands for pretty print.
+It's built into Python.
+So you need to actually import it to get this.
+It basically prints big dictionaries and lists and it spreads those basically over several lines instead of one long line, which makes MongoDB documents much easier to read like we see it here.
+So it's pretty print.
+It's more complicated than that, actually.
+That's it.
+Thank you.
+You're welcome.
+But we can see here that we have this ID, object ID, because we didn't give it any ID.
+So it created one for us.
+And every object ID is unique.
+So if I had another one, which is called students, for example, that would be every student would be unique.
+Okay.
+Let's just say, okay, we have created one object.
+Let's just say I want to delete.
+Do I do that?
+So I will actually just, because we already have that object in the database stored now.
+So we should be able to delete it.
+So we could either continue working on this, but I will save that.
+So maybe some of you want to try it.
+But I will create a new one.
+Result equals db.product.
+And now instead of saying insert one, we can say, if we can find it here, delete one.
+Here we will delete.
+Yeah, whatever we created was name.
+Not Bain.
+Name.
+Colon.
+Gloves.
+If you remember that.
+Gloves.
+Okay.
+And then we can do a print here that said something like deleted result deleted count.
+You can leave it as is.
+And then we can do another print that says db.products count documents.
+Yeah, don't forget these as well.
+Okay.
+Let's clear this and run the file again.
+I misspelled that.
+I misspelled that.
+Delted deleted, you should say.
+And then we told it to count the documents.
+And now we have 12.
+So we had 12 earlier.
+What is all of this popping up?
+So MongoDB has basically no pending changes.
+So every insert or update or delete is saved immediately, directly.
+So if you make a mistake, how do you roll back?
+Well, it depends on what you mean on mistake here.
+I mean, if you insert something by mistake, is that what you're saying?
+Yeah, or delete, for example.
+Then it's deleted.
+You can't revert back.
+Yeah.
+Yeah.
+You have to make sure you don't do any mistakes.
+That's the problem.
+Okay.
+Let's make another example because this is so much fun.
+So let's just put it that way.
+And now we can say, let's find something with a filter.
+Okay.
+Let's filter it.
+So we can do product here.
+So product, product, product, product equals.
+Let me just put my glasses on.
+I have a hard time seeing right now.
+Hold on.
+There we go.
+Oh, wow.
+Like a different world.
+DB dot products.
+Products.
+And we say, find one.
+We know this one.
+And this time, let me just check one thing here.
+Okay.
+Let's find Beanie here.
+Cool name.
+Name.
+Sorry.
+Name.
+And yeah, don't forget these.
+I always do that.
+Otherwise, this wouldn't work.
+Okay.
+Let's just do a simple print.
+So print.
+Product.
+Want.
+Take.
+Yeah.
+We can take out values just like we do.
+I'm going to say costs.
+This should be in.
+Yeah.
+Don't forget that.
+Let's say product.
+Let's take out the price.
+Price.
+This could be in kronor.
+Okay.
+Run that.
+So Beanie costs 179 kronor.
+So that's basically filter.
+You can call it a filter.
+The product whose name is Beanie.
+Because it's a dictionary, we take out values with square brackets like any other dictionary.
+Now, let's just say we want to.
+Okay.
+Let's do another one with a filter.
+So we can say, for example, print DB dot product products count documents.
+We can also do print DB product documents.
+And this time, we're going to say, I want the category shoes.
+And let's remove those.
+We don't need that for now.
+Let's clear the screen here.
+We already saw the result, but I like to keep it clean.
+So we can see that we have 12 documents.
+But if we can filter it, but by just saying, I want to see how many documents that has the category shoes.
+And it gave us three back.
+So what if I do it this way as well?
+So print DB customers, customers dot find.
+What do you think is going to happen now?
+It gave us an error.
+Now find for many documents.
+If I just print it like we did, we get something called a cursor.
+And find doesn't give us the documents directly.
+It gives us something we call, we can loop over.
+So we can't do this.
+So if we loop it, let's do a loop.
+We'll say instead for customers, a customer, it must be.
+Yeah, for a customer in db dot customers, customers underscore find, there we go.
+Work with me.
+Now we can say print customer brackets.
+And we can say, for example, first underscore name.
+And then we can also do customer, customer, last name as well, just for convenient here.
+Last underscore name.
+And that didn't work at all.
+Let's see.
+For customer in db, customers find, print customer.
+Oh, that should work here.
+Why are you using underscore find instead of dot find?
+Oh, that's wrong.
+There we go.
+Thank you.
+All right.
+So here we loop through them and then we're going to get a much better list.
+So this is basically where, if you compare this to, for example, SQL we did last week,
+this would be first name from customers.
+We can basically do it.
+Okay, let's just say, let's go back to SQL here.
+We can say select, let me do this as a comment.
+Select first name from customers.
+Then we can actually do another one where we can say where city is equal to, if you remember, we did this last week, Uppsala.
+Uppsala.
+Okay.
+So if we're going to do this with Mongo, we would do, well, we would copy this first.
+I'm going to copy, just copy this here.
+So for customers in DB customers find, and in here, we would say find city Uppsala.
+Okay.
+But we're not done yet because this is a loop.
+We need to print customer first name as well.
+So we don't get any gibberish.
+So basically this is what we do.
+So select first name from customers where city is equal to Uppsala, and then we get the result.
+But here we will loop through them.
+So for customer in DB customers find everyone that has the city Uppsala, print that customer with only his first name.
+So that's what we're saying here.
+And we can see we only have Anna, Johan, and Oscar that are from Uppsala.
+Okay.
+So it's a bit different, but yeah, it's quite, quite the same here.
+Okay.
+So what if I say, if I do Uppsala with, for example, with the wrong misspelling here, W-Sala.
+I don't know.
+Uppsala with O.
+Let's see.
+Nothing.
+We don't have that.
+So it's not going to give us anything.
+So text is case sensitive in MongoDB, just like SQL.
+I think if I spell it with small U, it wouldn't work as well.
+No.
+But if I have a big U, then it should work.
+So you can see it's just the capital U would break the whole thing without the capital U.
+Sorry.
+Because this is not the same as small letter of Oppsala.
+What if I do, for example, city with two T's?
+What would happen now?
+Why do I not see your, yeah, I see your questions here.
+I had the same, I guess this port has already been used, so we need to choose another one.
+But I'm not sure.
+Yeah, you can change port number.
+I don't know to do it in Windows.
+Yeah, you can start.
+But you should be able to only start MongoCompass.
+And this should do it automatically for you.
+Are we watching an old recording?
+No.
+This is real, real time, live.
+Do you have any other questions before I move on here?
+Yes, Fabian.
+Well, yeah, it's not really like a question, but it's sort of like it does an immediate refusal.
+So I guess, like, if there is no server downloaded, you need to have that, because I just tried to press it.
+Oh, yeah, maybe.
+Okay, so back in the days, it installed everything for you.
+Maybe you, I'll take, I'll, after this, don't worry, guys.
+I'll give you a PDF where, how you can install and download everything.
+A small guide.
+Okay, so just watch me here is good enough.
+So don't sit with something right now.
+I want you to focus.
+Okay, but we continue.
+So what if I misspell city like this?
+What's going to happen then?
+Anyone knows?
+No one?
+No one want to take a guess?
+Yes, let me see.
+I can take, I can, I can humiliate myself.
+Yeah.
+Yeah, it's going to be created.
+I don't know, actually.
+Let's try it.
+Let's try it.
+Let's see.
+It's going to be created.
+Let's look into compass, maybe.
+And let me see if I can refresh database.
+No, actually not.
+What's going to happen is city, go back here.
+It's going to give us nothing.
+No error, just nothing.
+In SQL, we get no such column as an error.
+And MongoDB doesn't know which field, which fields should exist.
+So it just looks for documents with a field called city with a two T.
+And there is none.
+So this is the same thing as we misspelling Uppsala.
+Let's take another one.
+If I forget, let's just bring this back and remove the quotes here.
+What would happen now?
+Someone wants to take a guess?
+Get my head.
+You may miss colon.
+Sorry, miss, miss color.
+Colon.
+It's like your syntax here or like that.
+Yeah, you're not, you're not too far from the right answer.
+Let's run it.
+Sorry, let's run that.
+And yeah, you're going to get an error.
+Because the city, Python thinks city is a variable.
+Field names are strings.
+So they always need quotes.
+Do another one then.
+Let's maybe like this.
+Customer.
+Let's print basically everyone's city.
+Is that correct?
+If I, hold on.
+If I say remove this.
+Now let's run it again.
+What is going to happen now?
+What do you think is going to happen?
+Who wants to take a guess maybe?
+Yes, Saranjo?
+Yeah, so I think for some of the field city would be null.
+So by then we'll show.
+Okay, let's run it.
+Let's run this.
+Kind of worked for around one, two, three, four, five, six, seven, nine.
+Nine customers.
+And then it crashes.
+And it says key error city.
+What happened here?
+Key error city.
+Let's go to a web shop here.
+And let's look at customers.
+Let's see if I can.
+We see that we have 10 customers.
+So it showed us all of those.
+But it didn't show Lucas.
+Why?
+Why didn't it show Lucas?
+Because Lucas didn't.
+Lucas don't have a city.
+So that's why it's crashed.
+So this would be Lucas had null.
+A null value in the city.
+In SQL.
+Okay, this.
+The fix is a normal Python trick here.
+So what we can do, instead of saying this, customer city,
+we could say customer.get.
+And in city, we can say, instead of that, we can say unknown.
+So now if I run it, it should give us everyone's.
+Hold on.
+What did I do here?
+I'm going to get there.
+That is correct.
+The brackets?
+Am I missing something?
+Where?
+Which brackets?
+Oh, hold on.
+Yeah, yeah, yeah.
+This should be exactly.
+Thank you.
+Thank you, thank you, thank you.
+There we go.
+Please don't mess that up.
+Okay.
+Let's look into these results.
+We can see we have all of them.
+Eric, Anna, and Fatima.
+But Lucas, it says unknown.
+So that's a trick you can do.
+Instead of getting a, instead of letting the program crash.
+Whenever it doesn't, doesn't, when it has a null value.
+That's cool.
+I'll do another example.
+Now let's maybe insert.
+Let's do that.
+Maybe insert one with the dictionary.
+And we don't give an ID.
+So we skip giving in ID.
+So MongoDB is going to create an object ID then.
+Okay.
+So we can say result equals DB.customers insert one.
+And here we need to be careful here.
+So we do everything correct here from the beginning.
+Key values.
+First, first name.
+Let's come up with someone.
+We can say Noah.
+And last name.
+Could be Svensson.
+Svensson.
+Forget the comma.
+Email.
+Sorry.
+Email.
+I have fat fingers today as well.
+And that could be no.
+Gmail.com.
+And let's have one more.
+And that would be this city.
+And the city could be in shopping.
+That's how we.
+Let me see if I can.
+We see all of it.
+All right.
+Let's print.
+Print the results.
+Result inserted ID.
+That should be good enough.
+Let me see.
+Then we get the ID of that inserted.
+New inserted customer.
+And this happens like I said before.
+I mean if I run this again.
+Then we're going to have another Noah.
+Because we're going to get a new ID for every insert.
+Because every run inserts a new document with a new object ID.
+And we basically clean up with this seed script at the end here.
+Okay.
+So let's just check that we have this guy in our database.
+We can actually go here.
+Customers.
+And I think I need to refresh here.
+There it is.
+So we can see the other ones have ID 9, ID 10.
+But we didn't give an ID to Noah here.
+And we see we have one document.
+So if I run this again.
+We're going to get another Noah.
+With a different ID.
+Object ID.
+Maybe we can also do insert many.
+Because we have only insert one now.
+We insert one customer.
+Let's do insert many one time as well.
+Let me see what time is it right now.
+Okay.
+We can do this.
+And then we can end the session.
+I know there is a faster way of doing this.
+But that's fast as well.
+Okay.
+So result.
+Result.
+Equals.
+DB dot.
+Products.
+Products.
+And we do insert many.
+So we're going to insert some products here.
+Okay.
+And don't forget these.
+And now we have these.
+And we will say ID.
+We want to set the ID here.
+So ID is going to be 13.
+Name.
+We can call this scarf.
+Scarf.
+Okay.
+Category.
+Oh, sorry.
+It will be accessories.
+Accessories.
+And price.
+Could be an int.
+Okay.
+And a comma there.
+And I'm going to press enter here.
+And keep adding some stuff.
+So stock.
+Be a good idea to have.
+15.
+And we can also have tags.
+Winter.
+Overcomplicating this on purpose.
+Details.
+Another dictionary in here.
+That would say.
+Oops.
+Car.
+What's going on here?
+This is too much.
+There we go.
+Color.
+Now we close the brackets there.
+Comma there.
+We're going to add another one.
+So what I actually can do.
+Because I'm lazy.
+I'm going to copy this.
+And put it down here.
+And we change only the values here.
+So we would say this is 14s.
+And instead of scarf.
+We can say gloves.
+Categories.
+Accessories.
+Fine.
+And we can change the price to 199.
+Stock.
+Could be another number here.
+20.
+Tags.
+Winter.
+We can leave it.
+Details.
+Color.
+Maybe have black here.
+Looks good enough.
+Hold on.
+Yeah.
+There it is.
+I was looking for that.
+Let's print.
+Print.
+Result.
+Inserted IDs.
+And then we can do another print.
+And we can print it.
+DB products.
+Products.
+Count.
+Documents.
+And yeah.
+Don't forget.
+These.
+Clear.
+And run the file.
+Okay.
+So the output was 13.
+No.
+14.
+This is something here.
+Oh yeah.
+Because.
+Oh.
+Hold on.
+But we gave it ID.
+Ah.
+Look what we did.
+Look what we.
+What did.
+What did I miss here?
+Why did it give us an object ID instead of ID 13 and 14?
+This is a good mistake that I did here.
+Is it underscore something?
+Exactly.
+We need to put underscore here.
+Otherwise this will not work.
+So let's try to run it again.
+Hopefully.
+Yeah.
+There we go.
+It should look something like this.
+Now we probably have a lot of gibberish in our database.
+But it doesn't matter.
+So let's just check compass here.
+And do a small refresh.
+Products.
+And here we see the gloves.
+It says actually ID 14.
+It gave it.
+It gave it another key and value appear here.
+This is wrong.
+It shouldn't be like this.
+It should be like this.
+So this is a good mistake.
+Because this shows what could actually happen here.
+I can actually delete it directly from here.
+Remove document.
+Delete.
+And remove that as well.
+Delete.
+So now it looks correct.
+Let's refresh this just in case.
+Click here and there.
+And go back.
+Yeah.
+So we have our ID 13.
+scarf, accessories, blah, blah, blah.
+Details.
+Color red.
+Same thing here.
+Details.
+So this is an object.
+Color black.
+Okay.
+What if I want to reset all of this?
+Now we have put some data into here.
+But I want to reset.
+What do I do to reset?
+Any ideas?
+So whenever the data gets messy.
+I'm going to give you this file.
+You can just run this file again.
+There we go.
+And then we go double check that.
+I don't think.
+Hold on.
+Maybe.
+Let me see.
+Refresh.
+Product is still there.
+Maybe I need to remove the whole database and then restart.
+Okay.
+So maybe I will do this.
+Web shop.
+Drop the database.
+There we go.
+And then now the database is dropped.
+Now I can run this file again.
+Oh, that's the wrong file.
+Let me see what happened here.
+Refresh.
+Yeah, it started.
+Let's remove that.
+Web shop.
+I think it's good you're seeing me doing these mistakes.
+So you don't have to do that.
+Python.
+Maybe it would work if I just web shop.py.
+There we go.
+And go back.
+And now we should have everything just as normal.
+So let's double check that because we know the products.
+Yeah, we still have the default values here.
+Perfect.
+So you can just drop it and then add it again if the data gets messy.
+I'll actually copy this.
+I'll put this in a file as well under files later.
+But I can put it in the chat here if you want to have it now.
+Block and see if no SQL exists here.
+Python.
+There we go.
+So you can run that and see if that works on your end as well.
+I'm actually going to...
+We have some break.
+But I'm going to end the session now and give you some labs.
+So you can get your hands a little bit dirty.
+Okay.
+Do you have any questions?
+Okay.
+If you don't have any questions, you can of course leave the meeting.
+Me and Aladin will be here all day as usual.
+And take some break.
+Go grab some coffee.
+Maybe open the window.
+Grab some fresh new air to the brain.
+Or whatever you want to do.
+Just do something else for a while.
+Yes, someone raising hands?
+No?
+False alarm?
+You can leave the meeting if you don't have any questions.
