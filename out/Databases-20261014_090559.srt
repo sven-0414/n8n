@@ -1,0 +1,680 @@
+1
+00:00:02,370 --> 00:00:09,020
+ document is like a Python dictionary with lists and objects inside and every
+
+2
+00:00:09,020 --> 00:00:18,720
+ document has a unique ID if you don't specify anything. PyMongo on the other
+
+3
+00:00:18,720 --> 00:00:26,550
+ hand is equal to talking like talking to MongoDB from Python. Filters are
+
+4
+00:00:26,550 --> 00:00:34,710
+ dictionaries so city Uppsala here if you remember that. If you take a moment here
+
+5
+00:00:34,710 --> 00:00:41,140
+ to think maybe which of these felt easy and which one would you like to see
+
+6
+00:00:41,140 --> 00:00:56,680
+ again maybe you can write that to me. So quick questions here about yesterday maybe
+
+7
+00:00:56,680 --> 00:01:08,880
+ take two minutes and write your answer in the chat. It's not a test it's a way
+
+8
+00:01:08,880 --> 00:01:22,060
+ for you and me to see if someone is stuck maybe. So you can just what is a
+
+9
+00:01:22,060 --> 00:01:27,450
+ collection and what is it called in SQL. What does DB customers find and give you
+
+10
+00:01:27,450 --> 00:01:32,440
+ and how do you see documents and why why does misspelled field name give zero
+
+11
+00:01:32,440 --> 00:03:51,330
+ errors instead of an error. Take a couple of minutes answer those in the chat. I'm
+
+12
+00:03:51,330 --> 00:03:58,180
+ still waiting for answers from many of you guys. Please answer everyone right the
+
+13
+00:03:58,180 --> 00:06:35,410
+ best as you can. Still missing some students yeah. Wait a couple of minutes. I'll give
+
+14
+00:06:35,410 --> 00:09:07,920
+ you two more minutes. All right you got an extra minute even that. All right so I'll
+
+15
+00:09:07,920 --> 00:09:13,360
+ answer these questions as well. So the first of all first question so what is a
+
+16
+00:09:13,360 --> 00:09:20,020
+ collection and was what is it called in SQL? Well the answer is it's a group of
+
+17
+00:09:20,020 --> 00:09:27,180
+ documents and in SQL it's a table. Second question is what does DB customers find
+
+18
+00:09:27,180 --> 00:09:36,260
+ give you and how do you see the documents? Well the answer here is a cursor and how do
+
+19
+00:09:36,260 --> 00:09:43,120
+ you see the documents is you loop over it with a for loop or actually a useless
+
+20
+00:09:43,120 --> 00:09:51,950
+ function as well. Third answer why does a spelled field name give zero results
+
+21
+00:09:51,950 --> 00:10:00,510
+ instead of an error? Well MongoDB has no fixed columns so it's just it just looks for documents
+
+22
+00:10:00,510 --> 00:10:11,580
+ with that field name and there are none basically that's why it's not showing you anything. All
+
+23
+00:10:11,580 --> 00:10:24,810
+ right now that we got that out of the way comparison operators and yesterday we could only ask for
+
+24
+00:10:24,810 --> 00:10:37,160
+ example is equal to for example today we will learn operators they all start with a dollar sign and gt is
+
+25
+00:10:37,160 --> 00:10:59,280
+ basically great to them and it is less than and and the e versions here include you see not equal so
+
+26
+00:10:59,280 --> 00:11:19,090
+ dollar sign not equal or equal so dollar sign e would be equal in in in in in means in this list or not in
+
+27
+00:11:19,090 --> 00:11:30,180
+ in the list it's pretty it's pretty straightforward here and this is basically just like in in sql
+
+28
+00:11:30,180 --> 00:11:39,490
+ and the trick is the shape i mean the field then a small dictionary with an operator and the value
+
+29
+00:11:39,490 --> 00:12:04,070
+ price dollar it i mean 500 means price less than 500 basically here so why the dollar sign and that's
+
+30
+00:12:04,070 --> 00:12:15,110
+ basically how mongodb tells the difference between a field name and an instruction price is a field dollar
+
+31
+00:12:15,690 --> 00:12:29,780
+ it is an instruction i mean it lt maybe less than the name come comes of course from english gt is greater than
+
+32
+00:12:29,780 --> 00:12:53,720
+ l t is less than e stands for equal and e is not equal and and n i n is not in and so on and so on okay if i read if
+
+33
+00:12:53,720 --> 00:13:04,070
+ let me read maybe a few aloud here the way i want you to think about them so price dollar less than 500
+
+34
+00:13:04,070 --> 00:13:20,020
+ so that means price less than 500 basically category uh category dollar in a list so category is one of
+
+35
+00:13:20,020 --> 00:13:29,330
+ these so if you remember the shape field then a small dictionary with an operator you can write
+
+36
+00:13:29,330 --> 00:13:45,650
+ any of them of course so if i ask a question here and how would you write stock is zero or less i can
+
+37
+00:13:45,650 --> 00:14:05,920
+ write it here in the chat stock is zero or less so how would we write that you can answer them in the
+
+38
+00:14:05,920 --> 00:14:13,100
+ chat or if you want to say it out loud you can do that as well but i think it's easiest easier to to
+
+39
+00:14:13,100 --> 00:14:26,930
+ answer in the chat so stock is zero or less how do we write that in the same way as we're writing here
+
+40
+00:14:26,930 --> 00:15:38,540
+ yeah daniel almost all right i like your answers many of you are correct hi thumb yeah can i just
+
+41
+00:15:38,540 --> 00:15:44,850
+ leave and rejoin i see that my chat isn't moving and everyone looks like offline for some reason can
+
+42
+00:15:44,850 --> 00:16:00,270
+ i just oh just log in and log out that might help okay all right okay i almost got everyone's answers
+
+43
+00:16:00,270 --> 00:16:14,290
+ here so i will look through i would say hold on so it would be doc colon curly bracket dollar lte
+
+44
+00:16:14,370 --> 00:16:23,870
+ colon zero curly bracket okay i'll write that in the chat so it would be just give me a second
+
+45
+00:16:23,870 --> 00:17:15,650
+ here doc colon curly bracket and a dollar sign zero curly bracket there is the writer so now that we
+
+46
+00:17:15,650 --> 00:17:24,410
+ know a little bit about this we can move off to and and or an and is easy several fields in the same
+
+47
+00:17:24,410 --> 00:17:36,040
+ dictionary must all match if it's an and or is written differently dollar or and then a list of small
+
+48
+00:17:36,040 --> 00:17:46,360
+ filters at least one of them must match and if you want a range on the same field for example like
+
+49
+00:17:46,360 --> 00:17:58,790
+ price between 200 and 600 put both operators in the same same small dictionary so let's maybe translate
+
+50
+00:17:58,790 --> 00:18:07,180
+ this to sql the first example is where category equals to shoes and price is greater than thousand if you
+
+51
+00:18:07,180 --> 00:18:19,510
+ remember that the second is where category equals to shoes or stock equals to zero okay so i can write
+
+52
+00:18:19,510 --> 00:18:33,500
+ it here in the chat so you see what i so it would be where we did this we kind of did this where category
+
+53
+00:18:34,050 --> 00:18:57,920
+ is equal to shoes and price is greater than what did we say thousand or whatever and thousand and for the or
+
+54
+00:18:57,920 --> 00:19:19,470
+ it would be so the and version is the most common one and it's easy just add more fields to the dictionary
+
+55
+00:19:19,470 --> 00:19:31,790
+ the or version looks strange at first uh why a list because each item in the list is complete little
+
+56
+00:19:31,790 --> 00:19:46,700
+ filter and mongodb keeps a document if any of uh any of them matches and here is also a trap that some of you
+
+57
+00:19:46,700 --> 00:19:54,120
+ might fall in in in python you can't you can't put the same key twice in a dictionary if you write
+
+58
+00:19:54,120 --> 00:20:03,800
+ price or price greater than 200 and then price less than 600 as two separate keys python will silent silently
+
+59
+00:20:03,800 --> 00:20:18,000
+ keeps only the last one and that's why both operators go in the same small dictionary for one field so if i ask you for example a question here
+
+60
+00:20:18,000 --> 00:21:02,200
+ how would you find customers in upsala or customers who get the newsletter answers no question no answers at
+
+61
+00:21:02,200 --> 00:21:12,150
+ all so how would you find customers in upsala or customers who get the newsletter i'll i'll i'll i'll
+
+62
+00:21:12,150 --> 00:21:40,280
+ put that question in the chat then you can try to how would you find yeah yeah good job guys you're with me i think this might be too easy for you
+
+63
+00:21:40,280 --> 00:21:53,180
+ while you figure that out i'll go to the next slide here inside objects or dot notation our product have
+
+64
+00:21:53,180 --> 00:22:07,150
+ an object called details with color and material inside so to search inside it use a dot i mean details dot
+
+65
+00:22:07,150 --> 00:22:18,170
+ color the whole thing in quotes of course and watch out also for the trap on the last line if you write details
+
+66
+00:22:18,170 --> 00:22:30,420
+ colon a dictionary with color black mongodb looks for the details object that is exactly that nothing more
+
+67
+00:22:30,420 --> 00:22:45,630
+ and nothing less remember that our products have a details object with color and material so the dot notation
+
+68
+00:22:45,630 --> 00:22:55,420
+ is how we reach inside it is how we reach inside it like a path so like a path is gonna go go into details
+
+69
+00:22:55,420 --> 00:23:10,970
+ then look at color i'm sorry and you can go also several levels deep like address dot city dot post code
+
+70
+00:23:10,970 --> 00:23:24,420
+ if your documents of course have that the quotes here are important uh so the whole path with the dot is one string now
+
+71
+00:23:24,420 --> 00:23:34,350
+ the trap if you write details equals a dictionary with color black you're asking for product whose details
+
+72
+00:23:34,350 --> 00:23:44,250
+ object looks exactly like that with only color black and nothing else in that order so most of most of our
+
+73
+00:23:44,250 --> 00:23:55,510
+ products also have material so they won't match it's like asking for someone whose whole shopping bag contains
+
+74
+00:23:55,510 --> 00:24:05,570
+ exactly one black hat when you really wanted anyone who has a black hat in their bag so use the dot notation here
+
+75
+00:24:05,570 --> 00:24:22,160
+ very important searching in arrays array are where mongodb shines so if you ask tags equals winter
+
+76
+00:24:24,140 --> 00:24:34,380
+ mongodb checks if the list contains winter so no loop no join dollar all means it must contain all of these
+
+77
+00:24:34,380 --> 00:24:42,610
+ and the dollar size check the length of the list and it works with numbers to numbers too as well
+
+78
+00:24:44,170 --> 00:24:55,340
+ size 44 finds the shoes that come comes in size 44 and this is actually one of my favorite things
+
+79
+00:24:55,340 --> 00:25:04,520
+ about mongodb is about mongodb in sql to find products with the tag winter we need product underscore tag table
+
+80
+00:25:04,520 --> 00:25:14,510
+ and and then a join but here we we just ask tag tags equals winter and mongodb understand that the tag is
+
+81
+00:25:14,510 --> 00:25:26,740
+ a list and check if the list contains winter so you don't need any special operators here dollar all is for
+
+82
+00:25:26,740 --> 00:25:38,320
+ when it must contain several things at once winter and cotton dollar size checks how long the list is so
+
+83
+00:25:38,320 --> 00:25:51,360
+ size two means exactly two tags and it works with numbers i mean it works with numbers two so our shoes
+
+84
+00:25:51,360 --> 00:26:10,580
+ have a list of sizes so sizes 44 finds every shoe that comes in size 44 for example does the feel exist
+
+85
+00:26:10,580 --> 00:26:20,510
+ well with a flexible schema some some documents have a field and some don't dollar exists true finds in the
+
+86
+00:26:21,740 --> 00:26:30,240
+ in the documents that have the field and notice here also the true with a capital t because this is
+
+87
+00:26:30,240 --> 00:26:41,330
+ python a missing field and the field with the value null are different things but the filter for city
+
+88
+00:26:41,890 --> 00:26:53,110
+ none matches both so with a flexible schema we call it a new question becomes important does this document
+
+89
+00:26:53,110 --> 00:27:03,420
+ even have the field so for example in our webshop only some customers have a phone number and lucas
+
+90
+00:27:03,420 --> 00:27:14,840
+ has no city at all so dollar exists true finds documents where the field is there whatever the value dollar
+
+91
+00:27:14,840 --> 00:27:27,140
+ exists falls finds the ones where it's missing so here's also subtle point a field can be missing or it can be
+
+92
+00:27:28,260 --> 00:27:38,770
+ i mean it can be there with the value null in python null is none we already know that searching for city equals
+
+93
+00:27:38,770 --> 00:27:54,060
+ none finds both the documents where city is missing and the one where city is null gonna find both anyway and that's
+
+94
+00:27:54,060 --> 00:28:04,450
+ often what you want but if you need to tell them apart use dollar exists it's like a it's like the difference
+
+95
+00:28:04,450 --> 00:28:14,940
+ between a form where the phone box was left empty and and the form that never had a phone box at all
+
+96
+00:28:14,940 --> 00:28:31,350
+ projection i mean choose your fields in sql we picked columns after select if you remember that in mongodb we
+
+97
+00:28:31,350 --> 00:28:44,090
+ pick fields with a second dictionary called a projection one means include uh well one means include and zero
+
+98
+00:28:44,090 --> 00:28:53,150
+ means leave out so one special rule here underscore id is always included like we we actually missed it
+
+99
+00:28:53,150 --> 00:29:04,160
+ yesterday if you remember my mistake unless you say underscore id zero so why bother choosing fields
+
+100
+00:29:04,160 --> 00:29:12,000
+ i mean there's two reasons first readability so when you print documents you don't want to see every field every time
+
+101
+00:29:12,640 --> 00:29:18,090
+ second speed and privacy if a document has a big description or personal data
+
+102
+00:29:18,810 --> 00:29:23,260
+ you don't want to send all all of it over the network to your
+
+103
+00:29:23,260 --> 00:29:34,000
+ program when you only need the name so the projection is the second argument to find one means
+
+104
+00:29:34,560 --> 00:29:46,200
+ basically give give me this field zero means leave it out and the only special rule is underscore id it
+
+105
+00:29:46,200 --> 00:29:58,940
+ always includes unless you explicitly say zero okay and one more rule in one projection you either list
+
+106
+00:29:58,940 --> 00:30:10,330
+ what you want with ones or list what you don't want with zeros so you can't mix them except for underscore id
+
+107
+00:30:10,330 --> 00:30:25,880
+ if you mix mongodb gives you actually an error in this case sort and limit skip sort and limit sort
+
+108
+00:30:25,880 --> 00:30:35,640
+ limit and skip sorry sorting is a method you add after find so sort by price minus one means
+
+109
+00:30:36,670 --> 00:30:51,460
+ the most expensive first like descending in sql if you remember that and limit is limit and skip
+
+110
+00:30:51,460 --> 00:31:05,810
+ is offset offset in sql so you can actually chain them like this one after the other so these three
+
+111
+00:31:05,810 --> 00:31:15,710
+ are methods that you add after find with a dot don't forget the dot the order you write them in
+
+112
+00:31:15,710 --> 00:31:28,220
+ doesn't change the results so mongodb always sorts first then skips then the limits and sort takes the
+
+113
+00:31:28,220 --> 00:31:41,930
+ field name and the direction so one for example is ascending uh smallest first or a to z and the minus
+
+114
+00:31:41,930 --> 00:31:53,600
+ one is descending you can sort by several fields by giving a list of pairs like category first then a price
+
+115
+00:31:54,490 --> 00:32:06,550
+ if you want limit three gives uh at most three documents and skip five jumps over the first five
+
+116
+00:32:06,550 --> 00:32:17,300
+ so together skip and limit are how websites show page two and three and so on so skip 10
+
+117
+00:32:17,860 --> 00:32:43,480
+ limits limits limits 10 gives you the second page with 10 items per page okay so count documents counts of
+
+118
+00:32:43,480 --> 00:32:54,350
+ course the documents that match a filter distinct gives a list of the different values of a field like
+
+119
+00:32:54,350 --> 00:33:04,480
+ select distinct in sql if you remember that it even works on arrays actually uh this things of tags gives
+
+120
+00:33:04,480 --> 00:33:18,630
+ every tag that is used so count document always need a filter even if just i mean even if it is just an
+
+121
+00:33:18,630 --> 00:33:28,590
+ empty dictionary for everything don't confuse it with the the len of list count documents ask the database to
+
+122
+00:33:28,590 --> 00:33:39,550
+ count so no documents need to be sent to python and that's much faster for big collections if you have a lot
+
+123
+00:33:39,550 --> 00:33:53,960
+ of collections distinct gives you each each different value once and this is like select distinct in sql the
+
+124
+00:33:53,960 --> 00:34:03,810
+ really neat part is what it does with arrays distinct on tags looks inside every tags list and gives you
+
+125
+00:34:04,610 --> 00:34:15,710
+ each tag once in sql that would that would need a join with the tags table and the distinct and so on
+
+126
+00:34:15,710 --> 00:34:24,450
+ and one small warning here distinct doesn't promise any particular order so if you want the list sorted
+
+127
+00:34:24,450 --> 00:34:38,770
+ wrap it in python sorted functions uh hopefully you will try it out today in in your lab actually so you'll
+
+128
+00:34:38,770 --> 00:34:45,500
+ understand that even more okay changing documents i mean to change documents we use the update one or update
+
+129
+00:34:45,500 --> 00:34:59,280
+ many uh so two dictionaries for example the first is filter so which document the second says what to
+
+130
+00:34:59,280 --> 00:35:11,380
+ change using an update operator like a dollar set and then we have the update one changes for the first match
+
+131
+00:35:11,380 --> 00:35:21,950
+ and update many changes all matches and notice here uh the second line uh on underscore sale doesn't exist yet
+
+132
+00:35:21,950 --> 00:35:35,420
+ so dollar set just adds it so no no alter table here needed so every update needs two things who and what
+
+133
+00:35:35,420 --> 00:35:47,360
+ who is the filter exactly like in find and what is the update and it always starts with an operator like
+
+134
+00:35:47,360 --> 00:36:10,500
+ the dollar set in this case i mean let's read the first line here uh update uh one product the one whose id is
+
+135
+00:36:10,500 --> 00:36:27,500
+ and set its price to 199 okay the second line update every product in shoes category
+
+136
+00:36:30,780 --> 00:36:41,510
+ and set on underscore sale to true and that field didn't exist before and mongodb simply adds it if you
+
+137
+00:36:41,510 --> 00:36:58,850
+ compare with sql where we need alter table first would be different i mean that result object tells you what
+
+138
+00:36:58,850 --> 00:37:08,220
+ happened so match underscore count is how many documents the filter found modified underscore count is how
+
+139
+00:37:08,220 --> 00:37:17,270
+ many actually changed and they can be different so if the price was already 199 it matches but nothing
+
+140
+00:37:17,270 --> 00:37:29,700
+ is modified always look at these numbers when you test your code updates operators these are the update
+
+141
+00:37:29,700 --> 00:37:42,600
+ operators you'll use the most set and unset add or remove fields and then you have the ink adds to a number
+
+142
+00:37:42,600 --> 00:37:59,660
+ and with a minus number it subtracts and that's perfect for stock i mean push adds to a list i mean add to
+
+143
+00:38:01,380 --> 00:38:30,800
+ also adds but only if the value isn't already in the list and pull removes from the list the one okay let's go
+
+144
+00:38:30,800 --> 00:38:41,940
+ through them with maybe the webshop in mind dollar set change the price change the status of an order dollar
+
+145
+00:38:41,940 --> 00:38:51,440
+ unset remove a field completely for example when a customer asks us to delete their phone number okay
+
+146
+00:38:52,320 --> 00:39:06,400
+ the empty string after it doesn't matter it's just there because well the syntax needs a value so dollar ink perfect for stock
+
+147
+00:39:07,230 --> 00:39:22,860
+ and when someone buys two hoodies ink stock minus two so you don't need to read the all the old value first and two sales at the same time can't mess it up
+
+148
+00:39:22,860 --> 00:40:00,810
+ so dollar push adds to a list like adding a tag dollar add to set does the same but only if the value isn't already there so it's safer when you don't want duplicates and dollar pull removes every copy of a value from a list okay i'll upload this to you later so you can have it in your back pocket the most important slide today
+
+149
+00:40:00,810 --> 00:40:14,460
+ so it's okay an empty filter means every document just like missing where in sql okay so in db browser we could
+
+150
+00:40:14,460 --> 00:40:26,720
+ click click revert changes mongodb saves every change immediately so there is actually no undo so the habit from sql days is even more important now
+
+151
+00:40:27,480 --> 00:40:45,840
+ run find or count underscore documents with the exact same filter first look at the result and only then update or delete so i i i want you to really feel this one in db browser every change
+
+152
+00:40:45,840 --> 00:41:09,790
+ waited for us to press right changes and we had revert changes as a safety net mongodb has no safety net the moment update underscore many or delete underscore many runs the change is saved so an empty filter matches every document so the first line makes every product free
+
+153
+00:41:09,790 --> 00:41:21,960
+ and the second line deletes every order in a real company that means restoring from a backup if there is one
+
+154
+00:41:21,960 --> 00:41:34,560
+ and explaining to your boss what happened so here is the habit and i'll ask you to say it out loud with me if you want
+
+155
+00:41:34,560 --> 00:42:18,840
+ find it first then change run find or count underscore documents with the exact filter and look at what comes back and only then change find to change find to update or delete okay date or insert i mean or absurd absurd is
+
+156
+00:42:18,840 --> 00:42:37,090
+ if not a new one is created and this is handy when you don't want when you don't know if something already exists for example syncing customers from another system
+
+157
+00:42:37,090 --> 00:42:52,420
+ could be something upsert is a combination of the words update and insert so picture a member membership list here person comes in with their email if they're already a member
+
+158
+00:42:52,420 --> 00:43:26,090
+ we update their details if not we add them as a new member so without upsert you would write find underscore one then an if statement and then either update or insert but with upsert it's it's one command when mongodb creates a new document it uses the fields from the filter here basically the email plus everything
+
+159
+00:43:26,090 --> 00:43:49,460
+ in dollar set the results tell you what happens match underscore count is zero and upserted underscore id holds the new documents id when it was created and upserted underscore id is none when an existing document was updated
+
+160
+00:43:49,460 --> 00:43:57,610
+ so upsert is very common when data comes in from another system for example every night
+
+161
+00:43:57,610 --> 00:44:19,230
+ deletting deleting deleting works the same way delete underscore one deletes the first match delete underscore many deletes all matches and delete underscore count tells you
+
+162
+00:44:19,230 --> 00:44:34,520
+ how many were deleted and remember check first then delete deleting works exactly like updating just without the second dictionary so delete underscore one removes the first document that matches the filter
+
+163
+00:44:34,520 --> 00:45:10,220
+ and delete underscore many removes all of them the result has delete underscore count so you can you can't check how many were removed so a good habit here is to print that number every time when you're learning here so if you expected to delete one order and it says 14 you know something went wrong also think about whether you really think about whether you really want to
+
+164
+00:45:10,220 --> 00:45:47,360
+ delete i mean in many real systems orders are never deleted they are never deleted they are giving the standard cancelled or something like that so basically so the company still has the history of accounting and remember from sql days last week swedish accounting law says sales record must be kept for seven years and remember let's sum up the theory before
+
+165
+00:45:47,360 --> 00:46:23,570
+ before you guys start coding here operators gt lt okay dollar in dollar ne written as uh yeah written as field dollar op column value details dot color reaches inside objects tags colon winter search searches in array find filter or projection dot sort limit and so on update underscore one or uh or many
+
+166
+00:46:23,570 --> 00:47:00,660
+ and so on update underscore one or uh or uh or many with the dollar set dollar ink dollar push dollar pull dollar add to set empty filter equals everything no undo check with the find first very important uh so the basically the the these are the points to keep in your head during when you when you start coding uh okay so i'm not gonna uh do any code along today i'm just gonna give you uh
+
+167
+00:47:00,660 --> 00:47:07,380
+ uh a lab to work on today so we're gonna end this session right now and i know that some of you guys aren't
+
+168
+00:47:07,380 --> 00:48:02,330
+ aren't aren't haven't done yesterday's lab so continue with that i'll drag the handbrake a little bit here so you have some time and then you can continue with this uh this subject with the second lab that i'm gonna upload for you sorry a bit tired today we're gonna take some break as well but before we do that do you have any questions can you still hear me or am i just speaking yeah yeah okay no it's all crystal it's all crystal clear it's
+
+169
+00:48:02,330 --> 00:48:41,560
+ it's clear okay perfect then we don't need to talk about this again yeah yeah exactly exactly i'll i'll i'll upload this and i can give you some um some material to learn even more about this uh and upload the lab for you as well uh you can leave the meeting take some break 10 minutes go grab some coffee or something like that and while you come back you're gonna see me uploaded some stuff i'll inform you you're welcome thank you thank you
+
+170
+00:48:41,560 --> 00:49:06,810
+ thank you thank you thank you thank you bye-bye robert kundo and sven ericsson still here you have any questions
+
