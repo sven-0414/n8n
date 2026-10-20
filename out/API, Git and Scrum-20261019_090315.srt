@@ -1,0 +1,2872 @@
+1
+00:00:04,510 --> 00:00:15,710
+ there we go so like i mentioned and you know the drill guys if you have any questions just stop me
+
+2
+00:00:15,710 --> 00:00:21,950
+ or raise your hand or so uh so we can cover them if it's something that i'm gonna answer on later
+
+3
+00:00:21,950 --> 00:00:30,170
+ later on well then i will just uh let you hold on your question for for a little while uh yeah so
+
+4
+00:00:30,170 --> 00:00:39,830
+ like i mentioned today and tomorrow we're going to talk about the apis and i believe this is the
+
+5
+00:00:39,830 --> 00:00:46,120
+ first time in in the course that you actually or that your program actually we start talking to the
+
+6
+00:00:46,120 --> 00:00:54,390
+ outside world right so until now everything has been on your own computer right your files your
+
+7
+00:00:54,390 --> 00:01:07,350
+ list your databases and so on but today we're going to ask other systems for data so this is the plan
+
+8
+00:01:07,350 --> 00:01:18,660
+ for today so the plan is that after the lesson you can make requests to an api from python read the
+
+9
+00:01:18,660 --> 00:01:26,650
+ answer of course handle it when something goes wrong and you can keep your api keys safe and tomorrow
+
+10
+00:01:27,350 --> 00:01:35,040
+ we will actually flip the script we'll flip it around a little bit and tomorrow we will build our own api
+
+11
+00:01:35,040 --> 00:01:43,970
+ so that's the plan so today using the an api tomorrow uh building our own and that will be
+
+12
+00:01:43,970 --> 00:01:53,840
+ the api part but before we start i just want to get a general uh just a general uh over glass of the
+
+13
+00:01:53,840 --> 00:02:03,950
+ class um have you guys worked with apis before uh or is well yeah have you guys just raise your hand
+
+14
+00:02:03,950 --> 00:02:19,580
+ if you have if you have worked with apis before thank you so yeah some of you have some of you haven't
+
+15
+00:02:19,580 --> 00:02:28,080
+ maybe i think it was kind of half half and that's that's good uh so for some this would be new and
+
+16
+00:02:28,080 --> 00:02:34,240
+ for some you will see this as maybe repetition and so on and maybe just see how we do it in python
+
+17
+00:02:34,240 --> 00:02:39,750
+ and that's it you might have done it in another platform or something like that in another language
+
+18
+00:02:39,750 --> 00:02:50,530
+ i don't know and yeah and this course is is like that um some things you have already stumbled on
+
+19
+00:02:50,530 --> 00:03:01,570
+ something you haven't um before we start we're just gonna all make the same installation here or pip install
+
+20
+00:03:02,030 --> 00:03:16,760
+ um not fundamentals api yeah i can write uh uh demo one maybe and then demo two tomorrow
+
+21
+00:03:20,490 --> 00:03:29,440
+ um what did i say yeah we just start the terminal and we're just gonna write uh maybe i can
+
+22
+00:03:29,440 --> 00:03:40,780
+ make this a little bit bigger hope that works for you then we're just gonna write pip uh install uh
+
+23
+00:03:40,780 --> 00:03:59,450
+ re quest uh requests uh don't forget the s at the end and then python and dot env and i'm gonna send
+
+24
+00:03:59,450 --> 00:04:21,040
+ it in the chat uh there we go obviously i've already done this uh you can you guys can can do it so we're all
+
+25
+00:04:21,040 --> 00:04:30,120
+ standing in there we start from the same page here so request well that that would be the library that
+
+26
+00:04:30,120 --> 00:04:38,340
+ makes the api calls for us and the python dot dot env is something that we're going to talk about later
+
+27
+00:04:38,340 --> 00:04:46,800
+ but uh we will use later uh when we talk about keys and secrets uh so so that will come later on but
+
+28
+00:04:46,800 --> 00:05:00,230
+ we do the whole installation right now you can also check that it works uh if you want just write
+
+29
+00:05:03,960 --> 00:05:14,470
+ when you have installed you can check it out just by writing this i can send it in chat as
+
+30
+00:05:14,470 --> 00:05:25,180
+ well just look at the version that you have we should all have the same version because i actually
+
+31
+00:05:25,180 --> 00:05:35,010
+ just installed it on this apptube during the weekend all right so if you see a version number
+
+32
+00:05:35,010 --> 00:06:05,500
+ then you're good to go any questions before we start are we all in the same page so yeah let's
+
+33
+00:06:05,500 --> 00:06:12,780
+ start with a question well when you open the weather app on your phone and it says eight degrees in
+
+34
+00:06:12,780 --> 00:06:21,980
+ stockholm where that does number come from actually well does the app have its own thermometer well no
+
+35
+00:06:21,980 --> 00:06:31,090
+ right obviously well the app asks uh someone else probably a weather service or something like that
+
+36
+00:06:31,090 --> 00:06:38,430
+ right and then and and and then gets the information right so that happens through an api so this is
+
+37
+00:06:38,430 --> 00:06:50,390
+ something you actually use every single day just never see it right api well it stands for application
+
+38
+00:06:50,390 --> 00:07:01,870
+ programming interface and it's basically a set of rules that allows programs to talk to each other on one
+
+39
+00:07:01,870 --> 00:07:11,150
+ side we have the client um that is the app or the program that wants something and then on the other
+
+40
+00:07:11,150 --> 00:07:28,220
+ side we have the um well the uh have the what do you call it uh we have the server uh with the api right
+
+41
+00:07:28,220 --> 00:07:39,760
+ and behind it maybe we have a database right the client sends a request the api and so uh handles it
+
+42
+00:07:39,760 --> 00:07:50,100
+ and sends back a response and that's the whole idea request response and why do we do it like this well one reason is that
+
+43
+00:07:50,100 --> 00:07:58,970
+ that the same api can uh well can serve many different clients the same data to a website right a mobile app
+
+44
+00:07:58,970 --> 00:08:07,140
+ or a smartwatch or whatever and the other reason is actually also security right we never want everybody
+
+45
+00:08:07,140 --> 00:08:15,340
+ or everyone to be able to talk to directly to our database so the api kind of stands in between
+
+46
+00:08:15,340 --> 00:08:27,420
+ and decides what is allowed and what's not allowed right now you will hear the word arrest all the time
+
+47
+00:08:27,420 --> 00:08:35,400
+ it stands for um uh representational state transfer but you don't have to remember that that's all right
+
+48
+00:08:35,960 --> 00:08:46,830
+ what you need to know is is is that a rest api uses a normal web protocol http and it is stateless that
+
+49
+00:08:46,830 --> 00:08:55,510
+ just means that um that every request has to contain uh everything the server actually needs
+
+50
+00:08:56,130 --> 00:09:06,400
+ the server doesn't remember who you were five minutes ago and the answer we usually get back
+
+51
+00:09:06,400 --> 00:09:18,270
+ is in a format called json uh and this is nice for us uh as python developers as you can see on the
+
+52
+00:09:18,940 --> 00:09:30,500
+ table over here um because well if you take a look at this a json object is almost the same as a python
+
+53
+00:09:30,500 --> 00:09:43,140
+ dictionary a json array well it's basically a list strings numbers are the same in both the only
+
+54
+00:09:43,140 --> 00:09:49,100
+ difference i would say is true and false which becomes true and false with a capital letter and no that
+
+55
+00:09:49,100 --> 00:09:57,820
+ actually becomes none so yeah if you already know dictionaries which i presume right uh that you know
+
+56
+00:09:57,820 --> 00:10:16,250
+ dictionaries and lists you already know kind of know json this is what i call the anatomy of a request
+
+57
+00:10:16,250 --> 00:10:24,370
+ there are four things that we need to know about first well that would be the endpoint that is the
+
+58
+00:10:24,370 --> 00:10:34,550
+ address so it tells us which resource we're asking for right second would be the method and that is what
+
+59
+00:10:34,550 --> 00:10:44,580
+ we want to do right maybe read maybe create maybe delete and so on right third is the headers that is
+
+60
+00:10:44,580 --> 00:10:54,380
+ the extra information about the request like which format we wanted back or who we are and fourth we have
+
+61
+00:10:54,380 --> 00:11:04,990
+ the body and this is the data we send with us for example when we create something new so again endpoint
+
+62
+00:11:06,690 --> 00:11:26,470
+ method headers and body and today we will yeah use all four of course yes there we go and if we take
+
+63
+00:11:26,470 --> 00:11:40,170
+ a little closer look at the endpoint it has three parts first is the root that is the address of the api
+
+64
+00:11:40,170 --> 00:11:52,250
+ so in this example that would be api github.com then we have the path which tells us which resource we
+
+65
+00:11:52,250 --> 00:12:03,420
+ want and here it is the well uh the users octa cat uh the octa cat repos so the repositories of the user
+
+66
+00:12:03,420 --> 00:12:15,920
+ octa cat and then we want to add a query parameter they they start with a question mark and if we have more
+
+67
+00:12:15,920 --> 00:12:28,700
+ more than one we separate them with uh ampersand uh so here we say uh sort uh sort by when they were pushed
+
+68
+00:12:28,700 --> 00:12:43,070
+ and only give me five per page who decides what the path and the parameter looks like well the developer
+
+69
+00:12:43,070 --> 00:12:55,790
+ of the api of course and that is why we always have to read the documentation and here you see that in the
+
+70
+00:12:55,790 --> 00:13:08,480
+ documentation they often write username um with a column or with a curly bracket and so on uh so that
+
+71
+00:13:08,480 --> 00:13:17,780
+ that just means replace this with a real uh value right uh one more thing uh never ever put a password
+
+72
+00:13:17,780 --> 00:13:27,180
+ or keys in the url uh urls will end up in logs and in in browser history uh and we will come back to that
+
+73
+00:13:27,180 --> 00:13:45,530
+ at the end the last part of the lesson so we know where to send the request uh and that is the end point
+
+74
+00:13:45,530 --> 00:13:54,680
+ but the server also needs to know what we want and that is what the method is right think of it as a verb
+
+75
+00:13:55,430 --> 00:14:08,000
+ a word that says what we want to do and there are five main ones uh get would be one uh that is to
+
+76
+00:14:08,000 --> 00:14:16,710
+ read the data we ask for something and we get it back and nothing changes on the server so you can do it
+
+77
+00:14:16,710 --> 00:14:24,290
+ a hundred times and nothing breaks right and you already use get all the time every time you type
+
+78
+00:14:24,290 --> 00:14:35,700
+ an address uh in the browser you actually it actually sends a get right uh and then we have post uh and
+
+79
+00:14:35,700 --> 00:14:43,060
+ that is to create something new so here we send data with us for example the details of a new product
+
+80
+00:14:43,990 --> 00:14:53,920
+ and the server saves it as a new one and usually the server decides the id uh we actually don't and then
+
+81
+00:14:53,920 --> 00:15:03,000
+ we have put and that is to replace something that uh already exists and i want you to notice that the
+
+82
+00:15:03,000 --> 00:15:17,410
+ word replace here um exactly yeah uh so if i have a product with a title a price and maybe a description
+
+83
+00:15:17,410 --> 00:15:24,710
+ and i send a put with a new title and the new price but i forget the description part well then the
+
+84
+00:15:24,710 --> 00:15:35,240
+ description could be gone because put says uh here is the whole new version right white patch that is
+
+85
+00:15:35,240 --> 00:15:42,590
+ also to update but only the part that that is actually changed so if i only want to change the
+
+86
+00:15:42,590 --> 00:15:52,380
+ price well i said only uh i said only the price and everything says stays as it as it was and then we
+
+87
+00:15:52,380 --> 00:16:00,030
+ have delete and well i think delete is kind of self-explanatory but that is to actually remove
+
+88
+00:16:00,030 --> 00:16:10,300
+ something right uh and as you can guess uh we use that one carefully and together uh well these are
+
+89
+00:16:10,300 --> 00:16:19,930
+ called prod uh create read update delete and it just uh it is just for things that you can do with data
+
+90
+00:16:19,930 --> 00:16:30,550
+ well create would be post read is to get update is put or patch and delete would be delete and you will
+
+91
+00:16:30,550 --> 00:16:41,140
+ see this word everywhere in the industry and one warning how an api uses these methods is actually up to
+
+92
+00:16:41,140 --> 00:16:51,200
+ the developer most follow this table that we have in front of us here but some actually uses post for
+
+93
+00:16:52,010 --> 00:17:04,700
+ everything and some don't even support patch so again always read the documentation uh and today we will
+
+94
+00:17:04,700 --> 00:17:14,700
+ try all of them in python so if you're new to apis don't worry if it feels like a lot you will see
+
+95
+00:17:14,700 --> 00:17:30,900
+ them in action pretty soon the last thing i actually want to say before i actually start to code is about
+
+96
+00:17:30,900 --> 00:17:45,310
+ status codes so every response comes with a number that tells us how it went we have the 200 range which
+
+97
+00:17:45,310 --> 00:17:56,710
+ means success we have the 300 range which means redirect we have the 400 range uh which means that you have
+
+98
+00:17:56,710 --> 00:18:05,440
+ made a mistake meaning the client right and then we have the 500 range which means that the server has
+
+99
+00:18:05,440 --> 00:18:18,160
+ a problem so if i were to get a 404 for example well who made the mistake well probably us right we did and
+
+100
+00:18:18,160 --> 00:18:28,850
+ if i get a 500 well that would be not our fault on the side i have written down the the ones that you
+
+101
+00:18:28,850 --> 00:18:41,760
+ meet uh mostly or well which the ones that you will meet the most 200 which is okay 201 uh created
+
+102
+00:18:41,760 --> 00:18:57,370
+ 404 not found uh 401 unauthorized uh 403 forbidden uh 422 uh when the date you said is not valid
+
+103
+00:18:59,130 --> 00:19:11,040
+ uh 429 uh when you ask too many times and 500 uh when the server breaks let me just ask you a
+
+104
+00:19:11,040 --> 00:19:28,270
+ question here um what is the difference between 401 and 403 what do you guys say 401 and 403 what would
+
+105
+00:19:28,270 --> 00:19:50,730
+ be the difference here anybody oh it's monday i will take this one okay fabio yeah i just assumed that if
+
+106
+00:19:50,730 --> 00:19:57,370
+ you were unauthorized you weren't white listed but if you were forbidden it was more like you have been
+
+107
+00:19:57,370 --> 00:20:04,460
+ white listed but you've been blocked later on i'm not sure actually i just guess you're kind of on the
+
+108
+00:20:04,460 --> 00:20:12,930
+ right path but but i would i would just simplify it just by saying well 401 is more uh i don't know who
+
+109
+00:20:12,930 --> 00:20:22,510
+ who you are while 403 is more i know who you are but you cannot get this information right uh you you're
+
+110
+00:20:22,510 --> 00:20:28,840
+ not allowed or whatever uh so yeah that would be the difference i don't know who you are but i know who
+
+111
+00:20:28,840 --> 00:20:39,050
+ you are but at the same time you are not allowed to do whatever uh you wanted to do yeah so let's take
+
+112
+00:20:39,050 --> 00:20:51,070
+ a little break from uh the theory part and let's actually start coding but before we do that uh so
+
+113
+00:20:51,070 --> 00:21:01,510
+ well today uh we're going to use an api which i like uh to use in the well especially in this course
+
+114
+00:21:01,510 --> 00:21:11,870
+ uh and it's called fake store api uh and it pretends to be a web shop uh well with a product
+
+115
+00:21:12,750 --> 00:21:23,260
+ cards and users and it is completely open so yeah you don't need any key um here uh it is not needed
+
+116
+00:21:23,260 --> 00:21:32,450
+ at all uh and that makes it pretty pretty good and perfect for actually practicing uh i'm actually
+
+117
+00:21:32,450 --> 00:21:40,010
+ gonna show it to you guys it looks like something like this and i'm actually also gonna send the link
+
+118
+00:21:40,010 --> 00:21:58,210
+ here the chat thinkstoreapi.com and here the documentation we find the documentation we could
+
+119
+00:21:58,210 --> 00:22:03,010
+ click on it and we're not going to spend a lot of time here but well this is the documentation and as
+
+120
+00:22:03,010 --> 00:22:17,720
+ you can see you can find all the information you need how to get products um how to add a new product
+
+121
+00:22:17,720 --> 00:22:27,860
+ how to update one and well of course how to delete one and remember the methods from before right it is the
+
+122
+00:22:27,860 --> 00:22:38,920
+ same the same four things get post put and delete and each one shows you the end point uh as you see
+
+123
+00:22:38,920 --> 00:22:47,690
+ here uh also the method and what you can get back and we're not going to spend much time here uh instead
+
+124
+00:22:47,690 --> 00:22:56,260
+ we will go straight into uh into the code uh so well obviously i've read through the documentation so
+
+125
+00:22:57,220 --> 00:23:03,640
+ you will just have to trust me for now but uh i would recommend uh that you look at the documentation
+
+126
+00:23:03,640 --> 00:23:17,110
+ after the lesson uh i think that's a good idea and also you will of course have a lab uh so yeah look
+
+127
+00:23:17,110 --> 00:23:24,790
+ through the documentation just to get uh familiar with reading documentation and so on and it's a good
+
+128
+00:23:24,790 --> 00:23:42,480
+ practice right all right but let's get started let's actually uh write our first request there we go
+
+129
+00:23:45,500 --> 00:24:01,830
+ the first thing we're going to do is just import import re requests so we've the we just import well the
+
+130
+00:24:01,830 --> 00:24:18,340
+ library we just installed and then we will call a request uh let's actually do that so response uh and
+
+131
+00:24:18,340 --> 00:24:30,660
+ we call requests dot get here and then we will use the endpoint uh or or uh the address of the products
+
+132
+00:24:30,660 --> 00:24:41,690
+ endpoint uh and and we uh and we will save uh what comes back in a variable well that is called response
+
+133
+00:24:41,690 --> 00:24:52,680
+ and then we will print it and see what we actually get so let's do that so here i just write the address
+
+134
+00:24:52,680 --> 00:25:06,110
+ that i just wrote to you guys uh that would be http uh s like that uh oh i thought it would came
+
+135
+00:25:06,110 --> 00:25:15,470
+ without the http all right thanks to her and then we have products and where did i get this information
+
+136
+00:25:15,470 --> 00:25:32,510
+ from well of course the documentation and now let's print response and see what we get so when i run
+
+137
+00:25:32,510 --> 00:25:42,910
+ this well what do we see here well we don't see any products right we see something called
+
+138
+00:25:43,150 --> 00:25:51,920
+ a response object and in the brackets here we have a 200 and that is the status code that we just
+
+139
+00:25:51,920 --> 00:26:01,300
+ talked about so it means that it actually worked and this is important to understand request.get here
+
+140
+00:26:01,300 --> 00:26:12,270
+ does not give us the data it gives us the whole response and the data inside of it now the next step
+
+141
+00:26:12,270 --> 00:26:27,100
+ would obviously be to actually take a look at what's inside um if i try to do something like this
+
+142
+00:26:27,100 --> 00:26:40,730
+ and then come here and try to do something like this try to look at the first object or something like
+
+143
+00:26:40,730 --> 00:26:56,650
+ that let's run this and see what happens perfect we get a type error response object is not so subscriptable
+
+144
+00:26:58,430 --> 00:27:09,110
+ and why is that well because response is not the list of products it's the whole package just like i
+
+145
+00:27:09,110 --> 00:27:32,520
+ mentioned so how how do we get the data well we kind of ask for it right so the response is like like
+
+146
+00:27:32,520 --> 00:27:38,940
+ i mentioned a package and inside this package there are three things that we care about well first of all
+
+147
+00:27:38,940 --> 00:27:56,620
+ the status code which uh tells us how it went so let me just write that status status uh code uh
+
+148
+00:27:59,660 --> 00:28:12,760
+ then we have headers which is the information about the answer and then we have the body which is the
+
+149
+00:28:12,760 --> 00:28:26,400
+ actual content well would be the data that we actually asked for so status headers and and we will take a
+
+150
+00:28:26,400 --> 00:28:43,370
+ look at each one of them so the first thing that i'm gonna do is print response now i can come and write
+
+151
+00:28:43,370 --> 00:28:55,740
+ status code and if we run this we will see the 200 the number that we've talked about in theory
+
+152
+00:28:55,740 --> 00:29:05,260
+ so three 200 means okay it worked if this was a 404 we would know that something is wrong probably with
+
+153
+00:29:05,260 --> 00:29:26,370
+ the address right so this is something that i always look at that uh when i get started also i'm gonna
+
+154
+00:29:26,370 --> 00:29:45,530
+ write print uh response uh that headers i'm just gonna write uh con and type let's run this and see
+
+155
+00:29:45,530 --> 00:29:53,100
+ what we get what we get the 200 of course for the response status code but here we get application json
+
+156
+00:29:53,100 --> 00:30:05,170
+ right so this would be the headers and remember on the slide i said that headers are extra information
+
+157
+00:30:05,170 --> 00:30:14,580
+ about the request well the server also sends headers back with the answer and they work kind of in the
+
+158
+00:30:14,580 --> 00:30:23,310
+ same way you can think of it as the label on the package it doesn't contain the data it tells us
+
+159
+00:30:23,310 --> 00:30:31,970
+ something about the data so here i asked for one specific header called content type and i get it
+
+160
+00:30:32,870 --> 00:30:45,100
+ and i get it back like uh like i get a value from a dictionary with with square brackets and and and
+
+161
+00:30:45,100 --> 00:30:54,020
+ and and of course the the name as well um and it says uh application json here so the server is
+
+162
+00:30:54,020 --> 00:31:03,840
+ telling us uh what i'm sending you is actually json in order for you to know how to read it and this part
+
+163
+00:31:03,840 --> 00:31:15,420
+ about utf uh 8 here is just uh which characters uh it uses and yeah you can ignore this part for now let
+
+164
+00:31:15,420 --> 00:31:32,530
+ me add one more thing let's say i write print um response but uh text 200 and notice the column here
+
+165
+00:31:35,450 --> 00:31:49,810
+ and let's run this and see what we get back and there we go and kind of stops here right so so this would
+
+166
+00:31:49,810 --> 00:31:58,210
+ be the last part here so this would be the body right the actual content so response text gives us
+
+167
+00:31:58,210 --> 00:32:08,940
+ the body as text and here as you see i only print the first uh 200 characters and that is what the
+
+168
+00:32:08,940 --> 00:32:18,940
+ column 200 in square brackets actually means give me everything from the start to character 200 and i do
+
+169
+00:32:18,940 --> 00:32:26,720
+ that because the answer actually has 20 products i already checked and if i printed all of them
+
+170
+00:32:26,720 --> 00:32:32,840
+ well you would see a huge wall of text and we wouldn't be able to read anything here right
+
+171
+00:32:32,840 --> 00:32:46,810
+ but if we take a look at this it starts with a bracket and this kind of indicates uh or i would rather
+
+172
+00:32:46,810 --> 00:32:55,850
+ say it looks like it is a list and inside we have curly brackets with with kind of keys right keys and
+
+173
+00:32:55,850 --> 00:33:07,070
+ values which looks like a dictionary so it looks like a list with dictionaries but here's the thing for
+
+174
+00:33:07,070 --> 00:33:20,170
+ python this is actually just text it's just a long string letters and symbols in a row so python doesn't
+
+175
+00:33:20,170 --> 00:33:34,470
+ know that these products are in there so if i were to try to write uh something like um let's say i try to write
+
+176
+00:33:34,470 --> 00:34:03,140
+ um zero and then uh maybe title since we have title here so i'm trying to print out fjällräden here right
+
+177
+00:34:03,140 --> 00:34:18,040
+ uh and if i try to do that i will get a type error and so this doesn't work because text zero is is just the
+
+178
+00:34:18,040 --> 00:34:26,330
+ is is just the first character that would be the square bracket from what we saw before so we can't
+
+179
+00:34:26,330 --> 00:34:35,640
+ use it like a list quite yet so what we need to do well the first thing we have to do is to convert it
+
+180
+00:34:35,640 --> 00:34:50,080
+ from text to real python data and that would be the next step so like i mentioned we have a problem the server
+
+181
+00:34:50,080 --> 00:35:03,130
+ sends us text uh and and we wanted to use it and we want to use it like a list with dictionaries the way
+
+182
+00:35:03,130 --> 00:35:11,220
+ we do that is with a method that is built in to the response and it's actually called json so what we
+
+183
+00:35:11,220 --> 00:35:29,630
+ can do is something like this data equals response json so what is happening here well response json takes
+
+184
+00:35:29,630 --> 00:35:37,850
+ that long text that we just saw or that we just looked at reads it and then converts it into real
+
+185
+00:35:39,600 --> 00:35:51,910
+ python data and i saved this result uh in a variable and which is called data and this is the reason
+
+186
+00:35:52,430 --> 00:35:59,250
+ why i showed you that uh that table on the slide right a json object becomes a dictionary and the
+
+187
+00:35:59,250 --> 00:36:08,130
+ json array becomes a list so python knows exactly how to convert it but i don't want you just to trust
+
+188
+00:36:08,130 --> 00:36:17,480
+ it uh i want to actually check what we got so let's look at it from three sides uh first we can look at
+
+189
+00:36:17,480 --> 00:36:36,450
+ the type uh so we can just write uh print um type and that would be for the data let's run this and we
+
+190
+00:36:36,450 --> 00:36:44,250
+ see class list so type tells us what kind of thing it is right and we saw type when we talked about
+
+191
+00:36:44,250 --> 00:36:57,460
+ fundamentals and it actually says list so it is a list not a text anymore uh if i have written uh type
+
+192
+00:36:57,460 --> 00:37:07,320
+ response uh text before it would have said string or str for string right and that is the difference now
+
+193
+00:37:07,320 --> 00:37:21,410
+ it's a real list uh and this is the habit i want you to get uh when you get data from an api check the type
+
+194
+00:37:21,410 --> 00:37:29,620
+ first because it decides for us how we will actually use it right for example a list we would loop over
+
+195
+00:37:29,620 --> 00:37:56,500
+ it right and from a dictionary we actually pick out keys let's also print length of the data so let's see the length or rather how many things are in the list and i told you to trust me
+
+196
+00:37:56,500 --> 00:38:23,060
+ trust me it actually says 20 which means that we have 20 products let's also print data um let's run this
+
+197
+00:38:23,060 --> 00:38:36,590
+ in here first item in the list right and if you remember in python we start counting well at zero right
+
+198
+00:38:37,310 --> 00:38:44,150
+ so now look at the difference here before when i tried text text zero here
+
+199
+00:38:47,030 --> 00:38:52,070
+ i only got this well i would have only got the the square brackets right because we didn't never tried
+
+200
+00:38:52,070 --> 00:39:06,290
+ it right but data zero here actually gives me the whole first product and if i look at the curly
+
+201
+00:39:06,290 --> 00:39:14,140
+ brackets here and the columns well this kind of tells me that this is a dictionary with keys and values we have
+
+202
+00:39:14,140 --> 00:39:29,110
+ id we have title we have a price we have a description excuse me we have a category uh and we have an image
+
+203
+00:39:29,110 --> 00:39:43,380
+ right and then we have also a rating and we also see that rating is has its own dictionary um right with
+
+204
+00:39:43,380 --> 00:39:57,470
+ uh rate and count but we will talk about that later on so this is exactly what we saw on the slide a list
+
+205
+00:39:57,470 --> 00:40:08,650
+ with a dictionary for each product and now it is just python which means we we can do anything we
+
+206
+00:40:08,650 --> 00:40:16,480
+ want with it we can loop over it we can pick out values we can filter and all the things you already
+
+207
+00:40:16,480 --> 00:40:24,480
+ know from the python fundamental modules that we had that we had at the beginning of course and this
+
+208
+00:40:24,480 --> 00:40:35,170
+ is what we actually will do next so now we have a list with 20 products and when we printed one of them
+
+209
+00:40:35,170 --> 00:40:42,480
+ it was a big dictionary with a lot of information but usually we don't want everything
+
+210
+00:40:43,470 --> 00:40:49,000
+ we just want the parts that actually matter for us right and what we want to do with it
+
+211
+00:40:50,910 --> 00:40:59,290
+ or let's say this so so when we have a list and want to do something with every item in it
+
+212
+00:40:59,290 --> 00:41:07,290
+ what do we actually use do you say guys let's see if you're still awake with me so let's say
+
+213
+00:41:07,290 --> 00:41:20,230
+ we have a list and we want to do something with every item in it what do we usually use i expect you
+
+214
+00:41:20,230 --> 00:41:29,650
+ all to be able to answer this question you've all been in the in the christopher yeah we could
+
+215
+00:41:29,650 --> 00:41:38,110
+ do a for loop for example yeah perfect a loop a for loop right uh so let's actually
+
+216
+00:41:38,110 --> 00:41:49,720
+ loop over the products and for each one we will just pick out the id uh yeah we can also pick out
+
+217
+00:41:49,720 --> 00:42:01,650
+ the title and and and and the price and then print them on uh just in one line uh and i will only take the
+
+218
+00:42:01,650 --> 00:42:11,560
+ first five uh so we don't get all 20 products and i will use this colon five that we saw before uh the
+
+219
+00:42:11,560 --> 00:42:24,510
+ same as i did with the colon 200 as we saw right here so it will start from the first one up to
+
+220
+00:42:24,510 --> 00:42:45,180
+ number five so how would i do that just as uh clip top dimension with a for loop so for product in to
+
+221
+00:42:45,180 --> 00:43:08,120
+ the right next in help me anybody yeah christoph thank you uh jacob so in data right and we said only the
+
+222
+00:43:08,120 --> 00:43:42,300
+ first five and we want to print out let's make a little nice print here with an f product d we said
+
+223
+00:43:42,300 --> 00:43:52,820
+ the title and also something like this and also see the price with a kind of a dollar sign or something
+
+224
+00:43:52,820 --> 00:44:23,050
+ like that excuse me product uh price something like that and let's run this as we see here i take the
+
+225
+00:44:23,050 --> 00:44:38,010
+ first five and print out the id the title uh and the and the price and this is exactly what you did uh
+
+226
+00:44:38,010 --> 00:44:47,030
+ with lists and dictionaries in the python course right the only new thing here is where the data came
+
+227
+00:44:47,030 --> 00:44:59,970
+ from before we just wrote some kind of data right but now we get it from our fake store any questions
+
+228
+00:44:59,970 --> 00:45:33,120
+ all right let's say i want let's say i want let's say i want product number 15 how would i do
+
+229
+00:45:33,120 --> 00:45:52,720
+ let me just save this one because i i i actually can share the code with you guys after the lesson
+
+230
+00:45:52,720 --> 00:46:04,390
+ i will put it in our uh folder uh in the shared photo folder in uh in teams so let's say i want a
+
+231
+00:46:04,390 --> 00:46:11,370
+ specific product uh and we said let's say product number 15 or something like that so here i can
+
+232
+00:46:11,370 --> 00:46:21,370
+ actually according to the documentation i can actually add 15 here and now same as before product
+
+233
+00:46:21,370 --> 00:46:52,770
+ roll duckt equals response uh based on let's end product and let's run this and we see that we get
+
+234
+00:46:52,770 --> 00:47:13,130
+ the actual product with id 15. if i come over here and let's say i want the name of the product and
+
+235
+00:47:13,130 --> 00:47:19,520
+ i'm quick i don't read any documentation and anything like that and i just come here and say i just want
+
+236
+00:47:19,520 --> 00:47:33,730
+ the name right something like that and if i run this key error right because there's no key called name
+
+237
+00:47:33,730 --> 00:47:45,010
+ it's actually called title and this is something you will probably do so my tip is always uh print
+
+238
+00:47:45,010 --> 00:47:56,740
+ the data first and look at it before you start picking things out of it all right and so in this
+
+239
+00:47:56,740 --> 00:48:23,750
+ case it would be title let's try that out and there we go just get product here and now let's we saw
+
+240
+00:48:23,750 --> 00:48:35,650
+ earlier in the printout that we had something called rating uh and let's also take a look at that one
+
+241
+00:48:36,810 --> 00:48:59,090
+ so let's just write print product we said rating rating let's run this and there we go so what do we get
+
+242
+00:48:59,090 --> 00:49:10,050
+ back but we don't get a single number right it is curly brackets again so it is another dictionary with
+
+243
+00:49:10,050 --> 00:49:19,780
+ its own keys rate and count and rate is the average score and count is kind of how many people have
+
+244
+00:49:19,780 --> 00:49:29,240
+ actually voted so so this is a dictionary inside a dictionary so how do we actually get the rating
+
+245
+00:49:29,240 --> 00:49:37,270
+ number well we have already done this when we talked about fundamentals and i think you had a more
+
+246
+00:49:37,270 --> 00:49:46,030
+ complex question uh to work with before so this would be a piece of cake uh so we would open one
+
+247
+00:49:46,030 --> 00:49:55,690
+ box at a time right first of all the big box which is product and the key rating uh and that will give
+
+248
+00:49:55,690 --> 00:50:04,490
+ us the small box and now we try to open the small box with the next key that would be rate in order to get
+
+249
+00:50:04,490 --> 00:50:20,480
+ 2.6 so therefore i would write rate here all right and if i run this i will actually get point 2.6 all
+
+250
+00:50:20,480 --> 00:50:41,260
+ right and let me just um so we remember where we came from uh there we go we said just rate the next
+
+251
+00:50:41,260 --> 00:51:04,140
+ key here and now and now we can actually combine everything so let's say we want a title from the first
+
+252
+00:51:04,940 --> 00:51:15,590
+ box and the rate from the small box all right so what we can do here is actually separate by comma so that
+
+253
+00:51:15,590 --> 00:51:28,620
+ print uh so we can use a print that that puts them on the same line so what we can do here is something
+
+254
+00:51:28,620 --> 00:51:52,320
+ like this uh product uh and also product title there you go and then let's not forget the comma there we
+
+255
+00:51:52,320 --> 00:52:11,950
+ go and let's run this and see if it works yeah so we get we get the title and also the rating 2.6 so
+
+256
+00:52:11,950 --> 00:52:20,010
+ whenever you get data from an api and there are curly brackets inside curly brackets it is actually the
+
+257
+00:52:20,010 --> 00:52:28,600
+ same thing you just add one more key for every level you go down right and that is why i always say i'll print
+
+258
+00:52:28,600 --> 00:52:41,560
+ the data first and then look at it before you pick things out of it let's see here should we take a
+
+259
+00:52:41,560 --> 00:52:48,760
+ break or should we take the last part here we're actually going to take a little break and then we
+
+260
+00:52:48,760 --> 00:52:59,430
+ will talk about query parameters so let's take a little break uh so let's say 1005 and then we will
+
+261
+00:52:59,430 --> 01:02:32,800
+ continue with queries see you back soon all right are you guys back can you hear me and so on see my screen
+
+262
+01:02:34,110 --> 01:02:49,440
+ perfect perfect perfect all right let's continue uh now the query parameters and if you remember from
+
+263
+01:02:49,440 --> 01:02:56,590
+ the slide uh well the part that would be the part of the address that started with a question mark right
+
+264
+01:02:58,140 --> 01:03:10,720
+ and it is a way to give the api extra information about what we want back so it is well it is not which
+
+265
+01:03:10,720 --> 01:03:19,510
+ resource we ask for that that would be the path right it is how we actually want it for example how many or
+
+266
+01:03:19,510 --> 01:03:29,890
+ order and so on and which parameter we can actually use is up to the api that is why we always look at
+
+267
+01:03:29,890 --> 01:03:42,820
+ the documentation uh and this api uh if we were to read uh through the documentation uh this api has one
+
+268
+01:03:42,820 --> 01:03:54,210
+ one called limit which says how many products we want and one that is called sort which says in what order
+
+269
+01:03:54,210 --> 01:04:06,050
+ so first of all let's do it uh the way we saw on the slide uh we just write it in the url i will add a
+
+270
+01:04:06,050 --> 01:04:14,040
+ question mark then the then the name then the name limit and and and equal sign and and yeah and i'll get
+
+271
+01:04:14,040 --> 01:04:30,080
+ i'll put a five or something like that okay so let's start there so response equals requests don't get
+
+272
+01:04:30,080 --> 01:04:49,840
+ just as we saw before uh let me just use the address again no there we go right uh but also add uh the
+
+273
+01:04:49,840 --> 01:05:04,250
+ query uh so limit equals uh we said five right and now let's just um print you start something like
+
+274
+01:05:04,250 --> 01:05:25,210
+ this print len uh response json right and if i were to run this i get a five right so before uh uh when
+
+275
+01:05:25,210 --> 01:05:34,720
+ we asked for all products we got a 20 now we say limit it to five so the length gave us of course five
+
+276
+01:05:34,720 --> 01:05:46,350
+ so the api understood our instruction here so that works but it gets messy when we have a lot of
+
+277
+01:05:46,350 --> 01:05:53,940
+ parameters right can you imagine because well we have to remember the question mark and then the the
+
+278
+01:05:53,940 --> 01:06:02,160
+ ampersand and so on uh and we will need to remember that ourselves right so request has a nicer way
+
+279
+01:06:04,250 --> 01:06:14,250
+ and we could give the parameters as a dictionary with a key for the name and a value so this time i will
+
+280
+01:06:14,250 --> 01:06:23,630
+ actually add two parameters uh and and and limit uh yeah i will use limit and sort in this case right
+
+281
+01:06:23,630 --> 01:06:31,100
+ so kind of the same thing that we just did but uh with limit and sort uh in a little nicer way
+
+282
+01:06:31,100 --> 01:06:39,100
+ so i'll just copy that and let's just remember where we came from if you were to read the notes
+
+283
+01:06:39,100 --> 01:06:52,770
+ later on excuse me so let me get rid of that because we don't need it anymore there we go so products
+
+284
+01:06:52,770 --> 01:07:08,690
+ is fine and now we can use something called parents and here i can write it like this so limit uh and we
+
+285
+01:07:08,690 --> 01:07:31,690
+ will use five just like we did before and also we can say sort uh and i would choose okay descending and
+
+286
+01:07:31,690 --> 01:07:47,880
+ now let's do as before uh print the length so len response uh dot json all right and also let's print
+
+287
+01:07:49,340 --> 01:08:09,430
+ and let's also print the response url i think that's pretty neat okay and let's run this and when i run
+
+288
+01:08:09,430 --> 01:08:25,320
+ this i see uh and if you notice here well you you saw that uh the address that i give uh that i gave
+
+289
+01:08:25,320 --> 01:08:31,710
+ it gave to request well it's just a plain one right no question mark uh so the parameters here
+
+290
+01:08:33,640 --> 01:08:41,510
+ are in their own dictionary and that is the well the params part here and if we were to look at the
+
+291
+01:08:41,510 --> 01:08:54,020
+ response url that we get back here uh this is the address that request actually used it built the url for
+
+292
+01:08:54,020 --> 01:09:05,020
+ us it added the question mark right uh and uh it put the equal signs uh it put the ampersand between
+
+293
+01:09:05,020 --> 01:09:13,920
+ the two parameters uh so we didn't have to do that uh or do any of that right and why would i say this is
+
+294
+01:09:13,920 --> 01:09:22,880
+ better well it is easier to read uh and it's easy to add and remove one parameter and if the values have
+
+295
+01:09:22,880 --> 01:09:31,630
+ maybe spaces or special characters uh well requests will actually fix that for us so yeah i actually
+
+296
+01:09:31,630 --> 01:09:48,900
+ recommend using params and sort descending here or the esc uh means just descending uh and so to see that it
+
+297
+01:09:48,900 --> 01:10:07,460
+ actually work we can look at the ids uh something like this uh print um product oh we don't have the product
+
+298
+01:10:07,460 --> 01:10:38,140
+ okay uh we don't have it from before uh let's just do that there we go so product raised a little bit but
+
+299
+01:10:38,140 --> 01:10:57,620
+ anyways let's see what we get back uh id uh for product in response and it's um something like that
+
+300
+01:10:57,620 --> 01:11:09,850
+ and let's run this and see what we get back five four three two one perfect so what do we actually see
+
+301
+01:11:09,850 --> 01:11:36,920
+ that it's going in a descending order right so from id five four one one more end point that we actually
+
+302
+01:11:36,920 --> 01:11:56,610
+ can take a look at with that one that out that would be one more endpoint that i want to look take a look
+
+303
+01:11:56,610 --> 01:12:06,110
+ at is uh categories let's get the categories so categories uh and this one is a well i would say a good
+
+304
+01:12:06,110 --> 01:12:14,520
+ comparison uh because there's no uh question mark here uh so there's no parameter instead uh it is a
+
+305
+01:12:14,520 --> 01:12:27,700
+ different path uh so a different resource right uh and the resource will be categories right the path
+
+306
+01:12:28,340 --> 01:12:38,780
+ says in order to remember right so the path says what we're asking for and the parameters says how we
+
+307
+01:12:38,780 --> 01:12:53,120
+ want to see it so actually keep that one sure that's all right uh and just print out because we remember
+
+308
+01:12:53,120 --> 01:13:09,260
+ from yeah print uh response uh json something like that and now let's run this yeah right and we get
+
+309
+01:13:09,260 --> 01:13:20,780
+ back electronics jewelry men's clothing women's clothing so all the categories there is and i you see there is a
+
+310
+01:13:20,780 --> 01:13:27,940
+ a mess misspelling it's not from my end it's it's actually uh it's actually spent like that in the
+
+311
+01:13:27,940 --> 01:13:46,030
+ api okay now let's take um the last part of that tandem the anatomy and that would be to go back to
+
+312
+01:13:46,030 --> 01:14:02,570
+ the beginning and that would be uh headers we haven't talked about we have already looked at the response
+
+313
+01:14:02,570 --> 01:14:54,050
+ headers but what about the headers we actually send so um what if i came and wrote something like this
+
+314
+01:14:54,050 --> 01:15:27,010
+ print west headers happen when i write that interesting so requests adds some headers actually
+
+315
+01:15:27,010 --> 01:15:37,900
+ automatically we see here user agent it actually says the it actually says python request so the server
+
+316
+01:15:37,900 --> 01:15:48,880
+ knows what kind of client is actually asking here right so now we can actually add our own here so
+
+317
+01:15:48,880 --> 01:16:08,490
+ what we can do is something like this that uh we can save that one so what we can now write is
+
+318
+01:16:08,490 --> 01:16:58,050
+ response equals uh request uh get like this we can do is we can write here headers equals um accept uh vacation
+
+319
+01:16:58,050 --> 01:17:17,220
+ vacation vacation json and now let's just print response let's start with let's take a look at the status
+
+320
+01:17:17,220 --> 01:17:27,940
+ code here so here i'm saying that i want json back so this is how we actually send extra information about
+
+321
+01:17:27,940 --> 01:17:36,940
+ the request uh and and later on or we will actually in a few minutes we will actually use headers for
+
+322
+01:17:36,940 --> 01:17:44,150
+ something much more important uh in order to tell the api who we are but let's take a look at that and
+
+323
+01:17:44,150 --> 01:17:53,790
+ we get a 200 so perfect it works so now we have used the endpoint we have used the path uh we have used
+
+324
+01:17:53,790 --> 01:18:15,430
+ the query parameters and headers okay let's go back to our powerpoint here and this is i would say
+
+325
+01:18:15,430 --> 01:18:23,810
+ important so so far everything that we have done has worked but in real life of course as you know
+
+326
+01:18:24,370 --> 01:18:30,910
+ things can go wrong right uh the internet is down the server is slow or you ask for something that
+
+327
+01:18:30,910 --> 01:18:38,410
+ actually doesn't exist and so on right and on this slide uh you see different kind of problems so the
+
+328
+01:18:38,410 --> 01:18:51,870
+ the first one well the the the server answers but actually says no right uh and that is a 400 or 500
+
+329
+01:18:51,870 --> 01:19:00,570
+ code uh and the second would be um the server never answers because it's too slow or we can't connect
+
+330
+01:19:00,570 --> 01:19:08,830
+ the third would be uh the the server the server answers but it's not json and and a good developer
+
+331
+01:19:08,830 --> 01:19:37,100
+ would be able to handle all of these of course earlier we saw back we saw a um a github api and
+
+332
+01:19:37,100 --> 01:19:47,560
+ this one is also open uh and let's ask ask for the user here which should be octa cat right or octocat
+
+333
+01:19:48,710 --> 01:19:58,980
+ and we will try something like that okay um and take it step by step and try to stumble a little
+
+334
+01:19:58,980 --> 01:20:16,180
+ bit on the problems that we can actually stumble up and let me do something like this kind of a part
+
+335
+01:20:16,180 --> 01:20:36,130
+ two of of the theory part there we go so uh let's start with import uh import requests all right now
+
+336
+01:20:36,130 --> 01:20:58,090
+ response equals right uh but that is not right sorry we're not gonna look at this one we're actually gonna
+
+337
+01:20:58,090 --> 01:21:18,060
+ look at uh you said the github api right api dot github dot com slash users slash uh let me spell it
+
+338
+01:21:18,060 --> 01:21:27,680
+ that's right we can actually send this one in the chat if anybody is coding along
+
+339
+01:21:34,690 --> 01:21:40,730
+ all right uh now let's print we start off just as we did before
+
+340
+01:21:43,460 --> 01:21:56,700
+ response uh the status code and also let's print uh the name so that would be response
+
+341
+01:21:57,120 --> 01:22:17,080
+ dot json and we said uh then name all right let's run this see what happens perfect so octa cat is the
+
+342
+01:22:17,080 --> 01:22:29,270
+ well kind of a mascot of github right so so this actually works now let's ask for a user that
+
+343
+01:22:29,270 --> 01:22:36,850
+ actually does not exist all right so let me try something else so this works perfect therefore we can
+
+344
+01:22:36,850 --> 01:22:56,080
+ add a title here uh 404 so that worked but what if i uh write another user not octocat let's write um
+
+345
+01:22:56,640 --> 01:23:08,700
+ another user this user so it becomes very clear if you were to read the notes later on does not
+
+346
+01:23:08,700 --> 01:23:24,150
+ exist let's be awesome add one two three all right so now let's run it the second time and see what we
+
+347
+01:23:24,150 --> 01:23:34,810
+ get and perfect and this time we get a status code right and we also get a key error so our program
+
+348
+01:23:34,810 --> 01:23:45,000
+ actually crashes right with a key error and the key error here or the message is that is actually
+
+349
+01:23:45,000 --> 01:23:52,900
+ the name right and if i just read that i would think okay i wrote i probably wrote the wrong key
+
+350
+01:23:53,990 --> 01:23:59,930
+ there is something wrong with the word name in my code maybe i'm not supposed to use name or something
+
+351
+01:23:59,930 --> 01:24:08,230
+ like that but that is not the problem here right the key name is exactly the same as before so there is
+
+352
+01:24:08,230 --> 01:24:14,770
+ nothing wrong with that because we just used it a minute ago right so what really happened well let's
+
+353
+01:24:14,770 --> 01:24:24,580
+ go through it step by step well first we asked for for a user that does not exist so github answered us
+
+354
+01:24:24,580 --> 01:24:38,180
+ with a 404 not found and second github still sends back an answer with some json but but it's not a user
+
+355
+01:24:38,180 --> 01:24:46,620
+ it is an error message so it does not have a key called name and third our code didn't actually check
+
+356
+01:24:46,620 --> 01:24:53,710
+ that it just went ahead and said well give me the name and and and the key wasn't there so so python crashed
+
+357
+01:24:53,710 --> 01:25:02,560
+ with a key error so the real problem is the 404 but the error we see is the key error so the program
+
+358
+01:25:02,560 --> 01:25:10,350
+ tells us about the symptom not the cause and that is what happens when we don't check actually
+
+359
+01:25:10,350 --> 01:25:29,550
+ the status code uh and i can actually take a look at what uh what github sent to us try that there we go
+
+360
+01:25:30,100 --> 01:25:38,500
+ so here uh we see that the message says not found right so the answer is a dictionary but with a
+
+361
+01:25:38,500 --> 01:25:47,490
+ message and not a user with a name so the key name is not there right and that is why we got the key
+
+362
+01:25:47,490 --> 01:25:56,960
+ error and this is why i usually always check the status code first then i know if i can trust the data
+
+363
+01:25:56,960 --> 01:26:22,730
+ or not the first thing we could do here first thing we can do here uh or the first way i would say uh is
+
+364
+01:26:22,730 --> 01:26:29,940
+ to check the status code ourselves so let me actually copy that and let's start from a clean slate here
+
+365
+01:26:29,940 --> 01:26:38,980
+ with the same uh response here uh with the same user that did not exist so what i can do here is
+
+366
+01:26:38,980 --> 01:26:57,150
+ something like this if response status code equals 200 then print um response um json
+
+367
+01:27:00,890 --> 01:27:33,130
+ elif fonts status code equals 404 then we can just a nice print here print that user does exist or
+
+368
+01:27:33,130 --> 01:27:53,380
+ something like that and else well that would be maybe print um i don't know um something wrong
+
+369
+01:27:53,380 --> 01:28:09,020
+ actually be specific here right maybe response uh status so here we kind of expect something right
+
+370
+01:28:09,020 --> 01:28:15,680
+ we expect that the user does not exist because we already know that we will get back a 404
+
+371
+01:28:15,680 --> 01:28:27,130
+ so let's run this and yeah the user does not exist so this works right uh but we kind of have
+
+372
+01:28:27,130 --> 01:28:36,130
+ to write this every time right so request has actually a shortcut and this is something called
+
+373
+01:28:36,130 --> 01:28:48,100
+ raise for status and it does nothing if the status is fine but if it's a 400 or 500 code it actually
+
+374
+01:28:48,100 --> 01:28:58,680
+ raises an exception and then we can use try and accept uh which i believe that you already know because
+
+375
+01:28:58,680 --> 01:29:10,640
+ i think that we went through it in the previous uh module so let's do kind of the same thing but
+
+376
+01:29:10,640 --> 01:29:21,170
+ using raise for status and how would that look like uh let me maybe i can write the title here raise
+
+377
+01:29:23,170 --> 01:30:13,700
+ for davis so we try to try um response so we will try there we go right response we said raise raise
+
+378
+01:30:13,700 --> 01:30:35,790
+ raise for status print response let's say j's yeah just like we did before so json yeah let's stick with
+
+379
+01:30:35,790 --> 01:31:19,660
+ what we did before and then we have accept request exceptions http error print that use the error that
+
+380
+01:31:19,660 --> 01:31:40,630
+ we just created error response status pretty neat right and what do we expect here since it is a 400 well we
+
+381
+01:31:40,630 --> 01:31:52,410
+ should get the service at no 404 so the try block runs our request and if everything is fine well we will print
+
+382
+01:31:52,410 --> 01:32:06,540
+ out the name uh but if the server answers with an error then raise for status raises an http error and
+
+383
+01:32:06,540 --> 01:32:17,510
+ the code jumps to the accept block and there we can read the status code from error response status code
+
+384
+01:32:20,160 --> 01:32:27,100
+ and this is the same uh and this is the same try and accept that we did before uh we just catch a type
+
+385
+01:32:27,100 --> 01:32:51,950
+ of error that comes from requests yeah continue i hope it's not going too fast just have to tell me all
+
+386
+01:32:51,950 --> 01:33:04,630
+ all right uh a bad status code well that's one kind of a problem right uh let's try another one let's
+
+387
+01:33:04,630 --> 01:33:11,280
+ say well first of all let's say what if what if the server is too slow so this time i will actually set a
+
+388
+01:33:11,280 --> 01:33:25,140
+ timeout uh and i will use 0.001 seconds which is way too short uh but it's only to see what what actually
+
+389
+01:33:25,140 --> 01:33:48,570
+ happens so let's try that so response equals requests uh target and that maybe just want that actually
+
+390
+01:33:48,570 --> 01:34:03,540
+ worked and there we go okay but i will actually also add as i mentioned a timeout and i will put it to
+
+391
+01:34:03,540 --> 01:34:23,360
+ 0.001 all right and this is way too short just to be clear so if i were to run this uh there we go
+
+392
+01:34:23,360 --> 01:34:38,660
+ we get a request exception connection timeout or a read timeout uh so so so we get a timeout exception
+
+393
+01:34:38,660 --> 01:34:47,150
+ right and this one is important because request has no default timeout so if you don't set one as we
+
+394
+01:34:47,150 --> 01:34:58,090
+ did here and the server never answers well the program will wait forever so my rule here is to always
+
+395
+01:34:58,090 --> 01:35:05,530
+ set a timeout not a ridiculous one just as we did here but something that would be logical to use
+
+396
+01:35:05,530 --> 01:35:24,550
+ okay and you will try that a little bit in the labs and so on let's say and that will be the timeout
+
+397
+01:35:24,550 --> 01:35:33,480
+ part so now let's say uh that we cannot connect at all maybe the internet is down or something like
+
+398
+01:35:33,480 --> 01:35:46,250
+ that or maybe i misspelled the address or something like that all right so let's write here um fonts let's
+
+399
+01:35:46,250 --> 01:36:05,150
+ make it super clear response uh equals requests but get and now https uh oh sorry uh let's read right
+
+400
+01:36:05,150 --> 01:36:23,900
+ something this domain does not exist just to make sure abc123.com i hope this does not exist all right
+
+401
+01:36:23,900 --> 01:36:32,780
+ so if i were to run this we will actually get back something here we go we actually get a connection
+
+402
+01:36:32,780 --> 01:36:44,520
+ error this time right and what if i write uh what if i write something that actually exists but i forget the
+
+403
+01:36:44,520 --> 01:37:00,890
+ https response and we use the fake store that actually works that we know works so fake store
+
+404
+01:37:02,380 --> 01:37:22,150
+ api.com slash products but we kind of forget uh https right and if we were to run this we get a missing
+
+405
+01:37:22,150 --> 01:37:38,580
+ schema right invalid url no no schema supplied right and this is a mistake you probably will make
+
+406
+01:37:38,580 --> 01:37:46,720
+ yourself especially if you're new to this so in order if you know what the error actually means
+
+407
+01:37:46,720 --> 01:37:58,890
+ then it's a little bit easier right because the request wants to know which protocol to use
+
+408
+01:37:59,450 --> 01:38:09,660
+ so it actually needs https here beginning so this is a perfect example to you because well i do that
+
+409
+01:38:09,660 --> 01:38:19,630
+ even now after doing this hundred of sites i sometimes forget https to be honest but then when i see this
+
+410
+01:38:19,630 --> 01:38:36,540
+ ah all right i also perhaps you meant and this is kind of easy to understand what if i do something like
+
+411
+01:38:36,540 --> 01:38:51,200
+ this let's look at another mistake uh what if i do something like this uh let's say response so here i
+
+412
+01:38:51,200 --> 01:38:59,780
+ will actually the server will actually give us a 200 but the answer will not be in json let's say for
+
+413
+01:38:59,780 --> 01:39:12,910
+ example if i call a normal webpage so response equals uh requests uh look get let's not forget the https
+
+414
+01:39:13,630 --> 01:39:31,220
+ uh and just yeah example.com right and let's first take a look at the status code print uh response status
+
+415
+01:39:31,220 --> 01:40:06,870
+ code and also look at the response here response uh json as you see here so i get a 200 right so the
+
+416
+01:40:06,870 --> 01:40:22,050
+ status code is fine but json actually fades here uh because this is an html and not json right so it
+
+417
+01:40:22,050 --> 01:40:38,560
+ raises some kind of uh json decode error expecting value line one right so now we have actually seen
+
+418
+01:40:38,560 --> 01:40:47,420
+ things that can go wrong a bad status code a timeout no connection a missing https
+
+419
+01:40:48,830 --> 01:40:59,500
+ an answer that is not json and i don't want to write all of this every time i call an api so let's
+
+420
+01:40:59,500 --> 01:41:06,810
+ actually put everything in a function i will just write it once and then i can use it
+
+421
+01:41:07,100 --> 01:41:15,390
+ everywhere and this is what is something that you can use in your um in your own projects as well
+
+422
+01:41:15,390 --> 01:41:26,970
+ or maybe also in the lab let me just write it and then we can go through it step by step right so we
+
+423
+01:41:26,970 --> 01:41:49,590
+ said create a function that uh get json and here we have your url uh rams equals equals none uh headers
+
+424
+01:41:50,150 --> 01:42:08,920
+ uh equals uh equals none uh equals none and timeout was five something like that and now we would use the try
+
+425
+01:42:08,920 --> 01:42:38,510
+ uh response uh response uh response uh raise for status and we want to return response uh json right
+
+426
+01:42:38,510 --> 01:43:36,250
+ uh except uh except uh except uh requests exceptions out print well request clear right also another except uh
+
+427
+01:43:36,250 --> 01:44:45,250
+ requests exceptions connection error print good server clear also another except requests exceptions http error
+
+428
+01:44:45,250 --> 01:44:56,470
+ as well as error and i've already know this one because we've already done that so uh and let's use the
+
+429
+01:44:56,470 --> 01:45:19,060
+ the same print as before so print f and we said the server said no rare response we said yeah see the status
+
+430
+01:45:19,060 --> 01:46:00,950
+ code right another except except requests oh sorry quests uh exceptions code error print sir json and last but not least
+
+431
+01:46:00,950 --> 01:46:37,570
+ except request exceptions error so print something like this print let's make it neat here so something else
+
+432
+01:46:46,140 --> 01:47:18,850
+ like this right name and return article the fine thing is that we only need to write it once and we can
+
+433
+01:47:18,850 --> 01:47:33,260
+ reuse this uh this function however we want so let's take it step by step let's take a look at this so the
+
+434
+01:47:33,260 --> 01:47:50,830
+ the get json here so first we have the name and what goes in uh so the url is the only one we actually have
+
+435
+01:47:50,830 --> 01:48:02,270
+ to give the other have a default value right uh params and and headers are none which means well nothing
+
+436
+01:48:02,270 --> 01:48:13,110
+ and then we have timeout which is set to five seconds so if i don't write anything it will use these right
+
+437
+01:48:13,110 --> 01:48:25,510
+ uh but i can still give my own params or headers or set the time to what i what i want right and i will
+
+438
+01:48:25,510 --> 01:48:36,240
+ do that in a minute or so and then we have the try part here uh or the try block uh and this is what we
+
+439
+01:48:36,240 --> 01:48:46,390
+ want to have we send the request with the timeout right uh so we never wait forever and then we we
+
+440
+01:48:46,390 --> 01:49:00,310
+ we uh then raise for status here which raises an exception as we saw earlier on a 404 or 500 and
+
+441
+01:49:00,310 --> 01:49:10,700
+ everything's if everything is fine well we will convert the answer to uh python data json and then we will
+
+442
+01:49:10,700 --> 01:49:21,730
+ return it right so these three lines would be the as we could say the happy part right and then we have
+
+443
+01:49:21,730 --> 01:49:33,340
+ the accept parts and the accept parts well this is what we do if something goes wrong and each one catches
+
+444
+01:49:34,030 --> 01:49:43,780
+ one of the problems we just saw right uh timeout well uh the server was too slow uh the connection uh
+
+445
+01:49:43,780 --> 01:49:53,780
+ connection error we couldn't reach it uh the http error uh that is the 404 or the 500 and then the json
+
+446
+01:49:53,780 --> 01:50:02,740
+ decode uh decode uh decode error uh the answer was not in json and in every case we just write
+
+447
+01:50:02,740 --> 01:50:11,550
+ a short message short not sort a short message that uh well the us can actually read and comprehend
+
+448
+01:50:11,550 --> 01:50:31,320
+ does the order matter what do you say guys does the order matter let's see if you're still awake anybody
+
+449
+01:50:40,000 --> 01:50:49,570
+ thank you jacob yes so christopher yes yeah i was gonna say yes too yeah yeah yeah yeah because python
+
+450
+01:50:49,570 --> 01:50:57,130
+ well as we have seen earlier uh especially in the fundamental part well we see that python checks
+
+451
+01:50:57,130 --> 01:51:03,660
+ from the top and takes the first one that actually fits so we will put the specific ones
+
+452
+01:51:04,920 --> 01:51:15,730
+ first and the general one maybe the request exception as last so it catches everything else
+
+453
+01:51:15,730 --> 01:51:27,690
+ that the request actually can't throw like a missing http uh so actually nothing slips through here and last
+
+454
+01:51:27,690 --> 01:51:34,820
+ but not least well we have returned none right so if something went wrong the function returns none
+
+455
+01:51:36,350 --> 01:51:44,620
+ which means nothing and that way the program doesn't crash it just gives us nothing back and just a message
+
+456
+01:51:44,620 --> 01:52:03,770
+ about why so in short either we will get the data back or we will get none and a message and let's try it
+
+457
+01:52:03,770 --> 01:52:12,780
+ with everything uh we we kind of broke before uh so let's try something that that actually worked and i've
+
+458
+01:52:12,780 --> 01:52:19,830
+ kind of saved these on the side here in order to save a little bit of time because we have already written
+
+459
+01:52:19,830 --> 01:52:28,580
+ and it's pretty much the same thing so let's try this one first and we get the octa cat right or let me
+
+460
+01:52:28,580 --> 01:52:41,560
+ just do all of them at once so these are the ones that we tried before right earlier there's nothing new
+
+461
+01:52:41,560 --> 01:52:54,170
+ here where we set our own timeout uh a user that does not exist a domain that does not exist uh we forget
+
+462
+01:52:54,170 --> 01:53:12,550
+ the http and not uh not json right and let's run this and see what we what we get and the first thing
+
+463
+01:53:12,550 --> 01:53:24,190
+ we notice here so the first thing that we notice here is that our program doesn't crash pretty neat right
+
+464
+01:53:24,190 --> 01:53:37,930
+ so the first one well we get the the octa cat that's good it is a good user and it works so we get
+
+465
+01:53:37,930 --> 01:53:50,110
+ the name the second well the user does not exist uh so we get a 404 the service said no the third has
+
+466
+01:53:50,110 --> 01:54:00,160
+ well a timeout as we saw earlier and it's so short that it actually can't finish uh so it takes
+
+467
+01:54:00,160 --> 01:54:13,470
+ too too long i see there it's a little misspelling here anyways uh and the fourth one is that the address
+
+468
+01:54:13,470 --> 01:54:26,250
+ doesn't exist right uh so we can't connect and the fifth has no http so something else went wrong uh
+
+469
+01:54:26,250 --> 01:54:51,180
+ and the last one is a normal web page so so yeah it answers fine but it is not uh json right and what
+
+470
+01:54:51,180 --> 01:55:03,070
+ i wanted you to notice here no crashes every error gave us a clear message so yeah uh this is a function
+
+471
+01:55:03,070 --> 01:55:10,590
+ that you will probably probably like if you don't already have it or maybe you have your own way of
+
+472
+01:55:10,590 --> 01:55:17,170
+ writing it but anyways you can reuse this for your lab and like i said i'm gonna share the code so you
+
+473
+01:55:17,170 --> 01:55:26,670
+ will already have that one i can also send it in the chat no problem if you're coding along it went too
+
+474
+01:55:26,670 --> 01:56:21,420
+ fast and there you go so let me get also another pretty neat thing here uh well so one important thing i
+
+475
+01:56:21,420 --> 01:56:30,600
+ would say is to remember that if something goes wrong well the function gives us none right so we can't just
+
+476
+01:56:30,600 --> 01:56:40,670
+ use the answers right away because none has no name right so before we use or before you use the data
+
+477
+01:56:40,670 --> 01:56:56,830
+ check that you actually got something uh something like this say data equals get json uh
+
+478
+01:56:56,830 --> 01:57:29,090
+ is that one in something like this if data is not uh none name right something like that i would say
+
+479
+01:57:29,090 --> 01:57:47,930
+ and we will get so if data is not none then we know the call actually worked and we can use it and if it is none well we will skip it skip it right uh
+
+480
+01:57:48,220 --> 01:58:04,890
+ so yeah and the error message has already told us went wrong so yeah always right now we have the last part
+
+481
+01:58:04,890 --> 01:58:16,800
+ uh and i think it's time for a little break so let's take a little break and then yeah we can continue
+
+482
+01:58:16,800 --> 01:58:30,040
+ so let's say 1105 let's say 11 10 sounds all right let's short break if you want to fill up your coffee
+
+483
+01:58:30,040 --> 02:08:16,790
+ marks so see you soon all right guys can you hear me you can see my screen right okay so last part here uh
+
+484
+02:08:16,790 --> 02:08:47,400
+ let's just do an import let's not forget that all right until now everything we have done has been get
+
+485
+02:08:47,400 --> 02:08:56,460
+ right we have only read data from an api uh we have asked for something and we've got it back but never
+
+486
+02:08:56,460 --> 02:09:03,660
+ changed anything right so now we are kind of going to do the opposite here uh we're going to write to
+
+487
+02:09:03,660 --> 02:09:12,250
+ an api uh we're going to send data to it uh to in order to maybe to create a product change one and
+
+488
+02:09:12,250 --> 02:09:27,110
+ maybe to delete one right so this is the other half great and on the slide well you see four methods uh
+
+489
+02:09:27,110 --> 02:09:39,670
+ post in order to create put to replace and patch to to change right to change a specific part and delete
+
+490
+02:09:39,670 --> 02:09:48,730
+ in order to remove and you can see how similar they actually are it is always request dot and then the
+
+491
+02:09:48,730 --> 02:10:01,100
+ method name so so if you can do uh request get then well you should be able to do all of these the new
+
+492
+02:10:01,100 --> 02:10:12,220
+ thing here is that now we actually have something we want to send in right and if you remember the body
+
+493
+02:10:12,220 --> 02:10:20,590
+ from the anatomy of a request well the data that we send uh send with us right so in request we send
+
+494
+02:10:20,590 --> 02:10:34,140
+ the body with json equals and then python dictionary uh and and there's one thing i want you to be aware
+
+495
+02:10:34,140 --> 02:10:46,310
+ of before we uh print uh or sorry not print before we start uh and this is a fake api right so when
+
+496
+02:10:46,310 --> 02:10:56,250
+ we create or delete something it will uh answer as if it worked but nothing is really saved so that is
+
+497
+02:10:56,250 --> 02:11:02,480
+ that is actually good for us right because uh we can practice without breaking anything in 12 api
+
+498
+02:11:03,230 --> 02:11:14,540
+ but tomorrow uh we will build our own api where it will be real so we will start off with uh let's see
+
+499
+02:11:14,540 --> 02:11:23,710
+ here we will start off with post uh which is how we create something right so imagine that we run this
+
+500
+02:11:23,710 --> 02:11:32,170
+ web shop and we want to add a new product uh so what does the api need from us well it needs the
+
+501
+02:11:32,170 --> 02:11:43,790
+ information about the product and that would be a it will need a title right uh it will need a price
+
+502
+02:11:44,720 --> 02:12:03,070
+ it will need a description uh it will need an image and a category right and we will write that as a
+
+503
+02:12:03,070 --> 02:12:22,290
+ dictionary something like this new product equals title uh maybe we can put test product something like that
+
+504
+02:12:25,640 --> 02:12:52,600
+ let's put a price price uh let's say 13.5 uh we need a description description uh i don't know a product
+
+505
+02:13:05,600 --> 02:13:20,300
+ and we need an image and i've already prepared one here uh it's just a poster i will get that one soon
+
+506
+02:13:21,860 --> 02:13:34,740
+ but before we put the image let's also put the category to the re and i will actually have it in
+
+507
+02:13:34,740 --> 02:14:10,530
+ elect electronics right uh and yeah and the image um yeah this toaster will be fine um there you go
+
+508
+02:14:10,530 --> 02:14:21,950
+ so these are the same keys uh as the products that we have seen before right title price and so on notice that i did not write an id
+
+509
+02:14:21,950 --> 02:14:29,820
+ write because we don't decide id the the server actually does that for us uh so it gives the new
+
+510
+02:14:29,820 --> 02:14:39,230
+ product the next free number so this dictionary is our body the data that we will actually send in
+
+511
+02:14:39,230 --> 02:14:47,920
+ now we will send it with post to the same address as when we uh got all the products but with a different
+
+512
+02:14:47,920 --> 02:15:01,930
+ just with a different method and i will give the dictionary with uh jason you will see so response
+
+513
+02:15:01,930 --> 02:15:23,200
+ just as we've done before response let me just reuse uh there we go gonna save time uh there we go all
+
+514
+02:15:23,200 --> 02:15:33,600
+ right so response uh request but this time we will say post right and fake story appeared on the product
+
+515
+02:15:33,600 --> 02:15:47,220
+ very good and now we need to send in this new product json equals new product and there we go let's
+
+516
+02:15:47,220 --> 02:15:58,800
+ let's check it with uh with the status code here so print uh response status code and also let's print
+
+517
+02:16:00,750 --> 02:16:16,840
+ response dot json and let's run this and there we go so first we see the status code 200
+
+518
+02:16:18,100 --> 02:16:31,590
+ or 201 uh so it works uh or 201 was more that it was actually created right and if it says sometimes
+
+519
+02:16:31,590 --> 02:16:39,970
+ maybe it will say 200 uh and that is fine but yeah this was pretty pretty neat since it gave us the 201
+
+520
+02:16:39,970 --> 02:16:52,280
+ i love that we also get back an id 21 so the server is telling us well i created it and it got the number
+
+521
+02:16:52,280 --> 02:17:03,760
+ 21 right and remember we had 20 products right so uh this one is number 21 so there you go uh we created
+
+522
+02:17:03,760 --> 02:17:20,460
+ something from python and now i also want to show you uh what was actually or what actually got sent put it
+
+523
+02:17:20,460 --> 02:17:43,720
+ that way so print response uh request just as we have seen before request uh headers um content um type and
+
+524
+02:17:43,720 --> 02:18:12,420
+ so uh print uh response requests all right let's run this and there we go so uh so here we look at the
+
+525
+02:18:12,420 --> 02:18:19,530
+ request we actually sent not the answer right so first the header the request set uh content type to
+
+526
+02:18:19,530 --> 02:18:27,210
+ application json for us so uh well this is the content type header uh i talked about earlier in the theory
+
+527
+02:18:27,210 --> 02:18:36,540
+ right and it tells the server server that the body is json right uh and then the body itself it is our
+
+528
+02:18:36,540 --> 02:18:48,520
+ dictionary uh but as text in json format and the b here at the beginning uh just means that it's bytes
+
+529
+02:18:48,520 --> 02:19:01,770
+ and you can actually ignore that for now so request converted our python dictionary to json for us pretty
+
+530
+02:19:01,770 --> 02:19:33,950
+ neat what if i do something like this uh i write instead of json i actually write data all right uh
+
+531
+02:19:34,590 --> 02:19:49,590
+ this is but yeah all right let's run this so this is a different format right so this is how an old
+
+532
+02:19:49,590 --> 02:20:00,690
+ school web form sends data and many apis will reject it or misunderstand it so for apis that want json that
+
+533
+02:20:00,690 --> 02:20:10,060
+ would be json equals not as we saw here dot data and this is a very common mistake especially if you
+
+534
+02:20:10,060 --> 02:20:24,210
+ are a little bit old school so now we have created the product using a post now let's change it a little
+
+535
+02:20:24,210 --> 02:20:49,900
+ bit now let's actually a little title here so we said post uh and now we will use now let's change
+
+536
+02:20:49,900 --> 02:21:01,060
+ something that already exists and for that we will use uh put right and remember uh what i said about put
+
+537
+02:21:01,700 --> 02:21:08,210
+ well it replaces the whole thing so i don't send only what i want to change i send the complete new
+
+538
+02:21:08,210 --> 02:21:17,810
+ version of the product and there are two differences from post that i want you to notice uh first of all
+
+539
+02:21:17,810 --> 02:21:31,480
+ would be the address with post um well with post we we we sent uh we will we sent to products the the
+
+540
+02:21:31,480 --> 02:21:39,450
+ the whole uh the whole collection right but because we're adding a new uh uh a new one to it right but but
+
+541
+02:21:39,450 --> 02:21:52,720
+ but now we want one specific product so we will also add an id at the end and and that is just how we say which
+
+542
+02:21:52,720 --> 02:22:01,020
+ one we actually mean uh and that's what we actually uh talked a little bit in in the theory part so the
+
+543
+02:22:01,020 --> 02:22:10,780
+ address says what we're talking about uh maybe product seven for example and and the method says what we
+
+544
+02:22:10,780 --> 02:22:26,780
+ want to do with it which is to replace it so let's actually try to do that so instead of new let's say
+
+545
+02:22:26,780 --> 02:22:45,920
+ updated product so instead of test product let's say uh updated product and dated is just with one app
+
+546
+02:22:45,920 --> 02:23:09,610
+ right uh updated product let's do another price maybe 99.0 uh new description maybe okay uh and i don't know
+
+547
+02:23:09,610 --> 02:23:16,080
+ uh i would have used the same image but now i don't have it so let's also change the image here uh and
+
+548
+02:23:16,080 --> 02:23:25,710
+ let's keep it category in electronics for example all right so now let's put put into action response
+
+549
+02:23:25,710 --> 02:23:53,460
+ equals request request uh put and products but we'll also add a specific product and we will choose
+
+550
+02:23:53,460 --> 02:24:07,520
+ number seven and just like we saw earlier json equals updated product and now just let's check the status
+
+551
+02:24:07,520 --> 02:24:34,490
+ code just like we saw earlier let's run this we get a 200 right so it actually worked and then we get
+
+552
+02:24:34,490 --> 02:24:43,910
+ the answer and if we take a look at what the api actually sends back to us it is the product but now
+
+553
+02:24:43,910 --> 02:24:57,290
+ with our new values so the the title is updated product we see that id seven right and the price
+
+554
+02:24:57,290 --> 02:25:05,790
+ is 99 and so on and we have a new description new image and so and so on and we notice here that it's
+
+555
+02:25:05,790 --> 02:25:13,880
+ product seven that we're talking about so we didn't write an id in our dictionary right it comes from
+
+556
+02:25:13,880 --> 02:25:24,290
+ the address because that's the product that we actually pointing at uh so that is put we pointed
+
+557
+02:25:24,290 --> 02:25:34,860
+ out product seven we sent a completely new version and it replaced the old one and remember if i had
+
+558
+02:25:34,860 --> 02:25:46,330
+ left uh out one field uh for example the description uh then uh in in the real api it could be gone
+
+559
+02:25:46,330 --> 02:25:54,470
+ the previous description that we had because put says well this is the whole new thing and that's
+
+560
+02:25:54,470 --> 02:26:09,080
+ or this would rather be the exact difference to patch which we will actually do next and now let's turn
+
+561
+02:26:09,080 --> 02:26:32,060
+ to uh patch uh uh we said patch uh something like that all right now patch well this one same thing as
+
+562
+02:26:32,060 --> 02:26:40,690
+ put uh it updates a product that already exists but as as we said there is a difference in how much we
+
+563
+02:26:40,690 --> 02:26:50,100
+ actually sent so we put uh we had to send the whole new product every field even the ones we didn't want
+
+564
+02:26:50,100 --> 02:26:58,170
+ to change and that is a bit annoying if i only want to change one thing like for example the price and
+
+565
+02:26:58,170 --> 02:27:07,640
+ patch is made exactly for that we send only what we have changed and everything else stays the same as it
+
+566
+02:27:07,640 --> 02:27:26,140
+ was so i will still point at i will still point at product number seven right uh but here i would just
+
+567
+02:27:26,140 --> 02:27:37,310
+ update whatever i want to update and we said let's update the for example the price here sorry price and
+
+568
+02:27:37,310 --> 02:27:56,110
+ let's set the price to 49.0 and now let's look at the status code so on let's run this and we see that
+
+569
+02:27:56,110 --> 02:28:04,480
+ we get the 200 it works uh and if we look at the answer well it is short we only get the id and the
+
+570
+02:28:04,480 --> 02:28:11,870
+ price and that is because this is a fake uh well this api is actually fake it doesn't really look up
+
+571
+02:28:11,870 --> 02:28:18,830
+ product seven it just sends back what we sent plus the id from the address so we only see our own price
+
+572
+02:28:18,830 --> 02:28:28,600
+ here a real api would often send back the whole updated product so you could see the new price and
+
+573
+02:28:28,600 --> 02:28:37,890
+ the title and everything else done well that still is there but not all apis do that some send us back
+
+574
+02:28:37,890 --> 02:28:49,630
+ only what we have changed and some send back nothing at all so again read the documentation yeah and you
+
+575
+02:28:49,630 --> 02:29:00,140
+ see the difference between put and patch right so here it's right the whole body and here we can just go
+
+576
+02:29:00,140 --> 02:29:08,090
+ ahead and just change whatever we want to change can we always do patch no so always read the documentation
+
+577
+02:29:08,090 --> 02:29:28,510
+ if it's actually supports that the last one would be delete pretty straightforward the lead uh and i would
+
+578
+02:29:28,510 --> 02:29:34,330
+ say this is the simplest one of them all but the most dangerous one right so this is if we want to
+
+579
+02:29:34,330 --> 02:29:42,900
+ remove a product so we point at the product we want to remove uh with the id in the address just as we saw
+
+580
+02:29:42,900 --> 02:29:56,610
+ previously and the method says what to do with it in this case it would be delete uh and you will notice
+
+581
+02:29:56,610 --> 02:30:16,110
+ something here that we actually don't need patch here i wonder if it matters uh no sorry i just want
+
+582
+02:30:16,110 --> 02:30:29,080
+ to double check this if i would have gotten the whole actually get back the whole thing interesting that
+
+583
+02:30:29,080 --> 02:30:47,590
+ that worked for put as well uh if we go back to delete uh and not forget to write delete right and you will
+
+584
+02:30:47,590 --> 02:30:55,240
+ notice that i don't need any json anymore right and i think it's pretty obvious why and let's say that
+
+585
+02:30:55,240 --> 02:31:05,150
+ i want to remove from number six for this uh because the method already tells us what we want to do with it
+
+586
+02:31:05,150 --> 02:31:15,080
+ right and we are actually not sending in any new data right we're only saying well remove this one uh so
+
+587
+02:31:15,080 --> 02:31:31,640
+ the address and the method is exact actually uh pretty enough right so let's see if it works for us so
+
+588
+02:31:31,640 --> 02:31:54,870
+ let's run this there you go uh i get a 200 right and i also get what was actually removed and a real api
+
+589
+02:31:54,870 --> 02:32:03,490
+ would probably write something else maybe 204 no content or something like that but in this case
+
+590
+02:32:03,490 --> 02:32:16,670
+ it actually says what you actually removed and that would be uh what was actually removed for this api
+
+591
+02:32:16,670 --> 02:32:26,570
+ now my question to you guys just a simple question here did we actually change the product or delete a
+
+592
+02:32:26,570 --> 02:32:41,000
+ product no we didn't we can actually check that uh of course we haven't a fake one uh so let's do a
+
+593
+02:32:41,000 --> 02:33:07,290
+ a little check um let's check or something like that uh so response let me use that one right
+
+594
+02:33:07,290 --> 02:33:27,610
+ also check this one though got it right and let's look at the uh print maybe uh response
+
+595
+02:33:28,370 --> 02:33:40,290
+ um basin and let's just take a look at the title right let's do the same thing for product
+
+596
+02:33:40,290 --> 02:33:48,220
+ number six so let's see if we actually changed anything sorry uh
+
+597
+02:33:49,450 --> 02:34:09,500
+ let's see patching you need to get right all right let's run this and we see the title right
+
+598
+02:34:09,500 --> 02:34:18,610
+ white saw a gold platted princesses and solid gold anyways so we see that we haven't actually changed
+
+599
+02:34:18,610 --> 02:34:32,810
+ anything or deleted anything right absolute last part and we're not going to spend a lot of time in it
+
+600
+02:34:32,810 --> 02:34:39,440
+ because it's quite self-explanatory uh but this is something that we actually talked about in the
+
+601
+02:34:39,440 --> 02:34:53,860
+ uh um theory part uh just check that i'm on the right slide here yeah so uh until now everyone
+
+602
+02:34:53,860 --> 02:35:00,970
+ could use the apis we have called right uh fake store was open and so was the github for for public
+
+603
+02:35:00,970 --> 02:35:09,930
+ user nobody had to say who they were but most real apis want to know who you are and the reasons are very
+
+604
+02:35:09,930 --> 02:35:16,540
+ very simple they want to limit how much you can actually how much you can use it they want to charge
+
+605
+02:35:16,540 --> 02:35:27,830
+ you for using it or the data is private like your own account so how do we say who we are well we would
+
+606
+02:35:27,830 --> 02:35:37,610
+ use an api key or a token and it's just a long secret text like a password uh like a password for programs
+
+607
+02:35:38,250 --> 02:35:52,620
+ and we send it with request in in a header right uh the standard way is uh authorization bearer or sorry
+
+608
+02:35:52,620 --> 02:36:00,990
+ the authorization header uh with the word bearer i would say and then a space and then the token
+
+609
+02:36:00,990 --> 02:36:09,910
+ and here's the question from before what is the difference between 401 and 403 well we kind of answer
+
+610
+02:36:09,910 --> 02:36:22,740
+ that i do not know who you are and with 403 i know who you are but no can't uh so let's take a look at
+
+611
+02:36:22,740 --> 02:36:43,390
+ that yeah we i think we have time a little longer lesson for this um so this would be the last part
+
+612
+02:36:43,390 --> 02:37:01,330
+ all right so here uh so i just want to show you first of all the reason an api wants to know who you
+
+613
+02:37:01,330 --> 02:37:09,410
+ are well if we want to limit how much you use it right so github even tells us how much we are allowed
+
+614
+02:37:09,410 --> 02:37:16,880
+ in actually the headers of the answer and these are the response headers like we looked at earlier
+
+615
+02:37:16,880 --> 02:37:26,220
+ today so let's ask for a public user and we will look at at the two of them and i will cheat a little
+
+616
+02:37:26,220 --> 02:37:32,920
+ bit here and just write similar code that we have uh written before and just do another copy and paste
+
+617
+02:37:32,920 --> 02:37:47,760
+ here but here i will just print this is new response uh headers and then we will actually write something
+
+618
+02:37:47,760 --> 02:38:09,910
+ like this uh x uh rate limit uh limit right and also let's look at the remaining x rate limit uh instead
+
+619
+02:38:09,910 --> 02:38:21,340
+ of limit let's look at that remaining all right so let's try this we get two numbers right
+
+620
+02:38:21,340 --> 02:38:28,460
+ the first one is the limit which is 60 and this is how many requests we are allowed to to make per
+
+621
+02:38:28,460 --> 02:38:37,190
+ hour when we are anonymous when github doesn't know who we are and the second one is how many we have
+
+622
+02:38:37,190 --> 02:38:47,160
+ left right now so as you see it's a bit under uh 60 since we have uh none a call when it reaches zero
+
+623
+02:38:47,160 --> 02:38:56,640
+ what happens then well then github will stop answering us we get an error uh a 429 or a 403 depending on
+
+624
+02:38:56,640 --> 02:39:08,290
+ the api and then we would need to just wait until the hour is over and here's the thing if we tell
+
+625
+02:39:08,290 --> 02:39:17,150
+ github who we are with the token then we actually get 5000 per hour instead so that is one reason to
+
+626
+02:39:17,150 --> 02:39:29,960
+ actually identify yourself you actually get more and let's also look at another reason to why we want to
+
+627
+02:39:29,960 --> 02:39:36,310
+ identify ourselves which is the private data so github has an address that gives you information about
+
+628
+02:39:36,310 --> 02:39:44,330
+ yourself meaning the person who's logged in so the address is just just slash user with no name after
+
+629
+02:39:44,330 --> 02:39:53,910
+ it so github can't know who i mean unless i tell it so let's call without telling it anything so this
+
+630
+02:39:53,910 --> 02:40:03,580
+ time i will actually do something like this so you notice that i'm just writing user here right and let's
+
+631
+02:40:03,580 --> 02:40:16,170
+ see what actually happens and you know this already raised response status goes we get a 401 so a 401 which
+
+632
+02:40:16,170 --> 02:40:23,870
+ means unauthorized and you remember what that means right i don't know who you are so the message says the
+
+633
+02:40:23,870 --> 02:40:32,900
+ the same thing requires authentication so github is basically asking who are you and it can't give me
+
+634
+02:40:32,900 --> 02:40:44,070
+ information about myself if it doesn't know who i am but let's send a token first we will actually send
+
+635
+02:40:44,070 --> 02:40:51,520
+ a fake one uh so we can see the difference between sending nothing and sending actually something wrong
+
+636
+02:40:51,520 --> 02:41:01,950
+ uh and i will make a dictionary called headers uh with the uh the key authorization authorization which
+
+637
+02:41:01,950 --> 02:41:10,820
+ we will see in a minute and the value would be the word um the value would be oh let me just do it
+
+638
+02:41:12,050 --> 02:41:28,990
+ particularly here there we go uh there we go and there we go so uh so as i said we make a dictionary
+
+639
+02:41:28,990 --> 02:41:39,000
+ uh with the key authorization and the value is the word bearer and then we have and then we have
+
+640
+02:41:39,000 --> 02:41:47,770
+ a space and then the token here but we're using a fake one just a made up one all right so let's run
+
+641
+02:41:47,770 --> 02:42:02,260
+ this this time i get a 401 uh but look at the message here bad credential before he said requires
+
+642
+02:42:02,260 --> 02:42:11,440
+ authentication so here github was missing something and now it says what we sent is actually wrong so
+
+643
+02:42:11,440 --> 02:42:23,170
+ github knows we sent a token it just doesn't recognize it so that is how we tell d2 apart no token or wrong
+
+644
+02:42:23,170 --> 02:42:33,310
+ token uh now i have a real token but i'm not actually gonna i'm gonna try not to paste it in my code but i'm
+
+645
+02:42:33,310 --> 02:42:42,460
+ actually gonna revoke it after the lesson either way uh and that's the the idea of the next slide here
+
+646
+02:42:42,460 --> 02:42:49,850
+ uh so keep secret secrets right so the rule is very simple a key or a token never goes in your code
+
+647
+02:42:49,850 --> 02:42:58,720
+ never in the url and never in git and the reason is that code gets shared you push it to github
+
+648
+02:42:58,720 --> 02:43:06,560
+ and then everyone can see it and there are also bots that scan github all day looking for keys
+
+649
+02:43:07,600 --> 02:43:15,370
+ and they find them in minutes so where do we actually put it well in a file called env and we
+
+650
+02:43:15,370 --> 02:43:22,320
+ tell git to never include that file with something called git ignore and then in our code we read the
+
+651
+02:43:22,320 --> 02:43:31,700
+ file well the value from there so if you ever do push a key by mistake don't just delete it
+
+652
+02:43:31,700 --> 02:43:39,460
+ it is already in the history you have to go to the service and revoke it and make a new one so github
+
+653
+02:43:39,460 --> 02:43:50,430
+ will often detect it and revoke it for you but don't rely on that so let's try that out and that would
+
+654
+02:43:50,430 --> 02:44:09,060
+ be the part so i'm just going to create a file here uh which i call env and that's it boom uh and here i'm
+
+655
+02:44:09,060 --> 02:44:24,120
+ i'm going to write that token right and then i'm going to remove this from the screen and just write
+
+656
+02:44:24,120 --> 02:44:38,630
+ my github token and it starts with a g a g g h p and how you create the token you will uh you will
+
+657
+02:44:38,630 --> 02:44:44,710
+ actually see in the lab so i've written a step by step on how to do that in order to save a little bit
+
+658
+02:44:44,710 --> 02:44:55,100
+ time from the lesson so now in the env i have actually my my token there no spaces no nothing
+
+659
+02:44:55,100 --> 02:45:17,430
+ so our secret lives kind of uh and not in our code right that we're going to create right now now how
+
+660
+02:45:17,430 --> 02:45:28,710
+ do we get it into python well we use two things the first one is os so import us uh which is built in
+
+661
+02:45:28,710 --> 02:45:37,630
+ into python the second one is load dot env from the package that we installed in the morning so from uh
+
+662
+02:45:37,630 --> 02:45:54,910
+ dot and import uh load and first i would just make a mistake uh purposely uh because this is the mistake
+
+663
+02:45:54,910 --> 02:46:12,090
+ that we usually make nothing wrong with that uh so i will read the token from uh i'll write it like this
+
+664
+02:46:12,090 --> 02:46:25,230
+ i will use an f string just like before but but uh so the token actually gets inserted into the text
+
+665
+02:46:25,230 --> 02:46:38,850
+ right so nothing wrong here but from this let's see what we get we actually get a 401 but wait the
+
+666
+02:46:38,850 --> 02:46:49,780
+ token is in the env file so it is a real token so what is actually wrong what do you say guys what is
+
+667
+02:46:49,780 --> 02:47:10,120
+ actually wrong here last part okay i can take one uh we can take it step by step there so uh what if i do
+
+668
+02:47:13,090 --> 02:47:26,880
+ let's check if it's empty okay i never print the token itself that would be the whole point lost right
+
+669
+02:47:26,880 --> 02:47:40,910
+ but i can check if it's actually empty so if i were to print token is none and if i run this i actually
+
+670
+02:47:40,910 --> 02:47:48,950
+ get a true so the token is none it is empty so python never found it and the reason is that python
+
+671
+02:47:48,950 --> 02:47:57,530
+ doesn't read the env file by itself it is just a text file sitting there we have to tell python to go
+
+672
+02:47:57,530 --> 02:48:10,400
+ and read it and that is what the load dot and does so let's actually add that uh and we can just do it
+
+673
+02:48:10,400 --> 02:48:27,510
+ over here load there we go and now let's run this and we get a 200 and this time we get a false because
+
+674
+02:48:27,510 --> 02:48:40,970
+ it's not empty anymore wait sorry there we go very good so we get it to 100 which means that it actually
+
+675
+02:48:40,970 --> 02:48:56,510
+ worked i can also uh not just do the status code let's also print and that's the last print i promise
+
+676
+02:48:56,510 --> 02:49:07,750
+ response json and let's actually see who this is and you will see that it's my github account
+
+677
+02:49:08,670 --> 02:49:20,290
+ and that's just my github username so yeah so this is github telling us who we are it recognizes the
+
+678
+02:49:20,290 --> 02:49:26,710
+ token and gives me the information about myself from the same address that said requires authentication
+
+679
+02:49:26,710 --> 02:49:35,340
+ before and as you see in the code there's no token in it so if i push this folder to github
+
+680
+02:49:35,340 --> 02:49:52,600
+ the env file stays actually in my computer and that's pretty much it one thing that people often do in
+
+681
+02:49:52,600 --> 02:50:01,040
+ in real projects is to actually add a file called env example which is actually committed and it has the
+
+682
+02:50:01,040 --> 02:50:13,340
+ same names but a fake uh fake value uh for the env so so the developer can quickly just uh fill it in
+
+683
+02:50:13,340 --> 02:50:18,760
+ yeah and also don't print the token don't put it in screenshots and don't send it in teams or anything
+
+684
+02:50:18,760 --> 02:50:33,640
+ like that uh and and small thing to know some apis want the key as a parameter in the url and like api
+
+685
+02:50:33,640 --> 02:50:42,370
+ keys equals something and it works but it's less safe because urls end up in logs uh so use a header
+
+686
+02:50:42,370 --> 02:50:56,140
+ when the api lets you i would rather say and yeah that's pretty much it so there are some things some
+
+687
+02:50:56,140 --> 02:51:01,830
+ good to know you can look at this later on uh because there's some things that you will meet when
+
+688
+02:51:01,830 --> 02:51:09,480
+ you work with apis for real uh first is the 421 29 it means too many requests so if you asked to offer
+
+689
+02:51:09,480 --> 02:51:16,940
+ right and sometimes you have well every try after or something like that every try after header that
+
+690
+02:51:16,940 --> 02:51:24,220
+ tells you how many seconds to wait you have something called pagination uh when there is a lot of data
+
+691
+02:51:24,220 --> 02:51:32,450
+ the api doesn't give you everything at once it gives you one page at a time uh usually with something like
+
+692
+02:51:32,450 --> 02:51:38,860
+ limit and page or per page or whatever so you will ask for the first page then the next page and so
+
+693
+02:51:38,860 --> 02:51:47,400
+ on always read the documentation uh that is where you find the endpoints the parameters how to
+
+694
+02:51:47,400 --> 02:51:57,560
+ authenticate and so on and last look at the version in the url like version one because because apis
+
+695
+02:51:57,560 --> 02:52:08,540
+ change over time and the version tells you which one you are talking to so remember a request has an
+
+696
+02:52:08,540 --> 02:52:17,950
+ endpoint and method headers and everybody always check the status code and always set a timeout use json
+
+697
+02:52:20,280 --> 02:52:30,460
+ and params for query parameters and keys and tokens go in env and never in git and like i mentioned
+
+698
+02:52:30,460 --> 02:52:39,860
+ tomorrow we will actually flip it around uh you will build your own api and yeah and there
+
+699
+02:52:40,830 --> 02:52:48,420
+ we will use we will see what we will use i'm i'm still a little bit divided here if i'm going to
+
+700
+02:52:48,420 --> 02:52:55,980
+ use flask or something else we'll see and you see here that it says before tomorrow finish lab one
+
+701
+02:52:55,980 --> 02:53:02,260
+ the lab to ignore that that is a little bit from a previous class that i had so the lab is very
+
+702
+02:53:02,260 --> 02:53:10,320
+ straightforward just like always lab question one two three and four so four questions there yeah and we
+
+703
+02:53:10,320 --> 02:53:25,050
+ we will be here all day uh if you have any questions just write to us i will probably call you up uh write
+
+704
+02:53:25,050 --> 02:53:32,070
+ to you back depending on the question then you will get the lab pretty soon and i know it was a little
+
+705
+02:53:32,070 --> 02:53:39,190
+ bit longer lesson than usual uh so you will have lunch right away uh and then you can start with the lab
+
+706
+02:53:39,190 --> 02:53:45,850
+ because well we have to cover the whole api uh i don't want to divide it so we can start with the
+
+707
+02:53:45,850 --> 02:53:52,370
+ clean slate tomorrow building api building api will not take so much time as it took today i promise
+
+708
+02:53:52,370 --> 02:54:00,790
+ you that all right sometimes shorter lessons sometimes longer lessons you need to cope with both uh i see
+
+709
+02:54:00,790 --> 02:54:10,200
+ that fabian yeah you're raising your hand uh yes maybe you explained it but what differs uh bearer token
+
+710
+02:54:10,200 --> 02:54:46,320
+ from just a normal token all right uh anybody wants to take that one so bearer token well it's not a a
+
+711
+02:54:46,320 --> 02:55:00,140
+ i wouldn't say it's a different token it's just how you the token is actually set so the token uh that
+
+712
+02:55:00,140 --> 02:55:07,100
+ we know you couldn't see my token but it starts with a ghp and underscore and then it says something
+
+713
+02:55:07,100 --> 02:55:19,010
+ so that that kind of identifies uh myself right while bearer is the name of the schema uh and also
+
+714
+02:55:19,010 --> 02:55:30,590
+ maybe you could say rules for how you put uh the token in the header so i don't know how to say
+
+715
+02:55:30,590 --> 02:55:39,140
+ the uh the user yeah so bearer kind of is in swedish i would say in the hall item but but it's kind of
+
+716
+02:55:39,140 --> 02:55:55,390
+ the user um yeah so the one who so has the take the token well bears it uh i hope that i kind of answered
+
+717
+02:55:55,390 --> 02:56:18,330
+ yeah the holder thank you thank you thank you thank you very good any more questions before i
+
+718
+02:56:18,330 --> 02:56:21,840
+ let you go stop the recording here
+

@@ -1,0 +1,718 @@
+there we go so like i mentioned and you know the drill guys if you have any questions just stop me
+or raise your hand or so uh so we can cover them if it's something that i'm gonna answer on later
+later on well then i will just uh let you hold on your question for for a little while uh yeah so
+like i mentioned today and tomorrow we're going to talk about the apis and i believe this is the
+first time in in the course that you actually or that your program actually we start talking to the
+outside world right so until now everything has been on your own computer right your files your
+list your databases and so on but today we're going to ask other systems for data so this is the plan
+for today so the plan is that after the lesson you can make requests to an api from python read the
+answer of course handle it when something goes wrong and you can keep your api keys safe and tomorrow
+we will actually flip the script we'll flip it around a little bit and tomorrow we will build our own api
+so that's the plan so today using the an api tomorrow uh building our own and that will be
+the api part but before we start i just want to get a general uh just a general uh over glass of the
+class um have you guys worked with apis before uh or is well yeah have you guys just raise your hand
+if you have if you have worked with apis before thank you so yeah some of you have some of you haven't
+maybe i think it was kind of half half and that's that's good uh so for some this would be new and
+for some you will see this as maybe repetition and so on and maybe just see how we do it in python
+and that's it you might have done it in another platform or something like that in another language
+i don't know and yeah and this course is is like that um some things you have already stumbled on
+something you haven't um before we start we're just gonna all make the same installation here or pip install
+um not fundamentals api yeah i can write uh uh demo one maybe and then demo two tomorrow
+um what did i say yeah we just start the terminal and we're just gonna write uh maybe i can
+make this a little bit bigger hope that works for you then we're just gonna write pip uh install uh
+re quest uh requests uh don't forget the s at the end and then python and dot env and i'm gonna send
+it in the chat uh there we go obviously i've already done this uh you can you guys can can do it so we're all
+standing in there we start from the same page here so request well that that would be the library that
+makes the api calls for us and the python dot dot env is something that we're going to talk about later
+but uh we will use later uh when we talk about keys and secrets uh so so that will come later on but
+we do the whole installation right now you can also check that it works uh if you want just write
+when you have installed you can check it out just by writing this i can send it in chat as
+well just look at the version that you have we should all have the same version because i actually
+just installed it on this apptube during the weekend all right so if you see a version number
+then you're good to go any questions before we start are we all in the same page so yeah let's
+start with a question well when you open the weather app on your phone and it says eight degrees in
+stockholm where that does number come from actually well does the app have its own thermometer well no
+right obviously well the app asks uh someone else probably a weather service or something like that
+right and then and and and then gets the information right so that happens through an api so this is
+something you actually use every single day just never see it right api well it stands for application
+programming interface and it's basically a set of rules that allows programs to talk to each other on one
+side we have the client um that is the app or the program that wants something and then on the other
+side we have the um well the uh have the what do you call it uh we have the server uh with the api right
+and behind it maybe we have a database right the client sends a request the api and so uh handles it
+and sends back a response and that's the whole idea request response and why do we do it like this well one reason is that
+that the same api can uh well can serve many different clients the same data to a website right a mobile app
+or a smartwatch or whatever and the other reason is actually also security right we never want everybody
+or everyone to be able to talk to directly to our database so the api kind of stands in between
+and decides what is allowed and what's not allowed right now you will hear the word arrest all the time
+it stands for um uh representational state transfer but you don't have to remember that that's all right
+what you need to know is is is that a rest api uses a normal web protocol http and it is stateless that
+just means that um that every request has to contain uh everything the server actually needs
+the server doesn't remember who you were five minutes ago and the answer we usually get back
+is in a format called json uh and this is nice for us uh as python developers as you can see on the
+table over here um because well if you take a look at this a json object is almost the same as a python
+dictionary a json array well it's basically a list strings numbers are the same in both the only
+difference i would say is true and false which becomes true and false with a capital letter and no that
+actually becomes none so yeah if you already know dictionaries which i presume right uh that you know
+dictionaries and lists you already know kind of know json this is what i call the anatomy of a request
+there are four things that we need to know about first well that would be the endpoint that is the
+address so it tells us which resource we're asking for right second would be the method and that is what
+we want to do right maybe read maybe create maybe delete and so on right third is the headers that is
+the extra information about the request like which format we wanted back or who we are and fourth we have
+the body and this is the data we send with us for example when we create something new so again endpoint
+method headers and body and today we will yeah use all four of course yes there we go and if we take
+a little closer look at the endpoint it has three parts first is the root that is the address of the api
+so in this example that would be api github.com then we have the path which tells us which resource we
+want and here it is the well uh the users octa cat uh the octa cat repos so the repositories of the user
+octa cat and then we want to add a query parameter they they start with a question mark and if we have more
+more than one we separate them with uh ampersand uh so here we say uh sort uh sort by when they were pushed
+and only give me five per page who decides what the path and the parameter looks like well the developer
+of the api of course and that is why we always have to read the documentation and here you see that in the
+documentation they often write username um with a column or with a curly bracket and so on uh so that
+that just means replace this with a real uh value right uh one more thing uh never ever put a password
+or keys in the url uh urls will end up in logs and in in browser history uh and we will come back to that
+at the end the last part of the lesson so we know where to send the request uh and that is the end point
+but the server also needs to know what we want and that is what the method is right think of it as a verb
+a word that says what we want to do and there are five main ones uh get would be one uh that is to
+read the data we ask for something and we get it back and nothing changes on the server so you can do it
+a hundred times and nothing breaks right and you already use get all the time every time you type
+an address uh in the browser you actually it actually sends a get right uh and then we have post uh and
+that is to create something new so here we send data with us for example the details of a new product
+and the server saves it as a new one and usually the server decides the id uh we actually don't and then
+we have put and that is to replace something that uh already exists and i want you to notice that the
+word replace here um exactly yeah uh so if i have a product with a title a price and maybe a description
+and i send a put with a new title and the new price but i forget the description part well then the
+description could be gone because put says uh here is the whole new version right white patch that is
+also to update but only the part that that is actually changed so if i only want to change the
+price well i said only uh i said only the price and everything says stays as it as it was and then we
+have delete and well i think delete is kind of self-explanatory but that is to actually remove
+something right uh and as you can guess uh we use that one carefully and together uh well these are
+called prod uh create read update delete and it just uh it is just for things that you can do with data
+well create would be post read is to get update is put or patch and delete would be delete and you will
+see this word everywhere in the industry and one warning how an api uses these methods is actually up to
+the developer most follow this table that we have in front of us here but some actually uses post for
+everything and some don't even support patch so again always read the documentation uh and today we will
+try all of them in python so if you're new to apis don't worry if it feels like a lot you will see
+them in action pretty soon the last thing i actually want to say before i actually start to code is about
+status codes so every response comes with a number that tells us how it went we have the 200 range which
+means success we have the 300 range which means redirect we have the 400 range uh which means that you have
+made a mistake meaning the client right and then we have the 500 range which means that the server has
+a problem so if i were to get a 404 for example well who made the mistake well probably us right we did and
+if i get a 500 well that would be not our fault on the side i have written down the the ones that you
+meet uh mostly or well which the ones that you will meet the most 200 which is okay 201 uh created
+404 not found uh 401 unauthorized uh 403 forbidden uh 422 uh when the date you said is not valid
+uh 429 uh when you ask too many times and 500 uh when the server breaks let me just ask you a
+question here um what is the difference between 401 and 403 what do you guys say 401 and 403 what would
+be the difference here anybody oh it's monday i will take this one okay fabio yeah i just assumed that if
+you were unauthorized you weren't white listed but if you were forbidden it was more like you have been
+white listed but you've been blocked later on i'm not sure actually i just guess you're kind of on the
+right path but but i would i would just simplify it just by saying well 401 is more uh i don't know who
+who you are while 403 is more i know who you are but you cannot get this information right uh you you're
+not allowed or whatever uh so yeah that would be the difference i don't know who you are but i know who
+you are but at the same time you are not allowed to do whatever uh you wanted to do yeah so let's take
+a little break from uh the theory part and let's actually start coding but before we do that uh so
+well today uh we're going to use an api which i like uh to use in the well especially in this course
+uh and it's called fake store api uh and it pretends to be a web shop uh well with a product
+cards and users and it is completely open so yeah you don't need any key um here uh it is not needed
+at all uh and that makes it pretty pretty good and perfect for actually practicing uh i'm actually
+gonna show it to you guys it looks like something like this and i'm actually also gonna send the link
+here the chat thinkstoreapi.com and here the documentation we find the documentation we could
+click on it and we're not going to spend a lot of time here but well this is the documentation and as
+you can see you can find all the information you need how to get products um how to add a new product
+how to update one and well of course how to delete one and remember the methods from before right it is the
+same the same four things get post put and delete and each one shows you the end point uh as you see
+here uh also the method and what you can get back and we're not going to spend much time here uh instead
+we will go straight into uh into the code uh so well obviously i've read through the documentation so
+you will just have to trust me for now but uh i would recommend uh that you look at the documentation
+after the lesson uh i think that's a good idea and also you will of course have a lab uh so yeah look
+through the documentation just to get uh familiar with reading documentation and so on and it's a good
+practice right all right but let's get started let's actually uh write our first request there we go
+the first thing we're going to do is just import import re requests so we've the we just import well the
+library we just installed and then we will call a request uh let's actually do that so response uh and
+we call requests dot get here and then we will use the endpoint uh or or uh the address of the products
+endpoint uh and and we uh and we will save uh what comes back in a variable well that is called response
+and then we will print it and see what we actually get so let's do that so here i just write the address
+that i just wrote to you guys uh that would be http uh s like that uh oh i thought it would came
+without the http all right thanks to her and then we have products and where did i get this information
+from well of course the documentation and now let's print response and see what we get so when i run
+this well what do we see here well we don't see any products right we see something called
+a response object and in the brackets here we have a 200 and that is the status code that we just
+talked about so it means that it actually worked and this is important to understand request.get here
+does not give us the data it gives us the whole response and the data inside of it now the next step
+would obviously be to actually take a look at what's inside um if i try to do something like this
+and then come here and try to do something like this try to look at the first object or something like
+that let's run this and see what happens perfect we get a type error response object is not so subscriptable
+and why is that well because response is not the list of products it's the whole package just like i
+mentioned so how how do we get the data well we kind of ask for it right so the response is like like
+i mentioned a package and inside this package there are three things that we care about well first of all
+the status code which uh tells us how it went so let me just write that status status uh code uh
+then we have headers which is the information about the answer and then we have the body which is the
+actual content well would be the data that we actually asked for so status headers and and we will take a
+look at each one of them so the first thing that i'm gonna do is print response now i can come and write
+status code and if we run this we will see the 200 the number that we've talked about in theory
+so three 200 means okay it worked if this was a 404 we would know that something is wrong probably with
+the address right so this is something that i always look at that uh when i get started also i'm gonna
+write print uh response uh that headers i'm just gonna write uh con and type let's run this and see
+what we get what we get the 200 of course for the response status code but here we get application json
+right so this would be the headers and remember on the slide i said that headers are extra information
+about the request well the server also sends headers back with the answer and they work kind of in the
+same way you can think of it as the label on the package it doesn't contain the data it tells us
+something about the data so here i asked for one specific header called content type and i get it
+and i get it back like uh like i get a value from a dictionary with with square brackets and and and
+and and of course the the name as well um and it says uh application json here so the server is
+telling us uh what i'm sending you is actually json in order for you to know how to read it and this part
+about utf uh 8 here is just uh which characters uh it uses and yeah you can ignore this part for now let
+me add one more thing let's say i write print um response but uh text 200 and notice the column here
+and let's run this and see what we get back and there we go and kind of stops here right so so this would
+be the last part here so this would be the body right the actual content so response text gives us
+the body as text and here as you see i only print the first uh 200 characters and that is what the
+column 200 in square brackets actually means give me everything from the start to character 200 and i do
+that because the answer actually has 20 products i already checked and if i printed all of them
+well you would see a huge wall of text and we wouldn't be able to read anything here right
+but if we take a look at this it starts with a bracket and this kind of indicates uh or i would rather
+say it looks like it is a list and inside we have curly brackets with with kind of keys right keys and
+values which looks like a dictionary so it looks like a list with dictionaries but here's the thing for
+python this is actually just text it's just a long string letters and symbols in a row so python doesn't
+know that these products are in there so if i were to try to write uh something like um let's say i try to write
+um zero and then uh maybe title since we have title here so i'm trying to print out fjällräden here right
+uh and if i try to do that i will get a type error and so this doesn't work because text zero is is just the
+is is just the first character that would be the square bracket from what we saw before so we can't
+use it like a list quite yet so what we need to do well the first thing we have to do is to convert it
+from text to real python data and that would be the next step so like i mentioned we have a problem the server
+sends us text uh and and we wanted to use it and we want to use it like a list with dictionaries the way
+we do that is with a method that is built in to the response and it's actually called json so what we
+can do is something like this data equals response json so what is happening here well response json takes
+that long text that we just saw or that we just looked at reads it and then converts it into real
+python data and i saved this result uh in a variable and which is called data and this is the reason
+why i showed you that uh that table on the slide right a json object becomes a dictionary and the
+json array becomes a list so python knows exactly how to convert it but i don't want you just to trust
+it uh i want to actually check what we got so let's look at it from three sides uh first we can look at
+the type uh so we can just write uh print um type and that would be for the data let's run this and we
+see class list so type tells us what kind of thing it is right and we saw type when we talked about
+fundamentals and it actually says list so it is a list not a text anymore uh if i have written uh type
+response uh text before it would have said string or str for string right and that is the difference now
+it's a real list uh and this is the habit i want you to get uh when you get data from an api check the type
+first because it decides for us how we will actually use it right for example a list we would loop over
+it right and from a dictionary we actually pick out keys let's also print length of the data so let's see the length or rather how many things are in the list and i told you to trust me
+trust me it actually says 20 which means that we have 20 products let's also print data um let's run this
+in here first item in the list right and if you remember in python we start counting well at zero right
+so now look at the difference here before when i tried text text zero here
+i only got this well i would have only got the the square brackets right because we didn't never tried
+it right but data zero here actually gives me the whole first product and if i look at the curly
+brackets here and the columns well this kind of tells me that this is a dictionary with keys and values we have
+id we have title we have a price we have a description excuse me we have a category uh and we have an image
+right and then we have also a rating and we also see that rating is has its own dictionary um right with
+uh rate and count but we will talk about that later on so this is exactly what we saw on the slide a list
+with a dictionary for each product and now it is just python which means we we can do anything we
+want with it we can loop over it we can pick out values we can filter and all the things you already
+know from the python fundamental modules that we had that we had at the beginning of course and this
+is what we actually will do next so now we have a list with 20 products and when we printed one of them
+it was a big dictionary with a lot of information but usually we don't want everything
+we just want the parts that actually matter for us right and what we want to do with it
+or let's say this so so when we have a list and want to do something with every item in it
+what do we actually use do you say guys let's see if you're still awake with me so let's say
+we have a list and we want to do something with every item in it what do we usually use i expect you
+all to be able to answer this question you've all been in the in the christopher yeah we could
+do a for loop for example yeah perfect a loop a for loop right uh so let's actually
+loop over the products and for each one we will just pick out the id uh yeah we can also pick out
+the title and and and and the price and then print them on uh just in one line uh and i will only take the
+first five uh so we don't get all 20 products and i will use this colon five that we saw before uh the
+same as i did with the colon 200 as we saw right here so it will start from the first one up to
+number five so how would i do that just as uh clip top dimension with a for loop so for product in to
+the right next in help me anybody yeah christoph thank you uh jacob so in data right and we said only the
+first five and we want to print out let's make a little nice print here with an f product d we said
+the title and also something like this and also see the price with a kind of a dollar sign or something
+like that excuse me product uh price something like that and let's run this as we see here i take the
+first five and print out the id the title uh and the and the price and this is exactly what you did uh
+with lists and dictionaries in the python course right the only new thing here is where the data came
+from before we just wrote some kind of data right but now we get it from our fake store any questions
+all right let's say i want let's say i want let's say i want product number 15 how would i do
+let me just save this one because i i i actually can share the code with you guys after the lesson
+i will put it in our uh folder uh in the shared photo folder in uh in teams so let's say i want a
+specific product uh and we said let's say product number 15 or something like that so here i can
+actually according to the documentation i can actually add 15 here and now same as before product
+roll duckt equals response uh based on let's end product and let's run this and we see that we get
+the actual product with id 15. if i come over here and let's say i want the name of the product and
+i'm quick i don't read any documentation and anything like that and i just come here and say i just want
+the name right something like that and if i run this key error right because there's no key called name
+it's actually called title and this is something you will probably do so my tip is always uh print
+the data first and look at it before you start picking things out of it all right and so in this
+case it would be title let's try that out and there we go just get product here and now let's we saw
+earlier in the printout that we had something called rating uh and let's also take a look at that one
+so let's just write print product we said rating rating let's run this and there we go so what do we get
+back but we don't get a single number right it is curly brackets again so it is another dictionary with
+its own keys rate and count and rate is the average score and count is kind of how many people have
+actually voted so so this is a dictionary inside a dictionary so how do we actually get the rating
+number well we have already done this when we talked about fundamentals and i think you had a more
+complex question uh to work with before so this would be a piece of cake uh so we would open one
+box at a time right first of all the big box which is product and the key rating uh and that will give
+us the small box and now we try to open the small box with the next key that would be rate in order to get
+2.6 so therefore i would write rate here all right and if i run this i will actually get point 2.6 all
+right and let me just um so we remember where we came from uh there we go we said just rate the next
+key here and now and now we can actually combine everything so let's say we want a title from the first
+box and the rate from the small box all right so what we can do here is actually separate by comma so that
+print uh so we can use a print that that puts them on the same line so what we can do here is something
+like this uh product uh and also product title there you go and then let's not forget the comma there we
+go and let's run this and see if it works yeah so we get we get the title and also the rating 2.6 so
+whenever you get data from an api and there are curly brackets inside curly brackets it is actually the
+same thing you just add one more key for every level you go down right and that is why i always say i'll print
+the data first and then look at it before you pick things out of it let's see here should we take a
+break or should we take the last part here we're actually going to take a little break and then we
+will talk about query parameters so let's take a little break uh so let's say 1005 and then we will
+continue with queries see you back soon all right are you guys back can you hear me and so on see my screen
+perfect perfect perfect all right let's continue uh now the query parameters and if you remember from
+the slide uh well the part that would be the part of the address that started with a question mark right
+and it is a way to give the api extra information about what we want back so it is well it is not which
+resource we ask for that that would be the path right it is how we actually want it for example how many or
+order and so on and which parameter we can actually use is up to the api that is why we always look at
+the documentation uh and this api uh if we were to read uh through the documentation uh this api has one
+one called limit which says how many products we want and one that is called sort which says in what order
+so first of all let's do it uh the way we saw on the slide uh we just write it in the url i will add a
+question mark then the then the name then the name limit and and and equal sign and and yeah and i'll get
+i'll put a five or something like that okay so let's start there so response equals requests don't get
+just as we saw before uh let me just use the address again no there we go right uh but also add uh the
+query uh so limit equals uh we said five right and now let's just um print you start something like
+this print len uh response json right and if i were to run this i get a five right so before uh uh when
+we asked for all products we got a 20 now we say limit it to five so the length gave us of course five
+so the api understood our instruction here so that works but it gets messy when we have a lot of
+parameters right can you imagine because well we have to remember the question mark and then the the
+ampersand and so on uh and we will need to remember that ourselves right so request has a nicer way
+and we could give the parameters as a dictionary with a key for the name and a value so this time i will
+actually add two parameters uh and and and limit uh yeah i will use limit and sort in this case right
+so kind of the same thing that we just did but uh with limit and sort uh in a little nicer way
+so i'll just copy that and let's just remember where we came from if you were to read the notes
+later on excuse me so let me get rid of that because we don't need it anymore there we go so products
+is fine and now we can use something called parents and here i can write it like this so limit uh and we
+will use five just like we did before and also we can say sort uh and i would choose okay descending and
+now let's do as before uh print the length so len response uh dot json all right and also let's print
+and let's also print the response url i think that's pretty neat okay and let's run this and when i run
+this i see uh and if you notice here well you you saw that uh the address that i give uh that i gave
+it gave to request well it's just a plain one right no question mark uh so the parameters here
+are in their own dictionary and that is the well the params part here and if we were to look at the
+response url that we get back here uh this is the address that request actually used it built the url for
+us it added the question mark right uh and uh it put the equal signs uh it put the ampersand between
+the two parameters uh so we didn't have to do that uh or do any of that right and why would i say this is
+better well it is easier to read uh and it's easy to add and remove one parameter and if the values have
+maybe spaces or special characters uh well requests will actually fix that for us so yeah i actually
+recommend using params and sort descending here or the esc uh means just descending uh and so to see that it
+actually work we can look at the ids uh something like this uh print um product oh we don't have the product
+okay uh we don't have it from before uh let's just do that there we go so product raised a little bit but
+anyways let's see what we get back uh id uh for product in response and it's um something like that
+and let's run this and see what we get back five four three two one perfect so what do we actually see
+that it's going in a descending order right so from id five four one one more end point that we actually
+can take a look at with that one that out that would be one more endpoint that i want to look take a look
+at is uh categories let's get the categories so categories uh and this one is a well i would say a good
+comparison uh because there's no uh question mark here uh so there's no parameter instead uh it is a
+different path uh so a different resource right uh and the resource will be categories right the path
+says in order to remember right so the path says what we're asking for and the parameters says how we
+want to see it so actually keep that one sure that's all right uh and just print out because we remember
+from yeah print uh response uh json something like that and now let's run this yeah right and we get
+back electronics jewelry men's clothing women's clothing so all the categories there is and i you see there is a
+a mess misspelling it's not from my end it's it's actually uh it's actually spent like that in the
+api okay now let's take um the last part of that tandem the anatomy and that would be to go back to
+the beginning and that would be uh headers we haven't talked about we have already looked at the response
+headers but what about the headers we actually send so um what if i came and wrote something like this
+print west headers happen when i write that interesting so requests adds some headers actually
+automatically we see here user agent it actually says the it actually says python request so the server
+knows what kind of client is actually asking here right so now we can actually add our own here so
+what we can do is something like this that uh we can save that one so what we can now write is
+response equals uh request uh get like this we can do is we can write here headers equals um accept uh vacation
+vacation vacation json and now let's just print response let's start with let's take a look at the status
+code here so here i'm saying that i want json back so this is how we actually send extra information about
+the request uh and and later on or we will actually in a few minutes we will actually use headers for
+something much more important uh in order to tell the api who we are but let's take a look at that and
+we get a 200 so perfect it works so now we have used the endpoint we have used the path uh we have used
+the query parameters and headers okay let's go back to our powerpoint here and this is i would say
+important so so far everything that we have done has worked but in real life of course as you know
+things can go wrong right uh the internet is down the server is slow or you ask for something that
+actually doesn't exist and so on right and on this slide uh you see different kind of problems so the
+the first one well the the the server answers but actually says no right uh and that is a 400 or 500
+code uh and the second would be um the server never answers because it's too slow or we can't connect
+the third would be uh the the server the server answers but it's not json and and a good developer
+would be able to handle all of these of course earlier we saw back we saw a um a github api and
+this one is also open uh and let's ask ask for the user here which should be octa cat right or octocat
+and we will try something like that okay um and take it step by step and try to stumble a little
+bit on the problems that we can actually stumble up and let me do something like this kind of a part
+two of of the theory part there we go so uh let's start with import uh import requests all right now
+response equals right uh but that is not right sorry we're not gonna look at this one we're actually gonna
+look at uh you said the github api right api dot github dot com slash users slash uh let me spell it
+that's right we can actually send this one in the chat if anybody is coding along
+all right uh now let's print we start off just as we did before
+response uh the status code and also let's print uh the name so that would be response
+dot json and we said uh then name all right let's run this see what happens perfect so octa cat is the
+well kind of a mascot of github right so so this actually works now let's ask for a user that
+actually does not exist all right so let me try something else so this works perfect therefore we can
+add a title here uh 404 so that worked but what if i uh write another user not octocat let's write um
+another user this user so it becomes very clear if you were to read the notes later on does not
+exist let's be awesome add one two three all right so now let's run it the second time and see what we
+get and perfect and this time we get a status code right and we also get a key error so our program
+actually crashes right with a key error and the key error here or the message is that is actually
+the name right and if i just read that i would think okay i wrote i probably wrote the wrong key
+there is something wrong with the word name in my code maybe i'm not supposed to use name or something
+like that but that is not the problem here right the key name is exactly the same as before so there is
+nothing wrong with that because we just used it a minute ago right so what really happened well let's
+go through it step by step well first we asked for for a user that does not exist so github answered us
+with a 404 not found and second github still sends back an answer with some json but but it's not a user
+it is an error message so it does not have a key called name and third our code didn't actually check
+that it just went ahead and said well give me the name and and and the key wasn't there so so python crashed
+with a key error so the real problem is the 404 but the error we see is the key error so the program
+tells us about the symptom not the cause and that is what happens when we don't check actually
+the status code uh and i can actually take a look at what uh what github sent to us try that there we go
+so here uh we see that the message says not found right so the answer is a dictionary but with a
+message and not a user with a name so the key name is not there right and that is why we got the key
+error and this is why i usually always check the status code first then i know if i can trust the data
+or not the first thing we could do here first thing we can do here uh or the first way i would say uh is
+to check the status code ourselves so let me actually copy that and let's start from a clean slate here
+with the same uh response here uh with the same user that did not exist so what i can do here is
+something like this if response status code equals 200 then print um response um json
+elif fonts status code equals 404 then we can just a nice print here print that user does exist or
+something like that and else well that would be maybe print um i don't know um something wrong
+actually be specific here right maybe response uh status so here we kind of expect something right
+we expect that the user does not exist because we already know that we will get back a 404
+so let's run this and yeah the user does not exist so this works right uh but we kind of have
+to write this every time right so request has actually a shortcut and this is something called
+raise for status and it does nothing if the status is fine but if it's a 400 or 500 code it actually
+raises an exception and then we can use try and accept uh which i believe that you already know because
+i think that we went through it in the previous uh module so let's do kind of the same thing but
+using raise for status and how would that look like uh let me maybe i can write the title here raise
+for davis so we try to try um response so we will try there we go right response we said raise raise
+raise for status print response let's say j's yeah just like we did before so json yeah let's stick with
+what we did before and then we have accept request exceptions http error print that use the error that
+we just created error response status pretty neat right and what do we expect here since it is a 400 well we
+should get the service at no 404 so the try block runs our request and if everything is fine well we will print
+out the name uh but if the server answers with an error then raise for status raises an http error and
+the code jumps to the accept block and there we can read the status code from error response status code
+and this is the same uh and this is the same try and accept that we did before uh we just catch a type
+of error that comes from requests yeah continue i hope it's not going too fast just have to tell me all
+all right uh a bad status code well that's one kind of a problem right uh let's try another one let's
+say well first of all let's say what if what if the server is too slow so this time i will actually set a
+timeout uh and i will use 0.001 seconds which is way too short uh but it's only to see what what actually
+happens so let's try that so response equals requests uh target and that maybe just want that actually
+worked and there we go okay but i will actually also add as i mentioned a timeout and i will put it to
+0.001 all right and this is way too short just to be clear so if i were to run this uh there we go
+we get a request exception connection timeout or a read timeout uh so so so we get a timeout exception
+right and this one is important because request has no default timeout so if you don't set one as we
+did here and the server never answers well the program will wait forever so my rule here is to always
+set a timeout not a ridiculous one just as we did here but something that would be logical to use
+okay and you will try that a little bit in the labs and so on let's say and that will be the timeout
+part so now let's say uh that we cannot connect at all maybe the internet is down or something like
+that or maybe i misspelled the address or something like that all right so let's write here um fonts let's
+make it super clear response uh equals requests but get and now https uh oh sorry uh let's read right
+something this domain does not exist just to make sure abc123.com i hope this does not exist all right
+so if i were to run this we will actually get back something here we go we actually get a connection
+error this time right and what if i write uh what if i write something that actually exists but i forget the
+https response and we use the fake store that actually works that we know works so fake store
+api.com slash products but we kind of forget uh https right and if we were to run this we get a missing
+schema right invalid url no no schema supplied right and this is a mistake you probably will make
+yourself especially if you're new to this so in order if you know what the error actually means
+then it's a little bit easier right because the request wants to know which protocol to use
+so it actually needs https here beginning so this is a perfect example to you because well i do that
+even now after doing this hundred of sites i sometimes forget https to be honest but then when i see this
+ah all right i also perhaps you meant and this is kind of easy to understand what if i do something like
+this let's look at another mistake uh what if i do something like this uh let's say response so here i
+will actually the server will actually give us a 200 but the answer will not be in json let's say for
+example if i call a normal webpage so response equals uh requests uh look get let's not forget the https
+uh and just yeah example.com right and let's first take a look at the status code print uh response status
+code and also look at the response here response uh json as you see here so i get a 200 right so the
+status code is fine but json actually fades here uh because this is an html and not json right so it
+raises some kind of uh json decode error expecting value line one right so now we have actually seen
+things that can go wrong a bad status code a timeout no connection a missing https
+an answer that is not json and i don't want to write all of this every time i call an api so let's
+actually put everything in a function i will just write it once and then i can use it
+everywhere and this is what is something that you can use in your um in your own projects as well
+or maybe also in the lab let me just write it and then we can go through it step by step right so we
+said create a function that uh get json and here we have your url uh rams equals equals none uh headers
+uh equals uh equals none uh equals none and timeout was five something like that and now we would use the try
+uh response uh response uh response uh raise for status and we want to return response uh json right
+uh except uh except uh except uh requests exceptions out print well request clear right also another except uh
+requests exceptions connection error print good server clear also another except requests exceptions http error
+as well as error and i've already know this one because we've already done that so uh and let's use the
+the same print as before so print f and we said the server said no rare response we said yeah see the status
+code right another except except requests oh sorry quests uh exceptions code error print sir json and last but not least
+except request exceptions error so print something like this print let's make it neat here so something else
+like this right name and return article the fine thing is that we only need to write it once and we can
+reuse this uh this function however we want so let's take it step by step let's take a look at this so the
+the get json here so first we have the name and what goes in uh so the url is the only one we actually have
+to give the other have a default value right uh params and and headers are none which means well nothing
+and then we have timeout which is set to five seconds so if i don't write anything it will use these right
+uh but i can still give my own params or headers or set the time to what i what i want right and i will
+do that in a minute or so and then we have the try part here uh or the try block uh and this is what we
+want to have we send the request with the timeout right uh so we never wait forever and then we we
+we uh then raise for status here which raises an exception as we saw earlier on a 404 or 500 and
+everything's if everything is fine well we will convert the answer to uh python data json and then we will
+return it right so these three lines would be the as we could say the happy part right and then we have
+the accept parts and the accept parts well this is what we do if something goes wrong and each one catches
+one of the problems we just saw right uh timeout well uh the server was too slow uh the connection uh
+connection error we couldn't reach it uh the http error uh that is the 404 or the 500 and then the json
+decode uh decode uh decode error uh the answer was not in json and in every case we just write
+a short message short not sort a short message that uh well the us can actually read and comprehend
+does the order matter what do you say guys does the order matter let's see if you're still awake anybody
+thank you jacob yes so christopher yes yeah i was gonna say yes too yeah yeah yeah yeah because python
+well as we have seen earlier uh especially in the fundamental part well we see that python checks
+from the top and takes the first one that actually fits so we will put the specific ones
+first and the general one maybe the request exception as last so it catches everything else
+that the request actually can't throw like a missing http uh so actually nothing slips through here and last
+but not least well we have returned none right so if something went wrong the function returns none
+which means nothing and that way the program doesn't crash it just gives us nothing back and just a message
+about why so in short either we will get the data back or we will get none and a message and let's try it
+with everything uh we we kind of broke before uh so let's try something that that actually worked and i've
+kind of saved these on the side here in order to save a little bit of time because we have already written
+and it's pretty much the same thing so let's try this one first and we get the octa cat right or let me
+just do all of them at once so these are the ones that we tried before right earlier there's nothing new
+here where we set our own timeout uh a user that does not exist a domain that does not exist uh we forget
+the http and not uh not json right and let's run this and see what we what we get and the first thing
+we notice here so the first thing that we notice here is that our program doesn't crash pretty neat right
+so the first one well we get the the octa cat that's good it is a good user and it works so we get
+the name the second well the user does not exist uh so we get a 404 the service said no the third has
+well a timeout as we saw earlier and it's so short that it actually can't finish uh so it takes
+too too long i see there it's a little misspelling here anyways uh and the fourth one is that the address
+doesn't exist right uh so we can't connect and the fifth has no http so something else went wrong uh
+and the last one is a normal web page so so yeah it answers fine but it is not uh json right and what
+i wanted you to notice here no crashes every error gave us a clear message so yeah uh this is a function
+that you will probably probably like if you don't already have it or maybe you have your own way of
+writing it but anyways you can reuse this for your lab and like i said i'm gonna share the code so you
+will already have that one i can also send it in the chat no problem if you're coding along it went too
+fast and there you go so let me get also another pretty neat thing here uh well so one important thing i
+would say is to remember that if something goes wrong well the function gives us none right so we can't just
+use the answers right away because none has no name right so before we use or before you use the data
+check that you actually got something uh something like this say data equals get json uh
+is that one in something like this if data is not uh none name right something like that i would say
+and we will get so if data is not none then we know the call actually worked and we can use it and if it is none well we will skip it skip it right uh
+so yeah and the error message has already told us went wrong so yeah always right now we have the last part
+uh and i think it's time for a little break so let's take a little break and then yeah we can continue
+so let's say 1105 let's say 11 10 sounds all right let's short break if you want to fill up your coffee
+marks so see you soon all right guys can you hear me you can see my screen right okay so last part here uh
+let's just do an import let's not forget that all right until now everything we have done has been get
+right we have only read data from an api uh we have asked for something and we've got it back but never
+changed anything right so now we are kind of going to do the opposite here uh we're going to write to
+an api uh we're going to send data to it uh to in order to maybe to create a product change one and
+maybe to delete one right so this is the other half great and on the slide well you see four methods uh
+post in order to create put to replace and patch to to change right to change a specific part and delete
+in order to remove and you can see how similar they actually are it is always request dot and then the
+method name so so if you can do uh request get then well you should be able to do all of these the new
+thing here is that now we actually have something we want to send in right and if you remember the body
+from the anatomy of a request well the data that we send uh send with us right so in request we send
+the body with json equals and then python dictionary uh and and there's one thing i want you to be aware
+of before we uh print uh or sorry not print before we start uh and this is a fake api right so when
+we create or delete something it will uh answer as if it worked but nothing is really saved so that is
+that is actually good for us right because uh we can practice without breaking anything in 12 api
+but tomorrow uh we will build our own api where it will be real so we will start off with uh let's see
+here we will start off with post uh which is how we create something right so imagine that we run this
+web shop and we want to add a new product uh so what does the api need from us well it needs the
+information about the product and that would be a it will need a title right uh it will need a price
+it will need a description uh it will need an image and a category right and we will write that as a
+dictionary something like this new product equals title uh maybe we can put test product something like that
+let's put a price price uh let's say 13.5 uh we need a description description uh i don't know a product
+and we need an image and i've already prepared one here uh it's just a poster i will get that one soon
+but before we put the image let's also put the category to the re and i will actually have it in
+elect electronics right uh and yeah and the image um yeah this toaster will be fine um there you go
+so these are the same keys uh as the products that we have seen before right title price and so on notice that i did not write an id
+write because we don't decide id the the server actually does that for us uh so it gives the new
+product the next free number so this dictionary is our body the data that we will actually send in
+now we will send it with post to the same address as when we uh got all the products but with a different
+just with a different method and i will give the dictionary with uh jason you will see so response
+just as we've done before response let me just reuse uh there we go gonna save time uh there we go all
+right so response uh request but this time we will say post right and fake story appeared on the product
+very good and now we need to send in this new product json equals new product and there we go let's
+let's check it with uh with the status code here so print uh response status code and also let's print
+response dot json and let's run this and there we go so first we see the status code 200
+or 201 uh so it works uh or 201 was more that it was actually created right and if it says sometimes
+maybe it will say 200 uh and that is fine but yeah this was pretty pretty neat since it gave us the 201
+i love that we also get back an id 21 so the server is telling us well i created it and it got the number
+21 right and remember we had 20 products right so uh this one is number 21 so there you go uh we created
+something from python and now i also want to show you uh what was actually or what actually got sent put it
+that way so print response uh request just as we have seen before request uh headers um content um type and
+so uh print uh response requests all right let's run this and there we go so uh so here we look at the
+request we actually sent not the answer right so first the header the request set uh content type to
+application json for us so uh well this is the content type header uh i talked about earlier in the theory
+right and it tells the server server that the body is json right uh and then the body itself it is our
+dictionary uh but as text in json format and the b here at the beginning uh just means that it's bytes
+and you can actually ignore that for now so request converted our python dictionary to json for us pretty
+neat what if i do something like this uh i write instead of json i actually write data all right uh
+this is but yeah all right let's run this so this is a different format right so this is how an old
+school web form sends data and many apis will reject it or misunderstand it so for apis that want json that
+would be json equals not as we saw here dot data and this is a very common mistake especially if you
+are a little bit old school so now we have created the product using a post now let's change it a little
+bit now let's actually a little title here so we said post uh and now we will use now let's change
+something that already exists and for that we will use uh put right and remember uh what i said about put
+well it replaces the whole thing so i don't send only what i want to change i send the complete new
+version of the product and there are two differences from post that i want you to notice uh first of all
+would be the address with post um well with post we we we sent uh we will we sent to products the the
+the whole uh the whole collection right but because we're adding a new uh uh a new one to it right but but
+but now we want one specific product so we will also add an id at the end and and that is just how we say which
+one we actually mean uh and that's what we actually uh talked a little bit in in the theory part so the
+address says what we're talking about uh maybe product seven for example and and the method says what we
+want to do with it which is to replace it so let's actually try to do that so instead of new let's say
+updated product so instead of test product let's say uh updated product and dated is just with one app
+right uh updated product let's do another price maybe 99.0 uh new description maybe okay uh and i don't know
+uh i would have used the same image but now i don't have it so let's also change the image here uh and
+let's keep it category in electronics for example all right so now let's put put into action response
+equals request request uh put and products but we'll also add a specific product and we will choose
+number seven and just like we saw earlier json equals updated product and now just let's check the status
+code just like we saw earlier let's run this we get a 200 right so it actually worked and then we get
+the answer and if we take a look at what the api actually sends back to us it is the product but now
+with our new values so the the title is updated product we see that id seven right and the price
+is 99 and so on and we have a new description new image and so and so on and we notice here that it's
+product seven that we're talking about so we didn't write an id in our dictionary right it comes from
+the address because that's the product that we actually pointing at uh so that is put we pointed
+out product seven we sent a completely new version and it replaced the old one and remember if i had
+left uh out one field uh for example the description uh then uh in in the real api it could be gone
+the previous description that we had because put says well this is the whole new thing and that's
+or this would rather be the exact difference to patch which we will actually do next and now let's turn
+to uh patch uh uh we said patch uh something like that all right now patch well this one same thing as
+put uh it updates a product that already exists but as as we said there is a difference in how much we
+actually sent so we put uh we had to send the whole new product every field even the ones we didn't want
+to change and that is a bit annoying if i only want to change one thing like for example the price and
+patch is made exactly for that we send only what we have changed and everything else stays the same as it
+was so i will still point at i will still point at product number seven right uh but here i would just
+update whatever i want to update and we said let's update the for example the price here sorry price and
+let's set the price to 49.0 and now let's look at the status code so on let's run this and we see that
+we get the 200 it works uh and if we look at the answer well it is short we only get the id and the
+price and that is because this is a fake uh well this api is actually fake it doesn't really look up
+product seven it just sends back what we sent plus the id from the address so we only see our own price
+here a real api would often send back the whole updated product so you could see the new price and
+the title and everything else done well that still is there but not all apis do that some send us back
+only what we have changed and some send back nothing at all so again read the documentation yeah and you
+see the difference between put and patch right so here it's right the whole body and here we can just go
+ahead and just change whatever we want to change can we always do patch no so always read the documentation
+if it's actually supports that the last one would be delete pretty straightforward the lead uh and i would
+say this is the simplest one of them all but the most dangerous one right so this is if we want to
+remove a product so we point at the product we want to remove uh with the id in the address just as we saw
+previously and the method says what to do with it in this case it would be delete uh and you will notice
+something here that we actually don't need patch here i wonder if it matters uh no sorry i just want
+to double check this if i would have gotten the whole actually get back the whole thing interesting that
+that worked for put as well uh if we go back to delete uh and not forget to write delete right and you will
+notice that i don't need any json anymore right and i think it's pretty obvious why and let's say that
+i want to remove from number six for this uh because the method already tells us what we want to do with it
+right and we are actually not sending in any new data right we're only saying well remove this one uh so
+the address and the method is exact actually uh pretty enough right so let's see if it works for us so
+let's run this there you go uh i get a 200 right and i also get what was actually removed and a real api
+would probably write something else maybe 204 no content or something like that but in this case
+it actually says what you actually removed and that would be uh what was actually removed for this api
+now my question to you guys just a simple question here did we actually change the product or delete a
+product no we didn't we can actually check that uh of course we haven't a fake one uh so let's do a
+a little check um let's check or something like that uh so response let me use that one right
+also check this one though got it right and let's look at the uh print maybe uh response
+um basin and let's just take a look at the title right let's do the same thing for product
+number six so let's see if we actually changed anything sorry uh
+let's see patching you need to get right all right let's run this and we see the title right
+white saw a gold platted princesses and solid gold anyways so we see that we haven't actually changed
+anything or deleted anything right absolute last part and we're not going to spend a lot of time in it
+because it's quite self-explanatory uh but this is something that we actually talked about in the
+uh um theory part uh just check that i'm on the right slide here yeah so uh until now everyone
+could use the apis we have called right uh fake store was open and so was the github for for public
+user nobody had to say who they were but most real apis want to know who you are and the reasons are very
+very simple they want to limit how much you can actually how much you can use it they want to charge
+you for using it or the data is private like your own account so how do we say who we are well we would
+use an api key or a token and it's just a long secret text like a password uh like a password for programs
+and we send it with request in in a header right uh the standard way is uh authorization bearer or sorry
+the authorization header uh with the word bearer i would say and then a space and then the token
+and here's the question from before what is the difference between 401 and 403 well we kind of answer
+that i do not know who you are and with 403 i know who you are but no can't uh so let's take a look at
+that yeah we i think we have time a little longer lesson for this um so this would be the last part
+all right so here uh so i just want to show you first of all the reason an api wants to know who you
+are well if we want to limit how much you use it right so github even tells us how much we are allowed
+in actually the headers of the answer and these are the response headers like we looked at earlier
+today so let's ask for a public user and we will look at at the two of them and i will cheat a little
+bit here and just write similar code that we have uh written before and just do another copy and paste
+here but here i will just print this is new response uh headers and then we will actually write something
+like this uh x uh rate limit uh limit right and also let's look at the remaining x rate limit uh instead
+of limit let's look at that remaining all right so let's try this we get two numbers right
+the first one is the limit which is 60 and this is how many requests we are allowed to to make per
+hour when we are anonymous when github doesn't know who we are and the second one is how many we have
+left right now so as you see it's a bit under uh 60 since we have uh none a call when it reaches zero
+what happens then well then github will stop answering us we get an error uh a 429 or a 403 depending on
+the api and then we would need to just wait until the hour is over and here's the thing if we tell
+github who we are with the token then we actually get 5000 per hour instead so that is one reason to
+actually identify yourself you actually get more and let's also look at another reason to why we want to
+identify ourselves which is the private data so github has an address that gives you information about
+yourself meaning the person who's logged in so the address is just just slash user with no name after
+it so github can't know who i mean unless i tell it so let's call without telling it anything so this
+time i will actually do something like this so you notice that i'm just writing user here right and let's
+see what actually happens and you know this already raised response status goes we get a 401 so a 401 which
+means unauthorized and you remember what that means right i don't know who you are so the message says the
+the same thing requires authentication so github is basically asking who are you and it can't give me
+information about myself if it doesn't know who i am but let's send a token first we will actually send
+a fake one uh so we can see the difference between sending nothing and sending actually something wrong
+uh and i will make a dictionary called headers uh with the uh the key authorization authorization which
+we will see in a minute and the value would be the word um the value would be oh let me just do it
+particularly here there we go uh there we go and there we go so uh so as i said we make a dictionary
+uh with the key authorization and the value is the word bearer and then we have and then we have
+a space and then the token here but we're using a fake one just a made up one all right so let's run
+this this time i get a 401 uh but look at the message here bad credential before he said requires
+authentication so here github was missing something and now it says what we sent is actually wrong so
+github knows we sent a token it just doesn't recognize it so that is how we tell d2 apart no token or wrong
+token uh now i have a real token but i'm not actually gonna i'm gonna try not to paste it in my code but i'm
+actually gonna revoke it after the lesson either way uh and that's the the idea of the next slide here
+uh so keep secret secrets right so the rule is very simple a key or a token never goes in your code
+never in the url and never in git and the reason is that code gets shared you push it to github
+and then everyone can see it and there are also bots that scan github all day looking for keys
+and they find them in minutes so where do we actually put it well in a file called env and we
+tell git to never include that file with something called git ignore and then in our code we read the
+file well the value from there so if you ever do push a key by mistake don't just delete it
+it is already in the history you have to go to the service and revoke it and make a new one so github
+will often detect it and revoke it for you but don't rely on that so let's try that out and that would
+be the part so i'm just going to create a file here uh which i call env and that's it boom uh and here i'm
+i'm going to write that token right and then i'm going to remove this from the screen and just write
+my github token and it starts with a g a g g h p and how you create the token you will uh you will
+actually see in the lab so i've written a step by step on how to do that in order to save a little bit
+time from the lesson so now in the env i have actually my my token there no spaces no nothing
+so our secret lives kind of uh and not in our code right that we're going to create right now now how
+do we get it into python well we use two things the first one is os so import us uh which is built in
+into python the second one is load dot env from the package that we installed in the morning so from uh
+dot and import uh load and first i would just make a mistake uh purposely uh because this is the mistake
+that we usually make nothing wrong with that uh so i will read the token from uh i'll write it like this
+i will use an f string just like before but but uh so the token actually gets inserted into the text
+right so nothing wrong here but from this let's see what we get we actually get a 401 but wait the
+token is in the env file so it is a real token so what is actually wrong what do you say guys what is
+actually wrong here last part okay i can take one uh we can take it step by step there so uh what if i do
+let's check if it's empty okay i never print the token itself that would be the whole point lost right
+but i can check if it's actually empty so if i were to print token is none and if i run this i actually
+get a true so the token is none it is empty so python never found it and the reason is that python
+doesn't read the env file by itself it is just a text file sitting there we have to tell python to go
+and read it and that is what the load dot and does so let's actually add that uh and we can just do it
+over here load there we go and now let's run this and we get a 200 and this time we get a false because
+it's not empty anymore wait sorry there we go very good so we get it to 100 which means that it actually
+worked i can also uh not just do the status code let's also print and that's the last print i promise
+response json and let's actually see who this is and you will see that it's my github account
+and that's just my github username so yeah so this is github telling us who we are it recognizes the
+token and gives me the information about myself from the same address that said requires authentication
+before and as you see in the code there's no token in it so if i push this folder to github
+the env file stays actually in my computer and that's pretty much it one thing that people often do in
+in real projects is to actually add a file called env example which is actually committed and it has the
+same names but a fake uh fake value uh for the env so so the developer can quickly just uh fill it in
+yeah and also don't print the token don't put it in screenshots and don't send it in teams or anything
+like that uh and and small thing to know some apis want the key as a parameter in the url and like api
+keys equals something and it works but it's less safe because urls end up in logs uh so use a header
+when the api lets you i would rather say and yeah that's pretty much it so there are some things some
+good to know you can look at this later on uh because there's some things that you will meet when
+you work with apis for real uh first is the 421 29 it means too many requests so if you asked to offer
+right and sometimes you have well every try after or something like that every try after header that
+tells you how many seconds to wait you have something called pagination uh when there is a lot of data
+the api doesn't give you everything at once it gives you one page at a time uh usually with something like
+limit and page or per page or whatever so you will ask for the first page then the next page and so
+on always read the documentation uh that is where you find the endpoints the parameters how to
+authenticate and so on and last look at the version in the url like version one because because apis
+change over time and the version tells you which one you are talking to so remember a request has an
+endpoint and method headers and everybody always check the status code and always set a timeout use json
+and params for query parameters and keys and tokens go in env and never in git and like i mentioned
+tomorrow we will actually flip it around uh you will build your own api and yeah and there
+we will use we will see what we will use i'm i'm still a little bit divided here if i'm going to
+use flask or something else we'll see and you see here that it says before tomorrow finish lab one
+the lab to ignore that that is a little bit from a previous class that i had so the lab is very
+straightforward just like always lab question one two three and four so four questions there yeah and we
+we will be here all day uh if you have any questions just write to us i will probably call you up uh write
+to you back depending on the question then you will get the lab pretty soon and i know it was a little
+bit longer lesson than usual uh so you will have lunch right away uh and then you can start with the lab
+because well we have to cover the whole api uh i don't want to divide it so we can start with the
+clean slate tomorrow building api building api will not take so much time as it took today i promise
+you that all right sometimes shorter lessons sometimes longer lessons you need to cope with both uh i see
+that fabian yeah you're raising your hand uh yes maybe you explained it but what differs uh bearer token
+from just a normal token all right uh anybody wants to take that one so bearer token well it's not a a
+i wouldn't say it's a different token it's just how you the token is actually set so the token uh that
+we know you couldn't see my token but it starts with a ghp and underscore and then it says something
+so that that kind of identifies uh myself right while bearer is the name of the schema uh and also
+maybe you could say rules for how you put uh the token in the header so i don't know how to say
+the uh the user yeah so bearer kind of is in swedish i would say in the hall item but but it's kind of
+the user um yeah so the one who so has the take the token well bears it uh i hope that i kind of answered
+yeah the holder thank you thank you thank you thank you very good any more questions before i
+let you go stop the recording here
