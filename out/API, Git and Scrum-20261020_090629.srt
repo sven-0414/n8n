@@ -1,0 +1,3564 @@
+1
+00:00:02,110 --> 00:00:11,490
+ If you write comments in your, if you want to write short comments in order to show yourself or show me that you have actually answered the question, sure, do that.
+
+2
+00:00:12,450 --> 00:00:19,260
+ But if it's something that you're just reflecting along the way that you're working, sure, that's all right, too, as long as you do it, right?
+
+3
+00:00:20,370 --> 00:00:22,280
+ So we are all adults here.
+
+4
+00:00:22,900 --> 00:00:28,530
+ We have some of, there is some coding, there is some reflections to take sometimes.
+
+5
+00:00:29,440 --> 00:00:33,750
+ And yeah, when it is coding, you're supposed to code, right?
+
+6
+00:00:33,750 --> 00:00:37,960
+ But when it comes to a little bit of reflection, it depends on the question.
+
+7
+00:00:38,120 --> 00:00:41,180
+ Sometimes it could be write some comments.
+
+8
+00:00:41,620 --> 00:00:45,770
+ Sometimes it could be, well, just reflect on that.
+
+9
+00:00:47,470 --> 00:00:48,550
+ Can I answer your question, Fabian?
+
+10
+00:00:49,120 --> 00:00:49,440
+ Yes.
+
+11
+00:00:50,210 --> 00:00:50,670
+ All right.
+
+12
+00:00:53,630 --> 00:00:58,410
+ Any more questions about the labs in general?
+
+13
+00:01:01,580 --> 00:01:06,200
+ I hope we have answered all the questions now.
+
+14
+00:01:07,190 --> 00:01:08,680
+ Do we record our lecture?
+
+15
+00:01:09,040 --> 00:01:09,660
+ Yes, we do.
+
+16
+00:01:10,270 --> 00:01:15,580
+ I actually just started the recording a minute ago or something like that.
+
+17
+00:01:15,580 --> 00:01:19,740
+ All right.
+
+18
+00:01:19,940 --> 00:01:21,090
+ So part two.
+
+19
+00:01:21,410 --> 00:01:24,870
+ Hopefully it won't be a lesson until 12 o'clock today.
+
+20
+00:01:25,480 --> 00:01:26,280
+ We will see.
+
+21
+00:01:26,490 --> 00:01:28,960
+ We will see where we land.
+
+22
+00:01:30,150 --> 00:01:32,910
+ I believe this is a little bit shorter than yesterday.
+
+23
+00:01:33,110 --> 00:01:36,710
+ But every lesson lives its own life, right?
+
+24
+00:01:38,120 --> 00:01:40,330
+ So part two.
+
+25
+00:01:41,950 --> 00:01:53,430
+ So yesterday, we kind of talked about, or I would rather say we learned how to talk to an API, right?
+
+26
+00:01:54,300 --> 00:01:55,610
+ We were the client.
+
+27
+00:01:55,810 --> 00:02:03,980
+ We sent the request and somebody else, or I would say somebody else's server answered.
+
+28
+00:02:03,980 --> 00:02:14,470
+ And today, like I kind of revealed yesterday, we're going to flip it around and you will be the one who's building the server.
+
+29
+00:02:15,110 --> 00:02:15,990
+ We will do it together, right?
+
+30
+00:02:17,550 --> 00:02:28,800
+ And by the end, you will have your own API running on your computer and can call it from Python with the code that you actually wrote yesterday.
+
+31
+00:02:29,850 --> 00:02:34,650
+ So that will be the last thing we do.
+
+32
+00:02:37,280 --> 00:02:39,770
+ And, of course, a lab.
+
+33
+00:02:40,370 --> 00:02:42,110
+ I will show you the lab before we finish.
+
+34
+00:02:42,740 --> 00:02:47,930
+ Just go through it so there's no questions about the format or anything like that.
+
+35
+00:02:48,330 --> 00:02:49,560
+ And then you can get started.
+
+36
+00:02:52,380 --> 00:02:53,000
+ All right.
+
+37
+00:02:53,060 --> 00:02:53,620
+ Let's do this.
+
+38
+00:02:54,150 --> 00:02:59,590
+ So this is what you can do after today or something like that.
+
+39
+00:03:00,130 --> 00:03:06,730
+ Well, you can build an API with the routes for get, post, put, and delete.
+
+40
+00:03:08,710 --> 00:03:12,380
+ You can take values from the path and from the query.
+
+41
+00:03:14,030 --> 00:03:17,250
+ Well, you can make the API and check the data it receives.
+
+42
+00:03:19,050 --> 00:03:24,090
+ And you can return the right status codes like 201404.
+
+43
+00:03:26,970 --> 00:03:34,330
+ But before we start, let's actually check that everyone has what they need.
+
+44
+00:03:35,210 --> 00:03:46,720
+ So we're just going to open our terminal here and just write pip install again.
+
+45
+00:03:47,120 --> 00:03:48,780
+ So pip install.
+
+46
+00:03:49,050 --> 00:03:50,920
+ And I'm going to send it in the chat.
+
+47
+00:03:52,600 --> 00:04:02,520
+ So fast, fast API, standard, standard.
+
+48
+00:04:03,540 --> 00:04:04,920
+ Yeah, that's it.
+
+49
+00:04:05,530 --> 00:04:08,550
+ So I'm going to send this in the chat.
+
+50
+00:04:11,060 --> 00:04:14,760
+ And some of you might write it without a quotation.
+
+51
+00:04:14,920 --> 00:04:15,960
+ That's perfectly fine.
+
+52
+00:04:16,040 --> 00:04:19,630
+ But in some versions, you need actually to write the quotations.
+
+53
+00:04:19,710 --> 00:04:20,210
+ So keep them.
+
+54
+00:04:20,670 --> 00:04:21,730
+ Just keep the quotations.
+
+55
+00:04:22,580 --> 00:04:22,920
+ I would say.
+
+56
+00:04:23,740 --> 00:04:29,110
+ Obviously, I'm not going to install it since I've already done it and made sure.
+
+57
+00:04:29,830 --> 00:04:34,630
+ So yesterday, I tried everything that I'm going to show you guys that it actually works and so on.
+
+58
+00:04:38,390 --> 00:04:50,470
+ So do the installation, and then we can get started.
+
+59
+00:04:52,220 --> 00:04:54,040
+ So here we actually install.
+
+60
+00:04:56,100 --> 00:04:58,950
+ No, we shouldn't be needed, Christian.
+
+61
+00:05:01,700 --> 00:05:12,080
+ So this actually installs fast API.
+
+62
+00:05:12,080 --> 00:05:13,220
+ Yeah, I had to do that.
+
+63
+00:05:13,720 --> 00:05:16,140
+ I had to write the pipe.
+
+64
+00:05:16,220 --> 00:05:24,130
+ I think I also had to write Python 3 because I have different versions of Python installed.
+
+65
+00:05:24,490 --> 00:05:28,470
+ So I thought it might be the case for someone else as well.
+
+66
+00:05:29,220 --> 00:05:30,560
+ Thank you.
+
+67
+00:05:30,700 --> 00:05:31,260
+ Thank you, Christian.
+
+68
+00:05:32,150 --> 00:05:32,920
+ Thank you.
+
+69
+00:05:34,530 --> 00:05:42,490
+ And we will also get some tools when installing fast API that will let us run it.
+
+70
+00:05:45,620 --> 00:05:52,920
+ But if you have any difficulties with the installation, of course, I can help you after the lesson.
+
+71
+00:05:54,370 --> 00:05:54,510
+ Sure.
+
+72
+00:05:55,990 --> 00:05:58,150
+ Right.
+
+73
+00:05:58,870 --> 00:06:00,890
+ It takes a little time to install it.
+
+74
+00:06:00,890 --> 00:06:02,110
+ I understand that.
+
+75
+00:06:02,520 --> 00:06:06,140
+ So just give it a minute, and then we can continue.
+
+76
+00:06:26,250 --> 00:06:27,470
+ All right.
+
+77
+00:06:27,880 --> 00:06:28,550
+ Let's continue.
+
+78
+00:06:31,270 --> 00:06:33,890
+ Let's start here with a little picture here, right?
+
+79
+00:06:34,090 --> 00:06:38,800
+ So yesterday, like I mentioned, your Python program was declined, right?
+
+80
+00:06:38,920 --> 00:06:48,580
+ It sent a request with an endpoint, a method, headers, and the body, and it got a response back, right?
+
+81
+00:06:49,300 --> 00:06:52,050
+ But today, we build the other side.
+
+82
+00:06:52,560 --> 00:06:53,300
+ Well, the server.
+
+83
+00:06:53,690 --> 00:06:57,110
+ The server will wait for requests.
+
+84
+00:06:57,110 --> 00:07:13,510
+ And when that one arrives, looks at the method and the path, finds the function that belongs to that combination, and then runs it and sends back the result as JSON.
+
+85
+00:07:15,040 --> 00:07:18,350
+ So everything from yesterday is still true.
+
+86
+00:07:19,940 --> 00:07:25,230
+ We're just standing on the other side of it now, right?
+
+87
+00:07:28,710 --> 00:07:41,800
+ Well, in earlier courses, I would say, we have actually taught Flask for this part.
+
+88
+00:07:42,460 --> 00:07:44,200
+ And Flask is a very good framework.
+
+89
+00:07:44,560 --> 00:07:45,580
+ There's nothing wrong with that.
+
+90
+00:07:47,760 --> 00:07:51,000
+ And a lot of real projects still use it.
+
+91
+00:07:51,400 --> 00:07:52,980
+ So there's nothing wrong with Flask.
+
+92
+00:07:53,450 --> 00:07:58,430
+ But this time, I have actually chosen to switch it a little bit.
+
+93
+00:07:58,850 --> 00:08:02,360
+ And I'm actually going to switch it to FastAPI.
+
+94
+00:08:03,810 --> 00:08:06,330
+ And why I do that?
+
+95
+00:08:06,430 --> 00:08:07,910
+ Well, there are three reasons.
+
+96
+00:08:08,480 --> 00:08:13,190
+ Well, first of all, FastAPI is actually built for APIs.
+
+97
+00:08:14,340 --> 00:08:21,060
+ In Flask, you write methods, like, for example, methods equals get post.
+
+98
+00:08:21,640 --> 00:08:27,160
+ You read request.json, and you wrap the answers in JSON file.
+
+99
+00:08:29,930 --> 00:08:36,090
+ And in FastAPI, you just return a dictionary, and it becomes JSON.
+
+100
+00:08:37,460 --> 00:08:44,580
+ And I'm going to try to, sometimes when I code, I'm going to show you the difference from how you do it in Flask.
+
+101
+00:08:47,050 --> 00:08:50,750
+ Second, the data is actually checked for you.
+
+102
+00:08:51,570 --> 00:08:54,980
+ So you describe what valid data looks like.
+
+103
+00:08:55,300 --> 00:08:59,880
+ And FastAPI rejects everything else with a clear error.
+
+104
+00:09:00,570 --> 00:09:03,800
+ In Flask, you have to write that checking yourself.
+
+105
+00:09:05,090 --> 00:09:06,150
+ So that's pretty neat.
+
+106
+00:09:08,020 --> 00:09:11,180
+ And third, you also get the documentation for free.
+
+107
+00:09:12,310 --> 00:09:22,480
+ So FastAPI builds a web page from your code where you can read about every endpoint and then try it out, which we will see in a few minutes.
+
+108
+00:09:23,830 --> 00:09:25,410
+ And I think you will like it.
+
+109
+00:09:26,940 --> 00:09:30,260
+ So, yeah, we're going to try that for this course.
+
+110
+00:09:34,190 --> 00:09:42,270
+ And also, if you were to compare the code, as you see here, it's a lot of code, right?
+
+111
+00:09:43,310 --> 00:09:45,010
+ And you will see the real thing in a moment.
+
+112
+00:09:45,010 --> 00:09:52,900
+ And if you ever get a job where they use Flask, well, don't worry at all.
+
+113
+00:09:53,280 --> 00:09:58,030
+ It is still the same ideas, the same methods, the same status codes.
+
+114
+00:09:59,070 --> 00:10:02,510
+ Only the way you write is a little bit different.
+
+115
+00:10:03,170 --> 00:10:06,510
+ So it's not a huge difference, right?
+
+116
+00:10:07,330 --> 00:10:18,460
+ This is how it would, the same thing would look in Flask compared to how it would look in FastAPI.
+
+117
+00:10:19,310 --> 00:10:22,440
+ So that's the idea of why.
+
+118
+00:10:22,440 --> 00:10:27,730
+ So what are we building today?
+
+119
+00:10:27,950 --> 00:10:30,610
+ Well, we are building a small API for books.
+
+120
+00:10:31,940 --> 00:10:41,290
+ A book, well, it has an idea, a title, an author, and a year.
+
+121
+00:10:43,010 --> 00:10:45,270
+ And we will have these endpoints.
+
+122
+00:10:47,360 --> 00:10:49,370
+ Get on books.
+
+123
+00:10:51,270 --> 00:10:52,890
+ That gives us all books.
+
+124
+00:10:54,270 --> 00:11:03,260
+ Get on books and an ID.
+
+125
+00:11:04,060 --> 00:11:06,280
+ That gives us one book.
+
+126
+00:11:06,280 --> 00:11:12,730
+ We will have a post on books that adds a book.
+
+127
+00:11:12,730 --> 00:11:24,830
+ And we will have put on books and an ID to replace a book.
+
+128
+00:11:25,580 --> 00:11:29,180
+ And also delete, well, removes one, right?
+
+129
+00:11:29,870 --> 00:11:36,900
+ And if you notice here, well, it is the same CRUD table that we looked at yesterday.
+
+130
+00:11:38,600 --> 00:11:46,200
+ One important thing, we will actually keep the Python books in a plain Python list.
+
+131
+00:11:46,280 --> 00:11:47,080
+ So no database.
+
+132
+00:11:47,080 --> 00:11:54,430
+ So that means when we restart the server, the list is back to what it was in the code.
+
+133
+00:11:55,390 --> 00:11:57,560
+ And that is fine for learning, right?
+
+134
+00:11:58,520 --> 00:12:02,740
+ But in a real application, the data would have been saved in the database.
+
+135
+00:12:03,630 --> 00:12:05,430
+ And that's a little bit different topic.
+
+136
+00:12:10,450 --> 00:12:14,490
+ And two things that I'm skipping on purpose.
+
+137
+00:12:16,130 --> 00:12:21,720
+ So we spend a little bit more time on the most important parts here.
+
+138
+00:12:21,910 --> 00:12:24,280
+ So the first thing that I'm skipping is patch.
+
+139
+00:12:25,400 --> 00:12:29,880
+ It actually works like put, but you only send the fields that you want to change, right?
+
+140
+00:12:31,210 --> 00:12:32,870
+ And it is a very good exercise.
+
+141
+00:12:33,250 --> 00:12:38,330
+ So it is actually in the lab to try to do a patch.
+
+142
+00:12:41,390 --> 00:12:46,120
+ And the second is protecting the API with a key, like we talked about yesterday.
+
+143
+00:12:46,620 --> 00:12:48,450
+ And that is also in the lab.
+
+144
+00:12:49,530 --> 00:12:52,830
+ Therefore, I recommend to do the lab in your own pace.
+
+145
+00:12:56,260 --> 00:13:00,210
+ So when you get the lab, well, then you know that these two are waiting for you.
+
+146
+00:13:06,200 --> 00:13:07,120
+ All right, let's get started.
+
+147
+00:13:08,670 --> 00:13:12,050
+ So let's start a little bit of coding.
+
+148
+00:13:20,180 --> 00:13:25,540
+ Inside, well, API2 folder would be lesson two, right?
+
+149
+00:13:25,640 --> 00:13:26,760
+ So this was lesson one.
+
+150
+00:13:26,900 --> 00:13:27,640
+ This is lesson two.
+
+151
+00:13:27,740 --> 00:13:29,120
+ So I tried to divide it like that.
+
+152
+00:13:29,580 --> 00:13:35,840
+ And you see here that I have a Python file called API client.
+
+153
+00:13:36,640 --> 00:13:39,640
+ And this is something I just have prepared for the lesson.
+
+154
+00:13:39,640 --> 00:13:41,800
+ So there's nothing that we're going to look at right now.
+
+155
+00:13:42,530 --> 00:13:43,790
+ We will look at it later.
+
+156
+00:13:46,300 --> 00:13:51,630
+ I'm going to create a main, the pie here.
+
+157
+00:13:55,320 --> 00:14:04,990
+ And just going to make this, I think it's big enough.
+
+158
+00:14:05,130 --> 00:14:05,930
+ Or should I make it bigger?
+
+159
+00:14:06,050 --> 00:14:06,630
+ Or is it good?
+
+160
+00:14:08,160 --> 00:14:09,240
+ Thumbs up if you can see.
+
+161
+00:14:15,530 --> 00:14:15,790
+ All right.
+
+162
+00:14:16,400 --> 00:14:16,850
+ All right.
+
+163
+00:14:17,200 --> 00:14:18,870
+ Just tell me if there's anything.
+
+164
+00:14:21,190 --> 00:14:28,100
+ So we're going to start with the smallest possible API.
+
+165
+00:14:29,480 --> 00:14:31,880
+ So first, we're just going to import FastAPI.
+
+166
+00:14:31,880 --> 00:14:40,720
+ So from FastAPI, import FastAPI.
+
+167
+00:14:41,930 --> 00:14:46,520
+ And then we will create an app.
+
+168
+00:14:47,560 --> 00:14:52,470
+ And then we will add one route just to get started.
+
+169
+00:14:54,780 --> 00:15:00,360
+ So app equals FastAPI, something like that.
+
+170
+00:15:00,360 --> 00:15:36,670
+ And just to get started.
+
+171
+00:15:37,800 --> 00:15:49,230
+ So the route says when somebody sends a get request to the root address, well, then run this function.
+
+172
+00:15:50,980 --> 00:15:54,640
+ And the function returns a dictionary, right?
+
+173
+00:15:55,200 --> 00:15:56,640
+ Normal Python dictionary.
+
+174
+00:15:58,760 --> 00:16:02,540
+ Let's start the server and see what happens.
+
+175
+00:16:03,610 --> 00:16:22,560
+ So in the terminal, I will write FastAPI, the main.
+
+176
+00:16:38,680 --> 00:16:40,810
+ I'm actually going to copy this.
+
+177
+00:16:41,440 --> 00:16:43,520
+ We could have just looked at it here in Visual Studio.
+
+178
+00:16:43,660 --> 00:16:47,330
+ But we're actually going to look here.
+
+179
+00:16:47,580 --> 00:17:08,210
+ So the server is actually running on this address, 127.001.8000.
+
+180
+00:17:10,020 --> 00:17:13,780
+ Or rather, until up to one, right?
+
+181
+00:17:15,100 --> 00:17:19,910
+ So that means this computer, while 8000 is the port, right?
+
+182
+00:17:21,440 --> 00:17:24,970
+ And what do we see here?
+
+183
+00:17:25,710 --> 00:17:27,810
+ Well, here's our answer.
+
+184
+00:17:29,080 --> 00:17:37,880
+ And if you notice here what's actually happening, well, we returned a Python dictionary, didn't we?
+
+185
+00:17:38,670 --> 00:17:46,270
+ So we returned it to Python dictionary, but what we got back, we actually got back JSON.
+
+186
+00:17:47,870 --> 00:17:53,290
+ And as you see, we didn't call JSON-py or set any headers or anything like that.
+
+187
+00:17:53,950 --> 00:17:55,350
+ FastAPI did that for us.
+
+188
+00:17:57,720 --> 00:18:02,620
+ And I think I know what somebody might be thinking right now.
+
+189
+00:18:03,800 --> 00:18:07,320
+ You might be thinking, well, Aladdin, this actually looks like a dictionary.
+
+190
+00:18:08,490 --> 00:18:12,210
+ And so I don't see that it's actually JSON.
+
+191
+00:18:12,210 --> 00:18:15,920
+ And that is actually what I said yesterday.
+
+192
+00:18:16,460 --> 00:18:18,840
+ JSON is almost the same as Python dictionary.
+
+193
+00:18:19,440 --> 00:18:30,010
+ But if we were to look at the details here, we see that the quotations that we have here are double, double quotes, and not a single quote.
+
+194
+00:18:33,580 --> 00:18:37,600
+ And because JSON actually used double quotes.
+
+195
+00:18:37,740 --> 00:18:43,140
+ If I had printed this dictionary in Python, it would have used single quotes.
+
+196
+00:18:44,240 --> 00:18:49,760
+ Another thing is that I can actually click here as well.
+
+197
+00:18:49,960 --> 00:18:55,210
+ So the browser even offers me to format it for us.
+
+198
+00:18:55,210 --> 00:19:00,740
+ And it only does that when it recognizes the answer as JSON.
+
+199
+00:19:02,660 --> 00:19:10,640
+ But to be completely sure, we will check the header in a moment on the docs page in a second.
+
+200
+00:19:14,310 --> 00:19:14,430
+ Okay?
+
+201
+00:19:15,210 --> 00:19:18,740
+ So this is a get request.
+
+202
+00:19:19,380 --> 00:19:22,360
+ The browser always sends get when you type an address.
+
+203
+00:19:23,010 --> 00:19:26,920
+ So we are the server now, and the browser is the client.
+
+204
+00:19:28,140 --> 00:19:30,380
+ And one more thing about this command.
+
+205
+00:19:30,920 --> 00:19:41,230
+ Well, it says dev, and that means that the server restarts by itself every time you save the file.
+
+206
+00:19:42,820 --> 00:19:51,220
+ So if I were to write, for example, now I have actually autosave.
+
+207
+00:19:51,260 --> 00:19:59,570
+ Either way, Lexicon, yeah, I see that it's actually restarting since it's saving, right?
+
+208
+00:20:01,380 --> 00:20:05,020
+ And if I reload here, it should say hello, Lexicon.
+
+209
+00:20:06,740 --> 00:20:06,980
+ Okay?
+
+210
+00:20:16,340 --> 00:20:26,050
+ I'm going to get rid of that.
+
+211
+00:20:30,280 --> 00:20:35,910
+ Also, let's take a look at this one.
+
+212
+00:20:35,990 --> 00:20:37,310
+ So I'm just adding docs here.
+
+213
+00:20:40,450 --> 00:20:46,890
+ And this is what I think is nicest thing about the Fast API.
+
+214
+00:20:48,440 --> 00:20:57,450
+ So we didn't write, when I wrote docs, I went into this page, and we didn't write anything of this page, right?
+
+215
+00:20:58,020 --> 00:21:01,160
+ Fast API actually built it from our code.
+
+216
+00:21:01,960 --> 00:21:15,470
+ It lists every endpoint with its method, and we can actually click on it, and we can actually try it out, and then we can execute.
+
+217
+00:21:15,530 --> 00:21:25,220
+ So here you can actually test your API without writing any code.
+
+218
+00:21:26,350 --> 00:21:33,870
+ You see the request, the status code, you see, and the answer, right?
+
+219
+00:21:36,300 --> 00:21:53,560
+ And at the top, it even shows you the address it called, and the same request as curl, as a curl command, if you ever want to run it from your terminal.
+
+220
+00:21:53,560 --> 00:22:09,100
+ And if we look at the response headers here, and if you remember what I said earlier, that the browser looks like it's just showing a dictionary, well, here is the proof.
+
+221
+00:22:09,570 --> 00:22:20,430
+ So the content type header says application JSON, and that is the server telling the client what I'm sending you is actually JSON.
+
+222
+00:22:21,840 --> 00:22:29,390
+ So, yeah, and it is the same header you looked at yesterday when you printed response headers from Python.
+
+223
+00:22:29,390 --> 00:22:45,580
+ And here you also see server and UVcorn, well, which is just the program that is running our app.
+
+224
+00:22:48,750 --> 00:22:55,330
+ And when I used Flask, I had to use a separate tool for that, and, well, today we don't need it.
+
+225
+00:22:56,440 --> 00:23:06,450
+ And the page actually updates by itself when we add more routes, which we will see in a few minutes when we add routes.
+
+226
+00:23:06,450 --> 00:23:21,740
+ Okay, so we will keep this open, and we will get back to our docs when we create more routes.
+
+227
+00:23:28,240 --> 00:23:31,010
+ I'm just going to pump this out.
+
+228
+00:23:39,630 --> 00:23:47,640
+ Now, let's try to make it a real API.
+
+229
+00:23:48,810 --> 00:23:51,390
+ But before we do that, we need some data.
+
+230
+00:23:52,330 --> 00:24:01,910
+ So I've actually created a list of books, and each book is a dictionary, just like the products that we had yesterday.
+
+231
+00:24:03,320 --> 00:24:09,350
+ And that would be our list of, or that list will be our database for today.
+
+232
+00:24:10,700 --> 00:24:15,300
+ So I'm just going to copy it and paste it over here.
+
+233
+00:24:15,640 --> 00:24:22,150
+ I can also send it in the chat if you want to code along, and you don't want to write all of that.
+
+234
+00:24:25,260 --> 00:24:27,260
+ So I've actually sent it in the chat.
+
+235
+00:24:32,820 --> 00:24:37,530
+ Now, we need a route that returns all of them.
+
+236
+00:24:39,140 --> 00:24:50,700
+ And remember, some things that we're going to do, if maybe you're thinking, well, you're missing this and that, just remember that we might build on it later on.
+
+237
+00:24:52,670 --> 00:24:58,600
+ And it looks a little bit, the first one that we're going to do, it looks a little bit just like the one we did before.
+
+238
+00:24:58,600 --> 00:25:06,350
+ But this time, the path is books, and the function returns the list.
+
+239
+00:25:08,070 --> 00:25:38,640
+ So therefore, I'll write something like this, app, get, this time, and write, and also return.
+
+240
+00:25:52,670 --> 00:26:03,110
+ Now, if we go back to our browser, we add books here, fully, we will see all our books.
+
+241
+00:26:04,560 --> 00:26:04,960
+ And there you go.
+
+242
+00:26:04,960 --> 00:26:17,970
+ So we see a JSON array with four objects, exactly like yesterday when we got the list of products.
+
+243
+00:26:18,490 --> 00:26:24,480
+ The only difference is that now it is our own code that actually produces it.
+
+244
+00:26:27,600 --> 00:26:38,470
+ And if we go back to here, to our docs, reload, we see that we have a new endpoint, the list.
+
+245
+00:26:41,180 --> 00:26:53,820
+ The next step would be to actually, well, would be a specific book.
+
+246
+00:26:53,820 --> 00:27:01,280
+ So yesterday, we got one product by putting the ID at the end of the address, right?
+
+247
+00:27:01,650 --> 00:27:06,010
+ So, for example, slash 15 or slash 7 or whatever we did.
+
+248
+00:27:06,400 --> 00:27:09,340
+ So now, we are on the other side.
+
+249
+00:27:09,480 --> 00:27:11,750
+ So we need to catch that ID.
+
+250
+00:27:12,620 --> 00:27:19,270
+ So in the path, I will actually write the ID in curly brackets.
+
+251
+00:27:21,090 --> 00:27:25,930
+ And I will give the function a parameter with the same name.
+
+252
+00:27:26,930 --> 00:27:35,560
+ And I want you to notice that I also write int, and that would be our type int.
+
+253
+00:27:35,930 --> 00:27:40,320
+ And it actually tells FastAPI that this should be a whole number.
+
+254
+00:27:40,840 --> 00:27:44,710
+ And I will actually come back to that and why that actually matters.
+
+255
+00:27:45,340 --> 00:27:47,380
+ So let's do it step by step.
+
+256
+00:27:48,770 --> 00:27:51,740
+ So app is for you.
+
+257
+00:27:52,850 --> 00:27:59,110
+ So app.get, and we said books, right?
+
+258
+00:28:02,010 --> 00:28:28,690
+ Get book ID.
+
+259
+00:28:30,340 --> 00:28:32,350
+ And notice the int over here.
+
+260
+00:28:36,740 --> 00:29:02,360
+ For book in books if D equals D, turn the book.
+
+261
+00:29:06,010 --> 00:29:11,470
+ So the function loops through the list.
+
+262
+00:29:12,500 --> 00:29:19,110
+ And when it finds a book with that ID, it actually returns it.
+
+263
+00:29:19,910 --> 00:29:27,960
+ So let's try that out back here.
+
+264
+00:29:28,160 --> 00:29:39,130
+ And now we try maybe to get this book, the new Romancer, through here.
+
+265
+00:29:40,200 --> 00:29:43,090
+ See that we actually get that book.
+
+266
+00:29:45,520 --> 00:29:52,080
+ Now let's ask for a book that actually does not exist.
+
+267
+00:29:53,780 --> 00:29:57,040
+ And what if we write, for example, let's say 99.
+
+268
+00:29:57,630 --> 00:30:00,810
+ And if we run this, well, we get what?
+
+269
+00:30:01,270 --> 00:30:02,490
+ Well, we get null.
+
+270
+00:30:04,550 --> 00:30:07,710
+ Well, what is the status code then?
+
+271
+00:30:08,130 --> 00:30:12,580
+ Well, we can actually check that in our docs here.
+
+272
+00:30:13,460 --> 00:30:14,550
+ And let's do that.
+
+273
+00:30:15,230 --> 00:30:16,380
+ Here we go.
+
+274
+00:30:19,570 --> 00:30:20,370
+ Excuse me, guys.
+
+275
+00:30:21,620 --> 00:30:24,380
+ So let's try it out.
+
+276
+00:30:25,230 --> 00:30:26,790
+ And it will ask us for an ID.
+
+277
+00:30:27,610 --> 00:30:28,770
+ Let's try it with 99.
+
+278
+00:30:30,050 --> 00:30:30,450
+ Execute.
+
+279
+00:30:30,980 --> 00:30:31,770
+ And let's see here.
+
+280
+00:30:32,280 --> 00:30:32,520
+ All right.
+
+281
+00:30:33,980 --> 00:30:39,150
+ So the answer is null, right?
+
+282
+00:30:39,650 --> 00:30:43,700
+ And the status code is 200, which means OK.
+
+283
+00:30:44,100 --> 00:30:45,870
+ But it's not OK, right?
+
+284
+00:30:46,410 --> 00:30:47,650
+ The book doesn't exist.
+
+285
+00:30:48,460 --> 00:30:53,400
+ And if you remember yesterday when we said that a 404 means not found, right?
+
+286
+00:30:54,090 --> 00:30:55,470
+ So this would be the reason.
+
+287
+00:30:55,470 --> 00:31:03,490
+ A client that only checks the status code here would think everything worked.
+
+288
+00:31:04,600 --> 00:31:08,840
+ So we have to tell FastAPI to answer with a 404.
+
+289
+00:31:09,770 --> 00:31:13,860
+ And we do that by raising an exception.
+
+290
+00:31:17,490 --> 00:31:21,050
+ And this is a special one that FastAPI gives us.
+
+291
+00:31:22,270 --> 00:31:25,740
+ So I need to actually import it, first of all.
+
+292
+00:31:26,650 --> 00:31:28,700
+ So we are going to do that.
+
+293
+00:31:28,700 --> 00:31:37,060
+ So if we go back to our import, we're just going to add HT.
+
+294
+00:31:37,080 --> 00:31:38,100
+ HTTP exception.
+
+295
+00:31:38,710 --> 00:31:39,240
+ That's it.
+
+296
+00:31:40,640 --> 00:31:47,230
+ And then we can come back here and say, jump down here.
+
+297
+00:31:47,550 --> 00:31:47,730
+ Boom.
+
+298
+00:31:48,420 --> 00:31:53,630
+ And then we can just raise HTTP exception.
+
+299
+00:31:55,530 --> 00:32:01,930
+ Status code 404 with a detail.
+
+300
+00:32:05,150 --> 00:32:05,430
+ Book.
+
+301
+00:32:06,550 --> 00:32:07,660
+ Maybe a book now.
+
+302
+00:32:08,720 --> 00:32:10,320
+ That's pretty clear.
+
+303
+00:32:12,110 --> 00:32:20,600
+ If we go back to our docs here and cancel.
+
+304
+00:32:21,560 --> 00:32:24,810
+ Now try it out.
+
+305
+00:32:25,680 --> 00:32:26,360
+ 99.
+
+306
+00:32:27,000 --> 00:32:27,620
+ Execute.
+
+307
+00:32:28,540 --> 00:32:28,860
+ Boom.
+
+308
+00:32:28,860 --> 00:32:35,840
+ Now the client actually gets a clear answer.
+
+309
+00:32:36,850 --> 00:32:42,440
+ So the status code says what went wrong and the message says why.
+
+310
+00:32:45,380 --> 00:32:51,570
+ And yesterday we actually handled exactly this one, this on the other side with a raise for status.
+
+311
+00:32:52,380 --> 00:32:54,660
+ But now you have seen both ends.
+
+312
+00:32:59,280 --> 00:33:00,740
+ Let's try something else.
+
+313
+00:33:01,490 --> 00:33:22,550
+ Let's say instead of writing 99 here, we will actually try ABC, right?
+
+314
+00:33:23,180 --> 00:33:29,760
+ When I run this, this is interesting.
+
+315
+00:33:30,350 --> 00:33:33,570
+ First of all, before looking at that, we can look at our terminal here.
+
+316
+00:33:35,790 --> 00:33:47,140
+ So we see, we see that we get a 422 when it tried to do books ABC, right?
+
+317
+00:33:49,970 --> 00:33:57,600
+ And this is why I actually wrote int here.
+
+318
+00:33:58,610 --> 00:34:06,640
+ So we said that book ID must be a whole number and ABC is not, right?
+
+319
+00:34:07,170 --> 00:34:12,770
+ So FastAPI answers with an error before our function even runs.
+
+320
+00:34:14,710 --> 00:34:21,460
+ So as we see in the terminal, the server actually logged the request and it ended with a 422.
+
+321
+00:34:22,550 --> 00:34:27,880
+ And that is the status code I said you would meet when the data you send is not valid.
+
+322
+00:34:28,040 --> 00:34:37,490
+ And in the browser, we actually see some things here, right?
+
+323
+00:34:38,320 --> 00:34:41,950
+ And if we were to look at the lock here, maybe I can make this a little bit bigger.
+
+324
+00:34:42,780 --> 00:34:47,180
+ I think that's better, right?
+
+325
+00:34:48,220 --> 00:34:55,870
+ So if we look here, we can actually see the message itself, right?
+
+326
+00:34:56,250 --> 00:35:07,240
+ So if we look at lock here, it actually says path and then the book ID.
+
+327
+00:35:08,490 --> 00:35:12,660
+ So it tells us exactly where the problem is in the path.
+
+328
+00:35:12,660 --> 00:35:22,310
+ So in the part called actually book ID and the message says what is actually wrong.
+
+329
+00:35:23,780 --> 00:35:25,680
+ Well, it should be a valid integer.
+
+330
+00:35:27,840 --> 00:35:29,720
+ And we didn't actually write any code for that.
+
+331
+00:35:30,940 --> 00:35:32,700
+ TypeHint did that for us.
+
+332
+00:35:35,820 --> 00:35:44,450
+ And if we try the same thing over here at our docs, try it out.
+
+333
+00:35:44,930 --> 00:35:46,510
+ And let's say ABC.
+
+334
+00:35:48,830 --> 00:35:57,330
+ And then if we try to execute, if we try to execute,
+
+335
+00:35:57,330 --> 00:36:04,430
+ you see that it actually stops us before sending anything with this red message.
+
+336
+00:36:06,120 --> 00:36:08,980
+ So the docs page helps us to avoid the mistake, right?
+
+337
+00:36:09,950 --> 00:36:12,590
+ But the server actually protects itself too.
+
+338
+00:36:13,830 --> 00:36:15,490
+ And that is what we just saw.
+
+339
+00:36:19,460 --> 00:36:24,370
+ Cool.
+
+340
+00:36:24,640 --> 00:36:29,670
+ Let's filter a little bit.
+
+341
+00:36:31,100 --> 00:36:33,780
+ So yesterday, we used query parameters.
+
+342
+00:36:34,640 --> 00:36:42,020
+ If you remember the parts that was after the question mark to say how we wanted the data.
+
+343
+00:36:44,070 --> 00:37:02,620
+ So now we want to be able to write books and a question mark, maybe a question mark.
+
+344
+00:37:02,620 --> 00:37:05,950
+ And then an author equals to a specific author.
+
+345
+00:37:05,950 --> 00:37:11,050
+ And maybe we can take Tolkien, okay?
+
+346
+00:37:11,910 --> 00:37:13,700
+ And only get his book.
+
+347
+00:37:18,990 --> 00:37:27,500
+ And to catch a query parameter, I just add a parameter to the function that is not in the path.
+
+348
+00:37:33,290 --> 00:37:42,020
+ And I will give it a default value of none, which means that it's actually optional.
+
+349
+00:37:43,090 --> 00:37:47,380
+ So we're going to change this one a little bit.
+
+350
+00:37:51,600 --> 00:37:55,210
+ So here, I'm actually going to add author.
+
+351
+00:37:59,550 --> 00:38:09,680
+ So type in none, none.
+
+352
+00:38:12,740 --> 00:38:14,140
+ Here we can have an if.
+
+353
+00:38:14,780 --> 00:38:33,370
+ If author return, right?
+
+354
+00:38:38,170 --> 00:38:44,250
+ Here, let's actually also add a lower here.
+
+355
+00:38:47,580 --> 00:39:04,510
+ In also a lower than return.
+
+356
+00:39:04,510 --> 00:39:29,160
+ So if author has a value, we return only the books where that text is part the author's name.
+
+357
+00:39:30,330 --> 00:39:36,250
+ And as you see, I use lower on both sides so that the capital letters don't matter.
+
+358
+00:39:37,410 --> 00:39:40,310
+ And if there is no author, well, we return nothing.
+
+359
+00:39:40,790 --> 00:39:41,190
+ Oh, sorry.
+
+360
+00:39:41,270 --> 00:39:42,950
+ We return everything like before.
+
+361
+00:39:44,220 --> 00:39:50,150
+ So let's now try it out in the browser.
+
+362
+00:39:50,390 --> 00:40:02,860
+ Let's say we have books and then question mark here and author token.
+
+363
+00:40:04,980 --> 00:40:05,620
+ Let's try that.
+
+364
+00:40:07,250 --> 00:40:09,150
+ And hopefully, yeah, there we go.
+
+365
+00:40:09,850 --> 00:40:14,680
+ We get Talbot made by JRR token.
+
+366
+00:40:22,320 --> 00:40:26,190
+ And let's see if do it without the question mark.
+
+367
+00:40:26,610 --> 00:40:28,420
+ We still get all four books.
+
+368
+00:40:30,460 --> 00:40:47,200
+ And if we take a look at the docs here, we will see that this has been added.
+
+369
+00:40:47,200 --> 00:40:55,650
+ We see that we have a, it says query.
+
+370
+00:40:56,380 --> 00:41:04,060
+ So FastAPI actually knows this one comes after the question mark, right?
+
+371
+00:41:06,490 --> 00:41:16,540
+ And the type says string or null, which comes from the string or none in our code.
+
+372
+00:41:17,580 --> 00:41:22,180
+ And that is how the page tells us that it is actually optional.
+
+373
+00:41:22,590 --> 00:41:26,020
+ We can send a text or nothing at all.
+
+374
+00:41:26,020 --> 00:41:35,830
+ And if you compare that with the other path that we had, for example, over here, keep them both open.
+
+375
+00:41:38,250 --> 00:41:44,890
+ If we look at the parameter on this other route, it has a red star here, right?
+
+376
+00:41:45,440 --> 00:41:46,840
+ And the word required.
+
+377
+00:41:48,160 --> 00:41:55,080
+ So a path parameter, well, it's always required because without it, the address doesn't match.
+
+378
+00:41:56,880 --> 00:42:00,080
+ So yeah, remember the rule and we don't have it here, right?
+
+379
+00:42:00,690 --> 00:42:01,990
+ Because it's a query.
+
+380
+00:42:01,990 --> 00:42:08,390
+ So if the name is in the path, it is a path parameter.
+
+381
+00:42:09,120 --> 00:42:12,880
+ If it's not in the path, well, then it's a query parameter.
+
+382
+00:42:14,300 --> 00:42:17,380
+ And FastAPI actually figures that out for us.
+
+383
+00:42:18,210 --> 00:42:20,610
+ That's why I like FastAPI.
+
+384
+00:42:24,480 --> 00:42:26,560
+ All right.
+
+385
+00:42:27,540 --> 00:42:32,110
+ We're actually going to take a little break.
+
+386
+00:42:34,150 --> 00:42:36,370
+ I think it's a perfect place to take a break now.
+
+387
+00:42:36,650 --> 00:42:42,340
+ And then we can move on with some post and validation.
+
+388
+00:42:45,000 --> 00:42:45,440
+ Sounds all right?
+
+389
+00:42:48,040 --> 00:42:51,010
+ And I hope it's not going too fast.
+
+390
+00:42:51,010 --> 00:42:52,580
+ Very good.
+
+391
+00:42:53,720 --> 00:42:53,940
+ All right.
+
+392
+00:42:54,020 --> 00:42:59,760
+ So let's say back at 10 o'clock.
+
+393
+00:43:04,510 --> 00:43:06,550
+ See you guys soon.
+
+394
+00:56:29,760 --> 00:56:30,580
+ All right, guys.
+
+395
+00:56:31,590 --> 00:56:32,410
+ Can you hear me?
+
+396
+00:56:34,230 --> 00:56:34,910
+ Thumbs up.
+
+397
+00:56:35,500 --> 00:56:35,660
+ Yeah.
+
+398
+00:56:35,840 --> 00:56:38,390
+ And you should be able to see my screen.
+
+399
+00:56:39,230 --> 00:56:39,470
+ All right.
+
+400
+00:56:41,990 --> 00:56:47,100
+ So we're going to take the next step here.
+
+401
+00:56:47,930 --> 00:57:02,790
+ We've already spoken about this.
+
+402
+00:57:03,860 --> 00:57:11,370
+ So far, we have actually only read data.
+
+403
+00:57:12,270 --> 00:57:20,540
+ Now, let's let the client actually send data to us so that it can add a book, for example.
+
+404
+00:57:20,540 --> 00:57:31,070
+ And this is where I actually want to show you that FastAPI is really good.
+
+405
+00:57:31,070 --> 00:57:38,780
+ So when somebody sends us data, well, we need to know what is actually allowed.
+
+406
+00:57:38,780 --> 00:57:45,870
+ So a book, well, it needs a title, an author, a year.
+
+407
+00:57:45,870 --> 00:57:53,100
+ The title and the author are text.
+
+408
+00:57:54,080 --> 00:57:55,910
+ And the year, well, it's a whole number.
+
+409
+00:57:56,310 --> 00:57:57,690
+ And we will discuss that a little bit.
+
+410
+00:58:00,820 --> 00:58:02,860
+ And we describe that in a class.
+
+411
+00:58:05,310 --> 00:58:07,420
+ So let's take it step by step.
+
+412
+00:58:08,550 --> 00:58:09,320
+ Just let go of this.
+
+413
+00:58:11,300 --> 00:58:16,160
+ The first thing we're going to do is we're going to import something called a base module
+
+414
+00:58:16,160 --> 00:58:19,190
+ from a library called Pedantic.
+
+415
+00:58:20,100 --> 00:58:24,100
+ And it was actually installed together with FastAPI.
+
+416
+00:58:24,590 --> 00:58:26,150
+ So let's start there.
+
+417
+00:58:26,150 --> 00:58:34,460
+ So from Pedantic import.
+
+418
+00:58:37,830 --> 00:58:43,230
+ So what is Pedantic?
+
+419
+00:58:43,450 --> 00:58:50,160
+ Well, Pedantic, it is a library for, well, data validation.
+
+420
+00:58:52,170 --> 00:58:53,170
+ Just get teams back.
+
+421
+00:58:54,210 --> 00:58:54,590
+ There we go.
+
+422
+00:58:56,790 --> 00:59:03,560
+ So you describe what your data should look like.
+
+423
+00:59:04,030 --> 00:59:09,210
+ And Pedantic checks that the data you receive really matches.
+
+424
+00:59:09,210 --> 00:59:19,440
+ And FastAPI uses it for everything that comes in the body of a request.
+
+425
+00:59:20,830 --> 00:59:27,510
+ So that means, well, we don't have to write a pile of if statements to check that the title
+
+426
+00:59:27,510 --> 00:59:31,090
+ is there or that the year is a number and so on.
+
+427
+00:59:31,580 --> 00:59:33,500
+ We just describe it once.
+
+428
+00:59:34,780 --> 00:59:37,100
+ And Pedantic does that checking for us.
+
+429
+00:59:40,990 --> 00:59:43,430
+ And then I will make a class.
+
+430
+00:59:45,420 --> 00:59:47,690
+ I can do it.
+
+431
+00:59:48,290 --> 00:59:50,240
+ Or maybe I can do it over here.
+
+432
+00:59:53,820 --> 00:59:55,060
+ Excuse me.
+
+433
+00:59:57,250 --> 01:00:04,800
+ Or let's do it over here.
+
+434
+01:00:08,150 --> 01:00:15,980
+ So class, book, base, module.
+
+435
+01:00:19,520 --> 01:00:28,540
+ And we want title, string.
+
+436
+01:00:29,600 --> 01:00:38,580
+ We want an author, that is a string.
+
+437
+01:00:39,300 --> 01:00:41,540
+ And we want a year.
+
+438
+01:00:43,170 --> 01:00:44,830
+ That would be an int, right?
+
+439
+01:00:46,030 --> 01:00:53,430
+ So this class, well, is a description of what a valid book looks like.
+
+440
+01:00:54,160 --> 01:01:02,650
+ It has a title, that is a text, an author, that is text, and a year, that is a whole number.
+
+441
+01:01:02,650 --> 01:01:07,040
+ And you notice here, we have no ID, right?
+
+442
+01:01:07,600 --> 01:01:10,060
+ So the client doesn't decide the ID.
+
+443
+01:01:10,850 --> 01:01:12,010
+ The server actually does.
+
+444
+01:01:13,000 --> 01:01:15,740
+ Just like yesterday with the fake store.
+
+445
+01:01:18,150 --> 01:01:28,670
+ Think, well, you can think of the class as a form with three boxes.
+
+446
+01:01:29,800 --> 01:01:40,420
+ And if a box is empty or has the wrong kind of content, well, the request is turned down before it ever reaches our code.
+
+447
+01:01:41,120 --> 01:01:43,390
+ And we will see that in a moment.
+
+448
+01:01:47,580 --> 01:01:51,160
+ Now we can go over to the route.
+
+449
+01:01:53,100 --> 01:01:57,050
+ And it looks like the ones before.
+
+450
+01:01:59,350 --> 01:02:02,950
+ But there will be three new things that you will see here.
+
+451
+01:02:04,120 --> 01:02:07,550
+ First of all, we will not use app yet.
+
+452
+01:02:07,550 --> 01:02:12,520
+ We would rather use app.post instead of app.get, right?
+
+453
+01:02:13,600 --> 01:02:15,570
+ Because we want to create something.
+
+454
+01:02:17,520 --> 01:02:24,880
+ And second of all, the function also gets a parameter called book.
+
+455
+01:02:25,060 --> 01:02:29,650
+ And its type is our book class, right?
+
+456
+01:02:30,460 --> 01:02:39,090
+ And that's how we tell FastAPI that the body of the request should look like a book.
+
+457
+01:02:39,090 --> 01:02:45,850
+ And third, we add a status code that equals to 201.
+
+458
+01:02:46,170 --> 01:02:56,090
+ Because, well, we said yesterday that a successful create should answer 201 created or something like that.
+
+459
+01:02:58,280 --> 01:02:58,620
+ All right.
+
+460
+01:02:59,850 --> 01:03:03,310
+ Let's try that out step by step.
+
+461
+01:03:04,860 --> 01:03:10,670
+ So at app, and this time post and not get.
+
+462
+01:03:13,620 --> 01:03:20,220
+ Code.
+
+463
+01:03:20,990 --> 01:03:22,390
+ We said 201, right?
+
+464
+01:03:26,720 --> 01:03:29,900
+ Create book.
+
+465
+01:03:31,110 --> 01:03:34,530
+ And we said that book.
+
+466
+01:03:40,450 --> 01:03:50,020
+ New ID equals max.
+
+467
+01:03:50,260 --> 01:03:52,040
+ And we will discuss this in a second.
+
+468
+01:04:03,840 --> 01:04:40,640
+ Z01 equals AD, right?
+
+469
+01:04:42,080 --> 01:04:46,420
+ And title B.
+
+470
+01:04:48,450 --> 01:04:51,130
+ Title.
+
+471
+01:05:08,870 --> 01:05:09,670
+ And year.
+
+472
+01:05:14,010 --> 01:05:16,210
+ Year.
+
+473
+01:05:20,270 --> 01:05:25,800
+ Then we're just going to do an append here.
+
+474
+01:05:26,850 --> 01:05:27,270
+ Books.
+
+475
+01:05:29,550 --> 01:05:34,380
+ Append the new book.
+
+476
+01:05:34,380 --> 01:05:40,360
+ And then we will want to return the new book, right?
+
+477
+01:05:40,500 --> 01:05:44,900
+ So we can go through this function step by step.
+
+478
+01:05:45,450 --> 01:05:49,010
+ So first, we need an ID for the new book.
+
+479
+01:05:50,050 --> 01:05:59,860
+ And it takes the highest ID in the list and add one, right?
+
+480
+01:06:00,880 --> 01:06:02,680
+ And the default is zero.
+
+481
+01:06:04,480 --> 01:06:10,340
+ So is there, because why I put it there is in case the list is empty.
+
+482
+01:06:10,340 --> 01:06:16,120
+ So then I build a dictionary with a new ID and the values from the book here.
+
+483
+01:06:18,260 --> 01:06:30,070
+ And here, book title is where we actually read a field from the module.
+
+484
+01:06:30,450 --> 01:06:35,150
+ And then I add it to the list.
+
+485
+01:06:35,480 --> 01:06:44,890
+ And then I actually return it so that the client can see what was created, including the ID.
+
+486
+01:06:52,110 --> 01:07:07,380
+ Let's go to docs and try this out.
+
+487
+01:07:08,090 --> 01:07:09,640
+ There we go.
+
+488
+01:07:09,640 --> 01:07:12,760
+ So let's actually create something here.
+
+489
+01:07:13,070 --> 01:07:14,030
+ Let's try out.
+
+490
+01:07:14,250 --> 01:07:18,680
+ And we get that we need title.
+
+491
+01:07:19,500 --> 01:07:20,280
+ That should be a string.
+
+492
+01:07:20,620 --> 01:07:21,180
+ An author.
+
+493
+01:07:21,480 --> 01:07:22,120
+ That should be a string.
+
+494
+01:07:22,260 --> 01:07:24,490
+ A year with a whole number.
+
+495
+01:07:25,200 --> 01:07:27,110
+ So let's actually add something here.
+
+496
+01:07:28,150 --> 01:07:29,730
+ For example, I don't know.
+
+497
+01:07:30,260 --> 01:07:32,320
+ Snow crash.
+
+498
+01:07:34,140 --> 01:07:40,210
+ The author here is actually Neil Diedelsohn.
+
+499
+01:07:44,650 --> 01:07:51,100
+ And the year was 1902 or something like that.
+
+500
+01:07:51,100 --> 01:07:53,500
+ Okay.
+
+501
+01:07:53,640 --> 01:07:54,500
+ Let's execute.
+
+502
+01:07:54,820 --> 01:07:55,500
+ Let's see what happens.
+
+503
+01:07:58,700 --> 01:08:07,030
+ We get a 201 and a body with the ID 5.
+
+504
+01:08:12,180 --> 01:08:15,040
+ And now let's check that it's really there.
+
+505
+01:08:16,300 --> 01:08:18,700
+ So let's reload that.
+
+506
+01:08:19,340 --> 01:08:19,600
+ Boom.
+
+507
+01:08:20,490 --> 01:08:22,210
+ See what we have.
+
+508
+01:08:22,660 --> 01:08:23,040
+ And voila.
+
+509
+01:08:23,420 --> 01:08:24,710
+ We have our book.
+
+510
+01:08:25,780 --> 01:08:34,040
+ So we just created something on our own server.
+
+511
+01:08:34,040 --> 01:08:46,060
+ The interesting part here.
+
+512
+01:08:46,060 --> 01:08:54,590
+ What if the client sends something that is not valid or not valid for our book?
+
+513
+01:08:55,780 --> 01:09:10,520
+ So let's go back to docs here and send a book, say, without an author.
+
+514
+01:09:11,990 --> 01:09:12,110
+ Right?
+
+515
+01:09:12,510 --> 01:09:15,840
+ So we said, let's say, snow crash again.
+
+516
+01:09:15,840 --> 01:09:21,250
+ So we have a title.
+
+517
+01:09:22,740 --> 01:09:23,940
+ No author.
+
+518
+01:09:24,520 --> 01:09:25,730
+ Get rid of that.
+
+519
+01:09:26,770 --> 01:09:32,570
+ And the year, or maybe we can add another book.
+
+520
+01:09:33,040 --> 01:09:43,410
+ Let's say, Hyperion, 1929.
+
+521
+01:09:43,410 --> 01:09:45,790
+ All right.
+
+522
+01:09:45,850 --> 01:09:47,870
+ Let's execute this and see what happens.
+
+523
+01:09:49,280 --> 01:09:53,330
+ Ah, we get a 4.2.
+
+524
+01:09:53,870 --> 01:10:01,460
+ It says that it's not valid or not a valid status code.
+
+525
+01:10:01,540 --> 01:10:01,680
+ Right?
+
+526
+01:10:01,820 --> 01:10:09,760
+ And it says that the type is actually missing.
+
+527
+01:10:09,760 --> 01:10:25,340
+ So the body is, sorry, the location is body and author.
+
+528
+01:10:26,450 --> 01:10:30,670
+ And the message is field required.
+
+529
+01:10:31,340 --> 01:10:31,560
+ Right?
+
+530
+01:10:32,030 --> 01:10:35,020
+ So it tells us exactly what is wrong here.
+
+531
+01:10:36,600 --> 01:10:41,050
+ And actually, our function never ran.
+
+532
+01:10:43,710 --> 01:10:48,080
+ And we didn't write a single if statement to check this.
+
+533
+01:10:49,090 --> 01:10:51,500
+ The class actually did the checking.
+
+534
+01:10:53,250 --> 01:10:55,890
+ That's why I love fast API.
+
+535
+01:11:00,730 --> 01:11:02,420
+ We can try another one.
+
+536
+01:11:04,500 --> 01:11:19,540
+ Let's say, and this time, let's say, we have a book.
+
+537
+01:11:20,800 --> 01:11:23,000
+ We said Hyperion.
+
+538
+01:11:23,700 --> 01:11:34,190
+ And we have an author, Dan Simmons.
+
+539
+01:11:35,100 --> 01:11:44,010
+ But in the year, I'm actually going to write 19, like that.
+
+540
+01:11:44,010 --> 01:11:46,790
+ All right?
+
+541
+01:11:50,530 --> 01:11:53,950
+ Now, let's actually execute that and see what we get this time.
+
+542
+01:11:56,930 --> 01:11:58,330
+ So same thing here.
+
+543
+01:11:59,050 --> 01:12:05,130
+ It says that the year should be a valid integer.
+
+544
+01:12:05,130 --> 01:12:10,840
+ And this is the big difference from the Flask version here.
+
+545
+01:12:11,820 --> 01:12:15,960
+ So where request.json would have given us whatever the client sent.
+
+546
+01:12:16,960 --> 01:12:19,650
+ And we would have to check every field ourselves.
+
+547
+01:12:23,640 --> 01:12:27,420
+ And another neat thing that we can actually take a look at is this.
+
+548
+01:12:27,890 --> 01:12:34,900
+ If I do cancel, and at this time, I'm not going to reset.
+
+549
+01:12:35,550 --> 01:12:41,080
+ Instead of writing 19, I'm actually going to write, well, let's say 1965 here.
+
+550
+01:12:41,640 --> 01:12:41,960
+ 1965.
+
+551
+01:12:42,220 --> 01:12:44,280
+ But notice here, I'm using quotations.
+
+552
+01:12:45,800 --> 01:12:47,100
+ So will this work?
+
+553
+01:12:47,540 --> 01:12:48,310
+ That's interesting.
+
+554
+01:12:48,310 --> 01:12:54,270
+ When I execute, we get a 201.
+
+555
+01:12:54,850 --> 01:12:57,230
+ And we get a new book with ID 6.
+
+556
+01:12:58,200 --> 01:13:00,450
+ So it actually worked.
+
+557
+01:13:00,960 --> 01:13:04,760
+ And we see that our number here is actually a whole number.
+
+558
+01:13:05,780 --> 01:13:17,880
+ So Pydantic actually changed the number that we wrote as a text to the whole number integer 1965.
+
+559
+01:13:18,220 --> 01:13:22,110
+ So it can do that if it's able to do that.
+
+560
+01:13:23,570 --> 01:13:28,970
+ But of course, obviously, writing 1965 with letters, that wouldn't work.
+
+561
+01:13:34,690 --> 01:13:41,860
+ And if we take a look here, we see that we have our sixth book, Hyperion, Dan Simmons.
+
+562
+01:13:43,220 --> 01:13:54,460
+ But like I said before, since, well, we added a book, and it is in the list.
+
+563
+01:13:54,910 --> 01:14:05,300
+ But now, if I were to save the file here, so that the server actually restarts.
+
+564
+01:14:07,760 --> 01:14:17,600
+ And if we go back to our browser here and reload, we see our books are gone.
+
+565
+01:14:17,600 --> 01:14:27,460
+ And that is because the list only lives in the memory of the running program.
+
+566
+01:14:28,230 --> 01:14:33,910
+ So when the server actually restarts, the list is built again from the code with our four books.
+
+567
+01:14:34,970 --> 01:14:41,850
+ And that is what I meant earlier when I said that we're not using a real database, right?
+
+568
+01:14:42,860 --> 01:14:46,280
+ And this is fine for today.
+
+569
+01:14:47,010 --> 01:14:51,830
+ But a real application would save the data in a database, obviously, or a file.
+
+570
+01:14:52,950 --> 01:14:59,070
+ And that is actually one of the bonus tasks in the lab, if you reach the bonus.
+
+571
+01:15:03,850 --> 01:15:15,990
+ Now, let's actually finish the set.
+
+572
+01:15:16,230 --> 01:15:20,690
+ But let me get back our...
+
+573
+01:15:20,690 --> 01:15:23,510
+ So we have get and post.
+
+574
+01:15:23,810 --> 01:15:28,850
+ And now we need put to replace a book.
+
+575
+01:15:29,480 --> 01:15:32,590
+ And delete to actually remove one, right?
+
+576
+01:15:33,090 --> 01:15:37,380
+ And for both of them, we need to find a book by its ID.
+
+577
+01:15:37,380 --> 01:15:43,040
+ An answer with 404, if it doesn't exist.
+
+578
+01:15:44,700 --> 01:15:53,320
+ Now, if we'll take a look at our get book function, well, it does exactly that, right?
+
+579
+01:15:54,300 --> 01:16:06,030
+ So if I copy those lines into two more functions, it will have the same loop three times, right?
+
+580
+01:16:08,020 --> 01:16:14,030
+ Sorry, I would have the same loop three times.
+
+581
+01:16:14,030 --> 01:16:30,970
+ So let's do what we learned in the first module, where we actually put it in a function of its own, right?
+
+582
+01:16:32,400 --> 01:16:50,130
+ So here, we can go and just write, maybe...
+
+583
+01:16:50,130 --> 01:16:55,860
+ So let's actually write the function, okay?
+
+584
+01:16:56,820 --> 01:17:05,680
+ So dev, find, book, and you will see where I'm going with this.
+
+585
+01:17:06,820 --> 01:17:16,490
+ So book ID, and you should be familiar with what I'm writing because we have actually written this before.
+
+586
+01:17:16,490 --> 01:17:38,910
+ So for book in books, if book in...
+
+587
+01:17:38,910 --> 01:17:58,730
+ Sorry, if ID equals D, right?
+
+588
+01:17:59,060 --> 01:18:01,290
+ Well, there we go.
+
+589
+01:18:01,990 --> 01:18:03,250
+ Book ID, well done.
+
+590
+01:18:05,840 --> 01:18:20,280
+ Turn, and then raise HTTP exception.
+
+591
+01:18:22,490 --> 01:18:34,550
+ Data's called 404, and the detail, we said, book do not found.
+
+592
+01:18:36,640 --> 01:18:42,840
+ Okay, you should be familiar with this function since we have seen it before.
+
+593
+01:18:43,210 --> 01:18:44,270
+ Do you remember from where?
+
+594
+01:18:45,140 --> 01:18:46,350
+ What do you say, guys?
+
+595
+01:18:46,350 --> 01:18:47,750
+ Are you still with me?
+
+596
+01:18:48,540 --> 01:18:48,970
+ Anyone?
+
+597
+01:18:50,500 --> 01:19:02,960
+ Are you there, guys?
+
+598
+01:19:05,690 --> 01:19:13,830
+ I'm doing this function in order to not write the same loop over and over again, right?
+
+599
+01:19:14,140 --> 01:19:18,610
+ So what I said was, where did you see this function before?
+
+600
+01:19:22,280 --> 01:19:25,320
+ The get, right?
+
+601
+01:19:26,200 --> 01:19:46,930
+ So now, we can actually change this and just write, return, return, find book.
+
+602
+01:20:06,470 --> 01:20:10,380
+ So if I go back now, just to double check.
+
+603
+01:20:11,270 --> 01:20:24,720
+ So if I try to get a specific book, so let's get a specific book, maybe number two.
+
+604
+01:20:24,720 --> 01:20:25,500
+ Let's see.
+
+605
+01:20:25,500 --> 01:20:57,100
+ Maybe that will be actually my question.
+
+606
+01:20:57,560 --> 01:21:01,730
+ I wanted to confirm that your raise exception is inside the four loop.
+
+607
+01:21:01,830 --> 01:21:02,730
+ Shouldn't it be outside?
+
+608
+01:21:03,980 --> 01:21:05,570
+ Just give me one second.
+
+609
+01:21:54,530 --> 01:21:54,930
+ Post.
+
+610
+01:21:55,340 --> 01:21:57,760
+ Everything seems to be in order.
+
+611
+01:21:59,040 --> 01:22:08,240
+ I think in find, you gave the raise HTTP exception, like it should be outside the loop, right?
+
+612
+01:22:10,780 --> 01:22:13,730
+ Which line are you talking about?
+
+613
+01:22:13,730 --> 01:22:15,250
+ A raise HTTP exception.
+
+614
+01:22:15,410 --> 01:22:17,630
+ That line should be in one indentation.
+
+615
+01:22:18,090 --> 01:22:20,290
+ Oh, okay, okay, okay, okay, okay, okay, okay.
+
+616
+01:22:21,270 --> 01:22:31,710
+ Oh, maybe that was what the other students, I didn't catch who, but anyways, I think that
+
+617
+01:22:31,710 --> 01:22:34,350
+ was what you actually said as well.
+
+618
+01:22:35,380 --> 01:22:36,060
+ All right.
+
+619
+01:22:37,470 --> 01:22:42,350
+ Now, obviously, we need to try it out.
+
+620
+01:22:43,150 --> 01:22:46,710
+ Here, there we go.
+
+621
+01:22:46,960 --> 01:22:47,360
+ Number two.
+
+622
+01:22:48,190 --> 01:22:49,530
+ And let's try 99.
+
+623
+01:22:51,040 --> 01:22:53,750
+ Book was not found, of course.
+
+624
+01:22:55,150 --> 01:22:55,330
+ Okay?
+
+625
+01:22:56,000 --> 01:22:58,520
+ So nothing has changed.
+
+626
+01:23:01,280 --> 01:23:06,620
+ But now we can actually use that function wherever we want, and we don't need to write it over
+
+627
+01:23:06,620 --> 01:23:07,300
+ and over again.
+
+628
+01:23:08,110 --> 01:23:09,510
+ So that was basically the idea.
+
+629
+01:23:15,520 --> 01:23:18,620
+ Obviously, I made that on purpose just to see that you are awake, right?
+
+630
+01:23:22,020 --> 01:23:25,120
+ So now, what do we have?
+
+631
+01:23:25,380 --> 01:23:31,070
+ Well, now we're going to talk about put, right?
+
+632
+01:23:31,070 --> 01:23:36,660
+ So remember that put replaces, well, the whole thing.
+
+633
+01:23:37,800 --> 01:23:44,750
+ So the client has to send a complete book with all three fields.
+
+634
+01:23:46,400 --> 01:23:52,890
+ And that is why I use our, this is why I'm going to use our book class again.
+
+635
+01:23:54,090 --> 01:23:57,930
+ And the path has the ID, right?
+
+636
+01:23:58,390 --> 01:24:00,960
+ So we will actually know which book.
+
+637
+01:24:01,200 --> 01:24:04,320
+ But let's actually take a look at that step by step.
+
+638
+01:24:04,320 --> 01:24:57,200
+ So at app put, this time, books, in the face, basically, book D, please, and book, since
+
+639
+01:24:57,200 --> 01:24:59,610
+ we want the exact same things.
+
+640
+01:24:59,610 --> 01:25:16,770
+ We can call it existing, existing, equals, find, let's use that function that we just created.
+
+641
+01:25:18,030 --> 01:25:23,670
+ Find book, D, right?
+
+642
+01:25:25,130 --> 01:26:01,530
+ And now, existing title, equals, and author, equals, there, the year, year.
+
+643
+01:26:02,470 --> 01:26:04,530
+ And let's not forget the return, right?
+
+644
+01:26:04,530 --> 01:26:06,130
+ And let's not forget the return, right?
+
+645
+01:26:06,710 --> 01:26:08,980
+ Return, existing.
+
+646
+01:26:10,940 --> 01:26:16,780
+ Notice that the function has two parameters, right?
+
+647
+01:26:19,530 --> 01:26:22,360
+ The book ID, well, comes from the path.
+
+648
+01:26:23,630 --> 01:26:26,580
+ And the book, well, actually comes from the body.
+
+649
+01:26:28,510 --> 01:26:37,470
+ And FastAPI knows which is which, because book ID is in the path, and the book is our module.
+
+650
+01:26:37,570 --> 01:26:48,880
+ So first we find the existing book, which gives us the 404 for free, if it doesn't exist, obviously.
+
+651
+01:26:48,880 --> 01:26:54,310
+ And then we'll replace the three values, and return the result.
+
+652
+01:26:55,340 --> 01:26:57,030
+ So that's basically the idea.
+
+653
+01:26:58,820 --> 01:27:00,340
+ And now, let's try it out.
+
+654
+01:27:00,460 --> 01:27:05,630
+ And we will do it in our docs here.
+
+655
+01:27:07,760 --> 01:27:11,740
+ So, boom, let me also close this one.
+
+656
+01:27:13,030 --> 01:27:14,500
+ Also, close.
+
+657
+01:27:16,350 --> 01:27:16,490
+ Yeah.
+
+658
+01:27:16,900 --> 01:27:19,700
+ So let's reload.
+
+659
+01:27:20,130 --> 01:27:22,620
+ And we see that we now have put.
+
+660
+01:27:24,700 --> 01:27:30,450
+ And we said that we're going to try it out.
+
+661
+01:27:32,760 --> 01:27:37,180
+ First of all, required a book ID, of course.
+
+662
+01:27:37,930 --> 01:27:40,910
+ Let's say we want to change book.
+
+663
+01:27:41,050 --> 01:27:45,070
+ Book one, maybe.
+
+664
+01:27:48,130 --> 01:27:52,500
+ And we need a new title.
+
+665
+01:27:52,500 --> 01:28:01,030
+ Maybe June Messiah by Frank Herbert.
+
+666
+01:28:06,690 --> 01:28:06,970
+ Bert?
+
+667
+01:28:07,760 --> 01:28:08,990
+ Bert?
+
+668
+01:28:09,360 --> 01:28:10,560
+ Can it spell?
+
+669
+01:28:11,220 --> 01:28:14,880
+ And the year is 1969.
+
+670
+01:28:18,090 --> 01:28:20,780
+ Let's execute.
+
+671
+01:28:21,850 --> 01:28:23,670
+ Get a 200.
+
+672
+01:28:24,210 --> 01:28:25,280
+ Great.
+
+673
+01:28:26,800 --> 01:28:29,080
+ And let's look at our books again.
+
+674
+01:28:29,600 --> 01:28:39,460
+ And we see that our book has actually been changed to Dune Messiah, Frank Herbert, by Frank Herbert.
+
+675
+01:28:40,740 --> 01:28:43,040
+ So the book has changed.
+
+676
+01:28:43,040 --> 01:28:50,410
+ And this time, it has actually changed, right?
+
+677
+01:28:50,750 --> 01:28:52,310
+ If we were to compare it to yesterday.
+
+678
+01:28:53,190 --> 01:28:58,380
+ Because, well, this is our own API, not a fake one, the yesterday that we used yesterday.
+
+679
+01:28:59,620 --> 01:29:13,930
+ And if I try with a book that doesn't exist, say 99, we will actually get a 404 from our helper function.
+
+680
+01:29:14,050 --> 01:29:16,250
+ And you can actually try that later on.
+
+681
+01:29:20,590 --> 01:29:27,240
+ And I said before that I actually skipped patch on purpose.
+
+682
+01:29:28,150 --> 01:29:38,590
+ And a patch is the same idea as put, but the client only sends the field that has actually changed, that we actually want to change.
+
+683
+01:29:39,670 --> 01:29:45,120
+ And to do it, you need a second module where every field is actually optional.
+
+684
+01:29:46,350 --> 01:29:51,170
+ And that is a great way to actually check that you understood Tidantic.
+
+685
+01:29:52,130 --> 01:29:54,660
+ And that is actually waiting for you in the lab.
+
+686
+01:29:55,030 --> 01:29:57,450
+ And I think it's a great question to try out.
+
+687
+01:30:00,070 --> 01:30:03,180
+ So the last one would be delete.
+
+688
+01:30:05,870 --> 01:30:08,970
+ And delete, well, should it have a body?
+
+689
+01:30:10,990 --> 01:30:11,490
+ No.
+
+690
+01:30:12,510 --> 01:30:14,620
+ Because the ID is in the path, right?
+
+691
+01:30:15,920 --> 01:30:25,230
+ And just like yesterday, a real API often answers with a 204, which means no content.
+
+692
+01:30:26,180 --> 01:30:31,210
+ The delete worked and there is nothing to send back, right?
+
+693
+01:30:31,870 --> 01:30:37,530
+ So I will actually set the status code to 204 and return nothing this time.
+
+694
+01:30:38,810 --> 01:30:41,340
+ So let's try that out step by step.
+
+695
+01:30:48,550 --> 01:31:16,080
+ Delete books, E, and we set status code to 204.
+
+696
+01:31:17,980 --> 01:31:32,640
+ This would be delete book, right?
+
+697
+01:31:35,700 --> 01:31:47,000
+ Existing was find book.
+
+698
+01:31:47,260 --> 01:31:54,030
+ Again, we can reuse it, reuse the function, book ID.
+
+699
+01:31:57,330 --> 01:32:00,390
+ And what should we do with that?
+
+700
+01:32:00,610 --> 01:32:03,730
+ Well, we should remove this existing.
+
+701
+01:32:04,730 --> 01:32:11,680
+ So books.remove, that would be existing.
+
+702
+01:32:12,380 --> 01:32:13,140
+ And there you go.
+
+703
+01:32:13,140 --> 01:32:22,030
+ So first we find the book and again, we get a 404 for free, right?
+
+704
+01:32:22,750 --> 01:32:24,810
+ And then we remove it from the list.
+
+705
+01:32:25,620 --> 01:32:32,770
+ And as you see here, there's no return statement because, well, we have nothing to say, right?
+
+706
+01:32:35,110 --> 01:32:38,350
+ And yeah, let's try it out.
+
+707
+01:32:38,870 --> 01:32:42,430
+ Let's see if we can get rid of book number two, for example.
+
+708
+01:32:44,290 --> 01:32:48,200
+ Let's go back here and let's reload this.
+
+709
+01:32:49,360 --> 01:32:50,960
+ And we see, voila, delete.
+
+710
+01:32:51,390 --> 01:32:51,720
+ Perfect.
+
+711
+01:32:52,650 --> 01:32:54,170
+ And we want to try it out.
+
+712
+01:32:54,560 --> 01:32:56,050
+ Book ID, number two.
+
+713
+01:32:57,690 --> 01:32:59,970
+ And let's execute.
+
+714
+01:33:00,900 --> 01:33:04,210
+ We get our 204.
+
+715
+01:33:06,980 --> 01:33:09,610
+ And we don't get a response body, right?
+
+716
+01:33:11,770 --> 01:33:23,450
+ And also, if we were to go back here and look at our book, we see that book number two is actually removed.
+
+717
+01:33:24,640 --> 01:33:25,460
+ The new Romancer.
+
+718
+01:33:25,680 --> 01:33:27,620
+ The book that was called New Romancer is gone.
+
+719
+01:33:28,850 --> 01:33:35,000
+ And if you remember what I said yesterday about 204, well, there is no JSON in the answer.
+
+720
+01:33:35,000 --> 01:33:39,890
+ So if you called JSON on it from Python, it would actually crash.
+
+721
+01:33:40,640 --> 01:33:41,910
+ And now you can actually see why.
+
+722
+01:33:41,910 --> 01:33:42,530
+ And now you can actually see why.
+
+723
+01:33:42,530 --> 01:33:47,560
+ Because we are the ones who decide to send nothing.
+
+724
+01:33:49,840 --> 01:33:53,500
+ Now let's try to delete the same book again.
+
+725
+01:33:55,600 --> 01:34:00,490
+ So let's cancel that and try it out.
+
+726
+01:34:00,490 --> 01:34:01,730
+ And again, with number two.
+
+727
+01:34:01,730 --> 01:34:08,600
+ And if we execute, we get a 404 because it's already gone.
+
+728
+01:34:08,600 --> 01:34:10,190
+ So the answer is 404.
+
+729
+01:34:11,090 --> 01:34:16,640
+ And that is the full crud.
+
+730
+01:34:17,220 --> 01:34:18,170
+ We can create.
+
+731
+01:34:18,580 --> 01:34:19,250
+ We can read.
+
+732
+01:34:19,600 --> 01:34:21,150
+ We can update and delete.
+
+733
+01:34:23,080 --> 01:34:29,410
+ And it's about, okay, I have a lot of spaces.
+
+734
+01:34:29,570 --> 01:34:35,710
+ But I would say without the spaces, maybe I can get rid of this as well.
+
+735
+01:34:36,060 --> 01:34:37,470
+ And maybe 50 lines of code.
+
+736
+01:34:37,820 --> 01:34:38,530
+ That's it.
+
+737
+01:34:44,370 --> 01:34:47,120
+ Let's get back to our presentation here.
+
+738
+01:34:58,580 --> 01:35:02,850
+ The best part, in my opinion.
+
+739
+01:35:03,050 --> 01:35:07,580
+ Well, yesterday you wrote a function called getJSON.
+
+740
+01:35:07,580 --> 01:35:14,170
+ And you used it on, well, other people's API, right?
+
+741
+01:35:16,040 --> 01:35:18,770
+ Let's use it on ours.
+
+742
+01:35:19,550 --> 01:35:23,980
+ And for this, the server actually needs to keep running.
+
+743
+01:35:24,820 --> 01:35:28,300
+ So I will leave the terminal as it is.
+
+744
+01:35:30,580 --> 01:35:32,900
+ And I will open a second terminal.
+
+745
+01:35:36,560 --> 01:35:43,690
+ And a new file next to our main.
+
+746
+01:35:44,670 --> 01:35:46,910
+ So let's create that.
+
+747
+01:35:47,450 --> 01:35:54,580
+ We will call it client.py.
+
+748
+01:35:57,570 --> 01:36:03,050
+ And if you remember from yesterday, or beginning of the lesson,
+
+749
+01:36:03,130 --> 01:36:05,610
+ I said I have another file here, apiclient.py.
+
+750
+01:36:06,040 --> 01:36:13,900
+ And if you remember, I actually copied this from yesterday here.
+
+751
+01:36:15,500 --> 01:36:20,250
+ And if you didn't do that, I can actually,
+
+752
+01:36:20,250 --> 01:36:22,890
+ or if you don't have it, sorry,
+
+753
+01:36:23,670 --> 01:36:27,240
+ I can actually send it to you in the chat.
+
+754
+01:36:29,480 --> 01:36:36,320
+ If you're coding along, you can create your own file.
+
+755
+01:36:38,190 --> 01:36:38,690
+ And there we go.
+
+756
+01:36:44,800 --> 01:36:50,160
+ Let's go to our client here.
+
+757
+01:36:53,130 --> 01:36:54,140
+ There we go.
+
+758
+01:36:59,210 --> 01:37:04,740
+ First, we need to import the base.
+
+759
+01:37:06,620 --> 01:37:10,210
+ Sorry.
+
+760
+01:37:10,370 --> 01:37:13,130
+ First, we're going to do the import and the base address.
+
+761
+01:37:13,980 --> 01:37:22,490
+ And I will put the address in a variable so that I only need to write it once.
+
+762
+01:37:23,910 --> 01:37:29,490
+ And then I will use getJSON to get all the books, just like yesterday.
+
+763
+01:37:29,490 --> 01:37:39,140
+ So from API client, right?
+
+764
+01:37:41,090 --> 01:37:51,440
+ Import getJSON, right?
+
+765
+01:37:52,240 --> 01:37:55,130
+ And import also request.
+
+766
+01:37:58,070 --> 01:38:23,200
+ And we said we're going to put the link as equals get the HTTP.
+
+767
+01:38:25,310 --> 01:38:26,980
+ Boom.
+
+768
+01:38:28,700 --> 01:38:31,470
+ Same mistake as yesterday, right?
+
+769
+01:38:32,840 --> 01:38:34,020
+ Okay.
+
+770
+01:38:35,870 --> 01:39:01,800
+ Can do now, as we said before, books equals getJSON, string here, base.
+
+771
+01:39:07,910 --> 01:39:09,370
+ And now we can just print.
+
+772
+01:39:11,220 --> 01:39:18,890
+ Now let's run this file.
+
+773
+01:39:19,130 --> 01:39:20,620
+ So yeah, we can do it like this.
+
+774
+01:39:20,760 --> 01:39:26,080
+ Python client.py.
+
+775
+01:39:28,110 --> 01:39:30,280
+ And then let's run this.
+
+776
+01:39:32,510 --> 01:39:34,070
+ The server said no.
+
+777
+01:39:35,620 --> 01:39:50,340
+ Thing is because the base has an ending with the slash.
+
+778
+01:39:50,750 --> 01:39:53,400
+ So we don't need the slash in the line.
+
+779
+01:39:53,400 --> 01:39:53,700
+ Ah, thank you.
+
+780
+01:39:53,900 --> 01:39:54,750
+ Yeah, yeah, yeah, yeah.
+
+781
+01:39:55,570 --> 01:39:56,720
+ Fight again.
+
+782
+01:40:00,630 --> 01:40:01,550
+ And there we go.
+
+783
+01:40:01,900 --> 01:40:02,330
+ Thank you.
+
+784
+01:40:02,670 --> 01:40:03,450
+ Good notice there.
+
+785
+01:40:06,010 --> 01:40:08,060
+ And there you go.
+
+786
+01:40:09,040 --> 01:40:11,160
+ Here we have our books.
+
+787
+01:40:11,160 --> 01:40:20,340
+ And if we look at the other terminal, we actually get a 200.
+
+788
+01:40:21,160 --> 01:40:24,570
+ So the server still logs every request it gets.
+
+789
+01:40:25,260 --> 01:40:32,530
+ So we can see the requests arrive on one side and the answer on the other.
+
+790
+01:40:33,250 --> 01:40:43,090
+ We can actually also add a new book from Python with the JSON equals, just like yesterday.
+
+791
+01:40:44,560 --> 01:40:57,740
+ Let's say new book equals title.
+
+792
+01:41:03,120 --> 01:41:04,220
+ Oh, crash.
+
+793
+01:41:09,750 --> 01:41:12,240
+ There.
+
+794
+01:41:17,860 --> 01:41:21,540
+ Neil done.
+
+795
+01:41:24,030 --> 01:41:26,090
+ And a year.
+
+796
+01:41:30,930 --> 01:41:35,110
+ I'd like to response.
+
+797
+01:41:36,560 --> 01:41:38,590
+ Just like we did yesterday, right?
+
+798
+01:41:39,280 --> 01:41:40,090
+ Request.
+
+799
+01:41:41,040 --> 01:41:41,830
+ Post.
+
+800
+01:41:44,670 --> 01:41:45,510
+ String.
+
+801
+01:41:49,470 --> 01:41:50,070
+ Base.
+
+802
+01:41:55,780 --> 01:41:55,960
+ Right.
+
+803
+01:41:56,160 --> 01:41:56,280
+ Yeah.
+
+804
+01:41:57,110 --> 01:42:02,380
+ And JSON equals new book.
+
+805
+01:42:03,840 --> 01:42:05,320
+ And let's also add a timeout.
+
+806
+01:42:06,900 --> 01:42:07,700
+ Yeah, it's maybe five.
+
+807
+01:42:09,490 --> 01:42:18,220
+ And print response latest code.
+
+808
+01:42:20,450 --> 01:42:25,550
+ And also response JSON.
+
+809
+01:42:29,900 --> 01:42:33,230
+ And let's also add this.
+
+810
+01:42:33,610 --> 01:42:35,970
+ Get JSON.
+
+811
+01:42:41,750 --> 01:42:45,760
+ Let's go base.
+
+812
+01:42:46,010 --> 01:42:52,620
+ Try something that doesn't exist.
+
+813
+01:42:52,720 --> 01:42:53,820
+ For example, 99.
+
+814
+01:42:54,280 --> 01:42:56,360
+ We can do that at the same time.
+
+815
+01:43:02,580 --> 01:43:03,540
+ All right.
+
+816
+01:43:03,780 --> 01:43:04,680
+ Let's run this.
+
+817
+01:43:05,110 --> 01:43:05,810
+ Let's see what happens.
+
+818
+01:43:10,690 --> 01:43:12,150
+ All right.
+
+819
+01:43:12,550 --> 01:43:16,470
+ So we get a 201.
+
+820
+01:43:19,130 --> 01:43:24,500
+ Just rid of that print.
+
+821
+01:43:26,890 --> 01:43:27,490
+ And there we go.
+
+822
+01:43:27,490 --> 01:43:28,670
+ Oh, there we go.
+
+823
+01:43:28,930 --> 01:43:35,150
+ So we have our 201 and the new book with ID5.
+
+824
+01:43:36,520 --> 01:43:43,850
+ And the last line asks for a book that actually doesn't exist.
+
+825
+01:43:44,980 --> 01:43:58,330
+ And our function from yesterday tells us, or tells us, well, that the server said no 404, right?
+
+826
+01:43:58,330 --> 01:44:04,130
+ So the client and the server, both yours now.
+
+827
+01:44:04,750 --> 01:44:08,680
+ And they talk to each other with everything that we have actually learned.
+
+828
+01:44:11,090 --> 01:44:14,590
+ And that is pretty much how a real system is built.
+
+829
+01:44:18,930 --> 01:44:22,660
+ And yeah, that was basically it for today.
+
+830
+01:44:24,360 --> 01:44:28,980
+ Just a few things, just to wrap it up.
+
+831
+01:44:30,630 --> 01:44:33,210
+ Two things before we do the labs.
+
+832
+01:44:33,920 --> 01:44:40,720
+ Well, first of all, status codes in your own API.
+
+833
+01:44:41,620 --> 01:44:43,000
+ So 200 is the default.
+
+834
+01:44:43,700 --> 01:44:47,750
+ And for create, you use 201.
+
+835
+01:44:49,040 --> 01:44:51,120
+ For delete, you often use 204.
+
+836
+01:44:51,990 --> 01:44:55,280
+ And when something doesn't exist, you answer it 404, right?
+
+837
+01:44:55,630 --> 01:45:01,670
+ And when the data is wrong, FastAPI answers 4.22 for you.
+
+838
+01:45:03,370 --> 01:45:06,780
+ Second, well, that was the docs page.
+
+839
+01:45:08,040 --> 01:45:12,130
+ Always, well, I would say always keep the docs page open while you work.
+
+840
+01:45:13,400 --> 01:45:16,720
+ It is the fastest way to test, I believe.
+
+841
+01:45:17,920 --> 01:45:24,820
+ And third, well, keep in mind that everything that we did today, well, is stored in memory, right?
+
+842
+01:45:26,360 --> 01:45:30,240
+ So when the server restarts, well, the changes are gone.
+
+843
+01:45:30,240 --> 01:45:39,780
+ Well, and last but not least, patch and the API key, which I skipped on purpose while they are in the lab.
+
+844
+01:45:40,960 --> 01:45:43,870
+ And that's where you can practice them.
+
+845
+01:45:47,370 --> 01:45:48,990
+ Good things to remember.
+
+846
+01:45:49,540 --> 01:45:55,150
+ Well, a route is a method and a path, right?
+
+847
+01:45:55,650 --> 01:45:57,770
+ Connected to a function.
+
+848
+01:46:00,020 --> 01:46:01,640
+ Type hints do real work.
+
+849
+01:46:03,210 --> 01:46:05,750
+ Int in the path gives you validation.
+
+850
+01:46:07,120 --> 01:46:10,370
+ And a pedantic class describes the body.
+
+851
+01:46:13,100 --> 01:46:16,320
+ Raise HTTP exceptions when something is wrong.
+
+852
+01:46:16,480 --> 01:46:28,890
+ And set status code when it should be something other than 200.
+
+853
+01:46:31,140 --> 01:46:37,740
+ And as I said, FastAPI gives you the documentation at docs for free.
+
+854
+01:46:42,530 --> 01:46:45,010
+ And yeah, that's basically it.
+
+855
+01:46:45,850 --> 01:46:48,410
+ So shorter lesson than yesterday, as promised.
+
+856
+01:46:49,330 --> 01:46:52,130
+ But now we can actually build our own API.
+
+857
+01:46:53,310 --> 01:46:58,380
+ And of course, you are going to try this out yourself.
+
+858
+01:46:59,070 --> 01:47:03,960
+ We're just going to take a look at the lab so there's no confusions there.
+
+859
+01:47:05,660 --> 01:47:09,430
+ As you see, I've fixed the part.
+
+860
+01:47:09,850 --> 01:47:11,470
+ So it says parts instead of lab, right?
+
+861
+01:47:11,870 --> 01:47:13,620
+ So part one, your own API.
+
+862
+01:47:13,800 --> 01:47:16,440
+ It is guided, a guided question.
+
+863
+01:47:16,620 --> 01:47:19,340
+ It shouldn't take so much time to do this one.
+
+864
+01:47:19,380 --> 01:47:22,380
+ Since it's guided, it actually tells you step by step what to do.
+
+865
+01:47:22,640 --> 01:47:24,980
+ And it's pretty much the same thing that we did today.
+
+866
+01:47:25,080 --> 01:47:28,720
+ So it's actually just to make sure that you can practice what we have done.
+
+867
+01:47:28,900 --> 01:47:31,660
+ And maybe you can do it without the notes and so on.
+
+868
+01:47:31,760 --> 01:47:35,730
+ Just to test yourself that you remember what we did during the day.
+
+869
+01:47:36,200 --> 01:47:38,280
+ Of course, you can use the notes if you want.
+
+870
+01:47:40,240 --> 01:47:41,520
+ And now comes the fun part.
+
+871
+01:47:41,660 --> 01:47:43,780
+ And it's to try out patch.
+
+872
+01:47:44,140 --> 01:47:45,400
+ That will be part two.
+
+873
+01:47:47,090 --> 01:47:51,200
+ And also to protect your API with a key.
+
+874
+01:47:52,130 --> 01:47:55,830
+ So you get the idea here and here as well.
+
+875
+01:47:56,010 --> 01:47:57,110
+ And also some steps.
+
+876
+01:48:00,480 --> 01:48:02,900
+ Try to test when it says test.
+
+877
+01:48:02,900 --> 01:48:07,070
+ So test it and reflect on what actually happens.
+
+878
+01:48:07,230 --> 01:48:09,360
+ Something that we discussed in the morning.
+
+879
+01:48:09,560 --> 01:48:11,440
+ I think it was Fabian who asked the question there.
+
+880
+01:48:13,000 --> 01:48:16,000
+ And the last question is a bonus.
+
+881
+01:48:16,300 --> 01:48:18,040
+ And should be treated as a bonus, right?
+
+882
+01:48:18,360 --> 01:48:20,320
+ So if you get there, well, you get there.
+
+883
+01:48:20,360 --> 01:48:23,010
+ If you don't, you don't, right?
+
+884
+01:48:23,630 --> 01:48:25,950
+ So do your best with the lab.
+
+885
+01:48:27,700 --> 01:48:28,380
+ And yeah.
+
+886
+01:48:29,390 --> 01:48:34,030
+ And hopefully you will get to question three.
+
+887
+01:48:35,390 --> 01:48:39,440
+ If you don't, well, then save it for the catch-up day.
+
+888
+01:48:39,440 --> 01:48:45,480
+ Any questions about the lab before I let you go, guys?
+
+889
+01:48:52,800 --> 01:48:54,050
+ No question.
+
+890
+01:48:55,230 --> 01:48:56,090
+ Crystal clear.
+
+891
+01:49:02,690 --> 01:49:04,520
+ And I will stop the recording there.
+

@@ -1,0 +1,891 @@
+If you write comments in your, if you want to write short comments in order to show yourself or show me that you have actually answered the question, sure, do that.
+But if it's something that you're just reflecting along the way that you're working, sure, that's all right, too, as long as you do it, right?
+So we are all adults here.
+We have some of, there is some coding, there is some reflections to take sometimes.
+And yeah, when it is coding, you're supposed to code, right?
+But when it comes to a little bit of reflection, it depends on the question.
+Sometimes it could be write some comments.
+Sometimes it could be, well, just reflect on that.
+Can I answer your question, Fabian?
+Yes.
+All right.
+Any more questions about the labs in general?
+I hope we have answered all the questions now.
+Do we record our lecture?
+Yes, we do.
+I actually just started the recording a minute ago or something like that.
+All right.
+So part two.
+Hopefully it won't be a lesson until 12 o'clock today.
+We will see.
+We will see where we land.
+I believe this is a little bit shorter than yesterday.
+But every lesson lives its own life, right?
+So part two.
+So yesterday, we kind of talked about, or I would rather say we learned how to talk to an API, right?
+We were the client.
+We sent the request and somebody else, or I would say somebody else's server answered.
+And today, like I kind of revealed yesterday, we're going to flip it around and you will be the one who's building the server.
+We will do it together, right?
+And by the end, you will have your own API running on your computer and can call it from Python with the code that you actually wrote yesterday.
+So that will be the last thing we do.
+And, of course, a lab.
+I will show you the lab before we finish.
+Just go through it so there's no questions about the format or anything like that.
+And then you can get started.
+All right.
+Let's do this.
+So this is what you can do after today or something like that.
+Well, you can build an API with the routes for get, post, put, and delete.
+You can take values from the path and from the query.
+Well, you can make the API and check the data it receives.
+And you can return the right status codes like 201404.
+But before we start, let's actually check that everyone has what they need.
+So we're just going to open our terminal here and just write pip install again.
+So pip install.
+And I'm going to send it in the chat.
+So fast, fast API, standard, standard.
+Yeah, that's it.
+So I'm going to send this in the chat.
+And some of you might write it without a quotation.
+That's perfectly fine.
+But in some versions, you need actually to write the quotations.
+So keep them.
+Just keep the quotations.
+I would say.
+Obviously, I'm not going to install it since I've already done it and made sure.
+So yesterday, I tried everything that I'm going to show you guys that it actually works and so on.
+So do the installation, and then we can get started.
+So here we actually install.
+No, we shouldn't be needed, Christian.
+So this actually installs fast API.
+Yeah, I had to do that.
+I had to write the pipe.
+I think I also had to write Python 3 because I have different versions of Python installed.
+So I thought it might be the case for someone else as well.
+Thank you.
+Thank you, Christian.
+Thank you.
+And we will also get some tools when installing fast API that will let us run it.
+But if you have any difficulties with the installation, of course, I can help you after the lesson.
+Sure.
+Right.
+It takes a little time to install it.
+I understand that.
+So just give it a minute, and then we can continue.
+All right.
+Let's continue.
+Let's start here with a little picture here, right?
+So yesterday, like I mentioned, your Python program was declined, right?
+It sent a request with an endpoint, a method, headers, and the body, and it got a response back, right?
+But today, we build the other side.
+Well, the server.
+The server will wait for requests.
+And when that one arrives, looks at the method and the path, finds the function that belongs to that combination, and then runs it and sends back the result as JSON.
+So everything from yesterday is still true.
+We're just standing on the other side of it now, right?
+Well, in earlier courses, I would say, we have actually taught Flask for this part.
+And Flask is a very good framework.
+There's nothing wrong with that.
+And a lot of real projects still use it.
+So there's nothing wrong with Flask.
+But this time, I have actually chosen to switch it a little bit.
+And I'm actually going to switch it to FastAPI.
+And why I do that?
+Well, there are three reasons.
+Well, first of all, FastAPI is actually built for APIs.
+In Flask, you write methods, like, for example, methods equals get post.
+You read request.json, and you wrap the answers in JSON file.
+And in FastAPI, you just return a dictionary, and it becomes JSON.
+And I'm going to try to, sometimes when I code, I'm going to show you the difference from how you do it in Flask.
+Second, the data is actually checked for you.
+So you describe what valid data looks like.
+And FastAPI rejects everything else with a clear error.
+In Flask, you have to write that checking yourself.
+So that's pretty neat.
+And third, you also get the documentation for free.
+So FastAPI builds a web page from your code where you can read about every endpoint and then try it out, which we will see in a few minutes.
+And I think you will like it.
+So, yeah, we're going to try that for this course.
+And also, if you were to compare the code, as you see here, it's a lot of code, right?
+And you will see the real thing in a moment.
+And if you ever get a job where they use Flask, well, don't worry at all.
+It is still the same ideas, the same methods, the same status codes.
+Only the way you write is a little bit different.
+So it's not a huge difference, right?
+This is how it would, the same thing would look in Flask compared to how it would look in FastAPI.
+So that's the idea of why.
+So what are we building today?
+Well, we are building a small API for books.
+A book, well, it has an idea, a title, an author, and a year.
+And we will have these endpoints.
+Get on books.
+That gives us all books.
+Get on books and an ID.
+That gives us one book.
+We will have a post on books that adds a book.
+And we will have put on books and an ID to replace a book.
+And also delete, well, removes one, right?
+And if you notice here, well, it is the same CRUD table that we looked at yesterday.
+One important thing, we will actually keep the Python books in a plain Python list.
+So no database.
+So that means when we restart the server, the list is back to what it was in the code.
+And that is fine for learning, right?
+But in a real application, the data would have been saved in the database.
+And that's a little bit different topic.
+And two things that I'm skipping on purpose.
+So we spend a little bit more time on the most important parts here.
+So the first thing that I'm skipping is patch.
+It actually works like put, but you only send the fields that you want to change, right?
+And it is a very good exercise.
+So it is actually in the lab to try to do a patch.
+And the second is protecting the API with a key, like we talked about yesterday.
+And that is also in the lab.
+Therefore, I recommend to do the lab in your own pace.
+So when you get the lab, well, then you know that these two are waiting for you.
+All right, let's get started.
+So let's start a little bit of coding.
+Inside, well, API2 folder would be lesson two, right?
+So this was lesson one.
+This is lesson two.
+So I tried to divide it like that.
+And you see here that I have a Python file called API client.
+And this is something I just have prepared for the lesson.
+So there's nothing that we're going to look at right now.
+We will look at it later.
+I'm going to create a main, the pie here.
+And just going to make this, I think it's big enough.
+Or should I make it bigger?
+Or is it good?
+Thumbs up if you can see.
+All right.
+All right.
+Just tell me if there's anything.
+So we're going to start with the smallest possible API.
+So first, we're just going to import FastAPI.
+So from FastAPI, import FastAPI.
+And then we will create an app.
+And then we will add one route just to get started.
+So app equals FastAPI, something like that.
+And just to get started.
+So the route says when somebody sends a get request to the root address, well, then run this function.
+And the function returns a dictionary, right?
+Normal Python dictionary.
+Let's start the server and see what happens.
+So in the terminal, I will write FastAPI, the main.
+I'm actually going to copy this.
+We could have just looked at it here in Visual Studio.
+But we're actually going to look here.
+So the server is actually running on this address, 127.001.8000.
+Or rather, until up to one, right?
+So that means this computer, while 8000 is the port, right?
+And what do we see here?
+Well, here's our answer.
+And if you notice here what's actually happening, well, we returned a Python dictionary, didn't we?
+So we returned it to Python dictionary, but what we got back, we actually got back JSON.
+And as you see, we didn't call JSON-py or set any headers or anything like that.
+FastAPI did that for us.
+And I think I know what somebody might be thinking right now.
+You might be thinking, well, Aladdin, this actually looks like a dictionary.
+And so I don't see that it's actually JSON.
+And that is actually what I said yesterday.
+JSON is almost the same as Python dictionary.
+But if we were to look at the details here, we see that the quotations that we have here are double, double quotes, and not a single quote.
+And because JSON actually used double quotes.
+If I had printed this dictionary in Python, it would have used single quotes.
+Another thing is that I can actually click here as well.
+So the browser even offers me to format it for us.
+And it only does that when it recognizes the answer as JSON.
+But to be completely sure, we will check the header in a moment on the docs page in a second.
+Okay?
+So this is a get request.
+The browser always sends get when you type an address.
+So we are the server now, and the browser is the client.
+And one more thing about this command.
+Well, it says dev, and that means that the server restarts by itself every time you save the file.
+So if I were to write, for example, now I have actually autosave.
+Either way, Lexicon, yeah, I see that it's actually restarting since it's saving, right?
+And if I reload here, it should say hello, Lexicon.
+Okay?
+I'm going to get rid of that.
+Also, let's take a look at this one.
+So I'm just adding docs here.
+And this is what I think is nicest thing about the Fast API.
+So we didn't write, when I wrote docs, I went into this page, and we didn't write anything of this page, right?
+Fast API actually built it from our code.
+It lists every endpoint with its method, and we can actually click on it, and we can actually try it out, and then we can execute.
+So here you can actually test your API without writing any code.
+You see the request, the status code, you see, and the answer, right?
+And at the top, it even shows you the address it called, and the same request as curl, as a curl command, if you ever want to run it from your terminal.
+And if we look at the response headers here, and if you remember what I said earlier, that the browser looks like it's just showing a dictionary, well, here is the proof.
+So the content type header says application JSON, and that is the server telling the client what I'm sending you is actually JSON.
+So, yeah, and it is the same header you looked at yesterday when you printed response headers from Python.
+And here you also see server and UVcorn, well, which is just the program that is running our app.
+And when I used Flask, I had to use a separate tool for that, and, well, today we don't need it.
+And the page actually updates by itself when we add more routes, which we will see in a few minutes when we add routes.
+Okay, so we will keep this open, and we will get back to our docs when we create more routes.
+I'm just going to pump this out.
+Now, let's try to make it a real API.
+But before we do that, we need some data.
+So I've actually created a list of books, and each book is a dictionary, just like the products that we had yesterday.
+And that would be our list of, or that list will be our database for today.
+So I'm just going to copy it and paste it over here.
+I can also send it in the chat if you want to code along, and you don't want to write all of that.
+So I've actually sent it in the chat.
+Now, we need a route that returns all of them.
+And remember, some things that we're going to do, if maybe you're thinking, well, you're missing this and that, just remember that we might build on it later on.
+And it looks a little bit, the first one that we're going to do, it looks a little bit just like the one we did before.
+But this time, the path is books, and the function returns the list.
+So therefore, I'll write something like this, app, get, this time, and write, and also return.
+Now, if we go back to our browser, we add books here, fully, we will see all our books.
+And there you go.
+So we see a JSON array with four objects, exactly like yesterday when we got the list of products.
+The only difference is that now it is our own code that actually produces it.
+And if we go back to here, to our docs, reload, we see that we have a new endpoint, the list.
+The next step would be to actually, well, would be a specific book.
+So yesterday, we got one product by putting the ID at the end of the address, right?
+So, for example, slash 15 or slash 7 or whatever we did.
+So now, we are on the other side.
+So we need to catch that ID.
+So in the path, I will actually write the ID in curly brackets.
+And I will give the function a parameter with the same name.
+And I want you to notice that I also write int, and that would be our type int.
+And it actually tells FastAPI that this should be a whole number.
+And I will actually come back to that and why that actually matters.
+So let's do it step by step.
+So app is for you.
+So app.get, and we said books, right?
+Get book ID.
+And notice the int over here.
+For book in books if D equals D, turn the book.
+So the function loops through the list.
+And when it finds a book with that ID, it actually returns it.
+So let's try that out back here.
+And now we try maybe to get this book, the new Romancer, through here.
+See that we actually get that book.
+Now let's ask for a book that actually does not exist.
+And what if we write, for example, let's say 99.
+And if we run this, well, we get what?
+Well, we get null.
+Well, what is the status code then?
+Well, we can actually check that in our docs here.
+And let's do that.
+Here we go.
+Excuse me, guys.
+So let's try it out.
+And it will ask us for an ID.
+Let's try it with 99.
+Execute.
+And let's see here.
+All right.
+So the answer is null, right?
+And the status code is 200, which means OK.
+But it's not OK, right?
+The book doesn't exist.
+And if you remember yesterday when we said that a 404 means not found, right?
+So this would be the reason.
+A client that only checks the status code here would think everything worked.
+So we have to tell FastAPI to answer with a 404.
+And we do that by raising an exception.
+And this is a special one that FastAPI gives us.
+So I need to actually import it, first of all.
+So we are going to do that.
+So if we go back to our import, we're just going to add HT.
+HTTP exception.
+That's it.
+And then we can come back here and say, jump down here.
+Boom.
+And then we can just raise HTTP exception.
+Status code 404 with a detail.
+Book.
+Maybe a book now.
+That's pretty clear.
+If we go back to our docs here and cancel.
+Now try it out.
+99.
+Execute.
+Boom.
+Now the client actually gets a clear answer.
+So the status code says what went wrong and the message says why.
+And yesterday we actually handled exactly this one, this on the other side with a raise for status.
+But now you have seen both ends.
+Let's try something else.
+Let's say instead of writing 99 here, we will actually try ABC, right?
+When I run this, this is interesting.
+First of all, before looking at that, we can look at our terminal here.
+So we see, we see that we get a 422 when it tried to do books ABC, right?
+And this is why I actually wrote int here.
+So we said that book ID must be a whole number and ABC is not, right?
+So FastAPI answers with an error before our function even runs.
+So as we see in the terminal, the server actually logged the request and it ended with a 422.
+And that is the status code I said you would meet when the data you send is not valid.
+And in the browser, we actually see some things here, right?
+And if we were to look at the lock here, maybe I can make this a little bit bigger.
+I think that's better, right?
+So if we look here, we can actually see the message itself, right?
+So if we look at lock here, it actually says path and then the book ID.
+So it tells us exactly where the problem is in the path.
+So in the part called actually book ID and the message says what is actually wrong.
+Well, it should be a valid integer.
+And we didn't actually write any code for that.
+TypeHint did that for us.
+And if we try the same thing over here at our docs, try it out.
+And let's say ABC.
+And then if we try to execute, if we try to execute,
+you see that it actually stops us before sending anything with this red message.
+So the docs page helps us to avoid the mistake, right?
+But the server actually protects itself too.
+And that is what we just saw.
+Cool.
+Let's filter a little bit.
+So yesterday, we used query parameters.
+If you remember the parts that was after the question mark to say how we wanted the data.
+So now we want to be able to write books and a question mark, maybe a question mark.
+And then an author equals to a specific author.
+And maybe we can take Tolkien, okay?
+And only get his book.
+And to catch a query parameter, I just add a parameter to the function that is not in the path.
+And I will give it a default value of none, which means that it's actually optional.
+So we're going to change this one a little bit.
+So here, I'm actually going to add author.
+So type in none, none.
+Here we can have an if.
+If author return, right?
+Here, let's actually also add a lower here.
+In also a lower than return.
+So if author has a value, we return only the books where that text is part the author's name.
+And as you see, I use lower on both sides so that the capital letters don't matter.
+And if there is no author, well, we return nothing.
+Oh, sorry.
+We return everything like before.
+So let's now try it out in the browser.
+Let's say we have books and then question mark here and author token.
+Let's try that.
+And hopefully, yeah, there we go.
+We get Talbot made by JRR token.
+And let's see if do it without the question mark.
+We still get all four books.
+And if we take a look at the docs here, we will see that this has been added.
+We see that we have a, it says query.
+So FastAPI actually knows this one comes after the question mark, right?
+And the type says string or null, which comes from the string or none in our code.
+And that is how the page tells us that it is actually optional.
+We can send a text or nothing at all.
+And if you compare that with the other path that we had, for example, over here, keep them both open.
+If we look at the parameter on this other route, it has a red star here, right?
+And the word required.
+So a path parameter, well, it's always required because without it, the address doesn't match.
+So yeah, remember the rule and we don't have it here, right?
+Because it's a query.
+So if the name is in the path, it is a path parameter.
+If it's not in the path, well, then it's a query parameter.
+And FastAPI actually figures that out for us.
+That's why I like FastAPI.
+All right.
+We're actually going to take a little break.
+I think it's a perfect place to take a break now.
+And then we can move on with some post and validation.
+Sounds all right?
+And I hope it's not going too fast.
+Very good.
+All right.
+So let's say back at 10 o'clock.
+See you guys soon.
+All right, guys.
+Can you hear me?
+Thumbs up.
+Yeah.
+And you should be able to see my screen.
+All right.
+So we're going to take the next step here.
+We've already spoken about this.
+So far, we have actually only read data.
+Now, let's let the client actually send data to us so that it can add a book, for example.
+And this is where I actually want to show you that FastAPI is really good.
+So when somebody sends us data, well, we need to know what is actually allowed.
+So a book, well, it needs a title, an author, a year.
+The title and the author are text.
+And the year, well, it's a whole number.
+And we will discuss that a little bit.
+And we describe that in a class.
+So let's take it step by step.
+Just let go of this.
+The first thing we're going to do is we're going to import something called a base module
+from a library called Pedantic.
+And it was actually installed together with FastAPI.
+So let's start there.
+So from Pedantic import.
+So what is Pedantic?
+Well, Pedantic, it is a library for, well, data validation.
+Just get teams back.
+There we go.
+So you describe what your data should look like.
+And Pedantic checks that the data you receive really matches.
+And FastAPI uses it for everything that comes in the body of a request.
+So that means, well, we don't have to write a pile of if statements to check that the title
+is there or that the year is a number and so on.
+We just describe it once.
+And Pedantic does that checking for us.
+And then I will make a class.
+I can do it.
+Or maybe I can do it over here.
+Excuse me.
+Or let's do it over here.
+So class, book, base, module.
+And we want title, string.
+We want an author, that is a string.
+And we want a year.
+That would be an int, right?
+So this class, well, is a description of what a valid book looks like.
+It has a title, that is a text, an author, that is text, and a year, that is a whole number.
+And you notice here, we have no ID, right?
+So the client doesn't decide the ID.
+The server actually does.
+Just like yesterday with the fake store.
+Think, well, you can think of the class as a form with three boxes.
+And if a box is empty or has the wrong kind of content, well, the request is turned down before it ever reaches our code.
+And we will see that in a moment.
+Now we can go over to the route.
+And it looks like the ones before.
+But there will be three new things that you will see here.
+First of all, we will not use app yet.
+We would rather use app.post instead of app.get, right?
+Because we want to create something.
+And second of all, the function also gets a parameter called book.
+And its type is our book class, right?
+And that's how we tell FastAPI that the body of the request should look like a book.
+And third, we add a status code that equals to 201.
+Because, well, we said yesterday that a successful create should answer 201 created or something like that.
+All right.
+Let's try that out step by step.
+So at app, and this time post and not get.
+Code.
+We said 201, right?
+Create book.
+And we said that book.
+New ID equals max.
+And we will discuss this in a second.
+Z01 equals AD, right?
+And title B.
+Title.
+And year.
+Year.
+Then we're just going to do an append here.
+Books.
+Append the new book.
+And then we will want to return the new book, right?
+So we can go through this function step by step.
+So first, we need an ID for the new book.
+And it takes the highest ID in the list and add one, right?
+And the default is zero.
+So is there, because why I put it there is in case the list is empty.
+So then I build a dictionary with a new ID and the values from the book here.
+And here, book title is where we actually read a field from the module.
+And then I add it to the list.
+And then I actually return it so that the client can see what was created, including the ID.
+Let's go to docs and try this out.
+There we go.
+So let's actually create something here.
+Let's try out.
+And we get that we need title.
+That should be a string.
+An author.
+That should be a string.
+A year with a whole number.
+So let's actually add something here.
+For example, I don't know.
+Snow crash.
+The author here is actually Neil Diedelsohn.
+And the year was 1902 or something like that.
+Okay.
+Let's execute.
+Let's see what happens.
+We get a 201 and a body with the ID 5.
+And now let's check that it's really there.
+So let's reload that.
+Boom.
+See what we have.
+And voila.
+We have our book.
+So we just created something on our own server.
+The interesting part here.
+What if the client sends something that is not valid or not valid for our book?
+So let's go back to docs here and send a book, say, without an author.
+Right?
+So we said, let's say, snow crash again.
+So we have a title.
+No author.
+Get rid of that.
+And the year, or maybe we can add another book.
+Let's say, Hyperion, 1929.
+All right.
+Let's execute this and see what happens.
+Ah, we get a 4.2.
+It says that it's not valid or not a valid status code.
+Right?
+And it says that the type is actually missing.
+So the body is, sorry, the location is body and author.
+And the message is field required.
+Right?
+So it tells us exactly what is wrong here.
+And actually, our function never ran.
+And we didn't write a single if statement to check this.
+The class actually did the checking.
+That's why I love fast API.
+We can try another one.
+Let's say, and this time, let's say, we have a book.
+We said Hyperion.
+And we have an author, Dan Simmons.
+But in the year, I'm actually going to write 19, like that.
+All right?
+Now, let's actually execute that and see what we get this time.
+So same thing here.
+It says that the year should be a valid integer.
+And this is the big difference from the Flask version here.
+So where request.json would have given us whatever the client sent.
+And we would have to check every field ourselves.
+And another neat thing that we can actually take a look at is this.
+If I do cancel, and at this time, I'm not going to reset.
+Instead of writing 19, I'm actually going to write, well, let's say 1965 here.
+1965.
+But notice here, I'm using quotations.
+So will this work?
+That's interesting.
+When I execute, we get a 201.
+And we get a new book with ID 6.
+So it actually worked.
+And we see that our number here is actually a whole number.
+So Pydantic actually changed the number that we wrote as a text to the whole number integer 1965.
+So it can do that if it's able to do that.
+But of course, obviously, writing 1965 with letters, that wouldn't work.
+And if we take a look here, we see that we have our sixth book, Hyperion, Dan Simmons.
+But like I said before, since, well, we added a book, and it is in the list.
+But now, if I were to save the file here, so that the server actually restarts.
+And if we go back to our browser here and reload, we see our books are gone.
+And that is because the list only lives in the memory of the running program.
+So when the server actually restarts, the list is built again from the code with our four books.
+And that is what I meant earlier when I said that we're not using a real database, right?
+And this is fine for today.
+But a real application would save the data in a database, obviously, or a file.
+And that is actually one of the bonus tasks in the lab, if you reach the bonus.
+Now, let's actually finish the set.
+But let me get back our...
+So we have get and post.
+And now we need put to replace a book.
+And delete to actually remove one, right?
+And for both of them, we need to find a book by its ID.
+An answer with 404, if it doesn't exist.
+Now, if we'll take a look at our get book function, well, it does exactly that, right?
+So if I copy those lines into two more functions, it will have the same loop three times, right?
+Sorry, I would have the same loop three times.
+So let's do what we learned in the first module, where we actually put it in a function of its own, right?
+So here, we can go and just write, maybe...
+So let's actually write the function, okay?
+So dev, find, book, and you will see where I'm going with this.
+So book ID, and you should be familiar with what I'm writing because we have actually written this before.
+So for book in books, if book in...
+Sorry, if ID equals D, right?
+Well, there we go.
+Book ID, well done.
+Turn, and then raise HTTP exception.
+Data's called 404, and the detail, we said, book do not found.
+Okay, you should be familiar with this function since we have seen it before.
+Do you remember from where?
+What do you say, guys?
+Are you still with me?
+Anyone?
+Are you there, guys?
+I'm doing this function in order to not write the same loop over and over again, right?
+So what I said was, where did you see this function before?
+The get, right?
+So now, we can actually change this and just write, return, return, find book.
+So if I go back now, just to double check.
+So if I try to get a specific book, so let's get a specific book, maybe number two.
+Let's see.
+Maybe that will be actually my question.
+I wanted to confirm that your raise exception is inside the four loop.
+Shouldn't it be outside?
+Just give me one second.
+Post.
+Everything seems to be in order.
+I think in find, you gave the raise HTTP exception, like it should be outside the loop, right?
+Which line are you talking about?
+A raise HTTP exception.
+That line should be in one indentation.
+Oh, okay, okay, okay, okay, okay, okay, okay.
+Oh, maybe that was what the other students, I didn't catch who, but anyways, I think that
+was what you actually said as well.
+All right.
+Now, obviously, we need to try it out.
+Here, there we go.
+Number two.
+And let's try 99.
+Book was not found, of course.
+Okay?
+So nothing has changed.
+But now we can actually use that function wherever we want, and we don't need to write it over
+and over again.
+So that was basically the idea.
+Obviously, I made that on purpose just to see that you are awake, right?
+So now, what do we have?
+Well, now we're going to talk about put, right?
+So remember that put replaces, well, the whole thing.
+So the client has to send a complete book with all three fields.
+And that is why I use our, this is why I'm going to use our book class again.
+And the path has the ID, right?
+So we will actually know which book.
+But let's actually take a look at that step by step.
+So at app put, this time, books, in the face, basically, book D, please, and book, since
+we want the exact same things.
+We can call it existing, existing, equals, find, let's use that function that we just created.
+Find book, D, right?
+And now, existing title, equals, and author, equals, there, the year, year.
+And let's not forget the return, right?
+And let's not forget the return, right?
+Return, existing.
+Notice that the function has two parameters, right?
+The book ID, well, comes from the path.
+And the book, well, actually comes from the body.
+And FastAPI knows which is which, because book ID is in the path, and the book is our module.
+So first we find the existing book, which gives us the 404 for free, if it doesn't exist, obviously.
+And then we'll replace the three values, and return the result.
+So that's basically the idea.
+And now, let's try it out.
+And we will do it in our docs here.
+So, boom, let me also close this one.
+Also, close.
+Yeah.
+So let's reload.
+And we see that we now have put.
+And we said that we're going to try it out.
+First of all, required a book ID, of course.
+Let's say we want to change book.
+Book one, maybe.
+And we need a new title.
+Maybe June Messiah by Frank Herbert.
+Bert?
+Bert?
+Can it spell?
+And the year is 1969.
+Let's execute.
+Get a 200.
+Great.
+And let's look at our books again.
+And we see that our book has actually been changed to Dune Messiah, Frank Herbert, by Frank Herbert.
+So the book has changed.
+And this time, it has actually changed, right?
+If we were to compare it to yesterday.
+Because, well, this is our own API, not a fake one, the yesterday that we used yesterday.
+And if I try with a book that doesn't exist, say 99, we will actually get a 404 from our helper function.
+And you can actually try that later on.
+And I said before that I actually skipped patch on purpose.
+And a patch is the same idea as put, but the client only sends the field that has actually changed, that we actually want to change.
+And to do it, you need a second module where every field is actually optional.
+And that is a great way to actually check that you understood Tidantic.
+And that is actually waiting for you in the lab.
+And I think it's a great question to try out.
+So the last one would be delete.
+And delete, well, should it have a body?
+No.
+Because the ID is in the path, right?
+And just like yesterday, a real API often answers with a 204, which means no content.
+The delete worked and there is nothing to send back, right?
+So I will actually set the status code to 204 and return nothing this time.
+So let's try that out step by step.
+Delete books, E, and we set status code to 204.
+This would be delete book, right?
+Existing was find book.
+Again, we can reuse it, reuse the function, book ID.
+And what should we do with that?
+Well, we should remove this existing.
+So books.remove, that would be existing.
+And there you go.
+So first we find the book and again, we get a 404 for free, right?
+And then we remove it from the list.
+And as you see here, there's no return statement because, well, we have nothing to say, right?
+And yeah, let's try it out.
+Let's see if we can get rid of book number two, for example.
+Let's go back here and let's reload this.
+And we see, voila, delete.
+Perfect.
+And we want to try it out.
+Book ID, number two.
+And let's execute.
+We get our 204.
+And we don't get a response body, right?
+And also, if we were to go back here and look at our book, we see that book number two is actually removed.
+The new Romancer.
+The book that was called New Romancer is gone.
+And if you remember what I said yesterday about 204, well, there is no JSON in the answer.
+So if you called JSON on it from Python, it would actually crash.
+And now you can actually see why.
+And now you can actually see why.
+Because we are the ones who decide to send nothing.
+Now let's try to delete the same book again.
+So let's cancel that and try it out.
+And again, with number two.
+And if we execute, we get a 404 because it's already gone.
+So the answer is 404.
+And that is the full crud.
+We can create.
+We can read.
+We can update and delete.
+And it's about, okay, I have a lot of spaces.
+But I would say without the spaces, maybe I can get rid of this as well.
+And maybe 50 lines of code.
+That's it.
+Let's get back to our presentation here.
+The best part, in my opinion.
+Well, yesterday you wrote a function called getJSON.
+And you used it on, well, other people's API, right?
+Let's use it on ours.
+And for this, the server actually needs to keep running.
+So I will leave the terminal as it is.
+And I will open a second terminal.
+And a new file next to our main.
+So let's create that.
+We will call it client.py.
+And if you remember from yesterday, or beginning of the lesson,
+I said I have another file here, apiclient.py.
+And if you remember, I actually copied this from yesterday here.
+And if you didn't do that, I can actually,
+or if you don't have it, sorry,
+I can actually send it to you in the chat.
+If you're coding along, you can create your own file.
+And there we go.
+Let's go to our client here.
+There we go.
+First, we need to import the base.
+Sorry.
+First, we're going to do the import and the base address.
+And I will put the address in a variable so that I only need to write it once.
+And then I will use getJSON to get all the books, just like yesterday.
+So from API client, right?
+Import getJSON, right?
+And import also request.
+And we said we're going to put the link as equals get the HTTP.
+Boom.
+Same mistake as yesterday, right?
+Okay.
+Can do now, as we said before, books equals getJSON, string here, base.
+And now we can just print.
+Now let's run this file.
+So yeah, we can do it like this.
+Python client.py.
+And then let's run this.
+The server said no.
+Thing is because the base has an ending with the slash.
+So we don't need the slash in the line.
+Ah, thank you.
+Yeah, yeah, yeah, yeah.
+Fight again.
+And there we go.
+Thank you.
+Good notice there.
+And there you go.
+Here we have our books.
+And if we look at the other terminal, we actually get a 200.
+So the server still logs every request it gets.
+So we can see the requests arrive on one side and the answer on the other.
+We can actually also add a new book from Python with the JSON equals, just like yesterday.
+Let's say new book equals title.
+Oh, crash.
+There.
+Neil done.
+And a year.
+I'd like to response.
+Just like we did yesterday, right?
+Request.
+Post.
+String.
+Base.
+Right.
+Yeah.
+And JSON equals new book.
+And let's also add a timeout.
+Yeah, it's maybe five.
+And print response latest code.
+And also response JSON.
+And let's also add this.
+Get JSON.
+Let's go base.
+Try something that doesn't exist.
+For example, 99.
+We can do that at the same time.
+All right.
+Let's run this.
+Let's see what happens.
+All right.
+So we get a 201.
+Just rid of that print.
+And there we go.
+Oh, there we go.
+So we have our 201 and the new book with ID5.
+And the last line asks for a book that actually doesn't exist.
+And our function from yesterday tells us, or tells us, well, that the server said no 404, right?
+So the client and the server, both yours now.
+And they talk to each other with everything that we have actually learned.
+And that is pretty much how a real system is built.
+And yeah, that was basically it for today.
+Just a few things, just to wrap it up.
+Two things before we do the labs.
+Well, first of all, status codes in your own API.
+So 200 is the default.
+And for create, you use 201.
+For delete, you often use 204.
+And when something doesn't exist, you answer it 404, right?
+And when the data is wrong, FastAPI answers 4.22 for you.
+Second, well, that was the docs page.
+Always, well, I would say always keep the docs page open while you work.
+It is the fastest way to test, I believe.
+And third, well, keep in mind that everything that we did today, well, is stored in memory, right?
+So when the server restarts, well, the changes are gone.
+Well, and last but not least, patch and the API key, which I skipped on purpose while they are in the lab.
+And that's where you can practice them.
+Good things to remember.
+Well, a route is a method and a path, right?
+Connected to a function.
+Type hints do real work.
+Int in the path gives you validation.
+And a pedantic class describes the body.
+Raise HTTP exceptions when something is wrong.
+And set status code when it should be something other than 200.
+And as I said, FastAPI gives you the documentation at docs for free.
+And yeah, that's basically it.
+So shorter lesson than yesterday, as promised.
+But now we can actually build our own API.
+And of course, you are going to try this out yourself.
+We're just going to take a look at the lab so there's no confusions there.
+As you see, I've fixed the part.
+So it says parts instead of lab, right?
+So part one, your own API.
+It is guided, a guided question.
+It shouldn't take so much time to do this one.
+Since it's guided, it actually tells you step by step what to do.
+And it's pretty much the same thing that we did today.
+So it's actually just to make sure that you can practice what we have done.
+And maybe you can do it without the notes and so on.
+Just to test yourself that you remember what we did during the day.
+Of course, you can use the notes if you want.
+And now comes the fun part.
+And it's to try out patch.
+That will be part two.
+And also to protect your API with a key.
+So you get the idea here and here as well.
+And also some steps.
+Try to test when it says test.
+So test it and reflect on what actually happens.
+Something that we discussed in the morning.
+I think it was Fabian who asked the question there.
+And the last question is a bonus.
+And should be treated as a bonus, right?
+So if you get there, well, you get there.
+If you don't, you don't, right?
+So do your best with the lab.
+And yeah.
+And hopefully you will get to question three.
+If you don't, well, then save it for the catch-up day.
+Any questions about the lab before I let you go, guys?
+No question.
+Crystal clear.
+And I will stop the recording there.
