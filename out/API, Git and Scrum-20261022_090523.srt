@@ -1,0 +1,1304 @@
+1
+00:00:03,910 --> 00:00:13,540
+ you see the screen i managed to find full screen today see how that works but as you can see in
+
+2
+00:00:13,540 --> 00:00:21,670
+ front of you here good morning first of all in front of you we have agile method and scrum today
+
+3
+00:00:22,620 --> 00:00:35,320
+ basically how teams build software in small steps so this morning is only theory so there is no code
+
+4
+00:00:35,320 --> 00:00:41,410
+ along so you know you don't actually need to type anything just listen ask questions and maybe take
+
+5
+00:00:41,410 --> 00:00:51,690
+ notes if you like we'll have some short discussions and small tasks along the way and after lunch you
+
+6
+00:00:51,690 --> 00:01:01,200
+ will or maybe before you will put this into practice if anything is unclear just stop me raise your hand
+
+7
+00:01:01,200 --> 00:01:15,550
+ ask me if you wonder about it then someone else probably does as well now this up so i can see
+
+8
+00:01:15,550 --> 00:01:30,650
+ your hands raised there we go okay so goals today we take a break from coding instead we look at how
+
+9
+00:01:30,650 --> 00:01:41,030
+ real teams organize their work when they build software this is something you will meet in almost
+
+10
+00:01:41,030 --> 00:01:50,140
+ every developer job out there and it's a very common topic in job interviews as well you can be a great
+
+11
+00:01:50,140 --> 00:01:59,290
+ programmer but in a company you never work alone you work in a team for example with a customer maybe with
+
+12
+00:01:59,290 --> 00:02:10,560
+ deadlines and with requirements that change all the time for example agile methods and scrum in particular
+
+13
+00:02:10,560 --> 00:02:25,240
+ are the most common way to deal with that so the goals before lunch today is you should be able to explain
+
+14
+00:02:25,240 --> 00:02:44,040
+ what why agile actually exists hopefully so i'm gonna ask a question here has anyone worked in a team that
+
+15
+00:02:44,040 --> 00:03:02,270
+ used scrum or maybe kanban uh sprint or daily stand-up and raise hands a couple of you almost half of you
+
+16
+00:03:02,270 --> 00:03:13,480
+ but i can see that's good okay you can bring down your hands so maybe some some of you that has raised your
+
+17
+00:03:13,480 --> 00:03:31,520
+ hands maybe we can answer i mean what what was it what was it like someone wants maybe to share yes
+
+18
+00:03:31,520 --> 00:03:40,400
+ fabian yeah so during university we had like a project where we were supposed to do uh like a full
+
+19
+00:03:40,400 --> 00:03:53,720
+ stack application with android uh a studio and like i think uh yeah okay wait i suck at explaining this but
+
+20
+00:03:53,720 --> 00:04:04,090
+ like we used jira a lot and we used these like sprint tools so the responsibility was pretty clearly divided
+
+21
+00:04:04,090 --> 00:04:12,430
+ and sometimes that would lead to a person not doing as much as another would and therefore you would
+
+22
+00:04:12,430 --> 00:04:19,310
+ say in the following sprint that maybe you needed to uh reallocate where people worked so it was sort of
+
+23
+00:04:19,310 --> 00:04:32,380
+ like a repetitive process until everyone was more um content with the team structure yeah sounds uh very
+
+24
+00:04:32,380 --> 00:04:42,650
+ interesting i mean thank you fabian for sharing that uh the old way we need to talk about the old way
+
+25
+00:04:42,650 --> 00:04:55,100
+ now fabian shared a little bit on how they did but this is how software was often built before agile
+
+26
+00:04:55,100 --> 00:05:04,690
+ and it was called waterfall you do basically one phase at a time so first you write down all of the
+
+27
+00:05:04,690 --> 00:05:12,540
+ requirements everything the system must do then you design the whole system and then you build it
+
+28
+00:05:12,540 --> 00:05:21,460
+ and maybe you test it and finally maybe a year later you release it and it's called waterfall because
+
+29
+00:05:22,110 --> 00:05:34,040
+ the work flows down like water falling down steps for example and you can't really easily go back up so
+
+30
+00:05:34,040 --> 00:05:43,520
+ once the requirements are signed changing them is pretty expensive so waterfall isn't isn't stupid it works
+
+31
+00:05:43,520 --> 00:05:54,080
+ well when you know exactly what to build and nothing will change for example building a bridge you don't want to
+
+32
+00:05:54,080 --> 00:06:05,860
+ change your mind about the bridge halfway across the river but software is different and maybe let's see why
+
+33
+00:06:06,490 --> 00:06:17,080
+ but before we do that can maybe can can you think of something that is built well with a big plan up front
+
+34
+00:06:22,010 --> 00:06:32,930
+ i don't i don't want you to think of it of a software just anything else sometimes we need to build something
+
+35
+00:06:32,930 --> 00:06:44,440
+ and we need to have a plan before we build so yeah who's raising hands here christian yeah maybe you can
+
+36
+00:06:45,020 --> 00:06:52,950
+ yeah in uh in the soviet union they have the five-year plan you know and yeah and it worked for them
+
+37
+00:06:53,790 --> 00:07:03,240
+ why are you laughing why are you laughing oh no no i'm just maybe not the best example
+
+38
+00:07:06,480 --> 00:07:12,960
+ i hope yeah you're not far away it was just it was just a joke i actually i don't know uh you know
+
+39
+00:07:13,760 --> 00:07:20,430
+ whatever you produce you do you have to make changes yeah i mean building a house maybe a ship for
+
+40
+00:07:20,430 --> 00:07:27,670
+ example that would be you you you would have a big i mean especially building a house you would have a
+
+41
+00:07:27,670 --> 00:07:34,890
+ big plan up front before you do that and then and that might work or for like you said the five-year plan
+
+42
+00:07:34,890 --> 00:07:42,350
+ with soviet so yeah maybe that didn't work quite well for them i don't know yeah different opinions
+
+43
+00:07:43,280 --> 00:07:49,040
+ people have i'm sure people have different there's probably there's probably a lot of opinions on that
+
+44
+00:07:49,040 --> 00:07:54,440
+ subject but i was looking for a simple answer like building a house or a ship or whatever it could be
+
+45
+00:07:54,440 --> 00:08:01,940
+ or maybe a medical device that needs approval then that might work the waterfall might work in that
+
+46
+00:08:01,940 --> 00:08:20,670
+ situation even i mean i have even seen it in aviation as well so it's not stupid to use waterfall but in
+
+47
+00:08:20,670 --> 00:08:36,410
+ software it's different so imagine you order a birthday cake you describe it on the phone in january
+
+48
+00:08:36,410 --> 00:08:48,600
+ the baker works on it alone for months and you taste it for the first time at the party what if it was the
+
+49
+00:08:48,600 --> 00:08:58,610
+ wrong flavor well it's kind of too late and the guests are already there and that's what happened
+
+50
+00:08:58,610 --> 00:09:08,340
+ in many software projects the customer described what they wanted the team built it for a year and
+
+51
+00:09:08,340 --> 00:09:16,890
+ when the customer finally saw it they said oh that's not what i meant or the world has changed maybe and
+
+52
+00:09:16,890 --> 00:09:25,980
+ they need something else so three problems one the first one is people change their minds not because
+
+53
+00:09:25,980 --> 00:09:37,340
+ they are bad customers but because they learn and when you see something you understand what you really
+
+54
+00:09:37,340 --> 00:09:48,610
+ need for example so they're basically learning so and two feedbacks comes too late so mistakes are
+
+55
+00:09:48,610 --> 00:09:59,760
+ expensive here to fix and third all the risk is at the end you don't know if the project works until
+
+56
+00:09:59,760 --> 00:10:14,890
+ maybe the very last month so if you were a baker what would you do differently the open question for
+
+57
+00:10:14,890 --> 00:10:29,260
+ for anyone that wants to ask answer but i wouldn't be able to prototype or like yeah you could do prototype
+
+58
+00:10:29,260 --> 00:10:42,970
+ that you're not far away from the truth uh maybe give the customer small uh sample i mean a taste sample
+
+59
+00:10:42,970 --> 00:10:54,330
+ early maybe show them sketches and check in often basically to see so nothing goes wrong by the end of it
+
+60
+00:10:54,330 --> 00:11:10,020
+ and that's exactly the agile idea agile is basically small steps and fast feedback you know agile turned
+
+61
+00:11:10,020 --> 00:11:18,120
+ this basically the this stuff a little bit around instead of one big deliver delivery at the end you
+
+62
+00:11:18,120 --> 00:11:29,070
+ deliver small pieces all the time you work in short cycles often two weeks and at the end of the cycle
+
+63
+00:11:29,070 --> 00:11:36,330
+ you have something that actually works even if it's small you show it to the customer they say good but
+
+64
+00:11:37,290 --> 00:11:41,600
+ can the button be bigger for example or actually we need
+
+65
+00:11:45,300 --> 00:11:53,800
+ search more than we need maybe we need a wish list or whatever and you just adjust the plan for the
+
+66
+00:11:53,800 --> 00:12:02,460
+ next cycle whatever the customer said so the customer basically tastes the cake many times during the
+
+67
+00:12:02,460 --> 00:12:12,340
+ baking so if something is wrong you find out after two weeks not a year so the word agile means quick
+
+68
+00:12:12,340 --> 00:12:22,830
+ and able to change directions and basically that's the whole point not to be faster at typing code but
+
+69
+00:12:22,830 --> 00:12:35,550
+ faster at learning what's right to build so if i ask you for example another question is what's the
+
+70
+00:12:35,550 --> 00:12:51,830
+ difference between fast and agile well if you ask me fast is equal to doing things quickly agile is
+
+71
+00:12:51,830 --> 00:13:01,020
+ being able to change direction quickly an agile team can be slow at typing but still quick to react
+
+72
+00:13:01,020 --> 00:13:17,930
+ to change i mean in 2001 17 software developers met at a ski resort in the states here they were tired of heavy
+
+73
+00:13:17,930 --> 00:13:24,990
+ slow projects and they wrote a short text called the manifesto for agile software development
+
+74
+00:13:24,990 --> 00:13:32,500
+ and it's only four sentences so maybe let's read them so one is individuals and interactions over
+
+75
+00:13:33,740 --> 00:13:42,840
+ processes and tools people talking to each other i'm talking to each other solves many
+
+76
+00:13:43,330 --> 00:13:54,660
+ uh solves some i mean basically more problems than a perfect tool the second is working software over
+
+77
+00:13:54,660 --> 00:14:03,230
+ comprehensive documentation a program that works says more than a 200 page document about the program
+
+78
+00:14:03,230 --> 00:14:15,130
+ and third the customer collaborations over contract negotiation i mean basically work with the customer as a
+
+79
+00:14:15,130 --> 00:14:27,050
+ partner not as an opponent and fourth responding to change over the following plan so the most misunderstood
+
+80
+00:14:27,050 --> 00:14:37,730
+ path is i mean part here sorry part the most misunderstood part is uh the last line line on the slide here
+
+81
+00:14:37,730 --> 00:14:49,660
+ the manifesto doesn't say no to documentation or note to plan it says both sides have value but when you have to
+
+82
+00:14:49,660 --> 00:15:02,110
+ choose the left side's wins so let's just say someone says we're agile so we don't
+
+83
+00:15:03,390 --> 00:15:15,520
+ write any documentation is that the right way no of course not the manifesto says working software is
+
+84
+00:15:15,520 --> 00:15:31,180
+ valued more than documentation not instead of it you still document what's useful i would say so behind
+
+85
+00:15:31,180 --> 00:15:40,040
+ those four values there are 12 principles we won't go through all of them but here is at least six that you
+
+86
+00:15:40,040 --> 00:15:50,980
+ will recognize in scrum later maybe deliver often every few few weeks not once a year and welcome
+
+87
+00:15:50,980 --> 00:15:58,460
+ change even late in waterfall a late change is a problem in agile it's a chance to build something
+
+88
+00:15:58,460 --> 00:16:11,100
+ more useful is this people and developers work together every day so not one meeting at the start and
+
+89
+00:16:11,100 --> 00:16:24,270
+ one meeting at the end also talk face to face a five minute conversation often replaces 20 emails today
+
+90
+00:16:24,270 --> 00:16:32,260
+ that can also mean maybe a video call like we're having right now and also keep it simple the manifesto
+
+91
+00:16:32,260 --> 00:16:44,590
+ says simplicity the art of maximizing the amount of work not maximize the amount amount of work not done is
+
+92
+00:16:44,590 --> 00:17:04,490
+ essential basically so code code you never write has no bugs basically and finally stop you need to stop
+
+93
+00:17:04,490 --> 00:17:17,180
+ basically stop the regular and reflect how did it go uh what can we do better and that's basically the
+
+94
+00:17:17,180 --> 00:17:29,690
+ retrospective in scrum what do you think i mean which of these principles that i just mentioned do you
+
+95
+00:17:29,690 --> 00:17:42,010
+ think is the hardest in real life and why this time i'll want you guys to answer yes fabian
+
+96
+00:17:42,010 --> 00:17:51,110
+ i think the how can we work better because uh when you are in a team it's very easy to think that
+
+97
+00:17:51,110 --> 00:17:57,350
+ i've done my responsibility everyone else is like at fault or like i don't know how to improve so i guess
+
+98
+00:17:57,350 --> 00:18:05,960
+ the how how can we work better means that you need to be like uh receptive to feedback and that's
+
+99
+00:18:05,960 --> 00:18:16,690
+ that's not always the easiest exactly exactly so this the often i mean welcome change it's pretty
+
+100
+00:18:16,690 --> 00:18:25,770
+ frustrating to throw work away if someone wants to change it or maybe work together every day the customer
+
+101
+00:18:25,770 --> 00:18:44,130
+ is basically busy so it is hard but we will try to do our best anyway i mean agile itself is not a method
+
+102
+00:18:44,130 --> 00:18:54,090
+ it's a mindset a set of values and principles to actually work in an agile way teams use methods also
+
+103
+00:18:54,090 --> 00:19:05,920
+ called frameworks the most common one by far is scrum surveys of software teams shows that the majority
+
+104
+00:19:05,920 --> 00:19:19,290
+ use scrum or something based on it so that's what we'll spend most of the morning on here kanban is a
+
+105
+00:19:19,290 --> 00:19:26,100
+ second big one maybe we can take a look at that at the end as well and then we also have something
+
+106
+00:19:26,100 --> 00:19:34,500
+ called xp here extreme programming is more about how you write code for example pair programming writing
+
+107
+00:19:34,500 --> 00:19:48,700
+ tests first small releases and so on and many scrum teams borrow from xp practices actually and for
+
+108
+00:19:48,700 --> 00:19:55,700
+ example when a company has 50 or 100 teams working on the same project they need frameworks like
+
+109
+00:19:56,640 --> 00:20:07,970
+ something called safe or s-a-f-e or less to coordinate them you don't need to know those now just recognize
+
+110
+00:20:07,970 --> 00:20:28,880
+ the names if you see them in a job ad maybe you can as an exercise you can do yourself let's look at a few
+
+111
+00:20:28,880 --> 00:20:43,370
+ developer job ads after the class how many actually mentioned scrum and kanban or agile that matter mostly
+
+112
+00:20:43,370 --> 00:20:58,570
+ i see that in junior developer ads in here in sweden that mention agile and scrum actually scrum in basically
+
+113
+00:20:58,570 --> 00:21:06,630
+ one picture here here is all of scrum on one slide here so don't try to understand every word yet
+
+114
+00:21:06,630 --> 00:21:17,700
+ try to go through each box and then maybe come back here but it starts with the product backlog a list
+
+115
+00:21:17,700 --> 00:21:27,670
+ of everything we might want to build with the most important things at the top at sprint planning the
+
+116
+00:21:27,670 --> 00:21:44,320
+ team picks the top items they can finish in one sprint and that basically becomes the sprint blog i got a call
+
+117
+00:21:44,320 --> 00:21:54,890
+ there then the sprint i mean a fixed period usually two weeks every day the team has a short meeting
+
+118
+00:21:54,890 --> 00:22:03,010
+ called daily scrum and at the end of the sprint there is a new piece of working product basically called
+
+119
+00:22:03,010 --> 00:22:14,190
+ the increment the team shows it at the sprint review and gets feedback and then maybe they have a
+
+120
+00:22:14,190 --> 00:22:24,450
+ retrospective where they talk about how they worked not what they built and then the next sprint starts
+
+121
+00:22:24,450 --> 00:22:38,050
+ so scrum has three roles which the scrum guide calls accountabilities five events and three artifacts
+
+122
+00:22:38,050 --> 00:22:46,680
+ and that's basically the whole framework the official rule book the scrum guide is only about 13 pages and
+
+123
+00:22:46,680 --> 00:23:00,130
+ it's free you can search for it on google maybe you can go to scrumguides.org and see if i can somehow
+
+124
+00:23:00,130 --> 00:23:50,530
+ find it okay scrum team has three roles product owner decides what to build in which order they talk to
+
+125
+00:23:50,530 --> 00:23:59,760
+ customers and users and they own the product backlog it's one person not a committee so the team always
+
+126
+00:23:59,760 --> 00:24:09,210
+ knows who decides priorities and then you have the scrum master and he makes sure the scrum actually works
+
+127
+00:24:09,210 --> 00:24:20,780
+ they coach the team and maybe they run or help with events when needed and maybe also remove obstacles if the
+
+128
+00:24:20,780 --> 00:24:30,090
+ team is blocked because they are waiting for a test server the scrum master chases it also another note the
+
+129
+00:24:30,090 --> 00:24:38,690
+ scrum master is not the project manager and not the boss here they don't actually hand out any tasks
+
+130
+00:24:38,690 --> 00:24:51,150
+ developers build the product so in scrum developer means everyone who builds so programmers testers designers
+
+131
+00:24:51,150 --> 00:25:05,230
+ and other people the developers decide themselves how to do the work so nobody tells them you do this task
+
+132
+00:25:05,230 --> 00:25:16,860
+ you do that task or whatever and the team is small usually i mean 10 people or fewer i would say because big
+
+133
+00:25:16,860 --> 00:25:34,940
+ teams talk talk less and coordinate more so it's better to have a small team okay i'll ask a question here
+
+134
+00:25:34,940 --> 00:25:41,880
+ the product owner wants a new feature in the middle of a sprint and goes straight to a developer what
+
+135
+00:25:41,880 --> 00:25:53,940
+ should happen so the product owner he wants a new feature in the middle of we're working here in the
+
+136
+00:25:53,940 --> 00:26:11,740
+ middle of a sprint and he goes directly to a developer that's correct what should happen here yes aranya yeah
+
+137
+00:26:11,740 --> 00:26:21,020
+ so um it should go to the regular stand-up meeting then they need to discuss the priority of something
+
+138
+00:26:21,500 --> 00:26:29,730
+ business agency then they need to reprioritize what is currently team is working and then um reallocate
+
+139
+00:26:29,730 --> 00:26:39,160
+ the task yeah so basically the new feature should go into the product backlog first of all the product
+
+140
+00:26:39,160 --> 00:26:45,730
+ owner can discuss it with the team but the sprint goal shouldn't change in mid in mid sprint print
+
+141
+00:26:45,730 --> 00:27:07,790
+ print is the heart of scrum it's a basically a fixed period of one month or less most teams actually
+
+142
+00:27:07,790 --> 00:27:19,960
+ use two weeks and fixed means fixed if the sprint is two weeks it's two weeks you don't extend it by three
+
+143
+00:27:19,960 --> 00:27:28,480
+ days because you're almost done whatever isn't done goes back to the product backlog and that rhythm
+
+144
+00:27:28,480 --> 00:27:37,440
+ makes the team predictable so every sprint has a sprint goal so for example customers can search for
+
+145
+00:27:37,440 --> 00:27:50,280
+ products and that's uh and basically that's the why the why of the sprint the goal doesn't change during
+
+146
+00:27:50,280 --> 00:28:00,980
+ the sprint so the team basically can focus the details can change if the team learns something
+
+147
+00:28:00,980 --> 00:28:12,560
+ they can adjust to work as long as the goal stays and when one sprint ends the next one starts immediately
+
+148
+00:28:12,560 --> 00:28:21,630
+ so there is no gap between sprints and all other events like planning daily scrum a review and
+
+149
+00:28:21,630 --> 00:28:32,220
+ retrospective happen inside the sprint only the product owner can cancel a sprint and only if the
+
+150
+00:28:32,220 --> 00:28:42,130
+ sprint goals becomes basically useless for example if the company drops the product then maybe we shouldn't
+
+151
+00:28:42,130 --> 00:28:52,150
+ continue creating the product and that's very rare but why not just make sprints longer like three
+
+152
+00:28:52,150 --> 00:29:07,980
+ months to get more done a question here for anyone to answer why can't i have just a long sprint like
+
+153
+00:29:07,980 --> 00:29:15,000
+ three to four months so maybe six months even longer i will of course get more done if i have longer
+
+154
+00:29:15,000 --> 00:29:33,020
+ sprints why so short yes fabian yeah uh i i i guess really because yeah i think someone in chat said
+
+155
+00:29:33,020 --> 00:29:41,890
+ it very shortly and easily less agile that was basically the best way to describe it i mean
+
+156
+00:29:41,890 --> 00:29:49,670
+ yeah it was a good way of describing it basically longer sprints equals slower feedback and more risk
+
+157
+00:29:49,670 --> 00:30:03,900
+ so the whole idea is short cycles so basically you learn quickly the scrum events well inside the sprint
+
+158
+00:30:03,900 --> 00:30:14,840
+ there are four events together with the sprint itself that's basically five events okay the sprint planning
+
+159
+00:30:14,840 --> 00:30:23,010
+ starts at the sprint it starts well starts the sprint sorry the team answers basically three questions
+
+160
+00:30:23,660 --> 00:30:35,640
+ why is this sprint valuable and that's the sprint goal what can we finish and that's the item from the
+
+161
+00:30:35,640 --> 00:30:51,200
+ backlog and how will we do how will we do it basically and that's breaking items into tasks and the daily scrum is every day around 10 to 15 minutes
+
+162
+00:30:51,200 --> 00:31:02,250
+ we'll look at that uh next slide here the sprint review is at the end the team shows what they built
+
+163
+00:31:02,890 --> 00:31:10,570
+ to the product owner and stakeholders the people who basically who care about the product like customers
+
+164
+00:31:10,570 --> 00:31:21,270
+ or managers or whatever so it's not a slideshow it's a working demo and a discussion about what to do next
+
+165
+00:31:21,270 --> 00:31:31,610
+ the retrospective the retrospective on the other hand is the very last thing it's about the way the team worked
+
+166
+00:31:31,610 --> 00:31:48,640
+ not the product so what went well what didn't what will change basically the next sprint and so on so
+
+167
+00:31:48,640 --> 00:31:57,980
+ so the time on the slide are the maximum for one month sprints with two weeks sprints they are usually
+
+168
+00:31:57,980 --> 00:32:11,610
+ shorter so planning is often two two to four hours that's yeah it can take some time so another question so
+
+169
+00:32:11,610 --> 00:32:18,410
+ what's the difference between review and retrospective yes someone was raising hands here gloria yes
+
+170
+00:32:18,410 --> 00:32:27,080
+ uh yeah sorry i just what i i just going to ask the same what was the difference between those ah okay
+
+171
+00:32:27,080 --> 00:32:32,040
+ that's good okay so maybe we can ask the clause so what's the difference between the review and the
+
+172
+00:32:32,040 --> 00:32:45,060
+ retrospective of course answer that but i want you guys to try as well okay saranya it's always the same
+
+173
+00:32:45,060 --> 00:32:55,390
+ people try yeah i mean guess yeah yeah so review is something showing what we done and getting feedback
+
+174
+00:32:55,390 --> 00:33:07,470
+ like if if any changes needed or anything we need to um update like in the in the next upcoming sprint
+
+175
+00:33:07,470 --> 00:33:15,220
+ retrospective is like how this sprint went like is there any regarding the process like is there anything
+
+176
+00:33:15,220 --> 00:33:20,160
+ that we need to change in way of working or different things like that what did you say
+
+177
+00:33:20,160 --> 00:33:29,120
+ about the review it's review is like showing the work to the team like what we built or the customer
+
+178
+00:33:29,120 --> 00:33:36,670
+ and getting the feedback so basically the review equals the product what we built like you said what we
+
+179
+00:33:36,670 --> 00:33:47,260
+ built and the retrospective is equal basically the process how we work okay so review what we built
+
+180
+00:33:47,260 --> 00:34:00,980
+ retrospective how we worked hope i answered your question gloria uh all right so the daily scrum
+
+181
+00:34:01,530 --> 00:34:08,700
+ also called the daily stand up because many teams stand up physically stand up to keep it short
+
+182
+00:34:09,370 --> 00:34:21,730
+ it's often 15 around 15 minutes the same time and place every day it's for the developers basically to
+
+183
+00:34:21,730 --> 00:34:34,860
+ check are we are we on our way to the sprint goal what's the plan for the next 24 hours many teams use three questions
+
+184
+00:34:36,550 --> 00:34:48,070
+ what did i do yesterday and what will i do today is it anything that is blocking me if you look at the
+
+185
+00:34:48,070 --> 00:34:54,310
+ current scrum guide doesn't actually require these questions anymore but they are still very common and a good
+
+186
+00:34:54,310 --> 00:35:04,740
+ place to actually start and two classic mistakes here i want to address the first one is it turns into a
+
+187
+00:35:04,740 --> 00:35:13,120
+ status report where everyone talks to the manager instead of each other and the second one is it turns
+
+188
+00:35:13,120 --> 00:35:23,700
+ into a one hour problem solving meeting so if two people need to discuss a bug they say let's you should say
+
+189
+00:35:23,700 --> 00:35:40,580
+ like let's talk after and do it with only the people who are actually needed so why is it a good idea to
+
+190
+00:35:40,580 --> 00:35:47,300
+ have it at the same time and place every day well one of the reasons is also it becomes a habit
+
+191
+00:35:47,930 --> 00:36:03,950
+ nobody has to book it and it's easy to keep short as well artifacts are the things scrum
+
+192
+00:36:04,830 --> 00:36:13,980
+ produces there are three the product back backlog is a list of everything that might be built for example
+
+193
+00:36:13,980 --> 00:36:28,580
+ features bug fixes improvements i mean sorted it the most valuable items are at the top so it should
+
+194
+00:36:28,580 --> 00:36:39,770
+ be ordered and are described basically in details items further down can be rough ideas for example the
+
+195
+00:36:39,770 --> 00:36:53,130
+ product owner basically owns it the sprint backlog is the part of the team picked for this sprint plus the
+
+196
+00:36:53,130 --> 00:37:06,000
+ plan or for how to do it for example and that's well that's the the developers own that the increment
+
+197
+00:37:06,000 --> 00:37:13,670
+ is the new maybe working piece of the product a real usable step forward so each artifact has
+
+198
+00:37:14,400 --> 00:37:26,810
+ commitment something that makes it clear the product backlog has a product goal the long-term target and
+
+199
+00:37:26,810 --> 00:37:39,470
+ the sprint backlog has a sprint goal and the increment has the definition of done so the checklist that says
+
+200
+00:37:39,470 --> 00:37:48,830
+ when something is really basically finished we'll look in we'll look into that in a minute or so but user stories
+
+201
+00:37:48,830 --> 00:37:56,040
+ so how do you write the items in the backlog the most common way is user stories
+
+202
+00:37:56,890 --> 00:37:59,000
+ they are not part of the scrum guide
+
+203
+00:37:59,720 --> 00:38:07,240
+ but almost every scrum team actually you they you uses them so a user story has three parts
+
+204
+00:38:07,910 --> 00:38:18,020
+ who is the user what do they want and why let's take for example our web shop from the database days
+
+205
+00:38:18,580 --> 00:38:32,060
+ so as a customer i want to filter products by category so that i can find shoes faster so why this format
+
+206
+00:38:32,060 --> 00:38:41,440
+ because it forces you to think about the user and the reason so add a category filter says what to build
+
+207
+00:38:41,440 --> 00:38:51,070
+ the story also says who it is for and why and the why helps the developer make good choices here
+
+208
+00:38:51,070 --> 00:38:59,030
+ so a story should be small enough to finish in one sprint if it's too big it's called an epic
+
+209
+00:38:59,740 --> 00:39:14,050
+ and you split it into smaller stories of course i'm gonna have have you guys do a group task now
+
+210
+00:39:14,050 --> 00:39:24,200
+ it should be five minutes okay in pairs compare yourself with some classmate and i want you guys to
+
+211
+00:39:24,200 --> 00:39:35,610
+ write two user stories for the web shop one for a customer and one for the shop staff okay i'll write it here
+
+212
+00:39:36,250 --> 00:39:55,640
+ and you can take five minutes so i will write it in the chat here so write two user stories or the web shop
+
+213
+00:39:57,980 --> 00:40:24,410
+ one or a customer and one uh time is it now uh okay it's 45 now so take five minutes and then we can
+
+214
+00:40:24,410 --> 00:40:32,990
+ take 10 minutes of break so 15 minutes so we come back at 10 o'clock here okay and in the meantime i'm
+
+215
+00:40:32,990 --> 00:40:48,110
+ gonna just go make some new warm coffee for me i'll leave this open sorry sorry are we going to take a break now or
+
+216
+00:40:48,540 --> 00:40:54,830
+ no you you do the user stories and after that you take a break and we'll come back sorry
+
+217
+00:40:57,100 --> 00:41:06,150
+ should we do it in pairs yes in pairs yes two and two i do it now okay yes and after that you can
+
+218
+00:41:06,150 --> 00:43:56,130
+ take a break so we come back at 10 o'clock okay okay all right i see you guys complaining about
+
+219
+00:43:56,770 --> 00:44:11,070
+ the pairing here uh if you didn't find anyone just do it yourself i think having two brains working
+
+220
+00:44:11,070 --> 00:55:57,890
+ makes it go faster in my opinion so at least try you don't have to stress guys had the time for a
+
+221
+00:55:57,890 --> 00:56:13,240
+ break or maybe i miscalculated how many of you took a break let's have some hands raised here no break
+
+222
+00:56:13,240 --> 00:56:21,420
+ yeah i miss i miss i miss think that i think i say uh yeah you can take a break take a take a break
+
+223
+00:56:21,420 --> 00:56:27,960
+ after this uh write your answer in the chat uh take a break like five minutes or so if you need it and
+
+224
+00:56:27,960 --> 01:00:26,020
+ let us come back in five minutes i see that many of you have answered in the chat then that's cool and
+
+225
+01:00:26,020 --> 01:00:41,240
+ you have some interesting stuff it's an interesting story sorry uh looks good this was just we're gonna do
+
+226
+01:00:41,240 --> 01:00:48,320
+ this more later so this is just for those that haven't seen this maybe you find it hard to do it
+
+227
+01:00:48,320 --> 01:00:56,050
+ in such short time i gave you but don't worry the answers in the chat is something that you other
+
+228
+01:00:56,050 --> 01:01:06,070
+ students can also look into and so there is no right or wrong here just want you to try it that's the
+
+229
+01:01:06,070 --> 01:01:20,710
+ big main thing here now if we move on to the next slide here how do we know when a story is done well
+
+230
+01:01:20,710 --> 01:01:30,110
+ i'm gonna give you two tools here tense criteria belongs to one story they are the tests from the
+
+231
+01:01:30,110 --> 01:01:40,280
+ user's point of view so for our filter story for example choosing shoes shows only shoes choosing
+
+232
+01:01:40,280 --> 01:01:51,270
+ all shows everything works on for example mobile when all criteria are met the story does the right and
+
+233
+01:01:51,270 --> 01:02:00,790
+ then you have something else called the definition of done or dod is basically for all work it's the
+
+234
+01:02:00,790 --> 01:02:10,070
+ team's quality checklist you can you can see it so for example the code is reviewed by someone else the
+
+235
+01:02:10,070 --> 01:02:22,780
+ tests pass it's merged to the main branch and then and the documentation is also updated so why do we need
+
+236
+01:02:22,780 --> 01:02:34,650
+ both well because done means different things to different people a developer might say done when the code runs on their laptop
+
+237
+01:02:34,650 --> 01:02:48,240
+ so the dod makes it clear it's done when it meets the whole checklist and not before so and tomorrow we will
+
+238
+01:02:48,240 --> 01:02:57,630
+ talk about git and github and you will see that reviewed and merge domain are things we do with pull requests
+
+239
+01:02:57,630 --> 01:03:10,960
+ for example okay so how how big is it i mean story points so before planning a sprint the team needs to know
+
+240
+01:03:10,960 --> 01:03:21,390
+ roughly how big each story is many teams use story points and story points are relative you don't say
+
+241
+01:03:21,390 --> 01:03:31,650
+ this takes six hours you say this is you say basically this is about twice as big as that one for example
+
+242
+01:03:32,270 --> 01:03:41,900
+ and people are quite bad at guessing hours but quite good at comparing and the scale is often one two three
+
+243
+01:03:42,460 --> 01:03:52,210
+ five eight thirteen numbers from the fibonacci sequence if you know that the gaps get bigger because the bigger
+
+244
+01:03:52,210 --> 01:04:02,670
+ something is the less exact we can be so if a story is bigger than thirteen split it so one popular way of
+
+245
+01:04:02,670 --> 01:04:12,450
+ estimating is planning poker everyone has cards with numbers the team discuss a story
+
+246
+01:04:13,410 --> 01:04:23,760
+ and then everyone shows a card at the same time if one person shows two and another another shows thirteen
+
+247
+01:04:24,560 --> 01:04:35,030
+ they then they need to explain why often one of them knows something that the others don't after a few sprints
+
+248
+01:04:35,030 --> 01:04:46,870
+ the team knows its velocity so how many points it usually finishes and that helps planning a bit
+
+249
+01:04:46,870 --> 01:04:57,440
+ but velocity is for the team not for comparing teams and points means different things in different
+
+250
+01:04:57,440 --> 01:05:08,440
+ teams so if i ask you another question here so why show the cards at the same time instead of one by one
+
+251
+01:05:08,440 --> 01:05:36,380
+ someone can answer so why show them the same times same time well okay no one answers all right uh maybe in
+
+252
+01:05:36,380 --> 01:05:56,910
+ the chat yeah maxim had correct answer here you may get influence so so people aren't influenced by the
+
+253
+01:05:56,910 --> 01:06:16,970
+ first person especially by the most senior person in the room so that's very important so we don't get
+
+254
+01:06:16,970 --> 01:06:28,100
+ influenced by anyone backlog refinement well the product backlog is never finished new ideas come in
+
+255
+01:06:28,100 --> 01:06:36,690
+ all ones become less important so the team spends some time keeping it in good shape and that's called backlog
+
+256
+01:06:36,690 --> 01:06:44,860
+ refinement the product owner and the developers go through them go through basically the items near the top
+
+257
+01:06:44,860 --> 01:06:53,670
+ they split big items into smaller ones maybe add details and acceptance criteria and maybe also estimate them
+
+258
+01:06:53,670 --> 01:07:05,830
+ so the goal is that when sprint planning comes the top items are ready clear small and estimated then
+
+259
+01:07:05,830 --> 01:07:13,460
+ planning is quick if the backlog isn't refined uh sprint planning turns into a long painful meeting where
+
+260
+01:07:13,460 --> 01:07:27,250
+ nobody understands the story so refinement is one of the official scrum events it's basically an ongoing
+
+261
+01:07:27,250 --> 01:07:40,760
+ activity and many teams book an hour or two every week for it kanban now the second big method here is kanban
+
+262
+01:07:42,490 --> 01:07:51,970
+ it comes from toyota's factories in japan actually and the word means something like signboard or card i think
+
+263
+01:07:51,970 --> 01:08:01,960
+ and kanban is simple first make the work visible on a board with columns like to do in progress review
+
+264
+01:08:01,960 --> 01:08:17,050
+ and done each task is a card that moves from left to right very important and second and this is basically the key
+
+265
+01:08:17,050 --> 01:08:32,980
+ limit the work in progress also called wip look at the board so in progress has maximum of three if there are
+
+266
+01:08:32,980 --> 01:08:43,400
+ already three cards there nobody starts something new you basically help finish something first why why is that
+
+267
+01:08:43,400 --> 01:08:49,140
+ well because starting many things and finishing nothing is the most common problems in teams
+
+268
+01:08:49,140 --> 01:09:00,510
+ stop starting and start finishing is instead think of it that way and the third one there are no sprints
+
+269
+01:09:00,510 --> 01:09:10,490
+ work flows all the time so when a card is done you pull the next one and kanban fits well when
+
+270
+01:09:11,600 --> 01:09:24,420
+ works come comes basically in unpredictably for example like support team
+
+271
+01:09:24,920 --> 01:09:42,420
+ fixing bugs or an it operation teams so what should you choose scrum or kanban maybe let's compare these
+
+272
+01:09:43,010 --> 01:09:53,390
+ scrum has a rhythm basically sprints kanban has a flow scrum has three roles and kanban doesn't require
+
+273
+01:09:53,390 --> 01:10:06,190
+ any roles in scrum you don't change the sprint goal during a sprint and in kanban you can change at any
+
+274
+01:10:06,190 --> 01:10:17,470
+ time as long as the card hasn't started and both of them limit the work scrum by what fits in a sprint and
+
+275
+01:10:17,470 --> 01:10:29,420
+ kanban with wip limits on each column crum is actually good when you build a new product and want regular
+
+276
+01:10:29,420 --> 01:10:38,730
+ feedback kanban is good for support and maintenance where work arrives all the time and you can't plan two
+
+277
+01:10:38,730 --> 01:10:48,890
+ weeks ahead so in real life many teams mix them you will hear the word scrum ban sometimes a scrum team
+
+278
+01:10:48,890 --> 01:11:00,730
+ with the kanban board and wip limits is very common the most important thing is not which name you use
+
+279
+01:11:00,730 --> 01:11:12,170
+ but that the team keeps learning and improving here so let's just say you start a job in a team that fixes
+
+280
+01:11:12,170 --> 01:11:31,280
+ urgent problems for customers every day which one should i use should i use scrum or kanban correct
+
+281
+01:11:31,280 --> 01:11:42,500
+ so what should i use can you repeat the question you start a job in a team that fixes urgent problems
+
+282
+01:11:42,500 --> 01:12:01,860
+ okay for customers every single day so should i use scrum or kanban yeah many of you says kanban and that
+
+283
+01:12:01,860 --> 01:12:13,330
+ that is actually correct the work is unpredictable and urgent so waiting for the next sprint here doesn't
+
+284
+01:12:13,330 --> 01:12:25,110
+ actually work so i would choose kanban in that situation tools do team use the most common one
+
+285
+01:12:25,110 --> 01:12:33,590
+ in companies today is probably jira you will see it in many job ads asher devops is common in companies
+
+286
+01:12:33,590 --> 01:12:45,010
+ that uses microsoft tools trello is a simple and free for small teams github project is is a board inside
+
+287
+01:12:45,010 --> 01:12:56,790
+ github right next basically to the code hopefully maybe we can see that tomorrow because it it connects
+
+288
+01:12:56,790 --> 01:13:06,170
+ user stories to branches and pull requests and don't forget the simplest tool which basically is a white
+
+289
+01:13:06,170 --> 01:13:16,740
+ board with sticky notes many teams in the same room room sorry um still prefer that because everyone sees
+
+290
+01:13:16,740 --> 01:13:36,470
+ it all the time common mistakes well here are some common mistakes you most likely see at work the daily
+
+291
+01:13:36,470 --> 01:13:44,860
+ scrums turns into a status report to a manager the retrospective is skipped because we're busy for
+
+292
+01:13:44,860 --> 01:13:59,060
+ example so people basically stop caring the product owner is never available so the developers basically guess
+
+293
+01:13:59,060 --> 01:14:08,230
+ what to build stories are too big so nothing is ever finished at the end of the sprint and everything
+
+294
+01:14:08,230 --> 01:14:16,900
+ is like 80 percent done someone pushes new urgent work into the sprint all the time as well i have seen
+
+295
+01:14:16,900 --> 01:14:24,730
+ that so basically the sprint goal is never met and the most common one is something called scrum butt
+
+296
+01:14:25,390 --> 01:14:37,770
+ we do scrum but we don't have a product owner we do scrum but we skip the review you can adapt scrum but if
+
+297
+01:14:37,770 --> 01:14:55,560
+ you remove the parts that create feedback you lose basically the reason for doing it so why does this
+
+298
+01:14:55,560 --> 01:15:04,230
+ matter to you right now well most developer jobs you apply for work in an agile way in interviews you'll often
+
+299
+01:15:04,230 --> 01:15:11,220
+ get questions like what is a sprint or what's the difference difference between a product owner and
+
+300
+01:15:11,220 --> 01:15:21,660
+ a scrum master or maybe what's what does definition or done mean so hopefully after today you can answer
+
+301
+01:15:21,660 --> 01:15:32,420
+ them and when you start your first job or whatever or internship use the daily scrum i mean as a junior
+
+302
+01:15:32,420 --> 01:15:40,530
+ developer the the worst thing you can do is be stuck for two days without saying anything for example i'm
+
+303
+01:15:40,530 --> 01:15:49,990
+ stuck on the login bug is exactly what daily scrum is for no nobody expects for example a junior to know
+
+304
+01:15:49,990 --> 01:16:01,280
+ everything but they expect you to ask you can also use this in your own projects here a simple board with
+
+305
+01:16:01,280 --> 01:16:11,970
+ to do doing and done and maybe short goals goals for each week and that works for solo projects as well
+
+306
+01:16:11,970 --> 01:16:25,660
+ i have to remember here let's sum up this morning here agile equals small steps fast feedback and we welcome
+
+307
+01:16:25,660 --> 01:16:37,670
+ also the changes the manifesto manifesto uh has four values 12 principles scrum or in scrum we have product
+
+308
+01:16:37,670 --> 01:16:48,420
+ owner scrum master developers uh yeah exactly so product owner scrum master developers we have also events
+
+309
+01:16:48,420 --> 01:16:58,170
+ sprint planning daily scrum review retrospective also have the artifacts is basically the product backlog sprint
+
+310
+01:16:58,170 --> 01:17:12,520
+ backlog so product backlog sprint backlog and increment as well kanban is a board wip limits continuous flow remember
+
+311
+01:17:12,520 --> 01:17:29,390
+ that so that's basically it that i have for today i'm gonna give you a pretty cool uh or fun uh project to
+
+312
+01:17:29,390 --> 01:17:40,190
+ do in the exercise today so i will upload the exercise pretty soon uh we try to build a team together here
+
+313
+01:17:40,190 --> 01:17:54,590
+ and we split you in four to five group we'll see what i can come up with here do you have any questions
+
+314
+01:17:55,430 --> 01:18:11,330
+ so far oh thank you victor found one free tool for kanban flow yes fabian yeah uh of course it's nice to
+
+315
+01:18:11,330 --> 01:18:19,110
+ like remember like remember all of these things but since like many of these words i i don't know i easily forget them
+
+316
+01:18:19,110 --> 01:18:28,420
+ is it like um if you know the basics of how all of this works you don't have to remember like every word right like i get
+
+317
+01:18:28,980 --> 01:18:35,830
+ it's not really a question it's it's just it's a bit confusing to remember is my yeah i understand
+
+318
+01:18:36,210 --> 01:18:48,450
+ yeah you should try to remember them try your best the more you understand this stuff the better the
+
+319
+01:18:48,450 --> 01:19:16,440
+ outcome i would say okay any other questions before i end this i'll give you a really cool exercise for
+
+320
+01:19:16,440 --> 01:19:23,800
+ you guys to do but just give me a couple of minutes before i upload it and while you do that maybe you can
+
+321
+01:19:23,800 --> 01:19:30,990
+ read more about this actually there is actually pretty good uh let me see on youtube there is actually
+
+322
+01:19:30,990 --> 01:19:42,210
+ pretty good explanations on this uh just write scrum here in youtube i know one video that is really cool
+
+323
+01:19:42,210 --> 01:19:50,690
+ yeah and it's seven minutes you can watch this while you wait for me copy this introduction to scrum
+
+324
+01:19:50,690 --> 01:20:17,100
+ i'll put it here in the chat uploaded the presentation uh as well uh let's have some break and then uh
+
+325
+01:20:17,100 --> 01:20:24,360
+ watch out for uh the python info chat i will upload everything there as usual if you don't have any questions
+
+326
+01:20:24,360 --> 01:20:30,850
+ you can leave the meeting thank you bye bye
+

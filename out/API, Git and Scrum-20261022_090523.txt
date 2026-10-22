@@ -1,0 +1,326 @@
+you see the screen i managed to find full screen today see how that works but as you can see in
+front of you here good morning first of all in front of you we have agile method and scrum today
+basically how teams build software in small steps so this morning is only theory so there is no code
+along so you know you don't actually need to type anything just listen ask questions and maybe take
+notes if you like we'll have some short discussions and small tasks along the way and after lunch you
+will or maybe before you will put this into practice if anything is unclear just stop me raise your hand
+ask me if you wonder about it then someone else probably does as well now this up so i can see
+your hands raised there we go okay so goals today we take a break from coding instead we look at how
+real teams organize their work when they build software this is something you will meet in almost
+every developer job out there and it's a very common topic in job interviews as well you can be a great
+programmer but in a company you never work alone you work in a team for example with a customer maybe with
+deadlines and with requirements that change all the time for example agile methods and scrum in particular
+are the most common way to deal with that so the goals before lunch today is you should be able to explain
+what why agile actually exists hopefully so i'm gonna ask a question here has anyone worked in a team that
+used scrum or maybe kanban uh sprint or daily stand-up and raise hands a couple of you almost half of you
+but i can see that's good okay you can bring down your hands so maybe some some of you that has raised your
+hands maybe we can answer i mean what what was it what was it like someone wants maybe to share yes
+fabian yeah so during university we had like a project where we were supposed to do uh like a full
+stack application with android uh a studio and like i think uh yeah okay wait i suck at explaining this but
+like we used jira a lot and we used these like sprint tools so the responsibility was pretty clearly divided
+and sometimes that would lead to a person not doing as much as another would and therefore you would
+say in the following sprint that maybe you needed to uh reallocate where people worked so it was sort of
+like a repetitive process until everyone was more um content with the team structure yeah sounds uh very
+interesting i mean thank you fabian for sharing that uh the old way we need to talk about the old way
+now fabian shared a little bit on how they did but this is how software was often built before agile
+and it was called waterfall you do basically one phase at a time so first you write down all of the
+requirements everything the system must do then you design the whole system and then you build it
+and maybe you test it and finally maybe a year later you release it and it's called waterfall because
+the work flows down like water falling down steps for example and you can't really easily go back up so
+once the requirements are signed changing them is pretty expensive so waterfall isn't isn't stupid it works
+well when you know exactly what to build and nothing will change for example building a bridge you don't want to
+change your mind about the bridge halfway across the river but software is different and maybe let's see why
+but before we do that can maybe can can you think of something that is built well with a big plan up front
+i don't i don't want you to think of it of a software just anything else sometimes we need to build something
+and we need to have a plan before we build so yeah who's raising hands here christian yeah maybe you can
+yeah in uh in the soviet union they have the five-year plan you know and yeah and it worked for them
+why are you laughing why are you laughing oh no no i'm just maybe not the best example
+i hope yeah you're not far away it was just it was just a joke i actually i don't know uh you know
+whatever you produce you do you have to make changes yeah i mean building a house maybe a ship for
+example that would be you you you would have a big i mean especially building a house you would have a
+big plan up front before you do that and then and that might work or for like you said the five-year plan
+with soviet so yeah maybe that didn't work quite well for them i don't know yeah different opinions
+people have i'm sure people have different there's probably there's probably a lot of opinions on that
+subject but i was looking for a simple answer like building a house or a ship or whatever it could be
+or maybe a medical device that needs approval then that might work the waterfall might work in that
+situation even i mean i have even seen it in aviation as well so it's not stupid to use waterfall but in
+software it's different so imagine you order a birthday cake you describe it on the phone in january
+the baker works on it alone for months and you taste it for the first time at the party what if it was the
+wrong flavor well it's kind of too late and the guests are already there and that's what happened
+in many software projects the customer described what they wanted the team built it for a year and
+when the customer finally saw it they said oh that's not what i meant or the world has changed maybe and
+they need something else so three problems one the first one is people change their minds not because
+they are bad customers but because they learn and when you see something you understand what you really
+need for example so they're basically learning so and two feedbacks comes too late so mistakes are
+expensive here to fix and third all the risk is at the end you don't know if the project works until
+maybe the very last month so if you were a baker what would you do differently the open question for
+for anyone that wants to ask answer but i wouldn't be able to prototype or like yeah you could do prototype
+that you're not far away from the truth uh maybe give the customer small uh sample i mean a taste sample
+early maybe show them sketches and check in often basically to see so nothing goes wrong by the end of it
+and that's exactly the agile idea agile is basically small steps and fast feedback you know agile turned
+this basically the this stuff a little bit around instead of one big deliver delivery at the end you
+deliver small pieces all the time you work in short cycles often two weeks and at the end of the cycle
+you have something that actually works even if it's small you show it to the customer they say good but
+can the button be bigger for example or actually we need
+search more than we need maybe we need a wish list or whatever and you just adjust the plan for the
+next cycle whatever the customer said so the customer basically tastes the cake many times during the
+baking so if something is wrong you find out after two weeks not a year so the word agile means quick
+and able to change directions and basically that's the whole point not to be faster at typing code but
+faster at learning what's right to build so if i ask you for example another question is what's the
+difference between fast and agile well if you ask me fast is equal to doing things quickly agile is
+being able to change direction quickly an agile team can be slow at typing but still quick to react
+to change i mean in 2001 17 software developers met at a ski resort in the states here they were tired of heavy
+slow projects and they wrote a short text called the manifesto for agile software development
+and it's only four sentences so maybe let's read them so one is individuals and interactions over
+processes and tools people talking to each other i'm talking to each other solves many
+uh solves some i mean basically more problems than a perfect tool the second is working software over
+comprehensive documentation a program that works says more than a 200 page document about the program
+and third the customer collaborations over contract negotiation i mean basically work with the customer as a
+partner not as an opponent and fourth responding to change over the following plan so the most misunderstood
+path is i mean part here sorry part the most misunderstood part is uh the last line line on the slide here
+the manifesto doesn't say no to documentation or note to plan it says both sides have value but when you have to
+choose the left side's wins so let's just say someone says we're agile so we don't
+write any documentation is that the right way no of course not the manifesto says working software is
+valued more than documentation not instead of it you still document what's useful i would say so behind
+those four values there are 12 principles we won't go through all of them but here is at least six that you
+will recognize in scrum later maybe deliver often every few few weeks not once a year and welcome
+change even late in waterfall a late change is a problem in agile it's a chance to build something
+more useful is this people and developers work together every day so not one meeting at the start and
+one meeting at the end also talk face to face a five minute conversation often replaces 20 emails today
+that can also mean maybe a video call like we're having right now and also keep it simple the manifesto
+says simplicity the art of maximizing the amount of work not maximize the amount amount of work not done is
+essential basically so code code you never write has no bugs basically and finally stop you need to stop
+basically stop the regular and reflect how did it go uh what can we do better and that's basically the
+retrospective in scrum what do you think i mean which of these principles that i just mentioned do you
+think is the hardest in real life and why this time i'll want you guys to answer yes fabian
+i think the how can we work better because uh when you are in a team it's very easy to think that
+i've done my responsibility everyone else is like at fault or like i don't know how to improve so i guess
+the how how can we work better means that you need to be like uh receptive to feedback and that's
+that's not always the easiest exactly exactly so this the often i mean welcome change it's pretty
+frustrating to throw work away if someone wants to change it or maybe work together every day the customer
+is basically busy so it is hard but we will try to do our best anyway i mean agile itself is not a method
+it's a mindset a set of values and principles to actually work in an agile way teams use methods also
+called frameworks the most common one by far is scrum surveys of software teams shows that the majority
+use scrum or something based on it so that's what we'll spend most of the morning on here kanban is a
+second big one maybe we can take a look at that at the end as well and then we also have something
+called xp here extreme programming is more about how you write code for example pair programming writing
+tests first small releases and so on and many scrum teams borrow from xp practices actually and for
+example when a company has 50 or 100 teams working on the same project they need frameworks like
+something called safe or s-a-f-e or less to coordinate them you don't need to know those now just recognize
+the names if you see them in a job ad maybe you can as an exercise you can do yourself let's look at a few
+developer job ads after the class how many actually mentioned scrum and kanban or agile that matter mostly
+i see that in junior developer ads in here in sweden that mention agile and scrum actually scrum in basically
+one picture here here is all of scrum on one slide here so don't try to understand every word yet
+try to go through each box and then maybe come back here but it starts with the product backlog a list
+of everything we might want to build with the most important things at the top at sprint planning the
+team picks the top items they can finish in one sprint and that basically becomes the sprint blog i got a call
+there then the sprint i mean a fixed period usually two weeks every day the team has a short meeting
+called daily scrum and at the end of the sprint there is a new piece of working product basically called
+the increment the team shows it at the sprint review and gets feedback and then maybe they have a
+retrospective where they talk about how they worked not what they built and then the next sprint starts
+so scrum has three roles which the scrum guide calls accountabilities five events and three artifacts
+and that's basically the whole framework the official rule book the scrum guide is only about 13 pages and
+it's free you can search for it on google maybe you can go to scrumguides.org and see if i can somehow
+find it okay scrum team has three roles product owner decides what to build in which order they talk to
+customers and users and they own the product backlog it's one person not a committee so the team always
+knows who decides priorities and then you have the scrum master and he makes sure the scrum actually works
+they coach the team and maybe they run or help with events when needed and maybe also remove obstacles if the
+team is blocked because they are waiting for a test server the scrum master chases it also another note the
+scrum master is not the project manager and not the boss here they don't actually hand out any tasks
+developers build the product so in scrum developer means everyone who builds so programmers testers designers
+and other people the developers decide themselves how to do the work so nobody tells them you do this task
+you do that task or whatever and the team is small usually i mean 10 people or fewer i would say because big
+teams talk talk less and coordinate more so it's better to have a small team okay i'll ask a question here
+the product owner wants a new feature in the middle of a sprint and goes straight to a developer what
+should happen so the product owner he wants a new feature in the middle of we're working here in the
+middle of a sprint and he goes directly to a developer that's correct what should happen here yes aranya yeah
+so um it should go to the regular stand-up meeting then they need to discuss the priority of something
+business agency then they need to reprioritize what is currently team is working and then um reallocate
+the task yeah so basically the new feature should go into the product backlog first of all the product
+owner can discuss it with the team but the sprint goal shouldn't change in mid in mid sprint print
+print is the heart of scrum it's a basically a fixed period of one month or less most teams actually
+use two weeks and fixed means fixed if the sprint is two weeks it's two weeks you don't extend it by three
+days because you're almost done whatever isn't done goes back to the product backlog and that rhythm
+makes the team predictable so every sprint has a sprint goal so for example customers can search for
+products and that's uh and basically that's the why the why of the sprint the goal doesn't change during
+the sprint so the team basically can focus the details can change if the team learns something
+they can adjust to work as long as the goal stays and when one sprint ends the next one starts immediately
+so there is no gap between sprints and all other events like planning daily scrum a review and
+retrospective happen inside the sprint only the product owner can cancel a sprint and only if the
+sprint goals becomes basically useless for example if the company drops the product then maybe we shouldn't
+continue creating the product and that's very rare but why not just make sprints longer like three
+months to get more done a question here for anyone to answer why can't i have just a long sprint like
+three to four months so maybe six months even longer i will of course get more done if i have longer
+sprints why so short yes fabian yeah uh i i i guess really because yeah i think someone in chat said
+it very shortly and easily less agile that was basically the best way to describe it i mean
+yeah it was a good way of describing it basically longer sprints equals slower feedback and more risk
+so the whole idea is short cycles so basically you learn quickly the scrum events well inside the sprint
+there are four events together with the sprint itself that's basically five events okay the sprint planning
+starts at the sprint it starts well starts the sprint sorry the team answers basically three questions
+why is this sprint valuable and that's the sprint goal what can we finish and that's the item from the
+backlog and how will we do how will we do it basically and that's breaking items into tasks and the daily scrum is every day around 10 to 15 minutes
+we'll look at that uh next slide here the sprint review is at the end the team shows what they built
+to the product owner and stakeholders the people who basically who care about the product like customers
+or managers or whatever so it's not a slideshow it's a working demo and a discussion about what to do next
+the retrospective the retrospective on the other hand is the very last thing it's about the way the team worked
+not the product so what went well what didn't what will change basically the next sprint and so on so
+so the time on the slide are the maximum for one month sprints with two weeks sprints they are usually
+shorter so planning is often two two to four hours that's yeah it can take some time so another question so
+what's the difference between review and retrospective yes someone was raising hands here gloria yes
+uh yeah sorry i just what i i just going to ask the same what was the difference between those ah okay
+that's good okay so maybe we can ask the clause so what's the difference between the review and the
+retrospective of course answer that but i want you guys to try as well okay saranya it's always the same
+people try yeah i mean guess yeah yeah so review is something showing what we done and getting feedback
+like if if any changes needed or anything we need to um update like in the in the next upcoming sprint
+retrospective is like how this sprint went like is there any regarding the process like is there anything
+that we need to change in way of working or different things like that what did you say
+about the review it's review is like showing the work to the team like what we built or the customer
+and getting the feedback so basically the review equals the product what we built like you said what we
+built and the retrospective is equal basically the process how we work okay so review what we built
+retrospective how we worked hope i answered your question gloria uh all right so the daily scrum
+also called the daily stand up because many teams stand up physically stand up to keep it short
+it's often 15 around 15 minutes the same time and place every day it's for the developers basically to
+check are we are we on our way to the sprint goal what's the plan for the next 24 hours many teams use three questions
+what did i do yesterday and what will i do today is it anything that is blocking me if you look at the
+current scrum guide doesn't actually require these questions anymore but they are still very common and a good
+place to actually start and two classic mistakes here i want to address the first one is it turns into a
+status report where everyone talks to the manager instead of each other and the second one is it turns
+into a one hour problem solving meeting so if two people need to discuss a bug they say let's you should say
+like let's talk after and do it with only the people who are actually needed so why is it a good idea to
+have it at the same time and place every day well one of the reasons is also it becomes a habit
+nobody has to book it and it's easy to keep short as well artifacts are the things scrum
+produces there are three the product back backlog is a list of everything that might be built for example
+features bug fixes improvements i mean sorted it the most valuable items are at the top so it should
+be ordered and are described basically in details items further down can be rough ideas for example the
+product owner basically owns it the sprint backlog is the part of the team picked for this sprint plus the
+plan or for how to do it for example and that's well that's the the developers own that the increment
+is the new maybe working piece of the product a real usable step forward so each artifact has
+commitment something that makes it clear the product backlog has a product goal the long-term target and
+the sprint backlog has a sprint goal and the increment has the definition of done so the checklist that says
+when something is really basically finished we'll look in we'll look into that in a minute or so but user stories
+so how do you write the items in the backlog the most common way is user stories
+they are not part of the scrum guide
+but almost every scrum team actually you they you uses them so a user story has three parts
+who is the user what do they want and why let's take for example our web shop from the database days
+so as a customer i want to filter products by category so that i can find shoes faster so why this format
+because it forces you to think about the user and the reason so add a category filter says what to build
+the story also says who it is for and why and the why helps the developer make good choices here
+so a story should be small enough to finish in one sprint if it's too big it's called an epic
+and you split it into smaller stories of course i'm gonna have have you guys do a group task now
+it should be five minutes okay in pairs compare yourself with some classmate and i want you guys to
+write two user stories for the web shop one for a customer and one for the shop staff okay i'll write it here
+and you can take five minutes so i will write it in the chat here so write two user stories or the web shop
+one or a customer and one uh time is it now uh okay it's 45 now so take five minutes and then we can
+take 10 minutes of break so 15 minutes so we come back at 10 o'clock here okay and in the meantime i'm
+gonna just go make some new warm coffee for me i'll leave this open sorry sorry are we going to take a break now or
+no you you do the user stories and after that you take a break and we'll come back sorry
+should we do it in pairs yes in pairs yes two and two i do it now okay yes and after that you can
+take a break so we come back at 10 o'clock okay okay all right i see you guys complaining about
+the pairing here uh if you didn't find anyone just do it yourself i think having two brains working
+makes it go faster in my opinion so at least try you don't have to stress guys had the time for a
+break or maybe i miscalculated how many of you took a break let's have some hands raised here no break
+yeah i miss i miss i miss think that i think i say uh yeah you can take a break take a take a break
+after this uh write your answer in the chat uh take a break like five minutes or so if you need it and
+let us come back in five minutes i see that many of you have answered in the chat then that's cool and
+you have some interesting stuff it's an interesting story sorry uh looks good this was just we're gonna do
+this more later so this is just for those that haven't seen this maybe you find it hard to do it
+in such short time i gave you but don't worry the answers in the chat is something that you other
+students can also look into and so there is no right or wrong here just want you to try it that's the
+big main thing here now if we move on to the next slide here how do we know when a story is done well
+i'm gonna give you two tools here tense criteria belongs to one story they are the tests from the
+user's point of view so for our filter story for example choosing shoes shows only shoes choosing
+all shows everything works on for example mobile when all criteria are met the story does the right and
+then you have something else called the definition of done or dod is basically for all work it's the
+team's quality checklist you can you can see it so for example the code is reviewed by someone else the
+tests pass it's merged to the main branch and then and the documentation is also updated so why do we need
+both well because done means different things to different people a developer might say done when the code runs on their laptop
+so the dod makes it clear it's done when it meets the whole checklist and not before so and tomorrow we will
+talk about git and github and you will see that reviewed and merge domain are things we do with pull requests
+for example okay so how how big is it i mean story points so before planning a sprint the team needs to know
+roughly how big each story is many teams use story points and story points are relative you don't say
+this takes six hours you say this is you say basically this is about twice as big as that one for example
+and people are quite bad at guessing hours but quite good at comparing and the scale is often one two three
+five eight thirteen numbers from the fibonacci sequence if you know that the gaps get bigger because the bigger
+something is the less exact we can be so if a story is bigger than thirteen split it so one popular way of
+estimating is planning poker everyone has cards with numbers the team discuss a story
+and then everyone shows a card at the same time if one person shows two and another another shows thirteen
+they then they need to explain why often one of them knows something that the others don't after a few sprints
+the team knows its velocity so how many points it usually finishes and that helps planning a bit
+but velocity is for the team not for comparing teams and points means different things in different
+teams so if i ask you another question here so why show the cards at the same time instead of one by one
+someone can answer so why show them the same times same time well okay no one answers all right uh maybe in
+the chat yeah maxim had correct answer here you may get influence so so people aren't influenced by the
+first person especially by the most senior person in the room so that's very important so we don't get
+influenced by anyone backlog refinement well the product backlog is never finished new ideas come in
+all ones become less important so the team spends some time keeping it in good shape and that's called backlog
+refinement the product owner and the developers go through them go through basically the items near the top
+they split big items into smaller ones maybe add details and acceptance criteria and maybe also estimate them
+so the goal is that when sprint planning comes the top items are ready clear small and estimated then
+planning is quick if the backlog isn't refined uh sprint planning turns into a long painful meeting where
+nobody understands the story so refinement is one of the official scrum events it's basically an ongoing
+activity and many teams book an hour or two every week for it kanban now the second big method here is kanban
+it comes from toyota's factories in japan actually and the word means something like signboard or card i think
+and kanban is simple first make the work visible on a board with columns like to do in progress review
+and done each task is a card that moves from left to right very important and second and this is basically the key
+limit the work in progress also called wip look at the board so in progress has maximum of three if there are
+already three cards there nobody starts something new you basically help finish something first why why is that
+well because starting many things and finishing nothing is the most common problems in teams
+stop starting and start finishing is instead think of it that way and the third one there are no sprints
+work flows all the time so when a card is done you pull the next one and kanban fits well when
+works come comes basically in unpredictably for example like support team
+fixing bugs or an it operation teams so what should you choose scrum or kanban maybe let's compare these
+scrum has a rhythm basically sprints kanban has a flow scrum has three roles and kanban doesn't require
+any roles in scrum you don't change the sprint goal during a sprint and in kanban you can change at any
+time as long as the card hasn't started and both of them limit the work scrum by what fits in a sprint and
+kanban with wip limits on each column crum is actually good when you build a new product and want regular
+feedback kanban is good for support and maintenance where work arrives all the time and you can't plan two
+weeks ahead so in real life many teams mix them you will hear the word scrum ban sometimes a scrum team
+with the kanban board and wip limits is very common the most important thing is not which name you use
+but that the team keeps learning and improving here so let's just say you start a job in a team that fixes
+urgent problems for customers every day which one should i use should i use scrum or kanban correct
+so what should i use can you repeat the question you start a job in a team that fixes urgent problems
+okay for customers every single day so should i use scrum or kanban yeah many of you says kanban and that
+that is actually correct the work is unpredictable and urgent so waiting for the next sprint here doesn't
+actually work so i would choose kanban in that situation tools do team use the most common one
+in companies today is probably jira you will see it in many job ads asher devops is common in companies
+that uses microsoft tools trello is a simple and free for small teams github project is is a board inside
+github right next basically to the code hopefully maybe we can see that tomorrow because it it connects
+user stories to branches and pull requests and don't forget the simplest tool which basically is a white
+board with sticky notes many teams in the same room room sorry um still prefer that because everyone sees
+it all the time common mistakes well here are some common mistakes you most likely see at work the daily
+scrums turns into a status report to a manager the retrospective is skipped because we're busy for
+example so people basically stop caring the product owner is never available so the developers basically guess
+what to build stories are too big so nothing is ever finished at the end of the sprint and everything
+is like 80 percent done someone pushes new urgent work into the sprint all the time as well i have seen
+that so basically the sprint goal is never met and the most common one is something called scrum butt
+we do scrum but we don't have a product owner we do scrum but we skip the review you can adapt scrum but if
+you remove the parts that create feedback you lose basically the reason for doing it so why does this
+matter to you right now well most developer jobs you apply for work in an agile way in interviews you'll often
+get questions like what is a sprint or what's the difference difference between a product owner and
+a scrum master or maybe what's what does definition or done mean so hopefully after today you can answer
+them and when you start your first job or whatever or internship use the daily scrum i mean as a junior
+developer the the worst thing you can do is be stuck for two days without saying anything for example i'm
+stuck on the login bug is exactly what daily scrum is for no nobody expects for example a junior to know
+everything but they expect you to ask you can also use this in your own projects here a simple board with
+to do doing and done and maybe short goals goals for each week and that works for solo projects as well
+i have to remember here let's sum up this morning here agile equals small steps fast feedback and we welcome
+also the changes the manifesto manifesto uh has four values 12 principles scrum or in scrum we have product
+owner scrum master developers uh yeah exactly so product owner scrum master developers we have also events
+sprint planning daily scrum review retrospective also have the artifacts is basically the product backlog sprint
+backlog so product backlog sprint backlog and increment as well kanban is a board wip limits continuous flow remember
+that so that's basically it that i have for today i'm gonna give you a pretty cool uh or fun uh project to
+do in the exercise today so i will upload the exercise pretty soon uh we try to build a team together here
+and we split you in four to five group we'll see what i can come up with here do you have any questions
+so far oh thank you victor found one free tool for kanban flow yes fabian yeah uh of course it's nice to
+like remember like remember all of these things but since like many of these words i i don't know i easily forget them
+is it like um if you know the basics of how all of this works you don't have to remember like every word right like i get
+it's not really a question it's it's just it's a bit confusing to remember is my yeah i understand
+yeah you should try to remember them try your best the more you understand this stuff the better the
+outcome i would say okay any other questions before i end this i'll give you a really cool exercise for
+you guys to do but just give me a couple of minutes before i upload it and while you do that maybe you can
+read more about this actually there is actually pretty good uh let me see on youtube there is actually
+pretty good explanations on this uh just write scrum here in youtube i know one video that is really cool
+yeah and it's seven minutes you can watch this while you wait for me copy this introduction to scrum
+i'll put it here in the chat uploaded the presentation uh as well uh let's have some break and then uh
+watch out for uh the python info chat i will upload everything there as usual if you don't have any questions
+you can leave the meeting thank you bye bye
