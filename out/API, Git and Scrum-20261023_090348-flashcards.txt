@@ -1,0 +1,19 @@
+What is version control and what are its four key benefits?;Version control is a system that tracks changes to files over time. Its four key benefits are full history, rollback capability, collaboration, and backup.
+
+What is the difference between Git and GitHub?;Git is a distributed version control system that runs locally on your computer. GitHub is a web-based platform that hosts Git repositories online and provides collaboration features like pull requests and issue tracking.
+
+What are the three states of Git and what purpose does each serve?;The three states are Working Directory (active editing), Staging Area (selecting changes for commit), and Repository (committed snapshots). The staging area allows selective committing and logical grouping of changes.
+
+What is the purpose of using branches in Git?;Branches allow separate lines of development work, enabling safe experimentation without affecting the main codebase and supporting parallel development of multiple features.
+
+What are good practices for writing Git commit messages?;Use present tense, start with an action verb, be specific about what changed and why, and complete the sentence: "If applied, this commit will [action]."
+
+How should you handle sensitive information in Git repositories?;Never commit passwords, API keys, or database connection strings. Even if deleted later, they remain in history forever. Change them immediately if accidentally committed.
+
+What is a pull request and what are its purposes?;A pull request is GitHub's way of proposing changes from one branch to another. It serves as a review mechanism for code quality, discussion forum for improvements, and ensures changes meet project standards.
+
+How do you resolve merge conflicts in Git?;Open the conflicting file, choose the correct version or combine both, remove conflict markers (<<<<<<<, =======, >>>>>>>), save the file, then stage and commit the resolved file.
+
+What is the standard Git workflow for feature development?;Create a feature branch from main, work and commit regularly, push to GitHub, create a pull request for review, get approval, merge into main, and delete the feature branch.
+
+What should you avoid when using Git commands?;Avoid `git reset --hard` which deletes commits permanently and `git push --force` which rewrites history and can lose others' work.

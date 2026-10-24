@@ -1,148 +1,185 @@
 # Git and GitHub Version Control
 
-## What is Version Control?
+## Introduction to Version Control
 
-### Definition
-Version control is a system that keeps track of every change made to files in a project. It allows teams to collaborate effectively without overwriting each other's work.
+### What is Version Control?
+Version control is a system that keeps track of every change made to files over time. It provides four key benefits:
+1. **Full History** - Every change shows what changed, when, who did it, and why
+2. **Rollback Capability** - You can return to previous working versions if something breaks
+3. **Collaboration** - Multiple people can work on the same code simultaneously without conflicts
+4. **Backup** - Remote copies (like GitHub) serve as backups in case local data is lost
 
-### Code Example
-```bash
-# Basic version control workflow
-git init          # Initialize a new repository
-git add .         # Stage all changes
-git commit -m "Initial commit"  # Save snapshot with message
+### Why Use Version Control?
+Without version control, teams often end up with files like "version2_final_v2" and "final_version" where it's unclear which is the latest or what changed between versions. Git solves this by automatically tracking all changes.
+
+```python
+# Example of manual version control problems
+# Instead of:
+# project_v1.py
+# project_v2.py  
+# project_final.py
+# project_final_updated.py
+# Git tracks everything automatically with clear history
 ```
-
-### Key Benefits
-- **Full History**: Every change shows what changed, when, who did it, and why
-- **Rollback Capability**: Can revert to previous working versions
-- **Collaboration**: Multiple people can work on the same code simultaneously
-- **Backup**: Remote copies serve as backup in case local machine fails
-
-### Why It Matters
-Every professional software team uses version control. Git is the most popular system, and understanding it is essential for modern development work.
 
 ## Git vs GitHub
 
 ### Git
-Git is a program that runs locally on your computer and tracks project history. It works offline and was created by Linus Torvalds in 2005 for managing Linux kernel development.
+Git is a distributed version control system that runs locally on your computer. It was created by Linus Torvalds in 2005 for managing Linux kernel development. Git works offline - you can commit changes even without internet connection.
 
 ### GitHub
-GitHub is an online service that hosts Git repositories. It provides collaboration tools like pull requests, code review, issues, and project boards.
+GitHub is a web-based platform that hosts Git repositories online. It provides collaboration features like:
+- Pull requests and code reviews
+- Issue tracking  
+- Project boards
+- Continuous integration tools
 
-### Key Distinction
-Think of Git as a camera taking pictures, and GitHub as an online photo album where you share those pictures with others.
+**Key Difference**: Git = camera, GitHub = online photo album where you share photos with others.
 
-## Core Git Concepts
+## Essential Git Vocabulary
 
-### Repository (Repo)
-A project folder that Git keeps track of. Every repository contains the complete history of all changes made to files within it.
+### Core Terms
+- **Repository/Repo** - The project folder that Git tracks
+- **Commit** - A saved snapshot of the project with a descriptive message
+- **Branch** - A separate line of development work
+- **Remote** - A copy of the repository stored elsewhere (usually GitHub)
+- **Clone** - Downloading a repository to your local computer
+- **Push** - Sending commits to the remote repository
+- **Pull** - Getting new commits from the remote repository
+- **Merge** - Combining changes from different branches
+- **Pull Request** - A request to merge branch changes into another branch (usually main)
 
-### Commit
-A saved snapshot of the entire project at a specific moment. Commits typically include a message describing what changed and why.
+## The Three States of Git
 
-### Branch
-A separate line of work that allows you to experiment without affecting the main codebase. The main branch should always contain working, production-ready code.
+Git manages code in three distinct locations:
 
-### Remote
-A copy of the repository stored elsewhere, usually on GitHub. The default remote is typically named "origin".
+### Working Directory
+The files you're actively editing (like those in Visual Studio Code).
 
-### Clone
-Downloading a repository from a remote location (like GitHub) to your local computer.
+### Staging Area (Index)
+A "waiting room" where you select which changes will be included in the next commit. You use `git add` to move changes here.
 
-### Push
-Sending commits from your local repository to a remote repository (GitHub).
-
-### Pull
-Getting new commits from a remote repository and merging them into your current branch.
-
-### Merge
-Combining changes from two different branches into one.
-
-### Pull Request
-A request to merge changes from one branch into another, usually with code review by team members.
-
-## The Three Places for Your Code
-
-Git organizes code in three locations:
-
-1. **Working Directory**: Your actual files that you edit (like in Visual Studio Code)
-2. **Staging Area**: A waiting room where you choose which changes will be included in the next commit
-3. **Repository**: The complete history of all commits saved in Git
+### Repository (History)
+All committed snapshots of your project stored locally. You use `git commit` to save staged changes as a new snapshot.
 
 ### Why This Three-Step Process?
-The staging area allows you to selectively include only specific changes in each commit, rather than committing everything at once.
+This extra step allows you to:
+- Commit only specific changes rather than everything at once
+- Group related changes together logically
+- Build up commits incrementally
 
-### Code Example
 ```bash
 # Example workflow
-git add file1.txt         # Add specific file to staging area
-git add .                 # Add all changed files to staging area  
-git commit -m "Fixed bug" # Commit staged changes with message
-
-# If you want to see what would be committed:
-git diff --cached         # Shows staged changes
+# Edit files in working directory
+git status              # Check what changed
+git add file1.py        # Stage specific file
+git add .               # Stage all changes (be careful!)
+git commit -m "Fixed bug" # Save staged changes as snapshot
 ```
 
-### Gotcha: What Happens When You Don't Stage All Files?
-If you change three files but only run `git add` on one file, then `git commit`, only the staged file will be included in the commit. The other two changes remain in the working directory.
+### Understanding Git Add vs Git Commit
+If you change three files but only run `git add` on one file, then `git commit`, only the one file that was added will be committed. The other two changes remain in the working directory and aren't committed yet.
 
-## Basic Git Setup
+```bash
+# Scenario: Changed 3 files but only staged 1
+git add file1.py        # Only this file gets staged
+git commit -m "Fix bug" # Only file1.py is committed
+
+# The other 2 files are still in working directory
+# You can continue editing them or add them later
+```
+
+## Basic Git Setup and Commands
 
 ### Initial Configuration
+Every computer needs to be configured with your identity before using Git:
+
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
-git config --global init.defaultBranch main  # Set default branch name to 'main'
+git config --global init.defaultBranch main
 ```
 
-### Important Rules
-- Use the same email for Git configuration as your GitHub account
-- The `init.defaultBranch` setting ensures consistent naming (main instead of master)
-- These configurations are done once per computer
+**Important**: Use the same email as your GitHub account for commit attribution.
 
-## Repository Creation Methods
+### Repository Creation Methods
 
-### Method 1: Create New Repository
+#### git init
+Creates a new empty Git repository in the current folder. Used only for brand new projects.
+
 ```bash
-git init                  # Creates new empty repository in current directory
+mkdir my-project
+cd my-project
+git init
 ```
 
-### Method 2: Clone Existing Repository
+#### git clone
+Downloads an existing repository from GitHub with its complete history. Used when joining a company or working on existing code.
+
 ```bash
-git clone https://github.com/username/repository.git  # Downloads existing repo
+git clone https://github.com/user/repo.git
 ```
 
-### When to Use Which?
-When joining a company, you almost always use `git clone` because the project already exists on GitHub. Only use `git init` for completely new projects.
+### Everyday Git Commands
 
-## Everyday Git Commands
+#### git status
+Shows which files have changed, which are staged for commit, and what branch you're on.
 
-### Essential Commands (90% of daily use)
 ```bash
-git status                # Shows changed files and current branch
-git add <filename>        # Stages specific file changes
-git add .                 # Stages all changes (be careful!)
-git commit -m "message"   # Saves staged changes with message
-git log                   # Shows commit history
-git diff                  # Shows exact line differences
+git status
+# Output shows:
+# On branch main
+# Changes to be committed: [staged files]
+# Changes not staged for commit: [unstaged files]
 ```
 
-### Understanding Git Status
+#### git add
+Stages changes for the next commit. Can stage individual files or all files.
+
 ```bash
-git status                # Shows:
-                          # - Current branch
-                          # - Changed files
-                          # - Staged files
-                          # - Untracked files
+git add file1.py        # Stage specific file
+git add .               # Stage all files (careful!)
+git add folder/         # Stage all files in folder
 ```
 
-### Commit Message Best Practices
-- Write clear, descriptive messages that explain the "what" and "why"
-- Use imperative mood (fix bug, add feature, remove unused code)
-- Keep commits small and focused on one change
+#### git commit
+Saves staged changes as a new snapshot with a descriptive message.
 
-### Example Good vs Bad Messages
+```bash
+git commit -m "Fixed login bug"
+git commit -am "Updated documentation"  # Commit and add all tracked files at once
+```
+
+#### git log
+Shows the commit history with each commit's ID, author, date, and message.
+
+```bash
+git log                 # Show full history
+git log --oneline       # Show one line per commit (short format)
+```
+
+#### git diff
+Shows exactly which lines have changed between working directory and staging area.
+
+```bash
+git diff                # Shows unstaged changes
+git diff --staged       # Shows staged changes
+```
+
+### Git Workflow Rhythm
+The typical daily workflow is:
+1. Edit files in working directory
+2. Run `git status` to see what's changed
+3. Run `git add` to stage desired changes
+4. Run `git commit` to save snapshot
+
+This cycle repeats many times per day.
+
+## Commit Best Practices
+
+### Writing Good Commit Messages
+Commit messages should be descriptive and follow a consistent style:
+
 ```bash
 # Bad commit message
 git commit -m "Fixed stuff"
@@ -151,270 +188,288 @@ git commit -m "Fixed stuff"
 git commit -m "Fix incorrect total calculation when cart is empty"
 ```
 
-## Git Ignore Files
+**Good practices for commit messages:**
+1. Use present tense ("Add feature" not "Added feature")
+2. Start with an action verb (add, fix, remove, update)
+3. Be specific about what changed and why
+4. Complete the sentence: "If applied, this commit will [action]"
 
-### Purpose
-Some files should never be tracked by Git, such as:
-- Generated cache files (pycache)
-- Virtual environments (.venv)
-- Log files (.log)
-- Environment files (.env) containing secrets
+### Small, Focused Commits
+- Commit often in small pieces
+- One commit = one logical change
+- Small commits are easier to understand, review, and undo
 
-### Code Example
 ```bash
-# Create .gitignore file in project root
-echo ".venv" > .gitignore
-echo "__pycache__" >> .gitignore
-echo "*.log" >> .gitignore
-echo ".env" >> .gitignore
+# Good: Multiple small commits
+git add bugfix.py
+git commit -m "Fix null pointer exception in login"
+
+git add feature.py  
+git commit -m "Add user registration functionality"
 ```
 
-### Security Warning
-Never commit sensitive files like `.env` that contain passwords, API keys, or database connections. Even if you delete them later, they remain in Git history forever.
+## Ignoring Files with .gitignore
+
+### What to Ignore
+Some files should never be committed to Git because they contain sensitive information or are automatically generated:
+
+```bash
+# Common entries in .gitignore
+__pycache__/            # Python cache files
+.env                    # Environment variables (contains secrets!)
+venv/                   # Virtual environment folders
+*.log                   # Log files
+.DS_Store               # macOS metadata files
+```
+
+### Security Concerns with Secrets
+Never commit passwords, API keys, or database connection strings. Even if you delete them later, they remain in Git history forever.
+
+```bash
+# Example of dangerous .env file content
+DATABASE_URL=postgresql://user:password@localhost/mydb
+API_KEY=sk-1234567890abcdef
+```
+
+**Important**: If you accidentally commit secrets, change them immediately and remove the old versions from history.
 
 ## Working with Remotes
 
-### Remote Management
+### Remote Repositories
+A remote is a copy of your repository stored elsewhere (typically GitHub). The default remote name is "origin".
+
 ```bash
-git remote -v             # Shows all remotes (like origin)
-git push -u origin main   # Pushes to GitHub and sets upstream tracking
-git pull                  # Downloads new commits and merges them
-git fetch                 # Downloads but doesn't merge changes
+git remote -v           # Show all remotes
+git remote add origin https://github.com/user/repo.git  # Add new remote
 ```
 
-### Key Points About Remotes
-- Commits are local only until you push to a remote
-- Your teammates can't see your work until you push it
-- The default remote is usually called "origin"
-- Use `git push -u origin branchname` for first-time pushes to set up tracking
+### Push and Pull Operations
+
+#### git push
+Sends local commits to the remote repository:
+
+```bash
+# First time pushing new branch
+git push -u origin feature-branch
+
+# Subsequent pushes (no -u needed)
+git push
+```
+
+#### git pull
+Downloads new commits from remote and merges them into your current branch:
+
+```bash
+git pull                # Download and merge changes
+git fetch               # Download but don't merge
+```
+
+### Key Points About Push/Pull
+- **Commits are local only** until you push to GitHub
+- Teammates can't see your work until you push
+- Always push before closing your laptop or going offline
 
 ## Branching Strategy
 
 ### What is a Branch?
-A branch represents a separate line of development. This allows you to work on features or fixes without affecting the main codebase.
+A branch is a separate line of development work. It allows you to experiment without affecting the main codebase.
 
-### Basic Branch Operations
 ```bash
-git branch                # List all branches
-git switch -c feature/name  # Create and switch to new branch
-git switch branch-name    # Switch to existing branch  
-git merge branch-name     # Merge another branch into current branch
-git branch -d branch-name # Delete completed branch
+# Visual example:
+# Main branch: A → B → C
+# Feature branch: A → B → C → D → E
 ```
 
-### Branch Workflow Example
+### Why Use Branches?
+1. **Main stays stable** - Only tested, working code goes into main
+2. **Safe experimentation** - You can make mistakes on branches without breaking everyone else
+3. **Parallel development** - Multiple features can be worked on simultaneously
+
+### Branch Workflow Pattern
+Most companies follow this pattern:
+
+1. **Start from latest main**
+   ```bash
+   git checkout main
+   git pull
+   ```
+
+2. **Create feature branch**
+   ```bash
+   git switch -c feature/search
+   ```
+
+3. **Work and commit regularly**
+   ```bash
+   # Make changes, commit often
+   git add .
+   git commit -m "Add search functionality"
+   ```
+
+4. **Push branch to GitHub**
+   ```bash
+   git push -u origin feature/search
+   ```
+
+5. **Create Pull Request** on GitHub
+
+6. **Team reviews and approves**
+
+7. **Merge into main**
+
+8. **Delete feature branch**
+   ```bash
+   git checkout main
+   git pull
+   git branch -d feature/search
+   ```
+
+### Branch Naming Conventions
+Branch names should clearly communicate what they're for:
+
 ```bash
-# Typical workflow for a new feature
-git switch main           # Start from latest main
-git pull                  # Get latest changes
-git switch -c feature/search  # Create new branch
-# Work and commit changes
-git push origin feature/search  # Push branch to GitHub
-# Open pull request on GitHub
-# After review and merge:
-git switch main           # Return to main
-git pull                  # Update local main
-git branch -d feature/search  # Delete feature branch
+# Good naming patterns
+feature/user-login
+bugfix/payment-error
+hotfix/critical-security-fix
+refactor/database-connection
+
+# With issue numbers
+feature/12-order-history
+bugfix/45-login-validation
 ```
 
 ### Branch Best Practices
-1. **One Feature Per Branch**: Don't mix unrelated changes in the same branch
-2. **Keep Branches Short-Lived**: Usually days, not weeks or months
-3. **Name Branches Clearly**: Use descriptive names with prefixes like `feature/`, `bugfix/`
-4. **Pull Main Regularly**: Bring latest main into your branch to minimize conflicts
+1. **One feature per branch** - Don't mix unrelated changes
+2. **Keep branches short-lived** - Days, not weeks or months
+3. **Pull main regularly** - Merge latest changes to reduce conflicts
+4. **Use descriptive names** - Clear and consistent naming
 
-## Feature Branch Workflow
+## Pull Requests and Code Review
 
-### Complete Process
-1. Start from latest main: `git switch main && git pull`
-2. Create feature branch: `git switch -c feature/new-feature`
-3. Work and commit in small pieces
-4. Push branch: `git push origin feature/new-feature`
-5. Open pull request on GitHub
-6. Team reviews code, suggests changes if needed
-7. Merge into main after approval
-8. Delete feature branch locally and remotely
+### What is a Pull Request?
+A pull request is GitHub's way of proposing changes from one branch to another (usually main). It serves as:
+- A review mechanism for code quality
+- A discussion forum for improvements
+- A way to ensure changes meet project standards
 
-### Why This Workflow?
-- Main should always contain working, production-ready code
-- Feature branches allow experimentation without risk to main
-- Pull requests enable code review and collaboration
-- Ensures clean history on main branch
+### PR Best Practices
+**For PR Author:**
+- Keep pull requests small (few hundred lines max)
+- Write clear title and description explaining what changed, why, and how to test
+- Link to relevant issues using "Closes #123" syntax
+- Address all review comments before merging
 
-## Pull Requests (PRs)
+**For Reviewers:**
+- Be kind and specific in feedback
+- Focus on code quality, not personal style preferences
+- Ask questions instead of giving orders
+- Look for bugs, maintainability, and adherence to requirements
 
-### What is a PR?
-A pull request is a page on GitHub that says "Here are my changes. Please review and merge them into main."
+### Merge Strategies
+GitHub offers three merge options:
 
-### Good PR Characteristics
-- Clear title and description
-- Explain what was changed and why
-- Include testing instructions if needed
-- Link to related issues or user stories
-
-### Review Process
-1. Reviewer examines code for bugs, readability, and adherence to requirements
-2. Reviewer can comment on specific lines
-3. Author addresses feedback with new commits
-4. PR updates automatically with changes
-5. Approved PR gets merged into main
-
-## Merging Strategies
-
-### Three Merge Options in GitHub
-1. **Create Merge Commit**: Preserves full history with extra commit
-2. **Squash and Merge**: Combines all branch commits into one clean commit
-3. **Rebase and Merge**: Moves commits on top of main without merge commit
-
-### When to Use Each Strategy
-- **Merge Commit**: When you want to see the complete history
-- **Squash and Merge**: For cleaner main branch history (most popular)
-- **Rebase and Merge**: When you want a straight-line history
+1. **Create merge commit** - Preserves full history with an extra commit
+2. **Squash and merge** - Combines all branch commits into one clean commit in main  
+3. **Rebase and merge** - Moves commits on top of main without a merge commit
 
 ## Handling Merge Conflicts
 
-### What Happens During Conflicts?
-When two branches modify the same line of code differently, Git can't automatically decide which version to keep.
+### What Are Merge Conflicts?
+Merge conflicts occur when two branches modify the same line of code differently. Git can't automatically decide which version is correct, so it stops and asks you to resolve the conflict manually.
 
-### Conflict Resolution Example
 ```bash
-# Example conflict in file.txt:
+# Example conflict in file.py
 <<<<<<< HEAD
-Welcome to our web shop
+def calculate_total():
+    return price * quantity + tax
 =======
-Welcome to the shop
->>>>>>> branch-name
-
-# Resolution:
-Welcome to our web shop  # Choose one version or combine
+def calculate_total():
+    return price * quantity + shipping_cost
+>>>>>>> feature-branch
 ```
 
-### Fixing Conflicts
-1. Open conflicting file
-2. Decide which version(s) to keep
-3. Remove conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
-4. Save file
-5. `git add <file>` 
-6. `git commit` to complete merge
+### Resolving Conflicts
+1. **Open conflicting file** in your editor
+2. **Choose correct version** or combine both
+3. **Remove conflict markers** (`<<<<<<<`, `=======`, `>>>>>>>`)
+4. **Save the file**
+5. **Stage and commit** the resolved file
 
-### Important Notes
-- Merge conflicts are normal and safe
-- Git asks for human decision, doesn't guess
-- Visual Studio Code provides helpful buttons for conflict resolution
-- GitHub can resolve simple conflicts in browser
-
-## Best Practices for Avoiding Conflicts
-
-### Preventive Measures
-1. **Pull main regularly**: Switch to main and pull before working on your branch
-2. **Keep branches short-lived**: Days, not weeks/months
-3. **Communicate with team**: Use daily scrum to coordinate work
-4. **Don't reformat entire files**: Changes to indentation affect many lines
-5. **Commit and push often**: Make work visible to team
-
-### Example of Good Branch Management
 ```bash
-# Before starting feature work:
-git switch main
-git pull                  # Get latest code
-git switch -c feature/login-page  # Create new branch
-
-# Regularly bring in changes from main:
-git switch main
-git pull
-git switch feature/login-page
-git merge main            # Resolve small conflicts early
-
-# Work on feature and commit frequently:
-git add .
-git commit -m "Add login form"
-git push origin feature/login-page  # Share progress
+git add conflicted-file.py
+git commit -m "Resolve merge conflict in calculate_total"
 ```
 
-## GitHub Branch Protection
+### Prevention Strategies
+- Pull main often to stay up-to-date with changes
+- Keep branches small and short-lived
+- Communicate with team members about file changes
+- Avoid reformatting large sections of code
+- Commit and push frequently
 
-### What It Is
-Branch protection rules prevent accidental breaking of main branch by requiring specific conditions before merging.
+## Git Workflow in Agile Scrum Context
 
-### Common Rules
-- No direct pushes to main allowed
-- Minimum number of approvals required
-- All automated checks (tests) must pass
-- Require pull request review before merge
+### Connecting Git to Scrum
+In a Scrum environment, the workflow connects to user stories:
 
-### How to Set Up
-Go to Repository Settings → Branches → Add Rule for "main" branch
+1. **User Story becomes Issue** on GitHub
+2. **Sprint Backlog becomes Project Board** with columns like To Do, In Progress, Review, Done
+3. **Feature Branch** created for each story
+4. **Pull Request** opened when work is complete
+5. **Review and Approval** process completes the definition of done
+6. **Merge** updates the board to Done
 
-## Git and Scrum Integration
-
-### Connecting Concepts
-- **User Story** becomes **Issue** on GitHub
-- **Sprint Backlog** becomes **GitHub Project Board**
-- **Feature Branch** is created for each story
-- **Pull Request** represents work being reviewed
-- **Merge** represents completing the story
-
-### Workflow Example
-1. Create issue #12: "Implement user login"
-2. Create branch `feature/12-user-login`
-3. Work and commit changes
-4. Push to GitHub and create PR
-5. Review and merge into main
-6. Issue automatically closes when PR merges
-
-## Undoing Changes in Git
-
-### Safe Undo Commands
 ```bash
-git restore <file>        # Discard changes since last commit
-git restore --staged <file>  # Remove file from staging area (keep changes)
-git commit --amend        # Fix last commit message or add missing files
-git revert <commit-hash>  # Create new commit that undoes old changes
+# Example workflow for user story #123
+git switch -c feature/123-login-page
+# Work on login functionality
+git push -u origin feature/123-login-page
+# Create PR with "Closes #123"
 ```
 
-### Dangerous Commands (Use with Caution)
+## Advanced Git Operations
+
+### Undoing Changes
+
+#### git restore
+- `git restore file.py` - Discards changes in working directory since last commit
+- `git restore --staged file.py` - Removes file from staging area while keeping changes
+
+#### git commit --amend
+Fixes the most recent commit (only before pushing):
+
 ```bash
-git reset --hard          # Deletes work permanently (don't use on shared branches)
-git push --force          # Rewrites history (dangerous for shared repositories)
+git commit -m "Fix typo"     # Wrong message
+git commit --amend -m "Fix typo correctly"
 ```
+
+#### git revert
+Creates a new commit that undoes previous changes. Safe for shared repositories:
+
+```bash
+git revert <commit-hash>
+```
+
+### Dangerous Operations to Avoid
+- `git reset --hard` - Deletes commits permanently
+- `git push --force` - Rewrites history, potentially losing others' work
 
 ## Learning Resources
 
 ### Interactive Learning Platform
-[Learn Git Branching](https://learngitbranching.js.org/) - Visual way to practice Git commands and understand branching concepts.
+[learngitbranching.js.org](https://learngitbranching.js.org) provides visual, interactive Git training that helps you understand branching concepts through hands-on practice.
 
-### Key Concepts to Remember
-1. Git saves the history of your code
-2. GitHub shares it with your team every day
-3. Basic workflow: `git status`, `git add`, `git commit`, `git push`, `git pull`
-4. Commit small changes with clear messages
-5. Never commit secrets or sensitive information
-6. New work equals new branch
-7. Main always works (production-ready)
-8. Feature branches, then pull request, review, and merge
-9. Merge conflicts are questions, not errors
+### Key Takeaways
+1. **Git saves your code history** - Every change is tracked automatically
+2. **GitHub shares work with teams** - Collaboration happens through shared repositories  
+3. **Use daily commands**: `status`, `add`, `commit`, `push`, `pull`
+4. **Commit small with clear messages**
+5. **Never commit secrets** or sensitive information
+6. **New work = new branch** - Always create feature branches
+7. **Main always works** - Only stable code goes into main branch
+8. **Feature branch → pull request → review → merge** is the standard workflow
+9. **Merge conflicts are questions, not errors** - They're normal and resolvable
 
-## Common Gotchas and Edge Cases
-
-### File Staging Behavior
-- `git add .` stages everything including files you might not want to commit
-- Files in staging area show as "Changes to be committed"
-- Files in working directory show as "Changes not staged for commit"
-
-### Branch Names and Conventions
-- Always use descriptive branch names that tell the team what's happening
-- Follow your team's naming conventions (feature/, bugfix/, hotfix/)
-- Include issue numbers when appropriate
-
-### Remote Tracking
-- After first push, `git push` works without specifying remote/branch
-- Use `git push -u origin branch-name` to set upstream tracking
-- `git pull` is equivalent to `git fetch` + `git merge`
-
-### Conflict Resolution Tips
-- Visual Studio Code makes conflict resolution easier with buttons
-- Simple conflicts can be resolved in GitHub browser interface
-- Complex conflicts require manual editing and careful consideration
-- Always test code after resolving conflicts
-
-This comprehensive coverage of Git and GitHub ensures you understand both the theoretical foundations and practical applications essential for modern software development teamwork.
+### Recommended Practice
+Before starting your group project on Monday, practice these concepts using the interactive learning platform. This will help solidify your understanding of Git branching before working collaboratively in teams.
