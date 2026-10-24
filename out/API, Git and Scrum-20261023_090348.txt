@@ -1,0 +1,800 @@
+I got around 21 answers in the chat here.
+A couple of you guys are still missing.
+Okay, so you may wonder why I give you these questions and then you actually have some time to actually write your answers.
+Well, I think it's...
+If you don't know this stuff, then by writing it at least once will help you memorize it a little bit.
+I will start the lecture.
+I'll share my screen, first of all.
+Could be a good idea.
+Can you see the screen? Please confirm. Anyone?
+Yes.
+Thank you. Awesome.
+Okay, as you see in front of you, or good morning, today's topic is Git and GitHub version control and working together with feature branches.
+So in this morning here, we're only going to have theory, so there is no code along here.
+So you don't actually need to type anything, just like yesterday.
+Just listen, ask questions if you have any, take any notes if you want.
+But we'll probably have some small, short discussions here and there.
+So if anything is unclear, just, yeah, raise your hands as usual.
+All right, so our goals.
+Well, yesterday we talked about how teams organize their work.
+Today we will look at the tool that lets teams work on the same code at the same time without destroying each other's work.
+So Git together with GitHub, in this case.
+There is other services out there, but we will focus on GitHub here.
+Some recap before we start here.
+Quick recap from yesterday.
+Agile methods and Scrum.
+Agile equals small steps, past feedback.
+And we welcome change as well.
+The manifesto has four values, 12 principles, and the Scrum has a product owner, Scrum master, developer, and so on.
+And we have events as well.
+So sprint planning, daily Scrum, review, retrospective, artifacts, product backlog, sprint backlog, and increment.
+And we also have Kanban, which basically is a board, WIP limits, continuous flow, basically.
+There's questions I just gave you.
+All right, so why version control?
+So if you look at the file names here on this slide, has anyone maybe done this?
+Yeah, probably have.
+I mean, most of us probably have.
+Is version control by hand?
+And it doesn't work that well.
+Which file is the latest here?
+And what's the difference between version 2 and final?
+And who changed that?
+We don't know.
+So version control is a system that keeps track of every change for you.
+It gives you four things.
+So the first one is the full history.
+So for every change, you can see what changed and when, who did it, and maybe a message explaining why.
+Second is you can go back.
+So if you break something today, you can return to yesterday's version that worked.
+And third, many people can work on the same code at the same time.
+And the system helps you combine basically the changes.
+And lastly, basically a copy on another computer like GitHub is also a backup.
+So if your laptop dies, your code is safe.
+So in the software industry, every team uses version control and almost all of them uses Git.
+There is other version control systems called SVM, but that's pretty old.
+I haven't used it for years, but works almost like Git.
+I think Git is better.
+Git and GitHub, people have to mix these up.
+So just clear here.
+You probably know this as well, many of you at least.
+But Git is a program that runs on your computer, saves the history of your project.
+It works basically offline.
+You can commit on a train with no internet if you want.
+And it was made back in 2005 by Linus Torvalds, the same person who made Linux.
+Because it needed a tool to manage the Linux code with thousands of developers.
+And GitHub is just a website.
+It stores Git repositories online.
+So a team can basically share them.
+So on top of Git, GitHub adds tools for working together.
+So for example, you have pull requests, code review, issues, project boards and so on.
+GitHub nowadays is owned by Microsoft.
+There are alternatives like GitLab and Bitbucket that work basically in a similar way.
+A simple way to remember it is, Git is like the camera that takes the pictures.
+GitHub is like the online photo album where you share them with others.
+So here's the vocabulary I want you to remember.
+You will hear these words every day in a developer job.
+So it's worth learning them.
+Repository or repo, project folder that Git keeps track of.
+A commit is a saved snapshot of the whole project at the moment.
+Sometimes, most of the time with a message describing the change.
+So think of it as a save in a game.
+A branch is a separate line of work.
+A remote is a copy of the repo somewhere else, usually on GitHub.
+Clone means downloading a repo to your computer.
+Push sends your commits to the remote.
+Pull gets new commits from the remote.
+Merge combines two branches.
+And the pull request is a request to merge your branch into another one, usually main,
+with a review from your team.
+We might look at these in details later.
+Yes, someone is raising hands.
+Who is it?
+Novika.
+Novisa.
+I think I said that right.
+Yep, raising hand.
+Novika.
+I can't hear you if you're speaking.
+I think something is wrong with you.
+Maybe you can ask the question in the chat.
+And then raise your hand again when you have done that.
+Branch, one more time.
+Okay, let's go through it again.
+So what is a branch?
+We will actually go a little bit more deeper, a little bit later in this.
+So we'll come back to the branch.
+Okay?
+So don't worry if you don't understand it right now.
+Just remember this.
+Okay, where were we?
+Three places for your code.
+This is the most important idea in Git.
+So let's take this slowly.
+Your code can be in three places.
+So the working directory is just your files.
+The ones you edit in, for example, Visual Studio Code.
+The staging area is like a waiting room.
+You use git add to choose which changes should go into the next commit.
+The repository is the history.
+All the commits you have saved.
+You use git commit to take everything in the staging area and save it as a new snapshot.
+So why this extra step?
+Because you don't always want to save everything at once.
+Imagine you fixed a bug and started on a new feature.
+You can add only the bug fix, commit it with a message, for example,
+fixed price, rounding, or whatever, and commit the feature later.
+So one commit, one change, basically.
+So let's take an example, an image that maybe helps here.
+You're packing a moving box.
+Git add is putting things in the box.
+And git commit is closing the box and writing a label on it.
+Okay, I have a question to you guys.
+Let's just say I changed three files, but I only ran git add on one of them.
+Then I did a git commit.
+What is in the commit is my question.
+Okay, I can repeat it.
+I've changed three files, but only ran git add on one of them, and then git commit.
+What's in the commit?
+Yes, Kristoffer.
+Yeah, that would be only the one file, right?
+Yes, correct.
+Only the one file I added.
+The other two changes are still in the working directory, but not committed yet.
+Now, some commands.
+Remember, you don't need to type along now.
+Just look at what's in front of you.
+So first, once per computer, you tell git who you are, your name and your email.
+So every commit is stamped with them.
+So the team can see who made each change.
+Use the same email as your GitHub account here.
+So that's important.
+The third line here makes sure your main branch is called main.
+Yes, someone interrupting me here.
+Sounded like a child.
+I hope we don't have any childs in our class.
+Then this is going to be hard to learn.
+Yeah, please mute your mic.
+Okay, I think Aladin, can you check that?
+Yeah, sure.
+So the third line, this line here, this makes sure our main branch is called main.
+Older versions of git call it master, but GitHub uses main.
+So we will do the same.
+That actually rhymes.
+Because back in the days, it was called master.
+Do you know why they changed it to main?
+I remember back in the 90s, having a hard drive.
+I mean, installing a hard drive wasn't that easy, to be honest.
+It was pretty complicated back in the days.
+So if you had two hard drives, one hard drive was called master,
+and the other hard drive was called slave.
+I don't know if you remember that, if you're as old as me.
+And we kept those analogies in IT, master and slave, master and slave.
+But someone decided that we shouldn't use those words anymore.
+So GitHub changed there from master to main instead, which I think is good.
+It took a while to adapt to it.
+But now we are getting used to main.
+Now, there are two ways to get a repository.
+Git init turns the folder you are in into a new empty git repository.
+And git clone downloads an existing repository from GitHub with its whole history, of course.
+In a company, you almost always start with the clone.
+Because the project already exists, of course.
+So if I ask you a question here.
+You join a company here on Monday.
+Okay.
+Their code is on GitHub.
+Which command do you use first?
+Is it git init or is it git clone?
+Yes, it's clone.
+It's not init.
+Because the repository already exists.
+Init is only for brand new projects.
+Okay.
+Everyday commands.
+I mean, these six commands are about 90% of what you will use every day.
+Git status tells you what has changed.
+What staged and which branch you are on.
+And when you are unsure about anything, run git status.
+It often even tells you what to do next.
+Git add stages.
+I mean, git add stages changes.
+So one file by name.
+Or everything with a dot.
+But be a bit careful with the dot.
+Because it adds everything.
+Including the files you might not want to add.
+And then you have this git commit with -m.
+And that saves a snapshot with a message.
+So the -m here means message.
+Git log.
+One line shows the history.
+One line per commit.
+So each commit has an ID.
+A shortcode like gibberish.
+I don't know.
+It could be anything.
+A3, 5, 3, 21.
+Yeah.
+It's just a long number.
+And git diff shows exactly which lines have changed.
+I mean, before you add them.
+Lines with a minus.
+You're going to see like minus.
+That's the lines that are removed.
+And lines with plus.
+That's the lines that actually are added.
+So the everyday rhythm is basically edit, git status, git add, and git commit.
+Over and over.
+Many times a day.
+Sometimes.
+Okay.
+Let's just say you're about to commit.
+But you're not sure which files you have changed.
+Which command do you run?
+If you're not sure.
+Say diff.
+Yeah.
+I mean, the answer is on your screen.
+It's git status.
+Exactly.
+But with git diff is to see the exact lines.
+So you both are correct here.
+Okay.
+Good commits.
+Commit message is a note to your team and to yourself in six months, for example.
+Fixed stuff tells you nothing.
+I mean, this is a bad example.
+So fixed stuff here tells me nothing.
+What stuff did you fix?
+But here is a better one.
+Fixed wrong total when cart is empty.
+That's a better message.
+The common style is to write the message like order.
+For example, you have add, fix, remove, or not added or fixing.
+The trick you can have with you is the message should complete the sentence.
+So if applied, this commit will so on and so on.
+If applied, this commit will add category filter to products list basically.
+And commit often, in small pieces.
+One commit, one change.
+A small commit is easy to understand.
+Easy to review and easy to undo as well.
+A commit with a week of work in it is impossible to review and impossible to undo without losing
+everything.
+So do small commits all the time.
+Files git should ignore.
+Some files should never go into git.
+And you list them in a file called gitignore with a dot at the start here.
+That's a very important dot gitignore.
+And this should be in the root of the project.
+So for example, pycache is a python cache generated automatically.
+We don't need to save it.
+And for example, .vnv is a virtual environment.
+It's big and everyone creates their own.
+And .log means all log files.
+If you add .env, this is maybe the important one.
+Because an .env file often contains secrets, password, database connection strings,
+maybe API keys sometimes.
+Those must never go to GitHub.
+And here's why it's serious.
+Because if you push your password and then delete the file in the next commit,
+the password is still in the history.
+Anyone can go back and find it.
+And there are actually bots that can scan GitHub for leaked keys all the time, within minutes.
+If it happens, the only safe fix is to change the password immediately.
+GitHub can create a gitignore for you when you create a repository.
+And you can actually choose the python template there as well.
+Your computer in GitHub.
+Now, maybe let's connect your computer to GitHub.
+The remote is the copy on GitHub.
+It's usually, its usual nickname is origin.
+So git remote -v shows you were the origin points.
+Git push sends your commit to GitHub.
+So the first time you push a new branch, you write git push -u origin and the branch name.
+The -u connects your local branch to the one on GitHub.
+So after that, plain git push and git pull are enough.
+You don't have to do that anymore.
+So git pull does two things here.
+It downloads new commits from GitHub and merges them into your branch.
+Git fetch, for example, only downloads.
+So you can look before merging.
+One very important thing here.
+Commit is local.
+So when you commit, nothing happens on GitHub.
+Your teammates can't see it until you push.
+And many beginners commit, close the laptop and wonder why the team can't see their work.
+Well, because you haven't pushed yet.
+Signing into GitHub.
+I mean, this is maybe a practical slide here.
+Because this is where many people get stuck the first time.
+When you push to GitHub, git needs to know it's you.
+But your normal GitHub password does not work in the terminal.
+So GitHub turned that off.
+I think it was in like three, five, I don't know, four years ago.
+And that was actually for security reasons.
+On Windows, git for Windows includes git credential manager.
+So the first time you push, a browser window opens.
+You log into GitHub and basically it remembers you.
+Pretty easy.
+Other options are personal access tokens.
+Which is a long random password you create on GitHub.
+And use instead of a password.
+Or maybe an SSH key.
+A key pair on your computer that GitHub trusts.
+So many developers actually use SSH.
+I don't know if it's...
+Let me just check something.
+So I don't say anything wrong.
+Oh yeah, they actually removed the SSH part.
+Yeah, okay, so that's old.
+But back in the day you could do that.
+But you might have other problems.
+Otherwise, I mean, most of you guys don't have these problems.
+Because most of you already have GitHub and Git connected.
+So now we come back to this.
+What is a branch?
+The big topic of today.
+Branches.
+A branch is a separate line of work.
+So if you look at the picture here.
+Main has commits A, B and C.
+Then someone creates a feature branch from C.
+And commits D and E on it.
+Meanwhile, main stays untouched.
+So when the feature is ready, it's merged into main.
+And that's F in this.
+Well, why?
+Because main should always work.
+Main is the version that is live.
+Or maybe ready to go live.
+So if you work directly on main.
+And push half-finished code.
+You're gonna break it for everyone.
+On a branch on the other hand.
+You can experiment.
+You can make mistakes.
+And commit half-finished work if you want.
+Nobody else is affected.
+Only when it's finished and reviewed.
+Does it go into main basically.
+So a comparison here.
+Main is the published book.
+A branch is your draft.
+You don't edit the printed book.
+You write a draft.
+Someone reads it.
+And then it's printed.
+Now just take a sip of coffee.
+Perfect.
+Okay.
+So here are the branch commands.
+Git branch lists your branches.
+The star here is basically when it shows the star and your branch.
+It means this is the branch you're using right now.
+Git switch -c features/search here.
+So git switch creates a new branch and moves you to it basically.
+And the -c means create.
+So git switch without the -c just moves to an existing branch.
+And git merge takes another branch and merges it into the one you're on.
+So to merge the feature basically into main you first switch to main and then merge the feature.
+And when a branch is merged you delete it with for example git branch -d if you want.
+And old branches are just clutter here.
+You will see a git checkout in many tutorials and the stack overflow and all of that stuff on the web.
+That's the older command and it still works.
+But git switch is the newer and easier to understand.
+So I recommend using that.
+Okay.
+So I have a question.
+Let's just say I want to merge this feature /search into main.
+Which branch should I be on when I run git merge?
+Correct answer is main.
+Exactly.
+You merge into the branch you are on.
+Okay.
+Here's the feature branch workflow.
+This is the workflow.
+So it's how most companies work.
+And it's not all companies but most of them does this.
+So every new feature or bug fix follows basically these steps.
+So the first one we start from the latest main.
+We switch to main and pull.
+So you start from what everyone else has.
+Very important.
+Two, we create a branch for your feature.
+Three, work and commit in small steps.
+Four, push the branch to GitHub.
+Now the team can see it.
+That's good.
+Five, on GitHub open a pull request.
+You're basically saying I'm done.
+Please look at my code and merge it into main.
+Okay.
+Six, a teammate maybe reviews it.
+They read the code, maybe they comment, maybe ask for changes.
+You fix them with new commits on the same branch.
+And the pull requests will update automatically here.
+Seven, when it's approved it's merged into main.
+Usually with a button on GitHub.
+And then you have eight.
+Do you delete the branch, maybe switch to main and pull.
+So you have the merged version.
+And then you start again from step one with the next feature.
+So it's like a loop.
+We're going up and down, up and down.
+So that's the workflow we need to learn here.
+So if I ask another question here.
+So why do we pull main before creating a new branch?
+I can repeat it.
+Why do we pull main before creating a new branch?
+Yeah.
+So we start from the latest, said Christoffer.
+And many of you guys as well.
+Yes.
+So the new branch starts from the latest code.
+Otherwise you will build on old code and get more conflicts later.
+Naming branches.
+Well, branch names should tell the team what's happening.
+Many teams use a prefix.
+Like a feature slash bug fix slash.
+And then a short description with dashes, maybe.
+Some teams add the number of issue or user story like feature slash 12 order history.
+Then you can always find the story the branch belongs to.
+Two rules that matter more than the name.
+One feature per branch.
+One feature per branch.
+Don't fix the log in and add search in the same branch.
+And keep branches short lived.
+Maybe days, not weeks or months.
+A couple of days should be enough.
+A branch that lives for two months is far away from Maine.
+And merging it will probably be pretty painful.
+And your team will have its own naming rules and just follow them.
+The important thing is that everyone does the same thing.
+Whole request or a PR is the center of teamwork on GitHub.
+It's a page on GitHub that says here is my branch.
+Please review it and merge it into Maine.
+A good PR has a clear title and short description.
+What did you change and why?
+If there is something special to test, write it here please.
+GitHub shows every change line in green and red.
+Reviewers can comment on a specific line.
+Ask questions maybe.
+Suggest maybe changes.
+And finally approve it.
+Many teams also have automatic checks that runs on every PR request.
+For example the tests.
+If a test fails you see a red cross before anyone merges.
+And the nice trick here.
+If you write closes #12 in the description.
+GitHub closes issue #12 automatically when the PR is merged.
+That links basically your code to the user story.
+The name is a bit confusing.
+You are asking the team to pull your changes into Maine.
+GitLab calls the same thing a merge request.
+Which is maybe clearer than a pull request.
+Okay so another question is what should you write in a pull request description.
+Do you remember that?
+Yeah.
+What we should write in the description is basically what was changed.
+Why.
+How to test it.
+And the link to the issue/story for example.
+Review means another developer reads your code before it goes into Maine.
+It's one of the best ways to actually find bugs.
+The best way also to learn.
+As a reviewer be kind and specific.
+Not like don't write like this is bad.
+But this loop runs once per product.
+Could we do it with one query instead?
+Ask questions instead of giving orders.
+Like check that it works.
+That it's readable.
+And that meets the definition of done basically.
+As the author keep the pull request small.
+A pull request with 50 changed lines gets a careful review.
+A PR with 2000 lines looks good to me.
+Because nobody can read it all.
+And don't take comments personally here.
+The review is about the code.
+Not about you.
+Even senior developers get many comments on their PRs.
+So as for example as a junior you will you will learn a lot from reviews of your code.
+And you're also allowed to review seniors code as well.
+Asking for example questions like why does this work?
+Is a value valuable review comment actually.
+Merging a pull request.
+When a pull request is approved someone clicks merge.
+GitHub back has actually three options.
+Create a merge commit.
+All the commits from the branch are kept.
+Plus an extra merge commit.
+You see the full history.
+But it can get messy.
+Okay.
+Quash and merge.
+All the commits from the branch become one single commit in main.
+That's popular because main gets a clean history.
+So one commit per feature.
+Your fix typo or and maybe and oops commits basically disappear.
+Then you have rebase and merge.
+The commits are moved on top of main one by one without a merge commit.
+So it's a straight line of history.
+So you don't need to master the differences right now.
+Your team will have chosen one.
+Just recognize the three buttons here basically.
+But sometimes we can have merge conflicts.
+And then sooner or later you will see this.
+It looks scary.
+But it's normal and not dangerous.
+It happens when two branches changes the same line in different ways.
+So here main says welcome to the shop.
+And the feature branch says welcome to our web shop.
+Can't know which one is right.
+So instead of guessing it stops and it asks you.
+And git marks the conflict in the file.
+You see how between the arrows and the equal signs is in one version.
+The one from main.
+And between the equal signs and the other arrows is the other version.
+From the feature branch.
+So to fix this you open the file.
+Decide what the code should be.
+Maybe one version or maybe the other.
+Maybe a mix of both.
+Delete maybe the marker lines.
+The arrows and the equal signs.
+Save.
+Then git add the file and git commit.
+And then you're done.
+Actually Visual Studio Code helps a lot.
+It shows buttons above the conflict.
+Accept current change or accept incoming change.
+Or maybe accept both.
+And GitHub can show and fix simple conflicts even in the browser as well.
+An important thing here is a conflict is not an error.
+Nothing is lost.
+Git is just asking for a human decision here.
+Okay let's just.
+I have another question.
+Let's just say you have two developers change to different files on their branches.
+Will there be a conflict when both are merged?
+Yeah Fabian you're really fast.
+Fabian is right.
+No.
+I mean git merges different files.
+And even different parts of the same file automatically.
+Conflicts only happen when the same lines are changed.
+Like in the example here.
+You can't avoid conflicts completely.
+But you can make them small and rare.
+Pull main often.
+If your branch lives for a few days.
+Bring the latest main into it regularly.
+I mean switch to main and pull.
+Switch back to your branch and merge main into it.
+Then you solve a small conflict early instead of one big one at the end.
+And keep branches small and short.
+The longer a branch lives, the further it drifts away from main.
+Remember that.
+And talk to each other.
+I mean yesterday's daily scrum is perfect for this.
+I'm working on the login page today.
+Then nobody else starts changing the same file.
+If I say that to the team.
+And also don't reformat whole files.
+If your editor changes the indentation in a file of 500 lines.
+Every one of those lines is a possible conflict for someone else.
+And commit and push often.
+So your work is visible.
+Many teams don't just hope that everyone follows the workflow.
+They make GitHub enforce it.
+With rules on the main branch.
+The rules is nobody can push directly into main.
+Not even the boss.
+All changes must come through a pull request.
+So a pull request needs at least one approval from someone else.
+And all automatic checks like the tests and so on must pass.
+Then the main is protected.
+You can't break it by mistake.
+Because every change has been reviewed and tested.
+You can set this in the repository settings on GitHub.
+Under branches or rules.
+So I recommend trying that.
+Okay.
+Git and scrum together.
+Let's connect today with yesterday.
+A user story becomes an issue on GitHub.
+The sprint backlog can be a board in GitHub projects.
+With columns like for example to-do, in progress, review and done.
+So when you start working on a story.
+You create a feature branch.
+Maybe with the issue number in the name as well.
+And when you're done.
+You open a pull request.
+With closes and the issue number.
+So the review is part of the definition of done basically.
+And when it's merged, the issue closes.
+The cards moves to done.
+And the code is part of the increment you show at the sprint review for example.
+So the board, the branches and the pull requests all the same story.
+That's how a real team works from day to day basically.
+Oops.
+I'm doing things.
+Everyone makes mistakes.
+Git has many ways to undo them.
+Here are at least the safe ones.
+Git restore with a file name throws away the changes you have made in that file since the last commit.
+So the second one here takes a file out of the staging area.
+But it keeps your changes in that file.
+Git commit -amend -m here fixes the last commit.
+For example, a typo in the message.
+Maybe you wrote something wrong.
+Or a file you forgot to add.
+But this will work only before you actually pushed it.
+So don't do push.
+Git revert, as you can see here, creates a new commit that does the opposite of an old one.
+That's the safe way to undo something that's already on GitHub.
+Because history isn't rewritten.
+Everyone can see that a change was made and then undone.
+Two commits to be very careful with is git reset -hard and git push -force.
+They can actually delete work.
+Yours, maybe your work or your teammates.
+So don't use them on shared branches unless you really know what you're doing.
+And remember, sum up this morning here.
+Git saves the history of your code.
+GitHub shares it with your team every day.
+Git status, git add commit push and pull.
+Commit small with clear messages.
+Never commit secrets.
+New work equals new branch.
+Main always works.
+Feature branch, then pull request, review and merge.
+A merge conflict is a question, not an error.
+And these are the points to actually remember.
+If one of them still feels unclear, you can ask me now.
+So if you have any questions, you can of course ask me now.
+What I'm going to show you today, because we don't actually have a lab on this.
+And one good way is, let me see, I'm just going to bring it up here in a second.
+Maybe I can do that.
+Okay.
+Learn git branching.js.org.
+Well, here you can actually learn git branching.
+And yeah, you get some questions here.
+Nicely placed introduction to majority.
+Okay.
+So this is just, this is just some, and here you can actually visually see it.
+So here we have the main and here we have that.
+And let me see.
+And here you can actually type, oh, you can actually type some stuff here.
+So git commit git whatever.
+Levels.
+Let me see if I click here.
+That doesn't work.
+Okay.
+Git checkout.
+Yeah.
+And this is the head where it's actually pointing right now.
+Let's keep on clicking on these.
+Okay.
+So it wants me.
+Now we have, yeah, we changed it to another.
+So git, as you can see, git checkout c1.
+So this is the old, the old way of doing it.
+It says git checkout here.
+So this is our branch.
+Git checkout c1.
+And then we did git checkout c0.
+And c1 is the main here.
+To actually, let me see.
+If I type check out c1 again, maybe we can do that.
+I can say git commit first.
+There we go.
+Now we do the commit.
+So you can actually, you can try all of the stuff here and see it visually.
+What's going on actually?
+Yeah.
+Detached head state.
+Yeah.
+It's no problem there.
+We need to create a new branch there probably.
+So I want you to try this.
+Let me see.
+You can click on levels here.
+So no.
+Okay.
+What happened here?
+Let me just update this.
+Okay.
+Sure.
+You can see all of the commands with show commands at the terminal.
+All right.
+This is just some show commands.
+They have all of the commands we have been talking about.
+So play around with this.
+This is today's lab.
+Can you stage a folder?
+I mean, it depends on you should be able to stage a folder.
+You should be able to do a git add and then the actual folder name.
+And that stage every changed file in that folder as well, including subfolders if you have any in that folder.
+But git doesn't track empty folders though.
+So to include one, I mean, like someone mentioned here, you can put a file in it in the chat here.
+Yes, Fabian.
+Yes, I was wondering about the git restore command with the stage flag.
+If you run that command, will everything be marked still as modified in like an ID, like Visual Studio Code, if you run that?
+So sorry, again, ask your question again.
+Yeah, if you run this git restore stage command, does everything go back to, or does it have the like M marker as everything is modified in Visual Studio Code, everything that you changed?
+Uh, ooh, good question.
+Let me just check that, go look into the docs here.
+I think no, no marker and no trace actually.
+Ah, okay, cool, thanks.
+Because git restore stage, it doesn't actually create a commit or anything in the history.
+It only basically takes out the file out of the staging area, and your changes basically stay in that file.
+Oh, okay, now I get it.
+Thank you.
+So if you run, for example, git status after that command, it will tell you like something like changes, not stage for commit, instead of changes to be committed.
+Yeah, any other questions?
+See in the chat, maybe.
+Push to a specific folder in GitHub.
+No, git push sends on a branch, not folders.
+So the whole repository basically goes up.
+GitHub shows, I mean, it shows the same folder structure on your computer.
+I don't know why you would want to do that.
+But to answer you, Robert, is no.
+Do you have any other questions?
+Okay.
+I think we're a little bit out of time here for resting.
+Yeah, okay, so someone asked something not related to this.
+As I got an email from Lana, is the Praktikkafet mandatory?
+I do recommend going on that, yes.
+I don't know if it's mandatory, but I think so.
+Let's see who answered Victor.
+The modified and added markers in VS Code disappears only when you commit the changes.
+Staging and unstaging of file doesn't change those markers.
+Mostly right.
+Modified files shows both before and after staging.
+New files shows you untracked, basically, before staging.
+And then A is added after staging.
+So staging does change the letter there, maybe.
+I don't know.
+Good question.
+Okay.
+So if you don't have any questions, you can take some break.
+Take 10 minutes break.
+Go grab some coffee, get some fresh air to your lungs and to your brain.
+And then we sit with learngitbranching.js.
+I will send this to you guys in here in the chat and also in the Python info chat.
+So you can start looking into this on Monday.
+So now it's Friday.
+But on Monday, we will present present you guys to a project.
+So we have already split you up in groups, like the stuff we did yesterday.
+And you're going to stay in those groups.
+We're going to keep those groups to Monday.
+And then we're going to start a group project.
+Basically, I think it's, I don't know how many groups.
+So I don't say it wrong here.
+Seven groups.
+Yes.
+Seven groups.
+And each group is going to get a project to do.
+And you have to work with all of the stuff we have learned so far.
+So I could recommend learning this stuff.
+I will upload, of course, the presentation from today.
+And then we will put everything we have learned so far into practice.
+And work in a group.
+And then after that, you will also present in front of everyone, present your project.
+So you're going to get the day to actually present your project.
+So that's what's coming on Monday.
+I wanted to show it to you today, but I decided not.
+Because I wanted to give you some space.
+Learning and stuff like that.
+As much as you can before we start.
+So I recommend doing everything we have done this week at least.
+Maybe if you're unsure about anything, any subject, then it's a good idea to go back to it.
+So use this day to learn as much as possible.
+If you don't have anything to do and you have learned everything, then just write us a message.
+Me or Aladin.
+Okay?
+Does that sound good?
+Are we getting some thumbs up here?
+Yeah.
+Okay.
+You can leave the meeting if you don't have any questions.
+Bye.
+Bye-bye.

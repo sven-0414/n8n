@@ -1,0 +1,3200 @@
+1
+00:04:48,480 --> 00:04:51,780
+ I got around 21 answers in the chat here.
+
+2
+00:04:52,700 --> 00:04:54,110
+ A couple of you guys are still missing.
+
+3
+00:04:56,110 --> 00:05:04,980
+ Okay, so you may wonder why I give you these questions and then you actually have some time to actually write your answers.
+
+4
+00:05:05,300 --> 00:05:10,170
+ Well, I think it's...
+
+5
+00:05:10,170 --> 00:05:22,130
+ If you don't know this stuff, then by writing it at least once will help you memorize it a little bit.
+
+6
+00:05:24,930 --> 00:05:30,210
+ I will start the lecture.
+
+7
+00:05:30,530 --> 00:05:38,110
+ I'll share my screen, first of all.
+
+8
+00:05:38,350 --> 00:05:39,260
+ Could be a good idea.
+
+9
+00:05:39,260 --> 00:05:49,680
+ Can you see the screen? Please confirm. Anyone?
+
+10
+00:05:51,070 --> 00:05:51,430
+ Yes.
+
+11
+00:05:52,300 --> 00:05:56,230
+ Thank you. Awesome.
+
+12
+00:05:57,610 --> 00:06:07,940
+ Okay, as you see in front of you, or good morning, today's topic is Git and GitHub version control and working together with feature branches.
+
+13
+00:06:10,310 --> 00:06:14,910
+ So in this morning here, we're only going to have theory, so there is no code along here.
+
+14
+00:06:15,820 --> 00:06:18,770
+ So you don't actually need to type anything, just like yesterday.
+
+15
+00:06:19,120 --> 00:06:25,470
+ Just listen, ask questions if you have any, take any notes if you want.
+
+16
+00:06:25,470 --> 00:06:30,080
+ But we'll probably have some small, short discussions here and there.
+
+17
+00:06:32,640 --> 00:06:36,900
+ So if anything is unclear, just, yeah, raise your hands as usual.
+
+18
+00:06:42,730 --> 00:06:43,870
+ All right, so our goals.
+
+19
+00:06:44,010 --> 00:06:47,210
+ Well, yesterday we talked about how teams organize their work.
+
+20
+00:06:47,710 --> 00:06:57,240
+ Today we will look at the tool that lets teams work on the same code at the same time without destroying each other's work.
+
+21
+00:06:57,240 --> 00:07:01,320
+ So Git together with GitHub, in this case.
+
+22
+00:07:01,320 --> 00:07:07,850
+ There is other services out there, but we will focus on GitHub here.
+
+23
+00:07:07,850 --> 00:07:22,840
+ Some recap before we start here.
+
+24
+00:07:22,840 --> 00:07:24,830
+ Quick recap from yesterday.
+
+25
+00:07:24,830 --> 00:07:26,980
+ Agile methods and Scrum.
+
+26
+00:07:26,980 --> 00:07:32,370
+ Agile equals small steps, past feedback.
+
+27
+00:07:32,370 --> 00:07:34,460
+ And we welcome change as well.
+
+28
+00:07:34,460 --> 00:07:48,100
+ The manifesto has four values, 12 principles, and the Scrum has a product owner, Scrum master, developer, and so on.
+
+29
+00:07:48,100 --> 00:07:50,720
+ And we have events as well.
+
+30
+00:07:50,720 --> 00:08:01,130
+ So sprint planning, daily Scrum, review, retrospective, artifacts, product backlog, sprint backlog, and increment.
+
+31
+00:08:01,130 --> 00:08:12,300
+ And we also have Kanban, which basically is a board, WIP limits, continuous flow, basically.
+
+32
+00:08:12,300 --> 00:08:24,870
+ There's questions I just gave you.
+
+33
+00:08:24,870 --> 00:08:31,060
+ All right, so why version control?
+
+34
+00:08:31,060 --> 00:08:41,860
+ So if you look at the file names here on this slide, has anyone maybe done this?
+
+35
+00:08:41,860 --> 00:08:53,580
+ Yeah, probably have.
+
+36
+00:08:53,580 --> 00:08:57,000
+ I mean, most of us probably have.
+
+37
+00:08:57,000 --> 00:08:59,860
+ Is version control by hand?
+
+38
+00:08:59,860 --> 00:09:02,210
+ And it doesn't work that well.
+
+39
+00:09:02,210 --> 00:09:05,150
+ Which file is the latest here?
+
+40
+00:09:05,150 --> 00:09:09,180
+ And what's the difference between version 2 and final?
+
+41
+00:09:09,180 --> 00:09:10,880
+ And who changed that?
+
+42
+00:09:10,880 --> 00:09:11,520
+ We don't know.
+
+43
+00:09:11,520 --> 00:09:16,640
+ So version control is a system that keeps track of every change for you.
+
+44
+00:09:16,640 --> 00:09:19,360
+ It gives you four things.
+
+45
+00:09:19,360 --> 00:09:22,720
+ So the first one is the full history.
+
+46
+00:09:22,720 --> 00:09:33,250
+ So for every change, you can see what changed and when, who did it, and maybe a message explaining why.
+
+47
+00:09:33,250 --> 00:09:37,090
+ Second is you can go back.
+
+48
+00:09:37,090 --> 00:09:41,850
+ So if you break something today, you can return to yesterday's version that worked.
+
+49
+00:09:41,850 --> 00:09:47,830
+ And third, many people can work on the same code at the same time.
+
+50
+00:09:48,470 --> 00:09:52,320
+ And the system helps you combine basically the changes.
+
+51
+00:09:52,320 --> 00:10:02,530
+ And lastly, basically a copy on another computer like GitHub is also a backup.
+
+52
+00:10:02,530 --> 00:10:07,480
+ So if your laptop dies, your code is safe.
+
+53
+00:10:07,480 --> 00:10:13,980
+ So in the software industry, every team uses version control and almost all of them uses Git.
+
+54
+00:10:13,980 --> 00:10:21,410
+ There is other version control systems called SVM, but that's pretty old.
+
+55
+00:10:21,410 --> 00:10:26,370
+ I haven't used it for years, but works almost like Git.
+
+56
+00:10:26,370 --> 00:10:27,650
+ I think Git is better.
+
+57
+00:10:27,650 --> 00:10:48,800
+ Git and GitHub, people have to mix these up.
+
+58
+00:10:48,800 --> 00:10:51,290
+ So just clear here.
+
+59
+00:10:51,290 --> 00:10:54,050
+ You probably know this as well, many of you at least.
+
+60
+00:10:54,050 --> 00:11:00,890
+ But Git is a program that runs on your computer, saves the history of your project.
+
+61
+00:11:00,890 --> 00:11:04,620
+ It works basically offline.
+
+62
+00:11:04,620 --> 00:11:09,600
+ You can commit on a train with no internet if you want.
+
+63
+00:11:09,600 --> 00:11:18,910
+ And it was made back in 2005 by Linus Torvalds, the same person who made Linux.
+
+64
+00:11:18,910 --> 00:11:25,250
+ Because it needed a tool to manage the Linux code with thousands of developers.
+
+65
+00:11:25,250 --> 00:11:28,480
+ And GitHub is just a website.
+
+66
+00:11:28,480 --> 00:11:30,800
+ It stores Git repositories online.
+
+67
+00:11:30,800 --> 00:11:35,270
+ So a team can basically share them.
+
+68
+00:11:35,270 --> 00:11:40,030
+ So on top of Git, GitHub adds tools for working together.
+
+69
+00:11:40,030 --> 00:11:45,810
+ So for example, you have pull requests, code review, issues, project boards and so on.
+
+70
+00:11:46,460 --> 00:11:48,920
+ GitHub nowadays is owned by Microsoft.
+
+71
+00:11:49,910 --> 00:11:57,380
+ There are alternatives like GitLab and Bitbucket that work basically in a similar way.
+
+72
+00:11:57,380 --> 00:12:08,260
+ A simple way to remember it is, Git is like the camera that takes the pictures.
+
+73
+00:12:08,260 --> 00:12:13,210
+ GitHub is like the online photo album where you share them with others.
+
+74
+00:12:13,210 --> 00:12:23,780
+ So here's the vocabulary I want you to remember.
+
+75
+00:12:23,780 --> 00:12:26,900
+ You will hear these words every day in a developer job.
+
+76
+00:12:26,900 --> 00:12:28,510
+ So it's worth learning them.
+
+77
+00:12:28,510 --> 00:12:36,010
+ Repository or repo, project folder that Git keeps track of.
+
+78
+00:12:36,010 --> 00:12:41,130
+ A commit is a saved snapshot of the whole project at the moment.
+
+79
+00:12:42,800 --> 00:12:46,780
+ Sometimes, most of the time with a message describing the change.
+
+80
+00:12:46,780 --> 00:12:55,330
+ So think of it as a save in a game.
+
+81
+00:12:55,330 --> 00:12:59,360
+ A branch is a separate line of work.
+
+82
+00:12:59,360 --> 00:13:05,520
+ A remote is a copy of the repo somewhere else, usually on GitHub.
+
+83
+00:13:06,300 --> 00:13:09,730
+ Clone means downloading a repo to your computer.
+
+84
+00:13:09,730 --> 00:13:15,490
+ Push sends your commits to the remote.
+
+85
+00:13:15,490 --> 00:13:18,750
+ Pull gets new commits from the remote.
+
+86
+00:13:19,720 --> 00:13:22,650
+ Merge combines two branches.
+
+87
+00:13:22,650 --> 00:13:30,170
+ And the pull request is a request to merge your branch into another one, usually main,
+
+88
+00:13:30,170 --> 00:13:34,300
+ with a review from your team.
+
+89
+00:13:34,300 --> 00:13:38,490
+ We might look at these in details later.
+
+90
+00:13:38,490 --> 00:13:40,140
+ Yes, someone is raising hands.
+
+91
+00:13:40,140 --> 00:13:40,780
+ Who is it?
+
+92
+00:13:41,330 --> 00:13:41,950
+ Novika.
+
+93
+00:13:41,950 --> 00:13:43,070
+ Novisa.
+
+94
+00:13:43,070 --> 00:13:45,280
+ I think I said that right.
+
+95
+00:13:45,280 --> 00:13:50,870
+ Yep, raising hand.
+
+96
+00:13:50,870 --> 00:13:51,510
+ Novika.
+
+97
+00:13:51,510 --> 00:13:56,960
+ I can't hear you if you're speaking.
+
+98
+00:13:56,960 --> 00:14:09,310
+ I think something is wrong with you.
+
+99
+00:14:09,310 --> 00:14:11,950
+ Maybe you can ask the question in the chat.
+
+100
+00:14:11,950 --> 00:14:20,000
+ And then raise your hand again when you have done that.
+
+101
+00:14:20,000 --> 00:14:25,990
+ Branch, one more time.
+
+102
+00:14:25,990 --> 00:14:27,650
+ Okay, let's go through it again.
+
+103
+00:14:27,650 --> 00:14:29,760
+ So what is a branch?
+
+104
+00:14:29,760 --> 00:14:38,100
+ We will actually go a little bit more deeper, a little bit later in this.
+
+105
+00:14:39,120 --> 00:14:41,280
+ So we'll come back to the branch.
+
+106
+00:14:41,280 --> 00:14:41,760
+ Okay?
+
+107
+00:14:41,760 --> 00:14:44,290
+ So don't worry if you don't understand it right now.
+
+108
+00:14:44,290 --> 00:14:48,150
+ Just remember this.
+
+109
+00:14:48,150 --> 00:14:57,670
+ Okay, where were we?
+
+110
+00:15:03,710 --> 00:15:05,500
+ Three places for your code.
+
+111
+00:15:05,500 --> 00:15:07,870
+ This is the most important idea in Git.
+
+112
+00:15:07,870 --> 00:15:09,950
+ So let's take this slowly.
+
+113
+00:15:09,950 --> 00:15:13,730
+ Your code can be in three places.
+
+114
+00:15:13,730 --> 00:15:18,350
+ So the working directory is just your files.
+
+115
+00:15:18,350 --> 00:15:23,450
+ The ones you edit in, for example, Visual Studio Code.
+
+116
+00:15:23,450 --> 00:15:27,230
+ The staging area is like a waiting room.
+
+117
+00:15:27,230 --> 00:15:38,750
+ You use git add to choose which changes should go into the next commit.
+
+118
+00:15:43,310 --> 00:15:46,390
+ The repository is the history.
+
+119
+00:15:46,390 --> 00:15:49,210
+ All the commits you have saved.
+
+120
+00:15:49,210 --> 00:15:58,590
+ You use git commit to take everything in the staging area and save it as a new snapshot.
+
+121
+00:15:58,590 --> 00:16:02,490
+ So why this extra step?
+
+122
+00:16:02,490 --> 00:16:06,690
+ Because you don't always want to save everything at once.
+
+123
+00:16:06,690 --> 00:16:11,610
+ Imagine you fixed a bug and started on a new feature.
+
+124
+00:16:11,610 --> 00:16:20,130
+ You can add only the bug fix, commit it with a message, for example,
+
+125
+00:16:20,770 --> 00:16:29,410
+ fixed price, rounding, or whatever, and commit the feature later.
+
+126
+00:16:29,410 --> 00:16:32,450
+ So one commit, one change, basically.
+
+127
+00:16:32,450 --> 00:16:41,910
+ So let's take an example, an image that maybe helps here.
+
+128
+00:16:41,910 --> 00:16:43,900
+ You're packing a moving box.
+
+129
+00:16:43,900 --> 00:16:47,520
+ Git add is putting things in the box.
+
+130
+00:16:47,520 --> 00:16:52,830
+ And git commit is closing the box and writing a label on it.
+
+131
+00:16:52,830 --> 00:17:06,120
+ Okay, I have a question to you guys.
+
+132
+00:17:06,120 --> 00:17:12,890
+ Let's just say I changed three files, but I only ran git add on one of them.
+
+133
+00:17:12,890 --> 00:17:15,530
+ Then I did a git commit.
+
+134
+00:17:15,530 --> 00:17:21,120
+ What is in the commit is my question.
+
+135
+00:17:21,120 --> 00:17:23,680
+ Okay, I can repeat it.
+
+136
+00:17:23,680 --> 00:17:31,630
+ I've changed three files, but only ran git add on one of them, and then git commit.
+
+137
+00:17:31,630 --> 00:17:33,500
+ What's in the commit?
+
+138
+00:17:33,500 --> 00:17:36,540
+ Yes, Kristoffer.
+
+139
+00:17:36,540 --> 00:17:39,680
+ Yeah, that would be only the one file, right?
+
+140
+00:17:39,680 --> 00:17:41,340
+ Yes, correct.
+
+141
+00:17:41,340 --> 00:17:43,720
+ Only the one file I added.
+
+142
+00:17:43,720 --> 00:17:49,970
+ The other two changes are still in the working directory, but not committed yet.
+
+143
+00:17:49,970 --> 00:18:00,030
+ Now, some commands.
+
+144
+00:18:00,030 --> 00:18:05,530
+ Remember, you don't need to type along now.
+
+145
+00:18:05,530 --> 00:18:08,290
+ Just look at what's in front of you.
+
+146
+00:18:08,290 --> 00:18:21,120
+ So first, once per computer, you tell git who you are, your name and your email.
+
+147
+00:18:21,120 --> 00:18:24,350
+ So every commit is stamped with them.
+
+148
+00:18:24,350 --> 00:18:28,010
+ So the team can see who made each change.
+
+149
+00:18:29,920 --> 00:18:32,800
+ Use the same email as your GitHub account here.
+
+150
+00:18:32,800 --> 00:18:34,240
+ So that's important.
+
+151
+00:18:34,240 --> 00:18:40,990
+ The third line here makes sure your main branch is called main.
+
+152
+00:18:42,970 --> 00:18:47,230
+ Yes, someone interrupting me here.
+
+153
+00:18:47,230 --> 00:18:50,290
+ Sounded like a child.
+
+154
+00:18:50,290 --> 00:18:53,230
+ I hope we don't have any childs in our class.
+
+155
+00:18:54,350 --> 00:18:56,110
+ Then this is going to be hard to learn.
+
+156
+00:18:58,560 --> 00:19:06,030
+ Yeah, please mute your mic.
+
+157
+00:19:10,940 --> 00:19:22,190
+ Okay, I think Aladin, can you check that?
+
+158
+00:19:22,190 --> 00:19:25,840
+ Yeah, sure.
+
+159
+00:19:35,550 --> 00:19:52,450
+ So the third line, this line here, this makes sure our main branch is called main.
+
+160
+00:19:52,450 --> 00:19:57,950
+ Older versions of git call it master, but GitHub uses main.
+
+161
+00:19:57,950 --> 00:19:59,710
+ So we will do the same.
+
+162
+00:20:01,210 --> 00:20:02,850
+ That actually rhymes.
+
+163
+00:20:05,490 --> 00:20:09,060
+ Because back in the days, it was called master.
+
+164
+00:20:09,060 --> 00:20:12,680
+ Do you know why they changed it to main?
+
+165
+00:20:12,680 --> 00:20:29,030
+ I remember back in the 90s, having a hard drive.
+
+166
+00:20:29,030 --> 00:20:33,180
+ I mean, installing a hard drive wasn't that easy, to be honest.
+
+167
+00:20:33,180 --> 00:20:36,670
+ It was pretty complicated back in the days.
+
+168
+00:20:36,670 --> 00:20:41,020
+ So if you had two hard drives, one hard drive was called master,
+
+169
+00:20:41,020 --> 00:20:43,390
+ and the other hard drive was called slave.
+
+170
+00:20:43,390 --> 00:20:45,730
+ I don't know if you remember that, if you're as old as me.
+
+171
+00:20:45,730 --> 00:20:52,540
+ And we kept those analogies in IT, master and slave, master and slave.
+
+172
+00:20:52,540 --> 00:20:57,740
+ But someone decided that we shouldn't use those words anymore.
+
+173
+00:20:59,900 --> 00:21:10,210
+ So GitHub changed there from master to main instead, which I think is good.
+
+174
+00:21:11,700 --> 00:21:15,580
+ It took a while to adapt to it.
+
+175
+00:21:16,860 --> 00:21:21,180
+ But now we are getting used to main.
+
+176
+00:21:21,180 --> 00:21:28,610
+ Now, there are two ways to get a repository.
+
+177
+00:21:28,610 --> 00:21:39,020
+ Git init turns the folder you are in into a new empty git repository.
+
+178
+00:21:39,020 --> 00:21:48,030
+ And git clone downloads an existing repository from GitHub with its whole history, of course.
+
+179
+00:21:48,030 --> 00:21:53,690
+ In a company, you almost always start with the clone.
+
+180
+00:21:53,690 --> 00:21:57,470
+ Because the project already exists, of course.
+
+181
+00:21:57,470 --> 00:22:05,320
+ So if I ask you a question here.
+
+182
+00:22:06,320 --> 00:22:08,220
+ You join a company here on Monday.
+
+183
+00:22:08,220 --> 00:22:08,670
+ Okay.
+
+184
+00:22:09,200 --> 00:22:10,710
+ Their code is on GitHub.
+
+185
+00:22:10,710 --> 00:22:13,150
+ Which command do you use first?
+
+186
+00:22:13,150 --> 00:22:29,090
+ Is it git init or is it git clone?
+
+187
+00:22:29,090 --> 00:22:33,630
+ Yes, it's clone.
+
+188
+00:22:33,630 --> 00:22:34,750
+ It's not init.
+
+189
+00:22:34,750 --> 00:22:37,800
+ Because the repository already exists.
+
+190
+00:22:37,800 --> 00:22:40,790
+ Init is only for brand new projects.
+
+191
+00:22:40,790 --> 00:22:45,390
+ Okay.
+
+192
+00:22:46,110 --> 00:22:48,810
+ Everyday commands.
+
+193
+00:22:48,810 --> 00:22:54,120
+ I mean, these six commands are about 90% of what you will use every day.
+
+194
+00:22:54,120 --> 00:22:56,920
+ Git status tells you what has changed.
+
+195
+00:22:58,510 --> 00:23:01,530
+ What staged and which branch you are on.
+
+196
+00:23:01,530 --> 00:23:06,380
+ And when you are unsure about anything, run git status.
+
+197
+00:23:06,380 --> 00:23:10,400
+ It often even tells you what to do next.
+
+198
+00:23:10,400 --> 00:23:13,750
+ Git add stages.
+
+199
+00:23:16,260 --> 00:23:18,180
+ I mean, git add stages changes.
+
+200
+00:23:18,180 --> 00:23:19,700
+ So one file by name.
+
+201
+00:23:19,700 --> 00:23:21,460
+ Or everything with a dot.
+
+202
+00:23:21,460 --> 00:23:25,500
+ But be a bit careful with the dot.
+
+203
+00:23:25,500 --> 00:23:27,120
+ Because it adds everything.
+
+204
+00:23:27,120 --> 00:23:30,490
+ Including the files you might not want to add.
+
+205
+00:23:30,490 --> 00:23:38,640
+ And then you have this git commit with -m.
+
+206
+00:23:38,640 --> 00:23:43,520
+ And that saves a snapshot with a message.
+
+207
+00:23:43,520 --> 00:23:45,780
+ So the -m here means message.
+
+208
+00:23:45,780 --> 00:23:51,040
+ Git log.
+
+209
+00:23:51,040 --> 00:23:53,890
+ One line shows the history.
+
+210
+00:23:53,890 --> 00:23:55,760
+ One line per commit.
+
+211
+00:23:55,760 --> 00:23:57,980
+ So each commit has an ID.
+
+212
+00:23:57,980 --> 00:24:01,340
+ A shortcode like gibberish.
+
+213
+00:24:01,340 --> 00:24:02,230
+ I don't know.
+
+214
+00:24:02,230 --> 00:24:03,110
+ It could be anything.
+
+215
+00:24:03,110 --> 00:24:06,110
+ A3, 5, 3, 21.
+
+216
+00:24:06,110 --> 00:24:06,430
+ Yeah.
+
+217
+00:24:06,430 --> 00:24:08,190
+ It's just a long number.
+
+218
+00:24:08,190 --> 00:24:19,020
+ And git diff shows exactly which lines have changed.
+
+219
+00:24:22,940 --> 00:24:25,280
+ I mean, before you add them.
+
+220
+00:24:25,280 --> 00:24:29,870
+ Lines with a minus.
+
+221
+00:24:32,120 --> 00:24:33,560
+ You're going to see like minus.
+
+222
+00:24:35,030 --> 00:24:37,430
+ That's the lines that are removed.
+
+223
+00:24:37,430 --> 00:24:39,510
+ And lines with plus.
+
+224
+00:24:39,510 --> 00:24:41,730
+ That's the lines that actually are added.
+
+225
+00:24:41,730 --> 00:24:47,760
+ So the everyday rhythm is basically edit, git status, git add, and git commit.
+
+226
+00:24:47,760 --> 00:24:48,560
+ Over and over.
+
+227
+00:24:48,560 --> 00:24:49,630
+ Many times a day.
+
+228
+00:24:49,630 --> 00:24:50,750
+ Sometimes.
+
+229
+00:24:50,750 --> 00:24:55,240
+ Okay.
+
+230
+00:24:55,240 --> 00:24:57,250
+ Let's just say you're about to commit.
+
+231
+00:24:57,250 --> 00:25:01,090
+ But you're not sure which files you have changed.
+
+232
+00:25:01,090 --> 00:25:03,520
+ Which command do you run?
+
+233
+00:25:03,520 --> 00:25:05,310
+ If you're not sure.
+
+234
+00:25:05,310 --> 00:25:17,640
+ Say diff.
+
+235
+00:25:19,240 --> 00:25:19,610
+ Yeah.
+
+236
+00:25:19,610 --> 00:25:21,730
+ I mean, the answer is on your screen.
+
+237
+00:25:21,730 --> 00:25:23,460
+ It's git status.
+
+238
+00:25:23,460 --> 00:25:24,020
+ Exactly.
+
+239
+00:25:24,020 --> 00:25:31,470
+ But with git diff is to see the exact lines.
+
+240
+00:25:31,470 --> 00:25:34,140
+ So you both are correct here.
+
+241
+00:25:34,140 --> 00:25:39,450
+ Okay.
+
+242
+00:25:39,450 --> 00:25:40,410
+ Good commits.
+
+243
+00:25:40,410 --> 00:25:47,640
+ Commit message is a note to your team and to yourself in six months, for example.
+
+244
+00:25:49,150 --> 00:25:57,350
+ Fixed stuff tells you nothing.
+
+245
+00:25:59,710 --> 00:26:01,310
+ I mean, this is a bad example.
+
+246
+00:26:01,310 --> 00:26:03,790
+ So fixed stuff here tells me nothing.
+
+247
+00:26:03,790 --> 00:26:05,370
+ What stuff did you fix?
+
+248
+00:26:05,370 --> 00:26:07,630
+ But here is a better one.
+
+249
+00:26:07,630 --> 00:26:09,790
+ Fixed wrong total when cart is empty.
+
+250
+00:26:09,790 --> 00:26:11,070
+ That's a better message.
+
+251
+00:26:11,070 --> 00:26:24,000
+ The common style is to write the message like order.
+
+252
+00:26:24,000 --> 00:26:32,350
+ For example, you have add, fix, remove, or not added or fixing.
+
+253
+00:26:32,350 --> 00:26:38,490
+ The trick you can have with you is the message should complete the sentence.
+
+254
+00:26:38,490 --> 00:26:45,790
+ So if applied, this commit will so on and so on.
+
+255
+00:26:45,790 --> 00:26:51,290
+ If applied, this commit will add category filter to products list basically.
+
+256
+00:26:52,000 --> 00:26:58,370
+ And commit often, in small pieces.
+
+257
+00:26:58,370 --> 00:27:00,300
+ One commit, one change.
+
+258
+00:27:00,300 --> 00:27:03,670
+ A small commit is easy to understand.
+
+259
+00:27:04,470 --> 00:27:07,930
+ Easy to review and easy to undo as well.
+
+260
+00:27:07,930 --> 00:27:17,010
+ A commit with a week of work in it is impossible to review and impossible to undo without losing
+
+261
+00:27:17,010 --> 00:27:17,600
+ everything.
+
+262
+00:27:17,600 --> 00:27:20,350
+ So do small commits all the time.
+
+263
+00:27:20,350 --> 00:27:29,820
+ Files git should ignore.
+
+264
+00:27:29,820 --> 00:27:32,000
+ Some files should never go into git.
+
+265
+00:27:32,000 --> 00:27:38,490
+ And you list them in a file called gitignore with a dot at the start here.
+
+266
+00:27:38,490 --> 00:27:41,190
+ That's a very important dot gitignore.
+
+267
+00:27:42,530 --> 00:27:45,790
+ And this should be in the root of the project.
+
+268
+00:27:45,790 --> 00:27:51,080
+ So for example, pycache is a python cache generated automatically.
+
+269
+00:27:52,210 --> 00:27:53,810
+ We don't need to save it.
+
+270
+00:27:53,810 --> 00:27:58,330
+ And for example, .vnv is a virtual environment.
+
+271
+00:27:58,330 --> 00:28:01,610
+ It's big and everyone creates their own.
+
+272
+00:28:01,610 --> 00:28:05,790
+ And .log means all log files.
+
+273
+00:28:05,790 --> 00:28:10,740
+ If you add .env, this is maybe the important one.
+
+274
+00:28:11,350 --> 00:28:16,310
+ Because an .env file often contains secrets, password, database connection strings,
+
+275
+00:28:16,310 --> 00:28:17,990
+ maybe API keys sometimes.
+
+276
+00:28:19,110 --> 00:28:21,340
+ Those must never go to GitHub.
+
+277
+00:28:21,340 --> 00:28:24,850
+ And here's why it's serious.
+
+278
+00:28:24,850 --> 00:28:29,250
+ Because if you push your password and then delete the file in the next commit,
+
+279
+00:28:29,250 --> 00:28:31,010
+ the password is still in the history.
+
+280
+00:28:31,010 --> 00:28:34,010
+ Anyone can go back and find it.
+
+281
+00:28:34,010 --> 00:28:40,220
+ And there are actually bots that can scan GitHub for leaked keys all the time, within minutes.
+
+282
+00:28:40,860 --> 00:28:48,930
+ If it happens, the only safe fix is to change the password immediately.
+
+283
+00:28:48,930 --> 00:28:54,910
+ GitHub can create a gitignore for you when you create a repository.
+
+284
+00:28:54,910 --> 00:28:59,650
+ And you can actually choose the python template there as well.
+
+285
+00:28:59,650 --> 00:29:11,050
+ Your computer in GitHub.
+
+286
+00:29:11,050 --> 00:29:14,680
+ Now, maybe let's connect your computer to GitHub.
+
+287
+00:29:15,230 --> 00:29:21,470
+ The remote is the copy on GitHub.
+
+288
+00:29:21,470 --> 00:29:26,780
+ It's usually, its usual nickname is origin.
+
+289
+00:29:26,780 --> 00:29:35,630
+ So git remote -v shows you were the origin points.
+
+290
+00:29:35,630 --> 00:29:39,790
+ Git push sends your commit to GitHub.
+
+291
+00:29:40,610 --> 00:29:49,600
+ So the first time you push a new branch, you write git push -u origin and the branch name.
+
+292
+00:29:49,600 --> 00:29:54,650
+ The -u connects your local branch to the one on GitHub.
+
+293
+00:29:54,650 --> 00:29:59,330
+ So after that, plain git push and git pull are enough.
+
+294
+00:29:59,330 --> 00:30:01,310
+ You don't have to do that anymore.
+
+295
+00:30:01,310 --> 00:30:04,310
+ So git pull does two things here.
+
+296
+00:30:04,310 --> 00:30:11,560
+ It downloads new commits from GitHub and merges them into your branch.
+
+297
+00:30:11,560 --> 00:30:15,710
+ Git fetch, for example, only downloads.
+
+298
+00:30:15,710 --> 00:30:20,100
+ So you can look before merging.
+
+299
+00:30:20,100 --> 00:30:21,950
+ One very important thing here.
+
+300
+00:30:21,950 --> 00:30:24,100
+ Commit is local.
+
+301
+00:30:24,100 --> 00:30:26,740
+ So when you commit, nothing happens on GitHub.
+
+302
+00:30:27,330 --> 00:30:32,160
+ Your teammates can't see it until you push.
+
+303
+00:30:32,160 --> 00:30:41,430
+ And many beginners commit, close the laptop and wonder why the team can't see their work.
+
+304
+00:30:41,430 --> 00:30:43,580
+ Well, because you haven't pushed yet.
+
+305
+00:30:43,580 --> 00:30:48,610
+ Signing into GitHub.
+
+306
+00:30:48,610 --> 00:30:51,870
+ I mean, this is maybe a practical slide here.
+
+307
+00:30:52,750 --> 00:30:56,170
+ Because this is where many people get stuck the first time.
+
+308
+00:30:56,170 --> 00:31:00,150
+ When you push to GitHub, git needs to know it's you.
+
+309
+00:31:00,150 --> 00:31:05,820
+ But your normal GitHub password does not work in the terminal.
+
+310
+00:31:05,820 --> 00:31:07,410
+ So GitHub turned that off.
+
+311
+00:31:08,800 --> 00:31:13,760
+ I think it was in like three, five, I don't know, four years ago.
+
+312
+00:31:13,760 --> 00:31:16,340
+ And that was actually for security reasons.
+
+313
+00:31:16,340 --> 00:31:21,050
+ On Windows, git for Windows includes git credential manager.
+
+314
+00:31:21,050 --> 00:31:25,280
+ So the first time you push, a browser window opens.
+
+315
+00:31:25,280 --> 00:31:29,250
+ You log into GitHub and basically it remembers you.
+
+316
+00:31:29,250 --> 00:31:30,000
+ Pretty easy.
+
+317
+00:31:30,000 --> 00:31:32,840
+ Other options are personal access tokens.
+
+318
+00:31:32,840 --> 00:31:35,960
+ Which is a long random password you create on GitHub.
+
+319
+00:31:35,960 --> 00:31:37,850
+ And use instead of a password.
+
+320
+00:31:37,850 --> 00:31:39,560
+ Or maybe an SSH key.
+
+321
+00:31:40,120 --> 00:31:43,230
+ A key pair on your computer that GitHub trusts.
+
+322
+00:31:43,230 --> 00:31:46,500
+ So many developers actually use SSH.
+
+323
+00:31:47,450 --> 00:31:50,560
+ I don't know if it's...
+
+324
+00:31:50,560 --> 00:31:52,450
+ Let me just check something.
+
+325
+00:31:52,450 --> 00:31:57,380
+ So I don't say anything wrong.
+
+326
+00:31:57,380 --> 00:32:11,630
+ Oh yeah, they actually removed the SSH part.
+
+327
+00:32:14,240 --> 00:32:16,150
+ Yeah, okay, so that's old.
+
+328
+00:32:16,150 --> 00:32:19,080
+ But back in the day you could do that.
+
+329
+00:32:19,080 --> 00:32:24,970
+ But you might have other problems.
+
+330
+00:32:24,970 --> 00:32:29,350
+ Otherwise, I mean, most of you guys don't have these problems.
+
+331
+00:32:30,150 --> 00:32:33,190
+ Because most of you already have GitHub and Git connected.
+
+332
+00:32:33,190 --> 00:32:36,650
+ So now we come back to this.
+
+333
+00:32:36,650 --> 00:32:37,980
+ What is a branch?
+
+334
+00:32:37,980 --> 00:32:40,220
+ The big topic of today.
+
+335
+00:32:40,220 --> 00:32:40,930
+ Branches.
+
+336
+00:32:40,930 --> 00:32:44,130
+ A branch is a separate line of work.
+
+337
+00:32:44,130 --> 00:32:45,640
+ So if you look at the picture here.
+
+338
+00:32:46,910 --> 00:32:50,490
+ Main has commits A, B and C.
+
+339
+00:32:50,490 --> 00:32:55,200
+ Then someone creates a feature branch from C.
+
+340
+00:32:55,860 --> 00:33:00,190
+ And commits D and E on it.
+
+341
+00:33:01,850 --> 00:33:05,150
+ Meanwhile, main stays untouched.
+
+342
+00:33:05,150 --> 00:33:11,050
+ So when the feature is ready, it's merged into main.
+
+343
+00:33:11,050 --> 00:33:12,960
+ And that's F in this.
+
+344
+00:33:12,960 --> 00:33:17,010
+ Well, why?
+
+345
+00:33:17,690 --> 00:33:19,850
+ Because main should always work.
+
+346
+00:33:20,330 --> 00:33:22,730
+ Main is the version that is live.
+
+347
+00:33:22,730 --> 00:33:24,870
+ Or maybe ready to go live.
+
+348
+00:33:24,870 --> 00:33:26,750
+ So if you work directly on main.
+
+349
+00:33:26,750 --> 00:33:28,430
+ And push half-finished code.
+
+350
+00:33:29,150 --> 00:33:32,020
+ You're gonna break it for everyone.
+
+351
+00:33:32,020 --> 00:33:35,480
+ On a branch on the other hand.
+
+352
+00:33:35,480 --> 00:33:36,520
+ You can experiment.
+
+353
+00:33:36,520 --> 00:33:37,880
+ You can make mistakes.
+
+354
+00:33:37,880 --> 00:33:40,600
+ And commit half-finished work if you want.
+
+355
+00:33:40,600 --> 00:33:42,690
+ Nobody else is affected.
+
+356
+00:33:42,690 --> 00:33:46,430
+ Only when it's finished and reviewed.
+
+357
+00:33:46,430 --> 00:33:50,170
+ Does it go into main basically.
+
+358
+00:33:50,170 --> 00:33:53,580
+ So a comparison here.
+
+359
+00:33:53,580 --> 00:33:55,980
+ Main is the published book.
+
+360
+00:33:55,980 --> 00:33:58,890
+ A branch is your draft.
+
+361
+00:33:58,890 --> 00:34:01,810
+ You don't edit the printed book.
+
+362
+00:34:01,810 --> 00:34:03,630
+ You write a draft.
+
+363
+00:34:03,630 --> 00:34:05,470
+ Someone reads it.
+
+364
+00:34:05,470 --> 00:34:07,190
+ And then it's printed.
+
+365
+00:34:07,190 --> 00:34:16,660
+ Now just take a sip of coffee.
+
+366
+00:34:16,660 --> 00:34:20,510
+ Perfect.
+
+367
+00:34:20,510 --> 00:34:21,320
+ Okay.
+
+368
+00:34:21,320 --> 00:34:23,160
+ So here are the branch commands.
+
+369
+00:34:23,160 --> 00:34:27,960
+ Git branch lists your branches.
+
+370
+00:34:27,960 --> 00:34:38,910
+ The star here is basically when it shows the star and your branch.
+
+371
+00:34:38,910 --> 00:34:41,530
+ It means this is the branch you're using right now.
+
+372
+00:34:41,530 --> 00:34:47,080
+ Git switch -c features/search here.
+
+373
+00:34:47,080 --> 00:34:54,810
+ So git switch creates a new branch and moves you to it basically.
+
+374
+00:34:54,810 --> 00:34:58,780
+ And the -c means create.
+
+375
+00:34:58,780 --> 00:35:05,170
+ So git switch without the -c just moves to an existing branch.
+
+376
+00:35:07,550 --> 00:35:15,260
+ And git merge takes another branch and merges it into the one you're on.
+
+377
+00:35:15,260 --> 00:35:24,930
+ So to merge the feature basically into main you first switch to main and then merge the feature.
+
+378
+00:35:24,930 --> 00:35:37,760
+ And when a branch is merged you delete it with for example git branch -d if you want.
+
+379
+00:35:37,760 --> 00:35:41,440
+ And old branches are just clutter here.
+
+380
+00:35:41,440 --> 00:35:49,020
+ You will see a git checkout in many tutorials and the stack overflow and all of that stuff on the web.
+
+381
+00:35:49,020 --> 00:35:54,010
+ That's the older command and it still works.
+
+382
+00:35:54,010 --> 00:35:58,060
+ But git switch is the newer and easier to understand.
+
+383
+00:35:58,060 --> 00:36:00,410
+ So I recommend using that.
+
+384
+00:36:00,410 --> 00:36:05,350
+ Okay.
+
+385
+00:36:05,350 --> 00:36:07,190
+ So I have a question.
+
+386
+00:36:07,190 --> 00:36:13,860
+ Let's just say I want to merge this feature /search into main.
+
+387
+00:36:13,860 --> 00:36:18,980
+ Which branch should I be on when I run git merge?
+
+388
+00:36:18,980 --> 00:36:31,590
+ Correct answer is main.
+
+389
+00:36:31,590 --> 00:36:32,740
+ Exactly.
+
+390
+00:36:32,740 --> 00:36:35,740
+ You merge into the branch you are on.
+
+391
+00:36:35,740 --> 00:36:37,660
+ Okay.
+
+392
+00:36:37,660 --> 00:36:46,160
+ Here's the feature branch workflow.
+
+393
+00:36:46,160 --> 00:36:49,110
+ This is the workflow.
+
+394
+00:36:49,110 --> 00:36:52,350
+ So it's how most companies work.
+
+395
+00:36:52,350 --> 00:37:02,740
+ And it's not all companies but most of them does this.
+
+396
+00:37:03,260 --> 00:37:09,050
+ So every new feature or bug fix follows basically these steps.
+
+397
+00:37:09,050 --> 00:37:14,530
+ So the first one we start from the latest main.
+
+398
+00:37:14,530 --> 00:37:17,660
+ We switch to main and pull.
+
+399
+00:37:17,660 --> 00:37:21,630
+ So you start from what everyone else has.
+
+400
+00:37:21,630 --> 00:37:23,330
+ Very important.
+
+401
+00:37:23,330 --> 00:37:30,490
+ Two, we create a branch for your feature.
+
+402
+00:37:30,490 --> 00:37:36,990
+ Three, work and commit in small steps.
+
+403
+00:37:36,990 --> 00:37:41,470
+ Four, push the branch to GitHub.
+
+404
+00:37:41,470 --> 00:37:43,680
+ Now the team can see it.
+
+405
+00:37:43,680 --> 00:37:44,450
+ That's good.
+
+406
+00:37:44,450 --> 00:37:49,720
+ Five, on GitHub open a pull request.
+
+407
+00:37:49,720 --> 00:37:51,470
+ You're basically saying I'm done.
+
+408
+00:37:51,470 --> 00:37:53,950
+ Please look at my code and merge it into main.
+
+409
+00:37:53,950 --> 00:37:55,690
+ Okay.
+
+410
+00:37:55,690 --> 00:38:00,060
+ Six, a teammate maybe reviews it.
+
+411
+00:38:00,060 --> 00:38:04,210
+ They read the code, maybe they comment, maybe ask for changes.
+
+412
+00:38:04,850 --> 00:38:07,900
+ You fix them with new commits on the same branch.
+
+413
+00:38:07,900 --> 00:38:15,200
+ And the pull requests will update automatically here.
+
+414
+00:38:15,200 --> 00:38:21,470
+ Seven, when it's approved it's merged into main.
+
+415
+00:38:21,470 --> 00:38:23,360
+ Usually with a button on GitHub.
+
+416
+00:38:23,360 --> 00:38:26,540
+ And then you have eight.
+
+417
+00:38:26,540 --> 00:38:30,970
+ Do you delete the branch, maybe switch to main and pull.
+
+418
+00:38:30,970 --> 00:38:33,660
+ So you have the merged version.
+
+419
+00:38:33,660 --> 00:38:38,900
+ And then you start again from step one with the next feature.
+
+420
+00:38:38,900 --> 00:38:41,300
+ So it's like a loop.
+
+421
+00:38:41,300 --> 00:38:43,220
+ We're going up and down, up and down.
+
+422
+00:38:43,220 --> 00:38:45,980
+ So that's the workflow we need to learn here.
+
+423
+00:38:45,980 --> 00:38:54,070
+ So if I ask another question here.
+
+424
+00:38:54,070 --> 00:38:58,470
+ So why do we pull main before creating a new branch?
+
+425
+00:38:58,470 --> 00:39:06,730
+ I can repeat it.
+
+426
+00:39:06,730 --> 00:39:10,650
+ Why do we pull main before creating a new branch?
+
+427
+00:39:11,420 --> 00:39:20,600
+ Yeah.
+
+428
+00:39:20,600 --> 00:39:24,000
+ So we start from the latest, said Christoffer.
+
+429
+00:39:24,000 --> 00:39:26,770
+ And many of you guys as well.
+
+430
+00:39:26,770 --> 00:39:27,090
+ Yes.
+
+431
+00:39:28,320 --> 00:39:31,070
+ So the new branch starts from the latest code.
+
+432
+00:39:31,070 --> 00:39:38,140
+ Otherwise you will build on old code and get more conflicts later.
+
+433
+00:39:38,140 --> 00:39:42,060
+ Naming branches.
+
+434
+00:39:42,060 --> 00:39:45,820
+ Well, branch names should tell the team what's happening.
+
+435
+00:39:45,820 --> 00:39:49,030
+ Many teams use a prefix.
+
+436
+00:39:49,030 --> 00:39:55,120
+ Like a feature slash bug fix slash.
+
+437
+00:39:55,120 --> 00:39:59,200
+ And then a short description with dashes, maybe.
+
+438
+00:39:59,200 --> 00:40:10,370
+ Some teams add the number of issue or user story like feature slash 12 order history.
+
+439
+00:40:10,370 --> 00:40:16,670
+ Then you can always find the story the branch belongs to.
+
+440
+00:40:16,670 --> 00:40:21,240
+ Two rules that matter more than the name.
+
+441
+00:40:21,240 --> 00:40:23,250
+ One feature per branch.
+
+442
+00:40:23,250 --> 00:40:23,740
+ One feature per branch.
+
+443
+00:40:23,740 --> 00:40:28,340
+ Don't fix the log in and add search in the same branch.
+
+444
+00:40:28,340 --> 00:40:31,740
+ And keep branches short lived.
+
+445
+00:40:31,740 --> 00:40:34,280
+ Maybe days, not weeks or months.
+
+446
+00:40:34,280 --> 00:40:36,450
+ A couple of days should be enough.
+
+447
+00:40:36,450 --> 00:40:41,310
+ A branch that lives for two months is far away from Maine.
+
+448
+00:40:42,010 --> 00:40:45,370
+ And merging it will probably be pretty painful.
+
+449
+00:40:45,370 --> 00:40:54,270
+ And your team will have its own naming rules and just follow them.
+
+450
+00:40:54,270 --> 00:40:59,580
+ The important thing is that everyone does the same thing.
+
+451
+00:40:59,580 --> 00:41:10,080
+ Whole request or a PR is the center of teamwork on GitHub.
+
+452
+00:41:10,080 --> 00:41:13,990
+ It's a page on GitHub that says here is my branch.
+
+453
+00:41:13,990 --> 00:41:16,800
+ Please review it and merge it into Maine.
+
+454
+00:41:16,800 --> 00:41:22,020
+ A good PR has a clear title and short description.
+
+455
+00:41:23,010 --> 00:41:25,500
+ What did you change and why?
+
+456
+00:41:25,500 --> 00:41:30,010
+ If there is something special to test, write it here please.
+
+457
+00:41:30,010 --> 00:41:34,480
+ GitHub shows every change line in green and red.
+
+458
+00:41:35,500 --> 00:41:38,650
+ Reviewers can comment on a specific line.
+
+459
+00:41:38,650 --> 00:41:40,140
+ Ask questions maybe.
+
+460
+00:41:40,140 --> 00:41:42,370
+ Suggest maybe changes.
+
+461
+00:41:42,370 --> 00:41:44,320
+ And finally approve it.
+
+462
+00:41:44,320 --> 00:41:51,040
+ Many teams also have automatic checks that runs on every PR request.
+
+463
+00:41:51,040 --> 00:41:52,720
+ For example the tests.
+
+464
+00:41:54,290 --> 00:41:59,810
+ If a test fails you see a red cross before anyone merges.
+
+465
+00:41:59,810 --> 00:42:03,230
+ And the nice trick here.
+
+466
+00:42:03,230 --> 00:42:08,170
+ If you write closes #12 in the description.
+
+467
+00:42:08,810 --> 00:42:13,170
+ GitHub closes issue #12 automatically when the PR is merged.
+
+468
+00:42:13,170 --> 00:42:17,730
+ That links basically your code to the user story.
+
+469
+00:42:17,730 --> 00:42:21,320
+ The name is a bit confusing.
+
+470
+00:42:22,440 --> 00:42:26,210
+ You are asking the team to pull your changes into Maine.
+
+471
+00:42:26,210 --> 00:42:31,410
+ GitLab calls the same thing a merge request.
+
+472
+00:42:31,410 --> 00:42:35,030
+ Which is maybe clearer than a pull request.
+
+473
+00:42:35,680 --> 00:42:41,760
+ Okay so another question is what should you write in a pull request description.
+
+474
+00:42:41,760 --> 00:42:43,900
+ Do you remember that?
+
+475
+00:42:43,900 --> 00:42:57,230
+ Yeah.
+
+476
+00:42:57,230 --> 00:43:06,910
+ What we should write in the description is basically what was changed.
+
+477
+00:43:06,910 --> 00:43:07,490
+ Why.
+
+478
+00:43:07,490 --> 00:43:09,090
+ How to test it.
+
+479
+00:43:09,090 --> 00:43:12,800
+ And the link to the issue/story for example.
+
+480
+00:43:12,800 --> 00:43:22,490
+ Review means another developer reads your code before it goes into Maine.
+
+481
+00:43:22,490 --> 00:43:26,220
+ It's one of the best ways to actually find bugs.
+
+482
+00:43:26,220 --> 00:43:30,280
+ The best way also to learn.
+
+483
+00:43:30,280 --> 00:43:34,420
+ As a reviewer be kind and specific.
+
+484
+00:43:34,420 --> 00:43:37,520
+ Not like don't write like this is bad.
+
+485
+00:43:39,070 --> 00:43:42,350
+ But this loop runs once per product.
+
+486
+00:43:42,350 --> 00:43:45,390
+ Could we do it with one query instead?
+
+487
+00:43:45,390 --> 00:43:48,190
+ Ask questions instead of giving orders.
+
+488
+00:43:49,730 --> 00:43:53,980
+ Like check that it works.
+
+489
+00:43:55,130 --> 00:43:56,520
+ That it's readable.
+
+490
+00:43:56,520 --> 00:44:03,060
+ And that meets the definition of done basically.
+
+491
+00:44:03,060 --> 00:44:06,220
+ As the author keep the pull request small.
+
+492
+00:44:06,220 --> 00:44:13,180
+ A pull request with 50 changed lines gets a careful review.
+
+493
+00:44:13,180 --> 00:44:19,880
+ A PR with 2000 lines looks good to me.
+
+494
+00:44:19,880 --> 00:44:21,460
+ Because nobody can read it all.
+
+495
+00:44:22,780 --> 00:44:25,640
+ And don't take comments personally here.
+
+496
+00:44:26,420 --> 00:44:28,020
+ The review is about the code.
+
+497
+00:44:28,020 --> 00:44:28,740
+ Not about you.
+
+498
+00:44:29,280 --> 00:44:33,020
+ Even senior developers get many comments on their PRs.
+
+499
+00:44:33,020 --> 00:44:39,820
+ So as for example as a junior you will you will learn a lot from reviews of your code.
+
+500
+00:44:40,620 --> 00:44:45,850
+ And you're also allowed to review seniors code as well.
+
+501
+00:44:45,850 --> 00:44:49,240
+ Asking for example questions like why does this work?
+
+502
+00:44:50,140 --> 00:44:53,410
+ Is a value valuable review comment actually.
+
+503
+00:44:53,410 --> 00:45:00,170
+ Merging a pull request.
+
+504
+00:45:00,170 --> 00:45:03,930
+ When a pull request is approved someone clicks merge.
+
+505
+00:45:03,930 --> 00:45:08,130
+ GitHub back has actually three options.
+
+506
+00:45:08,130 --> 00:45:11,110
+ Create a merge commit.
+
+507
+00:45:12,250 --> 00:45:15,260
+ All the commits from the branch are kept.
+
+508
+00:45:15,260 --> 00:45:17,370
+ Plus an extra merge commit.
+
+509
+00:45:17,370 --> 00:45:20,080
+ You see the full history.
+
+510
+00:45:20,080 --> 00:45:22,110
+ But it can get messy.
+
+511
+00:45:22,110 --> 00:45:24,930
+ Okay.
+
+512
+00:45:24,930 --> 00:45:28,490
+ Quash and merge.
+
+513
+00:45:28,490 --> 00:45:35,420
+ All the commits from the branch become one single commit in main.
+
+514
+00:45:35,420 --> 00:45:38,950
+ That's popular because main gets a clean history.
+
+515
+00:45:38,950 --> 00:45:40,710
+ So one commit per feature.
+
+516
+00:45:42,220 --> 00:45:48,990
+ Your fix typo or and maybe and oops commits basically disappear.
+
+517
+00:45:49,800 --> 00:45:53,080
+ Then you have rebase and merge.
+
+518
+00:45:54,380 --> 00:46:00,340
+ The commits are moved on top of main one by one without a merge commit.
+
+519
+00:46:00,340 --> 00:46:03,990
+ So it's a straight line of history.
+
+520
+00:46:03,990 --> 00:46:06,790
+ So you don't need to master the differences right now.
+
+521
+00:46:06,790 --> 00:46:10,330
+ Your team will have chosen one.
+
+522
+00:46:10,330 --> 00:46:14,920
+ Just recognize the three buttons here basically.
+
+523
+00:46:14,920 --> 00:46:21,140
+ But sometimes we can have merge conflicts.
+
+524
+00:46:21,140 --> 00:46:23,550
+ And then sooner or later you will see this.
+
+525
+00:46:23,550 --> 00:46:26,650
+ It looks scary.
+
+526
+00:46:26,650 --> 00:46:28,860
+ But it's normal and not dangerous.
+
+527
+00:46:30,480 --> 00:46:35,230
+ It happens when two branches changes the same line in different ways.
+
+528
+00:46:35,230 --> 00:46:40,550
+ So here main says welcome to the shop.
+
+529
+00:46:40,550 --> 00:46:43,970
+ And the feature branch says welcome to our web shop.
+
+530
+00:46:43,970 --> 00:46:47,970
+ Can't know which one is right.
+
+531
+00:46:47,970 --> 00:46:51,420
+ So instead of guessing it stops and it asks you.
+
+532
+00:46:51,420 --> 00:46:56,110
+ And git marks the conflict in the file.
+
+533
+00:46:57,600 --> 00:47:04,190
+ You see how between the arrows and the equal signs is in one version.
+
+534
+00:47:04,190 --> 00:47:06,110
+ The one from main.
+
+535
+00:47:06,110 --> 00:47:10,790
+ And between the equal signs and the other arrows is the other version.
+
+536
+00:47:10,790 --> 00:47:12,720
+ From the feature branch.
+
+537
+00:47:12,720 --> 00:47:17,090
+ So to fix this you open the file.
+
+538
+00:47:17,090 --> 00:47:19,690
+ Decide what the code should be.
+
+539
+00:47:19,690 --> 00:47:22,880
+ Maybe one version or maybe the other.
+
+540
+00:47:22,880 --> 00:47:25,210
+ Maybe a mix of both.
+
+541
+00:47:25,210 --> 00:47:31,030
+ Delete maybe the marker lines.
+
+542
+00:47:31,030 --> 00:47:33,810
+ The arrows and the equal signs.
+
+543
+00:47:33,810 --> 00:47:34,640
+ Save.
+
+544
+00:47:34,640 --> 00:47:38,400
+ Then git add the file and git commit.
+
+545
+00:47:38,400 --> 00:47:41,060
+ And then you're done.
+
+546
+00:47:41,060 --> 00:47:44,180
+ Actually Visual Studio Code helps a lot.
+
+547
+00:47:44,900 --> 00:47:48,580
+ It shows buttons above the conflict.
+
+548
+00:47:48,580 --> 00:47:51,940
+ Accept current change or accept incoming change.
+
+549
+00:47:51,940 --> 00:47:53,300
+ Or maybe accept both.
+
+550
+00:47:53,940 --> 00:47:59,060
+ And GitHub can show and fix simple conflicts even in the browser as well.
+
+551
+00:48:00,090 --> 00:48:05,090
+ An important thing here is a conflict is not an error.
+
+552
+00:48:05,090 --> 00:48:06,380
+ Nothing is lost.
+
+553
+00:48:06,380 --> 00:48:09,580
+ Git is just asking for a human decision here.
+
+554
+00:48:09,580 --> 00:48:16,630
+ Okay let's just.
+
+555
+00:48:17,270 --> 00:48:18,310
+ I have another question.
+
+556
+00:48:18,310 --> 00:48:24,240
+ Let's just say you have two developers change to different files on their branches.
+
+557
+00:48:24,960 --> 00:48:29,210
+ Will there be a conflict when both are merged?
+
+558
+00:48:29,210 --> 00:48:44,180
+ Yeah Fabian you're really fast.
+
+559
+00:48:44,180 --> 00:48:46,880
+ Fabian is right.
+
+560
+00:48:46,880 --> 00:48:47,820
+ No.
+
+561
+00:48:47,820 --> 00:48:50,970
+ I mean git merges different files.
+
+562
+00:48:50,970 --> 00:48:54,970
+ And even different parts of the same file automatically.
+
+563
+00:48:54,970 --> 00:48:59,830
+ Conflicts only happen when the same lines are changed.
+
+564
+00:48:59,830 --> 00:49:01,790
+ Like in the example here.
+
+565
+00:49:01,790 --> 00:49:09,600
+ You can't avoid conflicts completely.
+
+566
+00:49:09,600 --> 00:49:13,120
+ But you can make them small and rare.
+
+567
+00:49:13,120 --> 00:49:16,450
+ Pull main often.
+
+568
+00:49:16,450 --> 00:49:20,220
+ If your branch lives for a few days.
+
+569
+00:49:20,970 --> 00:49:25,890
+ Bring the latest main into it regularly.
+
+570
+00:49:25,890 --> 00:49:28,140
+ I mean switch to main and pull.
+
+571
+00:49:28,940 --> 00:49:33,500
+ Switch back to your branch and merge main into it.
+
+572
+00:49:33,500 --> 00:49:40,020
+ Then you solve a small conflict early instead of one big one at the end.
+
+573
+00:49:42,590 --> 00:49:45,810
+ And keep branches small and short.
+
+574
+00:49:45,810 --> 00:49:52,130
+ The longer a branch lives, the further it drifts away from main.
+
+575
+00:49:52,130 --> 00:49:53,410
+ Remember that.
+
+576
+00:49:53,410 --> 00:49:55,090
+ And talk to each other.
+
+577
+00:49:55,090 --> 00:49:59,780
+ I mean yesterday's daily scrum is perfect for this.
+
+578
+00:50:00,340 --> 00:50:02,660
+ I'm working on the login page today.
+
+579
+00:50:03,340 --> 00:50:07,910
+ Then nobody else starts changing the same file.
+
+580
+00:50:07,910 --> 00:50:09,500
+ If I say that to the team.
+
+581
+00:50:09,500 --> 00:50:15,360
+ And also don't reformat whole files.
+
+582
+00:50:15,360 --> 00:50:19,520
+ If your editor changes the indentation in a file of 500 lines.
+
+583
+00:50:21,050 --> 00:50:26,880
+ Every one of those lines is a possible conflict for someone else.
+
+584
+00:50:26,880 --> 00:50:30,490
+ And commit and push often.
+
+585
+00:50:30,490 --> 00:50:32,000
+ So your work is visible.
+
+586
+00:50:32,000 --> 00:50:41,950
+ Many teams don't just hope that everyone follows the workflow.
+
+587
+00:50:41,950 --> 00:50:43,870
+ They make GitHub enforce it.
+
+588
+00:50:44,520 --> 00:50:46,520
+ With rules on the main branch.
+
+589
+00:50:46,520 --> 00:50:50,960
+ The rules is nobody can push directly into main.
+
+590
+00:50:50,960 --> 00:50:52,320
+ Not even the boss.
+
+591
+00:50:52,320 --> 00:50:56,510
+ All changes must come through a pull request.
+
+592
+00:50:57,570 --> 00:51:03,580
+ So a pull request needs at least one approval from someone else.
+
+593
+00:51:03,580 --> 00:51:09,130
+ And all automatic checks like the tests and so on must pass.
+
+594
+00:51:09,130 --> 00:51:12,510
+ Then the main is protected.
+
+595
+00:51:12,510 --> 00:51:14,690
+ You can't break it by mistake.
+
+596
+00:51:14,690 --> 00:51:18,410
+ Because every change has been reviewed and tested.
+
+597
+00:51:18,410 --> 00:51:26,780
+ You can set this in the repository settings on GitHub.
+
+598
+00:51:26,780 --> 00:51:29,430
+ Under branches or rules.
+
+599
+00:51:29,430 --> 00:51:33,520
+ So I recommend trying that.
+
+600
+00:51:33,520 --> 00:51:37,740
+ Okay.
+
+601
+00:51:37,740 --> 00:51:39,260
+ Git and scrum together.
+
+602
+00:51:39,260 --> 00:51:41,960
+ Let's connect today with yesterday.
+
+603
+00:51:41,960 --> 00:51:45,530
+ A user story becomes an issue on GitHub.
+
+604
+00:51:45,530 --> 00:51:50,410
+ The sprint backlog can be a board in GitHub projects.
+
+605
+00:51:51,230 --> 00:51:56,130
+ With columns like for example to-do, in progress, review and done.
+
+606
+00:51:56,130 --> 00:51:59,230
+ So when you start working on a story.
+
+607
+00:51:59,230 --> 00:52:01,160
+ You create a feature branch.
+
+608
+00:52:01,160 --> 00:52:04,670
+ Maybe with the issue number in the name as well.
+
+609
+00:52:04,670 --> 00:52:06,600
+ And when you're done.
+
+610
+00:52:06,600 --> 00:52:08,600
+ You open a pull request.
+
+611
+00:52:08,600 --> 00:52:13,630
+ With closes and the issue number.
+
+612
+00:52:13,630 --> 00:52:19,360
+ So the review is part of the definition of done basically.
+
+613
+00:52:19,360 --> 00:52:23,360
+ And when it's merged, the issue closes.
+
+614
+00:52:24,060 --> 00:52:25,500
+ The cards moves to done.
+
+615
+00:52:26,210 --> 00:52:32,450
+ And the code is part of the increment you show at the sprint review for example.
+
+616
+00:52:32,450 --> 00:52:41,530
+ So the board, the branches and the pull requests all the same story.
+
+617
+00:52:41,530 --> 00:52:46,430
+ That's how a real team works from day to day basically.
+
+618
+00:52:46,430 --> 00:52:52,800
+ Oops.
+
+619
+00:52:52,800 --> 00:52:53,660
+ I'm doing things.
+
+620
+00:52:54,220 --> 00:52:56,420
+ Everyone makes mistakes.
+
+621
+00:52:56,420 --> 00:53:00,700
+ Git has many ways to undo them.
+
+622
+00:53:00,700 --> 00:53:03,420
+ Here are at least the safe ones.
+
+623
+00:53:04,940 --> 00:53:14,620
+ Git restore with a file name throws away the changes you have made in that file since the last commit.
+
+624
+00:53:14,620 --> 00:53:31,420
+ So the second one here takes a file out of the staging area.
+
+625
+00:53:31,420 --> 00:53:36,820
+ But it keeps your changes in that file.
+
+626
+00:53:36,820 --> 00:53:42,770
+ Git commit -amend -m here fixes the last commit.
+
+627
+00:53:42,770 --> 00:53:44,770
+ For example, a typo in the message.
+
+628
+00:53:45,800 --> 00:53:47,320
+ Maybe you wrote something wrong.
+
+629
+00:53:47,320 --> 00:53:49,440
+ Or a file you forgot to add.
+
+630
+00:53:49,440 --> 00:53:55,570
+ But this will work only before you actually pushed it.
+
+631
+00:53:55,570 --> 00:53:57,310
+ So don't do push.
+
+632
+00:53:57,310 --> 00:54:06,970
+ Git revert, as you can see here, creates a new commit that does the opposite of an old one.
+
+633
+00:54:06,970 --> 00:54:12,380
+ That's the safe way to undo something that's already on GitHub.
+
+634
+00:54:12,380 --> 00:54:14,560
+ Because history isn't rewritten.
+
+635
+00:54:14,560 --> 00:54:20,660
+ Everyone can see that a change was made and then undone.
+
+636
+00:54:20,660 --> 00:54:30,700
+ Two commits to be very careful with is git reset -hard and git push -force.
+
+637
+00:54:31,580 --> 00:54:33,210
+ They can actually delete work.
+
+638
+00:54:35,210 --> 00:54:37,630
+ Yours, maybe your work or your teammates.
+
+639
+00:54:37,630 --> 00:54:44,730
+ So don't use them on shared branches unless you really know what you're doing.
+
+640
+00:54:44,730 --> 00:54:55,970
+ And remember, sum up this morning here.
+
+641
+00:54:55,970 --> 00:54:58,820
+ Git saves the history of your code.
+
+642
+00:54:59,920 --> 00:55:03,370
+ GitHub shares it with your team every day.
+
+643
+00:55:04,170 --> 00:55:08,190
+ Git status, git add commit push and pull.
+
+644
+00:55:08,190 --> 00:55:13,460
+ Commit small with clear messages.
+
+645
+00:55:15,890 --> 00:55:17,810
+ Never commit secrets.
+
+646
+00:55:17,810 --> 00:55:19,700
+ New work equals new branch.
+
+647
+00:55:20,330 --> 00:55:22,050
+ Main always works.
+
+648
+00:55:22,050 --> 00:55:27,280
+ Feature branch, then pull request, review and merge.
+
+649
+00:55:27,280 --> 00:55:31,970
+ A merge conflict is a question, not an error.
+
+650
+00:55:31,970 --> 00:55:35,420
+ And these are the points to actually remember.
+
+651
+00:55:36,130 --> 00:55:39,710
+ If one of them still feels unclear, you can ask me now.
+
+652
+00:55:39,710 --> 00:55:46,620
+ So if you have any questions, you can of course ask me now.
+
+653
+00:55:46,620 --> 00:55:51,590
+ What I'm going to show you today, because we don't actually have a lab on this.
+
+654
+00:55:52,450 --> 00:55:57,580
+ And one good way is, let me see, I'm just going to bring it up here in a second.
+
+655
+00:55:57,580 --> 00:56:17,900
+ Maybe I can do that.
+
+656
+00:56:17,900 --> 00:56:18,520
+ Okay.
+
+657
+00:56:18,520 --> 00:56:22,610
+ Learn git branching.js.org.
+
+658
+00:56:22,610 --> 00:56:25,970
+ Well, here you can actually learn git branching.
+
+659
+00:56:25,970 --> 00:56:27,970
+ And yeah, you get some questions here.
+
+660
+00:56:29,710 --> 00:56:31,310
+ Nicely placed introduction to majority.
+
+661
+00:56:32,190 --> 00:56:32,510
+ Okay.
+
+662
+00:56:32,510 --> 00:56:37,500
+ So this is just, this is just some, and here you can actually visually see it.
+
+663
+00:56:37,500 --> 00:56:39,740
+ So here we have the main and here we have that.
+
+664
+00:56:39,740 --> 00:56:40,540
+ And let me see.
+
+665
+00:56:40,540 --> 00:56:44,710
+ And here you can actually type, oh, you can actually type some stuff here.
+
+666
+00:56:44,710 --> 00:56:46,150
+ So git commit git whatever.
+
+667
+00:56:48,220 --> 00:56:48,780
+ Levels.
+
+668
+00:56:48,780 --> 00:56:50,370
+ Let me see if I click here.
+
+669
+00:56:50,370 --> 00:56:52,000
+ That doesn't work.
+
+670
+00:56:52,000 --> 00:56:53,040
+ Okay.
+
+671
+00:56:53,040 --> 00:56:54,300
+ Git checkout.
+
+672
+00:56:54,300 --> 00:56:55,310
+ Yeah.
+
+673
+00:56:55,310 --> 00:56:58,290
+ And this is the head where it's actually pointing right now.
+
+674
+00:57:00,070 --> 00:57:01,580
+ Let's keep on clicking on these.
+
+675
+00:57:04,250 --> 00:57:04,570
+ Okay.
+
+676
+00:57:04,570 --> 00:57:05,630
+ So it wants me.
+
+677
+00:57:05,630 --> 00:57:09,050
+ Now we have, yeah, we changed it to another.
+
+678
+00:57:09,050 --> 00:57:12,960
+ So git, as you can see, git checkout c1.
+
+679
+00:57:12,960 --> 00:57:16,050
+ So this is the old, the old way of doing it.
+
+680
+00:57:16,050 --> 00:57:17,250
+ It says git checkout here.
+
+681
+00:57:17,250 --> 00:57:18,370
+ So this is our branch.
+
+682
+00:57:18,370 --> 00:57:19,650
+ Git checkout c1.
+
+683
+00:57:19,650 --> 00:57:22,050
+ And then we did git checkout c0.
+
+684
+00:57:22,850 --> 00:57:24,450
+ And c1 is the main here.
+
+685
+00:57:26,920 --> 00:57:32,480
+ To actually, let me see.
+
+686
+00:57:32,480 --> 00:57:45,340
+ If I type check out c1 again, maybe we can do that.
+
+687
+00:57:47,200 --> 00:57:57,340
+ I can say git commit first.
+
+688
+00:57:57,340 --> 00:58:01,130
+ There we go.
+
+689
+00:58:01,130 --> 00:58:02,140
+ Now we do the commit.
+
+690
+00:58:02,140 --> 00:58:07,120
+ So you can actually, you can try all of the stuff here and see it visually.
+
+691
+00:58:07,120 --> 00:58:08,410
+ What's going on actually?
+
+692
+00:58:08,410 --> 00:58:10,190
+ Yeah.
+
+693
+00:58:10,190 --> 00:58:11,230
+ Detached head state.
+
+694
+00:58:11,230 --> 00:58:11,470
+ Yeah.
+
+695
+00:58:11,470 --> 00:58:13,460
+ It's no problem there.
+
+696
+00:58:13,460 --> 00:58:16,350
+ We need to create a new branch there probably.
+
+697
+00:58:16,350 --> 00:58:18,570
+ So I want you to try this.
+
+698
+00:58:18,570 --> 00:58:19,720
+ Let me see.
+
+699
+00:58:19,720 --> 00:58:21,000
+ You can click on levels here.
+
+700
+00:58:21,000 --> 00:58:23,260
+ So no.
+
+701
+00:58:23,260 --> 00:58:23,660
+ Okay.
+
+702
+00:58:23,660 --> 00:58:24,640
+ What happened here?
+
+703
+00:58:24,640 --> 00:58:26,950
+ Let me just update this.
+
+704
+00:58:26,950 --> 00:58:29,400
+ Okay.
+
+705
+00:58:29,400 --> 00:58:31,060
+ Sure.
+
+706
+00:58:31,060 --> 00:58:34,310
+ You can see all of the commands with show commands at the terminal.
+
+707
+00:58:34,310 --> 00:58:34,790
+ All right.
+
+708
+00:58:42,270 --> 00:58:47,520
+ This is just some show commands.
+
+709
+00:58:49,350 --> 00:58:52,380
+ They have all of the commands we have been talking about.
+
+710
+00:58:53,370 --> 00:58:56,780
+ So play around with this.
+
+711
+00:58:56,780 --> 00:58:59,870
+ This is today's lab.
+
+712
+00:58:59,870 --> 00:59:14,290
+ Can you stage a folder?
+
+713
+00:59:14,290 --> 00:59:39,580
+ I mean, it depends on you should be able to stage a folder.
+
+714
+00:59:39,580 --> 00:59:43,660
+ You should be able to do a git add and then the actual folder name.
+
+715
+00:59:43,660 --> 00:59:54,560
+ And that stage every changed file in that folder as well, including subfolders if you have any in that folder.
+
+716
+00:59:54,560 --> 00:59:57,740
+ But git doesn't track empty folders though.
+
+717
+00:59:57,740 --> 01:00:08,270
+ So to include one, I mean, like someone mentioned here, you can put a file in it in the chat here.
+
+718
+01:00:08,270 --> 01:00:12,540
+ Yes, Fabian.
+
+719
+01:00:12,540 --> 01:00:19,740
+ Yes, I was wondering about the git restore command with the stage flag.
+
+720
+01:00:21,830 --> 01:00:33,720
+ If you run that command, will everything be marked still as modified in like an ID, like Visual Studio Code, if you run that?
+
+721
+01:00:33,720 --> 01:00:36,570
+ So sorry, again, ask your question again.
+
+722
+01:00:36,570 --> 01:00:54,310
+ Yeah, if you run this git restore stage command, does everything go back to, or does it have the like M marker as everything is modified in Visual Studio Code, everything that you changed?
+
+723
+01:00:54,310 --> 01:00:58,160
+ Uh, ooh, good question.
+
+724
+01:00:58,160 --> 01:01:07,090
+ Let me just check that, go look into the docs here.
+
+725
+01:01:07,090 --> 01:01:23,100
+ I think no, no marker and no trace actually.
+
+726
+01:01:23,100 --> 01:01:25,590
+ Ah, okay, cool, thanks.
+
+727
+01:01:25,590 --> 01:01:37,340
+ Because git restore stage, it doesn't actually create a commit or anything in the history.
+
+728
+01:01:37,340 --> 01:01:50,190
+ It only basically takes out the file out of the staging area, and your changes basically stay in that file.
+
+729
+01:01:50,190 --> 01:01:54,950
+ Oh, okay, now I get it.
+
+730
+01:01:54,950 --> 01:01:55,270
+ Thank you.
+
+731
+01:01:55,270 --> 01:02:13,140
+ So if you run, for example, git status after that command, it will tell you like something like changes, not stage for commit, instead of changes to be committed.
+
+732
+01:02:17,850 --> 01:02:34,740
+ Yeah, any other questions?
+
+733
+01:02:34,740 --> 01:02:43,450
+ See in the chat, maybe.
+
+734
+01:02:43,450 --> 01:02:50,070
+ Push to a specific folder in GitHub.
+
+735
+01:02:51,330 --> 01:02:56,640
+ No, git push sends on a branch, not folders.
+
+736
+01:02:56,640 --> 01:03:00,410
+ So the whole repository basically goes up.
+
+737
+01:03:00,410 --> 01:03:07,790
+ GitHub shows, I mean, it shows the same folder structure on your computer.
+
+738
+01:03:07,790 --> 01:03:12,220
+ I don't know why you would want to do that.
+
+739
+01:03:12,220 --> 01:03:24,370
+ But to answer you, Robert, is no.
+
+740
+01:03:24,370 --> 01:03:31,510
+ Do you have any other questions?
+
+741
+01:03:31,510 --> 01:03:44,830
+ Okay.
+
+742
+01:03:44,830 --> 01:03:51,900
+ I think we're a little bit out of time here for resting.
+
+743
+01:03:51,900 --> 01:04:00,930
+ Yeah, okay, so someone asked something not related to this.
+
+744
+01:04:00,930 --> 01:04:05,090
+ As I got an email from Lana, is the Praktikkafet mandatory?
+
+745
+01:04:05,090 --> 01:04:08,580
+ I do recommend going on that, yes.
+
+746
+01:04:08,580 --> 01:04:17,660
+ I don't know if it's mandatory, but I think so.
+
+747
+01:04:17,660 --> 01:04:39,820
+ Let's see who answered Victor.
+
+748
+01:04:39,820 --> 01:04:46,680
+ The modified and added markers in VS Code disappears only when you commit the changes.
+
+749
+01:04:46,680 --> 01:04:51,270
+ Staging and unstaging of file doesn't change those markers.
+
+750
+01:04:51,270 --> 01:04:53,490
+ Mostly right.
+
+751
+01:04:53,490 --> 01:05:05,700
+ Modified files shows both before and after staging.
+
+752
+01:05:05,700 --> 01:05:10,140
+ New files shows you untracked, basically, before staging.
+
+753
+01:05:10,690 --> 01:05:13,960
+ And then A is added after staging.
+
+754
+01:05:13,960 --> 01:05:19,550
+ So staging does change the letter there, maybe.
+
+755
+01:05:19,550 --> 01:05:20,510
+ I don't know.
+
+756
+01:05:20,510 --> 01:05:21,970
+ Good question.
+
+757
+01:05:21,970 --> 01:05:27,920
+ Okay.
+
+758
+01:05:27,920 --> 01:05:31,040
+ So if you don't have any questions, you can take some break.
+
+759
+01:05:31,040 --> 01:05:32,320
+ Take 10 minutes break.
+
+760
+01:05:32,320 --> 01:05:40,860
+ Go grab some coffee, get some fresh air to your lungs and to your brain.
+
+761
+01:05:40,860 --> 01:05:47,510
+ And then we sit with learngitbranching.js.
+
+762
+01:05:47,510 --> 01:05:51,870
+ I will send this to you guys in here in the chat and also in the Python info chat.
+
+763
+01:05:52,480 --> 01:06:07,310
+ So you can start looking into this on Monday.
+
+764
+01:06:07,310 --> 01:06:09,140
+ So now it's Friday.
+
+765
+01:06:09,140 --> 01:06:17,050
+ But on Monday, we will present present you guys to a project.
+
+766
+01:06:17,050 --> 01:06:22,620
+ So we have already split you up in groups, like the stuff we did yesterday.
+
+767
+01:06:22,620 --> 01:06:25,560
+ And you're going to stay in those groups.
+
+768
+01:06:25,560 --> 01:06:27,770
+ We're going to keep those groups to Monday.
+
+769
+01:06:27,770 --> 01:06:30,490
+ And then we're going to start a group project.
+
+770
+01:06:30,490 --> 01:06:35,930
+ Basically, I think it's, I don't know how many groups.
+
+771
+01:06:37,450 --> 01:06:38,810
+ So I don't say it wrong here.
+
+772
+01:06:41,830 --> 01:06:42,630
+ Seven groups.
+
+773
+01:06:42,630 --> 01:06:43,110
+ Yes.
+
+774
+01:06:43,110 --> 01:06:43,830
+ Seven groups.
+
+775
+01:06:44,380 --> 01:06:47,460
+ And each group is going to get a project to do.
+
+776
+01:06:47,460 --> 01:06:50,660
+ And you have to work with all of the stuff we have learned so far.
+
+777
+01:06:51,360 --> 01:06:53,580
+ So I could recommend learning this stuff.
+
+778
+01:06:53,580 --> 01:06:56,220
+ I will upload, of course, the presentation from today.
+
+779
+01:06:58,140 --> 01:07:04,680
+ And then we will put everything we have learned so far into practice.
+
+780
+01:07:04,680 --> 01:07:06,250
+ And work in a group.
+
+781
+01:07:06,250 --> 01:07:14,460
+ And then after that, you will also present in front of everyone, present your project.
+
+782
+01:07:14,460 --> 01:07:18,560
+ So you're going to get the day to actually present your project.
+
+783
+01:07:18,560 --> 01:07:22,750
+ So that's what's coming on Monday.
+
+784
+01:07:22,750 --> 01:07:30,490
+ I wanted to show it to you today, but I decided not.
+
+785
+01:07:30,490 --> 01:07:32,410
+ Because I wanted to give you some space.
+
+786
+01:07:33,290 --> 01:07:35,040
+ Learning and stuff like that.
+
+787
+01:07:35,040 --> 01:07:37,090
+ As much as you can before we start.
+
+788
+01:07:37,830 --> 01:07:41,270
+ So I recommend doing everything we have done this week at least.
+
+789
+01:07:42,070 --> 01:07:50,780
+ Maybe if you're unsure about anything, any subject, then it's a good idea to go back to it.
+
+790
+01:07:50,780 --> 01:07:53,500
+ So use this day to learn as much as possible.
+
+791
+01:07:53,500 --> 01:08:00,450
+ If you don't have anything to do and you have learned everything, then just write us a message.
+
+792
+01:08:00,450 --> 01:08:01,850
+ Me or Aladin.
+
+793
+01:08:01,850 --> 01:08:07,970
+ Okay?
+
+794
+01:08:07,970 --> 01:08:11,370
+ Does that sound good?
+
+795
+01:08:11,370 --> 01:08:17,410
+ Are we getting some thumbs up here?
+
+796
+01:08:17,410 --> 01:08:19,440
+ Yeah.
+
+797
+01:08:19,440 --> 01:08:20,200
+ Okay.
+
+798
+01:08:20,200 --> 01:08:22,730
+ You can leave the meeting if you don't have any questions.
+
+799
+01:08:22,730 --> 01:08:26,570
+ Bye.
+
+800
+01:08:26,570 --> 01:08:28,180
+ Bye-bye.
+
