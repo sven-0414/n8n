@@ -1,55 +1,27 @@
-What is the main idea behind the Agile methodology?;Agile emphasizes small, iterative steps with fast feedback cycles, delivering working software in short sprints rather than building everything at once.
+What is the main principle behind agile software development?;Agile emphasizes iterative development, small steps, and rapid feedback through short cycles called sprints.
 
-How does Agile differ from the Waterfall method?;Waterfall follows a sequential approach where phases are completed one after another, while Agile uses iterative cycles with frequent feedback and adaptability to changing requirements.
+How does agile differ from the waterfall method?;Agile uses iterative cycles with early feedback, while waterfall follows a sequential approach where each phase must be completed before moving to the next.
 
-What are the four core values of the Agile Manifesto?;The four values are individuals and interactions over processes and tools, working software over comprehensive documentation, customer collaboration over contract negotiation, and responding to change over following a plan.
+What are the four core values of the Agile Manifesto?;The four core values are individuals and interactions over processes and tools, working software over comprehensive documentation, customer collaboration over contract negotiation, and responding to change over following a plan.
 
-What is the purpose of a Sprint in Scrum?;A Sprint is a fixed-length development cycle (typically 2 weeks) during which a team delivers a potentially shippable product increment.
+What is Scrum in the context of agile development?;Scrum is the most popular agile framework that provides specific roles, events, and artifacts to implement agile principles effectively.
 
-Who are the three roles in Scrum and what do they do?;The Product Owner defines what to build, the Scrum Master ensures the process works and removes obstacles, and Developers build the product and decide how to accomplish tasks.
+Who are the three main roles in a Scrum team?;The three main roles are the Product Owner, Scrum Master, and Developers (which includes programmers, testers, designers, etc.).
 
-What is the role of the Product Owner in Scrum?;The Product Owner decides what to build, talks to customers, owns the product backlog, and prioritizes items based on business value.
+What are the five key events in a Scrum sprint cycle?;The five events are Sprint, Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective.
 
-What are the five events in Scrum?;The five events are Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective, and the Sprint itself.
+What is a user story in agile development?;A user story is a simple description of a feature written from the user's perspective using the format: "As a [user], I want [feature] so that [reason]."
 
-What is a User Story in Agile?;A User Story is a simple description of a feature written from the user’s perspective using the format: "As a [user], I want [functionality] so that [reason]."
+What is the purpose of the Definition of Done (DoD) in Scrum?;The Definition of Done is a checklist that defines when work is truly complete, ensuring consistency and quality across all delivered increments.
 
-What is the purpose of Story Points in Agile estimation?;Story Points are a relative sizing method used to estimate effort rather than time, helping teams compare work size and track velocity.
+How are story points used in agile estimation?;Story points are a relative measure of effort using the Fibonacci sequence to represent increasing uncertainty and help teams estimate work complexity.
 
-What is the main goal of the Daily Scrum?;The Daily Scrum is a 15-minute meeting where team members synchronize their work toward the sprint goal by discussing progress, plans, and blockers.
+What is the main goal of backlog refinement?;Backlog refinement prepares items for future sprints by reviewing, clarifying, and breaking down product backlog items into manageable tasks.
 
-What are the three main artifacts in Scrum?;The three artifacts are the Product Backlog, Sprint Backlog, and Increment (working product).
+What are the key differences between Scrum and Kanban?;Scrum uses fixed sprints with defined roles and goals, while Kanban focuses on continuous flow with work-in-progress limits and no fixed iterations.
 
-How does Kanban differ from Scrum in terms of rhythm and planning?;Kanban uses continuous flow without fixed sprints, while Scrum follows a structured rhythm with regular sprints and planning meetings.
+What is a common mistake in implementing Scrum?;A common mistake is treating the daily scrum as a status report to management instead of a team coordination meeting.
 
-What is the main advantage of using WIP limits in Kanban?;WIP limits help manage flow by preventing too many tasks from being worked on simultaneously, which improves focus and reduces delays.
+Why is understanding agile important for developers?;Understanding agile is crucial for job interviews, real-world teamwork, and career advancement since most development teams use these methodologies.
 
-What are some common mistakes made when implementing Agile?;Common mistakes include treating Daily Scrums as status reports to managers, skipping retrospectives, having an unavailable Product Owner, and pushing new work into ongoing sprints.
-
-Which tool is most commonly used for Agile project management in enterprises?;Jira is the most widely used enterprise tool for managing Agile projects.
-
-What does the term "velocity" mean in Scrum?;Velocity measures how many story points a team typically completes in a sprint, helping with future planning and tracking performance.
-
-How should a team approach backlog refinement?;Backlog refinement involves reviewing items near the top, splitting large items into smaller ones, adding details and acceptance criteria, and estimating when appropriate.
-
-What is the main benefit of using the Scrum framework?;Scrum provides structure for teams to work iteratively with regular feedback, continuous improvement, and predictable delivery cycles.
-
-What does the term "Definition of Done" refer to in Agile?;The Definition of Done is a set of criteria that must be met before a product increment can be considered complete and potentially shippable.
-
-Why is it important to keep Sprint Goals consistent during a sprint?;Consistent Sprint Goals provide focus for the team, prevent scope creep, and help ensure alignment on what needs to be delivered.
-
-What is an Epic in Agile?;An Epic is a large user story that is too big to complete in one sprint and must be broken down into smaller stories.
-
-Why should teams avoid "Scrum-but" syndrome?;Teams should avoid "Scrum-but" because it means doing Scrum without key elements like regular reviews, retrospectives, or feedback mechanisms, which undermines the method’s effectiveness.
-
-What is the main idea behind the Kanban method?;Kanban focuses on visualizing work, limiting Work in Progress, and managing continuous flow to improve efficiency and reduce bottlenecks.
-
-How do teams estimate story sizes in Agile?;Teams use techniques like Planning Poker or story points to estimate relative effort, often using a Fibonacci sequence to compare work size.
-
-What is the benefit of regular retrospectives in Scrum?;Retrospectives help teams reflect on their processes, identify areas for improvement, and implement changes that enhance future performance.
-
-What is the difference between a Product Backlog and a Sprint Backlog?;The Product Backlog contains all potential features or requirements prioritized by value, while the Sprint Backlog includes only those items selected for the current sprint along with a plan to complete them.
-
-Why is customer collaboration important in Agile?;Customer collaboration ensures that teams understand user needs and can adapt quickly to feedback, leading to more relevant and valuable products.
-
-How does continuous improvement work in Scrum?;Continuous improvement occurs through regular retrospectives where teams discuss what went well, what didn’t, and how they can improve their process.
+How can solo developers apply agile concepts?;Solo developers can apply agile by doing daily progress updates, breaking large tasks into small steps, seeking early feedback, and reflecting on their processes for improvement.
