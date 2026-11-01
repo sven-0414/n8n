@@ -1,0 +1,59 @@
+What is the main design philosophy of Python?;Python emphasizes readability and simplicity to make code easy to read and learn.
+
+Who created Python and when was it first released?;Python was created by Guido van Rossum and first released in the early 1990s.
+
+Why is Python popular among beginners and advanced developers alike?;Python is popular because of its simple syntax and readability, making it beginner-friendly, while also being powerful enough for advanced applications like data science and AI.
+
+How can you execute Python code directly without creating a file first?;You can use the Python interpreter by typing `python` in your terminal.
+
+What are the basic built-in data types in Python?;The basic data types in Python are integer (int), float, string (str), and boolean (bool).
+
+What is dynamic typing in Python?;Dynamic typing means that you don't need to declare variable types explicitly; they are determined automatically from the assigned value.
+
+What are the rules for naming variables in Python?;Variables cannot start with a number, contain spaces or special characters except underscores, and are case-sensitive.
+
+What does the division operator `/` return in Python?;The `/` operator returns a floating-point result for division.
+
+What do the floor division (`//`) and modulus (`%`) operators do in Python?;Floor division removes the decimal part without rounding, while modulus gives the remainder after division.
+
+How do you convert a string to an integer in Python?;You use the `int()` function to convert a string representation of a number into an integer.
+
+How do you concatenate strings and numbers in Python?;You must first convert the number to a string using `str()` before concatenating.
+
+What is an f-string in Python and how is it used?;An f-string allows embedding expressions directly inside string literals using curly braces, e.g., `f"{name} is {age} years old"`.
+
+How do you access individual characters in a string in Python?;You use indexing with square brackets, where the first character has index 0 and negative indices count from the end.
+
+What happens when you try to modify a character in a Python string?;Attempting to change a character in a string causes a TypeError because strings are immutable.
+
+What does the `strip()` method do in Python strings?;The `strip()` method removes whitespace from both ends of a string.
+
+What is the difference between slicing with and without step parameters in Python strings?;Slicing with a step parameter extracts every nth character, while slicing without it returns consecutive characters.
+
+Which data type must start with a capital letter in Python?;Boolean values must start with a capital letter: `True` or `False`.
+
+Can you change the value of a variable in Python during execution?;Yes, due to dynamic typing, variables can be reassigned to different types during execution.
+
+What does the modulus operator `%` return when used with integers?;It returns the remainder after integer division.
+
+How do you reverse a string using slicing in Python?;You use `[::-1]` as the slice notation to reverse a string.
+
+What is the purpose of the `len()` function in Python?;The `len()` function returns the number of characters in a string or other sequence.
+
+How do string methods affect the original string in Python?;String methods return new strings without modifying the original string, since strings are immutable.
+
+What is the result of 7 divided by 3 using floor division in Python?;The result is 2, as floor division removes the decimal part.
+
+What happens if you attempt to use lowercase `true` or `false` in Python?;It will cause a NameError because boolean values must be capitalized as `True` and `False`.
+
+How do you create a new string by modifying an existing one in Python?;You can concatenate parts of the original string with new content to form a new string.
+
+What is the difference between `print("Hello")` and `print('Hello')` in Python?;There is no functional difference; both create the same string using either single or double quotes.
+
+What is the result of 5 raised to the power of 2 in Python?;The result is 25, calculated using the exponentiation operator `**`.
+
+How do you convert a number into a string in Python?;You use the `str()` function to convert a number into its string representation.
+
+What is the purpose of the `replace()` method in Python strings?;The `replace()` method substitutes occurrences of a substring with another substring in a string.
+
+Which operator performs integer division and removes the decimal part in Python?;The floor division operator (`//`) removes the decimal part without rounding.

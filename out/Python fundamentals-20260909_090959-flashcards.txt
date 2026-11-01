@@ -1,0 +1,35 @@
+What is a list in Python and what makes it different from strings?;A list is an ordered, mutable collection of items that can hold multiple values. Unlike strings, lists can be modified after creation.
+
+How do you create a list in Python?;You create a list using square brackets [] with elements separated by commas.
+
+What does it mean for a list to be mutable?;It means you can change the content of a list after it has been created by modifying its elements directly.
+
+How do you access individual elements in a list?;You use zero-based indexing with square brackets, such as list[0] for the first element.
+
+What is the difference between append() and insert() methods in lists?;append() adds an element to the end of the list, while insert() adds an element at a specific index position.
+
+How does the pop() method work in Python lists?;pop() removes and returns an element from a specific index or the last element if no index is given.
+
+What is the difference between sort() and sorted()?;sort() modifies the original list in place, while sorted() returns a new sorted list without changing the original.
+
+Why might you need to copy a list instead of just assigning it to another variable?;Because assignment creates a reference to the same list object, so changes to one affect the other. Using .copy() creates an independent copy.
+
+What is a tuple in Python and how does it differ from a list?;A tuple is an ordered, immutable collection. Unlike lists, tuples cannot be modified after creation.
+
+How do you create a tuple in Python?;You create a tuple using parentheses () with elements separated by commas.
+
+What is tuple unpacking and how is it useful?;Tuple unpacking allows you to assign the elements of a tuple to separate variables in one line, making code cleaner and more readable.
+
+How can you swap two variables in Python without using a temporary variable?;You can use multiple assignment like a, b = b, a to swap values directly.
+
+What is a set in Python and what are its key characteristics?;A set is an unordered collection of unique elements. It automatically removes duplicates and does not support indexing.
+
+How do you create an empty set in Python?;Use the set() function. Note that {} creates an empty dictionary, not a set.
+
+What are some common operations you can perform on sets?;You can add elements with add(), remove with remove() or discard(), and perform intersection, union, and difference operations.
+
+What is a dictionary in Python and how does it store data?;A dictionary stores data as key-value pairs where keys are unique and immutable, and values can be any type.
+
+How do you access values in a dictionary?;You access values by using the corresponding key inside square brackets, like dict['key'].
+
+What are some useful methods for working with dictionaries?;Methods include get() for safe access, keys() to retrieve all keys, values() for all values, and items() for key-value pairs.

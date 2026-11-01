@@ -1,0 +1,35 @@
+What is the result of a comparison expression in Python?;It evaluates to a Boolean value, either True or False.
+
+How do you perform equality comparison in Python?;Use double equals (==), not single equals (=) which is for assignment.
+
+What is the difference between = and == in Python?;= assigns a value to a variable, while == compares two values for equality.
+
+Which operator requires both conditions to be true?;The `and` operator.
+
+Which operator requires at least one condition to be true?;The `or` operator.
+
+How does the `not` operator work in Python?;It reverses the Boolean value of an expression.
+
+What does the `in` operator return when used in a conditional statement?;A Boolean value indicating whether an item is present in a collection.
+
+What is the structure of an `if` statement in Python?;It uses a condition followed by a colon, then indented code blocks.
+
+How many conditions can be checked with `if-elif-else`?;Multiple conditions can be checked, but only one block executes based on which condition is first met.
+
+Can you use nested conditional statements in Python?;Yes, you can nest `if` statements inside other `if` statements.
+
+What are truthy and falsy values in Python?;Values that are treated as True or False without explicit Boolean conversion.
+
+Which values are considered falsy in Python?;Empty strings (" "), empty lists ([]), zero (0), None, and False.
+
+How does a `for` loop work in Python when iterating over a list?;It directly iterates over each element in the collection without needing a counter variable.
+
+What is the purpose of the `range()` function in Python?;It generates a sequence of numbers for use in loops.
+
+When should you use `break` in a loop?;To immediately exit the loop when a specific condition is met.
+
+When should you use `continue` in a loop?;To skip the rest of the current iteration and proceed to the next one.
+
+What happens if you forget to update the loop variable in a while loop?;It can result in an infinite loop.
+
+What does it mean for Python to be sensitive to indentation?;Incorrect indentation will cause syntax errors because Python uses indentation to define code blocks.
