@@ -1,0 +1,31 @@
+What is the syntax for a basic list comprehension?;It follows the pattern [expression for item in iterable].
+
+How does a list comprehension differ from a traditional for loop?;List comprehensions are more concise and often faster than traditional loops.
+
+What is the difference between list and dictionary comprehensions?;Dictionary comprehensions use curly braces and require both key and value expressions, while list comprehensions use square brackets and only an expression.
+
+Can you filter items in a dictionary comprehension?;Yes, by adding an if condition at the end of the comprehension.
+
+What is the main advantage of using set comprehensions?;They automatically handle duplicates when creating sets from collections.
+
+How do generator expressions differ from list comprehensions?;Generator expressions use parentheses and produce items on-demand instead of storing all values in memory.
+
+What does the enumerate() function do?;It adds a counter to an iterable and returns it as an enumerate object.
+
+How does zip() work with multiple iterables?;It combines elements from each iterable into tuples based on their position.
+
+What is unpacking in Python?;It allows assigning elements from iterables to individual variables using the assignment operator.
+
+How do you define a lambda function?;With the lambda keyword followed by parameters and a colon, then an expression: lambda parameters: expression.
+
+When should you prefer traditional loops over list comprehensions?;When the logic is complex or readability suffers with comprehension.
+
+What are the benefits of using generator expressions?;They are memory-efficient because they generate values one at a time rather than storing all values in memory.
+
+How can you use unpacking to handle multiple variables?;By assigning elements from a collection to individual variables, or using * to capture remaining elements.
+
+What is the purpose of lambda functions?;To create small anonymous functions useful with higher-order functions like map(), filter(), and sorted().
+
+How do you create a dictionary using zip()?;By passing two iterables to zip() and converting the result to a dictionary with dict().
+
+What are some best practices for using list comprehensions?;Use them for simple transformations, avoid complex logic inside, and consider traditional loops for readability.

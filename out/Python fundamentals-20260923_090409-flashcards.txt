@@ -1,0 +1,31 @@
+What happens when you use a mutable object like a list as a default argument in Python?;The same list object is shared across all instances of the function, leading to unexpected behavior where changes in one instance affect others.
+
+How should you handle mutable objects as default arguments in Python?;Use None as the default value and create a new mutable object inside the function body when needed.
+
+Why is it problematic to use lists as default arguments in class constructors?;All instances of the class share the same list object, so modifying it in one instance affects all others.
+
+What is the correct way to define a class constructor with an optional list argument?;Set the parameter to None and then create a new list inside the method if the parameter is None.
+
+When should you use a dictionary instead of a class in Python?;For simple key-value data storage where behavior is minimal or when the structure is stable and rarely changes.
+
+When should you use a class instead of a dictionary in Python?;When you need methods to operate on the data, encapsulation, or when objects have complex behavior that changes over time.
+
+What does inheritance allow classes to do in Python?;Inheritance allows classes to inherit attributes and methods from other classes, promoting code reuse and establishing hierarchical relationships.
+
+What is the purpose of the `super()` function in Python?;It allows a subclass to call methods from its parent class, useful for extending rather than replacing parent behavior.
+
+What happens when a subclass overrides a method from its parent class?;The subclass provides its own implementation of the method, which replaces or extends the parent's behavior.
+
+How does method overriding enable polymorphism in Python?;Different objects can respond to the same method call in their own specific way, based on their actual type.
+
+What is the difference between a base class and a subclass in Python?;A base class (or parent class) is inherited from, while a subclass (or child class) inherits from another class.
+
+What is Method Resolution Order (MRO) in Python?;It is the order in which Python looks for methods in a class hierarchy during inheritance to determine which method to call.
+
+Why is it important to understand that inheritance is directional?;Because only subclasses inherit from parents, not vice versa, affecting how methods and attributes are accessed and modified.
+
+What is a common mistake when using inheritance in Python?;Forgetting to call `super().__init__()` in the child class constructor, which can lead to missing initialization of parent attributes.
+
+Why should you avoid using mutable defaults like lists as default arguments?;Because they are evaluated once at function definition time and shared among all instances, causing unintended side effects.
+
+What is the recommended practice for designing inheritance hierarchies?;Ensure that relationships follow an "is-a" pattern, meaning a subclass truly is a type of its parent class.

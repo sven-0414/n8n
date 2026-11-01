@@ -519,7 +519,7 @@
  And what if I put this one, this one, yet, not yet?
 
 131
-00:10:59,220 --> 00:11:00,860
+00:10:58,950 --> 00:11:00,860
  I'll print reverse.
 
 132
@@ -527,7 +527,7 @@
  The reverse.
 
 133
-00:11:03,090 --> 00:11:03,950
+00:11:03,110 --> 00:11:03,930
  Let's try it out.
 
 134
@@ -543,7 +543,7 @@
  Very good.
 
 137
-00:11:12,710 --> 00:11:12,950
+00:11:12,470 --> 00:11:12,950
  Yeah.
 
 138
@@ -555,7 +555,7 @@
  I can see that you did the lab and that you paid attention yesterday, right?
 
 140
-00:11:18,800 --> 00:11:24,420
+00:11:18,780 --> 00:11:24,420
  So this is the exact same slicing syntax that we used for strings, right?
 
 141
@@ -563,7 +563,7 @@
  But therefore, we should know them.
 
 142
-00:11:26,630 --> 00:11:27,610
+00:11:26,650 --> 00:11:27,610
  So very good, guys.
 
 143
@@ -655,7 +655,7 @@
  So yeah, let's go with hands up so everybody gets a chance.
 
 165
-00:12:41,850 --> 00:12:42,370
+00:12:41,870 --> 00:12:42,370
  I think that's better.
 
 166
@@ -663,23 +663,23 @@
  It was me who said that we can just shout out yesterday.
 
 167
-00:12:44,430 --> 00:12:53,560
+00:12:44,430 --> 00:12:53,580
  So yeah, just like the class is saying here, it allows us to mix different data types inside
 
 168
-00:12:53,560 --> 00:12:55,160
+00:12:53,580 --> 00:12:55,160
  the same list, right?
 
 169
 00:12:56,910 --> 00:13:01,700
- So technically, this is completely valid.
+ So technically this is completely valid.
 
 170
-00:13:03,050 --> 00:13:05,000
+00:13:01,700 --> 00:13:05,020
  But let me emphasize one thing.
 
 171
-00:13:05,000 --> 00:13:10,800
+00:13:05,500 --> 00:13:10,800
  Just because we can't do it doesn't always mean that we should, right?
 
 172
@@ -691,11 +691,11 @@
  right?
 
 174
-00:13:19,900 --> 00:13:22,430
+00:13:19,900 --> 00:13:22,470
  But this actually works.
 
 175
-00:13:22,430 --> 00:13:35,430
+00:13:22,470 --> 00:13:35,450
  So just to show it also, mixed, for example, this will actually work perfectly fine.
 
 176
@@ -703,7 +703,7 @@
  No problem.
 
 177
-00:13:36,210 --> 00:13:37,170
+00:13:36,230 --> 00:13:37,170
  No error, no nothing.
 
 178
@@ -715,539 +715,539 @@
  But another thing Python actually also allows, a list here can actually also contain other lists.
 
 180
-00:14:04,760 --> 00:14:10,760
+00:14:04,760 --> 00:14:10,660
  We also want to show, so we can call it matrix, like, something like that.
 
 181
-00:14:11,330 --> 00:14:14,930
+00:14:11,330 --> 00:14:14,910
  And we can put, just make it a little bit clearer.
 
 182
-00:14:15,010 --> 00:14:15,990
+00:14:15,030 --> 00:14:15,990
  So I'm just jumping here.
 
 183
-00:14:16,550 --> 00:14:19,030
+00:14:16,570 --> 00:14:19,030
  Still a list, square bracket, square bracket, right?
 
 184
-00:14:19,750 --> 00:14:23,170
- So here, inside, I can actually create a list, right?
+00:14:19,770 --> 00:14:23,170
+ So here inside, I can actually create a list, right?
 
 185
-00:14:23,650 --> 00:14:27,550
- I can put a 1, and a 2, and a 3, right?
+00:14:23,650 --> 00:14:27,570
+ I can put a one and two and three, right?
 
 186
-00:14:28,040 --> 00:14:31,740
- And then, I can create my next element in the list.
+00:14:27,740 --> 00:14:31,760
+ And then I can create my next element in the list.
 
 187
-00:14:32,250 --> 00:14:33,890
+00:14:32,430 --> 00:14:33,910
  That will be a second list.
 
 188
-00:14:34,410 --> 00:14:37,440
- So we have a 4, and a 5, and a 6.
+00:14:34,540 --> 00:14:37,440
+ So we have a four and a five and a six.
 
 189
-00:14:38,230 --> 00:14:43,020
- And then I can create my third element, which just happens to be a third list.
+00:14:38,700 --> 00:14:46,220
+ And then I can create my third element, which just happens to be a third list, a seven and
 
 190
-00:14:44,020 --> 00:14:48,200
- A 7, and an 8, and a 9.
+00:14:46,220 --> 00:14:48,200
+ an eight and a nine.
 
 191
 00:14:48,510 --> 00:14:49,260
  And there you go.
 
 192
-00:14:50,550 --> 00:14:52,760
- So what do I have here?
+00:14:50,700 --> 00:14:52,760
+ So what do I, what do I have here?
 
 193
-00:14:53,060 --> 00:14:58,020
- Well, I have a 1 list containing 3 elements.
+00:14:53,060 --> 00:14:58,040
+ Well, I have a one list containing three elements.
 
 194
-00:14:58,540 --> 00:15:02,680
- And these 3 elements seem to be 3 lists.
+00:14:58,540 --> 00:15:04,390
+ And these three elements seems to be three lists, three separate lists, right?
 
 195
-00:15:03,060 --> 00:15:04,390
- 3 separate lists, right?
-
-196
-00:15:04,850 --> 00:15:11,160
+00:15:05,490 --> 00:15:11,160
  Let's just print that out and see if that works.
 
-197
-00:15:12,150 --> 00:15:13,110
- And of course, it will.
+196
+00:15:12,150 --> 00:15:13,130
+ And of course it will.
 
-198
+197
 00:15:13,730 --> 00:15:15,090
  So I've already promised you that.
 
-199
+198
 00:15:16,020 --> 00:15:17,390
  So let's run that.
 
-200
+199
 00:15:17,390 --> 00:15:24,630
  And we see that we get the list containing the square brackets outside, right?
 
-201
+200
 00:15:25,210 --> 00:15:28,570
- So the list containing 1, 2, 3 lists.
+ So the list containing one, two, three lists.
+
+201
+00:15:31,260 --> 00:15:41,170
+ Sorry, guys, especially if you're wearing headphones.
 
 202
-00:15:30,320 --> 00:15:39,710
- Sorry, guys.
-
-203
-00:15:39,980 --> 00:15:41,150
- Especially if you're wearing headphones.
-
-204
 00:15:43,830 --> 00:15:55,540
  So what we want to see now is how we can actually access something particular inside the list.
 
-205
+203
 00:15:56,630 --> 00:15:57,170
  Let's see.
 
-206
+204
 00:15:57,770 --> 00:15:59,240
  I'm going to give you a little challenge here.
 
-207
+205
 00:16:00,170 --> 00:16:05,330
- Try to write out in the terminal, try to access number 5.
+ Try to write out in the terminal, try to access number five.
 
-208
-00:16:05,900 --> 00:16:08,240
+206
+00:16:06,120 --> 00:16:08,240
  And I want that to print out in the terminal.
 
-209
+207
 00:16:08,240 --> 00:16:11,430
  You can try it out right now.
 
-210
-00:16:12,360 --> 00:16:16,910
- And I'll give you a minute or something like that to try it out.
+208
+00:16:12,340 --> 00:16:16,930
+ And I'll give you some amenities or something like that to try it out.
 
-211
-00:16:17,610 --> 00:16:18,790
+209
+00:16:17,610 --> 00:16:18,810
  And then we can take it together.
 
-212
-00:17:48,190 --> 00:17:48,510
+210
+00:17:48,190 --> 00:17:48,490
  All right.
 
-213
-00:17:48,590 --> 00:17:49,770
+211
+00:17:48,570 --> 00:17:49,830
  I'm kind of talking to myself here.
 
-214
-00:17:50,510 --> 00:17:52,230
+212
+00:17:50,830 --> 00:17:52,230
  I forgot that I'm muted.
 
-215
-00:17:52,630 --> 00:17:52,940
+213
+00:17:52,670 --> 00:17:52,940
  Okay.
 
-216
+214
 00:17:52,980 --> 00:17:53,800
  What do you say, guys?
 
-217
-00:17:54,470 --> 00:17:56,470
+215
+00:17:54,660 --> 00:17:56,470
  Anybody wants to tackle the question?
 
-218
+216
 00:17:57,090 --> 00:17:58,220
  Just raise your hand.
 
-219
+217
 00:18:07,900 --> 00:18:08,260
  Georgi.
 
-220
-00:18:10,940 --> 00:18:11,600
+218
+00:18:11,240 --> 00:18:11,600
  Yeah.
 
+219
+00:18:11,720 --> 00:18:20,520
+ You would just put like in square brackets two and two afterwards, like matrix and square brackets inside two.
+
+220
+00:18:21,710 --> 00:18:22,650
+ No, which one is it?
+
 221
-00:18:11,720 --> 00:18:16,170
- And you would just put like in square brackets 2 and 2 afterwards.
-
-222
-00:18:16,390 --> 00:18:20,500
- Like matrix and square brackets inside 2.
-
-223
-00:18:21,400 --> 00:18:21,870
- No.
-
-224
-00:18:21,930 --> 00:18:22,630
- Which one is it?
-
-225
-00:18:22,710 --> 00:18:22,950
+00:18:22,710 --> 00:18:22,970
  Okay.
 
-226
+222
 00:18:23,170 --> 00:18:24,030
- 1 and 1.
+ One and one.
 
-227
-00:18:25,150 --> 00:18:25,790
+223
+00:18:25,150 --> 00:18:25,810
  Good.
 
-228
-00:18:26,530 --> 00:18:27,510
+224
+00:18:26,780 --> 00:18:27,530
  Not too bad.
 
-229
-00:18:27,610 --> 00:18:28,910
- You said actually 1, right?
+225
+00:18:27,630 --> 00:18:28,930
+ You said actually one, right?
 
-230
+226
 00:18:29,130 --> 00:18:29,550
  Very good.
 
-231
+227
 00:18:29,630 --> 00:18:29,750
  Yeah.
 
-232
-00:18:29,980 --> 00:18:31,200
- So 1 and 1.
+228
+00:18:29,980 --> 00:18:31,240
+ So one and one.
 
-233
+229
 00:18:33,140 --> 00:18:34,610
  Let's try it out.
 
-234
-00:18:35,430 --> 00:18:39,920
- And we actually get the 5, right?
+230
+00:18:34,610 --> 00:18:39,940
+ And we actually get the five, right?
 
-235
-00:18:40,190 --> 00:18:41,780
- So this is from the 5.
+231
+00:18:40,250 --> 00:18:41,780
+ So this is from the five.
 
-236
-00:18:42,970 --> 00:18:48,690
- Yeah.
+232
+00:18:42,990 --> 00:18:49,510
+ Yeah, we get the five.
 
-237
-00:18:48,750 --> 00:18:49,510
- We get the 5.
-
-238
+233
 00:18:49,990 --> 00:18:51,040
  You're actually correct, right?
 
-239
-00:18:51,200 --> 00:18:56,340
+234
+00:18:51,320 --> 00:18:56,340
  So what we're doing here is, well, using the index.
 
-240
+235
 00:18:56,590 --> 00:18:57,270
  And that's it.
 
-241
+236
 00:18:57,840 --> 00:19:00,480
  And we can use indexes for the list to access something, right?
 
-242
+237
 00:19:00,610 --> 00:19:11,600
- So in this first list, this list would be index 0, index 1, right?
+ So in this first list, this list would be index zero, index one, right?
 
-243
-00:19:11,770 --> 00:19:14,090
- And this would be index 2.
+238
+00:19:12,030 --> 00:19:14,110
+ And this would be index two.
 
-244
+239
 00:19:14,750 --> 00:19:18,090
- So the first one says access this.
+ So the first one says, access this.
 
-245
-00:19:18,090 --> 00:19:26,210
+240
+00:19:19,380 --> 00:19:26,190
  And then the second square bracket would be inside this list.
 
-246
-00:19:26,580 --> 00:19:34,270
- So this would be 0 for 4, index 1 for 5, and index 2 for 6.
+241
+00:19:26,580 --> 00:19:34,290
+ So this would be zero for four, index one for five, and index two for six.
 
-247
-00:19:34,700 --> 00:19:41,710
- Thus, Georgi is saying use 1 again, all right?
+242
+00:19:34,740 --> 00:19:38,990
+ Thus, Georgi is saying, use one again.
 
-248
+243
+00:19:40,530 --> 00:19:41,710
+ All right?
+
+244
 00:19:42,310 --> 00:19:52,480
  So try to play around with that later on if you want, if it was a little bit confusing.
 
-249
-00:19:53,840 --> 00:19:57,790
+245
+00:19:54,670 --> 00:19:57,790
  Questions before I move on?
 
-250
-00:19:58,540 --> 00:19:59,720
- I think somebody's very familiar.
+246
+00:19:58,740 --> 00:19:59,780
+ I think somebody's raising there.
 
-251
-00:20:00,360 --> 00:20:00,680
- Sarania.
+247
+00:20:00,360 --> 00:20:00,660
+ Saranya?
 
-252
-00:20:01,790 --> 00:20:02,790
+248
+00:20:01,910 --> 00:20:02,790
  Yes, Aladdin.
 
-253
+249
 00:20:02,930 --> 00:20:03,830
  So I have one question.
 
-254
-00:20:04,070 --> 00:20:08,830
+250
+00:20:04,050 --> 00:20:08,830
  Like, you told, like, we can have multiple data types inside the list.
 
-255
-00:20:09,010 --> 00:20:11,710
+251
+00:20:08,990 --> 00:20:11,710
  So is there any use case we really use that?
 
-256
-00:20:12,290 --> 00:20:13,410
+252
+00:20:12,270 --> 00:20:13,410
  Or why it was?
 
-257
-00:20:15,430 --> 00:20:20,530
+253
+00:20:15,570 --> 00:20:20,530
  I think, I mean, it's not conventional.
 
-258
+254
 00:20:20,690 --> 00:20:21,630
  It's not normal.
 
-259
-00:20:21,770 --> 00:20:24,110
+255
+00:20:21,770 --> 00:20:23,910
  It's not something you usually do.
 
-260
+256
 00:20:24,330 --> 00:20:24,650
  Okay.
 
-261
-00:20:25,050 --> 00:20:27,870
+257
+00:20:25,090 --> 00:20:27,870
  I mean, I'm not going to raise my eyebrows if I see that.
 
-262
-00:20:29,250 --> 00:20:32,830
+258
+00:20:29,280 --> 00:20:32,830
  Maybe you're putting something temporarily there or something like that.
 
-263
-00:20:32,830 --> 00:20:34,950
+259
+00:20:32,890 --> 00:20:34,970
  You're maybe playing around with code or something like that.
 
-264
-00:20:34,950 --> 00:20:35,330
+260
+00:20:34,970 --> 00:20:35,310
  I don't know.
 
-265
-00:20:36,070 --> 00:20:38,930
- But when you organize everything, you usually don't, right?
+261
+00:20:36,090 --> 00:20:38,490
+ But when you organize everything, you usually don't.
 
-266
-00:20:38,930 --> 00:20:40,440
- You try to...
+262
+00:20:38,790 --> 00:20:38,910
+ Right?
 
-267
-00:20:40,440 --> 00:20:42,770
+263
+00:20:39,630 --> 00:20:40,340
+ You try to.
+
+264
+00:20:41,100 --> 00:20:42,690
  It says itself, right?
 
-268
-00:20:42,770 --> 00:20:46,430
+265
+00:20:43,190 --> 00:20:46,430
  So usually you have a list of something, right?
 
-269
-00:20:46,430 --> 00:20:47,150
+266
+00:20:46,510 --> 00:20:47,150
  Maybe names.
 
-270
-00:20:47,150 --> 00:20:48,510
+267
+00:20:47,330 --> 00:20:48,510
  Well, that would be strings, right?
 
-271
-00:20:48,510 --> 00:20:52,620
- It would be very strange if you have names and then a truth pops up.
+268
+00:20:49,150 --> 00:20:52,540
+ It would be very strange if you have names and then a true pops up.
 
-272
-00:20:52,620 --> 00:20:56,020
+269
+00:20:53,890 --> 00:20:54,250
+ Okay.
+
+270
+00:20:54,610 --> 00:20:56,020
  Or a set of numbers.
 
-273
-00:20:56,020 --> 00:20:58,880
+271
+00:20:56,200 --> 00:20:58,880
  It could be any kind of numbers, right?
 
-274
+272
 00:20:59,250 --> 00:21:04,010
  So it would be very crazy if a string just appeared there.
 
-275
-00:21:04,720 --> 00:21:08,340
- So usually they used to have the same theme, right?
+273
+00:21:04,590 --> 00:21:08,340
+ So usually they just have the same theme, right?
 
-276
-00:21:09,770 --> 00:21:14,160
+274
+00:21:09,830 --> 00:21:14,160
  But I wouldn't raise my eyebrows if it did something like that.
 
-277
+275
 00:21:14,380 --> 00:21:16,120
  But, I mean, no.
 
-278
-00:21:16,860 --> 00:21:18,650
- I don't think I've seen it before.
+276
+00:21:16,860 --> 00:21:21,080
+ I don't think I've seen it before in any point that way.
 
-279
-00:21:19,850 --> 00:21:21,060
- I'm going to put it that way.
-
-280
-00:21:21,760 --> 00:21:22,160
+277
+00:21:21,960 --> 00:21:22,160
  Yeah.
 
-281
-00:21:22,400 --> 00:21:28,050
+278
+00:21:22,420 --> 00:21:28,050
  Good question.
 
-282
-00:21:30,750 --> 00:21:32,000
+279
+00:21:31,490 --> 00:21:32,000
  Right.
 
-283
-00:21:32,280 --> 00:21:33,100
+280
+00:21:32,260 --> 00:21:33,100
  Let's see here.
 
-284
+281
 00:21:34,210 --> 00:21:34,470
  Yeah.
 
-285
-00:21:34,660 --> 00:21:39,150
+282
+00:21:34,470 --> 00:21:39,150
  I kind of mentioned at the beginning about mutability, right?
 
-286
-00:21:39,290 --> 00:21:40,980
+283
+00:21:39,290 --> 00:21:41,000
  Check that out.
 
-287
-00:21:41,680 --> 00:21:45,160
+284
+00:21:41,410 --> 00:21:45,160
  So let's create a new list.
 
-288
-00:21:45,360 --> 00:21:46,500
+285
+00:21:45,320 --> 00:21:46,520
  I'm going to put some names here.
 
-289
-00:21:48,030 --> 00:21:51,320
+286
+00:21:47,500 --> 00:21:51,320
  So let's put, I don't know, Aladdin.
 
-290
-00:21:53,200 --> 00:21:56,710
+287
+00:21:53,280 --> 00:21:56,710
  Second name, maybe Grace.
 
-291
-00:21:58,480 --> 00:22:03,420
- And let's put the third name, I don't know, Aladdin.
+288
+00:21:58,400 --> 00:22:00,390
+ And let's put the third name.
 
-292
-00:22:03,420 --> 00:22:17,910
+289
+00:22:01,010 --> 00:22:01,660
+ I don't know.
+
+290
+00:22:03,180 --> 00:22:03,460
+ Aladdin.
+
+291
+00:22:07,310 --> 00:22:17,890
  So like I mentioned before, we can actually replace one element directly.
 
-293
-00:22:19,560 --> 00:22:23,570
+292
+00:22:17,890 --> 00:22:23,570
  So what I can do here is I can do something like this.
 
-294
-00:22:23,770 --> 00:22:32,270
+293
+00:22:23,910 --> 00:22:32,290
  Names, square bracket one, and put equals to, well, let's take either.
 
-295
-00:22:34,080 --> 00:22:38,210
+294
+00:22:34,080 --> 00:22:38,230
  So what's actually going to happen now?
 
-296
-00:22:41,120 --> 00:22:46,200
+295
+00:22:41,220 --> 00:22:46,200
  What's actually going to happen?
 
-297
-00:22:47,160 --> 00:22:48,560
+296
+00:22:46,910 --> 00:22:48,580
  Well, let's try it out and see.
 
-298
-00:22:50,400 --> 00:22:59,570
+297
+00:22:50,480 --> 00:22:59,570
  And try to notice the list now.
 
-299
-00:23:00,540 --> 00:23:03,780
+298
+00:23:00,540 --> 00:23:03,800
  So what's actually changed?
 
+299
+00:23:04,600 --> 00:23:13,490
+ Well, we changed, actually, the name or the element that had index one, right?
+
 300
-00:23:03,780 --> 00:23:13,490
- Well, we changed actually the name or the element that had index one, right?
+00:23:14,270 --> 00:23:16,150
+ Index one would be Grace here.
 
 301
-00:23:14,350 --> 00:23:16,150
- Index one would be grace here.
+00:23:16,780 --> 00:23:23,380
+ So Grace, index one, we kind of said, we'll take Grace and change it to Guido.
 
 302
-00:23:16,780 --> 00:23:23,380
- So grace, index one, we kind of said, we'll take grace and change it to guido.
+00:23:24,810 --> 00:23:30,650
+ We see that Grace is replaced by Guido.
 
 303
-00:23:23,970 --> 00:23:30,630
- We see that grace is replaced by guido.
+00:23:31,520 --> 00:23:36,400
+ We changed the element at index one.
 
 304
-00:23:31,520 --> 00:23:36,400
- We change the element at index one.
+00:23:36,400 --> 00:23:43,220
+ And this would not work on a string, because strings are immutable.
 
 305
-00:23:39,120 --> 00:23:43,220
- And this would not work on a string because strings are immutable.
+00:23:43,810 --> 00:23:48,570
+ But since lists are mutable, we can't actually do this.
 
 306
-00:23:43,810 --> 00:23:48,570
- But since lists are immutable, we can actually do this.
+00:23:51,940 --> 00:23:52,200
+ All right?
 
 307
-00:23:48,570 --> 00:23:52,200
- All right.
-
-308
-00:23:52,660 --> 00:23:57,230
+00:23:52,490 --> 00:23:57,230
  So this just proves the mutability, as we said before.
 
+308
+00:24:11,190 --> 00:24:17,180
+ We got also some list methods, as well, that we should take a look at.
+
 309
-00:24:11,270 --> 00:24:17,180
- We got also some list methods as well that we should take a look at.
+00:24:18,340 --> 00:24:26,740
+ Let's put some languages equals to, let's put Python.
 
 310
-00:24:18,340 --> 00:24:36,870
- Let's put some languages equals to, let's put Python, let's put Java, put language that is
+00:24:26,740 --> 00:24:42,640
+ Let's put Java, put language that is kind of dear to me, C, C sharp, right?
 
 311
-00:24:36,870 --> 00:24:42,640
- kind of there to me, C, C sharp, right?
+00:24:43,940 --> 00:24:44,260
+ All right.
 
 312
-00:24:42,640 --> 00:24:49,640
- All right, and let's print them out.
+00:24:46,470 --> 00:24:49,640
+ And let's print them out.
 
 313
-00:24:49,800 --> 00:24:50,850
+00:24:49,780 --> 00:24:50,850
  Just make sure.
 
 314
@@ -1255,23 +1255,23 @@
  Languages.
 
 315
-00:24:55,230 --> 00:24:57,470
+00:24:57,190 --> 00:24:57,470
  All right.
 
 316
 00:24:59,040 --> 00:25:02,550
- So lists actually come with many useful methods.
+ So let's actually come with many useful methods.
 
 317
-00:25:03,880 --> 00:25:07,080
+00:25:03,860 --> 00:25:07,080
  And we are just going to focus on a few common ones.
 
 318
-00:25:07,160 --> 00:25:08,500
+00:25:07,140 --> 00:25:08,500
  Of course, we're not going to do all of them.
 
 319
-00:25:08,720 --> 00:25:16,100
+00:25:08,740 --> 00:25:16,080
  But the first one that we're going to look at is actually pen.
 
 320
@@ -1279,5386 +1279,5494 @@
  So what does a pen do?
 
 321
-00:25:19,700 --> 00:25:23,330
+00:25:19,560 --> 00:25:23,370
  Well, let's actually try it and then let's see what actually happens.
 
 322
-00:25:23,810 --> 00:25:30,680
- So I'm going to put languages here, name of the list, dot, and then you can see actually,
+00:25:24,040 --> 00:25:25,550
+ So I'm going to put languages here.
 
 323
-00:25:31,760 --> 00:25:34,180
- I'm going to try append here.
+00:25:25,910 --> 00:25:26,710
+ Name of the list.
 
 324
-00:25:35,200 --> 00:25:43,430
- And then I'm going to put inside here, I'm going to put, well, let's say JavaScript, right?
+00:25:28,780 --> 00:25:29,040
+ Dot.
 
 325
-00:25:43,430 --> 00:25:57,400
- And now if I come here and let's print languages and let's see what happens.
+00:25:29,500 --> 00:25:34,180
+ And then you can see, actually, I'm going to try append here.
 
 326
-00:25:57,840 --> 00:26:00,440
- Well, Python, Java, C sharp, and JavaScript.
+00:25:35,120 --> 00:25:40,480
+ And then I'm going to put inside here, I'm going to put, well, let's say JavaScript.
 
 327
-00:26:01,020 --> 00:26:01,540
- And there you go.
+00:25:42,600 --> 00:25:43,490
+ All right.
 
 328
-00:26:02,150 --> 00:26:07,630
- So what append does is to add one element to the end of the list.
+00:25:44,360 --> 00:25:57,400
+ And now, if I come here and let's print out the languages, print languages, and let's see what happens.
 
 329
-00:26:08,340 --> 00:26:11,040
- And that's important to remember, the end of the list.
+00:25:57,820 --> 00:26:00,420
+ Well, Python, Java, C sharp, and JavaScript.
 
 330
+00:26:00,910 --> 00:26:01,520
+ And there you go.
+
+331
+00:26:01,660 --> 00:26:07,610
+ So what append does is to add one element to the end of the list.
+
+332
+00:26:08,340 --> 00:26:09,280
+ And that's important to remember.
+
+333
+00:26:09,720 --> 00:26:11,020
+ The end of the list.
+
+334
 00:26:16,370 --> 00:26:21,240
  The second one, any questions about append to begin with?
 
-331
-00:26:24,310 --> 00:26:33,420
- The second one that we're going to look at is not append, it is insert, just to see the difference here.
-
-332
-00:26:35,140 --> 00:26:40,100
- So insert, we can actually put, let's try it out and see what it does.
-
-333
-00:26:40,770 --> 00:26:47,420
- Languages, dot, this time we're going to put insert, right?
-
-334
-00:26:47,660 --> 00:26:53,220
- And then I'm going to put my parentheses and it kind of says something here, right?
-
 335
-00:26:53,680 --> 00:26:57,860
- Okay, something about the index and something about an object, okay?
+00:26:24,310 --> 00:26:27,430
+ The second one that we're going to look at is not append.
 
 336
-00:26:59,330 --> 00:27:03,710
- So I'm going to start with the index and I'm going to put a one, okay?
+00:26:27,760 --> 00:26:33,420
+ It is insert, just to see the difference here.
 
 337
-00:27:04,520 --> 00:27:08,140
- And then I'm going to put an object here.
+00:26:33,580 --> 00:26:34,340
+ The difference here.
 
 338
-00:27:08,950 --> 00:27:10,480
- I'm going to say go, for example.
+00:26:35,240 --> 00:26:40,100
+ So insert, we can actually put, let's try it out and see what it does.
 
 339
-00:27:12,590 --> 00:27:26,840
- And now if I come here, try to print out my languages, let's run this.
+00:26:40,770 --> 00:26:42,780
+ Languages, dot.
 
 340
-00:27:27,230 --> 00:27:35,620
- And we see that we added go, just like we did with append, but instead of putting it at the end of the list,
+00:26:43,260 --> 00:26:47,420
+ This time we're going to put insert, right?
 
 341
-00:27:36,930 --> 00:27:41,350
- we actually added it to a specific place, right?
+00:26:47,660 --> 00:26:49,500
+ And then I'm going to put my parentheses.
 
 342
-00:27:41,350 --> 00:27:47,480
- So we can specify an index and a value.
+00:26:50,400 --> 00:26:53,220
+ And it kind of says something here, right?
 
 343
+00:26:53,680 --> 00:26:53,920
+ Okay.
+
+344
+00:26:53,960 --> 00:26:56,720
+ Something about the index and something about an object.
+
+345
+00:26:57,580 --> 00:26:57,880
+ Okay.
+
+346
+00:26:59,350 --> 00:27:02,370
+ So I'm going to start with the index and I'm going to put a one.
+
+347
+00:27:03,200 --> 00:27:03,730
+ Okay.
+
+348
+00:27:04,370 --> 00:27:08,140
+ And then I'm going to put an object here.
+
+349
+00:27:08,550 --> 00:27:10,480
+ I'm going to say go, for example.
+
+350
+00:27:12,050 --> 00:27:26,840
+ And now, if I come here, try to print out my languages, let's run this.
+
+351
+00:27:26,840 --> 00:27:34,280
+ And we see that we added go, just like we did with append, but instead of putting it at
+
+352
+00:27:34,280 --> 00:27:41,350
+ the end of the list, we actually added it to a specific place, right?
+
+353
+00:27:41,500 --> 00:27:47,480
+ So we can specify an index and a value.
+
+354
 00:27:48,170 --> 00:27:52,730
  So it's a usual question that I get when we try to do append.
 
-344
-00:27:52,870 --> 00:27:57,430
- It doesn't happen this time, but usually when I go through append, the first question, I guess,
-
-345
-00:27:57,710 --> 00:28:01,580
- well, can I put it somewhere else and not at the end of the list, right?
-
-346
-00:28:02,320 --> 00:28:04,810
- And yes, we can with insert.
-
-347
-00:28:05,310 --> 00:28:09,150
- That was a little bit about insert.
-
-348
-00:28:10,370 --> 00:28:16,690
- And guys, of course, you're going to try all of this with lab that you're going to get later on.
-
-349
-00:28:16,690 --> 00:28:20,520
- Okay, let's look at another one.
-
-350
-00:28:21,440 --> 00:28:23,300
- Another one is called remove.
-
-351
-00:28:24,100 --> 00:28:27,000
- So let's try it out and see what it actually does.
-
-352
-00:28:27,560 --> 00:28:31,420
- And I think it says it in the name, but here's my list.
-
-353
-00:28:31,900 --> 00:28:37,820
- I'm just going to move it down a little bit just so you can see it.
-
-354
-00:28:40,670 --> 00:28:41,930
- Yeah, we're trying out remove.
-
 355
-00:28:42,090 --> 00:28:44,630
- So languages.remove.
+00:27:52,870 --> 00:27:57,250
+ It doesn't happen this time, but usually when I go through append, the first question, I
 
 356
+00:27:57,250 --> 00:28:01,580
+ guess, well, can I put it somewhere else and not at the end of the list, right?
+
+357
+00:28:01,580 --> 00:28:04,810
+ And yes, we can with insert.
+
+358
+00:28:05,890 --> 00:28:09,150
+ That was a little bit about insert.
+
+359
+00:28:10,370 --> 00:28:16,010
+ And guys, of course, you're going to try all of this with lab that you're going to get
+
+360
+00:28:16,010 --> 00:28:16,710
+ later on.
+
+361
+00:28:18,170 --> 00:28:18,430
+ Okay.
+
+362
+00:28:18,850 --> 00:28:20,150
+ Let's look at another one.
+
+363
+00:28:21,460 --> 00:28:23,280
+ Another one is called remove.
+
+364
+00:28:23,680 --> 00:28:27,000
+ So let's try it out and see what it actually does.
+
+365
+00:28:27,540 --> 00:28:31,420
+ And I think it says it in the name, but here's my list.
+
+366
+00:28:31,980 --> 00:28:37,820
+ I'm just going to move it down a little bit just so you can see it.
+
+367
+00:28:40,630 --> 00:28:41,930
+ Yeah, we're trying out remove.
+
+368
+00:28:41,930 --> 00:28:44,630
+ So languages.remove.
+
+369
 00:28:47,610 --> 00:28:52,040
  And now we see, well, remove value string.
 
-357
-00:28:52,160 --> 00:28:52,540
- Okay, okay.
+370
+00:28:52,180 --> 00:28:52,280
+ Okay.
 
-358
-00:28:52,580 --> 00:28:53,600
+371
+00:28:52,360 --> 00:28:52,540
+ Okay.
+
+372
+00:28:52,540 --> 00:28:53,600
  We need to put a string.
 
-359
-00:28:54,500 --> 00:28:56,400
- Remove first of the current value.
+373
+00:28:54,480 --> 00:28:56,380
+ Removes first of the current value.
 
-360
-00:28:57,040 --> 00:28:59,360
- Raise it first if the value is not present, right?
+374
+00:28:57,060 --> 00:28:59,380
+ Raises first if the value is not present, right?
 
-361
-00:28:59,500 --> 00:28:59,760
+375
+00:28:59,480 --> 00:28:59,780
  All right.
 
-362
+376
 00:29:00,180 --> 00:29:01,380
  So let's try it out.
 
-363
+377
 00:29:01,900 --> 00:29:04,720
  Let's actually put something to remove.
 
-364
+378
 00:29:05,890 --> 00:29:09,840
- And in this case, I'm going to put a Java, right?
+ And in this case, I'm going to put Java, right?
 
-365
+379
 00:29:10,480 --> 00:29:12,360
  And then we're just going to print.
 
-366
+380
 00:29:14,970 --> 00:29:15,720
  Excuse me.
 
-367
-00:29:16,380 --> 00:29:16,980
+381
+00:29:16,380 --> 00:29:17,020
  Languages.
 
-368
+382
 00:29:18,530 --> 00:29:19,590
  There we go.
 
-369
+383
 00:29:20,520 --> 00:29:21,380
  We try to run this.
 
-370
+384
 00:29:24,230 --> 00:29:28,500
  And we see that Java was actually removed now.
 
-371
+385
 00:29:29,880 --> 00:29:31,160
  So Python and C sharp.
 
-372
+386
 00:29:31,340 --> 00:29:31,860
  That's it.
 
-373
+387
 00:29:34,240 --> 00:29:34,360
  Okay.
 
-374
+388
 00:29:38,860 --> 00:29:42,600
- Remove removes the value by the value itself, right?
+ Move removes the value by the value itself, right?
 
-375
-00:29:43,740 --> 00:29:50,620
+389
+00:29:43,080 --> 00:29:50,640
  And we're going to take a, I don't remember what number we are on, but next one.
 
-376
-00:29:51,590 --> 00:30:00,370
+390
+00:29:51,670 --> 00:30:00,370
  And instead of remove, we're actually going to do something else.
 
-377
+391
 00:30:05,100 --> 00:30:11,530
  We're going to, with this list, we're actually going to look at something called pop.
 
-378
-00:30:11,980 --> 00:30:14,870
+392
+00:30:11,980 --> 00:30:14,850
  A little bit different from remove.
 
-379
-00:30:16,770 --> 00:30:22,220
- They kind of remind of each other, but they're not completely the same, right?
+393
+00:30:16,850 --> 00:30:22,220
+ They kind of look reminded of each other, but they're not completely the same, right?
 
-380
-00:30:23,000 --> 00:30:25,640
+394
+00:30:23,000 --> 00:30:25,620
  So let's take a look at the list here.
 
-381
-00:30:25,780 --> 00:30:27,200
+395
+00:30:25,800 --> 00:30:27,200
  It's called languages, right?
 
-382
-00:30:27,200 --> 00:30:39,820
- So I'm going to actually create a new variable, removed language, removed language.
+396
+00:30:27,280 --> 00:30:29,660
+ So I'm going to actually create a new variable.
 
-383
-00:30:40,770 --> 00:30:51,270
- And I'm going to put that equal to languages, the name of the list here, dot pop, all right?
+397
+00:30:32,030 --> 00:30:36,030
+ Removed language.
 
-384
-00:30:51,940 --> 00:30:59,980
- Then my parentheses, then I'm actually going to print out print.
+398
+00:30:36,670 --> 00:30:39,820
+ Removed language.
 
-385
-00:31:01,740 --> 00:31:12,610
- Let's actually look at the original list, languages, and also print removed language.
+399
+00:30:40,860 --> 00:30:46,770
+ And I'm going to put that equal to languages, the name of the list here.
 
-386
-00:31:12,610 --> 00:31:16,090
- So just to see the difference here.
+400
+00:30:47,720 --> 00:30:49,440
+ Dot pop.
 
-387
+401
+00:30:50,510 --> 00:30:51,270
+ All right.
+
+402
+00:30:51,940 --> 00:30:53,060
+ Then my parentheses.
+
+403
+00:30:53,910 --> 00:30:59,980
+ And I'm actually going to print out print.
+
+404
+00:31:01,760 --> 00:31:16,090
+ Let's actually look at the original list, languages, and also print removed language to just to see the difference here.
+
+405
 00:31:16,290 --> 00:31:21,560
  We have our list, right?
 
-388
-00:31:22,280 --> 00:31:25,450
+406
+00:31:22,220 --> 00:31:25,450
  Languages, which I actually can.
 
-389
-00:31:29,980 --> 00:31:39,530
- So we've got our list, languages, Python, Java, C sharp.
+407
+00:31:25,450 --> 00:31:39,530
+ So we've got our list languages, Python, Java, C sharp.
 
-390
-00:31:39,900 --> 00:31:42,730
- We created a new variable, removed language.
+408
+00:31:40,370 --> 00:31:42,730
+ We created a new variable, mood language.
 
-391
-00:31:43,990 --> 00:31:49,850
- We are doing pop to the, we're using pop to languages, the list.
+409
+00:31:44,010 --> 00:31:49,850
+ We are doing pop to the, we're using pop to languages to the list.
 
-392
-00:31:50,110 --> 00:31:52,540
+410
+00:31:49,910 --> 00:31:52,280
  And then we're printing out languages.
 
-393
-00:31:52,720 --> 00:31:56,360
- And we're also printing out removed language, just to see what actually happens.
+411
+00:31:52,280 --> 00:31:56,360
+ And we're also printing out removed language just to see what actually happens.
 
-394
-00:31:56,510 --> 00:32:01,750
+412
+00:31:57,030 --> 00:32:01,750
  When I run this, something actually happened, right?
 
-395
-00:32:09,330 --> 00:32:16,180
+413
+00:32:11,450 --> 00:32:15,260
  Well, we removed Java.
 
-396
+414
 00:32:16,650 --> 00:32:18,130
  No, we did not remove Java.
 
-397
+415
 00:32:18,270 --> 00:32:19,710
  We removed C sharp, right?
 
-398
+416
 00:32:20,710 --> 00:32:23,250
  The end from the list, right?
 
-399
+417
 00:32:23,710 --> 00:32:28,700
  And then we could actually see what we actually removed.
 
-400
-00:32:28,820 --> 00:32:30,040
+418
+00:32:28,780 --> 00:32:30,040
  We're supposed to see sharp, right?
 
-401
-00:32:30,540 --> 00:32:36,910
+419
+00:32:30,390 --> 00:32:36,930
  So the question here is really, what is the difference between remove and pop?
 
-402
-00:32:37,720 --> 00:32:40,860
+420
+00:32:37,160 --> 00:32:40,860
  So what is the difference between remove and pop?
 
-403
-00:32:40,860 --> 00:33:03,560
- Well, remove, as we saw earlier, removes remove by value, while pop actually removes by index or the last item if no index is specified.
+421
+00:32:40,860 --> 00:33:03,540
+ Well, remove, as we saw earlier, removes remove by value, while pop actually removes by index or the last item, if no index is specified.
 
-404
-00:33:07,720 --> 00:33:12,550
- And also, returns the removed item.
+422
+00:33:07,740 --> 00:33:12,570
+ And also returns the removed item.
 
-405
-00:33:13,980 --> 00:33:18,800
+423
+00:33:14,590 --> 00:33:18,820
  So let's actually specify, push on that a little bit more.
 
-406
-00:33:19,360 --> 00:33:26,930
+424
+00:33:19,380 --> 00:33:26,930
  So instead, this time, instead of saying removed language equals language pop, I'm going to save that for you guys.
 
-407
+425
 00:33:27,650 --> 00:33:29,750
  So we just remember where we were coming from.
 
-408
+426
 00:33:30,150 --> 00:33:41,090
  So instead of having an empty one, we're actually going to put an index this time.
 
-409
-00:33:41,950 --> 00:33:42,670
+427
+00:33:41,930 --> 00:33:42,670
  But notice something.
 
-410
-00:33:43,270 --> 00:33:48,880
- So I'm going to put a one here, for example.
+428
+00:33:43,270 --> 00:33:44,420
+ So I'm going to put a 1 here.
 
-411
-00:33:49,140 --> 00:33:49,820
- I'm going to put a one.
+429
+00:33:47,510 --> 00:33:49,820
+ For example, I'm going to put a 1.
 
-412
-00:33:50,120 --> 00:33:54,190
- And that would be index one, meaning index one.
+430
+00:33:50,040 --> 00:33:54,190
+ And that would be index 1, meaning index 1.
 
-413
-00:33:54,350 --> 00:33:55,690
+431
+00:33:54,330 --> 00:33:55,670
  And that would be Java, right?
 
-414
+432
 00:33:55,950 --> 00:33:57,750
  Before, we removed C sharp.
 
-415
+433
 00:33:57,920 --> 00:34:03,380
  But this time, I'm going to try to remove Java from the list and actually see the popped item.
 
-416
-00:34:05,090 --> 00:34:06,570
+434
+00:34:05,070 --> 00:34:06,570
  And let's see if that actually works.
 
-417
+435
 00:34:07,030 --> 00:34:08,060
  And yeah, it works.
 
-418
-00:34:08,340 --> 00:34:10,000
+436
+00:34:08,360 --> 00:34:10,000
  So before, we removed Java.
 
-419
-00:34:10,280 --> 00:34:14,410
+437
+00:34:10,260 --> 00:34:14,410
  Sorry, C sharp, when we have nothing inside the bracket here.
 
-420
+438
 00:34:15,030 --> 00:34:19,260
- And this time, we're actually removing Java when we have index one.
+ And this time, we're actually removing Java when we have index 1.
 
-421
-00:34:19,710 --> 00:34:23,500
- So we actually removed the item with index one.
+439
+00:34:20,060 --> 00:34:23,500
+ So we actually removed the item with index 1.
 
-422
-00:34:23,500 --> 00:34:30,460
+440
+00:34:23,940 --> 00:34:30,460
  And what we can notice here is that we don't write the index in the square brackets, actually.
 
-423
-00:34:31,230 --> 00:34:31,350
+441
+00:34:31,190 --> 00:34:31,350
  Right?
 
-424
+442
 00:34:31,950 --> 00:34:33,040
  So remember that.
 
-425
-00:34:34,270 --> 00:34:39,130
- A normal mistake to actually try to write it in square brackets.
+443
+00:34:34,050 --> 00:34:35,290
+ A normal mistake.
 
-426
-00:34:39,490 --> 00:34:40,830
+444
+00:34:35,290 --> 00:34:39,130
+ To actually try to write it in square brackets.
+
+445
+00:34:39,610 --> 00:34:40,830
  And it actually doesn't complain.
 
-427
-00:34:42,380 --> 00:34:51,530
- But if I run this, you will see that I actually, it will give you a type error.
+446
+00:34:42,530 --> 00:34:51,530
+ But if I run this, you will see that actually it will give you a type error.
 
-428
-00:34:54,080 --> 00:34:58,920
+447
+00:34:54,120 --> 00:34:58,920
  And since we have talked about this, you will kind of already know, okay, something's happening online.
 
-429
-00:34:59,160 --> 00:35:02,400
+448
+00:34:59,200 --> 00:35:02,400
  The subject cannot be interpreted as an integer.
 
-430
-00:35:04,020 --> 00:35:07,200
+449
+00:35:04,000 --> 00:35:07,200
  So this cannot be interpreted as an integer.
 
-431
-00:35:07,600 --> 00:35:09,880
+450
+00:35:07,550 --> 00:35:09,860
  Let's change it to a normal one.
 
-432
+451
 00:35:10,700 --> 00:35:12,010
  And let's try it out.
 
-433
-00:35:12,170 --> 00:35:13,130
+452
+00:35:12,150 --> 00:35:13,110
  And it actually works.
 
-434
-00:35:15,650 --> 00:35:16,070
+453
+00:35:15,630 --> 00:35:16,050
  There you go.
 
-435
-00:35:20,930 --> 00:35:22,630
+454
+00:35:16,190 --> 00:35:22,630
  That was a little bit about remove.
 
-436
+455
 00:35:24,570 --> 00:35:27,760
  Can we do more with our list?
 
-437
+456
 00:35:27,950 --> 00:35:29,040
  Yes, of course we can.
 
-438
-00:35:29,040 --> 00:35:49,340
+457
+00:35:34,290 --> 00:35:49,340
  I was just wondering what that command you wrote in the terminal was to remove everything you had written?
 
-439
-00:35:51,840 --> 00:35:52,800
- In the terminal?
-
-440
-00:35:53,380 --> 00:35:55,530
- It was something like CLS or something.
-
-441
-00:35:55,650 --> 00:35:56,470
- Oh, yeah, yeah, yeah.
-
-442
-00:35:56,570 --> 00:35:59,390
- You can either write clear or you can write CLS.
-
-443
-00:36:00,220 --> 00:36:00,900
- Okay, all right.
-
-444
-00:36:01,290 --> 00:36:01,570
- Nice.
-
-445
-00:36:02,130 --> 00:36:02,760
- No, no problem.
-
-446
-00:36:08,280 --> 00:36:13,120
- Or you can throw it in the garbage like this.
-
-447
-00:36:13,630 --> 00:36:16,890
- So if you press the X, it's just hiding, right?
-
-448
-00:36:17,270 --> 00:36:19,240
- But if you put it there, it's killing it.
-
-449
-00:36:19,240 --> 00:36:28,140
- So, yeah, let's see some other stuff that we can do to our list.
-
-450
-00:36:28,710 --> 00:36:29,870
- Let's see what time do we have.
-
-451
-00:36:29,930 --> 00:36:30,970
- Yeah, we have some more time.
-
-452
-00:36:31,420 --> 00:36:33,680
- Okay, so I'm going to put languages.
-
-453
-00:36:34,490 --> 00:36:34,880
- Time.
-
-454
-00:36:38,800 --> 00:36:39,220
- Languages.
-
-455
-00:36:41,600 --> 00:36:44,090
- Yes.
-
-456
-00:36:45,260 --> 00:36:45,780
- Equals.
-
-457
-00:36:50,080 --> 00:36:51,660
- So we can, when we have to leave.
-
 458
-00:36:55,230 --> 00:36:56,850
- So let's take that back.
+00:35:51,880 --> 00:35:52,800
+ In the terminal.
 
 459
-00:36:58,750 --> 00:37:01,960
- And Python, Java, C Sharp.
+00:35:52,800 --> 00:35:55,510
+ It was something like CLS or something.
 
 460
-00:37:02,080 --> 00:37:03,740
- And it's actually a JavaScript as well.
+00:35:55,630 --> 00:35:55,910
+ Oh, yeah.
 
 461
-00:37:04,220 --> 00:37:05,010
- Why not?
+00:35:55,910 --> 00:35:56,470
+ Yeah, yeah, yeah.
 
 462
-00:37:05,300 --> 00:37:08,380
- So it doesn't feel excluded.
+00:35:56,570 --> 00:35:59,370
+ You can either write clear or you can write CLS.
 
 463
-00:37:08,380 --> 00:37:10,670
+00:36:00,160 --> 00:36:00,440
  Okay.
 
 464
+00:36:00,560 --> 00:36:00,880
+ All right.
+
+465
+00:36:01,270 --> 00:36:01,570
+ Nice.
+
+466
+00:36:02,130 --> 00:36:02,740
+ No, no problem.
+
+467
+00:36:07,000 --> 00:36:13,120
+ Or you can throw it in the garbage like this.
+
+468
+00:36:13,610 --> 00:36:16,910
+ So if you put the X, it's not actually, it's just hiding, right?
+
+469
+00:36:17,310 --> 00:36:19,240
+ But if you put it there, it's killing it.
+
+470
+00:36:19,560 --> 00:36:19,860
+ So, yeah.
+
+471
+00:36:25,440 --> 00:36:28,140
+ Let's see some other stuff that we can do to our list.
+
+472
+00:36:28,730 --> 00:36:29,870
+ Let's see what time do we have.
+
+473
+00:36:29,930 --> 00:36:30,970
+ Yeah, we have some more time.
+
+474
+00:36:31,470 --> 00:36:31,700
+ Okay.
+
+475
+00:36:31,920 --> 00:36:33,700
+ So I'm going to put languages.
+
+476
+00:36:34,660 --> 00:36:34,880
+ Time.
+
+477
+00:36:38,740 --> 00:36:39,760
+ Languages.
+
+478
+00:36:39,760 --> 00:36:39,960
+ Languages.
+
+479
+00:36:41,660 --> 00:36:44,090
+ Yes.
+
+480
+00:36:45,240 --> 00:36:45,760
+ Equals.
+
+481
+00:36:50,080 --> 00:36:51,660
+ So we can when we have to leave.
+
+482
+00:36:53,690 --> 00:37:03,720
+ So let's take that back and Python, Java, C Sharp, and it's actually a JavaScript as well.
+
+483
+00:37:04,220 --> 00:37:05,010
+ Why not?
+
+484
+00:37:05,790 --> 00:37:08,380
+ So it doesn't feel excluded.
+
+485
+00:37:10,530 --> 00:37:10,690
+ Okay.
+
+486
 00:37:10,810 --> 00:37:11,840
  JavaScript as well.
 
-465
-00:37:12,870 --> 00:37:18,400
+487
+00:37:12,870 --> 00:37:18,380
  So what I can do here is, well, first of all, let's try this one out.
 
-466
-00:37:18,620 --> 00:37:18,960
- Print.
-
-467
-00:37:20,670 --> 00:37:23,890
- And I kind of showed you this one yesterday.
-
-468
-00:37:24,780 --> 00:37:25,100
- Lend.
-
-469
-00:37:26,820 --> 00:37:27,410
- Ticket.
-
-470
-00:37:28,410 --> 00:37:28,810
- Languages.
-
-471
-00:37:30,390 --> 00:37:31,130
- Okay.
-
-472
-00:37:31,210 --> 00:37:32,510
- What do you say, guys?
-
-473
-00:37:32,710 --> 00:37:34,050
- What was Lend again?
-
-474
-00:37:34,630 --> 00:37:35,410
- What does that mean?
-
-475
-00:37:44,020 --> 00:37:44,660
- Let's see.
-
-476
-00:37:44,740 --> 00:37:45,600
- Let's say Christopher.
-
-477
-00:37:48,160 --> 00:37:52,620
- Yeah, so Lend returns the length of languages in this case.
-
-478
-00:37:52,620 --> 00:37:54,300
- So it will be four.
-
-479
-00:37:55,430 --> 00:37:56,910
- Very good.
-
-480
-00:37:57,150 --> 00:37:57,310
- Yeah.
-
-481
-00:37:58,450 --> 00:38:01,260
- Lend is kind of short for length.
-
-482
-00:38:02,000 --> 00:38:04,890
- And yeah, the length of the list that we have here.
-
-483
-00:38:05,720 --> 00:38:12,580
- And just as our friend says here, as Christopher says, we will get a four, right?
-
-484
-00:38:12,580 --> 00:38:14,700
- Since we have four elements inside this list.
-
-485
-00:38:15,060 --> 00:38:16,480
- One, two, three, four.
-
-486
-00:38:17,910 --> 00:38:21,510
- Let's try another one.
-
-487
-00:38:22,050 --> 00:38:24,430
- What if I write something like this?
-
 488
-00:38:24,960 --> 00:38:25,340
+00:37:18,620 --> 00:37:18,940
  Print.
 
 489
-00:38:26,800 --> 00:38:32,280
- Print.
+00:37:20,670 --> 00:37:23,890
+ And I kind of showed you this one yesterday.
 
 490
-00:38:35,030 --> 00:38:36,530
- Python.
+00:37:24,800 --> 00:37:25,100
+ Lend.
 
 491
-00:38:42,900 --> 00:38:52,290
- Which is then instead of Python, I'm actually going to put Rust here.
+00:37:26,820 --> 00:37:27,410
+ Ticket.
 
 492
-00:38:58,980 --> 00:38:59,840
- Data type.
+00:37:28,410 --> 00:37:28,810
+ Languages.
 
 493
-00:39:00,680 --> 00:39:04,010
- Does the in expression actually return?
+00:37:30,390 --> 00:37:31,130
+ Okay.
 
 494
-00:39:06,470 --> 00:39:11,760
- Well, what it does is that it actually returns a Boolean.
+00:37:31,190 --> 00:37:32,510
+ What do you say, guys?
 
 495
+00:37:32,510 --> 00:37:34,070
+ What was Lend again?
+
+496
+00:37:34,630 --> 00:37:35,610
+ What does that want to do?
+
+497
+00:37:44,080 --> 00:37:44,660
+ Let's see.
+
+498
+00:37:44,740 --> 00:37:45,620
+ Let's see Christopher.
+
+499
+00:37:48,160 --> 00:37:48,440
+ Yeah.
+
+500
+00:37:48,560 --> 00:37:52,620
+ So Lend returns the length of languages in this case.
+
+501
+00:37:52,760 --> 00:37:54,330
+ So it will be four.
+
+502
+00:37:55,510 --> 00:37:56,910
+ Very good.
+
+503
+00:37:57,170 --> 00:37:57,290
+ Yeah.
+
+504
+00:37:58,510 --> 00:38:01,260
+ Lend is kind of short for length.
+
+505
+00:38:01,980 --> 00:38:04,890
+ And yeah, the length of the list that we have here.
+
+506
+00:38:05,720 --> 00:38:12,600
+ And just as our friend says here, as Christopher says, we will get a four, right?
+
+507
+00:38:12,600 --> 00:38:14,700
+ Since we have four elements inside this list.
+
+508
+00:38:15,080 --> 00:38:16,480
+ One, two, three, four.
+
+509
+00:38:17,910 --> 00:38:21,510
+ Let's try another one.
+
+510
+00:38:22,050 --> 00:38:24,410
+ What if I write something like this?
+
+511
+00:38:24,890 --> 00:38:52,290
+ Print, print, print, Python, which is then instead of Python, I'm actually going to put Rust here.
+
+512
+00:38:58,960 --> 00:39:04,010
+ Data type does the in expression actually return?
+
+513
+00:39:06,010 --> 00:39:11,760
+ Well, what it does is that it actually returns a Boolean.
+
+514
 00:39:12,700 --> 00:39:14,700
  I'm going to try it out.
 
-496
-00:39:16,920 --> 00:39:20,650
- So when I run this, I actually get a Boolean in return.
+515
+00:39:16,880 --> 00:39:24,080
+ So when I run this, I actually get a Boolean in return, a true, and then I get a false, right?
 
-497
-00:39:21,510 --> 00:39:24,080
- A true, and then I get a false, right?
+516
+00:39:24,080 --> 00:39:41,810
+ Think we saw in when we talked about strings last lesson, but as you see, it actually works with many collections in Python.
 
-498
-00:39:24,080 --> 00:39:35,270
- I think we saw in when we talked about strings.
-
-499
-00:39:35,450 --> 00:39:36,610
- Last lesson, but we didn't.
-
-500
-00:39:37,650 --> 00:39:41,790
- But as you see, it actually works with many collections in Python.
-
-501
-00:39:42,280 --> 00:39:46,440
+517
+00:39:42,260 --> 00:39:46,440
  So it works also with strings, but it also works with lists.
 
-502
+518
 00:39:46,850 --> 00:39:54,220
  So we can actually just check if the list actually contains something specific.
 
-503
-00:39:54,700 --> 00:39:58,810
- For example, here we're checking if Python actually exists in the list,
+519
+00:39:54,700 --> 00:40:01,330
+ For example, here we're checking if Python actually exists in the list and we get a true, since it actually exists.
 
-504
-00:39:58,990 --> 00:40:01,330
- and we get a true, since it actually exists.
-
-505
-00:40:02,740 --> 00:40:05,930
+520
+00:40:03,160 --> 00:40:05,930
  Does Rust exist in our list?
 
-506
-00:40:06,490 --> 00:40:08,640
+521
+00:40:06,490 --> 00:40:08,660
  No, it does not, since we get a false.
 
-507
-00:40:10,160 --> 00:40:14,030
+522
+00:40:11,050 --> 00:40:14,030
  Pretty neat, right?
 
-508
-00:40:14,030 --> 00:40:23,640
- If we imagine that we have a list with thousands of elements for it,
+523
+00:40:17,300 --> 00:40:29,610
+ If we imagine that we have a list with thousands of elements for it, that would be very useful to use if we just want to check something quickly.
 
-509
-00:40:24,070 --> 00:40:29,610
- that would be very useful to use if we just want to check something quickly.
-
-510
-00:40:31,840 --> 00:40:37,730
+524
+00:40:31,880 --> 00:40:37,730
  All right.
 
-511
-00:40:39,300 --> 00:40:43,570
+525
+00:40:39,560 --> 00:40:43,570
  Let's continue a little bit about lists.
 
-512
-00:40:46,100 --> 00:40:47,320
+526
+00:40:46,200 --> 00:40:47,320
  Yeah, we can do that.
 
-513
+527
 00:40:48,490 --> 00:40:48,650
  Okay.
 
-514
-00:40:48,870 --> 00:40:50,610
+528
+00:40:48,890 --> 00:40:50,610
  So let's create a new list.
 
-515
-00:40:50,850 --> 00:40:52,350
+529
+00:40:50,950 --> 00:40:52,370
  Let's leave the languages for now.
 
-516
-00:40:52,810 --> 00:40:53,250
+530
+00:40:52,830 --> 00:40:53,270
  Numbers.
 
-517
-00:40:53,710 --> 00:40:55,280
+531
+00:40:53,900 --> 00:40:55,300
  Let's go back to our numbers.
 
-518
-00:40:56,600 --> 00:41:00,580
+532
+00:40:56,580 --> 00:41:00,580
  And I'm going to put a, yeah, I'm going to put it like this.
 
-519
-00:41:00,840 --> 00:41:07,100
+533
+00:41:00,800 --> 00:41:07,100
  Five and a two and a, I don't know, a nine, maybe a one, maybe a seven.
 
-520
-00:41:07,500 --> 00:41:07,720
+534
+00:41:07,410 --> 00:41:07,720
  All right.
 
-521
-00:41:08,020 --> 00:41:12,220
+535
+00:41:08,580 --> 00:41:12,220
  So I think you know, guys, where I'm going with this.
 
-522
+536
 00:41:12,440 --> 00:41:14,860
  So we've got a five, two, nine, one, seven.
 
-523
-00:41:15,460 --> 00:41:17,440
+537
+00:41:15,540 --> 00:41:17,440
  And we want what?
 
-524
-00:41:17,640 --> 00:41:19,520
+538
+00:41:17,620 --> 00:41:19,520
  Well, let's sort this out.
 
-525
+539
 00:41:20,080 --> 00:41:21,330
  So we've got our numbers.
 
-526
-00:41:21,500 --> 00:41:24,560
+540
+00:41:22,200 --> 00:41:24,580
  Can we sort this out quickly?
 
-527
+541
 00:41:24,980 --> 00:41:25,860
  Well, yes, we can.
 
-528
-00:41:26,850 --> 00:41:34,130
+542
+00:41:26,810 --> 00:41:34,110
  So what we do is we use something called, well, sort.
 
-529
-00:41:36,540 --> 00:41:44,940
+543
+00:41:36,520 --> 00:41:44,920
  And, yeah, there you could read a little bit about sort.
 
-530
-00:41:45,180 --> 00:41:46,460
+544
+00:41:45,180 --> 00:41:46,440
  But let's try it out.
 
-531
-00:41:48,180 --> 00:41:49,570
- Print numbers.
+545
+00:41:48,180 --> 00:41:50,180
+ Print numbers, right?
 
-532
-00:41:50,040 --> 00:41:50,200
- Right.
-
-533
-00:41:50,420 --> 00:41:53,660
+546
+00:41:50,420 --> 00:41:53,640
  Let's run this and see if it sorts the list.
 
-534
-00:41:53,950 --> 00:41:55,230
- And it actually does.
+547
+00:41:54,350 --> 00:41:55,490
+ And it actually does, right?
 
-535
-00:41:55,370 --> 00:42:15,080
- So what it has actually done, and it's important to remember, it has actually changed the original list.
+548
+00:41:59,500 --> 00:42:16,610
+ So what it has actually done, and it's important to remember, it has actually changed the original list, right?
 
-536
-00:42:16,490 --> 00:42:16,610
- Right.
-
-537
-00:42:17,130 --> 00:42:21,880
+549
+00:42:17,360 --> 00:42:21,880
  So this list is not five, two, nine, one, seven anymore.
 
-538
+550
 00:42:22,140 --> 00:42:24,460
  It is actually one, two, five, seven, nine.
 
-539
-00:42:25,260 --> 00:42:32,390
+551
+00:42:24,460 --> 00:42:32,410
  So if I continue the code, I need to remember that now the numbers list is actually sorted.
 
-540
-00:42:32,940 --> 00:42:41,620
+552
+00:42:33,100 --> 00:42:41,620
  Since I do that in like 322, sort actually changed the original list.
 
-541
-00:42:42,120 --> 00:42:44,180
+553
+00:42:42,350 --> 00:42:44,160
  We can do something else as well.
 
-542
-00:42:44,180 --> 00:42:52,860
- Well, we can actually, instead of doing sort, well, not instead, but additional to that, we can actually also reverse.
-
-543
-00:42:53,530 --> 00:42:58,300
- So numbers.reverse, not remove, reverse.
-
-544
-00:42:58,720 --> 00:43:02,280
- And that also works.
-
-545
-00:43:03,360 --> 00:43:13,490
- And if I do print numbers, and if I run this, it will reverse this part, right?
-
-546
-00:43:14,250 --> 00:43:18,220
- So reverse also changes the original list.
-
-547
-00:43:19,760 --> 00:43:30,450
- And if I were to take this back again, if I run the code,
-
-548
-00:43:30,450 --> 00:43:38,170
- well, then you will see that I actually sorted it out first, and then I reverse it.
-
-549
-00:43:38,170 --> 00:43:44,050
- Since I'm actually changing the original list, which was five, two, nine, one, seven.
-
-550
-00:43:47,390 --> 00:43:53,820
- So no, we're not going into any sorting algorithms in that way,
-
-551
-00:43:53,980 --> 00:44:05,700
- but it's just to show you guys that Python actually offers some methods, right, that we can use.
-
-552
-00:44:09,710 --> 00:44:33,490
- There's also an important distinction in Python between the list method, sort, and the built-in function, which is called sorted.
-
-553
-00:44:34,590 --> 00:44:36,490
- If I'm actually going to put a little title here.
-
 554
-00:44:36,940 --> 00:44:43,070
- So we have sorted versus sort, right?
+00:42:44,510 --> 00:42:52,860
+ We can actually, instead of doing sort, well, not instead, but additional to that, we can actually also reverse.
 
 555
-00:44:43,230 --> 00:44:44,730
- They are not the same, right?
+00:42:52,860 --> 00:42:58,300
+ So numbers.reverse, not remove, reverse.
 
 556
-00:44:44,890 --> 00:44:48,110
- There is a kind of a distinction here.
+00:42:59,480 --> 00:43:02,280
+ And that also works.
 
 557
-00:44:49,030 --> 00:44:50,450
- Let me use the same list.
+00:43:03,380 --> 00:43:13,510
+ And if I do print numbers, and if I run this, it will reverse this part, right?
 
 558
-00:44:55,280 --> 00:45:00,950
- All right, so we saw what sorted, but let's take a look at sorted.
+00:43:13,770 --> 00:43:18,220
+ So reverse also changes the original list.
 
 559
-00:45:01,640 --> 00:45:05,490
- So for that, to make it super clear, I'm actually going to put a new variable here.
+00:43:18,220 --> 00:43:38,170
+ And if I were to take this back again, if I run the code, well, then you will see that I actually sort it out first, and then I reverse it.
 
 560
-00:45:05,490 --> 00:45:18,350
- So new numbers, numbers, equals sorted, this time, not sort, numbers, okay?
+00:43:38,740 --> 00:43:44,030
+ Since I'm actually changing the original list, which was five, two, nine, one, seven.
 
 561
-00:45:18,870 --> 00:45:23,130
- And now since I created a new variable, I can actually compare them to each other.
+00:43:48,680 --> 00:44:05,700
+ So no, we're not going into any sorting algorithms in that way, but it's just to show you guys that Python actually offers some methods that we can use.
 
 562
-00:45:23,390 --> 00:45:30,010
- And now I can put print, number, right?
+00:44:13,720 --> 00:44:33,510
+ There's also an important distinction in Python between the list method sort and the built-in function, which is called sorted.
 
 563
-00:45:30,540 --> 00:45:38,910
- And also, to compare it, I'm going to also print the new numbers, all right?
+00:44:33,870 --> 00:44:36,490
+ If I'm actually going to put a little title here.
 
 564
-00:45:39,890 --> 00:45:45,000
- Let's actually run this and see what happens.
+00:44:36,900 --> 00:44:43,070
+ So we have sorted versus sort, right?
 
 565
-00:45:46,060 --> 00:45:46,660
- Here we go.
+00:44:43,510 --> 00:44:44,730
+ They are not the same, right?
 
 566
-00:45:49,840 --> 00:45:55,230
- What actually happened?
+00:44:45,540 --> 00:44:48,110
+ There is a kind of a distinction here.
 
 567
+00:44:49,050 --> 00:44:50,470
+ Let me use the same list.
+
+568
+00:44:55,260 --> 00:44:55,520
+ All right.
+
+569
+00:44:55,940 --> 00:45:00,970
+ So we saw what sorted, but let's take a look at sorted.
+
+570
+00:45:01,410 --> 00:45:05,490
+ So for that, make it super clear, I'm actually going to put a new variable here.
+
+571
+00:45:05,870 --> 00:45:16,390
+ So new numbers, numbers, equals sorted, this time, not sort, numbers.
+
+572
+00:45:18,210 --> 00:45:18,370
+ Okay.
+
+573
+00:45:18,760 --> 00:45:23,130
+ And now since I created a new variable, I can actually compare them to each other.
+
+574
+00:45:23,270 --> 00:45:30,010
+ And now I can put print number, right?
+
+575
+00:45:30,730 --> 00:45:36,280
+ And also to compare it, I'm going to also print the new numbers.
+
+576
+00:45:38,430 --> 00:45:38,910
+ All right.
+
+577
+00:45:40,720 --> 00:45:45,000
+ Let's actually run this and see what happens.
+
+578
+00:45:46,060 --> 00:45:46,680
+ Here we go.
+
+579
+00:45:51,370 --> 00:45:55,230
+ What's actually happened?
+
+580
 00:45:55,410 --> 00:45:57,830
  Which one actually changed the original list, right?
 
-568
-00:45:57,830 --> 00:46:08,580
- So sorted returns a new sorted result, and the original list actually stays unchanged.
+581
+00:45:58,430 --> 00:46:02,900
+ So sorted returns a new sorted result.
 
-569
-00:46:08,980 --> 00:46:17,050
+582
+00:46:02,900 --> 00:46:08,580
+ And the original list actually stays unchanged.
+
+583
+00:46:10,410 --> 00:46:17,050
  So I hope you notice the difference between the sort and sorted, right?
 
-570
+584
 00:46:20,530 --> 00:46:26,480
  Sorted never, kind of never changed the original list while sort actually does that.
 
-571
-00:46:27,570 --> 00:46:29,840
+585
+00:46:27,850 --> 00:46:29,840
  So there is another distinction, right?
 
-572
-00:46:30,210 --> 00:46:36,870
- And as you see here, when I try to print out numbers, I actually see my original list,
+586
+00:46:30,210 --> 00:46:38,520
+ And as you see here, when I try to print out numbers, I actually see my original list, which
 
-573
-00:46:36,870 --> 00:46:41,970
- which I didn't do when I print it out after I used sort, right?
+587
+00:46:38,520 --> 00:46:41,970
+ I didn't do when I print it out after I use sort, right?
 
-574
-00:46:42,260 --> 00:46:45,970
- Printed numbers, then I didn't see my original list anymore.
+588
+00:46:42,260 --> 00:46:45,950
+ Print numbers, then I didn't see my original list anymore.
 
-575
-00:46:50,600 --> 00:46:51,220
- Let's hear, Anastasia.
+589
+00:46:50,600 --> 00:46:50,820
+ Let's hear it.
 
-576
-00:46:53,100 --> 00:46:57,600
- Yeah, I'm just wondering, you've got new numbers equals sorted, but what would happen
+590
+00:46:50,860 --> 00:46:51,200
+ Anastasia.
 
-577
-00:46:57,600 --> 00:47:00,520
- if we had numbers equals sorted numbers?
+591
+00:46:53,080 --> 00:46:53,980
+ Yeah, I'm just wondering.
 
-578
-00:47:00,830 --> 00:47:01,510
+592
+00:46:54,100 --> 00:46:59,700
+ So I think you've got new numbers equals sorted, but what would happen if we had numbers equals
+
+593
+00:46:59,700 --> 00:47:00,480
+ sorted numbers?
+
+594
+00:47:00,930 --> 00:47:01,510
  Would that work?
 
-579
-00:47:04,260 --> 00:47:04,700
+595
+00:47:04,280 --> 00:47:04,680
  Numbers?
 
-580
+596
 00:47:05,660 --> 00:47:08,810
  You mean if I put numbers here, right?
 
-581
+597
 00:47:09,610 --> 00:47:12,630
  Yeah, but then I'm kind of changing.
 
-582
+598
 00:47:13,870 --> 00:47:16,130
  You see, that's not pretty much the same thing.
 
-583
-00:47:16,130 --> 00:47:21,390
- We will get, of course, sorted, because now you have actually addressed something to this.
+599
+00:47:16,230 --> 00:47:21,370
+ We will get, of course, sorted because now you have actually addressed something to this.
 
-584
-00:47:21,530 --> 00:47:22,310
- Right, yeah, yeah, yeah.
+600
+00:47:21,510 --> 00:47:21,650
+ Right.
 
-585
-00:47:22,410 --> 00:47:27,130
+601
+00:47:21,870 --> 00:47:22,030
+ Yeah.
+
+602
+00:47:22,390 --> 00:47:27,130
  So you kind of change the list in that way, but that would work for anything, right?
 
-586
-00:47:27,660 --> 00:47:31,700
+603
+00:47:27,780 --> 00:47:31,700
  But basically, it would do the same thing as sort in this case.
 
-587
-00:47:32,120 --> 00:47:33,540
- Yeah, yeah, yeah, in this case.
+604
+00:47:32,140 --> 00:47:32,500
+ Yeah.
 
-588
-00:47:33,940 --> 00:47:34,960
- Yeah, thank you.
+605
+00:47:32,680 --> 00:47:32,860
+ Yeah.
 
-589
-00:47:35,840 --> 00:47:36,380
+606
+00:47:32,980 --> 00:47:33,120
+ Yeah.
+
+607
+00:47:33,120 --> 00:47:33,540
+ In this case.
+
+608
+00:47:33,920 --> 00:47:34,140
+ Yeah.
+
+609
+00:47:34,140 --> 00:47:34,300
+ Yeah.
+
+610
+00:47:34,440 --> 00:47:34,980
+ Thank you.
+
+611
+00:47:35,710 --> 00:47:36,380
  No problem.
 
-590
-00:47:36,660 --> 00:47:42,970
+612
+00:47:36,600 --> 00:47:42,970
  All right.
 
-591
+613
 00:47:43,400 --> 00:47:45,520
  Any more questions about sorted and sort?
 
-592
-00:47:48,460 --> 00:47:55,490
- Yeah, if I remember correctly, in the lab, we have actually a specific question about
+614
+00:47:48,460 --> 00:47:51,350
+ Yeah.
 
-593
-00:47:55,490 --> 00:47:58,520
- sorted and sort, where you will actually try it out.
+615
+00:47:51,410 --> 00:47:56,130
+ If I remember correctly, in the lab, we have actually a specific question about sorted and
 
-594
-00:48:00,160 --> 00:48:02,330
+616
+00:47:56,130 --> 00:47:58,520
+ sort, where you will actually try it out.
+
+617
+00:48:00,100 --> 00:48:02,330
  Let's see here.
 
-595
-00:48:06,490 --> 00:48:08,710
+618
+00:48:03,710 --> 00:48:08,730
  Interesting.
 
-596
-00:48:09,490 --> 00:48:10,500
+619
+00:48:09,470 --> 00:48:10,520
  We're going to take...
 
-597
-00:48:10,500 --> 00:48:10,940
+620
+00:48:10,520 --> 00:48:10,940
  Ah, no.
 
-598
-00:48:11,160 --> 00:48:12,580
+621
+00:48:11,120 --> 00:48:12,580
  We're actually going to take a break now.
 
-599
-00:48:12,840 --> 00:48:13,720
+622
+00:48:12,820 --> 00:48:13,720
  It's one hour.
 
-600
+623
 00:48:14,180 --> 00:48:15,020
  Let's take a break.
 
-601
-00:48:16,030 --> 00:48:16,350
- And...
-
-602
-00:48:18,390 --> 00:48:19,810
+624
+00:48:16,170 --> 00:48:19,830
  We're still at the beginning.
 
-603
-00:48:20,050 --> 00:48:25,940
- And we're actually, let's say, back at 10.15.
+625
+00:48:20,090 --> 00:48:25,960
+ I'm actually, let's say, back at 10.15.
 
-604
-00:48:26,100 --> 00:48:26,400
+626
+00:48:26,100 --> 00:48:26,420
  All right.
 
-605
-00:48:27,810 --> 00:48:30,300
- So let's take a small break.
+627
+00:48:26,420 --> 00:48:34,750
+ So let's take a small break and then we will actually come to you.
 
-606
-00:48:30,810 --> 00:48:34,590
- And then we will actually continue.
+628
+00:48:36,230 --> 00:48:39,960
+ So one last thing about the list and then we're going to move on.
 
-607
-00:48:36,230 --> 00:48:39,920
- So one last thing about the list, and then we're going to move on.
-
-608
-00:48:40,330 --> 00:48:41,990
+629
+00:48:40,430 --> 00:48:42,010
  Then it's enough with lists, right?
 
-609
-00:48:42,840 --> 00:48:44,540
- So back at 10.15.
+630
+00:48:43,070 --> 00:48:45,840
+ So back at 10.15, try to be on time.
 
-610
-00:48:44,920 --> 00:48:45,840
- Try to be on time.
-
-611
-00:48:45,960 --> 00:48:46,560
+631
+00:48:45,960 --> 00:48:46,580
  Grab some coffee.
 
-612
-00:48:48,050 --> 00:48:49,300
+632
+00:48:48,420 --> 00:48:49,300
  Let's walk a little bit.
 
-613
+633
 00:48:49,600 --> 00:48:52,270
  And yeah, have a nice coffee.
 
-614
-00:53:53,260 --> 01:05:35,600
+634
+00:57:13,790 --> 01:05:35,600
  We are back.
 
-615
-01:05:35,700 --> 01:05:35,840
+635
+01:05:35,720 --> 01:05:35,840
  Let's see.
 
-616
-01:05:35,840 --> 01:05:36,480
+636
+01:05:35,880 --> 01:05:36,480
  I'm sharing the screen.
 
-617
-01:05:36,620 --> 01:05:37,180
- No, no, actually.
+637
+01:05:36,720 --> 01:05:36,920
+ No, no.
 
-618
-01:05:38,880 --> 01:05:42,550
+638
+01:05:37,020 --> 01:05:39,260
+ Actually, let's see here.
+
+639
+01:05:39,960 --> 01:05:42,570
  There we go.
 
-619
-01:05:43,840 --> 01:05:45,150
+640
+01:05:43,840 --> 01:05:45,170
  Okay.
 
-620
+641
 01:05:45,170 --> 01:05:46,950
  Let's continue from where we left off.
 
-621
-01:05:47,350 --> 01:05:55,010
- I kind of mentioned that we have one last thing to go through when it comes to lists, right?
+642
+01:05:47,710 --> 01:05:53,400
+ I kind of mentioned that we have one last thing to go through when it comes to
 
-622
-01:05:55,190 --> 01:05:56,050
+643
+01:05:53,400 --> 01:05:54,990
+ lists, right?
+
+644
+01:05:55,190 --> 01:05:56,070
  Before we move on.
 
-623
-01:05:56,990 --> 01:06:01,080
- Well, this is kind of a gotcha thing.
+645
+01:05:56,990 --> 01:06:03,570
+ Well, this is kind of a gotcha thing, but let's take a look at it.
 
-624
-01:06:02,040 --> 01:06:03,570
- But let's take a look at it.
-
-625
-01:06:07,580 --> 01:06:11,190
+646
+01:06:05,570 --> 01:06:11,190
  Let's create a list.
 
-626
-01:06:11,470 --> 01:06:24,160
+647
+01:06:11,770 --> 01:06:24,160
  Let's call it list A equals, say, one, two, three.
 
-627
-01:06:25,650 --> 01:06:38,910
+648
+01:06:24,160 --> 01:06:38,910
  And let's also say that list B equals list A, right?
 
-628
-01:06:39,470 --> 01:06:39,770
+649
+01:06:39,530 --> 01:06:39,770
  All right.
 
-629
+650
 01:06:40,380 --> 01:06:42,540
  We've got a list A, one, two, three.
 
-630
+651
 01:06:42,680 --> 01:06:45,980
  And we also say that list B equals list A.
 
-631
-01:06:46,350 --> 01:06:52,070
+652
+01:06:46,690 --> 01:06:52,010
  And then we're also going to put a list B.
 
-632
-01:06:52,420 --> 01:06:56,470
+653
+01:06:52,320 --> 01:06:56,470
  We're going to use append, which we used before, right?
 
-633
-01:06:57,010 --> 01:06:57,410
+654
+01:06:57,050 --> 01:06:57,410
  Append.
 
-634
-01:06:58,080 --> 01:06:59,380
+655
+01:06:58,120 --> 01:06:59,380
  And we're going to put a four here.
 
-635
-01:06:59,620 --> 01:07:00,580
+656
+01:06:59,620 --> 01:07:00,600
  We said add, right?
 
-636
-01:07:02,850 --> 01:07:04,870
+657
+01:07:02,670 --> 01:07:04,870
  And we add it to the end of the list, right?
 
-637
-01:07:05,520 --> 01:07:11,140
+658
+01:07:05,520 --> 01:07:11,160
  And if we want to specify, we could use, instead of append, we used insert, right?
 
-638
-01:07:12,070 --> 01:07:13,510
- But we're going to use append.
+659
+01:07:12,070 --> 01:07:15,770
+ But we're going to use append, so it's going to end up at the end of the list.
 
-639
-01:07:13,710 --> 01:07:15,770
- So it's going to end up at the end of the list.
-
-640
-01:07:16,020 --> 01:07:18,730
+660
+01:07:16,110 --> 01:07:18,730
  But we're actually saying that to list B, right?
 
-641
+661
 01:07:20,110 --> 01:07:21,610
- Let's actually print this out.
+ Let's actually print this up.
 
-642
+662
 01:07:26,400 --> 01:07:40,240
  If I put print, and this is important, print list in here, I'm going to put print list B, just to compare.
 
-643
-01:07:40,660 --> 01:07:40,920
+663
+01:07:40,640 --> 01:07:40,920
  All right?
 
-644
+664
 01:07:42,700 --> 01:07:43,950
  Let's throw this.
 
-645
+665
 01:07:45,270 --> 01:07:47,990
  So the question is actually, well, list B is kind of obvious.
 
-646
-01:07:48,090 --> 01:07:49,290
+666
+01:07:47,990 --> 01:07:49,290
  It's going to add to four, right?
 
-647
+667
 01:07:49,350 --> 01:07:51,250
  Since we say add four to the end of the list.
 
-648
-01:07:51,630 --> 01:07:57,770
+668
+01:07:51,470 --> 01:07:57,770
  The question is actually, what is going to be printed out when we run live 347?
 
-649
+669
 01:07:58,050 --> 01:07:58,810
  What's going to happen?
 
-650
+670
 01:07:58,930 --> 01:08:00,110
  We're going to print list A.
 
-651
-01:08:00,830 --> 01:08:04,640
+671
+01:08:00,830 --> 01:08:04,620
  So when we run this, we actually see what?
 
-652
-01:08:04,640 --> 01:08:11,830
+672
+01:08:06,740 --> 01:08:11,830
  Well, we see that list A also got a four inside it, right?
 
-653
+673
 01:08:13,500 --> 01:08:17,060
  And this is a very important thing to understand here, right?
 
-654
-01:08:17,600 --> 01:08:26,630
+674
+01:08:17,500 --> 01:08:26,630
  So list B did not become a completely independent copy just by doing this on line 343.
 
-655
+675
 01:08:27,430 --> 01:08:28,580
  All right?
 
-656
-01:08:28,910 --> 01:08:30,480
+676
+01:08:28,700 --> 01:08:30,460
  So that's important.
 
-657
+677
 01:08:30,640 --> 01:08:31,140
  Remember that.
 
-658
-01:08:34,000 --> 01:08:35,740
- So it's not an independent list.
+678
+01:08:34,020 --> 01:08:41,640
+ So it's not an independent list, but what if I actually wanted to make this shallow copy?
 
-659
-01:08:36,020 --> 01:08:41,640
- But what if I actually wanted to make this shallow copy?
-
-660
+679
 01:08:42,470 --> 01:08:44,110
  Well, then I can actually do this.
 
-661
-01:08:44,540 --> 01:08:48,670
+680
+01:08:44,830 --> 01:08:48,690
  I'm just going to put this out, and I'm going to use this one again.
 
-662
+681
 01:08:49,450 --> 01:08:50,910
  Let me comment it out as well.
 
-663
+682
 01:08:51,170 --> 01:08:53,010
  So let's make it kind of separate here.
 
-664
-01:08:53,640 --> 01:08:58,720
+683
+01:08:53,520 --> 01:08:58,720
  So in order to make that shallow copy, then I would do something like this.
 
-665
-01:08:59,720 --> 01:09:09,240
- I would put list B, not Lewis, list B equals.
+684
+01:08:59,440 --> 01:09:11,950
+ I would put list B, not Lewis, list B equals, but this time I'm going to write something
 
-666
-01:09:09,630 --> 01:09:12,350
- But this time, I'm going to write something like this.
+685
+01:09:11,950 --> 01:09:12,350
+ like this.
 
-667
-01:09:12,570 --> 01:09:17,190
+686
+01:09:12,550 --> 01:09:17,190
  So list A dot copy.
 
-668
-01:09:17,190 --> 01:09:28,630
+687
+01:09:19,870 --> 01:09:28,630
  And then I'm going to put list B dot at the end.
 
-669
-01:09:30,090 --> 01:09:31,750
+688
+01:09:30,070 --> 01:09:31,770
  For example, let's take four.
 
-670
-01:09:32,140 --> 01:09:33,650
+689
+01:09:32,140 --> 01:09:33,630
  Since we used this, let's stick to four.
 
-671
-01:09:34,470 --> 01:09:36,130
+690
+01:09:33,840 --> 01:09:36,130
  And then I'm going to use my prints again.
 
-672
-01:09:36,330 --> 01:09:41,850
+691
+01:09:36,130 --> 01:09:41,850
  So print list A and see if we succeeded.
 
-673
+692
 01:09:42,750 --> 01:09:46,790
  And print list B.
 
-674
-01:09:47,520 --> 01:09:51,130
+693
+01:09:47,830 --> 01:09:51,130
  And when we run this, let's compare it to this one.
 
-675
-01:09:51,560 --> 01:09:52,930
+694
+01:09:51,670 --> 01:09:52,930
  They stay the same, right?
 
-676
-01:09:53,390 --> 01:09:55,300
- Not an independent copy from A.
+695
+01:09:53,390 --> 01:09:55,280
+ Not any independent copy from A.
 
-677
-01:09:56,470 --> 01:10:03,350
+696
+01:09:56,370 --> 01:10:03,370
  And when we run this, we see that there are separate list objects, right?
 
-678
+697
 01:10:04,590 --> 01:10:07,460
  So this is how you use copy.
 
-679
-01:10:13,370 --> 01:10:17,310
+698
+01:10:13,290 --> 01:10:17,290
  Questions?
 
-680
+699
 01:10:23,940 --> 01:10:25,160
  Anybody's putting their hand up?
 
-681
-01:10:26,040 --> 01:10:26,620
+700
+01:10:26,040 --> 01:10:26,640
  Let's see here.
 
-682
-01:10:28,050 --> 01:10:28,410
+701
+01:10:28,010 --> 01:10:28,410
  Christian.
 
-683
-01:10:33,910 --> 01:10:35,600
- Does this...
+702
+01:10:28,410 --> 01:10:36,400
+ Yeah, the microphone.
 
-684
-01:10:35,600 --> 01:10:37,020
- Yeah, the microphone was...
+703
+01:10:37,600 --> 01:10:41,010
+ Is this related to your reference types?
 
-685
-01:10:37,020 --> 01:10:44,240
- Is this related to, like, reference types or...
-
-686
-01:10:44,240 --> 01:10:46,230
- If it's...
-
-687
-01:10:46,230 --> 01:10:47,010
+704
+01:10:44,840 --> 01:10:47,030
  Say that again.
 
-688
-01:10:48,480 --> 01:10:51,750
+705
+01:10:48,650 --> 01:10:51,750
  Is it related to reference types?
 
-689
-01:10:53,270 --> 01:10:54,980
+706
+01:10:53,540 --> 01:10:54,980
  Well, kind of.
 
-690
-01:10:59,030 --> 01:11:01,170
+707
+01:11:00,170 --> 01:11:01,170
  Yes.
 
-691
-01:11:01,470 --> 01:11:02,130
+708
+01:11:01,470 --> 01:11:02,150
  Yes, in a way.
 
-692
-01:11:02,430 --> 01:11:03,070
+709
+01:11:02,510 --> 01:11:03,070
  In a way, yes.
 
-693
-01:11:03,470 --> 01:11:04,750
+710
+01:11:03,580 --> 01:11:04,750
  I would say, yes.
 
-694
-01:11:06,850 --> 01:11:15,090
+711
+01:11:07,010 --> 01:11:15,090
  There is a distinction at the end.
 
-695
-01:11:15,500 --> 01:11:15,880
+712
+01:11:15,590 --> 01:11:15,900
  Okay.
 
-696
-01:11:15,880 --> 01:11:23,150
- Could you explain it a bit more, maybe, perhaps?
+713
+01:11:17,950 --> 01:11:21,990
+ Could you explain it a bit more?
 
-697
-01:11:24,450 --> 01:11:26,710
+714
+01:11:22,310 --> 01:11:23,130
+ Maybe, perhaps?
+
+715
+01:11:24,530 --> 01:11:26,690
  The difference between this one and this one?
 
-698
-01:11:30,510 --> 01:11:30,670
- Yeah.
+716
+01:11:26,690 --> 01:11:37,270
+ Yeah, why list B is referencing to the same value in memory.
 
-699
-01:11:30,810 --> 01:11:33,190
- Why list B is...
-
-700
-01:11:33,190 --> 01:11:37,270
- It's referencing to the same value in memory.
-
-701
-01:11:37,510 --> 01:11:38,730
+717
+01:11:37,510 --> 01:11:38,750
  That's what it is, I guess.
 
-702
+718
 01:11:39,150 --> 01:11:39,370
  Okay.
 
-703
-01:11:39,450 --> 01:11:40,990
+719
+01:11:39,370 --> 01:11:40,990
  You're talking about the first one, right?
 
-704
+720
 01:11:43,740 --> 01:11:45,080
  Yeah.
 
-705
-01:11:45,160 --> 01:11:47,060
- That it did not become a independent...
+721
+01:11:45,160 --> 01:11:46,960
+ That it did not become independent.
 
-706
-01:11:47,060 --> 01:11:47,580
+722
+01:11:47,040 --> 01:11:47,600
  Yeah, exactly.
 
-707
-01:11:48,140 --> 01:11:48,550
+723
+01:11:48,140 --> 01:11:48,530
  Yeah, yeah.
 
-708
-01:11:48,630 --> 01:11:48,830
+724
+01:11:48,630 --> 01:11:48,850
  Okay.
 
-709
-01:11:49,550 --> 01:11:50,070
+725
+01:11:49,690 --> 01:11:50,090
  Okay.
 
-710
-01:11:51,910 --> 01:11:53,690
+726
+01:11:51,970 --> 01:11:53,690
  I could actually show that.
 
-711
-01:11:54,470 --> 01:11:55,550
+727
+01:11:54,450 --> 01:11:55,550
  Let me just remember.
 
-712
-01:11:56,420 --> 01:11:59,900
+728
+01:11:56,480 --> 01:11:59,900
  We can actually look at the reference type, actually.
 
-713
+729
 01:12:01,450 --> 01:12:02,310
  Let me see.
 
-714
-01:12:02,310 --> 01:12:05,270
- I need to actually look into...
+730
+01:12:02,450 --> 01:12:04,650
+ I need to actually look into.
 
-715
-01:12:05,270 --> 01:12:08,220
+731
+01:12:05,910 --> 01:12:08,220
  Let me just get a reminder here.
 
-716
-01:12:09,820 --> 01:12:15,660
- Because I can actually look at the...
+732
+01:12:10,880 --> 01:12:12,860
+ Because I can actually look at the.
 
-717
-01:12:15,660 --> 01:12:18,110
+733
+01:12:14,760 --> 01:12:18,110
  Give me one second.
 
-718
+734
 01:12:18,870 --> 01:12:23,450
  Well, can I take it afterwards so I don't create something just out of the blue?
 
-719
-01:12:23,550 --> 01:12:24,370
+735
+01:12:23,550 --> 01:12:24,350
  Let me think about it.
 
-720
-01:12:24,910 --> 01:12:27,530
- I'm going to show it because I'm not actually...
+736
+01:12:24,910 --> 01:12:27,310
+ I'm going to show it because I'm not actually.
 
-721
-01:12:27,530 --> 01:12:27,630
+737
+01:12:27,310 --> 01:12:27,590
  Yeah, sure.
 
-722
-01:12:28,630 --> 01:12:29,430
+738
+01:12:28,590 --> 01:12:29,430
  Absolutely, yeah.
 
-723
+739
 01:12:29,610 --> 01:12:30,310
  No problem.
 
-724
-01:12:30,750 --> 01:12:33,600
+740
+01:12:30,750 --> 01:12:33,620
  I just thought it looked the same.
 
-725
-01:12:33,600 --> 01:12:35,240
- It's a good question, but I'm just going to put...
+741
+01:12:33,620 --> 01:12:35,260
+ No, no, it's a good question, but I'm just going to put it.
 
-726
-01:12:35,240 --> 01:12:40,260
- It looks the same as with the problem, the problem with reference types, I guess.
+742
+01:12:35,260 --> 01:12:37,800
+ It looks the same as with the problem.
 
-727
-01:12:40,480 --> 01:12:40,920
+743
+01:12:38,300 --> 01:12:40,260
+ The problem with reference types, I guess.
+
+744
+01:12:40,460 --> 01:12:40,920
  Yeah, yeah, yeah.
 
-728
-01:12:40,920 --> 01:12:41,500
+745
+01:12:40,920 --> 01:12:41,480
  Exactly, exactly.
 
-729
-01:12:41,620 --> 01:12:46,120
+746
+01:12:41,480 --> 01:12:46,120
  So I'm just going to show you how it's actually stored in memory.
 
-730
-01:12:47,190 --> 01:12:48,750
- But let me just...
+747
+01:12:47,230 --> 01:12:48,130
+ But let me just.
 
-731
-01:12:49,550 --> 01:12:51,390
- Yeah, we can take it later if you...
+748
+01:12:49,450 --> 01:12:51,170
+ No, we can take it later if you.
 
-732
-01:12:51,390 --> 01:12:51,630
+749
+01:12:51,390 --> 01:12:51,690
  Yeah, yeah.
 
-733
-01:12:51,630 --> 01:12:52,330
+750
+01:12:51,690 --> 01:12:52,330
  No problem.
 
-734
-01:12:52,770 --> 01:12:53,150
+751
+01:12:52,790 --> 01:12:53,150
  No problem.
 
-735
-01:12:54,270 --> 01:12:54,470
+752
+01:12:54,290 --> 01:12:54,470
  Okay.
 
-736
+753
 01:12:54,770 --> 01:12:58,850
  So I don't confuse anyone by, you know, trying to remember.
 
-737
-01:12:59,610 --> 01:13:05,810
+754
+01:12:59,590 --> 01:13:05,810
  But yeah, I can actually show you how it looks like in memory.
 
-738
-01:13:06,290 --> 01:13:07,420
+755
+01:13:06,290 --> 01:13:07,440
  You can take it from there.
 
-739
-01:13:10,420 --> 01:13:13,360
+756
+01:13:10,380 --> 01:13:13,340
  So we'll get back to that one.
 
-740
-01:13:16,000 --> 01:13:20,530
+757
+01:13:16,160 --> 01:13:20,530
  But what was next on the menu?
 
-741
-01:13:20,830 --> 01:13:22,230
+758
+01:13:20,830 --> 01:13:22,310
  Let's see here on my notes.
 
-742
+759
 01:13:24,000 --> 01:13:24,540
  Yeah, okay.
 
-743
-01:13:24,660 --> 01:13:25,520
- We can finish lists.
+760
+01:13:24,660 --> 01:13:25,500
+ We can finish the list.
 
-744
-01:13:26,660 --> 01:13:32,500
+761
+01:13:26,660 --> 01:13:32,520
  Let's move to tuples.
 
-745
-01:13:36,470 --> 01:13:42,800
+762
+01:13:36,490 --> 01:13:42,800
  Well, tuples are also an ordered collection, right?
 
-746
-01:13:44,290 --> 01:13:49,640
+763
+01:13:44,030 --> 01:13:49,620
  They also, thus also support indexing as well.
 
-747
-01:13:50,050 --> 01:13:51,520
+764
+01:13:49,620 --> 01:13:51,520
  But there is a difference, of course.
 
-748
-01:13:51,520 --> 01:13:58,960
+765
+01:13:52,660 --> 01:13:58,960
  And the main difference, does anybody know what would be the difference between tuples and lists?
 
-749
-01:14:00,270 --> 01:14:00,950
+766
+01:14:00,140 --> 01:14:00,950
  Great difference here.
 
-750
-01:14:04,270 --> 01:14:08,070
+767
+01:14:04,710 --> 01:14:05,030
+ Sarani.
+
+768
+01:14:06,510 --> 01:14:08,090
  Yeah, so it is immutable.
 
-751
+769
 01:14:08,800 --> 01:14:09,560
  Very good.
 
-752
-01:14:10,120 --> 01:14:12,320
- Now we're back to the mute mode.
+770
+01:14:10,120 --> 01:14:11,210
+ Now we're back to the mute.
 
-753
-01:14:14,420 --> 01:14:16,870
+771
+01:14:14,460 --> 01:14:16,870
  We actually don't change that, right?
 
-754
+772
 01:14:17,470 --> 01:14:20,370
  So let's put some coordinates.
 
-755
-01:14:23,080 --> 01:14:29,880
- Equals term and 20.
+773
+01:14:22,450 --> 01:14:29,880
+ Equals 10 and 20.
 
-756
-01:14:31,550 --> 01:14:35,280
+774
+01:14:33,090 --> 01:14:35,280
  And then we try to print out our coordinates.
 
-757
+775
 01:14:35,520 --> 01:14:38,300
  As you see, we're using brackets, right?
 
-758
-01:14:38,530 --> 01:14:39,900
+776
+01:14:38,490 --> 01:14:39,900
  Instead of square brackets.
 
-759
-01:14:39,900 --> 01:14:42,820
- When we're going to create a tuple.
+777
+01:14:40,520 --> 01:14:42,800
+ When we're going to create, when we create a tuple.
 
-760
-01:14:43,930 --> 01:14:47,150
+778
+01:14:43,320 --> 01:14:47,150
  So when I would try to print out my coordinates, let's just check here.
 
-761
-01:14:48,850 --> 01:14:49,250
+779
+01:14:48,830 --> 01:14:49,230
  Coordinates.
 
-762
-01:14:51,260 --> 01:14:57,320
- If I run this, I actually get my tuple with my coordinates with 10 and 20, right?
+780
+01:14:50,850 --> 01:14:57,340
+ And if I run this, I actually get my tuple with my coordinates with 10 and 20, right?
 
-763
-01:14:58,890 --> 01:14:59,370
+781
+01:14:58,870 --> 01:14:59,350
  Perfect.
 
-764
-01:14:59,820 --> 01:15:10,820
- But I also wanted to show you that we also can access a specific coordinate by their index.
+782
+01:14:59,760 --> 01:15:10,820
+ But I also wanted to show you that we also got, we also can access a specific coordinate by their index.
 
-765
-01:15:10,970 --> 01:15:12,690
+783
+01:15:11,470 --> 01:15:12,690
  Works perfectly well.
 
-766
-01:15:14,310 --> 01:15:16,340
+784
+01:15:14,250 --> 01:15:16,660
  So let's actually try that out.
 
-767
-01:15:16,340 --> 01:15:18,180
+785
+01:15:16,800 --> 01:15:18,180
  I run this.
 
-768
-01:15:18,180 --> 01:15:19,300
+786
+01:15:18,320 --> 01:15:19,280
  I actually get my 10.
 
-769
-01:15:19,300 --> 01:15:25,010
- I actually get to 20 since 10 is the first one, index zero, right?
+787
+01:15:19,620 --> 01:15:22,860
+ I actually get the 20, since 10 is the first one.
 
-770
-01:15:26,590 --> 01:15:30,630
+788
+01:15:23,990 --> 01:15:25,010
+ Index zero, right?
+
+789
+01:15:25,870 --> 01:15:30,630
  So parentheses to create a tuple.
 
-771
-01:15:33,570 --> 01:15:53,730
- So the question that I usually get, and somebody might want to ask this question, the question that I usually get is, well, since, Aladin, you're saying that both lists and tuples are both ordered, right?
+790
+01:15:33,690 --> 01:15:40,870
+ So the question that I usually get, and somebody might want to ask this question.
 
-772
-01:15:53,870 --> 01:15:59,970
+791
+01:15:41,550 --> 01:15:53,730
+ The question that I usually get is, well, since, Aladin, you're saying that both lists and tuples are both ordered, right?
+
+792
+01:15:54,430 --> 01:15:59,970
  They are both ordered, they are, you can access them by their index, right?
 
-773
+793
 01:16:00,210 --> 01:16:02,310
  So why do we need tuples, right?
 
-774
-01:16:04,540 --> 01:16:06,500
+794
+01:16:05,230 --> 01:16:06,500
  And what do you say?
 
-775
-01:16:06,800 --> 01:16:08,120
+795
+01:16:06,800 --> 01:16:08,140
  Why would I need a tuple then?
 
-776
-01:16:12,400 --> 01:16:16,780
+796
+01:16:12,400 --> 01:16:16,760
  Why don't I just stick to lists?
 
-777
-01:16:20,710 --> 01:16:24,170
- I think somebody was raising their hand on this here.
+797
+01:16:16,760 --> 01:16:23,650
+ I think somebody was raising their hand.
 
-778
-01:16:24,470 --> 01:16:25,510
+798
+01:16:24,220 --> 01:16:25,510
  Dimitri, go ahead.
 
-779
-01:16:26,740 --> 01:16:33,250
- Yes, I saw like a constant and I guess performance could be better.
+799
+01:16:26,740 --> 01:16:33,270
+ It's like a constant, and I guess performance could be better.
 
-780
-01:16:34,200 --> 01:16:36,230
- Could be.
+800
+01:16:34,720 --> 01:16:36,820
+ Could be, could be.
 
-781
-01:16:36,450 --> 01:16:36,800
- Could be.
-
-782
-01:16:36,800 --> 01:16:39,570
+801
+01:16:37,230 --> 01:16:39,570
  So yeah, you're kind of into it.
 
-783
+802
 01:16:39,790 --> 01:16:47,260
- But one reason at least is to communicate at least that the structure should not change, right?
+ But one reason, at least, is to communicate, at least, that the structure should not change, right?
 
-784
-01:16:48,410 --> 01:16:53,830
+803
+01:16:48,390 --> 01:16:53,830
  For example, coordinates are a good conceptual example, right?
 
-785
-01:16:54,670 --> 01:17:02,210
+804
+01:16:54,750 --> 01:17:02,230
  So we may want to treat this pair as one fixed value, just like you were mentioning there.
 
-786
-01:17:03,600 --> 01:17:03,900
+805
+01:17:03,200 --> 01:17:03,920
  Very good.
 
-787
-01:17:05,790 --> 01:17:21,820
+806
+01:17:05,810 --> 01:17:21,820
  But what does not work is to go here and do something like this, coordinate 0 equals 99, for example.
 
-788
-01:17:22,490 --> 01:17:23,230
+807
+01:17:22,370 --> 01:17:23,230
  This does not work.
 
-789
+808
 01:17:25,640 --> 01:17:27,800
  This would actually give us a type error.
 
-790
-01:17:30,140 --> 01:17:40,010
- Should at least run this and we actually get a type error.
+809
+01:17:30,400 --> 01:17:40,010
+ Should at least run this, and we actually get a type error.
 
-791
-01:17:41,180 --> 01:17:49,610
- So tuples does not support item assignment since they are immutable.
+810
+01:17:41,180 --> 01:17:49,630
+ So tuples does not support item assignment, since they are immutable.
 
-792
-01:17:53,520 --> 01:17:58,790
- Yes, Guftami, did you want to add anything or maybe you had a question?
+811
+01:17:53,500 --> 01:17:53,820
+ Yes.
 
-793
-01:17:58,910 --> 01:18:04,660
+812
+01:17:54,960 --> 01:17:56,480
+ Guftami, did you want to add anything?
+
+813
+01:17:57,730 --> 01:17:58,770
+ Or maybe you had a question?
+
+814
+01:18:02,980 --> 01:18:04,640
  No, that's it.
 
-794
+815
 01:18:04,740 --> 01:18:05,780
  No, I'll ask it from before.
 
-795
+816
 01:18:05,920 --> 01:18:06,360
  All right, all right.
 
-796
-01:18:06,740 --> 01:18:07,720
+817
+01:18:06,500 --> 01:18:07,720
  I see, I see, I see.
 
-797
-01:18:08,220 --> 01:18:08,480
+818
+01:18:08,260 --> 01:18:08,480
  All right.
 
-798
-01:18:08,920 --> 01:18:12,010
- Alessandro, same thing or do you have a question or an input?
+819
+01:18:08,960 --> 01:18:09,880
+ Alessandro, same thing?
 
-799
-01:18:12,840 --> 01:18:16,030
- Yeah, why don't you have a compiler error?
+820
+01:18:10,020 --> 01:18:11,990
+ Or do you have a question or an input?
 
-800
+821
+01:18:12,840 --> 01:18:13,310
+ Yeah.
+
+822
+01:18:13,410 --> 01:18:16,050
+ Why don't you have a compiler error?
+
+823
 01:18:17,730 --> 01:18:18,160
  Why?
 
-801
-01:18:20,080 --> 01:18:20,480
+824
+01:18:20,100 --> 01:18:20,500
  Yes.
 
-802
-01:18:20,480 --> 01:18:28,960
+825
+01:18:20,740 --> 01:18:28,960
  In this case, when you try to put something in a tuple, should I have a compiler error, right?
 
-803
+826
 01:18:31,360 --> 01:18:38,230
  You mean, why do I get a type error or what?
 
-804
-01:18:39,260 --> 01:18:49,160
- No, I mean, then you have an error when you try to execute the code, but should it have a compiler error.
+827
+01:18:39,260 --> 01:18:46,630
+ No, I mean, then you have an error when you try to execute the code.
 
-805
-01:18:49,300 --> 01:18:50,460
- Oh, okay, okay, okay, okay.
+828
+01:18:46,630 --> 01:18:49,180
+ But should I have a compiler error?
 
-806
-01:18:50,460 --> 01:18:50,780
+829
+01:18:49,300 --> 01:18:50,440
+ Oh, okay, okay, okay.
+
+830
+01:18:50,460 --> 01:18:50,800
  I understand.
 
-807
-01:18:51,000 --> 01:18:51,280
- I understand.
+831
+01:18:51,000 --> 01:18:51,540
+ I understand the answer.
 
-808
-01:18:51,960 --> 01:18:52,320
+832
+01:18:52,080 --> 01:18:52,360
  Okay.
 
-809
-01:18:53,280 --> 01:18:55,420
+833
+01:18:53,080 --> 01:18:55,400
  Good question.
 
-810
-01:18:59,310 --> 01:19:00,830
- Can't look that up, actually.
+834
+01:18:56,220 --> 01:19:00,850
+ I can't look that up, actually.
 
-811
+835
 01:19:01,630 --> 01:19:09,660
  I don't know if it's something specific or why, actually.
 
-812
-01:19:10,780 --> 01:19:14,540
+836
+01:19:10,760 --> 01:19:14,540
  I don't know, to be honest.
 
-813
+837
 01:19:15,230 --> 01:19:16,730
- Can't actually look that up.
+ I can't actually look that up.
 
-814
-01:19:18,080 --> 01:19:19,060
+838
+01:19:18,060 --> 01:19:19,060
  Good question.
 
-815
-01:19:24,010 --> 01:19:25,410
- I can look it up and get back to you.
+839
+01:19:23,520 --> 01:19:25,710
+ I can look it up and get back to you, all right?
 
-816
-01:19:25,450 --> 01:19:25,710
- All right?
-
-817
-01:19:27,250 --> 01:19:28,830
+840
+01:19:27,210 --> 01:19:28,830
  If there is something specific there.
 
-818
-01:19:30,310 --> 01:19:31,590
+841
+01:19:30,180 --> 01:19:31,590
  Yeah, yeah, it's fine.
 
-819
-01:19:31,710 --> 01:19:35,910
+842
+01:19:31,590 --> 01:19:35,910
  But I think Victor answered because it's not a compiled language.
 
-820
-01:19:36,730 --> 01:19:37,710
+843
+01:19:36,750 --> 01:19:37,730
  Oh, okay, okay, okay.
 
-821
+844
 01:19:37,770 --> 01:19:38,370
  You mean it like that?
 
-822
-01:19:38,410 --> 01:19:38,870
+845
+01:19:38,490 --> 01:19:38,890
  Okay, okay.
 
-823
-01:19:38,950 --> 01:19:39,790
+846
+01:19:38,970 --> 01:19:39,810
  Yeah, yeah, yeah, yeah, yeah.
 
-824
+847
 01:19:39,850 --> 01:19:40,490
  It is not.
 
-825
-01:19:40,670 --> 01:19:41,640
+848
+01:19:40,670 --> 01:19:41,620
  Yeah, that's true.
 
-826
-01:19:42,160 --> 01:19:42,540
+849
+01:19:41,770 --> 01:19:42,540
  That's true.
 
-827
-01:19:45,110 --> 01:19:46,660
+850
+01:19:45,350 --> 01:19:46,660
  And, yeah, we have...
 
-828
+851
 01:19:46,660 --> 01:19:47,300
  Oh, okay, okay.
 
-829
-01:19:47,380 --> 01:19:48,800
+852
+01:19:47,380 --> 01:19:48,820
  Are you writing in the chat?
 
-830
-01:19:49,280 --> 01:19:50,780
+853
+01:19:49,320 --> 01:19:50,780
  Then we also got something else here.
 
-831
-01:19:51,520 --> 01:19:52,720
+854
+01:19:51,580 --> 01:19:52,720
  Tuples, faster execution.
 
-832
+855
 01:19:52,900 --> 01:19:53,280
  Yeah, sure.
 
-833
+856
 01:19:53,760 --> 01:19:54,380
  Lighter on memory.
 
-834
-01:19:54,580 --> 01:19:54,740
+857
+01:19:54,600 --> 01:19:54,740
  Sure.
 
-835
-01:19:56,170 --> 01:19:57,470
+858
+01:19:56,350 --> 01:19:57,470
  Tuples used for fixed data.
 
-836
+859
 01:19:57,610 --> 01:19:58,050
  Yeah, true.
 
-837
-01:20:09,870 --> 01:20:13,040
+860
+01:20:12,800 --> 01:20:13,040
  Yay.
 
-838
-01:20:13,410 --> 01:20:15,300
+861
+01:20:13,410 --> 01:20:15,200
  So we saw the type error.
 
-839
-01:20:15,710 --> 01:20:17,150
+862
+01:20:15,750 --> 01:20:17,130
  We saw the coordinates.
 
-840
-01:20:18,130 --> 01:20:20,190
+863
+01:20:18,310 --> 01:20:20,190
  But we can actually do something like this.
 
-841
-01:20:20,510 --> 01:20:21,630
+864
+01:20:20,530 --> 01:20:21,630
  This actually works.
 
-842
-01:20:22,370 --> 01:20:23,980
+865
+01:20:22,330 --> 01:20:23,980
  Let me reuse this one.
 
-843
-01:20:24,100 --> 01:20:26,020
+866
+01:20:23,980 --> 01:20:25,440
  Let me move it down a little bit.
 
-844
-01:20:26,630 --> 01:20:28,400
+867
+01:20:26,610 --> 01:20:28,400
  Let's see here.
 
-845
+868
 01:20:28,640 --> 01:20:30,860
  What if I do this?
 
-846
-01:20:33,810 --> 01:20:39,240
+869
+01:20:33,890 --> 01:20:39,260
  And, yeah, I can actually assign it at least to different variables.
 
-847
-01:20:40,040 --> 01:20:41,180
+870
+01:20:40,060 --> 01:20:41,160
  So, for example, x, y.
 
-848
-01:20:41,340 --> 01:20:43,660
+871
+01:20:41,320 --> 01:20:43,660
  I can do that in one line as well.
 
-849
-01:20:44,780 --> 01:20:46,570
+872
+01:20:45,470 --> 01:20:46,570
  Coordinates like that.
 
-850
-01:20:46,890 --> 01:20:48,570
+873
+01:20:47,430 --> 01:20:48,570
  That works perfectly fine.
 
-851
-01:20:49,060 --> 01:20:57,330
+874
+01:20:49,080 --> 01:20:57,330
  And then if I want to print x and I want to print y.
 
-852
-01:20:57,530 --> 01:21:03,880
+875
+01:21:00,820 --> 01:21:03,880
  And if I run this, it should actually work.
 
-853
-01:21:03,940 --> 01:21:04,480
+876
+01:21:03,960 --> 01:21:04,460
  Yeah, there we go.
 
-854
-01:21:04,920 --> 01:21:06,310
+877
+01:21:04,890 --> 01:21:06,310
  So, 10 and 20.
 
-855
-01:21:06,310 --> 01:21:12,140
+878
+01:21:07,490 --> 01:21:12,140
  And I can do that to anything.
 
-856
-01:21:12,300 --> 01:21:13,860
+879
+01:21:12,280 --> 01:21:13,860
  We can try something else as well.
 
-857
+880
 01:21:14,100 --> 01:21:16,000
- And, therefore, we can show a different thing.
+ And therefore, we're going to show a different thing.
 
-858
-01:21:17,250 --> 01:21:23,070
+881
+01:21:17,210 --> 01:21:23,070
  For example, what if I create another, let's say, a person here.
 
-859
-01:21:24,330 --> 01:21:33,750
+882
+01:21:23,070 --> 01:21:33,750
  Person equals, let's say, I'm going to create another tuple here.
 
-860
+883
 01:21:34,330 --> 01:21:36,190
  We can mix data types.
 
-861
-01:21:36,590 --> 01:21:37,530
+884
+01:21:36,610 --> 01:21:37,550
  No problem at all.
 
-862
-01:21:38,290 --> 01:21:42,150
+885
+01:21:38,270 --> 01:21:42,150
  Ada, that actually works as well, just to show that.
 
-863
-01:21:42,510 --> 01:21:46,830
+886
+01:21:42,850 --> 01:21:46,830
  And we can put London.
 
-864
-01:21:48,930 --> 01:21:52,580
+887
+01:21:50,860 --> 01:21:52,580
  So, this actually works as well.
 
-865
-01:21:53,360 --> 01:21:57,850
+888
+01:21:53,360 --> 01:21:57,870
  Name, age, city.
 
-866
-01:21:59,880 --> 01:22:02,570
- We can put equal here to person, right?
+889
+01:22:00,110 --> 01:22:02,570
+ We can put equal history here to person, right?
 
-867
+890
 01:22:03,910 --> 01:22:06,130
  So, this actually works perfectly fine.
 
-868
-01:22:06,980 --> 01:22:08,280
+891
+01:22:06,240 --> 01:22:08,280
  Let's actually try it out as well.
 
-869
+892
 01:22:08,400 --> 01:22:08,740
  Print.
 
-870
-01:22:08,930 --> 01:22:10,620
+893
+01:22:08,930 --> 01:22:10,600
  That would be name first.
 
-871
-01:22:14,470 --> 01:22:14,710
- Print.
+894
+01:22:14,510 --> 01:22:25,640
+ Print, age, print, city, right?
 
-872
-01:22:17,380 --> 01:22:18,170
- Age.
+895
+01:22:29,120 --> 01:22:37,240
+ And if I run this, I actually get Ada 36 London.
 
-873
-01:22:21,050 --> 01:22:21,370
- Print.
+896
+01:22:37,420 --> 01:22:38,220
+ Works perfectly fine.
 
-874
-01:22:22,750 --> 01:22:25,620
- City, right?
+897
+01:22:38,830 --> 01:22:45,010
+ But the question that I need to ask you guys is how many variables do I need to actually have here?
 
-875
-01:22:29,300 --> 01:22:36,940
- And if I run this, I actually get Ada 36.
-
-876
-01:22:37,160 --> 01:22:38,200
- It works perfectly fine.
-
-877
-01:22:38,830 --> 01:22:44,990
- But, the question that I need to ask you guys is, how many variables do I need to actually have here?
-
-878
+898
 01:22:50,660 --> 01:22:51,140
  Do you guys know?
 
-879
+899
 01:22:52,810 --> 01:22:54,680
  Maybe somebody's writing in the chat.
 
-880
-01:22:54,880 --> 01:22:56,920
+900
+01:22:54,860 --> 01:22:56,900
  I can't actually see the chat directly.
 
-881
-01:22:57,020 --> 01:22:58,340
+901
+01:22:57,060 --> 01:22:58,340
  I need to actually access.
 
-882
+902
 01:22:58,680 --> 01:22:58,880
  But, yeah.
 
-883
+903
 01:22:58,940 --> 01:22:59,160
  Okay.
 
-884
+904
 01:22:59,240 --> 01:22:59,500
  Kritika.
 
-885
-01:23:00,560 --> 01:23:06,120
- So, we should have, based on the number of values we have in the tuple.
-
-886
-01:23:06,670 --> 01:23:06,910
+905
+01:23:00,680 --> 01:23:00,900
  Yeah.
 
-887
-01:23:07,260 --> 01:23:08,500
+906
+01:23:00,980 --> 01:23:06,140
+ So, we should have based on the number of values we have in the tuple.
+
+907
+01:23:06,140 --> 01:23:06,830
+ Yeah.
+
+908
+01:23:06,830 --> 01:23:08,500
  Is that a must?
 
-888
+909
 01:23:08,820 --> 01:23:09,760
  Well, let's try it out.
 
-889
-01:23:11,510 --> 01:23:15,580
+910
+01:23:11,010 --> 01:23:15,600
  Obviously, we need to take off the city.
 
-890
-01:23:16,000 --> 01:23:16,960
- But, does this work?
+911
+01:23:16,020 --> 01:23:16,960
+ But does this work?
 
-891
-01:23:17,480 --> 01:23:20,280
- And, if we run this, we actually see a value error, right?
+912
+01:23:17,480 --> 01:23:20,260
+ And if we run this, we actually see a value, correct?
 
-892
+913
 01:23:20,440 --> 01:23:21,860
  Too many values to unpack.
 
-893
+914
 01:23:22,350 --> 01:23:24,050
  Expect the two got three, right?
 
-894
-01:23:25,020 --> 01:23:33,630
- So, when it comes to tuple unpacking, what was this called as well?
+915
+01:23:25,020 --> 01:23:33,650
+ So, when it comes to the tuple unpacking, what was this called as well?
 
-895
-01:23:33,830 --> 01:23:37,310
- So, let's actually put that in the title so you can go back here.
+916
+01:23:33,850 --> 01:23:37,330
+ So, let's actually put that in the title so we can go back here.
 
-896
-01:23:37,920 --> 01:23:38,240
- Tuple.
+917
+01:23:37,920 --> 01:23:40,420
+ Tuple on linear.
 
-897
-01:23:40,260 --> 01:23:41,860
- Here we go.
+918
+01:23:41,640 --> 01:23:41,860
+ There we go.
 
-898
-01:23:42,750 --> 01:23:55,620
+919
+01:23:42,810 --> 01:23:55,620
  We need to have the equivalent amount of variables to match the number of unpacked values, right?
 
-899
-01:23:56,280 --> 01:23:58,180
+920
+01:23:55,620 --> 01:23:58,220
  So, important to remember.
 
-900
-01:24:06,970 --> 01:24:28,890
+921
+01:24:16,170 --> 01:24:28,890
  So, tuple, we could say tuple style unpacking also kind of gives us a neat, kind of a neat Python way of swapping values.
 
-901
-01:24:29,590 --> 01:24:39,490
+922
+01:24:28,890 --> 01:24:39,470
  So, this is very different from different kind of languages is that we could do something like this.
 
-902
+923
 01:24:39,650 --> 01:24:41,070
  So, let's say A equals 10.
 
-903
-01:24:43,630 --> 01:24:47,830
+924
+01:24:43,730 --> 01:24:47,850
  And then we have a B equals 20.
 
-904
-01:24:47,830 --> 01:24:51,870
+925
+01:24:49,770 --> 01:24:51,850
  We can do some kind of multiple assignment here.
 
-905
-01:24:52,660 --> 01:24:55,490
+926
+01:24:52,860 --> 01:24:55,470
  That's very Pythonic here.
 
-906
+927
 01:24:55,810 --> 01:25:01,970
  So, A and B equals B and C.
 
-907
-01:25:05,580 --> 01:25:05,920
+928
+01:25:05,220 --> 01:25:05,920
  No, sorry.
 
-908
-01:25:06,040 --> 01:25:06,540
+929
+01:25:06,040 --> 01:25:06,560
  B and C.
 
-909
+930
 01:25:06,860 --> 01:25:07,840
  B and A, of course.
 
-910
-01:25:08,340 --> 01:25:10,880
+931
+01:25:08,320 --> 01:25:10,860
  So, A and B equals B and A.
 
-911
-01:25:11,760 --> 01:25:16,060
+932
+01:25:11,780 --> 01:25:16,060
  And if I want to try that out, I can actually do print.
 
-912
-01:25:16,250 --> 01:25:16,840
+933
+01:25:16,290 --> 01:25:16,860
  Oops.
 
-913
-01:25:17,450 --> 01:25:22,940
+934
+01:25:17,520 --> 01:25:22,920
  Print A and B.
 
-914
-01:25:22,940 --> 01:25:29,520
+935
+01:25:24,810 --> 01:25:29,520
  And if we run this, this actually works.
 
-915
-01:25:29,910 --> 01:25:31,930
+936
+01:25:29,890 --> 01:25:32,340
  We will see that A is now...
 
-916
-01:25:31,930 --> 01:25:34,000
+937
+01:25:32,340 --> 01:25:34,000
  Let me clear that up.
 
-917
+938
 01:25:34,240 --> 01:25:35,390
  So, that's pretty neat.
 
-918
-01:25:35,970 --> 01:25:41,020
+939
+01:25:36,020 --> 01:25:41,080
  So, what we see now is that A is actually 20 and B is actually 10.
 
-919
-01:25:41,430 --> 01:25:44,660
+940
+01:25:41,310 --> 01:25:44,660
  And if you're coming from Python, well, you don't see anything here.
 
-920
-01:25:44,780 --> 01:25:46,630
+941
+01:25:44,740 --> 01:25:46,630
  Well, this is kind of obvious.
 
-921
-01:25:46,810 --> 01:25:48,190
+942
+01:25:46,830 --> 01:25:48,190
  It is quite clear.
 
-922
-01:25:48,610 --> 01:25:49,550
+943
+01:25:48,590 --> 01:25:49,550
  I understand that.
 
-923
-01:25:49,630 --> 01:26:00,820
+944
+01:25:49,630 --> 01:26:00,800
  But if you're coming from another language, then I will ask you, did we actually need a temporarily variable or not?
 
-924
-01:26:01,890 --> 01:26:02,030
- Right?
-
-925
-01:26:03,300 --> 01:26:07,000
+945
+01:26:00,800 --> 01:26:07,000
  Especially if you're coming from, if I remember correctly, C sharp, right?
 
-926
-01:26:07,180 --> 01:26:11,100
+946
+01:26:07,210 --> 01:26:11,120
  You need some kind of temporary variable in order to do this, right?
 
-927
+947
 01:26:13,010 --> 01:26:17,660
  So, this is just a small example of Python's, what do you call it?
 
-928
-01:26:17,760 --> 01:26:19,410
+948
+01:26:17,780 --> 01:26:19,410
  Well, compact syntax.
 
-929
-01:26:37,000 --> 01:26:43,630
+949
+01:26:37,970 --> 01:26:43,630
  That was, I think that's enough of tuples.
 
-930
-01:26:43,950 --> 01:26:45,550
+950
+01:26:43,910 --> 01:26:45,550
  Let's actually move to the next part.
 
-931
-01:26:46,560 --> 01:26:50,090
+951
+01:26:46,540 --> 01:26:50,090
  And that would be, next in line is sets.
 
-932
-01:26:51,110 --> 01:26:52,730
+952
+01:26:51,410 --> 01:26:52,750
  So, next we have sets.
 
-933
+953
 01:26:54,690 --> 01:27:04,270
  And here, sets, well, the definition would be a collection where every value is actually unique.
 
-934
-01:27:06,450 --> 01:27:10,380
+954
+01:27:06,530 --> 01:27:10,400
  So, this is very useful when it comes to duplicates.
 
-935
-01:27:11,180 --> 01:27:13,400
+955
+01:27:11,260 --> 01:27:13,400
  So, sets would be very useful for this, right?
 
-936
-01:27:13,400 --> 01:27:16,050
+956
+01:27:13,810 --> 01:27:16,050
  So, let's put a set of numbers.
 
-937
-01:27:17,350 --> 01:27:19,840
+957
+01:27:17,390 --> 01:27:19,820
  Numbers, and I'm going to put equal.
 
-938
-01:27:20,120 --> 01:27:22,020
+958
+01:27:20,080 --> 01:27:22,020
  And I actually used square brackets here.
 
-939
+959
 01:27:22,200 --> 01:27:25,220
- Don't confuse it to a dictionary, which we're going to talk about later on.
+ Don't confuse it to dictionary, which we're going to talk about later on.
 
-940
-01:27:25,680 --> 01:27:33,830
- But, let's put one, two, and a three, and a four, right?
+960
+01:27:25,690 --> 01:27:33,830
+ But let's put one, two, and a three, and a four, right?
 
-941
-01:27:34,300 --> 01:27:42,960
- If I print these numbers, numbers, we will see something, right?
+961
+01:27:34,560 --> 01:27:42,960
+ If I print these numbers, we will see something, right?
 
-942
-01:27:43,640 --> 01:27:44,860
+962
+01:27:43,820 --> 01:27:44,860
  One, two, three, four.
 
-943
-01:27:45,070 --> 01:27:45,580
+963
+01:27:45,100 --> 01:27:45,580
  Very good.
 
-944
-01:27:46,500 --> 01:27:52,490
+964
+01:27:45,580 --> 01:27:52,490
  So, what we see here is that these curly brackets actually created a set, right?
 
-945
+965
 01:27:52,900 --> 01:27:53,500
  This works.
 
-946
-01:27:53,720 --> 01:27:54,720
+966
+01:27:53,740 --> 01:27:54,720
  So, it creates a set.
 
-947
+967
 01:27:55,770 --> 01:27:58,130
  But, like I mentioned earlier, be careful a little bit.
 
-948
+968
 01:27:58,530 --> 01:28:00,090
  It's not dictionary here.
 
-949
+969
 01:28:00,450 --> 01:28:05,500
  It is actually a set, since dictionary also uses curly braces.
 
-950
+970
 01:28:05,760 --> 01:28:07,320
- But, it is kind of different, right?
+ But it is kind of different, right?
 
-951
-01:28:08,440 --> 01:28:13,250
- But, we will get into dictionary soon, and then we can compare a set to a dictionary as well.
+971
+01:28:08,400 --> 01:28:13,230
+ But we will get into dictionary soon, and then we can compare a set to a dictionary as well.
 
-952
-01:28:13,250 --> 01:28:24,680
- So in order to see a good example of set, I'm going to put something else to our numbers.
+972
+01:28:13,230 --> 01:28:24,700
+ So, in order to see a good example of set, I'm going to put something else to our numbers.
 
-953
-01:28:26,600 --> 01:28:30,150
- So let's actually not create it from scratch.
+973
+01:28:24,700 --> 01:28:30,170
+ So, let's actually not create a point from scratch.
 
-954
-01:28:30,510 --> 01:28:46,500
- So numbers equals, let's put a 1 and a 2 and a 2 and a 2 and a 3 and a 3 and a 4, something like that.
+974
+01:28:30,170 --> 01:28:31,870
+ So, numbers equals.
 
-955
-01:28:47,260 --> 01:28:59,720
+975
+01:28:33,680 --> 01:28:44,130
+ Let's put a one, and a two, and a two, and a two, and a three, and a four.
+
+976
+01:28:44,290 --> 01:28:46,480
+ Something like that.
+
+977
+01:28:46,480 --> 01:28:59,720
  If I were to print my numbers this time, what is actually going to happen?
 
-956
-01:29:00,290 --> 01:29:01,890
+978
+01:29:00,290 --> 01:29:01,910
  Well, let's actually try it.
 
-957
-01:29:01,890 --> 01:29:05,730
- When I run this, I actually get 1, 2, 3, 4.
+979
+01:29:02,470 --> 01:29:05,730
+ When I run this, I actually get one, two, three, four.
 
-958
-01:29:06,410 --> 01:29:10,690
- So the unique values actually remain.
+980
+01:29:06,530 --> 01:29:10,690
+ So, the unique values actually remain.
 
-959
-01:29:13,380 --> 01:29:17,550
+981
+01:29:12,640 --> 01:29:17,550
  A more practical example would be maybe names.
 
-960
-01:29:18,840 --> 01:29:24,010
+982
+01:29:18,480 --> 01:29:24,010
  Let's say we got some users, right?
 
-961
-01:29:24,330 --> 01:29:25,770
- Oops, there'll be a list.
+983
+01:29:24,330 --> 01:29:24,550
+ Oops.
 
-962
+984
+01:29:25,210 --> 01:29:25,770
+ We have a list.
+
+985
 01:29:26,560 --> 01:29:27,760
- Now we're moving to sets.
+ Now, we're moving to sets.
 
-963
-01:29:28,570 --> 01:29:35,140
- Let's say we got Anna and we have Bob.
+986
+01:29:28,590 --> 01:29:35,140
+ Let's say we got Anna, and we have Bob.
 
-964
-01:29:35,260 --> 01:29:51,150
- We have Anna again, Charlie, and let's take Bob again, right?
+987
+01:29:35,580 --> 01:29:38,650
+ We have Anna.
 
-965
-01:29:54,000 --> 01:29:56,300
- And let's not actually do that.
+988
+01:29:38,810 --> 01:29:43,630
+ Again, Charlie.
 
-966
-01:29:56,420 --> 01:29:59,210
+989
+01:29:47,470 --> 01:29:51,130
+ And let's take Bob again, right?
+
+990
+01:29:52,770 --> 01:29:56,300
+ So, let's not actually do that.
+
+991
+01:29:56,400 --> 01:29:59,210
  Let's actually twist it up a little bit.
 
-967
-01:29:59,610 --> 01:30:07,590
+992
+01:29:59,610 --> 01:30:07,610
  Let's put it into a list instead, a little bit quicker.
 
-968
+993
 01:30:07,990 --> 01:30:08,170
  All right.
 
-969
+994
 01:30:08,390 --> 01:30:11,100
- So we've got a list now with names, right?
+ So, we got a list now with names, right?
 
-970
-01:30:11,480 --> 01:30:16,170
- So we've got a list of names since we're using square brackets here.
+995
+01:30:11,480 --> 01:30:16,150
+ So, we got a list of names since we're using square brackets here.
 
-971
-01:30:16,570 --> 01:30:17,920
- So this is a list, not a set.
+996
+01:30:16,570 --> 01:30:17,940
+ So, this is a list, not a set.
 
-972
-01:30:18,430 --> 01:30:20,470
- So Anna, Bob, Anna, Charlie, Bob.
+997
+01:30:18,470 --> 01:30:20,470
+ So, Anna, Bob, Anna, Charlie, Bob.
 
-973
-01:30:20,960 --> 01:30:25,320
- So as we see here, we have names that are repeating, right?
+998
+01:30:20,530 --> 01:30:25,320
+ So, as we see here, we have names that are repeating, right?
 
-974
+999
 01:30:26,220 --> 01:30:30,820
  And let's say we want to get the unique elements here.
 
-975
+1000
 01:30:31,270 --> 01:30:33,650
  That would be Anna, Bob, and Charlie, right?
 
-976
+1001
 01:30:34,400 --> 01:30:38,300
- So let's skip the second Anna and also let's skip the second Bob here.
+ So, let's skip the second Anna, and also let's skip the second Bob here.
 
-977
-01:30:38,660 --> 01:30:40,640
+1002
+01:30:38,660 --> 01:30:40,620
  We can actually do that to our list.
 
-978
-01:30:40,640 --> 01:30:44,250
- So let's create another variable.
+1003
+01:30:41,930 --> 01:30:44,230
+ So, let's create another variable.
 
-979
-01:30:44,640 --> 01:30:48,970
+1004
+01:30:44,720 --> 01:30:48,970
  We can put it as unique users.
 
-980
-01:30:49,650 --> 01:30:50,670
+1005
+01:30:49,430 --> 01:30:50,650
  Let's call it unique users.
 
-981
-01:30:52,000 --> 01:30:57,360
+1006
+01:30:50,650 --> 01:30:57,360
  And what I do is use set to our users.
 
-982
-01:31:00,270 --> 01:31:11,230
- And then if I come out here and now print our unique users, we will actually get the unique users.
+1007
+01:31:00,270 --> 01:31:11,190
+ And then, if I come out here and now print our unique users, we will actually get the unique users.
 
-983
-01:31:11,700 --> 01:31:13,920
- Hopefully this actually works.
+1008
+01:31:11,390 --> 01:31:13,920
+ Hopefully, this actually works.
 
-984
+1009
 01:31:15,720 --> 01:31:17,160
- So this is a very common pattern.
+ So, this is a very common pattern.
 
-985
+1010
 01:31:18,840 --> 01:31:25,640
- So if we were to only care about the unique values, we can convert a list to a set.
+ So, if we were to only care about the unique values, we can convert a list to a set.
 
-986
-01:31:26,710 --> 01:31:28,200
+1011
+01:31:26,710 --> 01:31:28,180
  That could be super useful.
 
-987
-01:31:32,350 --> 01:31:32,910
+1012
+01:31:32,390 --> 01:31:32,890
  Gloria.
 
-988
-01:31:36,250 --> 01:31:36,840
- Yeah.
-
-989
-01:31:37,020 --> 01:31:45,690
+1013
+01:31:32,890 --> 01:31:45,690
  Can we access each of the elements in our set with index as we do with the list?
 
-990
-01:31:47,150 --> 01:31:50,640
+1014
+01:31:48,040 --> 01:31:50,620
  Interesting.
 
-991
-01:31:51,180 --> 01:31:56,040
+1015
+01:31:51,200 --> 01:31:56,040
  Let me just see if I'm actually going to...
 
-992
+1016
 01:31:56,040 --> 01:31:58,330
- I'll get back to that question.
+ I will get back to that question.
 
-993
+1017
 01:31:58,940 --> 01:31:59,280
- All right.
+ All right?
 
-994
-01:31:59,610 --> 01:32:03,270
- Let me just do a little bit more on set and then you might answer that question.
+1018
+01:31:59,540 --> 01:32:03,270
+ Let me just do a little bit more on set, and then you might answer that question.
 
-995
-01:32:03,430 --> 01:32:03,590
- All right.
+1019
+01:32:03,410 --> 01:32:03,570
+ All right?
 
-996
-01:32:04,210 --> 01:32:04,490
+1020
+01:32:04,190 --> 01:32:04,490
  Okay.
 
-997
-01:32:04,990 --> 01:32:05,150
+1021
+01:32:04,930 --> 01:32:05,150
  Very.
 
-998
+1022
 01:32:05,330 --> 01:32:05,470
  Yeah.
 
-999
+1023
 01:32:07,290 --> 01:32:10,170
- So we don't give anything away right now.
+ So, we don't give anything away right now.
 
-1000
-01:32:11,030 --> 01:32:13,610
- So, but a very good question.
+1024
+01:32:11,110 --> 01:32:13,610
+ So, a very good question.
 
-1001
-01:32:14,700 --> 01:32:20,450
- Now, let's say, let's say just play with, let's say languages here.
+1025
+01:32:14,700 --> 01:32:18,930
+ Now, let's say just play with...
 
-1002
-01:32:22,490 --> 01:32:23,590
+1026
+01:32:18,930 --> 01:32:20,430
+ Let's say languages here.
+
+1027
+01:32:22,490 --> 01:32:23,630
  Languages.
 
-1003
+1028
 01:32:26,020 --> 01:32:27,840
- And then we're going to create a set here.
+ And then, we're going to create a set here.
 
-1004
-01:32:28,370 --> 01:32:31,740
+1029
+01:32:28,450 --> 01:32:31,720
  And we're just going to put unique elements.
 
-1005
-01:32:31,740 --> 01:32:33,490
+1030
+01:32:32,460 --> 01:32:33,450
  We're going to say Python.
 
-1006
-01:32:35,990 --> 01:32:37,910
+1031
+01:32:35,910 --> 01:32:37,910
  And we're going to put Java.
 
-1007
+1032
 01:32:42,540 --> 01:32:49,140
- Then we're going to put, I don't know, say C, C sharp.
+ Then, we're going to put C Sharp.
 
-1008
+1033
 01:32:50,080 --> 01:32:50,260
- All right.
+ All right?
 
-1009
-01:32:50,900 --> 01:32:57,400
- And then I actually can do some set methods.
+1034
+01:32:50,940 --> 01:32:57,400
+ And then, I actually can do some set methods.
 
-1010
-01:32:59,530 --> 01:33:02,600
- I think this wasn't what Gloria was into, but yeah.
+1035
+01:32:59,760 --> 01:33:01,860
+ I think this wasn't what Gloria was into.
 
-1011
-01:33:02,860 --> 01:33:06,460
- So, so we can use some set methods here.
+1036
+01:33:02,200 --> 01:33:02,580
+ But, yeah.
 
-1012
-01:33:06,880 --> 01:33:09,850
- So what we can do here is, for example, languages.
+1037
+01:33:02,880 --> 01:33:06,460
+ So, we can use some set methods here.
 
-1013
+1038
+01:33:06,960 --> 01:33:09,850
+ So, what we can do here is, for example, languages.
+
+1039
 01:33:10,070 --> 01:33:12,820
  We can also add a language, for example.
 
-1014
-01:33:13,260 --> 01:33:16,530
+1040
+01:33:12,820 --> 01:33:16,530
  In this case, add a language or add an element to the set.
 
-1015
-01:33:17,580 --> 01:33:20,200
- And let's try, add a go here.
+1041
+01:33:17,540 --> 01:33:20,240
+ Let's try to put add go here.
 
-1016
-01:33:20,200 --> 01:33:26,340
- And then also print languages, right?
+1042
+01:33:20,380 --> 01:33:26,340
+ And then, also print languages, right?
 
-1017
-01:33:28,810 --> 01:33:34,040
+1043
+01:33:27,440 --> 01:33:34,040
  And if we want to print this out, we will actually put go here, right?
 
-1018
-01:33:37,220 --> 01:33:44,370
- We can also remove languages dot remove.
+1044
+01:33:37,260 --> 01:33:44,390
+ We can also remove languages.remove.
 
-1019
-01:33:46,410 --> 01:33:57,480
- We can actually remove, for example, Java and then print line languages, right?
+1045
+01:33:46,490 --> 01:33:48,930
+ We can actually remove, for example, Java.
 
-1020
-01:33:58,400 --> 01:34:01,040
+1046
+01:33:50,170 --> 01:33:57,480
+ And then, print languages, right?
+
+1047
+01:33:58,380 --> 01:34:01,020
  And let's see if it actually removes.
 
-1021
-01:34:02,520 --> 01:34:07,830
- First of all, it's going to add go and then remove Java.
+1048
+01:34:03,050 --> 01:34:06,230
+ First of all, it's going to add go.
 
-1022
-01:34:08,170 --> 01:34:09,510
+1049
+01:34:06,620 --> 01:34:07,830
+ And then, remove Java.
+
+1050
+01:34:08,070 --> 01:34:09,490
  And let's see if it actually does that.
 
-1023
-01:34:09,610 --> 01:34:10,190
+1051
+01:34:09,610 --> 01:34:10,170
  Well, yeah.
 
-1024
-01:34:10,430 --> 01:34:17,320
+1052
+01:34:10,450 --> 01:34:17,320
  We see that it actually, go was added, right?
 
-1025
-01:34:18,790 --> 01:34:21,190
+1053
+01:34:18,910 --> 01:34:21,190
  But, do you notice something?
 
-1026
-01:34:23,110 --> 01:34:24,840
+1054
+01:34:22,510 --> 01:34:24,920
  It just repairs.
 
-1027
-01:34:25,960 --> 01:34:26,460
+1055
+01:34:25,730 --> 01:34:26,460
  Sorry?
 
-1028
-01:34:26,760 --> 01:34:28,460
+1056
+01:34:27,220 --> 01:34:28,460
  It's like a random.
 
-1029
-01:34:29,540 --> 01:34:30,700
+1057
+01:34:29,560 --> 01:34:30,700
  Very good.
 
-1030
-01:34:31,180 --> 01:34:37,080
+1058
+01:34:31,220 --> 01:34:37,080
  So, therefore, I think we kind of answered your question, right?
 
-1031
-01:34:37,240 --> 01:34:40,110
+1059
+01:34:37,080 --> 01:34:40,110
  So, we can actually add, we can actually remove.
 
-1032
-01:34:40,620 --> 01:34:49,810
- But, as you noticed here, we do not normally think about, when it comes to sets,
+1060
+01:34:40,660 --> 01:34:54,650
+ But, as you noticed here, we do not normally think about, when it comes to sets, we don't think about elements as elements by their position.
 
-1033
-01:34:49,970 --> 01:34:54,630
- we don't think about elements as elements by their position.
+1061
+01:34:56,320 --> 01:34:59,600
+ Yeah, they don't have, like, a fixed position, then.
 
-1034
-01:34:56,850 --> 01:34:59,600
- Yeah, they don't have like a fixed position then.
+1062
+01:34:59,600 --> 01:34:59,940
+ Yeah.
 
-1035
-01:34:59,600 --> 01:35:07,180
- Yeah, so sets are more about membership and uniqueness and not indexing.
+1063
+01:35:00,230 --> 01:35:00,500
+ Yeah.
 
-1036
-01:35:09,230 --> 01:35:19,590
- So, for example, if I come here and do this, let's say print with this,
+1064
+01:35:01,040 --> 01:35:07,180
+ So, sets are more about membership and uniqueness and not indexing.
 
-1037
-01:35:20,110 --> 01:35:29,370
- and then I'm going to print a zero, for example, and do that to that set.
+1065
+01:35:09,230 --> 01:35:29,370
+ So, for example, if I come here and do this, let's say, print, and then I'm going to print a zero, for example, and do that to that set.
 
-1038
+1066
 01:35:30,070 --> 01:35:33,130
  Well, if that would work, I would get Python, right?
 
-1039
-01:35:33,450 --> 01:35:35,270
+1067
+01:35:33,550 --> 01:35:35,270
  See what actually happens.
 
-1040
-01:35:36,070 --> 01:35:39,700
+1068
+01:35:36,360 --> 01:35:39,700
  When I run this, I actually get a type error, right?
 
-1041
-01:35:39,700 --> 01:35:50,220
+1069
+01:35:41,060 --> 01:35:50,220
  So, this does not work because sets are not indexed sequence or sequences.
 
-1042
-01:35:51,080 --> 01:35:58,610
- So, next question, how we can access each element in a set?
+1070
+01:35:51,080 --> 01:35:54,260
+ So, next question.
 
-1043
-01:35:59,190 --> 01:36:00,210
+1071
+01:35:54,420 --> 01:35:58,610
+ How we can access each element in a set?
+
+1072
+01:35:59,170 --> 01:36:00,210
  Would you use a set then?
 
-1044
-01:36:00,760 --> 01:36:02,110
+1073
+01:36:00,890 --> 01:36:02,130
  Or would you have a set then?
 
-1045
+1074
 01:36:02,610 --> 01:36:04,240
  Probably not, right?
 
-1046
-01:36:04,440 --> 01:36:06,540
+1075
+01:36:04,510 --> 01:36:06,520
  That's not where you would use a set.
 
-1047
-01:36:07,200 --> 01:36:17,780
- So, let's actually look at what the next part that would be actually set variations.
+1076
+01:36:06,520 --> 01:36:17,780
+ So, let's actually look at what the next part that would be, actually, set variations.
 
-1048
-01:36:19,140 --> 01:36:21,560
+1077
+01:36:19,360 --> 01:36:21,560
  But this is more where you usually use sets.
 
-1049
-01:36:21,560 --> 01:36:24,040
- And we're not going to dive into that too much.
+1078
+01:36:21,660 --> 01:36:30,570
+ And we're not going to dive into that too much, but it's just mentioned that it exists and how it usually works.
 
-1050
-01:36:24,470 --> 01:36:30,590
- But it's just mentioned that it exists and how it usually works.
+1079
+01:36:31,130 --> 01:36:39,640
+ So, let's say we have, let's say, okay, I'm just going to put something like this.
 
-1051
-01:36:31,190 --> 01:36:34,110
- So, let's say we have...
+1080
+01:36:39,640 --> 01:36:42,960
+ So, maybe you won't agree with me, but let's say, put backend languages.
 
-1052
-01:36:34,110 --> 01:36:36,530
- Let's say...
-
-1053
-01:36:36,530 --> 01:36:39,640
- Okay, I'm just going to put something like this.
-
-1054
-01:36:39,800 --> 01:36:41,260
- So, maybe you won't agree with me.
-
-1055
-01:36:41,440 --> 01:36:42,980
- But let's say, put backend languages.
-
-1056
-01:36:43,800 --> 01:36:49,750
+1081
+01:36:44,080 --> 01:36:49,750
  And I'm going to put, let's say, Python here.
 
-1057
-01:36:50,350 --> 01:36:52,710
+1082
+01:36:50,330 --> 01:36:50,450
+ Oh, sorry.
+
+1083
+01:36:51,130 --> 01:36:52,710
  Python, right?
 
-1058
-01:36:53,250 --> 01:36:56,410
- And then I'm going to put...
+1084
+01:36:53,250 --> 01:37:02,760
+ And then I'm going to put, we've got Python, but we've also got, let's say, Java.
 
-1059
-01:36:56,410 --> 01:37:02,760
- We got Python, but we also got, let's say, Java.
+1085
+01:37:03,550 --> 01:37:08,760
+ And we've got, let's say, C Sharp, right?
 
-1060
-01:37:03,590 --> 01:37:08,760
- And we got, let's say, C Sharp, right?
+1086
+01:37:09,530 --> 01:37:12,390
+ So, this is a classical backend language, right?
 
-1061
-01:37:09,360 --> 01:37:12,390
- So, this is classical backend language, right?
-
-1062
+1087
 01:37:12,750 --> 01:37:16,700
  But then I'm also going to put data languages.
 
-1063
-01:37:18,570 --> 01:37:20,620
- And this time, I'm actually going to put...
+1088
+01:37:16,700 --> 01:37:25,980
+ And this time, I'm actually going to put, well, let's put Python, right?
 
-1064
-01:37:20,620 --> 01:37:25,960
- Well, let's put Python, right?
-
-1065
+1089
 01:37:26,620 --> 01:37:27,670
  Python again here.
 
-1066
-01:37:28,010 --> 01:37:31,210
- But this time, I'm going to put, let's say, R.
+1090
+01:37:28,010 --> 01:37:36,290
+ But this time, I'm going to put, let's say, R and also something called Julia.
 
-1067
-01:37:33,090 --> 01:37:36,290
- And also, something called Julia.
-
-1068
+1091
 01:37:37,700 --> 01:37:39,620
  You can look them up later if you want.
 
-1069
+1092
 01:37:40,670 --> 01:37:46,730
  So, now I have two unique sets, right?
 
-1070
+1093
 01:37:47,070 --> 01:37:48,710
  So, I got Python, Java, and C Sharp.
 
-1071
+1094
 01:37:48,830 --> 01:37:50,930
- And then in the other one, I got Python, R, and Julia.
+ And then another one, I got Python, R, and Julia.
 
-1072
+1095
 01:37:51,530 --> 01:37:54,360
  So, what I can do here is something like this.
 
-1073
-01:37:56,540 --> 01:37:57,730
- Print.
+1096
+01:37:56,540 --> 01:38:02,500
+ Print, and this is super normal to use when it comes to sets.
 
-1074
-01:37:58,580 --> 01:38:02,500
- And this is super normal to use when it comes to sets.
+1097
+01:38:03,960 --> 01:38:12,080
+ What I can do is backend language, and then I'm going to put this symbol, and then I'm going
 
-1075
-01:38:03,550 --> 01:38:06,120
- What I can do is backend language.
+1098
+01:38:12,080 --> 01:38:13,580
+ to put data languages, right?
 
-1076
-01:38:07,410 --> 01:38:10,110
- I'm going to put this symbol.
+1099
+01:38:15,310 --> 01:38:23,640
+ And also, let's do another one instead of, here, I'm going to use apply symbol.
 
-1077
-01:38:11,260 --> 01:38:13,580
- And then I'm going to put data languages, right?
-
-1078
-01:38:15,230 --> 01:38:20,570
- And also, let's do another one instead of...
-
-1079
-01:38:20,570 --> 01:38:23,640
- Here, I'm going to use apply symbol.
-
-1080
-01:38:24,170 --> 01:38:32,490
+1100
+01:38:23,640 --> 01:38:32,470
  So, this is actually called ampersand, right?
 
-1081
+1101
 01:38:33,300 --> 01:38:35,650
  And this one would be pipe, right?
 
-1082
-01:38:35,810 --> 01:38:39,070
+1102
+01:38:35,810 --> 01:38:39,090
  So, what do these actually do?
 
-1083
-01:38:39,070 --> 01:38:49,350
+1103
+01:38:43,170 --> 01:38:49,310
  So, ampersand actually gives us the intersection.
 
-1084
-01:38:52,390 --> 01:38:59,950
+1104
+01:38:50,570 --> 01:38:59,950
  And when it comes to pipe, it gives us what we call the union, right?
 
-1085
-01:39:02,110 --> 01:39:05,910
+1105
+01:39:02,150 --> 01:39:05,890
  So, let's actually try them out and see what actually happens.
 
-1086
-01:39:07,920 --> 01:39:11,330
- And we see that we get Python here.
+1106
+01:39:07,920 --> 01:39:14,910
+ And we see that we get Python here, and then we get Python, R, Java, Julia, and C Sharp.
 
-1087
-01:39:11,590 --> 01:39:14,930
- And then we get Python, R, Java, Julia, and C Sharp.
+1107
+01:39:14,910 --> 01:39:23,960
+ So, ampersand, with ampersand here, with intersection, we get the values that actually exist in both
 
-1088
-01:39:15,610 --> 01:39:19,590
- So, ampersand, with ampersand here, with intersection,
+1108
+01:39:23,960 --> 01:39:35,370
+ sets, whilst using union, or pipe here, we get all the unique values from both sets.
 
-1089
-01:39:20,390 --> 01:39:24,680
- we get the values that actually exist in both sets.
-
-1090
-01:39:24,680 --> 01:39:35,370
- While it's using union or pipe here, we get all the unique values from both sets.
-
-1091
-01:39:36,430 --> 01:39:40,040
+1109
+01:39:36,050 --> 01:39:40,040
  So, this is a classical way of using sets, right?
 
-1092
-01:39:41,270 --> 01:39:42,970
- And there's another one.
+1110
+01:39:41,090 --> 01:39:51,580
+ And there's another one, I don't know what it's called, but it's a specific name.
 
-1093
-01:39:44,390 --> 01:39:51,580
- I don't know what it's called, but it's a specific name.
+1111
+01:39:52,110 --> 01:39:58,920
+ So, I can look that up during the break, but let's say backend languages, and I could put
 
-1094
-01:39:52,210 --> 01:39:55,380
- I can look that up during the break.
+1112
+01:39:58,920 --> 01:40:02,020
+ minus here, data languages.
 
-1095
-01:39:55,540 --> 01:40:02,000
- But let's say backend languages, and I could put the minus here, data languages.
-
-1096
-01:40:02,900 --> 01:40:04,310
+1113
+01:40:02,360 --> 01:40:04,310
  And what do you think this does?
 
-1097
-01:40:08,970 --> 01:40:10,990
+1114
+01:40:07,840 --> 01:40:10,990
  Let's actually try it out.
 
-1098
+1115
 01:40:11,510 --> 01:40:12,070
  What it does...
 
-1099
-01:40:12,070 --> 01:40:12,550
+1116
+01:40:12,070 --> 01:40:12,570
  Yes, please.
 
-1100
-01:40:13,290 --> 01:40:13,950
+1117
+01:40:13,310 --> 01:40:13,950
  Yes, of course.
 
-1101
-01:40:14,290 --> 01:40:16,390
- Let me just comment that out.
+1118
+01:40:14,290 --> 01:40:22,380
+ Let me just comment that out so we get a layer here.
 
-1102
-01:40:16,980 --> 01:40:22,360
- So, we get a layer here.
-
-1103
+1119
 01:40:22,740 --> 01:40:24,920
  So, we get Java and C Sharp, right?
 
-1104
-01:40:25,410 --> 01:40:30,770
- So, what this does, actually, is to give us the values that exist in the first one,
+1120
+01:40:24,920 --> 01:40:32,780
+ So, what this does, actually, is to give us the values that exist in the first one, in
 
-1105
-01:40:31,740 --> 01:40:36,120
- in the first set, but does not exist in the second set.
+1121
+01:40:32,780 --> 01:40:36,120
+ the first set, but does not exist in the second set.
 
-1106
+1122
 01:40:36,970 --> 01:40:40,020
  And then, if you want, you can also flip the script if you want.
 
-1107
-01:40:40,360 --> 01:40:43,800
+1123
+01:40:40,380 --> 01:40:43,820
  You can put data languages first, and then you can put backend languages afterwards.
 
-1108
+1124
 01:40:47,290 --> 01:40:47,490
  All right?
 
-1109
-01:40:51,790 --> 01:40:53,910
+1125
+01:40:51,750 --> 01:40:53,910
  Specific name, I don't remember.
 
-1110
+1126
 01:40:54,670 --> 01:40:55,990
  We can fill this out later.
 
-1111
+1127
 01:40:59,580 --> 01:41:01,440
  Yeah, there you go.
 
-1112
+1128
 01:41:01,440 --> 01:41:05,200
  So, this is how you would use...
 
-1113
+1129
 01:41:05,200 --> 01:41:08,460
  How you rather would use a set.
 
-1114
-01:41:11,620 --> 01:41:11,800
- Hmm.
+1130
+01:41:11,620 --> 01:41:12,060
+ Hmm...
 
-1115
-01:41:12,790 --> 01:41:16,170
+1131
+01:41:12,210 --> 01:41:16,170
  Let's also look at a different thing.
 
-1116
+1132
 01:41:16,720 --> 01:41:19,020
  Let's see if I answer your question, Moana.
 
-1117
+1133
 01:41:19,590 --> 01:41:20,910
  I'll get back to you.
 
-1118
-01:41:21,500 --> 01:41:28,870
- So, one usual question that I get, and if it's not, you will see,
+1134
+01:41:21,480 --> 01:41:37,570
+ So, one usual question that I get, and if it's not, you will see, is this kind of Python
 
-1119
-01:41:29,290 --> 01:41:39,600
- is this kind of Python dacha thing.
+1135
+01:41:37,570 --> 01:41:39,600
+ gotcha thing.
 
-1120
-01:41:41,060 --> 01:41:52,390
- So, let's say, what if I put, essentially, this empty collection, all right?
+1136
+01:41:41,120 --> 01:41:44,630
+ So, let's say, what if I put...
 
-1121
-01:41:52,840 --> 01:41:55,980
+1137
+01:41:44,630 --> 01:41:52,370
+ It's actually like this empty collection, all right?
+
+1138
+01:41:52,880 --> 01:41:54,690
  And then, I'm going to put it as...
 
-1122
-01:41:55,980 --> 01:42:08,880
+1139
+01:41:54,690 --> 01:42:08,880
  So, somebody might call this as an empty set, right?
 
-1123
+1140
 01:42:08,990 --> 01:42:12,950
  But this does not actually create an empty set.
 
-1124
+1141
 01:42:15,180 --> 01:42:22,610
  And if we were to print this out, print, and then use type here, which we used yesterday,
 
-1125
-01:42:26,020 --> 01:42:29,670
- type, empty collection.
+1142
+01:42:26,040 --> 01:42:29,670
+ type empty collection.
 
-1126
-01:42:31,680 --> 01:42:32,720
+1143
+01:42:30,940 --> 01:42:32,720
  Let's see what we get here.
 
-1127
+1144
 01:42:32,720 --> 01:42:35,710
  We actually get a dict.
 
-1128
-01:42:35,710 --> 01:42:39,270
+1145
+01:42:35,750 --> 01:42:39,270
  So, we did not get an empty set.
 
-1129
-01:42:39,450 --> 01:42:41,640
+1146
+01:42:39,450 --> 01:42:41,620
  We actually got an empty dictionary.
 
-1130
-01:42:43,780 --> 01:42:45,790
- So, this is not...
+1147
+01:42:43,840 --> 01:42:45,810
+ This is not...
 
-1131
-01:42:45,790 --> 01:42:47,050
+1148
+01:42:45,810 --> 01:42:47,050
  Therefore, this is not a set.
 
-1132
+1149
 01:42:47,360 --> 01:42:48,560
  This is actually a dictionary.
 
-1133
+1150
 01:42:58,540 --> 01:43:01,300
  But Aladdin, I really want to create an empty set.
 
-1134
-01:43:01,540 --> 01:43:03,240
+1151
+01:43:01,520 --> 01:43:03,240
  How do I actually do that, right?
 
-1135
+1152
 01:43:03,320 --> 01:43:05,880
  That would be the next question in line here.
 
-1136
+1153
 01:43:06,400 --> 01:43:08,200
  And yeah, can we do that?
 
-1137
-01:43:08,620 --> 01:43:09,660
+1154
+01:43:08,720 --> 01:43:09,660
  And what do you say, guys?
 
-1138
+1155
 01:43:10,000 --> 01:43:12,260
  Can I actually create an empty set?
 
-1139
+1156
 01:43:14,040 --> 01:43:16,890
  Nobody was going to answer that one.
 
-1140
-01:43:17,050 --> 01:43:17,170
+1157
+01:43:17,050 --> 01:43:17,190
  Okay.
 
-1141
+1158
 01:43:18,350 --> 01:43:19,550
  I think Georgie.
 
-1142
-01:43:20,630 --> 01:43:21,470
+1159
+01:43:20,970 --> 01:43:21,470
  Yeah.
 
-1143
-01:43:21,710 --> 01:43:28,480
+1160
+01:43:21,710 --> 01:43:27,440
  Just put set in front of curly brackets, and it will create set instead of...
 
-1144
-01:43:28,480 --> 01:43:28,700
+1161
+01:43:27,440 --> 01:43:28,660
  Yeah.
 
-1145
-01:43:29,220 --> 01:43:29,470
+1162
+01:43:29,130 --> 01:43:29,470
  Yeah.
 
-1146
-01:43:29,950 --> 01:43:36,290
+1163
+01:43:30,110 --> 01:43:36,290
  So, what we can do is, just like you mentioned, let's just make it super clear.
 
-1147
+1164
 01:43:37,270 --> 01:43:41,570
  So, what we can do is, well, let's create a variable that is actually called empty set.
 
-1148
+1165
 01:43:42,460 --> 01:43:44,220
  So, just like I think it was Georgie.
 
-1149
-01:43:45,010 --> 01:43:50,680
+1166
+01:43:44,970 --> 01:43:50,680
  Like Georgie mentioned here, we can actually do a set, something like that, right?
 
-1150
+1167
 01:43:50,680 --> 01:43:58,350
  And then, if we come up here and then do print, just to check that it's actually an empty set,
 
-1151
-01:43:58,710 --> 01:44:04,660
- we can actually do type tset and see what it does.
+1168
+01:43:58,690 --> 01:44:04,660
+ we can actually do a type, empty set, and see what it does.
 
-1152
-01:44:05,770 --> 01:44:13,610
- And when we run this, we will actually get a class set and not a dictionary anymore.
+1169
+01:44:05,350 --> 01:44:13,590
+ And when we run this, we will actually get a set, and not a dictionary anymore.
 
-1153
-01:44:14,760 --> 01:44:17,120
+1170
+01:44:14,640 --> 01:44:17,120
  So, this is how you would create an empty set.
 
-1154
+1171
 01:44:26,400 --> 01:44:32,600
  Yeah.
 
-1155
-01:44:32,640 --> 01:44:33,580
+1172
+01:44:32,640 --> 01:44:33,560
  That's basically the idea.
 
-1156
-01:44:34,770 --> 01:44:35,130
+1173
+01:44:34,750 --> 01:44:35,130
  Let's hear.
 
-1157
-01:44:35,890 --> 01:44:36,190
+1174
+01:44:35,890 --> 01:44:36,210
  Moana.
 
-1158
+1175
 01:44:39,050 --> 01:44:40,570
  It is called difference.
 
-1159
-01:44:41,330 --> 01:44:46,450
+1176
+01:44:41,350 --> 01:44:46,450
  For a backend language, minus data language, it's called difference.
 
-1160
+1177
 01:44:47,020 --> 01:44:48,110
  Not minus, right?
 
-1161
-01:44:49,800 --> 01:44:50,240
+1178
+01:44:48,880 --> 01:44:49,700
  Difference.
 
-1162
-01:44:52,670 --> 01:44:55,180
+1179
+01:44:52,690 --> 01:44:55,180
  Thank you for that one, Moana.
 
-1163
+1180
 01:44:55,890 --> 01:44:57,040
  You saved me some time.
 
-1164
-01:44:58,370 --> 01:45:00,830
- Georgie, did you have a question or is it from before?
+1181
+01:44:58,370 --> 01:45:00,810
+ Georgie, did you have a question, or is it from before?
 
-1165
-01:45:02,070 --> 01:45:03,520
+1182
+01:45:01,800 --> 01:45:03,500
  It was from before, sorry.
 
-1166
-01:45:03,520 --> 01:45:04,720
- Oh, right, right, right, right.
+1183
+01:45:03,760 --> 01:45:04,700
+ Ah, right, all right, all right.
 
-1167
-01:45:05,330 --> 01:45:11,630
- Maybe somebody also write it in the, let's see here.
+1184
+01:45:05,530 --> 01:45:09,090
+ Maybe somebody also write it in there.
 
-1168
-01:45:16,850 --> 01:45:19,050
- Oh, the faster execution.
+1185
+01:45:10,550 --> 01:45:11,630
+ Let's see here.
 
-1169
-01:45:19,250 --> 01:45:21,470
- I remember that was before, time was used to fix data.
+1186
+01:45:16,890 --> 01:45:19,050
+ A little faster execution.
 
-1170
-01:45:21,950 --> 01:45:23,130
+1187
+01:45:19,250 --> 01:45:20,350
+ I can remember that was before.
+
+1188
+01:45:20,470 --> 01:45:21,470
+ Tablet's use of fixed data.
+
+1189
+01:45:21,910 --> 01:45:23,150
  Python is a script-based language.
 
-1171
+1190
 01:45:23,230 --> 01:45:23,890
  Yes, that's true.
 
-1172
+1191
 01:45:24,520 --> 01:45:27,600
  No insertion order is not guaranteed in sets.
 
-1173
+1192
 01:45:28,400 --> 01:45:29,740
  So, that's removes duplicates.
 
-1174
-01:45:30,440 --> 01:45:31,360
+1193
+01:45:30,420 --> 01:45:31,360
  That's the last duplicates.
 
-1175
+1194
 01:45:31,480 --> 01:45:32,090
  Yeah, that's true.
 
-1176
+1195
 01:45:33,080 --> 01:45:33,560
  In set.
 
-1177
+1196
 01:45:34,600 --> 01:45:35,310
  Exactly.
 
-1178
-01:45:35,510 --> 01:45:38,120
+1197
+01:45:35,490 --> 01:45:38,120
  So, all right.
 
-1179
-01:45:39,030 --> 01:45:39,770
+1198
+01:45:39,030 --> 01:45:39,790
  Let's see here.
 
-1180
-01:45:39,770 --> 01:45:43,500
- Then we're going to move to the next part.
+1199
+01:45:39,790 --> 01:45:47,150
+ Then we're going to move to the next part, and I think we should take a little break, at least.
 
-1181
-01:45:43,740 --> 01:45:47,150
- And I think we should take a little break, at least.
-
-1182
-01:45:48,330 --> 01:45:49,810
+1200
+01:45:48,290 --> 01:45:49,810
  We're not going to take 15 minutes.
 
-1183
-01:45:50,310 --> 01:45:51,890
- This time we're going to just take 10.
+1201
+01:45:50,270 --> 01:45:51,870
+ This time, we're going to just take 10.
 
-1184
-01:45:52,740 --> 01:45:53,140
+1202
+01:45:52,820 --> 01:45:53,140
  Yeah.
 
-1185
+1203
 01:45:53,810 --> 01:45:56,910
  And then we're going to move to the last part of the lesson.
 
-1186
-01:45:58,160 --> 01:46:00,340
- And then that will be dictionaries.
+1204
+01:45:58,120 --> 01:46:00,200
+ And then that will be dictionary.
 
-1187
-01:46:00,440 --> 01:46:05,090
- So, if you have any questions about dictionaries, hopefully we'll answer them after the break.
+1205
+01:46:00,400 --> 01:46:05,090
+ So, if you have any questions about dictionaries, hopefully, we'll answer them after the break.
 
-1188
-01:46:07,630 --> 01:46:08,250
+1206
+01:46:07,670 --> 01:46:08,270
  Let's see here.
 
-1189
+1207
 01:46:08,330 --> 01:46:08,530
  Gloria.
 
-1190
-01:46:10,860 --> 01:46:15,180
- Yeah, but let's see that I want to go through each element in the set.
+1208
+01:46:10,860 --> 01:46:11,300
+ Yeah.
 
-1191
-01:46:15,560 --> 01:46:18,360
+1209
+01:46:11,380 --> 01:46:15,180
+ But let's see that I want to go through each element in the set.
+
+1210
+01:46:15,600 --> 01:46:18,360
  So, how can I print, for example, in the names?
 
-1192
+1211
 01:46:18,840 --> 01:46:26,200
- We have some names and then I want to say, hello, this is an invitation for name one, name two, name three.
+ We have some names, and then I want to say, hello, this is an invitation for name one, name two, name three.
 
-1193
-01:46:26,850 --> 01:46:28,580
+1212
+01:46:26,200 --> 01:46:28,580
  So, how can I print that?
 
-1194
+1213
 01:46:31,360 --> 01:46:34,140
  How can I use the elements in the set?
 
-1195
-01:46:34,140 --> 01:46:39,590
- You mean by using a loop or something to take them out one by one?
+1214
+01:46:35,390 --> 01:46:39,590
+ You mean by using a loop or something to take it out one by one?
 
-1196
+1215
 01:46:39,730 --> 01:46:43,810
- Like an in or how can you use them?
+ Like an in, or how can you use them?
 
-1197
-01:46:43,830 --> 01:46:46,270
- We will kind of cover that when we get to loops.
+1216
+01:46:43,830 --> 01:46:49,410
+ We will kind of cover that when we get to loops, and I think that's in tomorrow's lesson, actually.
 
-1198
-01:46:46,710 --> 01:46:49,410
- And I think that's in tomorrow's lesson, actually.
-
-1199
-01:46:49,550 --> 01:46:49,690
+1217
+01:46:49,530 --> 01:46:49,690
  Okay.
 
-1200
-01:46:50,120 --> 01:46:52,020
- So, we're going to move a little bit into loops.
+1218
+01:46:50,080 --> 01:46:54,700
+ So, we're going to move a little bit into loops, so let's not get ahead of ourselves.
 
-1201
-01:46:52,200 --> 01:46:54,700
- So, let's not get ahead of ourselves.
+1219
+01:46:54,800 --> 01:46:59,940
+ But it's a great question, and then we can actually specify where and what.
 
-1202
-01:46:54,800 --> 01:46:55,880
- But it's a great question.
+1220
+01:47:01,680 --> 01:47:09,710
+ But I see what you're asking there, but it would be a little bit far-fetched, since you wouldn't use set for something like that.
 
-1203
-01:46:56,580 --> 01:46:59,960
- And then we can actually specify where and in what.
-
-1204
-01:47:01,510 --> 01:47:05,700
- But I see what you're asking there.
-
-1205
-01:47:05,980 --> 01:47:09,710
- But, yeah, it would be a little bit far-fetched since you wouldn't use set for something like that.
-
-1206
-01:47:09,790 --> 01:47:12,590
+1221
+01:47:09,790 --> 01:47:12,570
  But, sure, we can take a look at that.
 
-1207
-01:47:13,150 --> 01:47:13,450
+1222
+01:47:13,150 --> 01:47:13,470
  Okay.
 
-1208
-01:47:14,130 --> 01:47:14,810
+1223
+01:47:14,320 --> 01:47:14,790
  Thank you.
 
-1209
-01:47:15,050 --> 01:47:18,410
- Oh, I see in the comments some people is commenting as well.
+1224
+01:47:15,130 --> 01:47:18,410
+ Oh, I see in the comments, some people is commenting as well.
 
-1210
-01:47:18,530 --> 01:47:19,940
+1225
+01:47:18,510 --> 01:47:19,920
  So, I will take a look there.
 
-1211
-01:47:22,360 --> 01:47:23,160
- Free in my sense.
+1226
+01:47:22,300 --> 01:47:23,740
+ Free in my sense, yeah, very good.
 
-1212
-01:47:23,220 --> 01:47:23,740
- Yeah, very good.
+1227
+01:47:25,820 --> 01:47:32,700
+ And we will do that in, yeah, in various ways.
 
-1213
-01:47:25,850 --> 01:47:32,700
- We will do that in various ways.
-
-1214
+1228
 01:47:33,400 --> 01:47:33,760
  All right.
 
-1215
-01:47:33,820 --> 01:47:34,760
- Let's take a little break.
+1229
+01:47:33,800 --> 01:47:38,940
+ Let's take a little break, and then, yeah, let's get back here at 11.05 or something like that.
 
-1216
-01:47:35,100 --> 01:47:38,940
- And then, yeah, let's get back here at 11.05 or something like that.
-
-1217
-01:47:39,020 --> 01:47:39,680
+1230
+01:47:39,020 --> 01:47:39,660
  Yeah, 11.05.
 
-1218
+1231
 01:47:39,900 --> 01:47:40,380
  That's perfect.
 
-1219
-01:47:40,880 --> 01:47:44,090
- And then we will take the last part and then we can call it today.
+1232
+01:47:40,880 --> 01:47:44,130
+ And then we will take the last part, and then we can call it the day.
 
-1220
+1233
 01:47:44,800 --> 01:47:47,280
  It was a little bit longer lesson than I expected, but that's all right.
 
-1221
-01:47:48,500 --> 01:47:49,070
+1234
+01:47:48,230 --> 01:47:49,050
  All right.
 
-1222
-01:47:49,670 --> 01:47:51,390
- Back at 11.05.
-
-1223
-01:47:51,390 --> 01:55:24,600
- All right, guys.
-
-1224
-01:55:25,500 --> 01:55:27,930
- Last run here.
-
-1225
-01:55:32,490 --> 01:55:34,780
- Before we move on.
-
-1226
-01:55:36,120 --> 01:55:41,790
- Well, we had a question, compiler.
-
-1227
-01:55:41,790 --> 01:55:47,530
- And I think Haidem answered it very well where he said, well, Python is a script-based language.
-
-1228
-01:55:47,530 --> 01:55:48,730
- And that's actually true.
-
-1229
-01:55:49,780 --> 01:55:56,410
- So, that could be confusing when coming from, well, if you're coming from another language, right?
-
-1230
-01:55:57,390 --> 01:56:03,830
- So, in Python, we usually talk about, well, the syntax error.
-
-1231
-01:56:04,010 --> 01:56:08,730
- We talk about runtime error rather than compilers, right?
-
-1232
-01:56:08,730 --> 01:56:15,700
- So, yeah, a syntax error is actually detected before the program can actually run, right?
-
-1233
-01:56:16,380 --> 01:56:21,350
- While a runtime error would occur while the program is running.
-
-1234
-01:56:21,630 --> 01:56:21,870
- So, yeah.
-
 1235
-01:56:23,040 --> 01:56:31,020
- And we had another great question, which was about the reference type, right?
+01:47:49,730 --> 01:47:50,770
+ Back at 10.05.
 
 1236
-01:56:32,110 --> 01:56:34,490
- That example, where was it?
+01:47:50,890 --> 01:47:51,370
+ 11.05.
 
 1237
-01:56:35,010 --> 01:56:36,430
- When it came to lists, right?
+01:52:22,910 --> 01:55:24,600
+ All right, guys.
 
 1238
-01:56:36,650 --> 01:56:48,700
- There we go.
+01:55:26,580 --> 01:55:27,930
+ Last run here.
 
 1239
+01:55:32,470 --> 01:55:38,010
+ Before we move on, well, we had a question.
+
+1240
+01:55:41,490 --> 01:55:41,920
+ Pile error.
+
+1241
+01:55:41,920 --> 01:55:47,550
+ And I think Haidemann said it very well, where he said, well, Python is a script-based language,
+
+1242
+01:55:47,630 --> 01:55:48,730
+ and that's actually true.
+
+1243
+01:55:49,760 --> 01:55:56,150
+ So, that could be confusing when coming from, well, if you're coming from another language,
+
+1244
+01:55:56,230 --> 01:55:56,430
+ right?
+
+1245
+01:55:57,410 --> 01:56:03,850
+ So, in Python, we usually talk about, well, syntax error.
+
+1246
+01:56:04,050 --> 01:56:08,730
+ We talk about runtime error rather than compilers, right?
+
+1247
+01:56:09,440 --> 01:56:10,460
+ So, yeah.
+
+1248
+01:56:10,980 --> 01:56:15,700
+ A syntax error is actually detected before the program can actually run, right?
+
+1249
+01:56:16,200 --> 01:56:21,350
+ While a runtime error would occur while the program is running.
+
+1250
+01:56:21,550 --> 01:56:21,870
+ So, yeah.
+
+1251
+01:56:22,980 --> 01:56:31,020
+ And we had another great question, which was about the reference type, right?
+
+1252
+01:56:32,030 --> 01:56:34,490
+ And that example, where was it?
+
+1253
+01:56:34,490 --> 01:56:36,430
+ When it came to lists, right?
+
+1254
+01:56:36,670 --> 01:56:48,700
+ There we go.
+
+1255
 01:56:49,620 --> 01:56:52,270
  We kind of made a little difference here, right?
 
-1240
-01:56:52,700 --> 01:56:55,800
+1256
+01:56:52,720 --> 01:56:55,800
  So, here we saw that it actually did not change.
 
-1241
-01:56:56,220 --> 01:56:58,380
+1257
+01:56:56,240 --> 01:56:58,380
  It did not do unique lists, right?
 
-1242
-01:56:58,770 --> 01:57:02,360
+1258
+01:56:58,720 --> 01:57:02,360
  Whilst here, when we use copy, it actually created another list, right?
 
-1243
+1259
 01:57:02,770 --> 01:57:07,070
  So, we got a question about reference type here.
 
-1244
-01:57:07,070 --> 01:57:15,880
+1260
+01:57:07,310 --> 01:57:15,860
  And that is a usual question if you're coming from, let's say, another language.
 
-1245
-01:57:17,140 --> 01:57:19,940
- Especially, I think, C sharp, right?
+1261
+01:57:17,120 --> 01:57:26,060
+ So, yes, of course, you can think of the terms of references, absolutely.
 
-1246
-01:57:21,010 --> 01:57:25,320
- So, yes, of course, you can think of the terms of references.
-
-1247
-01:57:25,740 --> 01:57:26,060
- Absolutely.
-
-1248
+1262
 01:57:26,930 --> 01:57:36,410
  But in Python, well, variables, let's say, it kind of holds references to an object.
 
-1249
-01:57:36,410 --> 01:57:47,100
- So, when we write list B equals list A here, well, both variables here are referenced to the same list object.
+1263
+01:57:36,410 --> 01:57:45,920
+ So, when we write list B equals list A here, well, both variables here are referenced to the
 
-1250
-01:57:48,310 --> 01:58:01,950
- And since lists are mutable, so changing it just by changing the list through one variable will also visibly change through the other variable.
+1264
+01:57:45,920 --> 01:57:47,120
+ same list object.
 
-1251
-01:58:03,690 --> 01:58:11,430
- So, the question actually could be is, is actually a list, a reference type in Python?
+1265
+01:57:48,530 --> 01:57:56,710
+ And since lists are mutable, so changing it, just by changing the list through one variable
 
-1252
+1266
+01:57:56,710 --> 01:58:01,930
+ will also visibly change through the other variable.
+
+1267
+01:58:01,930 --> 01:58:11,430
+ So, the question actually could be is, is actually a list a reference type in Python?
+
+1268
 01:58:11,840 --> 01:58:14,400
  Well, informally, I would say yes.
 
-1253
-01:58:15,490 --> 01:58:26,670
- But Python does not officially at least divide types into value types and reference types in the same way as languages in C sharp.
+1269
+01:58:15,490 --> 01:58:22,980
+ But Python does not, does not officially at least divide types into value types and reference
 
-1254
-01:58:28,290 --> 01:58:34,360
+1270
+01:58:22,980 --> 01:58:26,670
+ types in the same way as languages in C sharp.
+
+1271
+01:58:28,330 --> 01:58:34,340
  So, yeah, in Python, all variables refers to objects, right?
 
-1255
-01:58:35,940 --> 01:58:40,520
- Okay, yeah, that was my question, Christian.
+1272
+01:58:35,940 --> 01:58:40,540
+ Okay, yeah, that's what, that was my question, Christian.
 
-1256
-01:58:40,960 --> 01:58:44,800
+1273
+01:58:40,940 --> 01:58:44,800
  Yeah, well, you know, objects are also reference types.
 
-1257
+1274
 01:58:45,320 --> 01:58:45,460
  Yeah.
 
-1258
-01:58:45,700 --> 01:58:46,660
- As I, yeah.
-
-1259
-01:58:46,900 --> 01:58:50,900
+1275
+01:58:45,680 --> 01:58:50,940
  Well, it's still a computer.
 
-1260
-01:58:51,240 --> 01:58:54,840
+1276
+01:58:51,260 --> 01:58:54,840
  I mean, even if it's a virtual machine, it's still a computer.
 
-1261
-01:58:54,840 --> 01:59:04,900
- So, it has to be a value type or a reference type, even if they don't want to use that jargon.
+1277
+01:58:55,180 --> 01:59:04,880
+ So, it has to be a value type or reference type, even if they don't want to use that jargon.
 
-1262
-01:59:05,560 --> 01:59:07,320
+1278
+01:59:05,540 --> 01:59:07,320
  And you're kind of correct here.
 
-1263
-01:59:07,320 --> 01:59:11,290
+1279
+01:59:07,460 --> 01:59:11,290
  So, both variables here refer to the same list in memory, of course.
 
-1264
-01:59:12,330 --> 01:59:15,010
+1280
+01:59:12,350 --> 01:59:15,030
  That's why it wouldn't affect, right?
 
-1265
+1281
 01:59:15,800 --> 01:59:18,820
  That's why we see list A and list B as the same thing.
 
-1266
-01:59:19,620 --> 01:59:27,360
+1282
+01:59:19,640 --> 01:59:27,360
  But when we use list A copy here, Python actually creates a new list object.
 
-1267
+1283
 01:59:27,830 --> 01:59:31,390
  So, the two variables now refer to different, actually different lists.
 
-1268
-01:59:33,200 --> 01:59:40,910
- But as I said, we don't usually classify Python types as value types and reference types like in some other programming language.
+1284
+01:59:33,200 --> 01:59:39,470
+ But as I said, we don't usually classify Python types as value types and reference types,
 
-1269
-01:59:42,160 --> 01:59:51,890
- Instead, kind of think of it, it's, well, you could say it's better to think of it as variables as names that refers to objects.
+1285
+01:59:39,630 --> 01:59:40,910
+ like in some other programming language.
 
-1270
-01:59:52,170 --> 01:59:56,420
+1286
+01:59:42,180 --> 01:59:47,960
+ Instead, kind of think of it, it's, well, you could say it's better to think of it as variables
+
+1287
+01:59:47,960 --> 01:59:51,910
+ as names that refers to objects.
+
+1288
+01:59:52,150 --> 01:59:56,420
  I think that kind of clears things, hopefully.
 
-1271
+1289
 01:59:57,710 --> 01:59:58,490
  Or what do you say, Christian?
 
-1272
-01:59:59,680 --> 02:00:07,220
- Yeah, well, I can imagine there are heated discussions in online forums about this.
+1290
+01:59:59,680 --> 02:00:07,240
+ Yeah, well, I can imagine there are heated discussions on the, in online forums about this.
 
-1273
-02:00:08,000 --> 02:00:11,460
- But we don't have to go there.
+1291
+02:00:08,020 --> 02:00:11,460
+ But we don't have to, we don't have to go there.
 
-1274
+1292
 02:00:13,600 --> 02:00:14,510
  Okay, thanks.
 
-1275
-02:00:14,850 --> 02:00:15,090
+1293
+02:00:14,810 --> 02:00:15,090
  Thank you.
 
-1276
-02:00:15,290 --> 02:00:19,490
- Yeah, that's why I also needed some time to formulate this as well.
+1294
+02:00:15,290 --> 02:00:15,430
+ Yeah.
 
-1277
-02:00:19,750 --> 02:00:20,010
+1295
+02:00:15,680 --> 02:00:19,490
+ That's why I also needed some time to, how to formulate this as well.
+
+1296
+02:00:19,730 --> 02:00:20,010
  But, yeah.
 
-1278
+1297
 02:00:20,410 --> 02:00:20,790
  All right.
 
-1279
-02:00:20,910 --> 02:00:22,170
+1298
+02:00:20,890 --> 02:00:22,150
  I don't really care.
 
-1280
-02:00:22,330 --> 02:00:25,110
+1299
+02:00:22,330 --> 02:00:23,430
+ I just want to know.
+
+1300
+02:00:23,490 --> 02:00:25,110
  I just want to know how it works.
 
-1281
-02:00:25,250 --> 02:00:25,830
+1301
+02:00:25,230 --> 02:00:25,830
  It's good to clarify, right?
 
-1282
-02:00:26,150 --> 02:00:26,390
+1302
+02:00:26,150 --> 02:00:26,370
  Yeah.
 
-1283
-02:00:27,250 --> 02:00:28,650
- Okay, thanks.
+1303
+02:00:27,270 --> 02:00:28,250
+ Okay.
 
-1284
-02:00:28,770 --> 02:00:30,690
+1304
+02:00:28,350 --> 02:00:28,650
+ Thanks.
+
+1305
+02:00:28,830 --> 02:00:29,070
+ Thank you.
+
+1306
+02:00:29,440 --> 02:00:30,690
  No, no, no problem at all.
 
-1285
-02:00:34,260 --> 02:00:34,840
+1307
+02:00:34,180 --> 02:00:34,840
  All right.
 
-1286
-02:00:34,880 --> 02:00:35,720
+1308
+02:00:34,880 --> 02:00:35,740
  Let's move on.
 
-1287
-02:00:36,280 --> 02:00:37,440
+1309
+02:00:36,350 --> 02:00:37,460
  Last part here.
 
-1288
-02:00:38,790 --> 02:00:40,440
+1310
+02:00:38,640 --> 02:00:40,440
  Let me see here.
 
-1289
-02:00:41,220 --> 02:00:42,540
- Yeah, we said dictionaries, right?
+1311
+02:00:40,980 --> 02:00:41,380
+ Yeah.
 
-1290
-02:00:43,250 --> 02:00:45,350
- And, of course, we need to cover dictionaries.
+1312
+02:00:41,440 --> 02:00:42,540
+ We said dictionaries, right?
 
-1291
-02:00:50,110 --> 02:00:53,400
- No, that's not how we spell dictionaries.
+1313
+02:00:43,250 --> 02:00:45,370
+ And of course, we need to cover dictionaries.
 
-1292
-02:00:53,670 --> 02:00:54,560
- We spell it like this one.
-
-1293
-02:00:55,330 --> 02:00:55,730
+1314
+02:00:49,170 --> 02:00:49,810
  Dictionaries.
 
-1294
-02:00:56,820 --> 02:01:09,800
+1315
+02:00:51,290 --> 02:00:52,010
+ Oh, no.
+
+1316
+02:00:52,320 --> 02:00:53,380
+ That's not how we spell dictionaries.
+
+1317
+02:00:53,710 --> 02:00:54,540
+ We spell it like this one.
+
+1318
+02:00:55,230 --> 02:00:55,710
+ Dictionaries.
+
+1319
+02:00:56,800 --> 02:01:09,760
  So, a dictionary, well, they store, it stores things in a key value pairs.
 
-1295
-02:01:09,800 --> 02:01:12,520
- So, key value pairs is kind of limited here.
+1320
+02:01:09,760 --> 02:01:12,500
+ So, key value pairs is kind of free to go to there.
 
-1296
-02:01:14,360 --> 02:01:18,650
+1321
+02:01:14,340 --> 02:01:18,650
  And I'm going to show you, of course, the key value, right?
 
-1297
+1322
 02:01:19,470 --> 02:01:24,040
  So, if you're coming from JavaScript, you may think of objects.
 
-1298
-02:01:25,440 --> 02:01:33,150
- And if you're coming from Java or C Sharp, you may think of it as maps or maybe dictionaries as well.
+1323
+02:01:25,420 --> 02:01:32,790
+ And if you're coming from Java or C Sharp, you may think of it as maps or maybe dictionaries
 
-1299
-02:01:34,620 --> 02:01:44,230
- And the important concept here is instead of using a value by a numeric index, we access it by using a key.
+1324
+02:01:32,790 --> 02:01:33,150
+ as well.
 
-1300
+1325
+02:01:34,170 --> 02:01:42,310
+ And the important concept here is instead of using a value by a numeric index, we access it
+
+1326
+02:01:42,310 --> 02:01:44,250
+ by using a key.
+
+1327
 02:01:45,700 --> 02:01:47,680
  And I'm going to show you what I mean by that.
 
-1301
-02:01:47,680 --> 02:01:50,600
+1328
+02:01:48,440 --> 02:01:50,580
  So, let's create a dictionary here.
 
-1302
-02:01:52,830 --> 02:01:53,840
+1329
+02:01:52,830 --> 02:01:53,820
  Person equals.
 
-1303
-02:01:56,160 --> 02:01:57,120
+1330
+02:01:56,140 --> 02:01:57,120
  And just pop quiz.
 
-1304
+1331
 02:01:57,450 --> 02:01:58,440
  What am I creating now?
 
-1305
-02:02:00,610 --> 02:02:01,630
+1332
+02:01:59,790 --> 02:02:01,630
  What did I just create?
 
-1306
-02:02:04,920 --> 02:02:05,040
+1333
+02:02:04,920 --> 02:02:05,020
  Anybody?
 
-1307
-02:02:05,260 --> 02:02:05,480
- A dictionary.
+1334
+02:02:05,240 --> 02:02:05,640
+ Dictionary.
 
-1308
-02:02:06,070 --> 02:02:06,670
+1335
+02:02:06,070 --> 02:02:06,650
  Yeah, exactly.
 
-1309
-02:02:06,810 --> 02:02:07,070
- A dictionary.
+1336
+02:02:06,810 --> 02:02:07,050
+ Dictionary.
 
-1310
+1337
 02:02:07,540 --> 02:02:08,180
  Very good.
 
-1311
-02:02:08,260 --> 02:02:08,740
+1338
+02:02:08,240 --> 02:02:08,740
  You're observant.
 
-1312
-02:02:09,100 --> 02:02:10,620
+1339
+02:02:09,100 --> 02:02:10,580
  So, this is an empty dictionary.
 
-1313
+1340
 02:02:10,880 --> 02:02:12,080
  It's not an empty set, right?
 
-1314
-02:02:12,430 --> 02:02:13,940
+1341
+02:02:12,430 --> 02:02:13,920
  We kind of mentioned that already.
 
-1315
+1342
 02:02:15,920 --> 02:02:19,440
  So, just by doing this, we know that we're talking about the dictionary.
 
-1316
-02:02:20,030 --> 02:02:22,650
+1343
+02:02:19,440 --> 02:02:22,670
  But let's actually create some content inside it as well.
 
-1317
-02:02:22,950 --> 02:02:26,590
- So, let's say we're going to create the first name.
+1344
+02:02:22,970 --> 02:02:28,450
+ So, let's say we're going to create the first name that I'm going to put.
 
-1318
-02:02:27,670 --> 02:02:28,870
- And then I'm going to put...
-
-1319
+1345
 02:02:28,870 --> 02:02:29,730
  Well, let's stick to Ada.
 
-1320
+1346
 02:02:31,420 --> 02:02:38,840
  And we have an age of 36.
 
-1321
+1347
 02:02:39,690 --> 02:02:43,630
  And then we got a, let's say, 30.
 
-1322
-02:02:44,060 --> 02:02:44,220
+1348
+02:02:44,080 --> 02:02:44,220
  Sure.
 
-1323
+1349
 02:02:44,910 --> 02:02:46,680
  I think we used to London before.
 
-1324
+1350
 02:02:46,880 --> 02:02:51,790
  So, let's stick to London.
 
-1325
-02:02:53,040 --> 02:02:54,100
+1351
+02:02:52,760 --> 02:02:54,100
  Let's keep it there.
 
-1326
-02:02:54,100 --> 02:03:01,160
+1352
+02:02:55,080 --> 02:03:01,160
  So, what I've created now is three keys and three values.
 
-1327
-02:03:01,780 --> 02:03:02,840
- So, the key would be name.
+1353
+02:03:01,160 --> 02:03:05,460
+ So, the key would be name and the value of that key would be Ada.
 
-1328
-02:03:03,060 --> 02:03:05,460
- And the value of that key would be Ada.
-
-1329
-02:03:05,900 --> 02:03:09,880
+1354
+02:03:06,080 --> 02:03:09,880
  And the key age, the value would be 36.
 
-1330
-02:03:10,120 --> 02:03:15,540
+1355
+02:03:10,770 --> 02:03:15,540
  And the key city would be the value London.
 
-1331
-02:03:16,410 --> 02:03:18,770
+1356
+02:03:16,670 --> 02:03:18,770
  So, this is actually how you do it in Python.
 
-1332
-02:03:20,100 --> 02:03:22,100
+1357
+02:03:20,500 --> 02:03:22,100
  We can actually print this out.
 
-1333
+1358
 02:03:22,580 --> 02:03:25,770
  You can just see that everything works fine as well.
 
-1334
+1359
 02:03:26,290 --> 02:03:32,290
  And we get our dictionary just in a straight line.
 
-1335
+1360
 02:03:32,520 --> 02:03:33,590
  Just like we wrote here.
 
-1336
-02:03:33,590 --> 02:03:34,670
+1361
+02:03:33,990 --> 02:03:34,650
  It's the same thing.
 
-1337
+1362
 02:03:36,070 --> 02:03:38,170
  Name, Ada, age, 36, city, London.
 
-1338
+1363
 02:03:38,720 --> 02:03:40,130
  So far, so good, right?
 
-1339
-02:03:40,880 --> 02:03:43,320
+1364
+02:03:40,190 --> 02:03:43,320
  Of course, we can access them as well.
 
-1340
-02:03:43,420 --> 02:03:46,320
+1365
+02:03:43,460 --> 02:03:46,320
  We can access our values, right?
 
-1341
-02:03:47,810 --> 02:03:48,510
+1366
+02:03:47,870 --> 02:03:48,510
  With what?
 
-1342
-02:03:48,750 --> 02:03:50,270
+1367
+02:03:48,770 --> 02:03:50,270
  Well, what would we use?
 
-1343
+1368
 02:03:50,370 --> 02:03:54,750
  Well, we would use our keys in order to access our values.
 
-1344
-02:03:57,640 --> 02:03:58,400
+1369
+02:03:57,700 --> 02:03:58,400
  Excuse me.
 
-1345
-02:03:59,520 --> 02:04:02,560
+1370
+02:03:59,580 --> 02:04:02,560
  So, let's not print the whole dictionary here.
 
-1346
-02:04:02,970 --> 02:04:05,810
+1371
+02:04:02,970 --> 02:04:05,790
  Now, let's print a specific value.
 
-1347
-02:04:06,810 --> 02:04:09,310
+1372
+02:04:07,580 --> 02:04:09,250
  So, what I can put here is person.
 
-1348
+1373
 02:04:09,760 --> 02:04:13,810
  And now, instead of putting an index, I would put the key.
 
-1349
-02:04:14,140 --> 02:04:15,660
+1374
+02:04:14,090 --> 02:04:15,640
  And it actually helps me a little bit here.
 
-1350
-02:04:16,260 --> 02:04:17,950
+1375
+02:04:15,640 --> 02:04:17,950
  So, let's start with the name, for example.
 
-1351
-02:04:18,580 --> 02:04:18,740
+1376
+02:04:18,600 --> 02:04:18,720
  Sure.
 
-1352
-02:04:19,080 --> 02:04:27,800
- And if we were to print that out, we actually get Ada by using not the index, rather the key.
+1377
+02:04:19,060 --> 02:04:27,800
+ And if we were to print that out, we actually get Ada by using, not the index, rather the key.
 
-1353
-02:04:28,380 --> 02:04:29,410
+1378
+02:04:28,260 --> 02:04:29,430
  The key name.
 
-1354
-02:04:30,260 --> 02:04:35,420
+1379
+02:04:30,080 --> 02:04:35,420
  Same thing if we want to do it with another key, person.
 
-1355
-02:04:37,660 --> 02:04:42,290
+1380
+02:04:37,700 --> 02:04:42,290
  And this time, let's get the age of Ada.
 
-1356
-02:04:43,050 --> 02:04:46,820
+1381
+02:04:42,750 --> 02:04:46,820
  And we actually get 36, as you see.
 
-1357
-02:04:47,390 --> 02:04:51,000
+1382
+02:04:48,240 --> 02:04:51,000
  So, we're not using an index.
 
-1358
-02:04:51,230 --> 02:04:56,350
+1383
+02:04:51,310 --> 02:04:56,350
  We're actually using keys, right?
 
-1359
+1384
 02:04:56,510 --> 02:04:58,690
  So, that's the first fundamental thing here.
 
-1360
+1385
 02:04:59,340 --> 02:05:01,300
  And we can build on that a little bit.
 
-1361
-02:05:01,740 --> 02:05:08,820
+1386
+02:05:01,800 --> 02:05:08,820
  We can actually change and add values, as well, which we're going to do now.
 
-1362
+1387
 02:05:11,100 --> 02:05:16,870
  We can use the same dictionary here that we just created.
 
-1363
-02:05:18,090 --> 02:05:23,470
+1388
+02:05:18,070 --> 02:05:23,470
  And what we can do here, if we want to change, let's say, for instance, we want to change the age.
 
-1364
-02:05:23,690 --> 02:05:27,030
+1389
+02:05:23,730 --> 02:05:27,030
  Instead of it to be 36, let's change it to 37.
 
-1365
+1390
 02:05:27,350 --> 02:05:28,330
  How would one do that?
 
-1366
+1391
 02:05:28,590 --> 02:05:30,940
  Well, just person.
 
-1367
-02:05:31,800 --> 02:05:33,400
+1392
+02:05:32,060 --> 02:05:33,400
  And what do we want to change?
 
-1368
+1393
 02:05:33,600 --> 02:05:34,620
  Well, that would be age.
 
-1369
-02:05:35,500 --> 02:05:37,540
+1394
+02:05:35,680 --> 02:05:37,540
  Now, we don't want it to be 36 anymore.
 
-1370
-02:05:37,840 --> 02:05:39,100
+1395
+02:05:37,860 --> 02:05:39,100
  We want it to be 37.
 
-1371
+1396
 02:05:39,100 --> 02:05:48,250
  And if I now go and print our dictionary, this person.
 
-1372
+1397
 02:05:49,540 --> 02:05:55,670
  And if we were to run this, we will see that the age has now changed to 37.
 
-1373
+1398
 02:05:55,870 --> 02:06:11,200
  So, we can actually change a value for an existing key, which we just proved.
 
-1374
+1399
 02:06:13,560 --> 02:06:16,610
  Could I do this?
 
-1375
-02:06:23,620 --> 02:06:23,980
+1400
+02:06:23,620 --> 02:06:23,940
  37.
 
-1376
+1401
 02:06:24,920 --> 02:06:27,650
  But what if I come here and do this person?
 
-1377
+1402
 02:06:28,530 --> 02:06:34,130
  And I'm going to add a key that does not exist.
 
-1378
+1403
 02:06:34,660 --> 02:06:36,460
  Let's say, language.
 
-1379
-02:06:36,610 --> 02:06:40,720
+1404
+02:06:36,600 --> 02:06:40,720
  That's a key that does not exist in my dictionary, right?
 
-1380
+1405
 02:06:41,420 --> 02:06:49,040
  And then I put language equals Python, for example, right?
 
-1381
+1406
 02:06:49,780 --> 02:06:50,820
  What happens now?
 
-1382
+1407
 02:06:53,660 --> 02:07:06,610
  If I come and print this out, it's now to our dictionary.
 
-1383
+1408
 02:07:07,250 --> 02:07:10,590
  You'll see what?
 
-1384
+1409
 02:07:11,420 --> 02:07:17,610
  Well, you see that the key languages did not exist before, right?
 
-1385
-02:07:17,750 --> 02:07:20,540
+1410
+02:07:17,920 --> 02:07:20,540
  But now it actually exists in our dictionary.
 
-1386
-02:07:21,200 --> 02:07:28,120
- We have actually added the language, the key language with the value Python, a new key value pair.
+1411
+02:07:20,930 --> 02:07:26,090
+ We have actually added the language, the key language with the value Python.
 
-1387
-02:07:29,100 --> 02:07:30,380
+1412
+02:07:26,660 --> 02:07:28,120
+ A new key value pair.
+
+1413
+02:07:29,480 --> 02:07:30,380
  No problems at all.
 
-1388
-02:07:31,320 --> 02:07:32,940
+1414
+02:07:31,340 --> 02:07:32,940
  And it will be put at the end, of course.
 
-1389
-02:07:36,200 --> 02:07:42,440
- A typical question would be, can I do this?
+1415
+02:07:36,500 --> 02:07:42,440
+ And a typical question would be, can I do this?
 
-1390
-02:07:44,290 --> 02:07:48,460
+1416
+02:07:43,730 --> 02:07:48,440
  Let's take a new dictionary for this example.
 
-1391
-02:07:49,780 --> 02:07:54,150
- So, something that's important to remember before you stumble upon it.
+1417
+02:07:49,780 --> 02:07:54,130
+ So, something that's important to remember, or you stumble upon it.
 
-1392
-02:07:54,830 --> 02:07:57,020
- Let's create a new dictionary.
+1418
+02:07:54,870 --> 02:07:57,040
+ Let's create a...
 
-1393
-02:07:58,970 --> 02:08:00,830
+1419
+02:07:57,040 --> 02:07:57,740
+ No, no, no.
+
+1420
+02:07:58,760 --> 02:08:00,810
  Let's do name here, for example.
 
-1394
-02:08:01,170 --> 02:08:01,570
+1421
+02:08:01,250 --> 02:08:01,570
  Name.
 
-1395
+1422
 02:08:02,610 --> 02:08:07,890
  I'm using the key name for Ada, right?
 
-1396
-02:08:08,310 --> 02:08:12,030
- And then let's say, I want to use the same key here.
+1423
+02:08:08,310 --> 02:08:12,010
+ And then let's say I want to use the same key here.
 
-1397
-02:08:13,250 --> 02:08:13,530
- Name.
+1424
+02:08:13,250 --> 02:08:17,670
+ Name, grace.
 
-1398
-02:08:17,000 --> 02:08:17,650
- Grace.
-
-1399
-02:08:18,800 --> 02:08:20,560
+1425
+02:08:18,800 --> 02:08:20,540
  So, it's not actually complaining, right?
 
-1400
+1426
 02:08:21,030 --> 02:08:23,410
- But, will this work?
+ But will this work?
 
-1401
-02:08:31,590 --> 02:08:40,330
- If this works, well, you would get a dictionary with a key value pair, two key values pairs.
+1427
+02:08:31,590 --> 02:08:40,310
+ If this works well, we would get a dictionary with a key value pair, two key values pairs.
 
-1402
-02:08:40,650 --> 02:08:41,630
- That would be name, Ada.
+1428
+02:08:40,650 --> 02:08:42,750
+ That would be name, Ada, name, grace, right?
 
-1403
-02:08:41,790 --> 02:08:42,070
- Name.
-
-1404
-02:08:42,250 --> 02:08:42,750
- Grace, right?
-
-1405
+1429
 02:08:43,240 --> 02:08:45,020
  Let's actually run this and see what happens.
 
-1406
-02:08:45,850 --> 02:08:47,310
- We actually get name.
+1430
+02:08:45,850 --> 02:08:48,330
+ We actually get name, grace.
 
-1407
-02:08:47,820 --> 02:08:48,330
- Grace.
-
-1408
-02:08:48,510 --> 02:08:58,820
+1431
+02:08:50,810 --> 02:08:58,820
  It's good to remember that if I use the same key again, I'm actually not creating a second value for that key.
 
-1409
-02:08:59,160 --> 02:09:00,840
+1432
+02:08:59,090 --> 02:09:00,840
  I'm actually replacing it.
 
-1410
-02:09:01,670 --> 02:09:04,660
- So, I actually replaced Ada Grace.
+1433
+02:09:00,840 --> 02:09:04,660
+ So, I actually replaced Ada, grace.
 
-1411
-02:09:07,270 --> 02:09:09,660
+1434
+02:09:07,270 --> 02:09:11,620
  So, something to be careful with.
 
-1412
-02:09:13,340 --> 02:09:21,610
+1435
+02:09:13,380 --> 02:09:21,590
  Some more when it comes to our dictionary.
 
-1413
+1436
 02:09:27,650 --> 02:09:29,710
  We create a new dictionary here.
 
-1414
-02:09:29,710 --> 02:09:32,440
- But instead of, yeah, we can stick to the name Ada.
+1437
+02:09:29,930 --> 02:09:30,700
+ But instead of...
 
-1415
-02:09:33,070 --> 02:09:38,820
- But instead, we kind of do, let's say, yeah, age maybe.
+1438
+02:09:30,700 --> 02:09:32,420
+ Yeah, we can stick to the name Ada.
 
-1416
-02:09:42,120 --> 02:09:43,160
+1439
+02:09:33,070 --> 02:09:38,800
+ But instead, we kind of do, let's say, yeah, age maybe?
+
+1440
+02:09:42,100 --> 02:09:43,160
  That would be 36 again.
 
-1417
+1441
 02:09:43,810 --> 02:09:44,150
  All right.
 
-1418
+1442
 02:09:45,740 --> 02:09:51,030
  What happens if I try to access a key that does not exist?
 
-1419
-02:09:52,090 --> 02:09:53,680
+1443
+02:09:52,810 --> 02:09:53,680
  Does that work?
 
-1420
+1444
 02:09:54,590 --> 02:09:56,870
  Well, obviously, it shouldn't, right?
 
-1421
-02:09:57,020 --> 02:10:00,120
- So, let's put print person.
+1445
+02:09:56,870 --> 02:10:05,990
+ So, let's put a print person and let's put a key that does not exist.
 
-1422
-02:10:00,990 --> 02:10:05,990
- And let's put a key that does not exist.
-
-1423
-02:10:06,110 --> 02:10:08,070
+1446
+02:10:06,170 --> 02:10:08,090
  That would be city, for example.
 
-1424
-02:10:08,070 --> 02:10:18,610
+1447
+02:10:09,180 --> 02:10:18,610
  So, if I want to do this, we actually should get a key error.
 
-1425
-02:10:19,970 --> 02:10:20,550
+1448
+02:10:20,010 --> 02:10:20,550
  Let's see.
 
-1426
-02:10:21,190 --> 02:10:21,530
+1449
+02:10:21,070 --> 02:10:21,550
  Print.
 
-1427
-02:10:23,550 --> 02:10:23,950
+1450
+02:10:23,550 --> 02:10:23,930
  Oh, sorry.
 
-1428
-02:10:25,190 --> 02:10:26,900
- Let's try to print this.
+1451
+02:10:25,190 --> 02:10:29,260
+ Let's try to print this and we actually get a key error.
 
-1429
-02:10:27,440 --> 02:10:29,260
- And we actually get a key error.
-
-1430
+1452
 02:10:29,870 --> 02:10:30,430
  City, right?
 
-1431
-02:10:31,150 --> 02:10:34,740
+1453
+02:10:30,870 --> 02:10:34,740
  Because city does not exist, right?
 
-1432
+1454
 02:10:35,950 --> 02:10:40,550
  So, what just happened is that our program just crashed, right?
 
-1433
-02:10:40,590 --> 02:10:41,550
+1455
+02:10:40,610 --> 02:10:41,550
  With the key error.
 
-1434
+1456
 02:10:42,250 --> 02:10:45,140
  But what if we don't want it to crash?
 
-1435
+1457
 02:10:45,800 --> 02:10:51,670
- What if we wanted to maybe return none, for example, when the key does not exist?
+ What if we want it to maybe return none, for example, when the key does not exist?
 
-1436
+1458
 02:10:51,970 --> 02:10:52,680
  Could we do that?
 
-1437
+1459
 02:10:53,060 --> 02:10:54,080
  Well, yes, we can.
 
-1438
-02:10:54,080 --> 02:11:01,210
+1460
+02:10:55,510 --> 02:11:01,210
  So, what we can do here is actually maybe do something like this.
 
-1439
-02:11:01,710 --> 02:11:04,940
+1461
+02:11:01,730 --> 02:11:04,940
  Let me leave that one so you see the difference.
 
-1440
-02:11:07,810 --> 02:11:20,380
- What I can use here is something called get, and then instead of putting it in square brackets, I actually put it in normal brackets, get, and then I try to get.
+1462
+02:11:07,810 --> 02:11:17,120
+ What I can use here is something called get, and then instead of putting it in square brackets, I actually put it in normal brackets.
 
-1441
-02:11:21,860 --> 02:11:23,200
- We said city, right?
+1463
+02:11:17,340 --> 02:11:23,200
+ Get, and then I try to get, we said city, right?
 
-1442
-02:11:23,200 --> 02:11:32,850
- And also, I can put something here as unknown, all right?
+1464
+02:11:24,530 --> 02:11:32,750
+ And also, I can put something here as unknown, right?
 
-1443
-02:11:34,440 --> 02:11:38,700
+1465
+02:11:36,030 --> 02:11:38,700
  And we try to run this.
 
-1444
-02:11:38,800 --> 02:11:42,720
+1466
+02:11:38,840 --> 02:11:42,720
  This time with get, we actually get unknown.
 
-1445
-02:11:43,080 --> 02:11:49,540
+1467
+02:11:43,220 --> 02:11:49,540
  So, we can also provide a default value, which would be unknown in this case.
 
-1446
-02:11:50,350 --> 02:11:57,710
+1468
+02:11:50,690 --> 02:11:57,690
  And if we didn't have unknown, we would get none, right?
 
-1447
+1469
 02:11:58,810 --> 02:12:12,870
- So, we can do it with the default, and without anything, and then we will get none.
+ So, we can do it with the default, and without anything, and then we would get none.
 
-1448
+1470
 02:12:13,400 --> 02:12:15,640
  And the program doesn't crash.
 
-1449
+1471
 02:12:17,560 --> 02:12:18,430
  So, that's good to know.
 
-1450
+1472
 02:12:22,060 --> 02:12:23,420
  Just some tips and tricks.
 
-1451
-02:12:26,270 --> 02:12:39,170
+1473
+02:12:26,270 --> 02:12:39,150
  Let's look at some more things when it comes to our dictionary.
 
-1452
-02:12:39,730 --> 02:12:40,850
+1474
+02:12:39,500 --> 02:12:40,870
  Can we use that one?
 
-1453
+1475
 02:12:42,590 --> 02:12:46,210
  Let's add something else.
 
-1454
-02:12:46,510 --> 02:12:53,650
- Let's say, let's go back to our data.
+1476
+02:12:46,490 --> 02:12:53,650
+ Let's say, let's go back to our query.
 
-1455
-02:12:57,640 --> 02:13:06,040
+1477
+02:12:59,530 --> 02:13:06,040
  What we can do here, we can do some more things.
 
-1456
-02:13:07,440 --> 02:13:14,980
- So, we can actually use print, let's see, person, and we can do something like this, keys.
+1478
+02:13:07,400 --> 02:13:09,160
+ So, we can actually use print.
 
-1457
-02:13:15,200 --> 02:13:21,310
+1479
+02:13:10,150 --> 02:13:11,430
+ Let's see here, person.
+
+1480
+02:13:11,970 --> 02:13:14,980
+ And we can do something like this, keys.
+
+1481
+02:13:15,200 --> 02:13:21,290
  Let's see what this prints out when I use keys here.
 
-1458
+1482
 02:13:22,690 --> 02:13:28,810
  It returns a set-like object providing a view on the dictionary, it takes keys.
 
-1459
-02:13:29,040 --> 02:13:35,730
+1483
+02:13:29,160 --> 02:13:35,730
  So, if I run this, I get name, age, city.
 
-1460
-02:13:36,940 --> 02:13:39,400
- So, keys actually gives us keys, and that's it.
+1484
+02:13:36,920 --> 02:13:38,420
+ So, keys actually gives us keys.
 
-1461
-02:13:41,730 --> 02:13:49,530
- If I do something else, let's say print, and we can try another method, person.
+1485
+02:13:38,900 --> 02:13:39,380
+ And that's it.
 
-1462
-02:13:49,850 --> 02:13:58,600
+1486
+02:13:41,730 --> 02:13:49,550
+ If I do something else, let's say, print, and we can try another method, person.
+
+1487
+02:13:50,150 --> 02:13:58,600
  I can also, since I can also do keys, I can also put values here.
 
-1463
-02:13:59,180 --> 02:14:01,460
+1488
+02:13:58,600 --> 02:14:01,460
  That works perfectly fine as well.
 
-1464
-02:14:02,220 --> 02:14:08,530
- So, if I run this, I actually get all the values, which would be Ada, 36, and London.
+1489
+02:14:02,240 --> 02:14:08,550
+ So, if I run this, I actually get all the values, which would be Ada36 and London.
 
-1465
-02:14:09,770 --> 02:14:15,500
- You can try a third method here.
+1490
+02:14:11,970 --> 02:14:19,270
+ You can try a third method here, method.
 
-1466
-02:14:19,010 --> 02:14:23,660
- Method, and of course, there are more, but let's start with these ones.
+1491
+02:14:20,110 --> 02:14:23,660
+ And, of course, there are more, but let's start with these ones.
 
-1467
-02:14:24,670 --> 02:14:26,980
- Person, and then let's put items.
+1492
+02:14:24,780 --> 02:14:33,700
+ Person, and then let's put items and see what this, what happens when we do that, we actually get all items.
 
-1468
-02:14:28,550 --> 02:14:31,350
- Let's see what this, what happens when we do that.
-
-1469
-02:14:31,750 --> 02:14:34,970
- We actually get all items.
-
-1470
-02:14:36,030 --> 02:14:39,840
+1493
+02:14:33,700 --> 02:14:43,760
  So, items gives us the key value pairs, right?
 
-1471
-02:14:40,640 --> 02:14:44,660
- So, the first key value pair, the second key value pair, the third key value pair.
+1494
+02:14:43,760 --> 02:14:44,700
+ This is the third key value pair.
 
-1472
-02:14:45,360 --> 02:14:47,280
+1495
+02:14:45,180 --> 02:14:47,300
  And we're not going to dive into this too much.
 
-1473
-02:14:48,910 --> 02:14:59,290
+1496
+02:14:48,950 --> 02:14:59,310
  We are going to cover this a little bit more later on, especially when we come to our, when we're going to expect data and so on.
 
-1474
-02:14:59,850 --> 02:15:05,890
- But we will get there, we will look into this even deeper later on.
+1497
+02:14:59,870 --> 02:15:08,000
+ But we will look into this deeper later on, but it's just going to introduce some methods.
 
-1475
-02:15:06,460 --> 02:15:08,120
- But it's just to introduce some methods.
-
-1476
-02:15:08,700 --> 02:15:13,900
+1498
+02:15:08,000 --> 02:15:13,880
  And these methods are going to be useful also when we're going to use loops later on as well.
 
-1477
-02:15:17,470 --> 02:15:33,880
+1499
+02:15:13,880 --> 02:15:33,940
  Now, small challenge like before, but let's create a new dictionary.
 
-1478
+1500
 02:15:35,310 --> 02:15:37,810
  But this time, I'm going to do it a little bit nested.
 
-1479
+1501
 02:15:39,450 --> 02:15:41,670
  And this is super common in real programs, of course.
 
-1480
-02:15:42,120 --> 02:15:43,460
+1502
+02:15:42,140 --> 02:15:43,460
  So, let's do this.
 
-1481
-02:15:43,680 --> 02:15:51,350
- Students, that, what am I creating?
+1503
+02:15:43,680 --> 02:15:48,910
+ Students, that.
 
-1482
+1504
+02:15:49,990 --> 02:15:51,350
+ What am I creating?
+
+1505
 02:15:54,900 --> 02:15:56,700
  A list.
 
-1483
-02:15:57,250 --> 02:15:58,770
+1506
+02:15:57,170 --> 02:15:58,770
  Yeah, I'm actually creating a list.
 
-1484
-02:15:59,400 --> 02:16:00,280
+1507
+02:15:59,420 --> 02:16:00,280
  Very observant.
 
-1485
-02:16:00,780 --> 02:16:02,800
+1508
+02:16:00,800 --> 02:16:02,800
  So, now I'm actually creating a list, right?
 
-1486
+1509
 02:16:03,110 --> 02:16:08,420
  And in my list, I'm actually creating what?
 
-1487
+1510
 02:16:09,490 --> 02:16:11,340
  A dictionary, right?
 
-1488
-02:16:12,620 --> 02:16:16,930
+1511
+02:16:12,190 --> 02:16:16,930
  So, a list of dictionary, all right?
 
-1489
-02:16:16,930 --> 02:16:20,320
+1512
+02:16:17,090 --> 02:16:20,320
  So, in my dictionary, I'm going to have key values.
 
-1490
-02:16:22,030 --> 02:16:24,490
+1513
+02:16:21,530 --> 02:16:24,490
  So, my key, first my key will be name.
 
-1491
-02:16:25,290 --> 02:16:27,990
- And then I'm going to put, no.
+1514
+02:16:25,120 --> 02:16:28,070
+ And then I'm going to put a number.
 
-1492
-02:16:29,820 --> 02:16:34,670
- And here I can put a score, for example.
+1515
+02:16:28,070 --> 02:16:34,670
+ And here I can put a square, for example.
 
-1493
-02:16:37,710 --> 02:16:42,160
- Score, 85.
+1516
+02:16:37,900 --> 02:16:42,180
+ Or 85.
 
-1494
-02:16:43,980 --> 02:16:46,300
+1517
+02:16:43,980 --> 02:16:46,280
  So, that's my first dictionary.
 
-1495
-02:16:47,820 --> 02:16:52,460
+1518
+02:16:47,350 --> 02:16:52,460
  But I can actually create a second dictionary here.
 
-1496
+1519
 02:16:53,930 --> 02:16:55,450
  Let's not have Anna anymore.
 
-1497
-02:16:55,670 --> 02:16:56,960
+1520
+02:16:55,690 --> 02:16:56,960
  Let's have Bob.
 
-1498
-02:16:58,560 --> 02:16:59,420
+1521
+02:16:58,270 --> 02:16:59,420
  He has a different score.
 
-1499
-02:16:59,520 --> 02:17:01,530
- Let's say 72, something like that.
+1522
+02:16:59,520 --> 02:17:01,550
+ Let's say 72 or something like that.
 
-1500
-02:17:02,170 --> 02:17:03,450
+1523
+02:17:01,950 --> 02:17:03,450
  That's too much.
 
-1501
-02:17:03,580 --> 02:17:05,540
+1524
+02:17:04,020 --> 02:17:05,540
  72 is enough for Bob.
 
-1502
-02:17:06,270 --> 02:17:12,490
- And then we have this next, with another dictionary.
+1525
+02:17:06,250 --> 02:17:09,770
+ And then we have this next.
 
-1503
-02:17:14,600 --> 02:17:23,510
+1526
+02:17:11,510 --> 02:17:12,490
+ Wait, not a dictionary.
+
+1527
+02:17:14,540 --> 02:17:23,530
  And instead of Bob, let's put Charlie.
 
-1504
-02:17:25,350 --> 02:17:29,260
+1528
+02:17:25,370 --> 02:17:29,260
  And Charlie has a point of, I don't know, 91, right?
 
-1505
+1529
 02:17:29,960 --> 02:17:31,370
  So, this works.
 
-1506
-02:17:34,990 --> 02:17:36,810
+1530
+02:17:32,550 --> 02:17:36,830
  So, what do I have here?
 
-1507
-02:17:36,950 --> 02:17:41,530
+1531
+02:17:36,930 --> 02:17:41,530
  Well, I got a variable, started with students, with a list.
 
-1508
+1532
 02:17:41,530 --> 02:17:45,270
  And this list contains three separate dictionaries, right?
 
-1509
+1533
 02:17:45,900 --> 02:17:47,740
  Three dictionaries in this list.
 
-1510
+1534
 02:17:48,990 --> 02:17:49,630
  So far, so good.
 
-1511
-02:17:50,110 --> 02:17:51,750
+1535
+02:17:50,240 --> 02:17:51,750
  Let's actually print it out.
 
-1512
-02:17:52,120 --> 02:17:53,460
+1536
+02:17:52,140 --> 02:17:53,460
  Print students.
 
-1513
-02:17:56,640 --> 02:17:56,820
+1537
+02:17:56,640 --> 02:17:56,800
  Yeah.
 
-1514
+1538
 02:17:56,990 --> 02:17:58,340
  Works perfectly fine.
 
-1515
+1539
 02:17:58,580 --> 02:17:59,560
- No errors, no errors, no nothing.
+ No errors, no nothing.
 
-1516
+1540
 02:17:59,900 --> 02:18:01,730
  I see that it's a list.
 
-1517
-02:18:02,520 --> 02:18:05,910
+1541
+02:18:02,180 --> 02:18:05,910
  And I see that I have three separate dictionaries inside that.
 
-1518
+1542
 02:18:06,610 --> 02:18:06,870
  All right.
 
-1519
+1543
 02:18:07,160 --> 02:18:07,870
  So far, so good.
 
-1520
-02:18:10,110 --> 02:18:12,340
+1544
+02:18:10,660 --> 02:18:12,340
  So, a list containing dictionaries.
 
-1521
-02:18:12,480 --> 02:18:13,670
+1545
+02:18:12,480 --> 02:18:13,690
  Works perfectly fine.
 
-1522
-02:18:13,910 --> 02:18:17,890
- But, let me give you a small challenge here.
+1546
+02:18:14,540 --> 02:18:17,890
+ But let me give you a small challenge here.
 
-1523
-02:18:19,760 --> 02:18:25,130
+1547
+02:18:19,760 --> 02:18:25,210
  How would one print out, let's say, a specific score?
 
-1524
-02:18:26,180 --> 02:18:28,980
+1548
+02:18:26,320 --> 02:18:28,980
  And let's try to aim to a specific score.
 
-1525
-02:18:29,100 --> 02:18:35,440
+1549
+02:18:29,100 --> 02:18:35,420
  Let's try to aim at Bob's score, which would be 72.
 
-1526
-02:18:36,030 --> 02:18:38,310
+1550
+02:18:35,930 --> 02:18:38,310
  So, what I want to print here is actually 72.
 
-1527
+1551
 02:18:38,760 --> 02:18:41,100
  So, how would my prints look like?
 
-1528
-02:18:41,610 --> 02:18:42,410
+1552
+02:18:41,590 --> 02:18:42,410
  So, try that out.
 
-1529
+1553
 02:18:43,220 --> 02:18:43,870
  Take a second.
 
-1530
-02:18:44,650 --> 02:18:45,010
+1554
+02:18:44,570 --> 02:18:45,010
  A second.
 
-1531
+1555
 02:18:45,250 --> 02:18:45,390
  Okay.
 
-1532
+1556
 02:18:45,750 --> 02:18:51,070
- Takes a minute to try to actually print out 72.
+ Take a minute to try to actually print out 72.
 
-1533
-02:18:51,410 --> 02:18:52,750
+1557
+02:18:51,410 --> 02:18:52,730
  So, I'm going to highlight that one.
 
-1534
-02:18:53,290 --> 02:18:53,740
- Try that one.
+1558
+02:18:53,180 --> 02:18:53,760
+ Try that out.
 
-1535
+1559
 02:19:19,740 --> 02:19:45,860
  Right.
 
-1536
+1560
 02:19:45,980 --> 02:19:48,570
  I see that we got some answers.
 
-1537
-02:19:49,590 --> 02:19:52,940
+1561
+02:19:49,980 --> 02:19:52,940
  Some people have already written it in the chat.
 
-1538
+1562
 02:19:54,450 --> 02:19:54,650
  Yeah.
 
-1539
-02:19:58,030 --> 02:19:58,650
- Gloria.
+1563
+02:19:58,410 --> 02:20:00,390
+ Gloria, you want to take this one?
 
-1540
-02:19:59,480 --> 02:20:00,370
- You want to take this one?
-
-1541
+1564
 02:20:01,070 --> 02:20:01,980
  No, no.
 
-1542
+1565
 02:20:02,040 --> 02:20:05,780
- I have a question, but it's not the solution for the exercise.
+ I have a question, but it's not the solution or the exercise.
 
-1543
-02:20:06,300 --> 02:20:14,350
+1566
+02:20:05,780 --> 02:20:14,370
  I want to ask if a dictionary key could be a number or always it should be a string.
 
-1544
-02:20:14,900 --> 02:20:15,130
+1567
+02:20:15,010 --> 02:20:15,130
  Sure.
 
-1545
-02:20:15,230 --> 02:20:16,150
+1568
+02:20:15,250 --> 02:20:16,440
  We can try that one.
 
-1546
-02:20:16,830 --> 02:20:18,720
+1569
+02:20:16,850 --> 02:20:18,740
  We can try that one in a minute.
 
-1547
-02:20:18,940 --> 02:20:19,140
+1570
+02:20:18,980 --> 02:20:19,160
  All right.
 
-1548
+1571
 02:20:19,580 --> 02:20:19,940
  Okay.
 
-1549
-02:20:19,960 --> 02:20:20,620
- But, let's see here.
-
-1550
-02:20:21,580 --> 02:20:24,740
- Can we...
-
-1551
-02:20:24,740 --> 02:20:29,020
- Did you have an answer for this one?
-
-1552
-02:20:33,840 --> 02:20:34,040
- Okay.
-
-1553
-02:20:34,120 --> 02:20:34,700
- No, no, no problem.
-
-1554
-02:20:34,700 --> 02:20:35,990
- Mark, tell me.
-
-1555
-02:20:36,410 --> 02:20:37,450
- Yeah.
-
-1556
-02:20:38,060 --> 02:20:41,750
- It's student bracket one.
-
-1557
-02:20:42,880 --> 02:20:43,790
- Exactly.
-
-1558
-02:20:43,870 --> 02:20:45,800
- One, right?
-
-1559
-02:20:45,820 --> 02:20:45,920
- One, right?
-
-1560
-02:20:47,090 --> 02:20:50,590
- Bracket, like an apostrophe, and score.
-
-1561
-02:20:51,540 --> 02:20:53,170
- Score, right?
-
-1562
-02:20:53,640 --> 02:20:53,780
- Yeah.
-
-1563
-02:20:53,820 --> 02:20:58,630
- So, that will actually print out the score 72, perfectly fine.
-
-1564
-02:20:59,180 --> 02:21:06,630
- So, what we're showing here that we did not forget the rules that we have covered during
-
-1565
-02:21:06,630 --> 02:21:07,800
- today's lesson.
-
-1566
-02:21:08,040 --> 02:21:11,830
- So, when it comes to a list, it comes to index, right?
-
-1567
-02:21:11,830 --> 02:21:18,480
- So, when we're accessing this first, this list here, and then we're looking at index, well,
-
-1568
-02:21:18,520 --> 02:21:23,520
- this dictionary would have index zero, since we're still in a list, nothing changes, right?
-
-1569
-02:21:23,890 --> 02:21:25,760
- So, this has index zero.
-
-1570
-02:21:25,970 --> 02:21:32,170
- The second dictionary has index one, and the third dictionary has index two, right?
-
-1571
-02:21:32,600 --> 02:21:36,070
- We want to access this dictionary specifically.
-
 1572
-02:21:38,060 --> 02:21:41,830
- Therefore, we use one, index one, to go to this dictionary.
+02:20:19,960 --> 02:20:20,660
+ But let's see here.
 
 1573
-02:21:43,610 --> 02:21:49,570
- And when we enter the dictionary, well, now we're not using index anymore, since we're inside
+02:20:21,500 --> 02:20:29,020
+ Can we, did you have an answer for this one?
 
 1574
-02:21:49,570 --> 02:21:50,070
- the dictionary.
+02:20:33,860 --> 02:20:34,040
+ Okay.
 
 1575
-02:21:50,940 --> 02:21:57,720
- And inside the dictionary, if we want to get a specific key, we would use the key name.
+02:20:34,120 --> 02:20:34,720
+ No, no, no problem.
 
 1576
-02:21:58,540 --> 02:22:00,490
- And in this case, it's actually score.
+02:20:36,410 --> 02:20:37,410
+ Yeah.
 
 1577
-02:22:00,790 --> 02:22:02,330
- Therefore, we need to put score.
+02:20:37,930 --> 02:20:41,750
+ It's a student, bracket one.
 
 1578
-02:22:04,710 --> 02:22:11,190
- So, this is something to, yeah, to be started with.
+02:20:42,880 --> 02:20:43,810
+ Exactly.
 
 1579
-02:22:11,190 --> 02:22:26,080
- So, first, we accessed a list index, which was one, and then we actually used the key score,
+02:20:45,520 --> 02:20:45,820
+ One, right.
 
 1580
-02:22:26,320 --> 02:22:32,640
- which will give us a score, which is actually 72.
+02:20:47,250 --> 02:20:50,590
+ Bracket, like an apostrophe and score.
 
 1581
-02:22:33,560 --> 02:22:40,640
- And if I remember correctly, you're going to get in the lab more ness.
+02:20:50,590 --> 02:20:53,170
+ Score, right?
 
 1582
-02:22:41,020 --> 02:22:42,240
- No, you're not.
+02:20:53,660 --> 02:20:53,780
+ Yeah.
 
 1583
+02:20:53,840 --> 02:20:58,630
+ So, that will actually print out the score 72, perfectly fine.
+
+1584
+02:20:59,180 --> 02:21:07,820
+ So, what we're showing here that we did not forget the rules that we have covered during today's lesson.
+
+1585
+02:21:08,220 --> 02:21:11,830
+ So, when it comes to a list, it comes to index, right?
+
+1586
+02:21:12,120 --> 02:21:20,580
+ Since we're accessing this first, this list here, and then we're looking at index, well, this dictionary would have index zero.
+
+1587
+02:21:20,760 --> 02:21:23,520
+ Since we're still in a list, nothing changes, right?
+
+1588
+02:21:23,980 --> 02:21:25,760
+ So, this has index zero.
+
+1589
+02:21:25,760 --> 02:21:28,350
+ The second dictionary has index one.
+
+1590
+02:21:28,680 --> 02:21:32,190
+ And the third dictionary has index two, right?
+
+1591
+02:21:32,990 --> 02:21:36,070
+ We want to access this dictionary specifically.
+
+1592
+02:21:38,060 --> 02:21:40,650
+ Therefore, we use one, index one.
+
+1593
+02:21:40,770 --> 02:21:41,830
+ So, go to this dictionary.
+
+1594
+02:21:43,610 --> 02:21:50,070
+ And when we enter the dictionary, well, now we're not using index anymore since we're inside a dictionary.
+
+1595
+02:21:51,390 --> 02:21:57,720
+ And inside the dictionary, if we want to get a specific key, we would use the key name.
+
+1596
+02:21:58,520 --> 02:22:00,510
+ And in this case, it's actually score.
+
+1597
+02:22:00,870 --> 02:22:02,330
+ Therefore, we need to put score.
+
+1598
+02:22:04,670 --> 02:22:11,170
+ So, this is something to, yeah, to be started with.
+
+1599
+02:22:11,170 --> 02:22:17,500
+ So, first, we accessed a list index, which was one.
+
+1600
+02:22:18,140 --> 02:22:32,700
+ And then we actually used the key score, which will give us a score, which is actually 72.
+
+1601
+02:22:33,560 --> 02:22:40,620
+ And if I remember correctly, you're going to get a, in the lab, more Ness.
+
+1602
+02:22:40,980 --> 02:22:42,240
+ No, you're not.
+
+1603
 02:22:42,570 --> 02:22:43,150
  Forget that.
 
-1584
+1604
 02:22:43,820 --> 02:22:44,120
- Anastasia?
+ Anastasia.
 
-1585
-02:22:45,550 --> 02:22:51,640
- Yeah, I was just wondering if you could do it the other way around and use lists as values
+1605
+02:22:45,550 --> 02:22:53,140
+ Yeah, I was just wondering if you could do it the other way around and use lists as values for the dictionary.
 
-1586
-02:22:51,640 --> 02:22:53,100
- for the dictionary.
-
-1587
+1606
 02:22:55,610 --> 02:22:59,020
  So, yeah, can I use a list inside a dictionary?
 
-1588
+1607
 02:22:59,650 --> 02:23:00,130
  Right.
 
-1589
-02:23:00,740 --> 02:23:00,940
+1608
+02:23:00,740 --> 02:23:00,920
  Yeah.
 
-1590
+1609
 02:23:01,280 --> 02:23:02,340
  And that's actually true.
 
-1591
+1610
 02:23:02,520 --> 02:23:03,620
  Yes, sure, I can.
 
-1592
+1611
 02:23:04,080 --> 02:23:04,280
  Okay.
 
-1593
-02:23:04,280 --> 02:23:06,970
+1612
+02:23:04,280 --> 02:23:06,990
  Let's say, I don't know.
 
-1594
+1613
 02:23:07,330 --> 02:23:10,290
  Let's say that Bob has two scores.
 
-1595
+1614
 02:23:17,730 --> 02:23:21,090
  He has score 72, and he also got the score.
 
-1596
+1615
 02:23:21,210 --> 02:23:24,810
  I don't know why, but let's make it different from that one's score.
 
-1597
-02:23:25,150 --> 02:23:25,610
+1616
+02:23:25,130 --> 02:23:25,610
  So, 86.
 
-1598
+1617
 02:23:26,070 --> 02:23:26,350
- All right?
+ All right.
 
-1599
-02:23:26,530 --> 02:23:30,460
+1618
+02:23:26,690 --> 02:23:30,460
  I don't know why he has two scores, but let's just imagine that he does.
 
-1600
-02:23:30,900 --> 02:23:31,200
- All right?
+1619
+02:23:30,900 --> 02:23:31,220
+ All right.
 
-1601
-02:23:32,190 --> 02:23:37,770
+1620
+02:23:32,170 --> 02:23:37,770
  So, if I wanted to get the score now, what would I do?
 
-1602
-02:23:39,860 --> 02:23:44,340
+1621
+02:23:40,860 --> 02:23:44,340
  And I need to think about it a little bit.
 
-1603
-02:23:44,500 --> 02:23:47,300
+1622
+02:23:44,500 --> 02:23:47,320
  Well, first, I want to enter this dictionary.
 
-1604
-02:23:47,660 --> 02:23:48,580
+1623
+02:23:47,680 --> 02:23:48,580
  That would still be one.
 
-1605
-02:23:49,160 --> 02:23:52,590
+1624
+02:23:48,580 --> 02:23:52,590
  I still want to access the value of score.
 
-1606
-02:23:52,870 --> 02:23:53,850
+1625
+02:23:52,910 --> 02:23:53,870
  Therefore, I need to put score.
 
-1607
-02:23:54,210 --> 02:23:56,390
+1626
+02:23:54,330 --> 02:23:56,410
  But now, I'm actually entering a new list.
 
-1608
-02:23:56,390 --> 02:24:01,110
+1627
+02:23:57,610 --> 02:24:01,130
  And this list contains index 0 and index 1.
 
-1609
+1628
 02:24:01,530 --> 02:24:02,910
  And which one do I want to access?
 
-1610
+1629
 02:24:03,250 --> 02:24:03,990
  Well, index 1.
 
-1611
-02:24:04,580 --> 02:24:06,000
+1630
+02:24:04,660 --> 02:24:06,000
  Index 0, right?
 
-1612
+1631
 02:24:06,650 --> 02:24:08,800
  Therefore, I need to put index 0.
 
-1613
+1632
 02:24:09,500 --> 02:24:12,240
  And if I run this, I should get 72 as well.
 
-1614
+1633
 02:24:16,440 --> 02:24:17,880
  Did that answer your question, Anastasia?
 
-1615
-02:24:19,280 --> 02:24:20,240
+1634
+02:24:19,340 --> 02:24:20,240
  Yeah, I did.
 
-1616
+1635
 02:24:20,340 --> 02:24:21,500
  Can I ask another thing?
 
-1617
-02:24:23,330 --> 02:24:27,030
- Say you've got a class of people, and you want to...
-
-1618
-02:24:27,030 --> 02:24:30,290
- Each person has a bunch of information that basically belongs to them.
-
-1619
-02:24:30,590 --> 02:24:32,910
- What would be the best way to organize that?
-
-1620
-02:24:33,050 --> 02:24:38,590
- Would that be, like, a matrix or a list of dictionaries or a dictionary of lists?
-
-1621
-02:24:38,850 --> 02:24:39,750
- Or, like, what would you do?
-
-1622
-02:24:40,810 --> 02:24:57,280
- Oh, the best matrix, I think, depending on what.
-
-1623
-02:24:58,540 --> 02:25:03,890
- Usually, I'm talking about organizing it yourself.
-
-1624
-02:25:03,890 --> 02:25:11,750
- But usually, you will get, let's say, we are using an API or something like that.
-
-1625
-02:25:12,340 --> 02:25:20,850
- And we want to get a specific thing from the information there.
-
-1626
-02:25:21,430 --> 02:25:25,460
- And it's usually already a matrix.
-
-1627
-02:25:25,880 --> 02:25:26,600
- Yeah, I would say a matrix.
-
-1628
-02:25:29,890 --> 02:25:30,510
- How come?
-
-1629
-02:25:33,300 --> 02:25:40,860
- Because why I would guess that, well, that would be because they are usually written in that way.
-
-1630
-02:25:41,240 --> 02:25:44,220
- So that's why I would say that would be the most convenient one.
-
-1631
-02:25:45,320 --> 02:25:46,760
- Is it or is it not?
-
-1632
-02:25:47,600 --> 02:25:59,220
- Maybe we can look at that when we get there, to organizing ourselves, what would be the most useful way.
-
-1633
-02:25:59,740 --> 02:26:00,520
- It depends.
-
-1634
-02:26:00,780 --> 02:26:01,060
- All right.
-
-1635
-02:26:01,240 --> 02:26:01,820
- Thank you.
-
 1636
-02:26:01,820 --> 02:26:07,560
- I don't have a straight answer for that, to be honest.
+02:24:21,560 --> 02:24:30,310
+ Say you've got a class of people and you want to, each person has a bunch of information that basically belongs to them.
 
 1637
-02:26:09,940 --> 02:26:10,420
- Yes.
+02:24:30,610 --> 02:24:32,910
+ What would be the best way to organize that?
 
 1638
-02:26:10,760 --> 02:26:10,980
- Yeah.
+02:24:33,050 --> 02:24:38,590
+ Would that be like a matrix or a list of dictionaries or a dictionary of lists?
 
 1639
-02:26:11,040 --> 02:26:12,040
- And we've got another question.
+02:24:38,830 --> 02:24:39,790
+ Or like, what would you do?
 
 1640
-02:26:13,020 --> 02:26:16,670
- Can we use, let's not use this one.
+02:24:40,850 --> 02:24:52,750
+ Oh, the best matrix, I think.
 
 1641
-02:26:17,480 --> 02:26:24,500
- Can we use a key as an integer?
+02:24:52,750 --> 02:24:57,280
+ Depending on what.
 
 1642
-02:26:25,390 --> 02:26:28,490
- Let's actually try that test.
+02:24:58,190 --> 02:25:03,910
+ Usually, I'm talking about organizing it yourself.
 
 1643
-02:26:31,580 --> 02:27:14,490
- So we have a dictionary and let's put a one, column, and dictionary, there we go.
+02:25:04,070 --> 02:25:11,750
+ But usually, you will get, let's say, we are using an API or something like that.
 
 1644
-02:27:14,630 --> 02:27:14,950
- All right.
+02:25:12,060 --> 02:25:20,870
+ And we want to get a specific thing from the information there.
 
 1645
-02:27:15,190 --> 02:27:16,290
- Let's try this out.
+02:25:21,870 --> 02:25:25,460
+ And it's usually already a matrix.
 
 1646
-02:27:16,690 --> 02:27:18,090
- So we can do print.
+02:25:25,900 --> 02:25:26,600
+ Yeah, I would say matrix.
 
 1647
-02:27:19,100 --> 02:27:24,820
- We can start off with print test.
+02:25:29,930 --> 02:25:30,510
+ How come?
 
 1648
-02:27:29,480 --> 02:27:32,360
- So just by seeing this, it should actually work, right?
+02:25:33,610 --> 02:25:40,860
+ Because why I would guess that, well, that would be because they are usually written in that way.
 
 1649
-02:27:32,810 --> 02:27:35,770
- We can try the one that we used to, a normal string.
+02:25:41,260 --> 02:25:44,220
+ So that's why I would say that would be the most convenient one.
 
 1650
-02:27:36,540 --> 02:27:40,020
- It will print out the two, right?
+02:25:45,620 --> 02:25:46,760
+ Is it or is it not?
 
 1651
-02:27:40,260 --> 02:27:45,510
- But if I come here and a one, does this actually work?
+02:25:47,620 --> 02:25:59,240
+ Maybe we can look at that when we get there to organizing ourselves, what would be the most useful way.
 
 1652
-02:27:46,230 --> 02:27:49,120
- And it doesn't.
+02:25:59,800 --> 02:26:00,540
+ It depends.
 
 1653
-02:27:49,990 --> 02:27:53,120
- So yes, a key can be an integer.
+02:26:00,780 --> 02:26:01,040
+ All right.
 
 1654
-02:27:54,150 --> 02:27:58,350
- I think that was your question, Gloria, if I remember correctly.
+02:26:01,260 --> 02:26:01,820
+ Thank you.
 
 1655
-02:28:00,110 --> 02:28:00,690
+02:26:01,820 --> 02:26:02,860
  Yeah.
 
 1656
+02:26:03,400 --> 02:26:07,540
+ I don't have a straight answer for that, to be honest.
+
+1657
+02:26:09,560 --> 02:26:10,400
+ Yes.
+
+1658
+02:26:10,760 --> 02:26:11,000
+ Yeah.
+
+1659
+02:26:11,040 --> 02:26:12,060
+ And we've got another question.
+
+1660
+02:26:13,020 --> 02:26:16,670
+ Can we use, let's not use this one.
+
+1661
+02:26:17,420 --> 02:26:24,500
+ Can we use a key as an integer?
+
+1662
+02:26:25,390 --> 02:26:26,350
+ So actually, try that.
+
+1663
+02:26:27,790 --> 02:26:28,470
+ Test.
+
+1664
+02:26:30,270 --> 02:26:32,540
+ So we have a dictionary.
+
+1665
+02:26:33,390 --> 02:26:35,180
+ And let's put it one column.
+
+1666
+02:26:39,480 --> 02:27:13,050
+ And dictionary.
+
+1667
+02:27:13,290 --> 02:27:14,470
+ There we go.
+
+1668
+02:27:14,610 --> 02:27:14,950
+ All right.
+
+1669
+02:27:15,150 --> 02:27:16,290
+ Let's try this out.
+
+1670
+02:27:16,650 --> 02:27:18,110
+ So we can do print.
+
+1671
+02:27:19,100 --> 02:27:24,800
+ We can start off with print test.
+
+1672
+02:27:24,800 --> 02:27:32,360
+ So just by seeing this, it should actually work, right?
+
+1673
+02:27:32,810 --> 02:27:34,570
+ We can try the one that we used to.
+
+1674
+02:27:35,130 --> 02:27:35,770
+ A normal string.
+
+1675
+02:27:36,280 --> 02:27:40,020
+ It will print out the two, right?
+
+1676
+02:27:40,560 --> 02:27:45,510
+ But if I come here and a one, does this actually work?
+
+1677
+02:27:46,830 --> 02:27:49,100
+ And it doesn't.
+
+1678
+02:27:49,990 --> 02:27:53,120
+ So yes, a key can be an integer.
+
+1679
+02:27:54,150 --> 02:27:58,350
+ I think that was your question, Gloria, if I remember correctly.
+
+1680
+02:28:00,110 --> 02:28:00,690
+ Yeah.
+
+1681
 02:28:00,850 --> 02:28:01,990
  That was my question.
 
-1657
+1682
 02:28:02,540 --> 02:28:03,150
  All right.
 
-1658
-02:28:06,500 --> 02:28:06,940
+1683
+02:28:06,520 --> 02:28:06,920
  Yes.
 
-1659
-02:28:07,060 --> 02:28:10,460
+1684
+02:28:07,080 --> 02:28:10,460
  And that was actually the final part when it comes to dictionaries.
 
-1660
-02:28:10,460 --> 02:28:15,650
- So now we have looked at dictionaries, we have looked at lists, we have looked at tuples,
+1685
+02:28:11,370 --> 02:28:13,230
+ So now we have looked at dictionaries.
 
-1661
-02:28:15,950 --> 02:28:17,170
- we have looked at sets, right?
+1686
+02:28:13,470 --> 02:28:14,590
+ We have looked at lists.
 
-1662
+1687
+02:28:14,750 --> 02:28:15,650
+ We have looked at tuples.
+
+1688
+02:28:15,970 --> 02:28:17,170
+ We have looked at sets, right?
+
+1689
 02:28:17,940 --> 02:28:25,070
  And now it's time for you to try them out and let all this sink in.
 
-1663
-02:28:26,460 --> 02:28:34,730
+1690
+02:28:26,480 --> 02:28:34,730
  So what we're going to do in a minute or so, let's take a break, of course.
 
-1664
-02:28:35,030 --> 02:28:40,790
- Take a little break, maybe 10 minutes or 15 or something like that.
+1691
+02:28:35,070 --> 02:28:42,580
+ Take a little break, maybe 10 minutes or 15 or something like that, and then grab some coffee
 
-1665
-02:28:41,030 --> 02:28:49,390
- And then grab some coffee and you will find today's lab, just like yesterday.
+1692
+02:28:42,580 --> 02:28:49,410
+ and you will find today's lab, just like yesterday.
 
-1666
-02:28:50,000 --> 02:28:53,310
- But it's going to be, of course, a different plan, and I'm going to link it.
+1693
+02:28:50,570 --> 02:28:53,310
+ But it's going to be, of course, a different lab, and I'm going to link it.
 

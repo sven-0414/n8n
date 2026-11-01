@@ -1,0 +1,441 @@
+you might hear i'm having cold so if i disappear probably sneezing so i'm gonna try to be quick on
+the on the mute button and let's hear christian uh could you zoom in to make the text uh the
+interface a bit uh larger and bigger the text oh of course of course in envy that's cold yeah
+yeah yeah anyone else i don't know if they can see it but yeah that's good okay thanks thank you
+works hard just tell me if you want me to do anything else here so yeah of course uh all right
+let's begin so uh well uh up to this point i'm actually gonna start a new file here
+let's let's call it oop okay so up to this point well we um we have a represented uh you could say
+um structured data uh mostly using collections right for example uh um student with a name ada
+um we have the score an example that we're gonna come back to a lot of times so uh then we have
+maybe active uh maybe true and we can also print the student of course do it to run this
+not the demo uh do it like this all right so uh this works perfectly fine right this is completely
+valid dictionaries of course uh useful uh we can also uh write uh dictionaries uh sorry not dictionaries
+uh we can also write functions right so operate on these dictionaries for example um just a little
+bit of a reminder for what we did last week student right a student or maybe it's greater than or
+equal to let's take 70 then we can return something return let's say a pass and remember that we could
+just write directly like this retire that was perfectly fine right so this would be our fail
+uh else um and then we can just print what oh let's copy the function uh and then student that should
+also work perfectly fine so why do classes exist since we can do all of this well one reason is
+that sometimes well data and you could say behavior belongs closely together a student has of course data
+we have a name we have a score an active but and then we have behaviors for example update the score
+calculate the status display some information so this is when where object-oriented programming comes in
+so it gives us kind of another way to organize that relationship between the data and the behavior
+and the two most important words that we're going to talk about today
+is is what class and object so these are the two words that we're going to come back to
+a lot of time so we could say uh just a repetition if somebody didn't do object-oriented for a long time
+so a class is it's a definition or a blueprint right and the object is a what could you say
+concrete instance created from the class uh instance what did i say created the class right
+so for example um a class could be a blueprint for a house for example and the object would be the actual
+house built on that blueprint or class student object ada grace alan etc so one class can be used to
+create many objects now let's create our first uh our first class uh class student and i'm actually
+just gonna put a pause here okay so i click so i actually can run this because i have to have
+something to my class i'm just gonna put a pause here so we created our class using our uh class
+uh keyword right and class names normally use pascal case in python for example if you want to write
+student you can write with a capital s if you want to write bank account you will you will write
+uh something like this bank account so pascal case right and you could compare this with with with
+functions and and variable and and variables for example we would use snake case instead and like i
+said when it comes to this pass here uh we are intentionally uh not implementing anything yet here
+right just creating an empty class here okay and if we want to create an object we can actually do that
+just doing something like this uh student one was we're gonna build on this step by step maybe save
+the questions for a little while just let us get a hang of it first student one right so what is
+actually happening here and of course you can look at it student actually creates an object from the
+student class so now student one is is now an instance of student you could also look at the type here if
+you want type right to run this what is the type of a student one what would you say guys we're looking
+at type we've done this before i can't actually see you guys there we go right anybody what is the type of
+student one what do we see here um dimitri sorry i think it's class yeah which which one well student
+right technically specified here so so we see that the type is student right so what we have done now
+is actually to create or rather we have created one student object but a class is not limited to
+create just one object what if we want to let's say represent another student well then we can simply
+use the same class again that's perfectly fine in order to to create another student object so we just
+write student 2 for example student and now um so we can print out for both students prove where to run
+this we will see something here right same thing as we saw before so what we see here actually is that
+these are two different objects right even though they were created from the same class they are
+separate instances as we see here in memory so are they the same object let's actually take a look
+uh we could do something like this print student one is student two so let's see if we get a true true
+false well well of course we will get a false because they are not the same object even though they were
+created from the same class so far our student objects are well empty right uh we can actually can
+actually uh create them but they do not create well they do not contain at least any information yet
+right so what if we want each student to store information for example like we saw before earlier in the
+beginning for example a name or a square so what we could do here we could actually start off bit by bit
+step by step we could start up by adding that in information uh manually so i'm just going to write
+here another title adding info uh manually like that um so let's begin here student we said student one
+equals student now correct student one name equals ada and you could also add a score for example score right
+and that would not be ada let's give her another one and now we can come and print student one name
+we could do this uh instead of name we're gonna write um uh score right it should actually work uh so name and score
+here are called attributes so they store information connected to this particular object that we just
+created we have one uh student object with its own attributes right but what if we create another
+student and give it different values uh so let's actually create a second object and actually compare
+that uh so let's create a student um we said instead of student one we're going to create student two
+right student um and then let me just copy these uh there we go a student two here and student two
+and instead of ada that's that's something else uh let's go back to our usual grace and give her a different
+score data five for example now if i come here and write print um student one name and let's also print
+student one score and let's do the same thing for our um so what we should see here when we run this
+we should absolutely see well we're using the same class absolutely but different objects right we have
+student one and student two and we also see that we get different attribute values this is what we call
+an object state state but with at the same time saying that this approach actually has a problem because
+what we see here that every time we create a student we have to remember to manually add all the required
+attributes so for example if i come here and say student three equals student um and now i just write
+student dot name uh to the three right equals uh ada race let's use island and you see i deliberately
+forgot score and if i come here now and write print uh student three dot score won't complain
+but around this i will get an attribute error so as we see here is that we actually want a predictable or
+rather a more predictable way to to initialize every new student object and this is where dunder init
+comes in which we're going to spend a little bit time on just tell me if it's going too fast we said
+this is where init comes in so we have actually seen uh the problem with adding adding attributes manually
+what we want is a way to make sure that every student gets the information it needs when it's actually
+created because we didn't get it right here right so python gives us actually a special method for this
+and that is dunder init now let's see how that works step by step so here i can't say class uh
+let's stick to our student just come here and write def and the dunder init right and we're going to take it
+step by step what self is and so on core right let me just write it and then i'm going to explain it in
+in a second self dot name equals name and then we have um self dot score equals score and that's not how
+you write self that's how you write self right now let's create student come here i see that i need a name
+and also a score that's important all right ada and the score would be for example 91 okay i can come
+here and also print our student one dot name as we did previously and also we can access the score so
+this will actually work let me just run this see yeah we get ada and 91 so as we see here is that
+down there in it is actually a special method so python actually calls it automatically when we create a new
+object so when we write student ada 91 python actually creates an instance and then calls down there in
+it to to actually initialize uh to initialize it with the values that we have provided and also we need
+to talk about self right so this is one of the most important parts i would say in today's lesson is to
+actually understand self self refers was a more definition like so self refers to the specific object we are
+currently working with so if we are creating or working with state student one self would refer
+to student one so that might sound a little bit abstract at the beginning uh so when we connect it
+to an actual object i think it becomes a little bit more clear so when this object is created conceptually
+self is what conceptually we could say in this case self is what what do you say guys what is self
+well it's it's referring to the live object you can call it a live object and this case would be and
+not a blue blueprint is like that object and yes and the object the the instance of the object is a live
+live object you could call it that yes so so in this in in this case conceptually
+self would be self would be student one and name self student one and name would be of course um ada
+right in this case and the score would be 91 self dot name here equals name means i would say something
+like door ada as the name attribute on this object which would be student one now if we were to create
+another object from the same class let's say um student two a student two um student then let's add
+a new name race and we had a score of 85 right let me just get rid of this prints now you can actually
+print out the student one name and also without student to me so when student one here was created
+self would refer to student one and when student two was created well self would refer to student
+two and grace technically self is is a naming convention rather than a special keyword so we
+could have used anything else if we wanted we could have said cell or that would work that would work
+we don't right so i would say uh always use self because well python developers would expect it right
+uh documentation uses it and yeah using another name only makes your code confusing so use self i just
+want to show you that it's not a keyword in this case it's just a naming convention i'm gonna dive into
+this a little bit more see here uh you can invite gloria in gloria you have a question yeah i have two
+questions the first one is um what is the character before and after you need is it a one underscore or two
+two two underscore two before and two after okay perfect and you talk about object uh state can you
+repeat for me what is the object state all right guys what was the object state what do you say guys
+what's the object state for fabian go ahead i am actually not fully sure right now but i think it's
+what everything is assigned right now what each like part yeah i don't know yes in in a way in a way
+yeah exactly sarania yeah the values of the variables or attributes inside a class uh yeah they're called
+this state yes that's a good definition alessandro go ahead yeah i was just wondering uh when you
+create the but before before you ask uh just just let me check uh gloria did you did you get that so
+is there values assigned to the yes yes in this case yeah yeah yeah okay alessandro sorry yeah i was no
+problem i was just wondering uh when you create the init method how the variables uh you're passing uh are
+like any can be string or integer yes but sometimes uh isn't better to define the kind of variable yes we
+we're we're we're we're we're kind of going to build into that and and and the pitfalls with that as
+well okay okay okay all right so so i'm not gonna miss that okay all right and we'll be somewhere in the
+end of this uh not project but uh yeah i think you understand what i mean uh for this uh not lesson
+maybe uh maybe uh we will fall into that tomorrow or something like that all right so i have it in my
+notes at the end right uh now when i think we understand self and what that means um let's take
+a closer look at this line that we wrote self dot name equals uh name so what is this there is actually
+two different things here and it's important to not confuse them what do i mean by that if we take
+back our class here set self and we had a name and we had a score right let me just get back that uh
+self that name was name and instead of name i'm just gonna put score here equals name and score is what
+well there are parameters of the dunder image method so they receive the values we actually pass in
+when we create the object self dot name and self dot score uh are the attributes they store those values
+on the object itself so one way to make it to make this difference clearer uh is to give these parameters
+different names so i could say name instead of saying name uh let's just make it super clear let's
+actually write student name and here let's write student score and of course i would need to change here
+here as well student name and student right and now if i were to come down here and create something
+let's say a student student uh equals uh student as you see we need a student name uh ada and my21 and now
+you can actually print uh student name and student dot the parameter names do not have to match the attribute
+names it's not a must but at the same time i would actually say that matching names are often simpler
+right so having the same name here would be simpler and also more readable all right this was a little
+a little bit about let me say uh ram parameters um versus tributes maybe we can actually we can
+actually rather we have actually seen that uh down there in it can receive parameters but just like we
+learned with functions uh um that we have learned earlier when we when we spoke about functions those parameters
+can also have what well they can also have default values that actually works perfectly fine so let's
+actually try that out let me just reuse this there we go so instead of just writing name here uh
+i'm gonna have a name but let's say for score let's give it a default value zero and let's add something
+here to your active uh equals um all right and now let's also add self dot um active and now when i come
+down here i can actually say student one equals student ada and let's give the score of 91 works perfectly fine
+but here in student two i'm just gonna provide two to two i'm just gonna provide student uh just a name that's it
+so if i want to print everything out i could actually do that since i'm using people's values
+so i can come down here and say student one out name we want to see that we want to see student one
+uh score and we also want to see student one that active and we want to do the same thing
+in student two as well because we've never provided anything when we created the object
+so let's run this and see if that works and we get
+eta 91 true bob zero true so what we see here is that the down there in it actually follows
+the same parameter rules as a normal function so since bob was actually created without the score
+or active value python would use the default values uh instead and the same thing would apply to keyword
+arguments uh so let's also try that out a bit of the print here so instead of relying uh on the order
+of the arguments we can explicitly say which parameter each value actually belongs to that works
+perfectly fine student uh let's say student three equals student um just to make it clear i'm gonna
+actually jump here uh so name equals um let's say grace score equals uh let's say 88 and let's say active
+it was false that works perfectly fine and now we can come down here and just print uh student three
+name and uh dot score and active so here we're actually using uh the parameter names when we create
+the object that works perfectly fine and this can also make the well the code easier to actually read
+especially when we have several arguments so keyword arguments also works we said keyword
+are new methods also have well or i would rather say so far uh our object mainly stored data
+through attributes but earlier we actually said that objects can also have behavior and this is when
+or where rather methods actually comes in so we could give our students something it can actually do
+let's take a look at that as well yeah i see your hand uh alessandro and i will invite you in soon
+enough just let me finish the idea here and then it can come in class student um in it and let's add a
+name and a score right so got name equals name self dot score it was oops dot score equals score right
+no no let's add something here def produce and now take a look at this self i'm going to talk
+about that in a second print and we'll only write self in this case print uh let's just print something
+hello my name is and self name if i come down here and write and create something here student one
+equals student will ask us to provide a name actually do that that would be ada and we also need to add a
+also need to add a score here so let's give her 91 right and then you can actually write student one
+and the method so that would be introduce so here introduce is a method right let's run this and see
+what happens like i said introduce is a method and the method is a function that is actually defined
+inside the class but here you would notice the self again so the method actually needs it to know which
+student object it's actually working with therefore we need to put the self we're going to see this many
+times so if you didn't grasp that you will grasp that by the end of the lesson so and actually let's
+take another uh just add something here just to prove it even more prove it or just make it even more
+clearer so what if we have let's say two different student objects that use the exact same method the same
+method introduce well if we remember what we have learned about self we will see that it actually
+refers to what student 2 it actually refers to do that uh grace 85 and now i can come here and say um
+just get rid of that and just move it down here then say student 2 introduce so here we have the same method
+definition right but self actually refers to a different object each time therefore uh therefore
+the method uses the correct name for each object and that would be the importance of self since it
+refers to the specific object we're actually working with pretty cool right for now we just used print
+right let's build on that a little bit baby steps here so as we saw our um our first method actually
+printed out something directly but methods don't have to print of course just like normal functions they
+can also calculate something and return a value so let's actually create a method that uses students the
+student's score to let's say determine their status or something like that we could actually do that so
+let me just reuse it a little bit
+excuse me so this time let's create something else uh get status for example and then we're gonna make
+self and let's see here that we have if self dot score is greater than or equal to 70 then we should
+return a plus or else we will return um let's see if this actually works student one equals let me just reuse
+that add somewhere here oh there we go student two instead of ada gonna write and for the sake of example
+we're gonna give them a 62 here and we can now print um student student one data and of course we can do the same
+thing for our second student student two so if we run this we see actually that these methods can return
+values just like normal functions as we have seen previous lesson the difference here is just that the method
+can directly uh work with the state of an object through what self once again so far our methods
+have actually just either printed out something or as we saw just now actually returned something right
+return a value but methods can also change the data stored on an object that works perfectly fine
+so we're just going to create a method here that changes a student's score rather say could we do
+that so let's see so let's reuse our student class here but now let's create something new new portion
+let's say date we said update score right update score and here we would say self and add something
+new here new score now we need to actually come here and write self score equals new now let's create the
+student student needs a name and we need a skinner an 18 right so we can come here and just see
+see that we actually have an 18 when we're going to compare at the end so student before we use
+the method so here we would expect an 80 right this is the score is 80 but if i use my method here
+student dot update score to a new score for example any score here 95 we can come and i'll see
+that the score has actually changed student uh pretty much the same print right but
+let's see if it has actually changed power method actually works when we run this we see first print
+we would get 80 and after calling the score it is now 95 so to go back to what i think was gloria
+who asked uh to what she asked there so the current uh the the data currently stored on an object is
+called it's called it's state so here we would say that this method actually changes the state of the object
+like this changes the um let's say method this method changes the um the state what well of object
+that even made it a little bit clearer now we could add a little bit more because now we we have actually
+changed the student score through a method right but what if happened what happens if we try to set the
+score to 150 for example well the methods give us a place to actually control how the state is changed
+so what we can do is actually validate the new value before we actually accept it that's perfectly fine
+so we could add a little bit so we could add a little bit here um a little bit keep that one if you like
+that and let's reuse it um uh the score just right something like this if new core is less than zero or new
+score is higher than 100 and what a reaction right we would want to raise uh raise what a value add a message
+here as well uh score must be between uh zero and a hundred right and now here we would say self dot
+that score equals what well new score so we have our student ada 80 print student score and let's get rid
+of that so we don't get too many prints here where that's what just removed and let's move this all
+right so here we're updating score to 95 student scores still works no problem we change its state
+but what if we came here and said 150 for example we will see our value error score must be between zero
+and 100 so here we kind of combining object-oriented programming with exceptions validation right all
+right before i uh let you go on a break uh just let me finish the last idea here uh because they
+kind of build on each other uh we actually used the word state when we changed the score right if we were
+to make this idea a little bit more concrete with another example well state just simply means that
+the data is the data currently stored in an object so let's make another one here class um bank account
+for example just to make it super clear and then we can i'll break under in it um so we have self and
+owner and we have a balance the people value to zero i don't like spaces and instead of self we would say
+try to say it we would be in your brain here what am i gonna write try to expect what i'm gonna write here
+self-owner equals owner and self um comment here right sorry for that self uh balance equals balance
+right and now correct account equals bank account ada thousand and now let's see print account balance
+right now let's run this see it's actually quite fun so this bank account object just currently stores what
+the owner the data and the balance which is one thousand and these values are part of the object's
+current state and if the balance changes well uh the state of the object actually changes so we could add
+could add uh def deposit for example self say amount self um balance plus equals the amount and now and just
+instead of just printing the count balance uh before we do that uh um let's just use our method which is
+created account dot are is it and now let's change it to 500 and now let's use our printer so as we saw here
+this deposit method actually uh changes the object's state to 1500 since we added 500 to that amount
+or to that balance with our new amount which was 500 all right so a little bit the same thing that we
+summed up in one example here everything that we talked about all right uh let's actually take a well
+deserved break here um and then we can continue building up on what we have learned so far next we're
+going to talk a little bit more about instance attributes and so on um all right let's take
+50 minutes uh so let's say oh it's 10 0 5 so 10 20 all right so let's get back at 10 20 10 20. there we go
+nice one for now hey guys anybody here yeah yeah is my sound better now yeah i can hear you quite well yeah
+yeah yeah yeah your sound okay yeah yeah yeah so yeah so it seems it was a room mode in my device settings
+for some reason it was turned on i don't know why it's settings and when devices and when room mode
+all right all right you can hear dimitri but can you hear me yes all right let's continue from where we
+left off uh let's get rid of that here uh notes here uh and let's do back on the screen here there we go
+and you can still see my screen right okay perfect uh now well we have already created um you could say
+several objects well with their own attributes we could give or let's rather give those attributes a more
+specific name this is what we call um instance that's what we're going to talk about here instance
+tributes something like that i think i spelled it right so an instance attribute well belongs to one
+specific object so let's see what that means when we have for example two student objects let me just
+or we kind of have kind of talked about this but to make it super clear something like that all right
+so if i come here and say student one equals student ada and the same thing with student two say grace
+if i come here let's say do that one of name equals i can actually do something like this ada love
+loveless for example now if i come here and print uh student one name let's also look at student two
+so when we change student one name let's see if we actually done that um we see that we actually have
+changed the student one name right but that does not automatically change student two name right so each
+object has its own name attribute and this is what we mean when we say instance attribute and let's actually
+build on that what i want to build on or get to is well we saw just now that an instant attribute actually
+belongs to an individual object right but sometimes we want that value shared when i mean shared well i
+mean shared by all objects created from the same class so it should affect both objects in this case
+so for that we would use not an instance attribute or if we would not talk about instant attributes we
+would rather talk about class three views class attributes uh let's take an example let's say we have
+a class here class student all right and here i'm just going to write school and i'm going to explain
+lexicon lexicon lexicon for example now here let's go back duff uh duff down there in it uh self and name
+so that name equals name right let's reuse hidden grace here like that now look at this what if i write print
+student one dot school and the same thing for our second student student student two cool let's run this
+and see we will get the same thing for both objects right lexicon lexicon so what we see here is that
+school is what we call a class attribute attribute so it belongs to the class called student right rather
+than what we saw before or previously uh to one specific student object so both student one and
+student two can access the same uh class attribute and since school belongs to the class itself we can
+actually uh we don't actually need to um need and actually we don't need an object to to access it so
+we could just technically just right here print student school just to show that we don't need
+an object we can do it directly through lexicon lexicon lexicon we can do it directly through
+student so we see that student school actually gives us the same values so now we have kind of two
+different type of attributes right so school is a class attribute and self dot name equals name here
+or a self dot name rather is an instant attribute right so the instant attributes belongs to each
+individual object while the class attribute uh belongs to the class itself so what happens
+if we try to change the class attribute itself so let's change let's say we change student school
+and then let's say we we try to um to check uh the both objects again right so let's build on this a
+little bit i'm just going to get rid of my prints i can actually copy this uh so we don't have too many
+prints here there we go uh so now let's try to change that so we said student uh dot school equals so
+instead of uh lexicon let's say we want a i i don't know academy or something like that cad cad me
+as you see i'm a horrible speller so uh and now let's take back our prints let's see what happens
+and we see that we get that the both objects will show a academy since neither object
+actually has its own school attribute they are actually using the value from the class what what
+happens if one object gets its own school attributes right so now let's say uh that we
+add here um let's say um student one school equals let's say another uh school another school and
+i'm going to use this as well just to see what will actually be printed out now let's take a look what
+we'll try to to expect so what will student one show what will student two schools show and what
+will student school show well let's run this and see and there we go so student now one now shows uh
+another school student two and student still shows ai academy right so now student one has its own instant
+attribute attribute uh called school which actually shadows the class attribute from object so the important
+idea here is that what i want you to take with you here is that uh actually class attributes shared uh class
+level data whilst instance tributes is data uh belonging to an individual object and there you go
+uh before i invite you in uh fabian i think it might be that my next example will actually clarify so now
+that we kind of understand the the difference between class attribute and instant attributes
+let's actually take a more practical example and just clear things up so let's imagine we have
+say we have several products or something like that where everybody uses the same tax rate so instead of storing
+the name tax rates separately uh on every product that we're going to have we can store it in one class
+or on the class rather let's take a look at that so we use that one let's take a look so we have a class
+uh product let's add a class attribute here so tax rate it was 0.25 and in it and let's say that each product actually has a
+um name and a price right now i need to come down here and say self dot name equals name right and self dot ah
+self dot uh price right equals price right now let's add a method price the tax all right here i need to write
+what see if you're paying attention guys what should i write help me here raise your hand not all at once
+all right uh critica uh self yeah thank you self and let's return something return let's say self
+dot price uh multiplied by uh just to to to calculate right self dot uh tax rate something like that now let's
+create some products uh product uh product uh product one equals tact uh let's say keyboard keyboard and
+let's give it a price say 800 and then we have product two and instead of a keyboard let's say mouse
+let's put it to 300 right now let's try and action product one rise with tax and let's stop since it's
+a method right and let's do the same thing with product two so what we see here is that each product
+has its own name and price right keyboard 800 and the second product has mouse and 300 and if we run this
+we will get a calculation so 1000 for the keyboard after implementing the method
+375 for the mouse right after doing the calculation here since the tax rate is shared by all product
+objects just an example uh of when a class attribute can actually be useful all right excuse me sorry i have
+to mute myself in order to not make your eardrums uh so so far uh we have mostly worked with one or two
+objects at the time right but in real programs well we need to work with many objects of the same type
+right so what we can do here is actually use the collections we already know for example we can store
+student objects inside a list let's take a look at that uh so i'm just going to reuse this part here
+rid of that yeah we can stick uh name a price all right and now let's say we want to uh get status
+all right previous example that we have looked at uh self and what did we say before if self that score
+is bigger than or equals to uh 70 well then return uh pass just let's keep it simple and here we can
+return let's return right so what we can do here is something like this student this works perfectly
+fine just store everything in for example a list so we can start creating a student capital s and we
+don't want product right let's do that there we go so student name and price score right four thank you
+all right uh i think that was what you reacted on the glory so a student and we got anna and the score
+of 85 and we can create the bob here give him a different score maybe a 62 and let's give a third one
+let's say charlie with the score of 91. so this is just the normal list right but instead of containing
+strings or integers or dictionaries it contains what well student objects and we know everything
+about lists right and what we know is that we can actually loop through it just like any other list
+that we have seen previously so let's actually take a look at that uh so for rent in students right
+for student is for student is student for student is students uh print and name student
+for dent status parentheses now just check so i didn't forget anything here uh name score since
+i copied uh names names price others wrong right it should be the score right uh self-scores and
+i think it looks pretty good let's run this and 85 pass bob 62 fail because he got lower than 17 and we have
+charlie 91 pass each time through the loop student actually refers to what well obviously refers to the
+student object from the list so we can access his attributes uh and call its methods as we see here over here
+so yeah a normal or a common pattern uh when it comes to collections of objects we can actually add that
+up as a title here collection of objects all right and and because these objects are inside a normal list
+we can actually use the same python technique we already know so we could use uh let's say a list
+comprehension to filter the students based on their score so let's actually add a comprehension here
+past uh students was to the list comprehension here's our empty list and let's add some stuff here
+student for student in students if student score is greater than or equal to 70 just for the sake of
+readability i'm just gonna do something like this for student in students if something like that and let
+let me just forget this and now let's use this and just write for student in past students print what
+let's actually run this and we see the students that have actually passed that would be anna and charlie
+obviously so nothing new uh there's nothing new here right nothing nothing about the list comprehension
+is new the difference is just uh that we are now working with objects and accessing of course their
+attributes all our previous titan knowledge whatever we have talked about in the previous weeks
+still applies of course so as we see here classes uh uh do not um what do you say uh do not
+replace uh lists or loops or conditions or functions or anything like that they just work together with them
+all right let's jump to the next part here novita novita maybe your mic is not working
+all right we can take the question later maybe i will answer it on along the way um no i see another
+hand let's see here uh alessandro i want to know if there is a way when he to pair to uh if i can
+force the argument to be passed by keywords and if it is a good practice to do that let me just check
+one second but if we're going to talk about it today uh i remember that i would you what you're trying
+to say here um kind of going to touch a little bit on that uh just give it a little bit more and then
+maybe we can answer that all right let's get some more um knowledge so to say and see if we actually
+sort that out yeah i think the question will be answered itself mm-hmm um right a little bit more
+to cover uh no there we go uh what i wanted to show you to hear what we said so the so far uh
+well our attributes have uh mostly stored simple values right we have just stored well things like strings
+um numbers booleans but but an attribute can also refer to another object uh for example a course let's
+say a course can have a teacher and let's actually represent both of them as objects so we're not
+talking about if you if you're thinking about the inheritance not quite yet uh we're going to talk a
+little bit more about that so if you have any questions about that just save it for for tomorrow
+for tomorrow's lessons because we're gonna move into that but let's take it step by step so just objects
+that contain other objects so let's say here we have a class um teacher class teacher and name name
+equals name and then we have class course name sure equals name right so sure now let's create a teacher
+object so let's say teacher um teacher equals uh teacher and let's put a name just uh grace all right
+so now we have a teacher object and now let's try to pass the teacher objects to the course so course
+equals and here we can write course name then and not python let's say python foundation or something like
+that all right python foundation and we can actually pass the teacher object teacher and for the sake of
+readability i'm just gonna put something like this to write with you guys something like this uh now let's
+try to print uh the course name and let's try to access the teacher object then its name so how would one
+write that think about that how would i try to access the teacher object then its name so something like
+this right course that teacher name let's take a look the foundation course name and grace second printer
+right so of course uh um uh the course teacher here refers to the what well the teacher object right and then
+uh we passed it in when we created the course so when we write course teacher name well python first gets
+the teacher object from course teacher and then gets the name from teacher object and there you go pretty
+cool right so this is perfectly valid and of course we can build on this which we are going to do and i'm
+i'm going to do that after the actually the break so just land on this a little bit so we're going to take
+a little short break this time uh and then we're going to build a little bit on this so let's say
+well it can contain another object but let's say uh we have many student objects okay so how do we combine
+the same idea for many student objects we're going to take a look at that so let's take uh tenner this
+time uh so yeah eleven ten uh novita uh is your hand still raised or maybe it was from before
+all right um all right guys uh we said 11 10. go and grab some coffee see you soon right you guys back
+perfect all right and you still can see my screen all right let's continue uh well for the last part
+and then we can call it a day uh what we just saw uh was that one object can actually contain uh another
+object that works perfectly fine but what if a course needs to contain many student objects right so we
+can actually combine uh the same idea with something we know very well actually list let me just reuse
+this here instead of uh let me actually create a new example here instead of class teacher let's have
+class student right because we said multiple students uh that is fine class course name uh just the name
+enough example and let's get rid of that uh there we go all right so here we said we can do something
+like this um student equals an empty list and also add a method here uh add a student here we would say
+what one self and do that and here we will use self student uh 10 right many times about now let's say
+we have let's say we want to create a course here so course of course course and let's call it uh
+what did we call it before python foundation or something like that let's create two students student
+one equals uh let's use the student class of course student and we need to provide a name ada and also a
+student two uh let's call her grace right let's try to add these students so course right add student and
+now we need to specify which student so let's start with student one and we can do of course the same thing for
+thing for student two and now let's loop through our list now so for student in now carriers what should
+i write guys um wanna it is a course student very good student course students sorry right this doesn't
+make sense uh there we go uh we will print uh we will print what well student uh each student name all
+right let's try it out that's right now ada and grace so now uh the course object actually contains a list
+student objects right and each student is still its own separate uh object right isn't it but they are
+collected inside what well inside the course so this is just another example of composition right
+building larger structure using smaller object so yeah and i think that is enough is just to build the
+basic idea i know that this leads up to questions of course could we do this and could we do that don't
+forget we're going to continue with the lesson uh tomorrow i think it's a good place to take a little
+break uh for today but of course we're gonna talk a little bit more uh about uh let's say multiple
+default arguments warnings in classes uh we're gonna of course do some correct patterns gonna talk about
+uh dictionary versus class uh some practical example um and so on so let's uh and do some discussions and
+talk some pitfalls and so on where we could think common mistakes so to speak okay common mistakes that
+we make one when i would say not not be not being experienced programmers but just being new to the
+syntax so if we look at the common mistakes maybe we won't do them uh yeah and i think that's enough
+for today i think it's or else it would be too much right uh so let's see here uh we see some hands okay
+let's try it third time is a charm novita i will call you up after the lesson and maybe we can sort
+it out gloria yeah about the line 443 the students it is not being passed as a parameter it is just inside of the courses
+okay so i i was thinking that maybe you forgot to pass this sentence okay so that's that's allow it as well
+yeah there are some variables that are inside of the function or the class but they have not to be passed as a
+parameter uh yeah exactly exactly okay it's not questions i have another one oh sorry sorry
+uh sorry just just looking at the

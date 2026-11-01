@@ -171,12 +171,12 @@
  have this one here i'm going to just copy that paste it in here by right clicking on my mouse
 
 44
-00:06:48,800 --> 00:06:57,790
- mouth mouse not mouth git add remote perfect and the last one i'm just going to copy it from github and
+00:06:48,800 --> 00:06:56,800
+ mouth mouse not mouth git add remote perfect and the last one i'm just going to copy it from
 
 45
-00:06:57,790 --> 00:07:08,760
- i'm copying it from here i'm going to copy that right click on my mouse with my mouse say get to press enter
+00:06:56,800 --> 00:07:08,680
+ github and copy it from here can i copy that right click on my mouse with my mouse say get to press enter
 
 46
 00:07:09,410 --> 00:07:16,890
@@ -191,11 +191,11 @@
  actually need to do so every time you finish a lab just push it to github and make sure make sure you
 
 49
-00:07:32,650 --> 00:07:44,370
+00:07:32,650 --> 00:07:44,450
  write the correct name so maybe lab one whatever the lab name is have that in that name basically now
 
 50
-00:07:44,370 --> 00:07:53,150
+00:07:44,450 --> 00:07:53,150
  there is uh i don't know if some of you haven't set this up because i've already set it up in my
 
 51
@@ -203,158 +203,154 @@
  computer here uh git and github and all of that yes i see some hands raised so yep let me see who's
 
 52
-00:08:00,450 --> 00:08:08,830
- first gloria nice background picture yeah thank you hi uh yeah i have a question about the
+00:08:00,450 --> 00:08:09,710
+ first gloria nice background picture yeah thank you hi uh yeah i have a question about the the folder
 
 53
-00:08:09,150 --> 00:08:14,750
- the folder that we use create do you want that we create one folder and in that folder we start to
+00:08:09,710 --> 00:08:15,230
+ that we use create do you want that we create one folder and in that folder we start to add in
 
 54
-00:08:14,750 --> 00:08:23,340
- adding everything or should we just create a one repository for each lab one folder per lab would be
+00:08:15,230 --> 00:08:24,420
+ everything or should we just create a one repository for each lab one folder per lab would be it would
 
 55
-00:08:23,990 --> 00:08:31,940
- it would be uh would make sense perfect for you guys uh we don't care we just want to see lab lab one
+00:08:24,420 --> 00:08:32,100
+ be uh would make sense perfect for you guys uh we don't care we just want to see lab lab one two
 
 56
-00:08:31,940 --> 00:08:40,520
- one two three here and whatever uh the the files is okay so for us it doesn't matter but for you
+00:08:32,100 --> 00:08:41,000
+ three here and whatever uh the the files is okay so for us it doesn't matter but for you guys i think
 
 57
-00:08:40,520 --> 00:08:46,280
- guys i think it makes sense to have one folder per per lab and do you get in it and all of that stuff in each
+00:08:41,000 --> 00:08:49,460
+ it makes sense to have one folder per per lab and do you get in it and all of that stuff in each lab okay
 
 58
-00:08:46,280 --> 00:08:56,210
- lab okay uh yet not yet you have a question yeah uh we're gonna push commit everything like
+00:08:49,460 --> 00:08:57,730
+ uh yet not yet you have a question yeah uh we're gonna push commit everything like uh when we finish
 
 59
-00:08:56,850 --> 00:09:02,340
- when we finish or you want to see the history also like we have to commit you can just do it when you
+00:08:57,730 --> 00:09:03,460
+ or you want to see the history also like we have to commit you can just do it when you finish i don't
 
 60
-00:09:02,340 --> 00:09:08,420
- finish i don't need to see any commits or anything like that it's pretty simple labs so when you finish
+00:09:03,460 --> 00:09:10,100
+ need to see any commits or anything like that it's pretty simple labs so when you finish labs just commit
 
 61
-00:09:08,420 --> 00:09:18,680
- labs just commit them and push them there directly to to github okay okay so you have all weekend to fix
+00:09:10,100 --> 00:09:19,640
+ them and push them there directly to to github okay okay so you have all weekend to fix this uh i'm
 
 62
-00:09:18,680 --> 00:09:25,160
- this uh i'm gonna send you also a video on the github tutorial so to help you set it up a little bit
+00:09:19,640 --> 00:09:25,720
+ gonna send you also a video on the github tutorial so to help you set it up a little bit because it
 
 63
-00:09:25,160 --> 00:09:32,730
- because it requires a little bit of settings to set it up i have already done it for my last courses so
+00:09:25,720 --> 00:09:33,260
+ requires a little bit of settings to set it up i have already done it for my last courses so but we
 
 64
-00:09:32,730 --> 00:09:38,620
- but we will go through everything again and again and again so i'm just going to give you a challenge
+00:09:33,260 --> 00:09:38,620
+ will go through everything again and again and again so i'm just going to give you a challenge
 
 65
-00:09:38,620 --> 00:09:46,040
- right now to do this if you have if you're done with the labs uh with all of the labs uh then congratulations
+00:09:38,620 --> 00:09:44,920
+ right now to do this if you have if you're done with the labs uh with all of the labs uh then
 
 66
-00:09:46,040 --> 00:09:53,750
- and make sure you maybe you can sit and play around with this otherwise just write to me if you're if
+00:09:44,920 --> 00:09:52,950
+ congratulations and make sure you maybe you can sit and play around with this otherwise just write to
 
 67
-00:09:53,750 --> 00:10:02,880
- you're done with all of it and i'll make sure uh find you something to do uh let me see if i can
+00:09:52,950 --> 00:10:02,480
+ me if you are if you're done with all of it and i'll make sure uh find you something to do uh let me see
 
 68
-00:10:02,880 --> 00:10:13,730
- maximize this again okay do you have any questions uh johanna lilje kranz i don't have a question i
+00:10:02,480 --> 00:10:13,090
+ if i can maximize this again okay do you have any questions uh johanna lilje kranz i don't have a
 
 69
-00:10:13,730 --> 00:10:20,300
- just have a comment about the commit message i don't really agree that it should be just one or two or
+00:10:13,090 --> 00:10:19,020
+ question i just have a comment about um commit message i don't really agree that it should be
 
 70
-00:10:20,300 --> 00:10:27,670
- three words because uh when you're programming short when you're programming you can see the commit
+00:10:19,020 --> 00:10:26,230
+ just one or two or three words because uh when you're programming short when you're programming
 
 71
-00:10:27,670 --> 00:10:36,690
- message in the uh the files so it should like you should commit now we're just doing labs so i don't
+00:10:26,230 --> 00:10:35,490
+ you can see the commit message in the uh the files so it should like you should commit now we're just
 
 72
-00:10:36,690 --> 00:10:43,330
- think this is but but when you do projects you maybe should commit often and then a short description of
+00:10:35,490 --> 00:10:42,010
+ doing labs so i don't think this is but but when you do projects you maybe should commit often and then
 
 73
-00:10:43,330 --> 00:10:51,650
- what you did like uh what's going to happen when this is going to to like be deployed so the message
+00:10:42,010 --> 00:10:49,970
+ a short description of what you did like uh what's gonna happen when this is going to to like be
 
 74
-00:10:51,650 --> 00:10:57,620
- should state that but it should be short but it should be informative as well yeah short and informative
+00:10:49,970 --> 00:10:56,130
+ deployed so the message should state that but it should be short but it should be informative as well
 
 75
-00:10:57,620 --> 00:11:03,860
- yeah but for now it's i mean we're just creating a couple of labs maybe yeah i guess i just wanted to
+00:10:56,130 --> 00:11:02,180
+ yeah short and informative yeah but for now it's i mean we're just creating a couple of labs maybe
 
 76
-00:11:04,420 --> 00:11:12,020
- to put that out there because uh not not now but when you actually do code and work i have worked as
+00:11:02,180 --> 00:11:09,940
+ yeah i just i just wanted to to put that out there because uh not not now but when you actually do
 
 77
-00:11:12,020 --> 00:11:18,590
- front-end developer for 10 years and commit messages are pretty good to have because you know
+00:11:09,940 --> 00:11:17,460
+ code and work i have worked as front-end developer for 10 years and commit messages are pretty good to
 
 78
-00:11:18,590 --> 00:11:26,630
- the person did in that commit if you look at the code i agree with you uh we will dig dig dig deeper
+00:11:17,460 --> 00:11:25,430
+ have because you know the person did in that commit if you look at the code i agree with you uh we will
 
 79
-00:11:26,630 --> 00:11:33,270
- into git uh github sorry and commit messages and all of that branches all of that stuff later right now
+00:11:25,430 --> 00:11:32,070
+ dig dig dig deeper into github sorry and commit messages and all of that branches all of that stuff
 
 80
-00:11:33,270 --> 00:11:40,150
- we just keep it simple uh because we we we want to keep track of what you guys are doing so that's
+00:11:32,070 --> 00:11:38,630
+ later right now we just keep it simple uh because we we we want to keep track of what you guys are
 
 81
-00:11:40,150 --> 00:11:58,120
- that's basically what what we want from this okay you have any other questions i have one more quick
+00:11:38,630 --> 00:11:56,610
+ doing so that's that's basically what what we want from this okay you have any other questions i have
 
 82
-00:11:58,120 --> 00:12:06,090
- question should we send the github link to you or directly or yes yes yes just send the link to me
+00:11:56,610 --> 00:12:05,450
+ one more quick question should we send the github link to you or directly or yes yes yes just send the
 
 83
-00:12:06,090 --> 00:12:13,660
- i'm gonna have a lot to do today to try to see if i yeah just send them to me i'll solve the rest
+00:12:05,450 --> 00:12:13,660
+ link to me i'm gonna have a lot to do today to try to see if i yeah just send them to me i'll solve the rest
 
 84
-00:12:14,720 --> 00:12:25,700
- awesome okay so you have a bonus lab uploaded if you are finished with all of lab all of the labs
+00:12:13,660 --> 00:12:25,940
+ awesome okay so you have a bonus lab uploaded if you are finished with all of lab all of the labs make
 
 85
-00:12:25,700 --> 00:12:34,500
- make sure uh you also you also have two hours apl today and i have a couple of meetings as well so i
+00:12:25,940 --> 00:12:34,660
+ sure uh you also you also have two hours apl today and i have a couple of meetings as well so i might
 
 86
-00:12:34,500 --> 00:12:43,390
- might be away but i will always try to answer your direct messages if you have any uh or any questions so
+00:12:34,660 --> 00:12:43,390
+ be away but i will always try to answer your direct messages if you have any uh or any questions so you
 
 87
-00:12:43,390 --> 00:12:51,200
- you can always write to me and i answer them as soon as i see them uh so after lunch you have the apl
+00:12:43,390 --> 00:12:52,240
+ can always write to me and i answer them as soon as i see them so after lunch you have the apl basically
 
 88
-00:12:51,760 --> 00:12:58,510
- basically means look for internship jobs and maybe fix your cv or anything like that
+00:12:52,240 --> 00:13:03,940
+ means look for internship jobs and maybe fix your cv or anything like that so maybe do it for one or
 
 89
-00:13:00,220 --> 00:13:17,510
- so maybe do it for one or two hours it's up to you okay is everything clear awesome
-
-90
-00:13:17,510 --> 00:13:26,140
- okay i'll stop this recording and you can leave the meeting
+00:13:03,940 --> 00:13:26,270
+ two hours it's up to you okay is everything clear awesome okay i'll stop this recording and you can leave the meeting
 

@@ -1,0 +1,5440 @@
+1
+00:00:02,240 --> 00:00:13,770
+ So, yesterday we mentioned a little bit about the plan of the week.
+
+2
+00:00:15,480 --> 00:00:19,350
+ So, yeah, today, normal lesson, just as always.
+
+3
+00:00:23,390 --> 00:00:27,150
+ And we have a lap, just like always.
+
+4
+00:00:28,870 --> 00:00:32,730
+ And tomorrow, Thursday, we're going to have a small test
+
+5
+00:00:32,730 --> 00:00:38,660
+ that actually covers everything we have gone through this couple of days.
+
+6
+00:00:40,630 --> 00:00:44,250
+ And, yeah, just like I mentioned, the text is not going to be graded.
+
+7
+00:00:44,250 --> 00:00:47,470
+ So, it's not about prestige or something like that.
+
+8
+00:00:48,130 --> 00:00:58,030
+ So, it's more for you to know that you don't need to catch up on anything, right?
+
+9
+00:00:59,440 --> 00:01:07,800
+ And so, you get some pointers to what you need to actually dig into, right?
+
+10
+00:01:08,290 --> 00:01:13,740
+ And also, it's something for us to see if everybody's following along and so on.
+
+11
+00:01:15,760 --> 00:01:17,420
+ So, that's why we're doing the test.
+
+12
+00:01:17,480 --> 00:01:18,980
+ So, it's not going to be graded in that way,
+
+13
+00:01:19,020 --> 00:01:21,540
+ that you're going to go grade on your exam or something like that.
+
+14
+00:01:24,840 --> 00:01:27,280
+ And the rest of the day, and also Friday,
+
+15
+00:01:27,520 --> 00:01:30,980
+ we're not going to have any lessons that we have had.
+
+16
+00:01:31,720 --> 00:01:34,500
+ So, we're just going to have catch-up days.
+
+17
+00:01:35,660 --> 00:01:38,820
+ So, the idea is to catch up with the labs that you still haven't finished.
+
+18
+00:01:39,460 --> 00:01:45,180
+ Therefore, I expect all the labs that we have done so far to be done by Friday.
+
+19
+00:01:46,100 --> 00:01:46,700
+ By Friday.
+
+20
+00:01:48,700 --> 00:01:52,360
+ Pushed up to GitHub, committed, and so on.
+
+21
+00:01:56,460 --> 00:01:58,200
+ Yeah, that's basically the idea.
+
+22
+00:01:59,610 --> 00:02:01,040
+ Any questions about the plan?
+
+23
+00:02:04,540 --> 00:02:08,970
+ So, no confusions there.
+
+24
+00:02:09,650 --> 00:02:25,410
+ All right, we're going to continue with the, I would say, part one of the fundamentals.
+
+25
+00:02:25,570 --> 00:02:30,150
+ Part one is a little bit longer than part two, but still, I would divide it somewhere here.
+
+26
+00:02:32,090 --> 00:02:46,330
+ So, the last part of part one, fundamentals, and then next week, we're going to cover the rest.
+
+27
+00:02:46,840 --> 00:02:49,980
+ And that will be it when it comes to fundamentals.
+
+28
+00:02:51,720 --> 00:02:55,980
+ All right, so, what have we done so far?
+
+29
+00:02:56,280 --> 00:02:59,960
+ Well, I would say we have covered a lot of things, right?
+
+30
+00:03:00,910 --> 00:03:03,900
+ So, I just looked at our checklist.
+
+31
+00:03:05,860 --> 00:03:13,120
+ And, yeah, we have covered variables, strings, collections, also conditions, right?
+
+32
+00:03:13,970 --> 00:03:20,410
+ We've looked at loops, functions, scope, as we did yesterday, args and quarks.
+
+33
+00:03:23,480 --> 00:03:30,470
+ And today, well, we're not introducing anything new, no new programming concept in that way.
+
+34
+00:03:31,010 --> 00:03:38,680
+ So, it's more common Python patterns for expressing things that we probably already know.
+
+35
+00:03:39,500 --> 00:03:45,120
+ But you may hear the word Pythonic.
+
+36
+00:03:45,360 --> 00:04:01,590
+ So, yeah, Pythonic code generally, well, means a code that follows common Python, what can you say, Python conventions, and, well, and uses the language in a natural, readable way.
+
+37
+00:04:03,380 --> 00:04:12,920
+ And it does not mean that you always have to write the shortest code possible, because readability don't matter, right?
+
+38
+00:04:13,050 --> 00:04:19,170
+ I think we have stumbled on this dilemma sometimes, and we're also going to do that today.
+
+39
+00:04:20,990 --> 00:04:24,200
+ So, let's start with something we already know.
+
+40
+00:04:24,350 --> 00:04:28,550
+ Let's say I have a list of numbers.
+
+41
+00:04:33,350 --> 00:04:34,530
+ So, we have a list of numbers.
+
+42
+00:04:35,330 --> 00:04:48,470
+ 1, 2, 3, and 5.
+
+43
+00:04:49,930 --> 00:04:54,010
+ And let's say I want to create a new list.
+
+44
+00:04:56,340 --> 00:05:03,970
+ And in this new list, it will contain these numbers for each number multiplied by 2.
+
+45
+00:05:04,460 --> 00:05:06,560
+ So, that's the basic idea here.
+
+46
+00:05:07,630 --> 00:05:16,380
+ So, we have a new list, doubled numbers, equals, well, an empty list, right?
+
+47
+00:05:16,380 --> 00:05:33,340
+ We could do this in the way that we have learned so far, or at least what we have spoken about so far, with a little forward loop for a number in numbers.
+
+48
+00:05:33,340 --> 00:05:53,030
+ And here we could use, well, we could use append, which we have also spoken about, number multiplied by 2, right?
+
+49
+00:05:54,350 --> 00:05:56,980
+ And then we can also print, right?
+
+50
+00:05:57,820 --> 00:06:01,780
+ A new list, which was called doubled numbers.
+
+51
+00:06:04,580 --> 00:06:04,980
+ All right.
+
+52
+00:06:05,440 --> 00:06:09,660
+ Let's run this and see if it works.
+
+53
+00:06:10,140 --> 00:06:10,920
+ And there you go.
+
+54
+00:06:11,630 --> 00:06:15,780
+ So, the double numbers have each number doubled, right?
+
+55
+00:06:16,540 --> 00:06:18,710
+ So, there's nothing new here.
+
+56
+00:06:19,120 --> 00:06:21,020
+ Nothing that we haven't covered yet.
+
+57
+00:06:21,750 --> 00:06:24,580
+ But, and there's nothing wrong with this code.
+
+58
+00:06:24,800 --> 00:06:26,780
+ I want to emphasize on that.
+
+59
+00:06:27,100 --> 00:06:28,390
+ There's nothing wrong with this code.
+
+60
+00:06:29,450 --> 00:06:30,070
+ It's clear.
+
+61
+00:06:30,430 --> 00:06:31,130
+ It works.
+
+62
+00:06:31,470 --> 00:06:31,830
+ And so on.
+
+63
+00:06:34,970 --> 00:06:39,600
+ But this pattern that we did just now is extremely common, right?
+
+64
+00:06:40,100 --> 00:06:47,080
+ Create an empty list, loop, transform value, append the result into this new list, right?
+
+65
+00:06:47,870 --> 00:06:49,310
+ This is extremely common.
+
+66
+00:06:50,560 --> 00:06:54,210
+ Therefore, Python actually gives us a compact syntax for this.
+
+67
+00:06:54,210 --> 00:07:05,180
+ And this is what we call a comprehension, or rather a list comprehension, excuse me, a list comprehension, right?
+
+68
+00:07:05,790 --> 00:07:07,650
+ And this is what we're going to start with today.
+
+69
+00:07:09,730 --> 00:07:24,100
+ So, list, so we're going to do the same thing using a list comprehension.
+
+70
+00:07:25,710 --> 00:07:30,850
+ So, I'm going to use, well, I can use the same numbers here.
+
+71
+00:07:31,110 --> 00:07:32,570
+ That will be, all right.
+
+72
+00:07:32,850 --> 00:07:45,230
+ So, what I could have done here is when I create the variable here, double numbers, I could have just created an empty list, right?
+
+73
+00:07:47,010 --> 00:07:52,730
+ And then I can actually start with my for loop.
+
+74
+00:07:52,730 --> 00:08:03,360
+ Some people like to do this in this way, or number in numbers, right?
+
+75
+00:08:04,210 --> 00:08:09,770
+ For number in numbers, and then come to the beginning here, and then write what we actually want to do.
+
+76
+00:08:11,080 --> 00:08:16,910
+ Number multiplied by 2.
+
+77
+00:08:18,040 --> 00:08:34,700
+ Or, some people would like to write from the beginning to the end, reading it something like, give me number times 2 for every number in numbers.
+
+78
+00:08:35,660 --> 00:08:42,540
+ Give me the number times 2 for every number in numbers.
+
+79
+00:08:42,700 --> 00:08:52,970
+ Or, if you want to think in a kind of loop way, you can start from there, and then think, well, what am I going to do with loop?
+
+80
+00:08:53,170 --> 00:08:55,780
+ Well, numbers times 2, and that's it.
+
+81
+00:08:56,940 --> 00:09:00,140
+ So, this would be equivalent to this.
+
+82
+00:09:02,370 --> 00:09:03,590
+ And, of course, we're going to build on this.
+
+83
+00:09:04,020 --> 00:09:10,470
+ So, we're going to see more and more of what we can do with our comprehensions.
+
+84
+00:09:11,750 --> 00:09:18,620
+ And then, at the end here, we can come and just print, just like we did with the double numbers.
+
+85
+00:09:20,640 --> 00:09:33,530
+ We'll actually print this out, just to prove that all of this is the same thing as this line, line 1688.
+
+86
+00:09:34,640 --> 00:09:38,410
+ And let's run this, and we'll see that we actually get the same answer.
+
+87
+00:09:41,260 --> 00:09:42,590
+ Pretty good, right?
+
+88
+00:09:45,950 --> 00:09:47,090
+ Yes.
+
+89
+00:09:47,330 --> 00:09:47,750
+ Gloria?
+
+90
+00:09:47,750 --> 00:09:58,860
+ Is it a good practice, or is it a good idea to use parentheses to separate things there?
+
+91
+00:09:59,780 --> 00:10:04,730
+ So, I will save that question a little bit.
+
+92
+00:10:04,890 --> 00:10:05,210
+ Why?
+
+93
+00:10:05,610 --> 00:10:09,390
+ Because we're going to build on this, and we're going to fall into the dilemma of best practice and so on.
+
+94
+00:10:09,750 --> 00:10:09,950
+ All right?
+
+95
+00:10:10,130 --> 00:10:11,130
+ Should I stick to this?
+
+96
+00:10:11,210 --> 00:10:11,990
+ Should I stick to that?
+
+97
+00:10:12,270 --> 00:10:14,130
+ And we will discuss it along the way, right?
+
+98
+00:10:15,250 --> 00:10:19,550
+ And what we can do to make things even clearer as well.
+
+99
+00:10:20,920 --> 00:10:21,080
+ All right?
+
+100
+00:10:21,140 --> 00:10:25,120
+ Especially when we, well, I don't want to reveal anything, but we can also talk about dictionaries.
+
+101
+00:10:28,290 --> 00:10:29,090
+ All right?
+
+102
+00:10:32,350 --> 00:10:36,970
+ So, as we see here, well, the pieces are the same, right?
+
+103
+00:10:37,570 --> 00:10:39,540
+ Number times two, same thing.
+
+104
+00:10:39,980 --> 00:10:40,560
+ Number times two.
+
+105
+00:10:43,850 --> 00:10:47,460
+ The actual, what value do we want to the list?
+
+106
+00:10:47,890 --> 00:10:58,660
+ And remember that we have these square brackets here, as we're saying that we want to create the list.
+
+107
+00:10:59,300 --> 00:11:03,940
+ And this is how we created the list, just by putting the brackets here, right?
+
+108
+00:11:05,460 --> 00:11:08,280
+ And also, where do these values come from?
+
+109
+00:11:08,500 --> 00:11:10,970
+ Well, four numbers in numbers, right?
+
+110
+00:11:11,490 --> 00:11:14,320
+ Four number in numbers, just as we did over here.
+
+111
+00:11:15,670 --> 00:11:16,540
+ All right.
+
+112
+00:11:16,600 --> 00:11:21,220
+ Let's take a little bit more of examples, just to get the hang of it.
+
+113
+00:11:28,650 --> 00:11:34,410
+ So, we could take something else.
+
+114
+00:11:34,530 --> 00:11:36,530
+ Let's do another number example.
+
+115
+00:11:37,140 --> 00:11:39,250
+ So, numbers equals.
+
+116
+00:11:40,320 --> 00:11:42,190
+ Let's say we have a list of numbers.
+
+117
+00:11:42,390 --> 00:11:45,640
+ One, two, three.
+
+118
+00:11:47,450 --> 00:11:48,530
+ Sure.
+
+119
+00:11:48,650 --> 00:11:49,570
+ Let's stick to the same thing.
+
+120
+00:11:50,030 --> 00:11:51,090
+ One, two, three, four, five.
+
+121
+00:11:51,250 --> 00:11:51,500
+ All right?
+
+122
+00:11:52,810 --> 00:11:57,270
+ And let's say I want to square up all the numbers, all right?
+
+123
+00:11:57,890 --> 00:11:59,020
+ So, squares.
+
+124
+00:12:01,290 --> 00:12:04,790
+ Instead of just creating my empty list and then continue.
+
+125
+00:12:04,790 --> 00:12:07,200
+ Now, I've already created my empty list.
+
+126
+00:12:08,350 --> 00:12:11,080
+ And I could start from four.
+
+127
+00:12:11,420 --> 00:12:14,790
+ Or I could say, what do I actually want?
+
+128
+00:12:15,230 --> 00:12:19,880
+ So, number to the power of two, right?
+
+129
+00:12:20,970 --> 00:12:24,970
+ Four, right?
+
+130
+00:12:25,590 --> 00:12:28,350
+ Number in numbers.
+
+131
+00:12:29,230 --> 00:12:30,110
+ There you go.
+
+132
+00:12:34,900 --> 00:12:35,620
+ That's it.
+
+133
+00:12:36,580 --> 00:12:41,160
+ And let's actually print squares.
+
+134
+00:12:43,500 --> 00:12:44,800
+ There we go.
+
+135
+00:12:45,250 --> 00:12:47,560
+ One, four, nine, 16, 25.
+
+136
+00:12:47,740 --> 00:12:57,250
+ Let's do this with another example.
+
+137
+00:13:00,080 --> 00:13:08,360
+ For example, let's say we have a set of names to get the hang of it.
+
+138
+00:13:08,960 --> 00:13:10,020
+ Nothing new.
+
+139
+00:13:10,020 --> 00:13:14,170
+ So, we have a list of names.
+
+140
+00:13:18,070 --> 00:13:18,590
+ Grace.
+
+141
+00:13:19,650 --> 00:13:23,450
+ Let's say, usually use Guido.
+
+142
+00:13:25,930 --> 00:13:34,150
+ And then let's use some methods here.
+
+143
+00:13:34,730 --> 00:13:40,150
+ So, let's say we want to create a new list with upper names, right?
+
+144
+00:13:44,190 --> 00:13:53,470
+ And so, I want to make an uppercase for these letters, for these names.
+
+145
+00:13:55,210 --> 00:13:57,130
+ So, we can actually mix methods here.
+
+146
+00:13:57,250 --> 00:13:58,070
+ No problem at all.
+
+147
+00:13:59,150 --> 00:14:00,460
+ So, what would I do?
+
+148
+00:14:00,720 --> 00:14:07,030
+ Well, I could start from for name in names.
+
+149
+00:14:09,190 --> 00:14:17,780
+ Just mixing it the ways of doing it just to satisfy anyone who wants to do it in either way.
+
+150
+00:14:18,990 --> 00:14:22,090
+ Well, it is pretty much the same result, right?
+
+151
+00:14:23,210 --> 00:14:24,490
+ So, for name in names.
+
+152
+00:14:24,750 --> 00:14:26,430
+ And what do I actually want to do with the names?
+
+153
+00:14:26,650 --> 00:14:32,030
+ Well, name, and I want to use a method here.
+
+154
+00:14:32,190 --> 00:14:47,060
+ And I will actually use, let's use, so let's use upper for this.
+
+155
+00:14:47,170 --> 00:14:55,130
+ Print upper names.
+
+156
+00:14:55,820 --> 00:14:57,450
+ Let's run this and see.
+
+157
+00:14:58,670 --> 00:15:00,760
+ Ada, Grace, Guido.
+
+158
+00:15:01,020 --> 00:15:01,680
+ There you go.
+
+159
+00:15:08,660 --> 00:15:10,390
+ Let's build on this.
+
+160
+00:15:10,800 --> 00:15:12,750
+ I think you're getting the hang of it, right?
+
+161
+00:15:15,230 --> 00:15:16,870
+ Any questions so far?
+
+162
+00:15:17,300 --> 00:15:20,890
+ What we did?
+
+163
+00:15:21,520 --> 00:15:23,060
+ First, we're going to build on this.
+
+164
+00:15:29,730 --> 00:15:33,890
+ So, we could also filter values.
+
+165
+00:15:36,360 --> 00:15:40,850
+ Well, let's do that with the normal loop that we have already done before.
+
+166
+00:15:41,550 --> 00:15:42,090
+ Nothing new.
+
+167
+00:15:42,250 --> 00:15:45,880
+ And then we can use our comprehension to do the same thing.
+
+168
+00:15:48,260 --> 00:15:50,620
+ So, let's say we have our numbers here.
+
+169
+00:15:52,110 --> 00:15:52,250
+ Cool.
+
+170
+00:15:54,650 --> 00:15:56,350
+ Let's take some numbers.
+
+171
+00:15:56,350 --> 00:16:09,350
+ One, and two, and three, and four, and five, and six, and seven.
+
+172
+00:16:09,950 --> 00:16:10,430
+ Let's continue.
+
+173
+00:16:10,750 --> 00:16:13,680
+ Eight, nine, and why not?
+
+174
+00:16:13,840 --> 00:16:14,640
+ A ten as well.
+
+175
+00:16:15,370 --> 00:16:15,610
+ All right?
+
+176
+00:16:17,870 --> 00:16:22,410
+ And let's say I want all the even numbers in a list.
+
+177
+00:16:24,250 --> 00:16:25,530
+ Even numbers.
+
+178
+00:16:26,670 --> 00:16:34,270
+ So, the traditional way would be create an empty list, and then use a four loop.
+
+179
+00:16:34,270 --> 00:16:42,240
+ So, four, number in numbers, right?
+
+180
+00:16:44,630 --> 00:16:55,210
+ If number, we probably already done this example with lambda, lambda two.
+
+181
+00:16:55,680 --> 00:16:57,020
+ It does not give a rest.
+
+182
+00:16:58,180 --> 00:16:59,180
+ Therefore, it should be even.
+
+183
+00:17:00,380 --> 00:17:04,140
+ Therefore, it should be appended to that list, right?
+
+184
+00:17:04,380 --> 00:17:11,880
+ So, even numbers dot, and what should be appended?
+
+185
+00:17:12,060 --> 00:17:12,920
+ Well, the number, right?
+
+186
+00:17:16,420 --> 00:17:18,010
+ Right?
+
+187
+00:17:18,170 --> 00:17:22,910
+ So, if the number modulus two does not give a rest, therefore, it should be even, right?
+
+188
+00:17:23,500 --> 00:17:28,490
+ Because two divided by two does not give a rest, while one divided by two actually gives a rest.
+
+189
+00:17:28,490 --> 00:17:29,490
+ So, it will not be appended.
+
+190
+00:17:29,490 --> 00:17:32,050
+ So, it will not be appended.
+
+191
+00:17:32,050 --> 00:17:38,640
+ And then we can actually just print out and see if all the numbers got there that we wanted, all the even numbers.
+
+192
+00:17:38,640 --> 00:17:42,290
+ Let's see.
+
+193
+00:17:42,290 --> 00:17:44,220
+ Let's print it even numbers.
+
+194
+00:17:44,220 --> 00:17:46,280
+ And yeah, we get two, four, six, eight, ten.
+
+195
+00:17:46,280 --> 00:17:47,740
+ All the even numbers.
+
+196
+00:17:47,740 --> 00:17:49,580
+ So far, so good.
+
+197
+00:17:49,580 --> 00:17:53,180
+ Something we already know.
+
+198
+00:17:53,180 --> 00:17:54,540
+ Something we've already done.
+
+199
+00:17:54,540 --> 00:18:00,590
+ But now, let's actually filter with a list comprehension.
+
+200
+00:18:03,650 --> 00:18:06,220
+ Or let's, not filter, sorry.
+
+201
+00:18:06,340 --> 00:18:06,940
+ Yeah, yeah, exactly.
+
+202
+00:18:08,830 --> 00:18:15,090
+ Or use a rather list comprehension with a condition, right?
+
+203
+00:18:15,370 --> 00:18:16,560
+ So, that's the idea here.
+
+204
+00:18:19,720 --> 00:18:22,670
+ So, the idea, what would we do?
+
+205
+00:18:22,850 --> 00:18:33,790
+ Well, with a single line, I would just do create the variable, even numbers, create the list.
+
+206
+00:18:34,350 --> 00:18:35,590
+ And now, let's think here.
+
+207
+00:18:38,060 --> 00:18:39,580
+ So, what do I want?
+
+208
+00:18:39,680 --> 00:18:40,640
+ Well, I want the number, right?
+
+209
+00:18:41,680 --> 00:18:42,980
+ Which number?
+
+210
+00:18:43,200 --> 00:18:49,320
+ Well, for number in numbers, right?
+
+211
+00:18:50,760 --> 00:18:54,780
+ And now, I can add my condition as well.
+
+212
+00:18:54,780 --> 00:19:10,410
+ If number lambda, lambda two equals, there we go.
+
+213
+00:19:18,580 --> 00:19:23,330
+ Let's actually print even numbers.
+
+214
+00:19:23,490 --> 00:19:25,770
+ Let me comment this out.
+
+215
+00:19:29,100 --> 00:19:31,580
+ This is the same thing, right?
+
+216
+00:19:32,140 --> 00:19:33,740
+ Let's see if I get the even numbers.
+
+217
+00:19:33,940 --> 00:19:34,300
+ Yes, I do.
+
+218
+00:19:34,540 --> 00:19:35,460
+ Two, four, six, eight, ten.
+
+219
+00:19:36,860 --> 00:19:44,510
+ So, we can read in a kind of give me a number for every number in numbers.
+
+220
+00:19:46,180 --> 00:19:47,480
+ The number is even.
+
+221
+00:19:51,930 --> 00:19:54,940
+ Too cool, isn't it?
+
+222
+00:19:57,180 --> 00:20:03,150
+ So, use a for loop.
+
+223
+00:20:03,420 --> 00:20:04,980
+ Can use it with a condition.
+
+224
+00:20:05,840 --> 00:20:07,370
+ Let's even do more.
+
+225
+00:20:07,370 --> 00:20:17,820
+ Let me ask you.
+
+226
+00:20:19,010 --> 00:20:20,750
+ Let me say we have a set of numbers.
+
+227
+00:20:21,270 --> 00:20:22,490
+ Let's use this one.
+
+228
+00:20:27,910 --> 00:20:28,690
+ List of numbers, sorry.
+
+229
+00:20:30,700 --> 00:20:32,340
+ Five, six, sure.
+
+230
+00:20:33,300 --> 00:20:36,290
+ Now, let me create a variable.
+
+231
+00:20:37,810 --> 00:20:42,410
+ It was, let me not reveal while reading here.
+
+232
+00:21:04,750 --> 00:21:16,690
+ So, take a look at this one and try to read it and see what it actually will do.
+
+233
+00:21:18,270 --> 00:21:23,580
+ He should be able to do that with no problem since we have done the same thing.
+
+234
+00:21:24,160 --> 00:21:31,560
+ We just, anybody wants to go for it?
+
+235
+00:21:33,300 --> 00:21:34,730
+ What do we expect here?
+
+236
+00:21:38,270 --> 00:21:39,560
+ Sure, Fabian.
+
+237
+00:21:41,520 --> 00:21:49,090
+ We'll take each number by the power of two from numbers if it is even.
+
+238
+00:21:49,620 --> 00:21:51,060
+ Yeah, something like that, right?
+
+239
+00:21:51,730 --> 00:21:55,190
+ So, the first, let us run it and see.
+
+240
+00:21:56,590 --> 00:21:59,870
+ And yeah, as we see, we are correct, right?
+
+241
+00:22:00,030 --> 00:22:04,410
+ So, we get a four, since two is even, and two to the power of two is four.
+
+242
+00:22:04,790 --> 00:22:08,720
+ And then we've got 16, since four is even, and four to the power of two is 16.
+
+243
+00:22:09,320 --> 00:22:13,780
+ And then we get 36, since six is even, and six to the power of two is 36.
+
+244
+00:22:14,630 --> 00:22:16,210
+ And the rest is not even.
+
+245
+00:22:16,450 --> 00:22:18,610
+ Therefore, they're not in the list, right?
+
+246
+00:22:19,710 --> 00:22:24,640
+ So, first, the condition decides which values are included, right?
+
+247
+00:22:25,440 --> 00:22:31,340
+ And then, the expression actually determines what goes into the list.
+
+248
+00:22:33,470 --> 00:22:34,790
+ That's basically the idea.
+
+249
+00:22:37,910 --> 00:22:46,510
+ We can do another one, where we try to expect something, where I can ask you what to expect.
+
+250
+00:22:49,000 --> 00:22:51,820
+ Let's do it with some strings this time.
+
+251
+00:22:52,240 --> 00:22:54,730
+ Let's say we have names equals.
+
+252
+00:22:57,380 --> 00:23:03,580
+ Ada, today, this time.
+
+253
+00:23:03,580 --> 00:23:22,240
+ We got Bob, we got Alexander, we got Grace, and it was totally.
+
+254
+00:23:22,940 --> 00:23:27,430
+ All right, now I'm going to create a variable here.
+
+255
+00:23:28,450 --> 00:23:32,130
+ In order not to reveal, I'm going to use an X as a variable.
+
+256
+00:23:41,900 --> 00:24:10,800
+ Name, name, if, name, to, say five, X.
+
+257
+00:24:11,460 --> 00:24:15,060
+ All right, what should I expect this time?
+
+258
+00:24:15,440 --> 00:24:16,280
+ Think about it.
+
+259
+00:24:16,550 --> 00:24:17,170
+ Look at it.
+
+260
+00:24:17,770 --> 00:24:18,520
+ Take a minute.
+
+261
+00:24:18,820 --> 00:24:19,280
+ Look at it.
+
+262
+00:24:19,280 --> 00:24:21,180
+ And then, I will let you in.
+
+263
+00:24:29,400 --> 00:24:35,700
+ Who wants to give it a go?
+
+264
+00:24:40,270 --> 00:24:41,760
+ Name, name, name, name.
+
+265
+00:24:41,760 --> 00:24:44,610
+ Name, name, name, name, name.
+
+266
+00:24:44,610 --> 00:24:48,110
+ Sure, Christian.
+
+267
+00:24:51,420 --> 00:24:58,290
+ If the length is above or equal to five, then it will be printed.
+
+268
+00:24:59,340 --> 00:25:00,490
+ Let's try it.
+
+269
+00:25:01,710 --> 00:25:08,830
+ And we see the only names that remain are actually, or that got into the, well, the only names
+
+270
+00:25:08,830 --> 00:25:11,440
+ that remain were Alexander and Grace.
+
+271
+00:25:13,060 --> 00:25:23,820
+ So let me just change the variable name to maybe, I don't know, long names, long names.
+
+272
+00:25:24,690 --> 00:25:25,110
+ All right.
+
+273
+00:25:25,840 --> 00:25:27,080
+ And there you go.
+
+274
+00:25:32,980 --> 00:25:38,860
+ Usually, when we see a comprehension for the first time in Python, you could feel like,
+
+275
+00:25:39,370 --> 00:25:39,710
+ ta-da!
+
+276
+00:25:41,690 --> 00:25:48,980
+ But when it comes to list comprehension, well, it's pretty neat.
+
+277
+00:25:49,080 --> 00:25:49,800
+ It's great, right?
+
+278
+00:25:50,820 --> 00:25:53,660
+ When the transformation is simple, right?
+
+279
+00:25:54,700 --> 00:26:07,120
+ But let's say you got something to do.
+
+280
+00:26:08,890 --> 00:26:15,150
+ Let's say I want you to do something with a list of, maybe you got a student or something
+
+281
+00:26:15,150 --> 00:26:15,730
+ like that.
+
+282
+00:26:15,770 --> 00:26:16,130
+ I don't know.
+
+283
+00:26:16,590 --> 00:26:18,710
+ I want you to check several conditions.
+
+284
+00:26:20,320 --> 00:26:22,840
+ Maybe I want you to calculate several things as well.
+
+285
+00:26:23,930 --> 00:26:25,290
+ Maybe I want you to print something.
+
+286
+00:26:25,550 --> 00:26:27,170
+ Maybe I want you to update something, right?
+
+287
+00:26:27,880 --> 00:26:38,050
+ So trying to force all this into one single comprehension, well, can actually make the code
+
+288
+00:26:38,050 --> 00:26:39,930
+ much harder to read.
+
+289
+00:26:40,690 --> 00:26:43,580
+ Then I would say stick to the loop, right?
+
+290
+00:26:45,710 --> 00:26:55,810
+ So a normal loop is still perfectly itonic in that way, especially when it's clearer, right?
+
+291
+00:26:55,810 --> 00:27:03,450
+ So you need to make kind of a balance, right, between the readability.
+
+292
+00:27:07,650 --> 00:27:14,370
+ So if a comprehension is still readable, then use the list comprehension.
+
+293
+00:27:14,830 --> 00:27:19,560
+ But if it makes it not readable anymore, well, stick to the loop then.
+
+294
+00:27:23,760 --> 00:27:25,600
+ Do not force comprehension.
+
+295
+00:27:29,380 --> 00:27:42,600
+ And since we can do this with lists, maybe you could already imagine, be determined that
+
+296
+00:27:42,600 --> 00:27:47,150
+ we can do this with also other collections.
+
+297
+00:27:47,150 --> 00:27:58,060
+ For example, the general idea or the same general idea exists also with dictionaries.
+
+298
+00:27:58,060 --> 00:28:15,230
+ We call it dictionary compression.
+
+299
+00:28:17,460 --> 00:28:19,430
+ So the same idea applies here as well.
+
+300
+00:28:22,760 --> 00:28:33,280
+ If we imagine that we want a dictionary, let's say, well, we want a dictionary where, let's
+
+301
+00:28:33,280 --> 00:28:37,630
+ say we have a set of numbers or a list of numbers.
+
+302
+00:28:38,170 --> 00:28:39,050
+ What's wrong with me?
+
+303
+00:28:41,420 --> 00:28:47,730
+ One, let's say two, let's say three, let's say four, and let's say five, right?
+
+304
+00:28:47,950 --> 00:28:57,500
+ So I want this all numbers to be my key, right?
+
+305
+00:29:00,830 --> 00:29:09,180
+ So the numbers are my key, and I also want a value for all these keys, and that would be the
+
+306
+00:29:09,180 --> 00:29:11,780
+ squares of these numbers.
+
+307
+00:29:13,680 --> 00:29:21,670
+ I'm just going to create an empty dictionary.
+
+308
+00:29:22,290 --> 00:29:29,090
+ So the value will actually be the numbers squared, okay?
+
+309
+00:29:32,350 --> 00:29:40,720
+ So let's take just a loop to do this.
+
+310
+00:29:42,000 --> 00:29:50,710
+ So what we can do here is something like this, four number in numbers, right?
+
+311
+00:29:51,170 --> 00:29:53,230
+ Just like we have done before.
+
+312
+00:29:53,540 --> 00:30:05,920
+ Four number in numbers, well, like the squares, and where the number is actually the key, which
+
+313
+00:30:05,920 --> 00:30:21,370
+ will equal to, well, the number, let's say this works, great, squares, right?
+
+314
+00:30:33,930 --> 00:30:45,250
+ Quares, squares, squares, there we go, and let's run this, and we see that we get our dictionary,
+
+315
+00:30:45,410 --> 00:30:45,530
+ right?
+
+316
+00:30:46,030 --> 00:30:49,870
+ 1, 1, 2, 4, 3, 9, 4, 16, 5, 25, right?
+
+317
+00:30:49,870 --> 00:31:01,760
+ So we get the number as our key, and the squares as our value, no problem, nothing new, something
+
+318
+00:31:01,760 --> 00:31:04,150
+ we know, it works, it's clean.
+
+319
+00:31:04,540 --> 00:31:12,040
+ So there's nothing wrong with the code, but we could do the same thing just by using a
+
+320
+00:31:12,040 --> 00:31:12,940
+ dictionary comprehension.
+
+321
+00:31:14,990 --> 00:31:17,020
+ So how would one do that?
+
+322
+00:31:19,820 --> 00:31:27,690
+ It would look something like this, pretty, I can keep this just so you can also read with
+
+323
+00:31:27,690 --> 00:31:33,760
+ me here, and then we can, so we have our numbers, right?
+
+324
+00:31:34,090 --> 00:31:35,510
+ Let's keep them for now.
+
+325
+00:31:35,510 --> 00:31:43,930
+ I want my squares, I want it to be a dictionary, right?
+
+326
+00:31:43,930 --> 00:31:59,950
+ But now, could also, here, start from the end, with a for loop, for number in numbers, and
+
+327
+00:31:59,950 --> 00:32:05,660
+ then come to the start here, and then actually say, well, how would my dictionary look like?
+
+328
+00:32:05,860 --> 00:32:19,020
+ Well, I will have the key, number, and I will have the value, number to the power of loop, and that's it.
+
+329
+00:32:21,990 --> 00:32:33,650
+ If you think that writing in my way, it's complicated, well, then we can do it like this.
+
+330
+00:32:34,360 --> 00:32:36,400
+ Number, it's the same thing, right?
+
+331
+00:32:36,540 --> 00:32:38,450
+ It's just a matter of how you read it, right?
+
+332
+00:32:38,950 --> 00:32:47,530
+ So the curly braces will actually create the dictionary, and before we start the loop, we just
+
+333
+00:32:47,530 --> 00:32:54,930
+ specify the key and value, so number is the key, and the value would be number to the power of two.
+
+334
+00:32:56,160 --> 00:32:56,580
+ For what?
+
+335
+00:32:56,700 --> 00:33:07,060
+ Well, for number in numbers, and there you go.
+
+336
+00:33:08,410 --> 00:33:10,490
+ Let's check if this actually works.
+
+337
+00:33:11,390 --> 00:33:37,210
+ Print, and of course, let me just comment this out, and let's actually run this.
+
+338
+00:33:37,210 --> 00:33:52,440
+ We actually get our square numbers, two, four, three, nine, four, sixteen, five, twenty-five.
+
+339
+00:33:53,670 --> 00:33:55,130
+ Pretty neat, right?
+
+340
+00:33:57,940 --> 00:34:09,260
+ We don't always need to use, or we don't necessarily only use dictionary comprehension just to create
+
+341
+00:34:09,260 --> 00:34:10,480
+ dictionaries.
+
+342
+00:34:11,380 --> 00:34:22,950
+ We could also, we could also do dictionary comprehension existing dictionary.
+
+343
+00:34:24,140 --> 00:34:25,590
+ So let's actually take an example.
+
+344
+00:34:26,330 --> 00:34:37,000
+ Let's say we have a dictionary here with prices, all right, equals to, sorry, that is not
+
+345
+00:34:37,000 --> 00:34:39,110
+ a dictionary, that is a dictionary, right?
+
+346
+00:34:40,970 --> 00:34:44,740
+ Our fruits, yeah, let's take some fruits.
+
+347
+00:34:45,680 --> 00:35:04,870
+ Apple, for example, and we got maybe banana, banana, as, I don't know, five, and we've got
+
+348
+00:35:04,870 --> 00:35:13,500
+ some oranges as well, eight, all right?
+
+349
+00:35:14,690 --> 00:35:21,050
+ Now let's say we want to double the price, all right?
+
+350
+00:35:21,050 --> 00:35:33,290
+ So let's say we want to double the price using a dictionary comprehension from this existing
+
+351
+00:35:33,290 --> 00:35:33,730
+ dictionary.
+
+352
+00:35:34,150 --> 00:35:35,090
+ So how would that look like?
+
+353
+00:35:36,040 --> 00:35:41,380
+ Well, let me just create a variable.
+
+354
+00:35:41,640 --> 00:35:52,590
+ Let's call it double, double, double prices, right?
+
+355
+00:35:53,610 --> 00:35:58,780
+ Create our empty dictionary.
+
+356
+00:36:01,150 --> 00:36:08,220
+ We would write the key value, right?
+
+357
+00:36:08,340 --> 00:36:09,060
+ Just like we did.
+
+358
+00:36:09,830 --> 00:36:15,270
+ So this would be product, right?
+
+359
+00:36:15,650 --> 00:36:25,790
+ Product and price times this, we're doubling it, right?
+
+360
+00:36:27,030 --> 00:36:27,680
+ For what?
+
+361
+00:36:27,840 --> 00:36:45,440
+ Well, for product, product and price in sys.
+
+362
+00:36:52,830 --> 00:37:02,780
+ And then we can try to run this and see if that actually works.
+
+363
+00:37:03,510 --> 00:37:15,100
+ Print, price is 20 now.
+
+364
+00:37:15,290 --> 00:37:17,030
+ Banana is 10, orange is 16.
+
+365
+00:37:17,970 --> 00:37:19,870
+ So why did I use items here?
+
+366
+00:37:21,470 --> 00:37:22,300
+ You remember?
+
+367
+00:37:27,820 --> 00:37:28,180
+ See you guys.
+
+368
+00:37:30,200 --> 00:37:30,720
+ Sarane.
+
+369
+00:37:31,700 --> 00:37:34,940
+ Yeah, so do I do it as a key value, but...
+
+370
+00:37:34,940 --> 00:37:36,540
+ Since I want the key and value, right?
+
+371
+00:37:37,840 --> 00:37:43,440
+ So we use item here because we want both the key, the value.
+
+372
+00:37:45,010 --> 00:37:45,530
+ And there you go.
+
+373
+00:37:51,290 --> 00:38:03,590
+ As we saw earlier with our list comprehension, we can pretty much do the same thing.
+
+374
+00:38:03,590 --> 00:38:10,610
+ We could also filter dictionary by using dictionary comprehensions, of course.
+
+375
+00:38:11,470 --> 00:38:12,610
+ Let's actually do that.
+
+376
+00:38:12,790 --> 00:38:13,590
+ Let's take an example.
+
+377
+00:38:16,630 --> 00:38:24,540
+ Let's say we have some scores, those two.
+
+378
+00:38:26,150 --> 00:38:28,790
+ So we have Anna as a score.
+
+379
+00:38:29,790 --> 00:38:30,890
+ Let's give her an 85.
+
+380
+00:38:32,340 --> 00:38:39,860
+ And then we have Bob, 62 maybe.
+
+381
+00:38:42,730 --> 00:38:50,800
+ And then we have Charlie, got a 91.
+
+382
+00:38:51,920 --> 00:39:00,000
+ And we have Diana, that's living on the edge, a 70.
+
+383
+00:39:00,000 --> 00:39:01,540
+ All right?
+
+384
+00:39:03,080 --> 00:39:10,710
+ Let's create a comprehension to actually filter the students who have passed the test, right?
+
+385
+00:39:11,090 --> 00:39:14,110
+ And let's put the test to minimum score to 70.
+
+386
+00:39:14,230 --> 00:39:17,110
+ So 70 and upwards, you actually passed the score.
+
+387
+00:39:17,110 --> 00:39:24,820
+ If you get 69 and so forth or less, you did not pass, right?
+
+388
+00:39:27,650 --> 00:39:31,590
+ And before I do that, I'm going to get back to this one.
+
+389
+00:39:32,060 --> 00:39:35,560
+ I'm just going to show you, because I'm not going to write it in this way anymore.
+
+390
+00:39:35,930 --> 00:39:37,660
+ I'm actually going to write it like this.
+
+391
+00:39:37,880 --> 00:39:39,700
+ And this is perfectly fine to do.
+
+392
+00:39:42,270 --> 00:39:46,250
+ It's just like with the dictionary, because I think it adds a little bit of readability.
+
+393
+00:39:46,590 --> 00:39:47,370
+ And it's nothing new.
+
+394
+00:39:47,490 --> 00:39:49,650
+ It's nothing that is strange or something like that.
+
+395
+00:39:54,490 --> 00:40:03,460
+ So what I'm going to do here, double-price product, we can take each line for what it's actually doing.
+
+396
+00:40:03,660 --> 00:40:11,940
+ So take this, boom, and yeah, and there we go.
+
+397
+00:40:13,140 --> 00:40:14,920
+ All right, same thing, nothing new.
+
+398
+00:40:16,240 --> 00:40:21,330
+ So I just wanted to show you that one, because I'm going to write it in that way, because I think it adds a little bit of readability.
+
+399
+00:40:21,990 --> 00:40:31,210
+ So let's take back the scores, and we said that only the people who have got over 70 or more actually has passed the test.
+
+400
+00:40:34,150 --> 00:40:41,570
+ So let's call the new dictionary to past equals.
+
+401
+00:40:43,510 --> 00:40:46,350
+ Start with an empty dictionary, boom.
+
+402
+00:40:49,700 --> 00:40:50,700
+ Key and value, right?
+
+403
+00:40:51,000 --> 00:40:54,930
+ Name, and the value is actually score.
+
+404
+00:40:57,970 --> 00:41:02,760
+ Not scores, score, right?
+
+405
+00:41:04,960 --> 00:41:06,260
+ For what?
+
+406
+00:41:06,260 --> 00:41:10,910
+ Well, for name and score, right?
+
+407
+00:41:12,230 --> 00:41:13,800
+ In what?
+
+408
+00:41:14,750 --> 00:41:19,510
+ Well, scores, and we want the key and value from that scores.
+
+409
+00:41:19,910 --> 00:41:21,310
+ So, items, right?
+
+410
+00:41:22,360 --> 00:41:25,380
+ And do we have a condition?
+
+411
+00:41:25,700 --> 00:41:26,420
+ Yes, we do.
+
+412
+00:41:27,480 --> 00:41:34,850
+ If the score is greater than or equal to, we said 70, right?
+
+413
+00:41:36,030 --> 00:41:38,500
+ And this would be considered passed.
+
+414
+00:41:39,820 --> 00:41:40,360
+ And there you go.
+
+415
+00:41:41,070 --> 00:41:42,090
+ That's it.
+
+416
+00:41:43,270 --> 00:41:45,180
+ Or we could have done it in a single line, of course.
+
+417
+00:41:46,290 --> 00:41:47,480
+ No problem.
+
+418
+00:41:53,080 --> 00:41:58,120
+ We could have done that easily.
+
+419
+00:41:58,120 --> 00:42:04,610
+ But I think this adds a little bit of readability, if I'm going to stick to that.
+
+420
+00:42:06,070 --> 00:42:08,810
+ And now we can print out all the past students.
+
+421
+00:42:11,020 --> 00:42:14,280
+ And see if it actually worked.
+
+422
+00:42:16,510 --> 00:42:17,430
+ So let's run this.
+
+423
+00:42:17,590 --> 00:42:19,850
+ And we see that Anna makes the cut.
+
+424
+00:42:20,070 --> 00:42:21,010
+ Charlie makes the cut.
+
+425
+00:42:21,150 --> 00:42:22,050
+ And Diana makes the cut.
+
+426
+00:42:22,110 --> 00:42:23,290
+ So it's got 70.
+
+427
+00:42:24,610 --> 00:42:26,090
+ Bob needs to go home and study.
+
+428
+00:42:28,870 --> 00:42:29,960
+ All right.
+
+429
+00:42:30,640 --> 00:42:36,500
+ So that was actually our dictionary.
+
+430
+00:42:40,120 --> 00:42:46,980
+ Now the question is really, could we do this to our sets and tuples as well?
+
+431
+00:42:47,890 --> 00:42:52,190
+ Let me not reveal quite yet both of them.
+
+432
+00:42:52,190 --> 00:42:54,770
+ But let us first talk about sets.
+
+433
+00:42:55,250 --> 00:43:02,270
+ Sets, I would say, actually also support comprehensions.
+
+434
+00:43:02,740 --> 00:43:04,760
+ So let's try that out.
+
+435
+00:43:06,410 --> 00:43:09,010
+ So let me put some words here.
+
+436
+00:43:10,480 --> 00:43:13,510
+ Words equals, and we're going to create a set, right?
+
+437
+00:43:15,390 --> 00:43:17,490
+ But let's do it with a list.
+
+438
+00:43:17,960 --> 00:43:21,110
+ So we have a list here with Python, for example.
+
+439
+00:43:22,670 --> 00:43:27,210
+ We have Java.
+
+440
+00:43:28,100 --> 00:43:35,920
+ We have Python again, since we are trying to do a set, right?
+
+441
+00:43:37,460 --> 00:43:41,090
+ We have C sharp.
+
+442
+00:43:42,400 --> 00:43:47,020
+ And we have, let's say, Java again, right?
+
+443
+00:43:48,050 --> 00:43:52,600
+ So how would one do that with a set comprehension?
+
+444
+00:43:53,680 --> 00:43:54,670
+ Let's correct the title.
+
+445
+00:43:55,460 --> 00:43:55,720
+ Set.
+
+446
+00:43:56,970 --> 00:43:57,150
+ Right.
+
+447
+00:44:03,470 --> 00:44:23,080
+ We could call it length equals.
+
+448
+00:44:25,390 --> 00:44:28,530
+ Create our set here.
+
+449
+00:44:30,480 --> 00:44:32,420
+ And we can start with the end if we want.
+
+450
+00:44:32,990 --> 00:44:34,380
+ But this time I'm not.
+
+451
+00:44:35,110 --> 00:44:41,720
+ So length, word, for, word, in.
+
+452
+00:44:43,500 --> 00:44:45,580
+ That's it.
+
+453
+00:44:48,040 --> 00:44:49,800
+ And let's actually print this out.
+
+454
+00:44:51,050 --> 00:45:01,950
+ So let's actually run this.
+
+455
+00:45:06,290 --> 00:45:06,930
+ Ah, okay, okay.
+
+456
+00:45:07,270 --> 00:45:07,550
+ Yeah, sure.
+
+457
+00:45:09,350 --> 00:45:19,120
+ So we got the length of every word in the words.
+
+458
+00:45:19,840 --> 00:45:23,630
+ But why do we only get two?
+
+459
+00:45:24,090 --> 00:45:27,840
+ Pretty interesting.
+
+460
+00:45:32,190 --> 00:45:32,490
+ Christophe?
+
+461
+00:45:33,350 --> 00:45:36,740
+ Yeah, it's because it's a set, right?
+
+462
+00:45:36,780 --> 00:45:39,170
+ It doesn't support multiples.
+
+463
+00:45:40,450 --> 00:45:40,810
+ Exactly.
+
+464
+00:45:42,800 --> 00:45:43,550
+ Exactly.
+
+465
+00:45:46,650 --> 00:45:48,710
+ It's only unique values.
+
+466
+00:45:51,160 --> 00:45:54,550
+ So set is nothing new there.
+
+467
+00:45:54,550 --> 00:46:07,090
+ But what we can look at here is something very interesting here is when it comes to our tuple.
+
+468
+00:46:07,700 --> 00:46:10,430
+ This is something I want you to take with you.
+
+469
+00:46:11,590 --> 00:46:16,080
+ So I'm going to actually do tuple, and this kind of reveals it, but I'm going to put tuple.
+
+470
+00:46:16,840 --> 00:46:18,950
+ Question mark, question mark, question mark.
+
+471
+00:46:19,170 --> 00:46:28,370
+ So you might kind of expect parentheses to actually create a tuple comprehension, just as we have done with the previous one, right?
+
+472
+00:46:28,890 --> 00:46:40,760
+ But let's say we have numbers equals to.
+
+473
+00:46:47,290 --> 00:46:49,340
+ Need some numbers, right?
+
+474
+00:46:49,420 --> 00:46:49,540
+ No.
+
+475
+00:46:52,700 --> 00:46:54,560
+ Okay, no.
+
+476
+00:46:54,620 --> 00:46:56,980
+ Instead of creating, I will use range, all right?
+
+477
+00:46:56,980 --> 00:47:08,330
+ So number times two, four, number in range.
+
+478
+00:47:12,800 --> 00:47:18,230
+ And then let's print the numbers.
+
+479
+00:47:26,890 --> 00:47:29,410
+ And let's run this and see what happens.
+
+480
+00:47:35,430 --> 00:47:36,700
+ And we get what.
+
+481
+00:47:37,790 --> 00:47:45,040
+ What we see here is that it is not a tuple.
+
+482
+00:47:45,730 --> 00:47:49,300
+ It creates something called a generator.
+
+483
+00:47:51,730 --> 00:48:02,370
+ And generators, well, they are useful, especially when it comes to memory-efficient processing, right?
+
+484
+00:48:03,090 --> 00:48:09,800
+ But we're not going to go deep into that, this foundation course, at least.
+
+485
+00:48:11,330 --> 00:48:18,280
+ What I want you to take with you is, and I already prepared that one, is this.
+
+486
+00:48:18,820 --> 00:48:25,690
+ Just remember this.
+
+487
+00:48:25,690 --> 00:48:29,900
+ So when it comes to tuples, big no-no, only create generators.
+
+488
+00:48:31,370 --> 00:48:36,180
+ So when we have something like this, we've got a list comprehension.
+
+489
+00:48:36,410 --> 00:48:41,580
+ When we have a key value, and so on, we've got a dictionary comprehension.
+
+490
+00:48:42,510 --> 00:48:50,030
+ And when we do it like this, without key value, we're using the curly braces, but no key value.
+
+491
+00:48:50,400 --> 00:48:51,780
+ It will create a set comprehension.
+
+492
+00:48:53,050 --> 00:48:58,130
+ And when it comes to this one, it looks like a tuple, but it will actually create a generator expression.
+
+493
+00:48:59,190 --> 00:49:02,890
+ Or you actually created a generator expression, not a tuple comprehension.
+
+494
+00:49:02,890 --> 00:49:11,570
+ And yeah, that's pretty much it.
+
+495
+00:49:13,570 --> 00:49:15,440
+ And these are our comprehensions.
+
+496
+00:49:16,540 --> 00:49:18,770
+ I think you will find them very useful.
+
+497
+00:49:20,140 --> 00:49:21,380
+ But I can stress it more.
+
+498
+00:49:22,230 --> 00:49:33,230
+ Don't overuse comprehensions just because you can, or because it looks cooler or easier or whatever.
+
+499
+00:49:35,410 --> 00:49:37,110
+ Readability is always the most important.
+
+500
+00:49:41,600 --> 00:49:42,720
+ Yeah, and that's pretty much it.
+
+501
+00:49:44,470 --> 00:49:53,050
+ I think it's a perfect time to take a little break, and then we can continue with the rest of the lesson.
+
+502
+00:49:53,050 --> 00:49:55,660
+ I would say a little bit of part two of the lesson.
+
+503
+00:49:56,710 --> 00:49:57,550
+ Is that all right with you guys?
+
+504
+00:49:59,360 --> 00:49:59,740
+ Yeah, Christian?
+
+505
+00:50:01,010 --> 00:50:05,740
+ Yeah, this reminds me of Lambda functions.
+
+506
+00:50:06,500 --> 00:50:08,260
+ Is there any relation to that?
+
+507
+00:50:12,380 --> 00:50:12,810
+ Yes.
+
+508
+00:50:12,810 --> 00:50:14,320
+ No, no, sorry.
+
+509
+00:50:14,960 --> 00:50:16,120
+ We're actually going to talk Lambda.
+
+510
+00:50:17,550 --> 00:50:20,260
+ Sorry, they have them in Python as well?
+
+511
+00:50:20,690 --> 00:50:20,910
+ Yes.
+
+512
+00:50:21,410 --> 00:50:21,810
+ Okay.
+
+513
+00:50:22,310 --> 00:50:23,350
+ I said we do.
+
+514
+00:50:23,470 --> 00:50:24,430
+ Okay, that's, yeah.
+
+515
+00:50:24,590 --> 00:50:25,750
+ Since I'm team Python.
+
+516
+00:50:26,490 --> 00:50:28,370
+ Yeah, yes, yes, it does.
+
+517
+00:50:29,090 --> 00:50:29,370
+ All right.
+
+518
+00:50:29,510 --> 00:50:31,210
+ Yeah, let's take the break then.
+
+519
+00:50:31,690 --> 00:50:37,330
+ Yeah, so let's take a break, and then we're going to dive into Lambdas at the end of the lesson.
+
+520
+00:50:37,570 --> 00:50:39,490
+ Well, depending on where we reach, right?
+
+521
+00:50:39,750 --> 00:50:40,750
+ At the time and so on.
+
+522
+00:50:41,130 --> 00:50:43,530
+ So maybe we'll do it today or on Monday next week.
+
+523
+00:50:45,630 --> 00:50:46,090
+ All right.
+
+524
+00:50:46,210 --> 00:50:47,590
+ So let's take our break.
+
+525
+00:50:48,590 --> 00:50:52,550
+ We take our, in our first break, we usually take 15.
+
+526
+00:50:52,670 --> 00:50:53,730
+ So let's stick to that.
+
+527
+00:50:57,070 --> 00:50:59,770
+ So let's say, what would that be?
+
+528
+00:50:59,830 --> 00:51:01,780
+ 10, 10.
+
+529
+00:51:04,520 --> 00:51:04,740
+ All right.
+
+530
+00:51:05,540 --> 00:51:07,220
+ See you guys soon.
+
+531
+00:51:08,510 --> 00:51:11,860
+ We will come with some more fun stuff.
+
+532
+01:07:19,340 --> 01:07:19,840
+ All right, guys.
+
+533
+01:07:28,610 --> 01:07:37,230
+ Before we move forward, we're actually going to move a little bit back to something that we spoke about earlier.
+
+534
+01:07:37,230 --> 01:07:44,450
+ I believe it was Tuesday, Wednesday, Thursday last week.
+
+535
+01:07:45,500 --> 01:07:46,260
+ I could be wrong.
+
+536
+01:07:46,790 --> 01:07:47,400
+ Somewhere there.
+
+537
+01:07:47,840 --> 01:08:00,120
+ We kind of mentioned, or we briefly saw enumerate, if you remember.
+
+538
+01:08:00,710 --> 01:08:02,830
+ But we're going to take that again, if you have forgotten.
+
+539
+01:08:02,990 --> 01:08:03,350
+ No problem.
+
+540
+01:08:03,990 --> 01:08:04,880
+ So enumerate.
+
+541
+01:08:06,230 --> 01:08:15,470
+ We kind of introduced it, but we did not really dive into it.
+
+542
+01:08:15,550 --> 01:08:19,200
+ So we're actually going to dive a little bit more into enumerate, more than what we can do with it.
+
+543
+01:08:21,580 --> 01:08:28,230
+ So what we saw briefly before is to actually, we just saw why it existed, right?
+
+544
+01:08:28,230 --> 01:09:08,000
+ Now, let's say we have a list here of languages, and so we have our languages, and let's say Python, let's say Java, and let's say, I don't know.
+
+545
+01:09:11,670 --> 01:09:11,870
+ All right.
+
+546
+01:09:12,990 --> 01:09:22,480
+ And let's say I want the value of each value here, and also the index.
+
+547
+01:09:22,480 --> 01:09:36,610
+ So what we could do, a normal way, this actually works, this would not be using enumerate.
+
+548
+01:09:37,510 --> 01:09:43,540
+ But let's say we could do something like this for index, and we could use, for example, range, right?
+
+549
+01:09:45,040 --> 01:09:49,510
+ Look at the length of languages, right?
+
+550
+01:09:52,260 --> 01:10:05,170
+ And we want print index, and that would be languages index, right?
+
+551
+01:10:05,310 --> 01:10:07,360
+ Something like that.
+
+552
+01:10:07,920 --> 01:10:08,610
+ We could do that.
+
+553
+01:10:09,210 --> 01:10:09,490
+ Works.
+
+554
+01:10:09,690 --> 01:10:10,190
+ No problem.
+
+555
+01:10:11,710 --> 01:10:12,150
+ Let's run this.
+
+556
+01:10:13,060 --> 01:10:15,600
+ Zero Python, one Java, two C-sharp.
+
+557
+01:10:15,600 --> 01:10:18,340
+ This works.
+
+558
+01:10:19,170 --> 01:10:22,710
+ But Python actually gives us a cleaner pattern for this.
+
+559
+01:10:23,540 --> 01:10:26,370
+ So we can actually do the same thing using enumerate.
+
+560
+01:10:29,730 --> 01:10:42,410
+ So here, we can come directly into four index and languages, much cleaner in enumerate.
+
+561
+01:10:44,420 --> 01:10:45,040
+ With what?
+
+562
+01:10:45,160 --> 01:10:46,220
+ Well, languages, right?
+
+563
+01:10:47,200 --> 01:10:50,020
+ And then we just print it.
+
+564
+01:10:51,060 --> 01:10:56,560
+ Print index and languages.
+
+565
+01:11:00,080 --> 01:11:04,370
+ Four index language in enumerate languages.
+
+566
+01:11:05,390 --> 01:11:07,020
+ Print out the index and the language.
+
+567
+01:11:08,070 --> 01:11:11,080
+ Same thing, but much cleaner way, right?
+
+568
+01:11:11,240 --> 01:11:11,940
+ Using enumerate.
+
+569
+01:11:12,690 --> 01:11:13,920
+ And let's see if it works.
+
+570
+01:11:16,100 --> 01:11:17,230
+ And yes, it does.
+
+571
+01:11:21,570 --> 01:11:30,250
+ So yeah, we just unpacked the pairs directly in our for loop.
+
+572
+01:11:34,670 --> 01:11:48,990
+ But we could also, if we wanted to, we could have, let's keep the languages, but we could have chosen a starting number.
+
+573
+01:11:49,050 --> 01:11:51,850
+ So how would one do that?
+
+574
+01:11:51,850 --> 01:12:03,030
+ Well, for, for example, position, position and language in enumerate.
+
+575
+01:12:05,080 --> 01:12:06,420
+ And then we can do something like this.
+
+576
+01:12:07,480 --> 01:12:08,040
+ Languages.
+
+577
+01:12:09,690 --> 01:12:12,560
+ Now, we can add a start.
+
+578
+01:12:13,520 --> 01:12:15,760
+ And we could say start at one.
+
+579
+01:12:17,990 --> 01:12:22,580
+ And then we can just print, just as we did previously.
+
+580
+01:12:22,990 --> 01:12:28,620
+ Print position and language, of course.
+
+581
+01:12:30,160 --> 01:12:30,960
+ There you go.
+
+582
+01:12:31,780 --> 01:12:34,080
+ So it's pretty powerful in that way.
+
+583
+01:12:35,470 --> 01:12:36,510
+ Let's run this and see.
+
+584
+01:12:39,070 --> 01:12:41,000
+ We start at one, two, three.
+
+585
+01:12:41,530 --> 01:12:44,440
+ One, Python, two, Java, three, C sharp.
+
+586
+01:12:47,900 --> 01:12:52,700
+ So when do we use enumerate?
+
+587
+01:12:52,820 --> 01:13:35,110
+ Well, let's say, let's say we only, if we only need the value, well, then use for lang, for lang, for, yes, language in languages, print language, right?
+
+588
+01:13:35,520 --> 01:13:37,870
+ So here I would use just a direct loop.
+
+589
+01:13:38,850 --> 01:13:50,460
+ But if I also need the, need both the position and the value, I would rather use, I would rather use enumerate.
+
+590
+01:13:51,350 --> 01:13:56,400
+ So in this case, I would have done something like this.
+
+591
+01:13:56,620 --> 01:14:06,080
+ So maybe four, as we saw previously, four index language in, in what?
+
+592
+01:14:06,510 --> 01:14:10,350
+ Well, enumerate.
+
+593
+01:14:13,090 --> 01:14:15,370
+ And then we would print out also the index.
+
+594
+01:14:16,200 --> 01:14:31,850
+ So, yeah, it's just to say that you can actually avoid.
+
+595
+01:14:32,270 --> 01:14:39,640
+ Manually, manually managing indexes when Python can actually do that for you.
+
+596
+01:14:47,680 --> 01:14:49,940
+ So that was a little bit about enumerate.
+
+597
+01:14:51,950 --> 01:14:58,010
+ I'm also going to look at something called zip.
+
+598
+01:15:00,200 --> 01:15:08,040
+ So imagine that we have two lists and, for example, names here.
+
+599
+01:15:08,610 --> 01:15:22,180
+ So we've got name, list with, let's say, Anna, Bob, we've got Charlie, all right?
+
+600
+01:15:22,720 --> 01:15:26,950
+ And we also have another list that has their scores.
+
+601
+01:15:31,450 --> 01:15:37,560
+ So I'm going to say 85, 62, on 91, all right?
+
+602
+01:15:38,420 --> 01:15:48,380
+ So imagine these lists actually belong to each other, where Anna's score is 85, Bob's score is 62, and Charlie's score is 91.
+
+603
+01:15:48,870 --> 01:15:57,620
+ And one way of processing this list would be by using indexes.
+
+604
+01:15:57,620 --> 01:15:58,740
+ So I'm going to show that first.
+
+605
+01:15:58,740 --> 01:16:01,820
+ And then I'm going to use zip to show the same thing.
+
+606
+01:16:02,770 --> 01:16:09,660
+ So here I would do something like this for index, for index in.
+
+607
+01:16:10,150 --> 01:16:12,390
+ And here I would use maybe range, right?
+
+608
+01:16:14,750 --> 01:16:18,010
+ Names, right?
+
+609
+01:16:19,390 --> 01:16:29,480
+ And then I would do something like this, print names, index, right?
+
+610
+01:16:29,480 --> 01:16:33,070
+ And also, same thing for scores, right?
+
+611
+01:16:35,180 --> 01:16:37,910
+ And there, index, something like that.
+
+612
+01:16:38,740 --> 01:16:40,160
+ That's right.
+
+613
+01:16:41,090 --> 01:16:41,210
+ Yeah.
+
+614
+01:16:41,590 --> 01:16:43,710
+ Anna, 85, Bob, 62, Charlie, 91.
+
+615
+01:16:45,020 --> 01:16:45,640
+ No problem.
+
+616
+01:16:46,990 --> 01:16:53,520
+ But Python actually has a function that does pretty much the same thing.
+
+617
+01:16:54,390 --> 01:17:04,630
+ And this function is actually designed for combining iterable position by position.
+
+618
+01:17:05,050 --> 01:17:08,550
+ We could use something called zip.
+
+619
+01:17:10,180 --> 01:17:12,380
+ So let me actually show that to you.
+
+620
+01:17:14,570 --> 01:17:19,160
+ So we could take for, for example, for name.
+
+621
+01:17:20,550 --> 01:17:22,960
+ So we have a name and we have a score, right?
+
+622
+01:17:24,690 --> 01:17:28,070
+ In easy, easy peasy.
+
+623
+01:17:28,070 --> 01:17:32,110
+ So we have a name and we have a score in each names and scores.
+
+624
+01:17:33,390 --> 01:17:35,230
+ So we want for every name and score.
+
+625
+01:17:35,710 --> 01:17:36,550
+ We want to what?
+
+626
+01:17:36,910 --> 01:17:40,090
+ Well, zip what lists?
+
+627
+01:17:40,690 --> 01:17:47,250
+ Well, names and of course, easy peasy.
+
+628
+01:17:48,510 --> 01:17:54,530
+ And now we just can simply print the name and score.
+
+629
+01:17:56,700 --> 01:17:58,790
+ Much easier way.
+
+630
+01:17:59,870 --> 01:18:01,210
+ That's what we did before.
+
+631
+01:18:04,450 --> 01:18:08,630
+ So we're just zipping the pears in the two different lists.
+
+632
+01:18:09,560 --> 01:18:10,180
+ Let's try it out.
+
+633
+01:18:11,270 --> 01:18:12,830
+ And yeah, it actually works as well.
+
+634
+01:18:13,680 --> 01:18:14,540
+ Anna gets 85.
+
+635
+01:18:14,880 --> 01:18:17,140
+ Bob gets a 62 and Charlie gets a 91.
+
+636
+01:18:17,140 --> 01:18:25,650
+ So the tuple unpacking here gives us a score.
+
+637
+01:18:38,400 --> 01:18:41,730
+ And we can convert it into a...
+
+638
+01:18:41,730 --> 01:18:47,320
+ With my phone here.
+
+639
+01:18:51,980 --> 01:19:00,520
+ Yeah, we can easily convert it into a list to inspect the pears.
+
+640
+01:19:01,350 --> 01:19:04,830
+ So what we can do here is to actually do something like this.
+
+641
+01:19:05,020 --> 01:19:18,670
+ Just to inspect the pears, which would be the list zip names, of course.
+
+642
+01:19:19,890 --> 01:19:21,540
+ And I think that was your question, Fabio.
+
+643
+01:19:21,760 --> 01:19:22,340
+ Let's see here.
+
+644
+01:19:23,520 --> 01:19:23,980
+ Print.
+
+645
+01:19:26,410 --> 01:19:33,430
+ So now we can actually clearly see the tuples from where I was getting it.
+
+646
+01:19:33,940 --> 01:19:38,610
+ So here we've got the tuples on a 85, Bob 62, Charlie 91.
+
+647
+01:19:39,320 --> 01:19:46,250
+ Therefore, I said that we actually do a tuple unpacking here.
+
+648
+01:19:52,960 --> 01:19:53,360
+ Yes, Fabio.
+
+649
+01:19:53,360 --> 01:20:04,240
+ When we do the zipping with two lists of different lengths, will it simply just print out one of the...
+
+650
+01:20:04,240 --> 01:20:06,030
+ And that's actually...
+
+651
+01:20:06,030 --> 01:20:06,240
+ Yeah.
+
+652
+01:20:06,460 --> 01:20:11,040
+ And that's actually my...
+
+653
+01:20:11,040 --> 01:20:12,360
+ Not my...
+
+654
+01:20:12,360 --> 01:20:16,840
+ In two examples, you will see different lengths, right?
+
+655
+01:20:17,910 --> 01:20:19,080
+ So we will get there.
+
+656
+01:20:19,510 --> 01:20:20,680
+ I have it actually in my notes.
+
+657
+01:20:20,860 --> 01:20:21,660
+ We're going to cover that.
+
+658
+01:20:22,120 --> 01:20:22,880
+ Just give it a second.
+
+659
+01:20:24,790 --> 01:20:30,520
+ So before I actually look at different lengths, I'm just going to take another thing that we can also do.
+
+660
+01:20:31,070 --> 01:20:32,990
+ So here we actually had what?
+
+661
+01:20:33,150 --> 01:20:36,540
+ Well, we have two lists.
+
+662
+01:20:36,940 --> 01:20:38,760
+ But what if I have three lists?
+
+663
+01:20:39,810 --> 01:20:44,500
+ So let's keep Anna, Bob, and Charlie and 85, 62, 91.
+
+664
+01:20:44,940 --> 01:20:45,320
+ Sure.
+
+665
+01:20:45,630 --> 01:20:47,670
+ But let's actually add a third list here.
+
+666
+01:20:47,670 --> 01:20:52,330
+ Let's say we have cities equals two.
+
+667
+01:20:54,190 --> 01:20:55,960
+ Let's say, I don't know.
+
+668
+01:20:56,620 --> 01:20:58,730
+ Start, hold.
+
+669
+01:21:02,360 --> 01:21:05,740
+ Cut, of course, we need to get a boy.
+
+670
+01:21:06,570 --> 01:21:08,590
+ Since we have our students, we need to get a boy as well.
+
+671
+01:21:09,600 --> 01:21:10,600
+ And let's add something.
+
+672
+01:21:11,200 --> 01:21:14,070
+ Let's say Malma, right?
+
+673
+01:21:14,740 --> 01:21:17,900
+ So could we do this with three lists as well?
+
+674
+01:21:18,400 --> 01:21:19,180
+ Could we zip with three lists?
+
+675
+01:21:19,480 --> 01:21:19,780
+ Yes.
+
+676
+01:21:21,150 --> 01:21:27,610
+ We just add the third list when we zip.
+
+677
+01:21:28,490 --> 01:21:36,230
+ So for a name, so we have a name, we have a score, but now we also have a city, right?
+
+678
+01:21:37,910 --> 01:21:38,890
+ In what?
+
+679
+01:21:38,890 --> 01:21:49,430
+ Well, we're going to zip the three lists, which are names, which are scores, and also cities.
+
+680
+01:21:50,480 --> 01:21:50,960
+ And there you go.
+
+681
+01:21:52,270 --> 01:22:11,250
+ And now we simply just print, name, gore, and 85, Stockholm, Bob, 62, Göteborg, Charlie, 91, Malma.
+
+682
+01:22:15,390 --> 01:22:18,660
+ So zip can combine more than two intervals.
+
+683
+01:22:19,150 --> 01:22:19,570
+ No problem.
+
+684
+01:22:24,450 --> 01:22:25,570
+ To Fabian's question.
+
+685
+01:22:27,050 --> 01:22:29,410
+ What if they are in different length?
+
+686
+01:22:30,080 --> 01:22:30,770
+ All right.
+
+687
+01:22:32,030 --> 01:22:34,460
+ Let me just keep those to go.
+
+688
+01:22:45,900 --> 01:22:56,120
+ And so we have Anna, Bob, Charlie, but this time we also have a fourth person whose name is Diana, right?
+
+689
+01:22:56,640 --> 01:22:59,620
+ But Diana doesn't have a score in the score list, right?
+
+690
+01:22:59,920 --> 01:23:02,320
+ So what will actually happen now?
+
+691
+01:23:03,000 --> 01:23:04,000
+ Let's actually take a look.
+
+692
+01:23:05,230 --> 01:23:07,650
+ For name, and we have a score.
+
+693
+01:23:07,870 --> 01:23:09,470
+ We said name and score, right?
+
+694
+01:23:10,740 --> 01:23:18,880
+ In zip the lists, names, and scores.
+
+695
+01:23:19,680 --> 01:23:23,240
+ Now let's actually print and see what happens.
+
+696
+01:23:25,100 --> 01:23:27,900
+ And that would probably just answer the question directly.
+
+697
+01:23:29,310 --> 01:23:31,810
+ So what will actually happen, Diana?
+
+698
+01:23:32,330 --> 01:23:34,310
+ Any guesses before I run the code?
+
+699
+01:23:34,730 --> 01:23:35,940
+ What will actually happen to Diana?
+
+700
+01:23:36,120 --> 01:23:36,580
+ What do you think?
+
+701
+01:23:36,800 --> 01:23:44,480
+ Yes, Johanna.
+
+702
+01:23:45,510 --> 01:23:48,680
+ I think she will be added, but without a score.
+
+703
+01:23:49,170 --> 01:23:50,110
+ That gives her name.
+
+704
+01:23:51,040 --> 01:23:51,280
+ Yeah.
+
+705
+01:23:51,500 --> 01:23:56,210
+ So you could imagine that, and I think that's pretty logical, of course.
+
+706
+01:23:56,750 --> 01:23:58,330
+ But if we run it, it doesn't, actually.
+
+707
+01:23:59,710 --> 01:24:10,570
+ So a standard zip stops when the shortest iterable is, what can you say, done or exhausted, right?
+
+708
+01:24:10,990 --> 01:24:12,880
+ So this is actually important to know.
+
+709
+01:24:13,320 --> 01:24:14,540
+ So it will skip Diana.
+
+710
+01:24:14,680 --> 01:24:17,460
+ She's Diana doesn't have a score.
+
+711
+01:24:18,700 --> 01:24:23,080
+ So it will stop at the shortest list, actually.
+
+712
+01:24:25,710 --> 01:24:26,790
+ Did that answer your question, Fabian?
+
+713
+01:24:29,190 --> 01:24:29,630
+ Yes.
+
+714
+01:24:30,030 --> 01:24:30,540
+ Ah, perfect.
+
+715
+01:24:33,200 --> 01:24:35,080
+ All right.
+
+716
+01:24:35,080 --> 01:24:44,730
+ We could also, hmm, we could also, let's do another thing with zip.
+
+717
+01:24:45,220 --> 01:24:46,760
+ The last thing with zip, and then we can move on.
+
+718
+01:24:47,930 --> 01:24:50,650
+ We could also, what was I thinking?
+
+719
+01:24:50,770 --> 01:24:52,900
+ Yeah, create a dictionary with a zip.
+
+720
+01:24:53,840 --> 01:25:02,120
+ Let's say we have our names here, and above Charlie, they have the scores, 85, 62, and 91.
+
+721
+01:25:02,320 --> 01:25:05,130
+ But this time, I actually want to create a dictionary directly.
+
+722
+01:25:05,790 --> 01:25:06,830
+ Yeah, we can actually do that.
+
+723
+01:25:08,350 --> 01:25:15,020
+ So let's create a variable here, students, let's call it student scores, right?
+
+724
+01:25:16,220 --> 01:25:19,430
+ Uh, so normally we said, what?
+
+725
+01:25:19,430 --> 01:25:29,630
+ We said, uh, zip, uh, we said zip, uh, the names and scores, right?
+
+726
+01:25:30,220 --> 01:25:31,650
+ So this is what we normally would do.
+
+727
+01:25:32,530 --> 01:25:38,300
+ But what we can do directly here is to actually, um, add.
+
+728
+01:25:41,940 --> 01:25:42,750
+ That's it.
+
+729
+01:25:43,740 --> 01:25:44,430
+ Easy peasy.
+
+730
+01:25:45,810 --> 01:25:56,160
+ And now we can just print out the scores or the, uh, dictionary that we just created, which will be called student scores.
+
+731
+01:25:58,100 --> 01:26:01,040
+ And this is a very convenient, uh, Python matter, uh, pattern.
+
+732
+01:26:03,270 --> 01:26:17,750
+ So as you see here, zip actually creates value pairs, and dict converts it to those pairs into a dictionary, as we see here.
+
+733
+01:26:19,980 --> 01:26:22,100
+ Pretty neat, right?
+
+734
+01:26:23,700 --> 01:26:35,320
+ You can nearly hear the woohoo somewhere far away.
+
+735
+01:26:35,980 --> 01:26:46,070
+ Um, um, um, what was I thinking here?
+
+736
+01:26:47,060 --> 01:26:58,690
+ Thinking of how we did, but, um, yeah, we could actually take a little bit of unpacking here.
+
+737
+01:26:59,390 --> 01:27:01,750
+ So the next thing I wanted to speak about, yeah, Gloria.
+
+738
+01:27:04,270 --> 01:27:14,730
+ Yeah, can you go back to the example with the names when you, uh, the cities, the tree, uh, list?
+
+739
+01:27:15,860 --> 01:27:23,600
+ Because I tried to run it, and I got the, yeah, when we have tree, because I tried to run it, and I got the error, and I don't know where is my error.
+
+740
+01:27:24,200 --> 01:27:26,200
+ But can you go through it again?
+
+741
+01:27:26,340 --> 01:27:26,560
+ Sorry.
+
+742
+01:27:26,860 --> 01:27:29,940
+ So we have, uh, uh, three lists, right?
+
+743
+01:27:31,370 --> 01:27:33,360
+ Uh, with three objects here, three items.
+
+744
+01:27:33,360 --> 01:27:38,030
+ We have Anna, Bob, Charlie, 85, 62, 91, Stockholm, Göteborg, and Monmouth.
+
+745
+01:27:39,400 --> 01:27:42,220
+ And then, uh, we did, uh, the for loop.
+
+746
+01:27:43,280 --> 01:27:43,820
+ With what?
+
+747
+01:27:43,940 --> 01:27:46,120
+ Well, the name, the score, the city.
+
+748
+01:27:46,680 --> 01:27:47,690
+ In what?
+
+749
+01:27:48,010 --> 01:27:50,670
+ Well, we want to zip the three lists.
+
+750
+01:27:50,930 --> 01:27:56,730
+ So just make sure that you're actually writing the lists here, and not name, score, city, not the variables.
+
+751
+01:27:58,330 --> 01:28:01,110
+ And then we just print the variables, and that's it.
+
+752
+01:28:03,400 --> 01:28:11,780
+ Just make sure that you didn't forget to put the S at the end here, and that you didn't put the S over here.
+
+753
+01:28:13,230 --> 01:28:13,450
+ Yeah.
+
+754
+01:28:13,730 --> 01:28:15,410
+ If you're using the same variable names.
+
+755
+01:28:17,790 --> 01:28:18,170
+ Yeah.
+
+756
+01:28:18,250 --> 01:28:23,730
+ For some reason, it prints the complete cities.
+
+757
+01:28:24,810 --> 01:28:31,440
+ It says, for example, Anna, 85, and then Stockholm, Göteborg, Marco.
+
+758
+01:28:32,110 --> 01:28:32,270
+ Okay.
+
+759
+01:28:32,830 --> 01:28:34,090
+ But I will take a look later.
+
+760
+01:28:34,090 --> 01:28:34,590
+ Yeah, yeah.
+
+761
+01:28:34,850 --> 01:28:38,270
+ Save that one, and we can call you up after the lesson, and we can take a look at it, both of us.
+
+762
+01:28:38,750 --> 01:28:39,110
+ Thank you.
+
+763
+01:28:39,250 --> 01:28:40,910
+ Four eyes help sometimes.
+
+764
+01:28:41,390 --> 01:28:41,570
+ It does.
+
+765
+01:28:43,580 --> 01:28:49,360
+ Probably just a small typo or something like that.
+
+766
+01:28:50,100 --> 01:28:50,280
+ Probably.
+
+767
+01:28:50,280 --> 01:28:50,380
+ Probably.
+
+768
+01:28:52,330 --> 01:28:52,550
+ Okay.
+
+769
+01:28:53,360 --> 01:29:01,320
+ So we have actually, of course, we said we're going to talk about unpacking, which is un-king, right?
+
+770
+01:29:02,000 --> 01:29:06,490
+ So we have already covered unpacking several times, right?
+
+771
+01:29:07,870 --> 01:29:13,670
+ But I just want to collect the idea in pretty much one place.
+
+772
+01:29:14,350 --> 01:29:16,390
+ So let's say we have some coordinates.
+
+773
+01:29:16,390 --> 01:29:24,840
+ So let's take it step by step in order to get to my point here.
+
+774
+01:29:24,840 --> 01:29:26,560
+ 10 to 20.
+
+775
+01:29:26,560 --> 01:29:26,880
+ All right.
+
+776
+01:29:26,880 --> 01:29:34,830
+ So what we can do is, and we saw this earlier, is that we can do directly here, right?
+
+777
+01:29:34,910 --> 01:29:41,110
+ X and Y equals the coordinates.
+
+778
+01:29:41,720 --> 01:29:44,180
+ That actually works.
+
+779
+01:29:45,070 --> 01:29:51,890
+ And then we can print one coordinate at a time.
+
+780
+01:29:53,430 --> 01:30:01,420
+ So this will unpack it directly to the X, 10 to the X, and Y to the 20.
+
+781
+01:30:03,260 --> 01:30:03,850
+ 10 to 20.
+
+782
+01:30:07,240 --> 01:30:13,400
+ Python actually takes the values from the collection and assigns them to the variables on the left.
+
+783
+01:30:13,400 --> 01:30:19,660
+ We could do this, of course, with a list as well.
+
+784
+01:30:22,910 --> 01:30:30,980
+ Let's say we have the names equals Ada.
+
+785
+01:30:31,810 --> 01:30:34,660
+ We got, let's say, Grace.
+
+786
+01:30:35,450 --> 01:30:39,160
+ We got, for example, Vito.
+
+787
+01:30:41,540 --> 01:30:47,580
+ And then we could create three variables.
+
+788
+01:30:47,920 --> 01:30:54,270
+ So first, second, and third, right?
+
+789
+01:30:54,430 --> 01:30:58,530
+ And we want to do that with the names.
+
+790
+01:30:58,890 --> 01:30:59,460
+ No problems.
+
+791
+01:31:00,520 --> 01:31:06,080
+ And then we can just print first, for example.
+
+792
+01:31:06,740 --> 01:31:18,830
+ We could do the same thing with for our second and, of course, our third, right?
+
+793
+01:31:18,990 --> 01:31:21,430
+ Let's run this.
+
+794
+01:31:21,570 --> 01:31:23,100
+ And we see Ada, Grace, and Guido.
+
+795
+01:31:25,760 --> 01:31:28,080
+ So unpacking is not limited to samples.
+
+796
+01:31:28,600 --> 01:31:30,440
+ We could also do this with lists, right?
+
+797
+01:31:31,570 --> 01:31:39,500
+ But what if I only hear about the first value?
+
+798
+01:31:40,210 --> 01:31:44,640
+ And let's say I want to collect everything else.
+
+799
+01:31:46,350 --> 01:31:49,630
+ So let's try to do that.
+
+800
+01:31:52,640 --> 01:31:55,230
+ So instead, let me just put some numbers here instead.
+
+801
+01:31:55,550 --> 01:31:56,390
+ I think it's clearer.
+
+802
+01:31:58,290 --> 01:31:59,790
+ So a list of numbers.
+
+803
+01:32:00,190 --> 01:32:01,150
+ We have 10.
+
+804
+01:32:01,610 --> 01:32:02,320
+ We have 20.
+
+805
+01:32:02,650 --> 01:32:03,500
+ We have 30.
+
+806
+01:32:03,800 --> 01:32:05,040
+ And we have 40.
+
+807
+01:32:05,390 --> 01:32:06,680
+ And we can stop at 50, all right?
+
+808
+01:32:07,460 --> 01:32:17,120
+ So what I can do is I want the first number, but I also want to pack the rest.
+
+809
+01:32:19,170 --> 01:32:25,450
+ And now, bearing yesterday's lesson in mind, what should I add to rest?
+
+810
+01:32:26,070 --> 01:32:27,290
+ What do you say, guys?
+
+811
+01:32:32,900 --> 01:32:33,840
+ Kritika?
+
+812
+01:32:35,870 --> 01:32:39,110
+ Yeah, so we should add a trick before rest.
+
+813
+01:32:39,130 --> 01:32:39,850
+ There we go.
+
+814
+01:32:39,850 --> 01:32:44,440
+ And I totally agree with you.
+
+815
+01:32:46,200 --> 01:32:47,830
+ Thank you, Kritika.
+
+816
+01:32:50,470 --> 01:32:53,590
+ Now let's see what actually happens.
+
+817
+01:32:54,050 --> 01:33:01,600
+ So print first and print the rest.
+
+818
+01:33:02,330 --> 01:33:15,890
+ So when we run this, I wanted to actually ask you what data type will rest be.
+
+819
+01:33:16,440 --> 01:33:20,500
+ But anyways, kind of already revealed it, right?
+
+820
+01:33:20,860 --> 01:33:25,760
+ So we get our 10 as first, but the rest will actually be a what?
+
+821
+01:33:25,800 --> 01:33:27,670
+ So we have a list.
+
+822
+01:33:27,840 --> 01:33:36,680
+ What if we want to pack somewhere else?
+
+823
+01:33:37,790 --> 01:33:39,690
+ Let me get rid of that.
+
+824
+01:33:41,250 --> 01:33:44,580
+ With the same list of numbers.
+
+825
+01:33:45,140 --> 01:33:46,880
+ So what we could do is something like this.
+
+826
+01:33:47,020 --> 01:33:49,140
+ First works perfectly fine.
+
+827
+01:33:50,030 --> 01:34:00,240
+ So first, we got middle and we got last, but this time with the middle, I want to pack everything there.
+
+828
+01:34:02,340 --> 01:34:04,160
+ Works perfectly fine.
+
+829
+01:34:05,350 --> 01:34:06,110
+ Numbers.
+
+830
+01:34:08,480 --> 01:34:10,590
+ And now let's see what actually happens.
+
+831
+01:34:11,550 --> 01:34:13,690
+ Print.
+
+832
+01:34:15,410 --> 01:34:18,520
+ And just to make it super clear first.
+
+833
+01:34:28,040 --> 01:34:31,560
+ And we got second.
+
+834
+01:34:32,620 --> 01:34:36,170
+ And we got second.
+
+835
+01:34:39,270 --> 01:34:41,120
+ Not second.
+
+836
+01:34:41,500 --> 01:34:42,340
+ We said middle, right?
+
+837
+01:34:49,950 --> 01:35:00,010
+ And last but not least, we also have last, right?
+
+838
+01:35:05,670 --> 01:35:14,070
+ Right?
+
+839
+01:35:14,970 --> 01:35:16,810
+ See what happens.
+
+840
+01:35:21,000 --> 01:35:30,980
+ First, we pack the middle, 30, 40, and then we get our 50.
+
+841
+01:35:31,840 --> 01:35:36,580
+ So this is actually a very useful unpacking pattern.
+
+842
+01:35:40,240 --> 01:35:43,710
+ If we want to ignore a value, could we do that?
+
+843
+01:35:44,030 --> 01:35:45,290
+ Well, yes, we can.
+
+844
+01:35:45,920 --> 01:35:47,390
+ Let's take a look.
+
+845
+01:35:48,690 --> 01:35:59,490
+ For that, I'm going to do something like this, which also we're going to do, you're going to see a lot of times when we talk about, well, at the beginning of machine learning.
+
+846
+01:35:59,630 --> 01:36:00,640
+ And you will see that.
+
+847
+01:36:01,400 --> 01:36:05,420
+ So at least we have covered it then.
+
+848
+01:36:06,080 --> 01:36:06,520
+ Person.
+
+849
+01:36:07,740 --> 01:36:11,490
+ Let's say we have some info here.
+
+850
+01:36:11,800 --> 01:36:18,310
+ We have Ada, the name, and we have an age, 36, and we have city.
+
+851
+01:36:18,830 --> 01:36:19,050
+ All right?
+
+852
+01:36:22,800 --> 01:36:34,730
+ Let's say we want to ignore 36.
+
+853
+01:36:35,760 --> 01:36:45,500
+ So what we can do here, and this is very important that you listen here, so there's no confusions here.
+
+854
+01:36:45,500 --> 01:36:58,080
+ So what I can do here, name, underscore, and then city equals to person.
+
+855
+01:36:59,140 --> 01:36:59,610
+ All right?
+
+856
+01:37:00,000 --> 01:37:04,950
+ And then I can actually print the name, right?
+
+857
+01:37:05,680 --> 01:37:11,810
+ And print the city.
+
+858
+01:37:13,510 --> 01:37:13,770
+ All right?
+
+859
+01:37:14,000 --> 01:37:15,680
+ So this actually works.
+
+860
+01:37:18,480 --> 01:37:19,920
+ Get Ada and London.
+
+861
+01:37:20,200 --> 01:37:20,680
+ No problem.
+
+862
+01:37:22,590 --> 01:37:38,830
+ So underscore here is, and now I'm going to push on this, is commonly used as conventional variable name when we, well, intentionally do not care about the value.
+
+863
+01:37:43,750 --> 01:37:44,250
+ Listen carefully.
+
+864
+01:37:44,910 --> 01:37:46,770
+ It is still a variable.
+
+865
+01:37:46,770 --> 01:37:49,330
+ It is still technically a variable.
+
+866
+01:37:50,740 --> 01:37:58,770
+ So Python doesn't actually give this underscore any magical ignoring behavior here or something like that.
+
+867
+01:38:00,480 --> 01:38:11,880
+ It just communicates the intent to, well, as humans, were you able to follow that?
+
+868
+01:38:16,920 --> 01:38:17,940
+ Yes, Gloria?
+
+869
+01:38:18,960 --> 01:38:25,010
+ So it means that I can still access 36 in some way.
+
+870
+01:38:26,120 --> 01:38:27,000
+ Yep, yep, yep, yep.
+
+871
+01:38:27,940 --> 01:38:31,800
+ It just tells me that you won't ignore it.
+
+872
+01:38:32,300 --> 01:38:32,680
+ That's it.
+
+873
+01:38:39,280 --> 01:38:41,460
+ What was the output that you got from that?
+
+874
+01:38:42,100 --> 01:38:43,010
+ Here?
+
+875
+01:38:43,150 --> 01:38:43,550
+ Last year.
+
+876
+01:38:43,730 --> 01:38:43,870
+ Yeah.
+
+877
+01:38:44,740 --> 01:38:45,260
+ Both.
+
+878
+01:38:50,100 --> 01:38:53,300
+ That's just for city, or is it both?
+
+879
+01:38:53,540 --> 01:38:53,800
+ Okay.
+
+880
+01:38:54,690 --> 01:38:56,280
+ The name and city.
+
+881
+01:39:00,100 --> 01:39:00,500
+ Check here.
+
+882
+01:39:01,630 --> 01:39:05,420
+ I'm not getting the output at all.
+
+883
+01:39:06,420 --> 01:39:08,020
+ I will try it in a separate.
+
+884
+01:39:08,340 --> 01:39:10,660
+ I'm running interactive, so I...
+
+885
+01:39:10,660 --> 01:39:11,500
+ Ah, I understand.
+
+886
+01:39:12,000 --> 01:39:12,440
+ All right, all right.
+
+887
+01:39:12,990 --> 01:39:16,390
+ But if you want to save it, we can look at it after the lesson.
+
+888
+01:39:16,590 --> 01:39:18,090
+ I can look at your code, maybe.
+
+889
+01:39:18,450 --> 01:39:19,870
+ It's just a typo or something like that.
+
+890
+01:39:20,720 --> 01:39:21,240
+ Okay, okay.
+
+891
+01:39:21,560 --> 01:39:21,660
+ Yes.
+
+892
+01:39:23,840 --> 01:39:24,380
+ All right.
+
+893
+01:39:25,240 --> 01:39:25,600
+ Christopher?
+
+894
+01:39:27,120 --> 01:39:27,680
+ Yeah, okay.
+
+895
+01:39:27,740 --> 01:39:29,400
+ So you could print the underscore, I suppose.
+
+896
+01:39:30,420 --> 01:39:31,110
+ Let's try.
+
+897
+01:39:34,440 --> 01:39:42,710
+ So no magic here.
+
+898
+01:39:43,230 --> 01:39:44,010
+ Right.
+
+899
+01:39:45,180 --> 01:39:50,000
+ But since you know Python now, you will know
+
+900
+01:39:50,000 --> 01:39:52,030
+ that it's something that we're just ignoring.
+
+901
+01:39:52,430 --> 01:39:58,930
+ So we would do that in this way.
+
+902
+01:40:07,030 --> 01:40:32,310
+ Do I have anything more in here?
+
+903
+01:40:32,570 --> 01:40:46,680
+ Well, yeah.
+
+904
+01:40:46,740 --> 01:40:50,080
+ We have already been using hacking inside loops
+
+905
+01:40:50,080 --> 01:40:52,720
+ without necessarily calling it unpacking,
+
+906
+01:40:52,780 --> 01:40:53,900
+ but it's still unpacking, right?
+
+907
+01:40:53,950 --> 01:40:55,810
+ For example, when we do that with the dictionary,
+
+908
+01:40:55,950 --> 01:40:56,810
+ we do variables, right?
+
+909
+01:40:57,690 --> 01:41:00,580
+ I've done it somewhere here before.
+
+910
+01:41:01,680 --> 01:41:04,870
+ So I don't think we need to cover that again.
+
+911
+01:41:07,010 --> 01:41:17,070
+ Something just to show,
+
+912
+01:41:17,450 --> 01:41:22,010
+ we could use more of what we spoke about yesterday.
+
+913
+01:41:23,370 --> 01:41:26,420
+ So let's say we have a list first called...
+
+914
+01:41:26,420 --> 01:41:28,480
+ I have a question before you continue.
+
+915
+01:41:28,700 --> 01:41:28,800
+ Sorry.
+
+916
+01:41:28,800 --> 01:41:29,560
+ Sorry, sorry, Gloria.
+
+917
+01:41:30,140 --> 01:41:31,490
+ No, it's okay.
+
+918
+01:41:32,230 --> 01:41:35,730
+ Is it possible to ignore multiple values?
+
+919
+01:41:38,920 --> 01:41:40,020
+ Multiple values?
+
+920
+01:41:40,640 --> 01:41:41,100
+ Yes.
+
+921
+01:41:41,630 --> 01:41:42,370
+ Ignore them.
+
+922
+01:41:43,000 --> 01:41:47,130
+ Is it possible to ignore multiple values?
+
+923
+01:41:48,450 --> 01:41:49,910
+ Yeah, you can ignore how many you want
+
+924
+01:41:49,910 --> 01:41:52,430
+ because it doesn't really much do anything, right?
+
+925
+01:41:52,840 --> 01:41:53,740
+ So yeah, sure.
+
+926
+01:41:53,820 --> 01:41:54,600
+ Something like this, right?
+
+927
+01:41:55,200 --> 01:41:55,800
+ No problem.
+
+928
+01:41:58,990 --> 01:42:01,210
+ We're just creating variables and that's it
+
+929
+01:42:01,210 --> 01:42:03,110
+ because we're not supposed to use them later on.
+
+930
+01:42:03,330 --> 01:42:12,060
+ So let's say we have a list here
+
+931
+01:42:12,060 --> 01:42:16,370
+ with one, two, and three, for example.
+
+932
+01:42:17,230 --> 01:42:18,830
+ And we have a second list.
+
+933
+01:42:22,160 --> 01:42:36,170
+ We have a second list, four, five, and six, right?
+
+934
+01:42:36,710 --> 01:42:40,130
+ So what we can do is some...
+
+935
+01:42:40,130 --> 01:42:45,360
+ We can actually combine collections with our starts.
+
+936
+01:42:46,500 --> 01:42:49,030
+ So for example, I can do something like this,
+
+937
+01:42:49,490 --> 01:42:54,910
+ combine, and I want to combine what?
+
+938
+01:42:55,270 --> 01:43:00,190
+ Well, I want to create a new list with our first list
+
+939
+01:43:00,190 --> 01:43:02,590
+ and our second list.
+
+940
+01:43:03,180 --> 01:43:04,480
+ But in order to get all of them,
+
+941
+01:43:04,840 --> 01:43:08,180
+ I would ask, like Kritika mentioned, an asterisk here.
+
+942
+01:43:10,370 --> 01:43:13,540
+ And now we can just print and bind.
+
+943
+01:43:18,900 --> 01:43:19,540
+ This works as well.
+
+944
+01:43:20,640 --> 01:43:21,600
+ One, two, three, four, five, six.
+
+945
+01:43:23,780 --> 01:43:27,320
+ So the star actually unpacks the element from both lists
+
+946
+01:43:27,320 --> 01:43:29,510
+ into the new list combined.
+
+947
+01:43:32,240 --> 01:43:35,480
+ Of course, we can also do this with a dictionary.
+
+948
+01:43:41,200 --> 01:43:46,590
+ Let's say we have two dictionaries here.
+
+949
+01:43:47,050 --> 01:43:48,310
+ This is a good example, I think.
+
+950
+01:43:48,670 --> 01:43:55,070
+ Let's say we have defaults, for example.
+
+951
+01:43:55,420 --> 01:44:08,820
+ Getting sick.
+
+952
+01:44:09,240 --> 01:44:09,700
+ Let's see.
+
+953
+01:44:09,700 --> 01:44:10,630
+ All right.
+
+954
+01:44:11,210 --> 01:44:14,330
+ So we have some keys and values.
+
+955
+01:44:15,580 --> 01:44:18,520
+ Let's say we have the first key here, which is called theme.
+
+956
+01:44:20,150 --> 01:44:24,800
+ And it's going to be, well, let's say, light, right?
+
+957
+01:44:26,280 --> 01:44:29,900
+ And we have a, let's say, a language.
+
+958
+01:44:33,750 --> 01:44:36,410
+ And the language is actually, let's say, English.
+
+959
+01:44:37,850 --> 01:44:44,280
+ And then we have some, let's say, user settings.
+
+960
+01:44:54,850 --> 01:44:57,180
+ And here, we also have language.
+
+961
+01:44:57,180 --> 01:45:07,010
+ And this time, instead of English, I'm going to actually write Swedish.
+
+962
+01:45:10,110 --> 01:45:24,040
+ And we will also have a notification, and let's put it as, all right?
+
+963
+01:45:24,040 --> 01:45:34,020
+ Here, create a new variable, empty dictionary.
+
+964
+01:45:34,780 --> 01:45:36,000
+ No, no, empty dictionary, sorry.
+
+965
+01:45:36,760 --> 01:45:45,650
+ With where we want the defaults, and we want the user settings.
+
+966
+01:45:45,850 --> 01:45:54,200
+ But since we want all of them, we will do not one asterisk, but two, right?
+
+967
+01:45:54,700 --> 01:45:56,440
+ If you remember from yesterday's lesson.
+
+968
+01:45:58,240 --> 01:46:08,070
+ So here, one question I would want to ask you guys is, before we run it, which language will
+
+969
+01:46:08,070 --> 01:46:11,550
+ actually remain, since we have language two times, the same key, right?
+
+970
+01:46:12,240 --> 01:46:16,310
+ So the idea is basically to combine everything here into settings, right?
+
+971
+01:46:16,410 --> 01:46:17,210
+ The settings dictionary.
+
+972
+01:46:17,800 --> 01:46:22,420
+ But since we have two keys with language, which language will actually remain?
+
+973
+01:46:22,480 --> 01:46:25,010
+ Because we can't have the same thing twice.
+
+974
+01:46:29,320 --> 01:46:29,640
+ Dimitri?
+
+975
+01:46:30,080 --> 01:46:32,760
+ I think from user settings.
+
+976
+01:46:34,270 --> 01:46:37,240
+ I think from user settings.
+
+977
+01:46:37,500 --> 01:46:39,300
+ Ah, so you think actually Swedish, right?
+
+978
+01:46:39,590 --> 01:46:41,210
+ Yeah, so Swedish, right?
+
+979
+01:46:41,570 --> 01:46:42,370
+ Let's actually see.
+
+980
+01:46:43,370 --> 01:46:46,970
+ And Dimitri, I need to print it, right?
+
+981
+01:46:47,770 --> 01:46:51,050
+ Print settings.
+
+982
+01:46:51,630 --> 01:46:51,990
+ There we go.
+
+983
+01:46:53,270 --> 01:46:53,920
+ So let's see.
+
+984
+01:46:54,950 --> 01:46:56,990
+ And Dimitri is actually correct.
+
+985
+01:46:57,250 --> 01:46:58,190
+ Language, Swedish.
+
+986
+01:46:59,400 --> 01:47:08,490
+ So what we saw when we have a key overlap, the later value wins in the construction.
+
+987
+01:47:08,490 --> 01:47:25,400
+ So, yeah, this pattern will actually be more common when we have defaults plus user-specific
+
+988
+01:47:25,400 --> 01:47:26,520
+ overrides, for example.
+
+989
+01:47:30,870 --> 01:47:32,690
+ Did you guys have a question, Fabian?
+
+990
+01:47:33,090 --> 01:47:35,090
+ Or are you just raised your hand from the last question?
+
+991
+01:47:39,110 --> 01:47:48,950
+ And now, let's jump into the last part, which I think, let's see if we have time for that
+
+992
+01:47:48,950 --> 01:47:49,170
+ one.
+
+993
+01:47:59,650 --> 01:48:14,110
+ Yeah, we can take a break in 10 minutes.
+
+994
+01:48:14,110 --> 01:48:18,020
+ Let's just introduce what we want to talk about here.
+
+995
+01:48:18,480 --> 01:48:27,730
+ I don't remember who actually mentioned it, but in Python, we of course have, or of course
+
+996
+01:48:27,730 --> 01:48:32,260
+ it's not of course, but we actually have lambda functions.
+
+997
+01:48:39,650 --> 01:48:53,170
+ So lambda sometimes gets presented as, well, something very advanced.
+
+998
+01:48:54,220 --> 01:48:58,790
+ But the basic idea, at least, is actually pretty simple.
+
+999
+01:49:00,640 --> 01:49:04,060
+ Lambda is just a small, anonymous function.
+
+1000
+01:49:05,480 --> 01:49:09,360
+ So let's just create a simple function here.
+
+1001
+01:49:10,610 --> 01:49:17,130
+ Def double, say, a function that actually doubles a number.
+
+1002
+01:49:18,170 --> 01:49:18,390
+ All right?
+
+1003
+01:49:19,280 --> 01:49:26,130
+ So it actually returns number times two, since we want to double it.
+
+1004
+01:49:26,210 --> 01:49:38,590
+ All right, and now we can use it, for example, print double, and let's do it with a number,
+
+1005
+01:49:38,870 --> 01:49:39,490
+ for example, five.
+
+1006
+01:49:39,890 --> 01:49:40,130
+ All right?
+
+1007
+01:49:40,900 --> 01:49:41,530
+ Run this here.
+
+1008
+01:49:41,710 --> 01:49:42,670
+ We'll get out with 10.
+
+1009
+01:49:42,810 --> 01:49:43,230
+ No problem.
+
+1010
+01:49:47,310 --> 01:49:50,940
+ Can we express the same thing using lambda?
+
+1011
+01:49:51,650 --> 01:49:52,330
+ Yes, we can.
+
+1012
+01:49:54,560 --> 01:49:56,650
+ And how would that look like in Python?
+
+1013
+01:49:57,010 --> 01:49:59,070
+ Well, it would look like something like this.
+
+1014
+01:49:59,070 --> 01:50:11,240
+ So double, and then we put equal, and then we actually write lambda, then we'll do number.
+
+1015
+01:50:12,260 --> 01:50:14,560
+ And what do we want to do with the number?
+
+1016
+01:50:14,840 --> 01:50:16,690
+ Well, we want to do number times.
+
+1017
+01:50:18,000 --> 01:50:21,240
+ So a little bit different from comprehension, right?
+
+1018
+01:50:22,080 --> 01:50:25,880
+ But the idea is pretty similar.
+
+1019
+01:50:25,960 --> 01:50:32,000
+ So I understand why one would react to comprehension, and I think it's pretty much the same.
+
+1020
+01:50:32,080 --> 01:50:35,850
+ But it's really not very close.
+
+1021
+01:50:36,440 --> 01:50:43,590
+ And now we can just print and use double or five, for example.
+
+1022
+01:50:47,650 --> 01:50:49,590
+ And then let's run this.
+
+1023
+01:50:50,150 --> 01:50:51,010
+ We actually get our 10.
+
+1024
+01:50:51,010 --> 01:51:02,640
+ So the syntax here is lambda, parameters, cola, and expression.
+
+1025
+01:51:07,650 --> 01:51:13,380
+ And the result, as you see here, the result is actually returned automatically,
+
+1026
+01:51:13,880 --> 01:51:20,830
+ where we don't need to write it as a difference to what we did with a normal function.
+
+1027
+01:51:23,870 --> 01:51:24,210
+ Yes, Gloria?
+
+1028
+01:51:28,370 --> 01:51:32,110
+ Sorry, can you read again the line 2019?
+
+1029
+01:51:32,890 --> 01:51:34,420
+ How can you read it?
+
+1030
+01:51:35,880 --> 01:51:38,010
+ How can you read it?
+
+1031
+01:51:38,230 --> 01:51:38,410
+ Okay.
+
+1032
+01:51:39,020 --> 01:51:40,740
+ So we created our variable.
+
+1033
+01:51:41,700 --> 01:51:46,240
+ Then we just wrote, can't even write it.
+
+1034
+01:51:46,240 --> 01:51:47,670
+ So we wrote lambda.
+
+1035
+01:51:47,670 --> 01:51:59,770
+ And after lambda, we wrote the parameters, right?
+
+1036
+01:52:00,430 --> 01:52:01,010
+ Parameters.
+
+1037
+01:52:01,230 --> 01:52:06,990
+ And then after the parameters, we actually write colon.
+
+1038
+01:52:07,840 --> 01:52:12,540
+ And after the colon, we always write the expression.
+
+1039
+01:52:14,760 --> 01:52:22,400
+ And as I mentioned before, the return is returnable.
+
+1040
+01:52:23,640 --> 01:52:27,830
+ Well, the result of the expression is actually returned automatically.
+
+1041
+01:52:37,440 --> 01:52:41,490
+ However, something important to remember, which one should I choose?
+
+1042
+01:52:42,790 --> 01:52:46,700
+ It's pretty common, especially if you're a beginner, right?
+
+1043
+01:52:48,270 --> 01:52:53,710
+ So just to emphasize on that, you probably already know this from before.
+
+1044
+01:52:54,050 --> 01:53:07,000
+ But if I want to use, or let's say if I need reusable function, and this reusable function called double,
+
+1045
+01:53:08,430 --> 01:53:13,890
+ the normal def version here is usually clearer, actually.
+
+1046
+01:53:15,590 --> 01:53:30,220
+ Lambda becomes more useful when we need a small function temporarily, often as an argument to another function, for example.
+
+1047
+01:53:31,790 --> 01:53:34,730
+ So, yeah, that's important to remember.
+
+1048
+01:53:41,350 --> 01:53:47,400
+ Yes, they are referred to as anonymous functions.
+
+1049
+01:53:47,620 --> 01:53:52,810
+ I don't know if that's helpful, but it's the same thing here, I guess.
+
+1050
+01:53:52,810 --> 01:53:54,110
+ Yeah, yeah, anonymous function, exactly.
+
+1051
+01:53:54,480 --> 01:53:54,720
+ Exactly.
+
+1052
+01:53:54,800 --> 01:53:55,260
+ Okay, okay.
+
+1053
+01:53:55,690 --> 01:53:55,850
+ Yeah.
+
+1054
+01:54:02,220 --> 01:54:03,020
+ All right.
+
+1055
+01:54:03,860 --> 01:54:15,820
+ We can dive into Lambda a little bit more before we can take a break here.
+
+1056
+01:54:16,030 --> 01:54:18,530
+ We have some couple of minutes, I think.
+
+1057
+01:54:19,510 --> 01:54:23,410
+ So let's say we have a list of names, for example.
+
+1058
+01:54:26,110 --> 01:54:29,370
+ Names, just a practical example, that's it.
+
+1059
+01:54:32,080 --> 01:54:49,370
+ Alexander, we got Lee, we got Grace, and we got Ada, right?
+
+1060
+01:54:51,190 --> 01:54:57,050
+ And let's do this.
+
+1061
+01:54:57,150 --> 01:55:05,040
+ Print sorted names, for example.
+
+1062
+01:55:06,760 --> 01:55:07,640
+ All right.
+
+1063
+01:55:08,310 --> 01:55:09,200
+ Let's run the code.
+
+1064
+01:55:10,000 --> 01:55:10,380
+ Let's see here.
+
+1065
+01:55:10,650 --> 01:55:12,750
+ Yeah, we got Ada, Alexander, Grace, and Lee, right?
+
+1066
+01:55:13,070 --> 01:55:18,750
+ So by default, strings are sorted alphabetically, right?
+
+1067
+01:55:19,900 --> 01:55:23,290
+ What if I want their length?
+
+1068
+01:55:23,700 --> 01:55:26,760
+ Or what if I want to sort them by length?
+
+1069
+01:55:28,190 --> 01:55:35,750
+ Well, in a normal function, I would do something like this.
+
+1070
+01:55:38,640 --> 01:55:42,320
+ Get length, maybe.
+
+1071
+01:55:44,980 --> 01:55:57,020
+ Length, name, and return name.
+
+1072
+01:55:57,930 --> 01:55:58,730
+ Something like this, right?
+
+1073
+01:55:59,650 --> 01:56:25,140
+ And then sorted names equals sorted names, key, get length, right?
+
+1074
+01:56:26,080 --> 01:56:27,840
+ Something like this.
+
+1075
+01:56:29,090 --> 01:56:33,440
+ Print sorted names.
+
+1076
+01:56:36,460 --> 01:56:44,240
+ So here, if we run this, we get sorted by their length, right?
+
+1077
+01:56:44,360 --> 01:56:47,000
+ Lee, Ada, Grace, Alexander, with the longest name, right?
+
+1078
+01:56:47,000 --> 01:56:52,360
+ So the key parameter here actually expects a function.
+
+1079
+01:56:53,000 --> 01:56:56,710
+ So Python calls that function for each value in the list
+
+1080
+01:56:56,710 --> 01:57:02,050
+ to actually determine what should be used for sorting, right?
+
+1081
+01:57:03,480 --> 01:57:07,010
+ But what if we do the same thing using lambda?
+
+1082
+01:57:07,930 --> 01:57:09,340
+ Well, let's actually do that.
+
+1083
+01:57:10,870 --> 01:57:16,350
+ So instead of doing that, I will just, in this single line,
+
+1084
+01:57:16,900 --> 01:57:27,550
+ just do sorted names equals something like this.
+
+1085
+01:57:27,890 --> 01:57:44,270
+ Sorted names, and now here at key, I could do lambda, name,
+
+1086
+01:57:45,410 --> 01:57:50,660
+ and then the expression len, and that's it.
+
+1087
+01:57:51,530 --> 01:57:56,540
+ And now I can actually print the sorted names.
+
+1088
+01:57:57,860 --> 01:57:58,340
+ And there we go.
+
+1089
+01:58:01,770 --> 01:58:04,410
+ And if we run this, we see that we get the same thing.
+
+1090
+01:58:05,220 --> 01:58:06,720
+ Lee, Ada, Grace, Alexander.
+
+1091
+01:58:09,570 --> 01:58:14,530
+ So instead of passing a normal def function to our key,
+
+1092
+01:58:14,530 --> 01:58:20,220
+ we can actually pass in the lambda function.
+
+1093
+01:58:20,770 --> 01:58:21,050
+ No problem.
+
+1094
+01:58:24,670 --> 01:58:27,270
+ Now, let's take a short break.
+
+1095
+01:58:28,520 --> 01:58:32,280
+ And, yeah, when we get back, we can look a little bit more at lambda,
+
+1096
+01:58:32,830 --> 01:58:34,430
+ maybe 15 minutes, something like that,
+
+1097
+01:58:34,490 --> 01:58:36,570
+ and then we can call it a day.
+
+1098
+01:58:37,260 --> 01:58:39,280
+ And I think it's pretty much enough.
+
+1099
+01:58:40,220 --> 01:58:41,080
+ All right.
+
+1100
+01:58:45,470 --> 01:58:46,130
+ Let me see.
+
+1101
+01:58:46,250 --> 01:58:48,700
+ I have a question here.
+
+1102
+01:58:50,350 --> 01:58:56,000
+ Earlier today, you called the modulus thingy for lambda.
+
+1103
+01:58:56,200 --> 01:58:57,760
+ Was this a slip or is it normal?
+
+1104
+01:58:57,860 --> 01:58:58,500
+ Oh, no, no, no.
+
+1105
+01:58:58,600 --> 01:58:58,960
+ Sorry.
+
+1106
+01:58:59,140 --> 01:59:00,320
+ It might be a slip.
+
+1107
+01:59:01,610 --> 01:59:04,390
+ Maybe I had lambda in the back of my head or something like that.
+
+1108
+01:59:04,900 --> 01:59:05,820
+ I didn't even notice.
+
+1109
+01:59:06,430 --> 01:59:06,890
+ Sorry, Grace.
+
+1110
+01:59:07,670 --> 01:59:08,520
+ Oh, it was a slip.
+
+1111
+01:59:08,820 --> 01:59:09,420
+ Good question.
+
+1112
+01:59:12,120 --> 01:59:12,900
+ So sorry.
+
+1113
+01:59:12,980 --> 01:59:13,460
+ I'll be on.
+
+1114
+01:59:22,380 --> 01:59:22,640
+ It's here.
+
+1115
+01:59:22,780 --> 01:59:24,120
+ I can barely hear you.
+
+1116
+01:59:24,280 --> 01:59:24,680
+ Oh, okay.
+
+1117
+01:59:24,740 --> 01:59:24,840
+ Okay.
+
+1118
+01:59:24,840 --> 01:59:25,240
+ Not me.
+
+1119
+01:59:25,870 --> 01:59:27,910
+ And we have to print the value.
+
+1120
+01:59:28,340 --> 01:59:30,190
+ Exactly.
+
+1121
+01:59:30,930 --> 01:59:31,470
+ All right.
+
+1122
+01:59:31,490 --> 01:59:35,750
+ Let's take 10 minutes or eight minutes,
+
+1123
+01:59:35,750 --> 01:59:38,550
+ and then we can just continue with the end,
+
+1124
+01:59:38,610 --> 01:59:39,610
+ and then we can call it a day.
+
+1125
+01:59:39,950 --> 01:59:40,210
+ All right.
+
+1126
+01:59:41,230 --> 01:59:42,730
+ So 11.
+
+1127
+01:59:43,260 --> 01:59:43,590
+ 10.
+
+1128
+01:59:45,130 --> 01:59:46,250
+ Don't grab some coffee.
+
+1129
+02:06:50,200 --> 02:07:37,880
+ Are we guys back?
+
+1130
+02:07:43,930 --> 02:07:49,090
+ So, yeah, I can prepare this during the break
+
+1131
+02:07:49,090 --> 02:07:50,810
+ so you didn't miss anything.
+
+1132
+02:07:50,810 --> 02:07:57,310
+ So, let's sort a dictionary using lambda as well.
+
+1133
+02:07:58,000 --> 02:08:04,980
+ So, we have a list of dictionaries containing key and values.
+
+1134
+02:08:05,360 --> 02:08:10,450
+ Nana, score 85, name Bob, score 62, and so on.
+
+1135
+02:08:10,810 --> 02:08:14,180
+ And name Charlie with a score of 91.
+
+1136
+02:08:15,000 --> 02:08:15,560
+ All right.
+
+1137
+02:08:16,230 --> 02:08:20,620
+ So, let's actually do something like this.
+
+1138
+02:08:21,060 --> 02:08:25,930
+ Let me just write it, and then we can discuss it.
+
+1139
+02:08:26,300 --> 02:08:31,020
+ So, here, you can use sorted, sure.
+
+1140
+02:08:32,460 --> 02:08:36,630
+ Here, we actually need to specify students,
+
+1141
+02:08:36,790 --> 02:08:44,570
+ and then we can use the key lambda, and so on.
+
+1142
+02:08:45,420 --> 02:08:47,500
+ And just for the sake of readability,
+
+1143
+02:08:47,620 --> 02:08:49,460
+ I'm just going to do something like that.
+
+1144
+02:08:54,340 --> 02:08:55,110
+ Not that.
+
+1145
+02:08:57,520 --> 02:09:01,440
+ This, right?
+
+1146
+02:09:07,600 --> 02:09:15,790
+ So, here, the key, we can use lambda,
+
+1147
+02:09:17,420 --> 02:09:20,050
+ and here we can do student,
+
+1148
+02:09:22,510 --> 02:09:29,280
+ and with the student score, right?
+
+1149
+02:09:29,440 --> 02:09:33,560
+ And there we go.
+
+1150
+02:09:33,560 --> 02:09:41,200
+ And now, we can actually print the sorted students.
+
+1151
+02:09:42,800 --> 02:09:44,480
+ Let's try it out.
+
+1152
+02:09:49,650 --> 02:09:51,260
+ So, now, as we see,
+
+1153
+02:09:51,480 --> 02:09:54,280
+ we have sorted the dictionaries, right?
+
+1154
+02:09:54,360 --> 02:09:55,040
+ By their scores.
+
+1155
+02:09:55,540 --> 02:09:57,810
+ So, what we see here is that Python
+
+1156
+02:09:57,810 --> 02:10:00,940
+ actually cannot automatically know
+
+1157
+02:10:00,940 --> 02:10:05,060
+ which dictionary value we want to sort by, right?
+
+1158
+02:10:05,210 --> 02:10:11,260
+ So, the lambda actually tells sorted here
+
+1159
+02:10:11,260 --> 02:10:15,020
+ that for each student,
+
+1160
+02:10:15,710 --> 02:10:20,180
+ well, use the student's score as the sorting key.
+
+1161
+02:10:21,490 --> 02:10:23,020
+ So, we need to actually specify that.
+
+1162
+02:10:24,490 --> 02:10:29,840
+ And if we wanted to, let's say, reverse that,
+
+1163
+02:10:30,080 --> 02:10:31,080
+ we could have done that as well.
+
+1164
+02:10:31,840 --> 02:10:34,130
+ Could have just added, for example,
+
+1165
+02:10:37,210 --> 02:10:40,380
+ just written a reverse, for example,
+
+1166
+02:10:40,640 --> 02:10:42,220
+ and then put true to that.
+
+1167
+02:10:43,200 --> 02:10:46,560
+ That's not how you spell true.
+
+1168
+02:10:46,560 --> 02:10:48,110
+ And let's try it out.
+
+1169
+02:10:49,280 --> 02:10:50,200
+ That works as well.
+
+1170
+02:10:53,180 --> 02:10:54,960
+ So, now, the high score actually comes first.
+
+1171
+02:11:26,830 --> 02:11:31,650
+ The end function that you might stumble upon
+
+1172
+02:11:31,650 --> 02:11:36,350
+ is something called map and also filter.
+
+1173
+02:11:36,590 --> 02:11:37,930
+ But let's begin with map.
+
+1174
+02:11:40,090 --> 02:11:43,580
+ And they are worth actually recognizing
+
+1175
+02:11:43,580 --> 02:11:45,720
+ because they appear in Python code
+
+1176
+02:11:45,720 --> 02:11:51,000
+ and actually connect naturally to lambda as well.
+
+1177
+02:11:51,460 --> 02:11:53,220
+ So, let's say we have numbers here.
+
+1178
+02:11:54,730 --> 02:12:01,260
+ Equals, we got one and two, three, four, and five.
+
+1179
+02:12:01,260 --> 02:12:04,460
+ What we can do here,
+
+1180
+02:12:04,660 --> 02:12:06,020
+ let's say we want to double the numbers.
+
+1181
+02:12:06,660 --> 02:12:07,680
+ We can do something like this.
+
+1182
+02:12:08,520 --> 02:12:14,270
+ Double equals, and then here we can use map.
+
+1183
+02:12:14,890 --> 02:12:17,940
+ Then we can actually write a lambda expression here.
+
+1184
+02:12:18,630 --> 02:12:22,830
+ Lambda with the number.
+
+1185
+02:12:23,040 --> 02:12:25,120
+ We want what?
+
+1186
+02:12:25,260 --> 02:12:26,700
+ Well, we want to take that number,
+
+1187
+02:12:29,100 --> 02:12:33,590
+ multiply it by, we said multiply by two, right?
+
+1188
+02:12:34,000 --> 02:12:36,640
+ And we want to do this with our numbers, right?
+
+1189
+02:12:37,180 --> 02:12:38,780
+ So, this actually works.
+
+1190
+02:12:40,430 --> 02:12:48,550
+ So, let's actually run it and see what more output is.
+
+1191
+02:12:49,470 --> 02:12:51,700
+ So, when we run this,
+
+1192
+02:12:51,700 --> 02:12:55,170
+ oh, I actually need to print it out, right?
+
+1193
+02:12:56,630 --> 02:13:01,700
+ Print, there we go.
+
+1194
+02:13:04,080 --> 02:13:07,030
+ Now, let's see here.
+
+1195
+02:13:09,440 --> 02:13:13,290
+ So, map actually returns
+
+1196
+02:13:13,290 --> 02:13:18,940
+ an iterator-like map object.
+
+1197
+02:13:20,320 --> 02:13:22,670
+ But what if we want to actually see
+
+1198
+02:13:22,670 --> 02:13:27,190
+ the values as a list,
+
+1199
+02:13:27,290 --> 02:13:29,260
+ we can actually do that, of course.
+
+1200
+02:13:30,090 --> 02:13:31,390
+ So, what we can do here,
+
+1201
+02:13:32,020 --> 02:13:33,920
+ let me just run here,
+
+1202
+02:13:34,120 --> 02:13:36,290
+ and then what we do is just,
+
+1203
+02:13:38,150 --> 02:13:38,910
+ if I remember correctly,
+
+1204
+02:13:39,760 --> 02:13:45,840
+ we can do a list here.
+
+1205
+02:13:46,530 --> 02:13:46,970
+ And that's it.
+
+1206
+02:13:49,850 --> 02:13:51,210
+ And then, of course,
+
+1207
+02:13:51,390 --> 02:13:52,330
+ we need to also print.
+
+1208
+02:13:55,510 --> 02:13:57,850
+ And you see,
+
+1209
+02:13:58,240 --> 02:14:01,320
+ we actually get our list doubled.
+
+1210
+02:14:10,470 --> 02:14:15,860
+ We could compare this
+
+1211
+02:14:15,860 --> 02:14:19,100
+ to our list comprehension, of course.
+
+1212
+02:14:21,010 --> 02:14:24,330
+ For example, in this case,
+
+1213
+02:14:24,630 --> 02:14:26,730
+ if we used a list comprehension,
+
+1214
+02:14:26,970 --> 02:14:28,270
+ we would do something like this.
+
+1215
+02:14:28,970 --> 02:14:32,200
+ Doubled equals.
+
+1216
+02:14:34,760 --> 02:14:36,530
+ We said number.
+
+1217
+02:14:37,390 --> 02:14:38,800
+ What we want to do, right?
+
+1218
+02:14:39,120 --> 02:14:40,720
+ Number multiplied by two.
+
+1219
+02:14:41,750 --> 02:14:46,850
+ Or number in numbers.
+
+1220
+02:14:47,340 --> 02:14:48,560
+ And then we would have printed out,
+
+1221
+02:14:49,670 --> 02:14:53,470
+ we would have printed out doubled, right?
+
+1222
+02:14:55,030 --> 02:14:57,340
+ So, in Python,
+
+1223
+02:14:58,000 --> 02:15:03,410
+ well, I would say developers
+
+1224
+02:15:03,410 --> 02:15:05,290
+ find the list comprehension
+
+1225
+02:15:05,290 --> 02:15:07,560
+ easier to read
+
+1226
+02:15:07,560 --> 02:15:10,780
+ for very simple transformations, right?
+
+1227
+02:15:11,320 --> 02:15:14,850
+ But you should still understand map,
+
+1228
+02:15:14,950 --> 02:15:15,210
+ of course,
+
+1229
+02:15:15,750 --> 02:15:17,900
+ because you will encounter a map.
+
+1230
+02:15:20,740 --> 02:15:22,510
+ So, that was a little bit about map.
+
+1231
+02:15:24,430 --> 02:15:27,890
+ And now let's take the last part for today.
+
+1232
+02:15:29,190 --> 02:15:29,850
+ And that would be,
+
+1233
+02:15:30,420 --> 02:15:31,260
+ we said before,
+
+1234
+02:15:31,380 --> 02:15:33,840
+ this was actually right.
+
+1235
+02:15:34,000 --> 02:15:34,860
+ No, I didn't remember.
+
+1236
+02:15:35,490 --> 02:15:37,090
+ Map.
+
+1237
+02:15:39,190 --> 02:15:40,790
+ And the last part was actually
+
+1238
+02:15:40,790 --> 02:15:41,910
+ we said filter, right?
+
+1239
+02:15:51,470 --> 02:15:52,530
+ Let's take an example
+
+1240
+02:15:52,530 --> 02:15:53,450
+ and then we will see,
+
+1241
+02:15:53,570 --> 02:15:54,710
+ understand what it actually does.
+
+1242
+02:15:55,030 --> 02:15:56,190
+ So, let's say we have numbers.
+
+1243
+02:15:57,030 --> 02:16:00,160
+ Let's take our numbers again here.
+
+1244
+02:16:03,930 --> 02:16:05,680
+ And I will actually add a six here
+
+1245
+02:16:05,680 --> 02:16:07,020
+ for the sake of the example.
+
+1246
+02:16:07,760 --> 02:16:08,220
+ All right.
+
+1247
+02:16:09,180 --> 02:16:10,860
+ So, let's say
+
+1248
+02:16:10,860 --> 02:16:12,220
+ I want the even numbers,
+
+1249
+02:16:15,120 --> 02:16:17,320
+ equals.
+
+1250
+02:16:18,140 --> 02:16:20,130
+ And since I want to see the list,
+
+1251
+02:16:20,370 --> 02:16:21,350
+ I'll write list.
+
+1252
+02:16:22,910 --> 02:16:23,850
+ And for the sake of readability,
+
+1253
+02:16:23,930 --> 02:16:25,210
+ I'm going to do something like that.
+
+1254
+02:16:25,210 --> 02:16:27,470
+ So, here I can use filter
+
+1255
+02:16:27,470 --> 02:16:30,680
+ and my lambda expression,
+
+1256
+02:16:31,350 --> 02:16:34,990
+ lambda number,
+
+1257
+02:16:35,710 --> 02:16:37,530
+ and the expression is actually
+
+1258
+02:16:37,530 --> 02:16:38,250
+ number,
+
+1259
+02:16:39,650 --> 02:16:42,620
+ modulus,
+
+1260
+02:16:42,920 --> 02:16:43,620
+ not lambda,
+
+1261
+02:16:45,010 --> 02:16:45,930
+ modulus two,
+
+1262
+02:16:47,490 --> 02:16:49,540
+ equals zero.
+
+1263
+02:16:50,640 --> 02:16:51,320
+ And we want to do that.
+
+1264
+02:16:53,890 --> 02:16:55,600
+ And now,
+
+1265
+02:16:55,830 --> 02:16:57,090
+ if we were to print
+
+1266
+02:16:57,090 --> 02:16:59,060
+ our even numbers,
+
+1267
+02:16:59,300 --> 02:17:00,950
+ we will see what filter
+
+1268
+02:17:00,950 --> 02:17:02,170
+ actually does in action, right?
+
+1269
+02:17:04,460 --> 02:17:08,080
+ So, let's run this and see.
+
+1270
+02:17:10,360 --> 02:17:12,010
+ Two, four, six.
+
+1271
+02:17:12,490 --> 02:17:14,130
+ So, what filter does here,
+
+1272
+02:17:14,290 --> 02:17:15,810
+ well, filter keeps
+
+1273
+02:17:15,810 --> 02:17:17,570
+ the values
+
+1274
+02:17:17,570 --> 02:17:19,390
+ where the function
+
+1275
+02:17:19,390 --> 02:17:20,610
+ actually returns.
+
+1276
+02:17:21,540 --> 02:17:24,280
+ That's a useful way
+
+1277
+02:17:24,280 --> 02:17:25,850
+ of using filter.
+
+1278
+02:17:27,680 --> 02:17:30,510
+ Well, we could compare this
+
+1279
+02:17:30,510 --> 02:17:31,690
+ to, of course,
+
+1280
+02:17:31,810 --> 02:17:32,730
+ to our comprehension.
+
+1281
+02:17:34,720 --> 02:17:37,410
+ So, here I would write
+
+1282
+02:17:37,410 --> 02:17:38,050
+ even numbers,
+
+1283
+02:17:40,380 --> 02:17:42,970
+ start off with my empty list,
+
+1284
+02:17:44,820 --> 02:17:45,620
+ and now,
+
+1285
+02:17:46,100 --> 02:17:46,720
+ right here.
+
+1286
+02:17:47,090 --> 02:17:47,650
+ So, number,
+
+1287
+02:17:49,310 --> 02:17:53,080
+ no, number,
+
+1288
+02:17:53,640 --> 02:17:53,900
+ numbers.
+
+1289
+02:17:56,230 --> 02:17:57,630
+ For number
+
+1290
+02:17:57,630 --> 02:18:00,870
+ in numbers,
+
+1291
+02:18:01,310 --> 02:18:01,660
+ right?
+
+1292
+02:18:02,400 --> 02:18:03,960
+ And what if,
+
+1293
+02:18:04,690 --> 02:18:05,740
+ so add a condition here,
+
+1294
+02:18:06,170 --> 02:18:07,270
+ if number,
+
+1295
+02:18:08,290 --> 02:18:10,690
+ modulus
+
+1296
+02:18:10,690 --> 02:18:13,170
+ to actually
+
+1297
+02:18:13,170 --> 02:18:14,330
+ equals to zero
+
+1298
+02:18:14,330 --> 02:18:23,250
+ print numbers.
+
+1299
+02:18:23,590 --> 02:18:23,950
+ So, same thing,
+
+1300
+02:18:24,580 --> 02:18:25,160
+ but just using
+
+1301
+02:18:25,160 --> 02:18:25,700
+ a comprehension.
+
+1302
+02:18:26,710 --> 02:18:28,680
+ So, again,
+
+1303
+02:18:29,100 --> 02:18:30,000
+ for a simple
+
+1304
+02:18:30,000 --> 02:18:30,980
+ condition,
+
+1305
+02:18:32,500 --> 02:18:33,080
+ programmers would,
+
+1306
+02:18:33,560 --> 02:18:35,200
+ Python programmers
+
+1307
+02:18:35,200 --> 02:18:35,700
+ at least,
+
+1308
+02:18:36,360 --> 02:18:37,200
+ would prefer
+
+1309
+02:18:37,200 --> 02:18:38,240
+ to use comprehension.
+
+1310
+02:18:41,120 --> 02:18:42,040
+ So, yeah,
+
+1311
+02:18:42,120 --> 02:18:42,980
+ I just want to emphasize,
+
+1312
+02:18:43,140 --> 02:18:43,700
+ well, the goal
+
+1313
+02:18:43,700 --> 02:18:45,140
+ for today
+
+1314
+02:18:45,140 --> 02:18:46,080
+ is not to tell you,
+
+1315
+02:18:46,140 --> 02:18:46,320
+ like,
+
+1316
+02:18:46,920 --> 02:18:47,370
+ tell you guys
+
+1317
+02:18:47,370 --> 02:18:48,790
+ always use lambda
+
+1318
+02:18:48,790 --> 02:18:50,110
+ or map
+
+1319
+02:18:50,110 --> 02:18:50,830
+ and filters.
+
+1320
+02:18:51,170 --> 02:18:52,490
+ So, the goal
+
+1321
+02:18:52,490 --> 02:18:53,370
+ is to understand them,
+
+1322
+02:18:53,390 --> 02:18:53,550
+ right?
+
+1323
+02:18:53,870 --> 02:18:55,030
+ and recognize them,
+
+1324
+02:18:55,110 --> 02:18:55,350
+ of course,
+
+1325
+02:18:55,650 --> 02:18:56,280
+ and, yeah,
+
+1326
+02:18:56,640 --> 02:18:57,860
+ and always choose
+
+1327
+02:18:57,860 --> 02:18:59,310
+ readable code.
+
+1328
+02:19:01,470 --> 02:19:03,780
+ And now,
+
+1329
+02:19:03,840 --> 02:19:04,930
+ you have a lot
+
+1330
+02:19:04,930 --> 02:19:05,980
+ to choose about.
+
+1331
+02:19:09,420 --> 02:19:09,740
+ Yeah,
+
+1332
+02:19:10,030 --> 02:19:10,850
+ and that was
+
+1333
+02:19:10,850 --> 02:19:15,780
+ actually it.
+
+1334
+02:19:16,060 --> 02:19:16,260
+ Well,
+
+1335
+02:19:16,380 --> 02:19:17,100
+ we could have used
+
+1336
+02:19:17,100 --> 02:19:17,860
+ subconditional.
+
+1337
+02:19:18,220 --> 02:19:18,380
+ No,
+
+1338
+02:19:18,720 --> 02:19:19,580
+ I think that's enough.
+
+1339
+02:19:19,870 --> 02:19:20,900
+ That's enough for you guys
+
+1340
+02:19:20,900 --> 02:19:21,930
+ for today.
+
+1341
+02:19:24,660 --> 02:19:24,940
+ So,
+
+1342
+02:19:31,970 --> 02:19:32,270
+ choose.
+
+1343
+02:19:32,640 --> 02:19:32,930
+ Sure,
+
+1344
+02:19:32,970 --> 02:19:33,710
+ we could talk really,
+
+1345
+02:19:33,790 --> 02:19:35,030
+ or maybe we can add it
+
+1346
+02:19:35,030 --> 02:19:35,910
+ on Monday,
+
+1347
+02:19:35,990 --> 02:19:36,730
+ but I think this is
+
+1348
+02:19:36,730 --> 02:19:37,690
+ plenty enough for today.
+
+1349
+02:19:40,250 --> 02:19:42,250
+ Yes,
+
+1350
+02:19:42,530 --> 02:19:42,830
+ I don't know,
+
+1351
+02:19:42,930 --> 02:19:43,690
+ this also works.
+
+1352
+02:19:46,000 --> 02:19:46,660
+ All right.
+
+1353
+02:19:47,210 --> 02:19:48,290
+ I think that's
+
+1354
+02:19:48,290 --> 02:19:49,150
+ pretty much enough.
+
+1355
+02:19:50,240 --> 02:19:50,340
+ And,
+
+1356
+02:19:51,710 --> 02:19:53,360
+ just put my camera back
+
+1357
+02:19:53,360 --> 02:20:00,260
+ and also maybe
+
+1358
+02:20:00,260 --> 02:20:01,200
+ end the recording.
+
+1359
+02:20:04,720 --> 02:20:04,900
+ All right,
+
+1360
+02:20:04,920 --> 02:20:05,060
+ let's go.
+

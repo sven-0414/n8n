@@ -1,0 +1,23 @@
+What is a class in Python?;A class is a blueprint or template that defines the properties and behaviors an object of that type will have.
+
+What is an object in Python?;An object is a concrete instance created from a class, with its own state and behavior defined by the class.
+
+How do you create multiple objects from one class?;You can create multiple objects from a single class by calling the class name followed by parentheses multiple times.
+
+What naming convention should be used for class names in Python?;Class names should use PascalCase, where the first letter of each word is capitalized.
+
+Why is it problematic to set attributes manually on objects?;Setting attributes manually is error-prone and inefficient because you have to do it every time you create an object.
+
+What is the purpose of the `__init__` method in Python classes?;The `__init__` method is a special constructor that initializes new object instances with given parameters.
+
+What does the `self` parameter represent in Python class methods?;The `self` parameter refers to the specific instance of the class being worked with and is automatically passed when calling methods.
+
+Can default values be used in the `__init__` method?;Yes, default values can be assigned to parameters in `__init__`, allowing for flexible object creation.
+
+What are methods in Python classes?;Methods are functions defined inside a class that can access and modify the object's attributes and always take `self` as their first parameter.
+
+How do you differentiate between instance and class attributes?;Instance attributes belong to specific objects, while class attributes are shared among all instances of the class.
+
+What is object composition in Python?;Object composition refers to the practice of creating objects that contain other objects or collections of objects.
+
+Why is Object-Oriented Programming useful?;OOP helps organize code by grouping related data and behavior together, making it more reusable, maintainable, and intuitive to understand.

@@ -1,0 +1,25 @@
+What is the difference between parameters and arguments in Python functions?;Parameters are the variables defined in the function signature, while arguments are the actual values passed when calling the function.
+
+What does the return statement do in a Python function?;The return statement sends a value back to the caller and exits the function immediately.
+
+How does variable scope work in Python?;Local variables exist only within the function where they're defined, while global variables exist throughout the entire program.
+
+What is the L.E.G.B. rule in Python?;It's Python's lookup order for variable names: Local, Enclosing, Global, and Built-in.
+
+How can you modify a global variable inside a function?;Use the global keyword to allow a function to modify variables in the global scope.
+
+What does *args do in a Python function definition?;It allows a function to accept any number of positional arguments, which are packed into a tuple.
+
+What does **kwargs do in a Python function definition?;It allows a function to accept any number of keyword arguments, which are packed into a dictionary.
+
+How should parameters, *args, and **kwargs be ordered in a function definition?;Regular parameters must come before *args, and *args must come before **kwargs.
+
+Why is it better to avoid global variables in functions?;Using global variables makes code harder to test and maintain; returning values is generally cleaner.
+
+What does unpacking arguments mean in Python?;The * and ** operators can unpack collections into separate arguments for a function.
+
+What causes an UnboundLocalError in Python?;When Python sees an assignment to a variable inside a function, it treats that variable as local for the entire function, even if referenced before assignment.
+
+Why should you avoid overwriting built-in names like list or print?;It can cause unexpected behavior and make your code harder to debug and understand.
+
+What is the main benefit of using *args and **kwargs in functions?;They allow writing more adaptable functions that can handle varying numbers of inputs, making code more reusable.

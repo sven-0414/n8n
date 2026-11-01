@@ -1,0 +1,15 @@
+What is method overriding in Python?;Method overriding allows a subclass to provide a specific implementation of a method already defined in its parent class, enabling it to inherit behavior while adding or modifying functionality.
+
+Why is method overriding important for polymorphism?;It enables different objects to respond to the same method call in their own unique way, which is essential for writing flexible and extensible code.
+
+What does polymorphism mean in object-oriented programming?;Polymorphism allows different objects to respond to the same method call in their own unique way through a common interface.
+
+How does duck typing work in Python?;Duck typing determines an object's suitability by checking whether it has required methods and properties, rather than its explicit type, following the principle "if it walks like a duck and quacks like a duck, it's a duck."
+
+What is the purpose of the isinstance() function?;The isinstance() function checks whether an object is an instance of a specific class or type, including inheritance relationships.
+
+What does the __str__() method do in Python?;The __str__() method defines the string representation of an object, controlling how it appears when printed or converted to a string.
+
+When should you use inheritance over composition?;Use inheritance for clear "is-a" relationships where one class extends another's behavior, and composition for "has-a" relationships where one class contains or uses objects of other classes.
+
+What are the key differences between inheritance and composition?;Inheritance represents an "is-a" relationship for extending or modifying parent behavior, while composition represents a "has-a" relationship for reusing functionality without tight coupling.

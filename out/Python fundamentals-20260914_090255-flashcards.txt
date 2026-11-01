@@ -1,0 +1,29 @@
+What is the purpose of a function in Python?;Functions are reusable blocks of code designed to perform specific tasks, promoting code reusability and maintainability.
+
+How do you define a function in Python?;You define a function using the `def` keyword followed by the function name, parentheses, and a colon.
+
+What happens when you call a function without parentheses?;The function object is referenced but not executed.
+
+What are parameters in a function?;Parameters are variables defined in the function signature that act as placeholders for values passed to the function.
+
+What are arguments in a function?;Arguments are the actual values passed to a function when it's called.
+
+How do positional and keyword arguments differ?;Positional arguments are matched based on their order, while keyword arguments explicitly specify which parameter each value belongs to.
+
+Can a function have default parameters?;Yes, parameters can have default values, which are used if no argument is provided for that parameter.
+
+What does the `return` statement do in a function?;The `return` statement sends a value back to where the function was called and ends the function execution.
+
+What happens if you don't use `return` in a function?;The function implicitly returns `None`.
+
+How does the `return` statement affect function execution?;It immediately ends the function's execution, preventing any code after it from running.
+
+Can functions call other functions?;Yes, functions can call other functions, enabling code reuse and better organization.
+
+What is the benefit of using type hints in Python functions?;Type hints improve code readability by indicating expected data types for parameters and return values.
+
+How do you document a function's purpose and usage?;You use docstrings, which are string literals that appear right after the function definition.
+
+What is a common mistake when defining functions?;Forgetting to include parentheses when calling a function.
+
+Why should you avoid mixing `print` and `return` in the same function?;Using `print` only displays output but doesn't allow the returned value to be used elsewhere, whereas `return` sends a value back for further use.
