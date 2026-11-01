@@ -1,0 +1,194 @@
+hear you uh i have one suggestion maybe there is no room for more video maybe if we all uh already
+have downloaded uh the previous python lectures there's 25 hours there video if you need more
+space there maybe you can delete we have fixed that it's not that we need more space we have
+fixed that uh we're not gonna delete anything we yeah it's fixed but it it takes time for microsoft
+to synchronize so hopefully by today it should be fixed yeah okay to go back yesterday we spoke a
+little bit about the normalization and all of that stuff we have one more thing to talk about let me
+see uh today and then tomorrow uh aladdin is me and aladdin are preparing uh some quizzes for you
+guys so everything we have learned so far you're gonna get some questions uh which we will explain
+more about the quiz uh tomorrow so i suggest you do all of the labs until today we're gonna get one more
+today uh let me see if i can share my screen while i speak here yeah so this is the plan for today so
+after today we'll be able to do these things hopefully uh explaining i'm gonna explain why we need join and
+join two tables for example inner join here uh or maybe join three or four tables and something called
+left join so we'll have the theory as as usual it's not gonna be a super long lecture uh i'm just gonna
+go through this i know that some of you guys are not done with all of the labs so you're gonna get
+some time working on that as well um so yesterday we learned to split data into many tables and that's
+great but now if we look at for example orders we only see for example customer number one and and and
+who is that basically we have to go and look in the customer table basically to see that and join is how we
+put these pieces basically back together so the tables will stay neat and be a little bit separate as
+well join equals matching puzzles uh pieces well join is like it is like matching puzzles
+pieces we take each order and we look at its customer id and find the customer with the same id of course on is where
+we say which column should match so notice here we actually write the table name a dot and then the
+column and then orders dot customer id because both tables have column called customer id and we must say
+which one we mean so what inner join gives us or i mean a normal join also called inner join uh only gives rows that match in both tables
+so think of a school dance where people pair up okay only the people who find found the partner
+are on the dance floor so emma has never ordered for example anything so she has no partner in orders she
+won't show up for example aliasis well writing customer dot first name gets pretty long so we give tables nicknames
+uh orders basically means in this query i'll just call order o then we can write o dot order id uh like calling your friend
+uh alexander but we're calling him alex but his name is alexander joining many tables yeah you can join as
+as many tables as you need just add one join for each new table each with its own on on and another tip here
+uh if you look at the er diagram and follow the lines each line in the diagram is one join in your query
+actually so if you forgot this on
+what happens if you go if if you if you do well skl pairs every order with every customer so for
+example 15 to 10 times that that's i mean 15 times 10 that's 115 rows and most of them are nonsense
+actually like a dance where everyone dances with everyone if you ever get way too many rows check your
+um basically and left join sometimes you want everyone even those without the match left join keeps all of
+the rows from the left table uh the one after from if there is no match the column from the other table
+are null so go back to our dance here it's like a photo of the whole class including those standing
+alone here's also a useful trick left join and where uh the right side is basically is null and that gives
+you the one the ones without a match so customer who never bought anything uh products nobody nobody ever
+bought companies ask these questions all the time for example uh to send uh for example we miss you
+email to their customers uh to sum up a little bit here uh inner join only the pairs left join everyone
+from the left and null is where there is no partner if you remember the dance if you're unsure ask yourself
+do i want people without a match to show up if yes then do a left joint and if you sum up this uh i would say
+before we start coding here join puts pieces back together for the answer on says which columns must match
+so here's we have aliases ocmp here and we can basically make queries shorter like that
+inner join only only matches left join keeps everyone on the left and we have left plus is null finds what's
+missing okay let's go uh to db browser here and i'm gonna have gonna actually open uh webshop please open
+now yeah okay let's just double check that yeah looks looks correct perfect so let me just remove all of
+this start over today so select star from orders just do that and then we have everything is delivered
+here cancelled new okay sure but if we look at this list we see customer id not who the customer are not
+see any names so maybe let's fix that so what we can do is type select order id then customer customers there
+we go dot first name and order the date from orders and now i can do uh join customers on orders
+dot customer id equals customers customer id let's run this now we see at least the first name first name here
+so we have the same list but with names let's make this a little bit more interesting uh i'll save this
+i'm not gonna remove that because i know that some of you wants to test this yourself and of course you
+can do that let's do the same query with aliases instead so instead of me writing select orders dot order
+customer dot first name we can do it even shorter so select o dot order id then c dot first name and then
+o dot order date from orders we join customer the merge there we go c on oh this looks a bit strange to be
+honest customer id equal c customer id so a little bit shorter okay but maybe not the best uh but you get
+the idea so yeah we get the same results basically so same results less typing let's do another tricky
+tricky one and what if i do select o dot order underscore id the first name and then let me say from orders
+o uh join customer c what's gonna happen if i do this let's run it and see we forgot the on here can
+you see it 250 rows every order with every customer order one is suddenly let me see yeah uh order one is
+suddenly anna eric sarah juan maria everyone has order one so too many rows means check your on okay
+let's do another one select o dot order and c first name c city from orders o join customers c on
+o dot customer id equals customer underscore id where c dot city is equal to upsala and don't forget the semicolon there so we can
+use where together we can use where together with join so orders from order from customers in upsala so
+the where comes after all of the joints okay let me see here let me just see forgot the c on customer id oh yeah
+c dot customer id there we go there we go so now we can see well we have joined them together we can see that
+order one order one anna salah order three anna also upsala five view one also upsala and so on and so on
+what if i okay let's let's let's make one a little bit more interesting uh let's say select
+o dot order underscore id c dot first uh underscore name uh oh dot order underscore date so from orders
+oh we want to join customers uh c on o dot customer underscore id equals c dot customer id just like we did there earlier
+see that customer id there we go i forgot to see um order by o dot order date uh descending and we also
+want to have a limit here so limit five so order by and limit work just like before so this is the five
+newest uh worst orders with names as well in our list yeah well we can do one more thing actually uh select
+oh i so order id order id let's say p dot name or i or order id quantity there we go and from order
+items order id dot product product id equals p dot product okay now it starts to even confuse me here
+from that first so now order items it has product numbers and we joined products to see the names and we
+can see that we have let me see almost 323 the rows so one per item so that's a little bit complicated
+but i wanted to show you at least that it works and we can leave that now if if if if we think of it
+four tables let's say let's try to put all of the four tables at once
+uh so i'm thinking to do some left turn yes you someone is raising hands i can see it's gloria yeah
+that's me can you repeat what you are doing in the last query that you wrote okay uh so select
+order id so this is just an alias dot order id uh we have we took the product product names in this case
+and also the quantity if you see here we have the names and the quantity from the order items so
+this is our alias order id and we joined the products we joined the order id products we said
+that that is equal to the product id hopefully it will be clearer i mean this is confusing even me but
+quite hard to explain so basically this yeah yeah continue continue no you he's trying to understand
+so what he's doing is taking uh every order and then showing the products that he has and the quantity
+well that's what the table said yes and we're joining those together so we can see those uh i know this
+might be a little bit confusing let's do a better example with a left join maybe that will make it a
+bit more clearer and let's put all of the all of the four tables at once okay it's gonna be a little
+longer query hopefully we will understand this so select c dot first sorry first name and o dot order date
+and p dot name and also and we need one more dot quantity okay so from order uh items yeah item from order items
+order id uh join orders sorry orders o on and orders id d equals order id and we also want to join
+customer customer customers sorry customers uh c on o dot customer id equals c dot customer id and then
+we'll do a join products p on id equals p dot product id a little longer but we're gonna get i'm gonna see the
+full diagram here okay so this starts in order items and then we join orders so from orders we join customers
+and from order items we join the products and now we see who bought what and when and that is basically
+the full recipe so we can see that anna here had an order date of 20 26 first of january and she bought a hoodie
+black and then one quantity uh i see someone is raising uh hands yes who is that uh yeah it's me can you uh
+just add group by to be more readable like a group by a customer id for instance what do you mean
+i like uh i like uh i see for example anna she has three orders i but it's uh uh separate i just want to see
+like anna ordered um so what do you want to see exactly i want to see only uh group it by uh now i get
+confused so yeah it is it's it's uh i'm trying to understand uh your question here maybe we can go okay
+let's go through go through um let's go through it step by step here so we we start from i mean this
+we already know what this is but we start from if we start from from order items order items is basically
+our shopping bag so one row per product in an order so 23 rows in total hopefully yeah so it has numbers
+so we have the order id and the product id but no names so we join we basically join uh the other tables
+to replace the numbers with real information so we have three joints here so join join orders o on
+on o on o i orders dot order id of the equal equals o order id matches each item with its with its order
+that give us the date and the customer id okay and then we also have another join which is this uses
+basically the customer id we just got from orders to find the customer's name so note that this join goes
+through orders because order items has no customer id okay what's going on with this computer is
+starting excel here for some reason uh okay so the last one the last join here this go back
+this actually goes back to order items and matches the product id to get the product name yes someone
+is raising hand christian yeah uh maybe i don't know about this aliases uh i mean order date it
+could be named like od or it's just named though and i mean if if this is confusing i think it gets more
+even more confusing if we use this aliases uh like yeah where where are we exactly to show you that you
+can do this but this is the this is how it looks no no i i i'm not saying don't use aliases i'm just saying
+maybe they could be a little bit more descriptive that's that's all i'm saying yeah it's they should
+yeah uh my example is really bad uh that i don't want to bash on your example i'm just i'm just like
+for learning the learning uh experience i maybe we could call it like od for order date for example uh
+maybe maybe i'm wrong i don't know um you're not wrong you're right you're right so this is how it should
+look like so we have customers uh i mean this is our you can call this uh all this er diagram for this
+query here so customers well i mean orders points to customers and order items points to orders which
+points to customers and the order items is pointing to products and someone mentioned uh
+this group by this group by we can do that uh but then we have to write other stuff uh yeah it's gonna
+be really long we can try this and we can say for example where see that first name is equal to
+anna and then maybe say group by see that customers i don't know if this is gonna work
+we can try it customers ah id what's wrong semi-colon in the line 40 oh yeah there we go sorry a
+very important one and let's run it again yeah that didn't work i was hoping maybe if i
+order date yeah i have to redo everything here kind of no not everything hold on i can i can add uh
+and put there is boncat function here uh and then we say p dot name we separate as from let's see there
+we go no i should get more results i'll check that later for you guys but what group by should do here it
+should squash the rows that share the same value into one row but it's not actually working for
+my for my side here if i what if i remove anna here and run this again it starts looks crazy again
+yeah she's not i was just experimenting here i'm interested myself but let's let's not make it too
+complicated i'll remove all of this uh stuff we did let me just go back check this later where we
+where we can actually get only anna so to go back yeah so this is basically uh us joining the table
+yes gloria before i continue i'll take your question yeah just trying to understand the
+er diagram that you just draw it seems like a orders items are are not directly connected to customers
+so we use the join to get the names and get the emails and so on with those orders if i am yes
+okay yeah i i sorry i am a bit in me like a loss because i i don't know much about the databases
+so just trying to understand what we are doing yeah okay okay i'll try to be a little bit slower here
+um and i can send you some information on the join stuff you can actually go to vvv3w school let me see
+they have pretty good explanations of that with visuals so let me see v3 school and join girl thing
+no they have an okay you don't have any visuals yet uh see if i can find another one yeah this explains it
+pretty good uh with some cool animations i'll send this to you guys so i have inner join left join that's a
+right join that's b full outer join and then we have some other stuff that we don't have to look through
+that much left cross join so i'll send this to you guys so you can play around with this okay let's do this
+select c dot first name o dot order id from customer idc
+left join orders o on c dot customer id equals o customer v so now this is the left join so we start
+from customers and then left join orders so if we run this i need to i forgot here oh oh this should
+say customers there we go not customer id uh we should have yeah we have 17 rows affected here
+so this is i mean if you scroll yeah we see we can see that emma and also lucas here uh with
+null order id so basically what this means they never ordered see for example maria has ordered
+six times here i'm sorry she has the order id six and so on and so on but the null values here
+this means that both emma and lucas has uh never ordered anything this is quite hard to to explain
+just by doing it uh so that's our left to join let me see we only have done join customers and so on
+okay let's go through them one by one and let's do also well we did inner join somewhere yeah i think so
+so if i just left join now let's do inner join here we say select c dot first first name or order id from
+customers c and then we say join orders o on e dot customer id equals us variety do here i probably missed
+something you need to have an o here otherwise it doesn't know so this is our inner joins and we can
+see we have only 15 rows affected here and emma and lucas are gone because they have no partner
+if you remember that dance analogy i had earlier okay so that's our inner join what else can we do
+quiz stop here uh i want to give you some uh yeah some videos little visuals on how to understand this
+and also some uh something that you can read to to to deep dive a little bit more on this and tomorrow
+we're gonna have some some quiz for you guys so see it like a test so and the quiz is only gonna affect
+whatever we have done so far so you don't have to prepare for it i recommend at least doing the labs
+then you should be able to pass that quiz and we will try to do these quizzes every friday
+not on every section of the course but from time to time we will do that i have students that yeah they
+quite like it uh from previous courses is anyone raising hands because i can't see no no questions
+yeah if you have any questions you can of course ask them um i've got a question yeah um is this
+basically um like union and uh intersection operations uh what do you mean i mean like mathematically
+speaking you have two groups you can define a third that is either a union of the two groups
+or intersection of them and so on no i don't uh no that's a different thing i mean union union
+stacks the rows from for example two queries on top of each other and intersect if i remember it correctly
+so the short answer is no okay thanks is the quiz graded uh yeah we'll see uh we'll tell you all about
+the quiz uh tomorrow but yeah i mean if you get all all correct then uh you can you're not gonna get
+any more than a star from us uh and uh and uh congratulations maybe and we can also see who who's
+left behind and who if if we need to i mean if all of you get all of the answers correct then maybe this
+is too easy but if it's not then we can see we get more information about you when we do these quizzes
+so don't worry uh yes gloria you're still raising hands yes um yeah someone else there join and inner
+join is the same because in the example for inner join we use use join that's that's the same but we should
+write inner join in the last example i mean yes join is short for inner join okay and they basically give
+the exactly same result yeah so that is correct any other questions if it's confusing this is as hard
+as hard as it gets when it comes to join send you some cool videos and an exercise for you guys as well
+and you have some time today to finish all of the exercises uh until tomorrow and tomorrow we will do
+the quiz late so we will not have we'll have we will start a meeting at nine o'clock as well as it's normal
+but we will do we'll give you some time to work on on on on the labs so maybe after lunch we can start
+the quiz awesome so if you don't have any questions you can of course leave the meeting thank you thank you
+thank you thank you thank you

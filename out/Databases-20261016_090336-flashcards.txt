@@ -1,0 +1,16 @@
+In MongoDB, what is the difference between embedding and referencing data?;Embedding stores all related data within one document, while referencing stores only an ID that points to another document.
+When should you embed data in MongoDB?;You should embed data when it's always read together with the parent document, belongs only to that parent, and doesn't grow too large or change frequently.
+When should you reference data in MongoDB?;You should reference data when multiple documents share the same data or when a list could grow indefinitely.
+What is schema validation in MongoDB?;Schema validation allows you to define rules that documents must follow before being inserted or updated, ensuring data integrity similar to SQL constraints.
+How does the aggregation pipeline work in MongoDB?;The aggregation pipeline processes data through a series of stages to transform and analyze documents, functioning like SQL's GROUP BY, ORDER BY, and other set operations.
+What is the purpose of the $match stage in an aggregation pipeline?;$match filters documents based on specified conditions, equivalent to SQL's WHERE clause.
+What does the $group stage do in MongoDB aggregation?;$group groups documents by a specified field and performs aggregations like counting, summing, or averaging.
+How does the $sort stage function in an aggregation pipeline?;$sort orders documents by specified fields, similar to SQL's ORDER BY clause.
+What is the role of the $project stage in MongoDB aggregation?;$project reshapes documents by including or excluding fields, equivalent to SQL's SELECT clause.
+What does the $unwind stage do in MongoDB?;$unwind deconstructs an array field into separate documents for each element, enabling aggregations on array contents.
+How does the $lookup stage work in MongoDB?;$lookup performs a join operation by looking up documents from another collection based on matching fields, similar to SQL JOIN.
+Why is the order of stages important in an aggregation pipeline?;The order matters because each stage processes the output of the previous one, and incorrect ordering can lead to inefficient computations.
+What are accumulators in MongoDB's group stage?;Accumulators are functions used in the group stage to perform calculations on grouped data, such as $sum, $avg, $min, and $max.
+What is operator injection in MongoDB?;Operator injection occurs when user input is directly used in queries, allowing attackers to manipulate operators like $ne or $gt.
+How can you prevent operator injection attacks in MongoDB?;Never let user input become part of the query structure itself; validate and sanitize all inputs before using them in queries.
+What are GDPR considerations for storing personal data in MongoDB?;Avoid collecting unnecessary personal data, prefer referencing over embedding for easier deletion requests, and consider implications when copying personal information.

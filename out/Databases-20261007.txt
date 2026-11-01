@@ -1,0 +1,312 @@
+can read it with select if you remember that, add with insert, change with update and remove with
+delete and developers call this crude operation create read update delete and we'll come back to
+this when we start talking about apis as well so it's a good idea to learn this now if you don't
+already know it some of you might know this already so almost every app in the world does these four
+things so when you post for example on instagram or tick tock or whatever you you guys use maybe
+facebook that's actually an insert and when you edit for example a message or whatever that's the
+update and when you delete that's the delete basically so insert adds a row i mean insert
+into the table basically then a list of columns you want of course to fill then we have values and the
+values of course in the same order you have seen me doing that so basically it's like filling a form
+first the label then the answers if you skip a column you get null or a default value if you have put that
+in you can add of course many rows on the go each row in its own brackets with for example comma in between
+much faster than writing insert many times so that's a good idea save some time and space update changes
+so you can add those rows that are already there so we update the table we set the column to a new value
+where and where of course says which rows and here we change the price of product one uh the hoodie to
+549 and only that one row change changes okay but there is actually a very i mean i would say this is the most
+important slide of the of the day so what happens if you forget where well the database thinks you mean
+every row so every product is now free every customer is gone and this has actually happened in real
+companies and this is not fun so a simple rule here is always write the where first before you run an update
+or delete and even better maybe first run select with the same where to see which rows you will hit the
+safe way of course is using select and this habit is good to have this will save you so before update or
+delete write select with the exact same where look at the rows are those the one you want to change good
+then swap select or update measure twice cut once like a carperton carperton delete well delete removes
+whole rows if you only want to empty one value like someone's phone number for example that's an update
+where you set it for example to null and remember also the foreign keys if anna has orders the database won't
+let you delete anna because the orders would point to nobody that's not good a transaction is a group of
+changes that belong belong together so think of sending money with swish if you if you know you should
+know what swish is uh hopefully many of you have it uh two thing two things must happen here money leaves your
+account and arrives in your friend's account but if the computer crashes in the middle we can't have the
+money gone from yours but not theirs so the database does both here or neither saving everything is called
+of course commit undoing everything is called rollback transactions uh in in db browser i mean in db browser
+transactions are built in so every change you make is waiting not saved yet write changes or ctrl plus s is
+commit and now it's saved if you want revert changes then you use rollback so basically everything since
+your last saves disappear it's like a saving point in a video game if you think of it so if you die you can
+go back to the last save checkpoint and remember here uh if you sum up this theory part very short one
+before before we start coding here so insert adds adds sorry update changes delete remove and always use
+where where with update and delete run select with the same where first and remember also control plus s is
+equal to commit or meaning save and revert changes is equal to roll back basically undo i got a question
+yesterday about this so i want to address this let's open up db shop and db browser db shop and db shop and
+i'll remove this from yesterday we don't need that anymore and let's look at the orders okay
+so we can do a simple select here uh orders and let's run this and we can see it's empty zero rows
+so we built the the cup board yesterday now we actually need to fill it in so we have nothing in here
+so what i can do is insert into orders and then we need to have the order id and we can also have
+customer id and order date and let's have the status as well and the values and the values should be
+values uh one one and date as well two twenty six uh zero first of january and the status could be
+delivered there we go and don't forget the comma okay let's run this okay we should see execution
+finish with without errors so i thought it says with errors query executed successfully took blah blah blah
+okay perfect now let me just sections check something here i have it here order id customer id this stuff
+we just did perfect okay but what did anna buy here maybe we should her uh buy something insert into order
+items in here we put uh order product uh christian you you have your hand raised maybe you forgot to lower
+it down please do that so if someone has any question uh and at least i can see it let's see there we go
+thank you okay where were we uh product id uh quantity and unit price and in here we have some values
+um let's make this a bit a little bit interesting order id could be one that could also be one of
+one one and five ninety nine uh and in here we can have one three two one ninety nine so we have two row
+in one insert with of course a comma in between let's run that right let's go browse data here again
+let me see we have the order id is one uh coffee now i'm gonna do this select uh star from items and i
+want you to guys to get used to the way uh because not every program is built like this but i want you
+to get used to this and we can see of course the result here now typing 14 more orders would take all day
+and i actually have something here just give me a second a mall second maybe i can just drag and drop
+like this there we go i have already done my homework here so if we take a quick look into this uh i just
+use insert into orders just like we did and here's the values and all of this and i can actually run this
+go and now if i go to let me see if i can remove all of that first uh sorry if i go here we go now
+i have a couple of orders now if i go back hold on should be able to uh okay i can't and now we can
+do this again of course and i don't have to do it but i want you guys to get used to this idea so from
+select order items we run that and we should get the same result here yeah and it's quite a long list
+here right now okay what if i say select count instead of order items i should say orders will
+happen now anyone wants what is this count i have yeah i guess it is what the name says
+how many there are but i'm not quite sure how it will be structured just yet okay let's run it and
+see we got an error and the reason why is because we need to put this in parentheses and let's run it
+again just returned account 15 orders so we have 15 orders okay we can do the same thing for uh in this
+case some of you won't try this later we can do the same thing for order items we can see that we
+have 23 there border items now i want to save this so i'll press ctrl on my keyboard and s and now it's
+saved you can't see that of course but i'm pressing here so from now on i should always have the same
+data and i can actually copy this data to you guys as well if you want to have it there we go we can have
+it like that of course i took help from ai to do this and that part there we go okay you can run that if
+you're coding along okay now let's do some more interesting stuff do an insert insert two orders
+let's insert some orders uh well order id customer id as usual and order date could be a good idea and let's
+have some values in these values we can have for example 16 uh seven some date here 20 26
+oh four oh one semicolon and click select i'll explain what i'm doing i'm just gonna write this select
+star from orders where order id is equal to 16 okay so if you leave out status here i mean let's just say
+this emma makes an order and we don't and we don't say the status uh the status should be new and that's
+the default we built yesterday if you remember that so if i run this and it should say new and it did
+actually so order 16 and what what happened with the order date here 2021 you missed the codes for date
+so it had the default value maybe okay i missed quotes never do that because we have we put that
+as text yesterday yeah okay let's run it again see if it works i don't know maybe it will crash
+yeah it did so if i run this again doesn't matter 2021 should be fine what if i for example
+let's do another example and insert into orders order id customer underscore id and order score date and
+status this time we have some status and we say values 17 2 and don't forget the quotes 20 26 0 4 0 4 0 2
+and status is what if i invent the status here and status that we haven't done yet and i'll say it's lost
+what do you think is going to happen now if you remember this the status we had yesterday was it was
+delivered a couple of more but we never had lost so we had new ship delivered canceled i think anyone wants to
+take a guess okay saranya yeah it will check conditions will fail so it will throw error that
+the status is not in the in the list of it yeah actually you're correct so let's try that it will
+give us an uh an error what okay what's this it will give us an error and it will say check constraint
+failed status in new chip delivered cancelled well we don't have anything that is called lost
+what if i did this then okay so we don't have that that's not working so we leave that but if i
+let me see maybe i can copy this instead of i'm a bit lazy so and i remove the status here and we only
+have uh order id customer id and ordered date and let's just say i have values one two here we have 20 26
+and four and have the same same date that because that could happen of course okay so what if i use
+an order id that already exists i mean order one is taken run that and it will say unique constraint failed
+orders orders orders id so we can't do that because it is taken so you can't actually do that let me see
+who is sending me stuff through teams so you will get an error and this error is expected so you will
+get an error that says unique constraint failed okay let's leave this for a moment let's just say order
+nine is shipped and now it has arrived and we want to change that so first what i will do is do select
+star from orders where order id is equal to nine and let's run this and it says shipped here so before
+we change anything in here maybe we want to change it to delivered we always do a select here and check first
+okay now i want to update this first status equal to deliver delivered order d is equal to nine and then we can also do another select we can actually just copy this here and then run that so yeah we changed it to delivered and the status is delivered now you can also calculate update two i mean let's just say we have a sale 20% of all shoes
+for example for example for example basically that's price equals price times 0.8 so let's do that
+try that as well update product product products sorry set price equal to price times 0.8
+where category equals shoes okay so that's one line and then we can have a select here just to see
+on the screen here select name price from product where category equals shoes can you stop that thank you
+no misspelling here okay looks good let's run this all right so we have run the price has changed
+and we can see all of the shoes here it's only three actually that should be correct okay so that's how you
+can calculate let's just say that we have martin here wants to leave our webshop so first we need to use
+select to actually see him or lucas or whatever name he is can't remember the names here and let's just grab any
+any anyone from customers where customer id is equal to nine and then we want delete from customers
+where customer id is equal to nine okay let's first run this to see what customer we have and that's fatima
+yilmaz here uh now i can delete her oh what's this there we go uh delete the star i need to get my glasses
+because i can see run it what's going on here no we don't need the star actually it should work like
+this hold on uh delete from customers where customer id is equal to nine that should work ah it's a foreign
+key mistake okay that's a good mistake and this i think okay let's change this to and hold on changes
+to 10 just give me the same yeah okay because that was a foreign key now let's look at 10 here it's
+deleted perfect and the reason why i couldn't couldn't remove number nine is because let's just say that
+was anna or something uh because she has orders so if we delete her those orders would point to nobody
+and the database actually protected us there so that's good let's do some oops oops moment here
+a moment where uh let's just say i want to change one price but i forgot where okay
+so i will say update products price equals to zero and then we can take select name price from products
+this is gonna so everything went to zero here so we updated product set price equals zero so that's set
+everything to zero but can actually back here somehow and i don't know exactly how to roll back from this
+yeah we haven't saved uh can we do that somehow revert there we go revert changes yes all right and let's
+run this only and and the price go back so yeah that's how you do so of course do not uh save this no
+ctrl s after that otherwise it's gonna be saved so we check the prices and everything is okay uh let me see
+i don't know people are writing or who is writing to me okay so it's some urgent message from
+my colleagues but gonna do that right now uh okay do you have any questions yes uh yeah i was just
+wondering uh when we move forward to today's lab uh is it intended that we continue on like the database that
+we've worked on because i realized that i used for today's uh uh thing like an old web like a database
+and i didn't have all of the conditions that worked so i was just a bit curious what to use
+yeah we will continue uh you mean the exercise the labs for today yes you need yeah but you have the
+database in in teams so you can always download re-download it again if that's what you're talking
+about yeah okay so it should be there um but we're not done yet i'm planning to show you
+one more thing but let's take some break maybe we can take five ten minutes break before we continue
+is that okay with you guys take some break go to toilet maybe go take some fresh air or grab some coffee
+hello welcome back are you guys back a thumbs up awesome okay so i decided because i saw you guys
+pretty good at this so we will do two parts uh so the first part is done i have if you look at the
+chat you should have everything we have done so far in one message part one crude operations but i want to
+continue uh sorry the bad stomach today happened okay as you see in front of you you talk about design
+today as well so so far we have used this web shop someone designed this for us for example or for you
+guys i wanna i want us to learn to design one ourself i mean a badly designed database is like a messy room
+if you ask me you can still find your socks but it takes forever and sometimes you find three different
+socks so the big idea today is simple i mean every fact should be stored in exactly one place the this
+spreadsheet trap is well basically this is how many people can keep orders in excel i mean if you look
+at anna here her name email and city are written three times and look we have actually two different
+mails as well which one is correct nobody knows and the product column has a whole list
+just squeezed into one cell how would you count how many caps we sold and that's gonna be really hard
+the three problems i mean bad design gives three classic problems here the update problem anna moves
+and we have to change every row where she appears and miss one and the data disagrees with itself the delete
+problem as well if maria has the one order and we deleted we will lose maria completely and then we also
+have the insert problem we can add a new customer until they buy something because every row is an order
+tables are actually connected by relationships we have one to one one person has one passport and that's rare
+usually it's that's the case some some some some persons that maybe have two but if we say that
+one person only has one passport we also have something called one too many and so one customer can have
+many orders but each order has only one customer and that's the most common one actually and we also
+have many too many as you can see in front of you one order can have many products and one product can be in
+many orders okay so i want you guys to remember these this is very important the many many too many is a bit
+tricky we can't put a list in one cell the solution is a table in the middle we already have one i mean order items so each row is one pro
+one product in one order so one big many too many becomes two simple one too many so think of it of a school i mean
+students and courses are many too many because a student can have many courses and course can have many students
+so the middle table is basically the list of who is taking which course er diagram
+is a map of your database er stands for entity relationships so each box is a table with its
+columns inside the lines show how they are connected so write one and n on the ends of the line so one
+customer and orders always draw the map before you build build it's much easier to change your drawing than a database so it's better to have some plan here
+here as you can see here we have customers orders order items and products so one customer can have many orders
+one order can have many order items many order items can have one product normalization is the official word for
+basically tidying up a database there are three steps
+called first and second and third normal form and they're famous sentences that sums them up so every column
+must depend on the key the whole key and nothing but the key okay so the first normal form one value per
+cell no lists if you see commas commas inside a cell that's a warning sign so instead we make one row per value often in a new table and every
+every row must have a primary key okay so that's the first normal form the second normal form is
+about keys with two columns so in order order underscore items the key is order id plus the product id now imagine we
+also stored a product name here does the name depend on the order no the hoodie is called hoodie black in every order and it only depends on half the key
+so it belongs in the products table so it belongs in the products table i'll send you a video maybe after this
+so you can see it
+more visually i know this if this is first time you've seen it is going to be a bit confusing
+then we have the third normal form third normal form is nothing but the key
+if the orders table had a column for the customer city the city depends on the customer not on the order
+so it belongs in customers so a simple test we can always use so if this changes do i have to change many
+rows if yes it's probably in the wrong table okay so here is a recipe you can use every time including
+uh and we're gonna use this in in the lab next week you read the script description uh and underline
+the things the nouns basically so each important thing becomes a table its detail becomes columns then
+find out how they are connected if it's many to many add the middle table draw it basically with pen and paper
+or whatever you tool you want to use and then check it and only then write the actual sql so if you sum
+sum this up uh i mean this part of the theory before we start coding here we store every fact in exactly
+one place so one to n uses a foreign key and n to m needs a middle table i draw an er diagram before you
+build and first normal form one value per cell the second normal form form sorry the whole key and the
+third normal form nothing but the key okay now i'm gonna open up of course uh db browser again and actually
+i'm gonna remove all of this we don't need this anymore i have already pasted it in
+and what i'm gonna do i've already uh let me see here maybe i can just drag and drop like i did
+see earlier i have now this i can send you this as well if you're coding along put that in the chat right now
+code block code block there it is call this this is our order no no no no no no order and let's run all of that
+space here run it now let's look let's do uh select as usual select star from order underscore sheet
+maybe i cannot do this because i haven't oh do it in a different way if i'm gonna do it that way
+okay it worked anyway so as we can see we have let me see here so it's correct here yeah okay if we look
+at this this should be five orders yes one two three four five yep uh problems can we see here it's a
+question for all of you let's try to make this a little bit bigger there we go can you see the
+problems here i am raising my hand you are raising your hand and i cannot see it why are you okay hold
+on there we go gloria yes well one of the obvious ones is uh an ice double yeah an email twice different
+products exactly so problem one anna has also two different emails like you said but which one is
+right we have no idea and this happens when the same fact is written in many places so what we can do
+is type another code block here select uh distinct email from order sheet customer is equal to equal there we go
+to anna lindvist and let's run this piece of code this is a problem okay let's see if we have if we do it this way
+problems here select distinct city from order see three rows here Göteborg is written without the dots it
+says good gutteburg if we search for Göteborg with an uh we might miss for example sarah so typing the
+same thing many times leads to typos sometimes that's that's problem number two let's look at problem number
+three as well the select order product from order cheat where products like okay lists this problem is list
+lists in one cell we can't we can find orders with joggers using like like keyword here but how many
+joggers did we sell in total one order says joggers gray another says joggers joggers gray gray times two
+you can't add that up with sql and this breaks the first normal form to remember that we have another
+problem actually this and let's just say update order equals to take stockholm where customer equals to
+anna again poor anna run it it would say that three rows affected okay perfect three rows changed here
+okay let's uh so so what happened here is we update update the problem anna moves to stockholm and if one
+row had her name spelled differently we would miss it compare with with our good design here so uh in
+customers anna exists once okay uh let me see if i'd say update uh date customers city equals to home where
+customer id is equal to one from that as well date okay so that's the good design but hold on if i say
+select id one pity and from order for items where product id is equal to six for example six yeah and that
+so this is back to the joggers question in our good design here so which order have product six and how
+many clean numbers we can add up uh maybe next week or next time we will learn uh to add them with
+another keyword called sum but we we have changed this uh if we look at oh sorry anna has now we have
+updated this to stockholm but i don't want this to be it uh this way so what we can do is well we can just revert
+revert changes yes and if we go back to this we should see that anna is back to upsala and the messy table
+is gone so the table became pretty messy when we did all of that so now let's let's maybe design the
+database from scratch using the recipe i have told you about so maybe let's underline the nouns so the library
+books members whatever uh thinking something else here uh okay maybe we can just skip this and try
+something whole different to create a good design here and let's do it from scratch let's for example
+let's have a description and maybe i can just have some comments here description this we will have a
+library library library that lends books books to members a member can borrow many books can all times of
+course but only by one member at the time we want to know when a book was borrowed pick up and when it was
+returned return read there we go so how are they connected i mean one member can have many loans and
+one book can have many loans and one book can have many loans over time so members and books are many to
+many and loans in the middle is the middle table maybe let's draw that uh with some ugly ugly drawing from my
+side so members would be yeah it would be one to many remember m is many and loans is many to one books i
+think that's correct yeah so what we can do let's build this in the new file so we'll click on new
+database here i will actually copy this and put this in the chat so we don't forget it and where is the chat
+there it is paste it in like that no range and maybe need a code block here or whatever uh see top
+that's better there we go we set the rules now we have written it looks very good uh now let's create
+a new database new database new database and we can call this library uh dot db this you can just cancel
+this happen here now build two there we go do you want to say no discard okay so we have a new database
+freshly new okay so the first we need uh we need members so we need to create a table and maybe zoom in a
+a little bit here there we go create table members here we'll have a member underscore id and this could
+be an integer a primary key have name be text not null don't forget the comma yeah sometimes i do forget
+as well oops and also an email could be good to have text and this email should be unique you there we go
+let's run all of that no problems we run it without any problems perfect okay celebrate with a sip of
+coffee uh let's create another table called books create table books underscore id integer oops integer
+there we go and this should also be a primary key primary key there we go title uh text not null forget the
+comma i always forget those uh author could be also text and year could be a good idea year and this could
+be an integer okay let's run that celebrate with a sip of coffee again no errors okay uh so now we need
+to create one more table and the table should be called create table loans just like with like i told you earlier loans we should have a loan underscore id here
+and we should have two foreign keys so one two members and one books then we can also have the return date and so on
+uh so the loan id would be integer primary key and member id integer and this should not be null book id
+integer not null as well loan date we need to know the dates and this could be to text and not null for this
+as well and we also have to have return date not returning sorry return uh date underscore date sorry
+date and this could be just a text because we might not have a return date sometimes if it's a new book
+okay let's now let's do foreign key now we could have member id and this will references to members with member id
+another foreign key here foreign key or the book id this reference books okay let's hope this works
+let's zoom out a little bit so we see everything let's celebrate so we have created the tables let's
+just double check it we have books loans and members all right let's maybe now do some test data so this is
+this is going to take some time i haven't prepared for this actually so insert uh in off insert into
+members then we need to have the values here so values so what i'm gonna do is let's just say that leo borrowed
+matilda and returned it then mira borrowed matilda and still not returned and leo has the hobbit right now for example okay so come up with some dummy data here and then we have the hobbit right now for example okay so we have the hobbit right now for example okay so come up with some dummy data here
+here so the first value would be one and then leo and then he's uh he's also his email uh leo at art
+uh at gmail.com and then comma separate that and we will have another one uh to mira for example uh her email and this should actually be in quotes sorry because that's text and also her email uh mira at
+uh gmail dot com insert two books and a couple of values here uh values go uh on the hobbit movie
+uh in this case just check one thing here yeah we need to give a title author and all of that stuff okay
+uh gonna come up with whatever here okay sure uh anderson
+uh and what was more year year could be 19 19 also add
+two could call matilda like i told you mati
+uh just coming up with stuff here honestly uh l gibson uh the year could be
+1989 that's good good enough uh let's now insert the loans so insert insert please
+insert into loans and now we set values here uh the loans let me see just double check here so we need
+loan id member id book id loan date okay maybe i can so we can see everything there we go okay loan id
+you could be one one two also the date 2026 and one this has a return date 22606 and here we can have your values
+two sorry two two 26 and seven yeah we can just set null let's just have another one three one one and the date looks a bit strange
+uh 2020 no hold on 2026 and oh wait okay hopefully we didn't misspell or did something stupid here so
+let's just see if this runs and we have some syntax errors where is the syntax error
+i can i can't see it can you see it ah don't forget the comma as i always do on it what's going on here
+i think that is already executed uh it failed in the last one i guess you think so yeah let's check
+no okay this looks correct where is the loans and this might be so let's double check in there let's go
+there and see loans yeah there it is okay okay so that's our test data so which book are out right now
+so what we can do is our famous select select star from loans where return return date sorry return date
+is null so it gave us that so our design here answers the questions question pretty easy here let's
+control s this we save this and now maybe let's open uh with the web shop again is our order and our crazy
+stuff let me see hopefully this changed yeah okay perfect so we open a web shop all right we can use the
+same uh recipe in this lab but i'm not gonna do that i'm gonna let you guys do it uh or at least give you
+something equivalent to it uh so we're actually not gonna do that right now i think i think what happened
+is i'm i'm missing a lot of stuff so i need to redo those so we can't actually do that but what i wanted
+to give you from this is basically if you look uh let's open uh open the right one uh library uh basically
+the normal forms okay uh i think easiest to learn this is actually get your hands a little bit dirty so you're
+gonna get you're gonna you're gonna you're gonna what i'm gonna give you uh a couple of exercises on
+this so the first second and the third normal form so what we did here is basically didn't i write it
+okay i removed it so yeah i can write it again was members if you remember that members one too many loans
+is many two one that's what we did kind of connected everything to each other so basically one member
+can have many loans and one book can have many loans over time so members and books are many to many of
+course and loans is in the middle i know this might be a little bit confusing but don't worry you you you
+you will get it you didn't get it now uh so what i'm gonna do is i'm gonna actually stop the meeting now
+and i'm gonna give you some exercises for the first part that we did earlier with the crude operations
+and then the second of designing a good database basically do you have any questions i don't see any
+hands raised actually and no you haven't raised your hands okay if you don't have any questions and
+everything is clear i guess not it is for many of you but i'll send you some some youtube video on this
+so you can deep dive a little bit more on the concept on the theory part and if you have any questions
+of course you can ask me or aladdin and then i'll give you some labs okay that sound good i think the
+easiest way to learn this is actually get your hands dirty i mean looking at me writing the code might
+get some people confused uh yeah well you can take some break leave the meeting take a break go outside
+if you have the sun go grab it if you don't have it just open the window i guess take some fresh air
+or grab some coffee yeah thank you so much thank you thank you

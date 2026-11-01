@@ -1,0 +1,1292 @@
+1
+00:00:02,310 --> 00:00:14,360
+ All right. We'll also look into what an SQL injection is and some recommended way of how to
+
+2
+00:00:14,360 --> 00:00:22,480
+ stop it. You can't actually stop it. I mean, there is other ways, but we'll look into that.
+
+3
+00:00:22,480 --> 00:00:34,620
+ So we'll have some theory first, then maybe we can code some together. That's the schedule. We
+
+4
+00:00:34,620 --> 00:00:57,260
+ don't need to do that. So talking to just a recap from last week. No, we haven't done this yet. So
+
+5
+00:00:57,260 --> 00:01:06,730
+ I skipped this part with F strings and stuff like that. We don't need that for now. So we start here.
+
+6
+00:01:07,230 --> 00:01:19,600
+ So why connect Python to a database? I mean, so far we have talked to the database by hand in DB
+
+7
+00:01:19,600 --> 00:01:27,680
+ browser, but real apps don't do that. So when you click buy on a website, for example, some code
+
+8
+00:01:27,680 --> 00:01:36,630
+ runs an insert. Python is basically the waiter in this case. And the database is the kitchen. So the
+
+9
+00:01:36,630 --> 00:01:42,480
+ user talk to the waiter and the waiter brings the order to the kitchen and brings back the food to
+
+10
+00:01:42,480 --> 00:02:04,920
+ you if you are in a restaurant. So today we're going to build this waiter. So here it is. Four steps
+
+11
+00:02:04,920 --> 00:02:16,960
+ every time I say. Talking to a database from Python is always the same four steps. We first, we connect,
+
+12
+00:02:16,960 --> 00:02:23,990
+ we basically open the door to the database file, and then get a cursor. And that's basically your pen.
+
+13
+00:02:23,990 --> 00:02:33,890
+ The thing is that runs SQL. And then we execute. You run your SQL, basically. And we fetch, we get the
+
+14
+00:02:33,890 --> 00:02:45,000
+ answer back. And when you're done, you close the door. And SQLite3 is built into Python. So you don't need
+
+15
+00:02:45,000 --> 00:02:57,690
+ to install actually anything. So there it is. Can't close. So what comes back? Well, a list in this case.
+
+16
+00:02:57,690 --> 00:03:08,150
+ Each row is a tupple, which is like a list that can't be changed. So it's a list of rows. You can actually
+
+17
+00:03:08,150 --> 00:03:19,010
+ loop over it with a for loop if you can, if you want. Sorry. Just like any list. So fetch cone here,
+
+18
+00:03:19,010 --> 00:03:35,880
+ or fetch all. No, fetch cone gives you basically just the first row. And that could be handy if you
+
+19
+00:03:35,880 --> 00:03:43,950
+ want to, for example, count something. So fetch all gives a list of tupples. So one tupple, one row.
+
+20
+00:03:43,950 --> 00:03:58,370
+ The danger, building SQL with f-strings. Here's the most important slide of the day, maybe. It's tempting
+
+21
+00:03:58,370 --> 00:04:06,590
+ to put the user's input straight into SQL with an f-string. But then the user can type SQL code
+
+22
+00:04:06,590 --> 00:04:20,520
+ instead of a city. So if someone types this strange text, like OR, or 1 equals 1, or anything
+
+23
+00:04:20,520 --> 00:04:35,700
+ like that, the query becomes a bit different. So we need to make sure that the user can't
+
+24
+00:04:35,700 --> 00:04:44,760
+ do this. Because 1 equals 1 would give me either true or false. It's going to answer me. And if
+
+25
+00:04:44,760 --> 00:05:11,690
+ I get an answer, that means I have, I can control the database. That's not good. That's what we call is SQL
+
+26
+00:05:11,690 --> 00:05:21,890
+ rejection. And that is one of the most common ways, actually, websites get hacked. Attackers can read
+
+27
+00:05:21,890 --> 00:05:32,300
+ password, maybe change prices, or maybe delete anything. It has also caused huge data leaks. You've probably heard it in the news from time to time.
+
+28
+00:05:32,300 --> 00:05:46,200
+ The good news is there is actually a really easy fix for it. And I recommend always use it. So the fix is basically placeholders.
+
+29
+00:05:46,200 --> 00:06:05,980
+ Write a question mark with where the value should go and give the values separately. The database now knows this is just a value.
+
+30
+00:06:05,980 --> 00:06:19,360
+ It's never code. Even if someone types a strange text, it just searches for a city with a weird name and finds nothing. So if you see comma
+
+31
+00:06:19,360 --> 00:06:42,340
+ here after the city, that makes it topple with one item. So forgetting is a classic error. So yeah, changing the data. So when you change the data with
+
+32
+00:06:42,340 --> 00:06:59,910
+ insert, update, or delete, you must call con.commit, basically save. It's the same as when we do Ctrl+S in DB Browser from last week, if you
+
+33
+00:06:59,910 --> 00:07:12,610
+ remember that. So if you forget, your change disappears when the program ends. And con.rollback is the same as revert changes.
+
+34
+00:07:12,610 --> 00:07:23,850
+ And one more thing, because last week we talked about foreign keys and stuff like that. DB Browser checks foreign keys for us, but
+
+35
+00:07:23,850 --> 00:07:33,440
+ Python's SQLite3 doesn't, unless we ask. So right after connecting, run. We can actually run this.
+
+36
+00:07:33,440 --> 00:07:45,760
+ Drag my foreign keys equals on. Otherwise, Python would happily create an order for customer 999, if you remember that from last week.
+
+37
+00:07:45,760 --> 00:08:02,750
+ So if you sum this up a little bit before we start coding here. So we have connect, cursor, execute, fetch, close. That's how this goes.
+
+38
+00:08:02,750 --> 00:08:12,330
+ Oh, that rhymes. Results come back as a list of tuples. Never put user input in SQL with F strings.
+
+39
+00:08:12,330 --> 00:08:23,320
+ Use a question mark for placeholders, execute SQL value. Con.commit saves and con.rollback undoes.
+
+40
+00:08:23,320 --> 00:08:37,770
+ Turn on foreign keys for example, pragma foreign keys equals on. Okay. So what I'm gonna do, now we have worked with DB Browser last week.
+
+41
+00:08:37,770 --> 00:08:45,550
+ If you remember that, we had this cool, really, really cool project we're doing here. Very expensive one.
+
+42
+00:08:45,550 --> 00:08:55,170
+ No, just kidding. So you can save this. I did that already. So save it as a save database as whatever.
+
+43
+00:08:55,170 --> 00:09:04,320
+ Not as whatever. Sorry. I'm gonna show you the folder here. There we go. As webshot.db in a folder called SQL Python.
+
+44
+00:09:04,320 --> 00:09:14,130
+ Just doing it right now here. And what I'm gonna do is going to open up Visual Studio Code this time. Visual Studio Code.
+
+45
+00:09:14,130 --> 00:09:25,760
+ There we are. Hopefully not. You're not seeing my... Okay. All right. Welcome. And yeah, thank you.
+
+46
+00:09:25,760 --> 00:09:32,330
+ All right. So here's Visual Studio Code. Looks familiar, doesn't it? Okay. So I'm gonna open up just the folder.
+
+47
+00:09:32,330 --> 00:09:37,130
+ And now I'm gonna open up that SQL folder. Okay. And I'm gonna actually do it off screen.
+
+48
+00:09:37,130 --> 00:09:44,460
+ I just saved it in the desktop here. So select folder. Perfect.
+
+49
+00:09:44,460 --> 00:09:57,180
+ Now we have our webshop.db in this folder. All right. So let me see here and close this, maybe maximize that.
+
+50
+00:09:57,180 --> 00:10:09,440
+ Okay. I don't know what this gibberish is here. Let's just go to files. There we go. Okay. Let's make a new file in this folder.
+
+51
+00:10:09,440 --> 00:10:23,950
+ So I can either click here. New file. And call it read.py. Okay. And in here, I'm gonna make a really, really simple programming.
+
+52
+00:10:23,950 --> 00:10:34,510
+ Import SQLite3. And then we also need to do some stuff here. You can code along if you want.
+
+53
+00:10:34,510 --> 00:10:40,570
+ I'm actually zooming, trying to zoom in a little bit here. So you guys can see what I'm doing.
+
+54
+00:10:40,570 --> 00:10:48,190
+ And we can close this. We don't need that. All right. Con equals SQLite3.
+
+55
+00:10:48,190 --> 00:11:00,540
+ Connect. And we want to connect. Yeah, hopefully you're guessing it right.
+
+56
+00:11:00,540 --> 00:11:09,040
+ Webshop.db. There you go. That's our file in this folder.
+
+57
+00:11:09,040 --> 00:11:15,640
+ So to do this, you need to have the file in the same folder. Otherwise, you have to point it to the right path.
+
+58
+00:11:15,640 --> 00:11:17,660
+ If you have it in another folder. Okay. I'm happy with that.
+
+59
+00:11:17,660 --> 00:11:28,640
+ And then we have cursor. Like I said earlier, equals con.cursor.
+
+60
+00:11:28,640 --> 00:11:45,820
+ And then we have cursor.cursor.execute. And here we can just, yeah, we can just say, shouldn't do this, but we will do it.
+
+61
+00:11:45,820 --> 00:12:06,750
+ Select name. Price from products. Awesome. And then we have rows equals cursor.fetch.
+
+62
+00:12:06,750 --> 00:12:18,360
+ All. And then we can just print it here. Print rows. So clutch.
+
+63
+00:12:18,360 --> 00:12:27,610
+ And then we need to close it. Con.close. Not saving anything. We just...
+
+64
+00:12:27,610 --> 00:12:35,320
+ Okay. Let's run this. So if I want to run this, I need to open up the terminal.
+
+65
+00:12:35,320 --> 00:12:43,290
+ Where is the terminal? Here it is. Control + O. Okay. That's interesting.
+
+66
+00:12:43,290 --> 00:12:55,760
+ Let's run this file. So this is easy. Python.read.py. And then we get some SQL back.
+
+67
+00:12:55,760 --> 00:13:10,780
+ And this is cool. It's a bit ugly, to be honest. So maybe, maybe let's just add a loop into this.
+
+68
+00:13:10,780 --> 00:13:18,650
+ Okay. So we can make it a bit... Let me see. What do we do? Execute.
+
+69
+00:13:18,650 --> 00:13:28,920
+ And after that, we can say, I'll remove this. No, I don't remove this. Sorry.
+
+70
+00:13:30,370 --> 00:13:53,210
+ Thinking here. Yeah. Let's remove that. So for name price. Actually, I'm going to change this
+
+71
+00:14:01,690 --> 00:14:32,040
+ by price descending. Okay. So for name price in cursor fetch all, we want to print. Let's do it in a string.
+
+72
+00:14:33,120 --> 00:14:50,980
+ Sorry. F. Let's make this like this maybe. Actually, no. F. I'm going to understand why I removed that later.
+
+73
+00:14:52,960 --> 00:15:08,760
+ Name. Let's say we want less than 20 here. And price. Also, we do the same thing with price.
+
+74
+00:15:09,450 --> 00:15:47,750
+ Price. Sorry. Okay. That should be cool. Truner. Now we close it. Okay. Let's run this. What did I do here? What are you doing? There we go.
+
+75
+00:15:47,750 --> 00:15:56,680
+ A little, little bit more nicer for us. So it looks a little bit better. So we're using F string here
+
+76
+00:15:57,460 --> 00:16:01,440
+ for printing. It's totally fine here. We're just playing around.
+
+77
+00:16:02,110 --> 00:16:18,560
+ So it's only inside SQL that they are dangerous. Okay. So when we expect one value, we use fetch cone.
+
+78
+00:16:18,560 --> 00:16:34,200
+ If you remember that, the slides. If anyone wants to play around. Actually, I'll put it in the chat
+
+79
+00:16:34,200 --> 00:16:44,400
+ here. Because I know some of you want to test this maybe. Why does it say day 8 of 10? Well, I have
+
+80
+00:16:44,400 --> 00:16:57,050
+ jumped over a couple of days. You know, I have slides for two weeks. But because you guys were pretty good,
+
+81
+00:16:57,050 --> 00:17:07,860
+ actually. And you're not that slow. So we can do this a bit faster. And I have some other stuff
+
+82
+00:17:07,860 --> 00:17:14,030
+ we can do maybe. I'll explain later more why we did this way. It's going to make sense. So don't worry.
+
+83
+00:17:15,390 --> 00:17:24,560
+ Let me see. I'm just going to put some code block in here. So you guys can try this out if you want.
+
+84
+00:17:25,280 --> 00:17:27,260
+ Let me go.
+
+85
+00:17:28,830 --> 00:17:31,240
+ Yeah. Someone is raising hands.
+
+86
+00:17:31,240 --> 00:17:31,880
+ Murtaza.
+
+87
+00:17:31,880 --> 00:17:43,770
+ Yes, I had some questions, if it's okay to ask now. The first one about the cursor. What is it?
+
+88
+00:17:45,730 --> 00:17:49,010
+ Is it just for Python? Or is it something general?
+
+89
+00:17:49,010 --> 00:18:13,140
+ Well, the cursor, just like I explained, let me just bring up the slides where I just explained this.
+
+90
+00:18:13,140 --> 00:18:47,510
+ And then I did. Maybe I didn't. All right. That's strange. Okay, so the cursor. So why do we use it?
+
+91
+00:18:47,510 --> 00:18:59,120
+ Well, a cursor is basically an object that runs SQL and holds the result while you read it. So connection,
+
+92
+00:18:59,120 --> 00:19:08,400
+ see the connection as an open line to the database file here. Our file. Let's go back to, yeah.
+
+93
+00:19:08,400 --> 00:19:21,060
+ And the cursor is you use basically to send query through it and read the answer back.
+
+94
+00:19:21,060 --> 00:19:29,180
+ Okay, okay. So it's not like a, oh, it can't be like a connection string or something like that.
+
+95
+00:19:29,180 --> 00:19:40,020
+ It's just something that wants... No, no, no, no, no, no, no. It's not that enough.
+
+96
+00:19:40,020 --> 00:19:51,680
+ And also the question also, sorry, about this, how price is more than 8.2 F. What does that mean?
+
+97
+00:19:51,680 --> 00:20:02,260
+ And also less than 20. Yeah. Yeah. See if I can find a really good explanation on that stuff.
+
+98
+00:20:02,260 --> 00:20:47,800
+ Let me see. One thing here where I answer you. Okay, no V3 school. Should give me, find it later.
+
+99
+00:20:48,390 --> 00:21:00,420
+ Well, name less than 20 here means basically left aligned. And 20 means the characters width,
+
+100
+00:21:00,420 --> 00:21:09,570
+ if I remember it correctly. And short names get basically spaces after them, I think. So the next column
+
+101
+00:21:09,570 --> 00:21:21,060
+ will always start in the same place. And this 8.2 means right aligned. And 8 here means, well,
+
+102
+00:21:21,060 --> 00:21:32,450
+ eight characters width. So the prices basically line up on the right, we see here. And 0.2 F here means the
+
+103
+00:21:32,450 --> 00:21:43,140
+ decimal number with exactly two decimals. So 599 will become 599.00. So that's what we're doing here.
+
+104
+00:21:44,980 --> 00:21:52,550
+ But I couldn't find good... I'll try to find a really good explanation on all of those stuff.
+
+105
+00:21:53,270 --> 00:22:16,410
+ So you understand those a little bit more. Okay. So I'll remove this now. I have already put it in the
+
+106
+00:22:16,410 --> 00:22:21,580
+ chat. So you have it there in the chat. So I'll remove it. Just for convenient here. If you want to
+
+107
+00:22:21,580 --> 00:22:30,800
+ try it out, you can do that. Okay. So when we go back, when we expect one value, we use fetch cone,
+
+108
+00:22:30,800 --> 00:22:41,020
+ like I said earlier, and it gives us one tuple. And index 0 gives the first value, for example. So if I
+
+109
+00:22:42,070 --> 00:22:53,810
+ redo this, actually just remove all of this, then we can have... No, this needs to be changed as well.
+
+110
+00:22:53,810 --> 00:23:24,760
+ Let's redo this. Select count star customers count equals cursor and fetch cone. Oh, sorry.
+
+111
+00:23:26,010 --> 00:23:38,110
+ There we go. Index 0. And then we can do print, sorry, print customers.
+
+112
+00:23:44,270 --> 00:24:00,500
+ Let's run this. If you have a lot of stuff here, you can just clear and it will clear the terminal.
+
+113
+00:24:00,500 --> 00:24:12,550
+ Let's run the file and I'll just press up key here to get the latest history here. And we see customers 10, 10 customers.
+
+114
+00:24:13,340 --> 00:24:30,400
+ Okay. So here we expected one value and that's when we use fetch cone. Now a value from a variable
+
+115
+00:24:30,400 --> 00:24:53,620
+ is different. So what we can do, I will actually just, sorry, oops, fat fingers today.
+
+116
+00:24:53,620 --> 00:25:10,720
+ Okay. Do that as well. So I'll do another one here. What I can do, for example, let's just say I want city
+
+117
+00:25:13,050 --> 00:25:20,990
+ equals Uppsala. That looks pretty strange. There we go.
+
+118
+00:25:20,990 --> 00:25:59,100
+ Here I can do cursor.execute. And now say select first underscore name, last name from customers,
+
+119
+00:25:59,100 --> 00:26:23,510
+ where city is equal to a question mark. And then, like I said earlier, we do city and a comma. And now what I can do is,
+
+120
+00:26:23,510 --> 00:26:36,640
+ instead of saying customers here, we remove all of this and say print cursor dot fetch, not fetch,
+
+121
+00:26:36,640 --> 00:27:00,110
+ fetch all closet. The question mark in the SQL and the value in a tuple as the second argument here. And notice
+
+122
+00:27:00,110 --> 00:27:11,370
+ also the comma here after the city. So if I run this, I'm going to give us back a list and a tuple. So we see Anna,
+
+123
+00:27:11,370 --> 00:27:28,950
+ Lindqvist, Johan Bari, Oskar Persson. And this is just to prevent some SQL injections in our database.
+
+124
+00:27:28,950 --> 00:27:44,790
+ Okay. Let's maybe do some, let me see what time is it now? Oh, okay. I was thinking to give you one more
+
+125
+00:27:44,790 --> 00:28:11,930
+ example. Let's, let me see, remove this. I'll also comment out this stuff again. There is a faster way
+
+126
+00:28:11,930 --> 00:28:26,250
+ of doing this, but yeah. Okay. So let me give you also the bad example. Bad example would be something
+
+127
+00:28:26,250 --> 00:28:43,380
+ like this. So SQL equals F string. And this is a bad example. You shouldn't do this. And then we say,
+
+128
+00:28:43,380 --> 00:29:15,780
+ select first underscore name from customers. I can just copy all of this actually, where the equals and
+
+129
+00:29:15,780 --> 00:29:29,740
+ then city, for example. And of course, city would be a variable. Well, let's just say this is what the
+
+130
+00:29:29,740 --> 00:29:39,550
+ user is typing. We want, he's using, he's typing something that he shouldn't be typing. So for example,
+
+131
+00:29:39,550 --> 00:30:04,470
+ maybe he's typing an or one, sorry, one equal, I don't know. He's have done this in many different
+
+132
+00:30:04,470 --> 00:30:15,150
+ ways. But what the attacker is trying to do here is trying to break, trying to get something. So for
+
+133
+00:30:15,150 --> 00:30:24,440
+ example, if I send in a character that I shouldn't send in, for example, like this, then the database is
+
+134
+00:30:24,440 --> 00:30:30,360
+ going to answer me, even if it's an error is going to answer me. And then if it's, if it gives me back
+
+135
+00:30:30,360 --> 00:30:38,830
+ an error, then I can start to reverse engineer it and try to see what kind of messages I get back for
+
+136
+00:30:38,830 --> 00:30:48,670
+ each scenario here. And then of course, you do the cursor execute and so on. So I don't have to
+
+137
+00:30:48,670 --> 00:31:00,360
+ exactly show you. But this is just showing you different ways of breaking our database. So of
+
+138
+00:31:00,360 --> 00:31:07,170
+ course, you should do it like I did it here. So city equals Uppsala. And here we just set a question
+
+139
+00:31:07,170 --> 00:31:15,450
+ mark. And then we put the result in a tuple here, basically. So even whatever he writes is just going
+
+140
+00:31:15,450 --> 00:31:27,190
+ to come back as a string. Okay, so that's very simple. I suggest taking a couple of minutes of
+
+141
+00:31:27,190 --> 00:31:40,420
+ break. We're going to change this is just I'm going to give you a lab on this, of course. But we need to
+
+142
+00:31:40,420 --> 00:31:51,240
+ talk about one more thing today. And it's actually some, yeah, well, GDPR and stuff like that.
+
+143
+00:31:52,400 --> 00:31:59,460
+ We're going to touch on that a little bit here. So we get that out of the way as well. And then I'm
+
+144
+00:31:59,460 --> 00:32:03,960
+ also going to explain what we're going to do maybe for the rest of the week here. I'm going to ask you
+
+145
+00:32:03,960 --> 00:32:15,570
+ guys, which I think is a good idea, a good stuff to learn. And we'll take that later. So take a couple
+
+146
+00:32:15,570 --> 00:39:18,670
+ of minutes of break so I can prepare for the next slides as well. Are you guys back? Okay, so we're
+
+147
+00:39:18,670 --> 00:39:37,450
+ going to talk a little bit about personal data. So if I ask you, what is a personal data? I'm going to
+
+148
+00:39:37,450 --> 00:39:53,570
+ choose someone from the list to answer. Choose Mohana in our case. What is personal data? Hello.
+
+149
+00:39:53,570 --> 00:40:04,650
+ Yeah, you call me. Yes, I'm asking a question. I'm asking what is personal data in our situation.
+
+150
+00:40:04,650 --> 00:40:17,610
+ So in our database. Clothing? Sorry, again. The product you're asking? No, I'm asking about
+
+151
+00:40:17,610 --> 00:40:33,160
+ personal data. What is personal data? Okay, let's see. A couple of you are raising hands. Okay,
+
+152
+00:40:33,160 --> 00:40:41,730
+ Gloria. You can answer it. Maybe it is about the data from the customer, the name, last name,
+
+153
+00:40:43,270 --> 00:40:57,790
+ where they live. Exactly. So basically, personal data. Let me share the screen again. Personal data is
+
+154
+00:40:59,000 --> 00:41:06,370
+ any information that can be connected to a living person. Some is obvious. I mean, name, email,
+
+155
+00:41:06,370 --> 00:41:15,500
+ personal number, photo. But it can also be indirect. So if only one customer lives in, for example,
+
+156
+00:41:15,500 --> 00:41:28,540
+ Westeros, and joined in February 2023 here, that's enough to know who it is, even without a name. So if
+
+157
+00:41:28,540 --> 00:41:37,780
+ you look, for example, at our customer table, it's full of personal data, actually. And then we also have
+
+158
+00:41:37,780 --> 00:41:44,690
+ sensitive personal data. Some data is extra sensitive, especially health, religion, political opinions,
+
+159
+00:41:44,690 --> 00:41:51,010
+ maybe ethnic origin, sexual orientation, union membership, fingerprints, and DNA.
+
+160
+00:41:53,130 --> 00:41:59,490
+ The rules for these are much stricter. So as a developer, your best rule is if you don't
+
+161
+00:41:59,490 --> 00:42:07,650
+ absolutely, absolutely need it, don't collect it. And in Sweden, personal numbers needs extra care too.
+
+162
+00:42:07,650 --> 00:42:23,450
+ EDPR is the EU law about personal data. It's long. But for developers, it boils down to a few ideas. Use data
+
+163
+00:42:23,450 --> 00:42:32,670
+ only for the reason you collected it, basically. Collect only what you need. Keep it correct. Delete it
+
+164
+00:42:32,670 --> 00:42:41,380
+ when you're done. And also you need to keep it safe. So in Sweden, the authority that checks this is called
+
+165
+00:42:43,130 --> 00:42:55,740
+ Integrationsmyndigheten. And companies that break these rules can get pretty big fines, actually.
+
+166
+00:42:55,740 --> 00:43:07,090
+ So people have rights. They can ask: What do you have about me? That's basically select.
+
+167
+00:43:09,280 --> 00:43:18,730
+ They can ask you to fix wrong data. That's an update. And they can ask to be deleted. And that's a delete.
+
+168
+00:43:18,730 --> 00:43:31,460
+ But deleting isn't always simple. Which we will look into a little bit, maybe. And here is the real
+
+169
+00:43:31,460 --> 00:43:38,620
+ life puzzle. Anna wants to be deleted. But Swedish accounting law here says company must keep its
+
+170
+00:43:38,620 --> 00:43:46,830
+ accounting records, like sales, for seven years. And the foreign key won't let us delete her anyway.
+
+171
+00:43:46,830 --> 00:43:55,220
+ So the solution, we can basically anonymize her. We remove her name, email, and city. But we keep the orders.
+
+172
+00:43:55,220 --> 00:44:08,120
+ The money is still in the books. But nobody can tell it was Anna. We have
+
+173
+00:44:08,120 --> 00:44:14,170
+ Sevdo anonymized and versus anonymized. Two words that sounds very much alike.
+
+174
+00:44:14,170 --> 00:44:22,080
+ Sevdo anonymized means we replace the name with code, like customer number one.
+
+175
+00:44:23,420 --> 00:44:31,930
+ But somewhere there is a key that says customer number one is Anna. So it's still personal data.
+
+176
+00:44:31,930 --> 00:44:44,890
+ Anonymized means there is no way back to this person, ever. Only truly anonymous data is free from GDPR.
+
+177
+00:44:45,690 --> 00:44:47,960
+ And that's actually harder than it sounds.
+
+178
+00:44:50,360 --> 00:44:59,880
+ So how do we protect the data? Well, we give people only the access they need.
+
+179
+00:45:01,430 --> 00:45:11,510
+ The person making sales or sales charts doesn't need customer emails. So we can make a view that hides
+
+180
+00:45:11,510 --> 00:45:20,410
+ those columns. Never store passwords, of course, as plain text. Use placeholders to stop also in SQL
+
+181
+00:45:20,410 --> 00:45:31,340
+ injections, like we did before the break. And also make backups. But remember that backups contain personal
+
+182
+00:45:31,340 --> 00:45:40,640
+ data too. And we have SQLite, which we are working on. We have used SQLite because it's simple.
+
+183
+00:45:41,690 --> 00:45:50,130
+ In companies, you often meet other frameworks like PostgreSQL here, which runs on a server. It has users,
+
+184
+00:45:50,130 --> 00:46:00,250
+ password permissions. So you can say exactly who may see which table and so on and so on. The good news here,
+
+185
+00:46:00,250 --> 00:46:11,590
+ almost everything you have learned so far works also in PostgreSQL. So select join, group by, all the same.
+
+186
+00:46:12,540 --> 00:46:24,770
+ So SQLite lives in one file, PostgreSQL in a server. And we don't have users and password and permissions
+
+187
+00:46:24,770 --> 00:46:29,730
+ and stuff like that in SQLite here. So it's just for playing around and testing and stuff like that.
+
+188
+00:46:29,730 --> 00:46:40,130
+ So if I open up DB browser here, I mean, we can do it in Visual Studio Code as well. But I think it's
+
+189
+00:46:40,130 --> 00:46:55,810
+ easiest just to go back to this and do a very simple one here. So select, zoom in here, select star from
+
+190
+00:46:55,810 --> 00:47:08,320
+ customers. And let's just run that. We get a list. Let's do an audit here. Look at every column in
+
+191
+00:47:08,320 --> 00:47:44,660
+ customers. Which ones are personal data? Can you guys write the answer in the chat? Any more else?
+
+192
+00:47:44,660 --> 00:48:34,220
+ I mean, we are the seven students. Any of you saying all? Okay. So most of you said all. And yes,
+
+193
+00:48:34,220 --> 00:48:45,370
+ first name, last name, and email for sure. And join date can also point to a person together with other
+
+194
+00:48:45,370 --> 00:48:52,990
+ data. Even customer ID is personal data in this case, because it links to all of it. So yeah,
+
+195
+00:48:52,990 --> 00:49:04,660
+ all is the right answer. Okay. So if Anna sends an email to us and says, for example, what do you have
+
+196
+00:49:04,660 --> 00:49:14,920
+ about me? And that's actually her right of access. So what we can do, query here. So select all from
+
+197
+00:49:14,920 --> 00:49:39,540
+ customers where a customer ID is equal to one. So this is her, this is the customer role. Okay. But her
+
+198
+00:49:39,540 --> 00:49:55,050
+ orders are also data about her. So what she's, what she bought says a lot about the person actually. So what
+
+199
+00:49:55,050 --> 00:50:20,610
+ we can do if she asks such a question, going to be a longer query here is select order for ID or order date
+
+200
+00:50:20,610 --> 00:50:35,740
+ also, also all the, I think I need to make it a bit smaller here, status as well. We had e dot name,
+
+201
+00:50:37,950 --> 00:51:21,930
+ also quantity and units. It's pretty long here. Don't worry. From join order items, order underscore ID
+
+202
+00:51:23,360 --> 00:51:55,900
+ equals, they just like we did last week. And then we do join a product P on ID equals to P dot product ID
+
+203
+00:51:55,900 --> 00:52:17,850
+ where customers, where customers, customers, no, customer ID is equal to one. Okay, pretty long query. But yeah, so it's a
+
+204
+00:52:17,850 --> 00:52:26,820
+ small recap from what we did last week. And this returned with probably missed something here. What did I miss?
+
+205
+00:52:26,820 --> 00:52:51,330
+ I come after the name. I think so. Yeah, that's correct. There we go. Okay, so this join gives her basically her complete history, what
+
+206
+00:52:51,330 --> 00:53:04,050
+ she had done. Then we can start to fix this somehow. We're not going to do that today, of course. But I want to just
+
+207
+00:53:04,050 --> 00:53:12,520
+ wanted to show you where we can actually see the links link to this customer, customer ID equals to one.
+
+208
+00:53:12,520 --> 00:53:23,850
+ So we can use join and all of the stuff we have learned and get that. And this says a lot about her, what she's
+
+209
+00:53:25,210 --> 00:53:32,810
+ buying and stuff like that, what dates and if it's delivered, if it's shipped. Oh yeah, the status and yeah, everything basically.
+
+210
+00:53:33,440 --> 00:53:42,890
+ But this only works if you know the names of the other columns, right? I mean, in an ideal world,
+
+211
+00:53:42,890 --> 00:53:50,050
+ when you do this, it's a security type of things. If you don't know other things, you know, like,
+
+212
+00:53:50,050 --> 00:53:55,890
+ if there's a table called order ID, it has such things you won't be able to extract anything really.
+
+213
+00:53:55,890 --> 00:54:09,280
+ Yeah. Yeah, that's correct. Okay, let's make another scenario. Let's say our analyst here, he makes sales chart.
+
+214
+00:54:09,280 --> 00:54:23,370
+ Do they need names and emails? No, of course not. So we could make a view for our analyst here,
+
+215
+00:54:25,570 --> 00:54:35,160
+ only what they need. So they will need, and our analyst would only need, for example, the date,
+
+216
+00:54:35,160 --> 00:54:43,620
+ maybe the city, the category, and maybe the amount. In PostgreSQL, we would give the analyst access
+
+217
+00:54:43,620 --> 00:54:56,550
+ to this view only. So I would give you how it would do that. Let me see. So we would do something like
+
+218
+00:54:56,550 --> 00:55:17,600
+ this, create, view, sales, the score for analyst lists. Okay, maybe there are many. As, and then we do the select,
+
+219
+00:55:19,520 --> 00:55:37,020
+ o.order, id is interesting. Also, o.order date could be a good idea. The city as well,
+
+220
+00:55:39,410 --> 00:56:08,080
+ c.city, and also the category, p.category. Okay, we could also give him quantity, quantity, unit price
+
+221
+00:56:08,890 --> 00:56:41,630
+ as amount. Okay, and then you say from, orders, o. We could do a couple of joins here. So join customer, c, on customer id,
+
+222
+00:56:41,630 --> 00:57:35,610
+ and then we also do, sorry, join, order items, order, id, equals, let's do another one, join products, p, on product id,
+
+223
+00:57:36,000 --> 00:58:00,130
+ equals, so product. So that's our analyst here. And that runs without no errors, yeah. So we have now set a view
+
+224
+00:58:00,130 --> 00:58:07,610
+ for our analyst, so sales for analyst. So that's basically how you do it. So the analyst can still do their job.
+
+225
+00:58:07,610 --> 00:58:21,810
+ So what he can do is, let's just say he wants sales per city. So we do select, so this is for analysts, city,
+
+226
+00:58:25,730 --> 00:58:58,540
+ sales, there we go. So from sales for analysts, we do a group by, by city. This should return,
+
+227
+00:58:58,540 --> 00:59:13,280
+ got the sales per city, got the sales per city with no names or emails in sight. That's how you should do it.
+
+228
+00:59:13,280 --> 00:59:23,430
+ Let's just say our Lucas here wants to be deleted. He never ordered anything. So there are actually no recipes,
+
+229
+00:59:24,610 --> 00:59:37,600
+ receipts to keep. A normal delete works. So we would do something like delete from,
+
+230
+00:59:37,600 --> 01:00:06,600
+ let's see here. So here's number 10 here. Delete from customers, where customer id is equal to who is
+
+231
+01:00:06,600 --> 01:00:20,400
+ trying to join. What is going on here? Okay, that was strange. Okay, so yeah, well, this is going to
+
+232
+01:00:20,400 --> 01:00:32,620
+ actually delete Lucas here. So let's run that. Let's go and check. Lucas is deleted. So that's a simple,
+
+233
+01:00:32,620 --> 01:00:42,460
+ very simple, delete. Now Anna wants to be deleted. And if I do this, for example, well, let me see,
+
+234
+01:00:42,460 --> 01:00:50,350
+ what was Anna? Anna was number one. Okay, so let's just say I want to put one here. Okay, this is going to be
+
+235
+01:00:50,350 --> 01:01:34,570
+ interesting. I did delete her. Wow, why did I delete her? Okay, let's just take anyone else. But we must,
+
+236
+01:01:34,570 --> 01:01:40,570
+ hold on, we did delete the customer, but we still have her orders. So she's not actually deleted because
+
+237
+01:01:40,570 --> 01:01:52,030
+ we have this foreign key constraint. So okay, so it's fine. Actually, what we can do is update customers.
+
+238
+01:01:52,030 --> 01:02:24,370
+ Then we can set set first name equal to deleted. And her last name would be customer, whatever. Email,
+
+239
+01:02:24,370 --> 01:02:44,580
+ forget the comma guys, I always do that. There we go. Email equals, work with me. I want to keep it nice.
+
+240
+01:02:44,580 --> 01:03:18,580
+ Null and her equals null here as well. And then we can say where, where just her ID is equal to one.
+
+241
+01:03:18,580 --> 01:03:28,480
+ Let's go back. Yeah, we already deleted her. So yeah, but it says, let me see,
+
+242
+01:03:28,480 --> 01:03:55,230
+ actually without errors, query successfully zero row affected. Oh yeah. What if I do from customers
+
+243
+01:03:56,050 --> 01:04:13,060
+ where customer ID is equal to one? See if it's there. No, she's not there. So if you're doing this along
+
+244
+01:04:13,060 --> 01:04:19,060
+ with me, don't delete Anna. What you can do is update the customer. And we can actually do that for
+
+245
+01:04:19,060 --> 01:04:26,740
+ customer number two, for example, just to show you. There we go. If we go back to this,
+
+246
+01:04:26,740 --> 01:04:32,380
+ we can see that customer number two is a deleted customer. No. So if this was a foreign key,
+
+247
+01:04:32,380 --> 01:04:40,850
+ then we would see this. So we can't go back to who that is. So the person is gone. But customer two here
+
+248
+01:04:40,850 --> 01:04:54,100
+ is still there for the accounts. Maybe the join date is left and so on. Now, is that a problem?
+
+249
+01:04:54,100 --> 01:05:05,800
+ Could someone figure out who it was from the date and the orders? Can answer your chat answer your
+
+250
+01:05:05,800 --> 01:05:19,810
+ question in the chat again? What was the question? Sorry. So the question is now that we, if we look at,
+
+251
+01:05:19,810 --> 01:05:26,320
+ sorry, if you look at user number two here, or sorry, ID two here, we see that we have a deleted customer.
+
+252
+01:05:27,020 --> 01:05:44,340
+ We can't really trace back who it is. But we can still see the join, for example, date or if orders
+
+253
+01:05:44,340 --> 01:06:01,370
+ or whatever. Now we have to ask a question. Could someone still figure out who this is? It's basically a
+
+254
+01:06:01,370 --> 01:06:27,050
+ yes or no question. Yeah. Some says yes and some says no. But this is why real anonymization is pretty hard,
+
+255
+01:06:27,050 --> 01:06:41,390
+ actually. Can somehow still maybe figure that out. Yeah. So I would say maybe no to this.
+
+256
+01:06:42,520 --> 01:06:49,710
+ Maybe yes as well. But yeah. Yeah. Fingerprinting and cross-reference. If they have access to external
+
+257
+01:06:49,710 --> 01:07:05,720
+ data. Yeah. So yeah. I mean, yes. So it's pretty hard. So maybe that's a good idea. So before you
+
+258
+01:07:05,720 --> 01:07:13,380
+ actually create any database, maybe it's a good idea to plan for this before we actually start
+
+259
+01:07:14,620 --> 01:07:24,610
+ do any coding and setting up databases. So you have to have a real plan. Maybe write it with pen and paper
+
+260
+01:07:24,610 --> 01:07:51,770
+ before we start doing any code SQL. So what we can do to revert back Anna here actually changes. There it
+
+261
+01:07:51,770 --> 01:08:02,360
+ is. And let me see here. Where is Anna? Yeah, there's Anna. There's Eric. Well, actually we could run this.
+
+262
+01:08:02,360 --> 01:08:14,210
+ It's too many questions. I have a couple of labs for you. Now, if someone noticed that, why does it say day
+
+263
+01:08:14,210 --> 01:08:22,280
+ eight? And this is actually day nine. Well, because I, like I said earlier, it's, you don't, I mean,
+
+264
+01:08:22,280 --> 01:08:32,990
+ we don't need to put too much time into SQL. I want to show you also no SQL. Does any one of you guys
+
+265
+01:08:32,990 --> 01:08:59,090
+ know what no SQL is? So what's the difference between SQL and no SQL? Are you answering? Yeah,
+
+266
+01:08:59,090 --> 01:09:07,660
+ no relation something. Yeah. SQL, just like we're doing here, SQL lite and post SQL store data in tables,
+
+267
+01:09:07,660 --> 01:09:14,780
+ basically with fixed columns. And the structure is basically decided in advance, like I said earlier,
+
+268
+01:09:15,360 --> 01:09:25,180
+ with create table and then you use join to connect tables and stuff like that. But no SQL databases
+
+269
+01:09:25,180 --> 01:09:33,800
+ store data in other ways, most often as something called documents that look like JSON. Anyone heard
+
+270
+01:09:33,800 --> 01:09:50,600
+ of JSON? Probably most of you. Okay. So each document can have its own fields. So, so related data is often
+
+271
+01:09:50,600 --> 01:10:02,690
+ stored together instead of in separate tables like we do in SQL. So this is not going to work here,
+
+272
+01:10:02,690 --> 01:10:13,150
+ but I just want to show you, for example, so in no SQL, for example, if we want to see
+
+273
+01:10:14,490 --> 01:10:26,650
+ Anna has ordered, it would look something like this. This is not going to work in, in here. Oh,
+
+274
+01:10:26,650 --> 01:10:40,930
+ oh, oh, oh, oh, oh, what did I do? There we go. Oh, so it's actually changed. Okay, that's strange. So how do I do that then?
+
+275
+01:10:45,290 --> 01:11:07,010
+ Why is it changing? Oh, wow. Just give me a second. It would look something like this. And we will look
+
+276
+01:11:07,010 --> 01:11:13,050
+ into this this week, but I want to just give you a heads up here from what's coming. Order ID would be,
+
+277
+01:11:13,050 --> 01:11:36,010
+ then we say customer. Customer would be Anna, of course. And in here, we will type, for example,
+
+278
+01:11:36,890 --> 01:12:01,290
+ what am I doing? Okay. It's going to look like items. And then it's, yeah, it's actually pretty,
+
+279
+01:12:01,290 --> 01:12:09,980
+ this will make sense later. Product. I'm just trying to remember this product.
+
+280
+01:12:11,380 --> 01:12:26,430
+ Hoodie. Let's just say we want to see the quantity of that. We would say something like this quantity.
+
+281
+01:12:26,430 --> 01:12:41,120
+ Oops. Quantity one. And then we keep adding whatever we want to see. And this is no SQL. So I'll type it
+
+282
+01:12:41,120 --> 01:12:52,940
+ here. This is no SQL. Actually, it's something called MongoDB. And this works with Python as well.
+
+283
+01:12:53,500 --> 01:13:00,620
+ So we will go back to Python and do all of this stuff later this week in Python. So that's what's
+
+284
+01:13:00,620 --> 01:13:18,060
+ coming up. Most companies actually use SQL as their main database and no SQL for some special needs,
+
+285
+01:13:18,060 --> 01:13:35,220
+ basically. And we will touch more about that as well. So, and I think, I know that I could give you
+
+286
+01:13:35,220 --> 01:13:43,930
+ more labs on SQL. And I think that's good enough for now. And let's continue with no SQL for this week
+
+287
+01:13:43,930 --> 01:13:49,840
+ and do a little bit more complicated stuff. What do you think, guys? Do you think that's a good idea?
+
+288
+01:13:49,840 --> 01:13:55,910
+ Or do you want to keep me continuing with SQL? I mean, we could deep dive even more on it,
+
+289
+01:13:55,910 --> 01:14:17,800
+ but I don't think it's useful. Maybe raise your hands. What were the choices? Advanced or what was
+
+290
+01:14:17,800 --> 01:14:24,090
+ the other one? Or continue with SQL. And the hand raised is continue?
+
+291
+01:14:24,090 --> 01:14:43,120
+ The hand raises do not continue. The hand raises continue with no SQL. That's what I thought. I
+
+292
+01:14:43,120 --> 01:14:49,540
+ felt it was too easy for you guys. So I'm going to give you some challenges this week. And of course,
+
+293
+01:14:49,540 --> 01:14:57,350
+ we're going to have some quiz again on Friday on that as well. So we will end this day with a couple of
+
+294
+01:14:57,350 --> 01:15:05,600
+ labs on SQL because we have only spoke about that today. Thank you, guys. You can bring down your
+
+295
+01:15:05,600 --> 01:15:25,460
+ hands. If you have any questions, you can bring up your hands. I'm actually going to end the session
+
+296
+01:15:25,460 --> 01:15:41,530
+ now. I think that's good enough today. Yes, Alessandro, you have your hands raised. Do you have any
+
+297
+01:15:41,530 --> 01:15:53,390
+ questions? No, sorry. Okay, Novika. Maybe he forgot. So if you have any questions, you can, of course,
+
+298
+01:15:53,390 --> 01:16:02,400
+ just raise your hands and ask the question. Otherwise, you can leave a meeting. Yes. What is your
+
+299
+01:16:02,400 --> 01:16:32,160
+ question, Novika? We cannot hear you, Novika. You are talking. Yeah, I think, yeah. Oh, your mic is
+
+300
+01:16:32,160 --> 01:16:39,330
+ muted. Oh, you're talking. We don't hear you at all, actually. Something is wrong on your end.
+
+301
+01:16:39,330 --> 01:17:03,200
+ Maybe you can write it in the chat. Anyone else has any questions? Yes, I can, of course,
+
+302
+01:17:03,200 --> 01:17:11,620
+ share the presentation. I'll do that directly after this meeting. And you're going to find them under
+
+303
+01:17:11,620 --> 01:17:24,580
+ databases and files, as well as video from last week. They should be there. Anyone else has problems
+
+304
+01:17:24,580 --> 01:17:35,760
+ with seeing the videos? You're talking about the recordings, I guess. Yeah, you should be able to
+
+305
+01:17:35,760 --> 01:17:43,790
+ see them by just clicking. If you're clicking on the channel databases, you should see all of the days
+
+306
+01:17:43,790 --> 01:17:52,720
+ there. And if you click on those, then it should show you the recordings. Otherwise, you can also
+
+307
+01:17:52,720 --> 01:18:01,490
+ go into recordings folder. Hmm, what's happening here? Oh, they're not here. Oh, that was the last
+
+308
+01:18:01,490 --> 01:18:11,550
+ week's. Oh, wow. I will do a check on that to see if I can save them somehow. I see that it's only two
+
+309
+01:18:12,440 --> 01:18:26,980
+ recordings. And it's from, was that Friday only? Oh, wow. For the whole week? No, Friday was Wednesday.
+
+310
+01:18:26,980 --> 01:18:36,890
+ No, that was Wednesday. Wednesday and Thursday. But where is Friday? Where is Monday, Tuesday? All
+
+311
+01:18:36,890 --> 01:18:47,650
+ of the other. Hmm, strange. I'll check that. But I'll share the presentation. Yeah, I think I have them.
+
+312
+01:18:47,650 --> 01:18:57,070
+ Perfect. Maybe you can upload them if you have them. Sven Eriksson. Yeah, I tried to do that.
+
+313
+01:18:57,070 --> 01:19:01,710
+ Thank you. Thank you. Thank you. Otherwise, you can just write it to me and see if we can find a
+
+314
+01:19:01,710 --> 01:19:06,670
+ solution. I don't, I have no idea what happened. Because last week, we had trouble with space
+
+315
+01:19:07,710 --> 01:19:16,730
+ in this domain. And we fixed that the same day. But the recordings that was recorded, that they may
+
+316
+01:19:16,730 --> 01:19:29,180
+ not be there for some reason. But I thought I saved them anyway. But yeah, we'll see. Okay, thank you
+
+317
+01:19:29,180 --> 01:19:41,750
+ too, too, for today. Do you have anyone else have any other questions? Yeah, we'll see. Are we going
+
+318
+01:19:41,750 --> 01:19:50,480
+ to continue with the SQL or I'm going to, or is it going to be no SQL? We will continue with SQL today.
+
+319
+01:19:50,480 --> 01:19:58,620
+ The labs is going to be SQL, but tomorrow we will start a new subject in the same subject, same channel.
+
+320
+01:19:58,620 --> 01:20:05,470
+ So we're going to look into no SQL tomorrow. Yes. Okay. From tomorrow and for the rest of the week. Yeah.
+
+321
+01:20:05,470 --> 01:20:54,240
+ Okay. You can leave the meeting, guys, if you want. A couple of minutes of break. And I'll upload
+
+322
+01:20:54,240 --> 01:21:04,920
+ the presentation and the labs for you. Thank you for today. Thank you too. Bye bye. Thank you. Bye bye.
+
+323
+01:21:04,920 --> 01:21:26,460
+ Bye bye. Have you seen my email? No, I haven't seen my email. Okay.
+

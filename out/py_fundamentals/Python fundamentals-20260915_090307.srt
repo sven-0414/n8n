@@ -788,15 +788,15 @@
 
 198
 00:16:19,360 --> 00:16:39,450
- And Python actually follows a, what could you say, a lot, a lookup rule, actually write that, look, lookup rule, right?
+ And Python actually follows a, what could you say, a lot, a lookup rule, actually write that look, lookup rule, right?
 
 199
 00:16:39,450 --> 00:16:50,750
- So, and it's often summarized as L-E-G-B, anybody knows what it stands for?
+ So, and it's often summarized as L E G B. Anybody knows what it stands for?
 
 200
 00:16:50,750 --> 00:17:40,890
- So L-E-G-B, well, actually stands for, say, local, closing, G stands for, well, obviously global, and B actually stands for built.
+ So L E G B, well, actually stands for, say, local, closing, G stands for, well, obviously global, and B actually stands for built.
 
 201
 00:17:40,890 --> 00:17:47,470
@@ -804,7 +804,7 @@
 
 202
 00:17:47,470 --> 00:18:00,650
- The useful idea here is that Python searches for a name starting close to where it actually is being used, right?
+ The useful idea here is that Python searches for a name, starting close to where it actually is being used, right?
 
 203
 00:18:00,650 --> 00:18:06,890
@@ -832,7 +832,7 @@
 
 209
 00:19:07,110 --> 00:19:14,810
- Then we got something called built-in, right?
+ Then we got something called built in, right?
 
 210
 00:19:14,810 --> 00:19:25,790
@@ -867,12 +867,12 @@
  This would be built-in, right?
 
 218
-00:20:10,920 --> 00:20:23,570
- Yeah, built-ins, something like that.
+00:20:10,920 --> 00:20:25,750
+ Built-ins, something like that.
 
 219
-00:20:23,570 --> 00:20:31,040
- Just on this, we have three, because since we have three items, three objects in our list here.
+00:20:25,750 --> 00:20:31,040
+ Okay, three, because since we have three items, three objects in our list here.
 
 220
 00:20:31,040 --> 00:20:36,560
@@ -1076,11 +1076,11 @@
 
 270
 00:25:32,710 --> 00:25:40,150
- But for this part, what is important is the log scope and the global scope.
+ But for this part, what is important is the local scope and the global scope.
 
 271
 00:25:40,150 --> 00:25:54,270
- But now you also know what LGB refers to when you actually see the term.
+ But now you also know what "LGB" refers to when you actually see the term.
 
 272
 00:25:54,270 --> 00:25:58,260
@@ -1171,3510 +1171,4450 @@
  And then put something like this.
 
 294
-00:27:04,210 --> 00:27:11,990
- Def crease counter, right?
+00:27:04,210 --> 00:27:07,130
+ Def crease.
 
 295
-00:27:11,990 --> 00:27:21,260
- Then I'm actually going to do, let's actually put counter as equals to one.
+00:27:07,130 --> 00:27:11,990
+ Counter, right?
 
 296
-00:27:21,260 --> 00:27:30,520
- And then here, we're going to do kind of did the same thing.
+00:27:11,990 --> 00:27:17,730
+ Then I'm actually going to do...
 
 297
-00:27:30,520 --> 00:27:34,090
- But just to make sure that everybody got that.
+00:27:17,730 --> 00:27:21,260
+ Let's actually put counter as equals to one.
 
 298
+00:27:21,260 --> 00:27:27,670
+ And then here, we're going to do kind of...
+
+299
+00:27:27,670 --> 00:27:34,090
+ Did the same thing, but just to make sure that everybody got that.
+
+300
 00:27:34,090 --> 00:27:35,090
  So print.
 
-299
+301
 00:27:35,090 --> 00:27:36,030
  Let's see here.
 
-300
+302
 00:27:36,030 --> 00:27:37,060
  Inside.
 
-301
+303
 00:27:37,060 --> 00:27:40,570
  Inside.
 
-302
+304
 00:27:40,570 --> 00:27:42,580
  Inside.
 
-303
-00:27:42,580 --> 00:27:43,730
- Counter.
-
-304
-00:27:43,730 --> 00:27:52,410
- Right.
-
 305
-00:27:52,410 --> 00:27:53,410
- All increase counter.
+00:27:42,580 --> 00:27:43,730
+ Counter, right?
 
 306
+00:27:43,730 --> 00:27:53,410
+ All increase counter.
+
+307
 00:27:53,410 --> 00:27:59,920
  And we're also going to do print here.
 
-307
+308
 00:27:59,920 --> 00:28:04,440
  Print.
 
-308
+309
 00:28:04,440 --> 00:28:09,600
  Inside.
 
-309
+310
 00:28:09,600 --> 00:28:11,030
  Counter.
 
-310
+311
 00:28:11,030 --> 00:28:12,440
  So what's interesting here.
 
-311
+312
 00:28:12,440 --> 00:28:13,370
  See if you picked that up already.
 
-312
+313
 00:28:13,370 --> 00:28:14,790
  So what's interesting here.
 
-313
-00:28:14,790 --> 00:28:16,910
- Did we actually change the global.
-
 314
+00:28:14,790 --> 00:28:16,910
+ Did we actually change the global...
+
+315
 00:28:16,910 --> 00:28:18,610
  Excuse me.
 
-315
+316
 00:28:18,610 --> 00:28:22,250
  Did we actually change the global counter here when we did this?
 
-316
-00:28:22,250 --> 00:28:24,910
- What do you say guys?
-
 317
+00:28:22,250 --> 00:28:24,910
+ What do you say, guys?
+
+318
 00:28:24,910 --> 00:28:33,850
  Did we change this global counter when doing this?
 
-318
+319
 00:28:33,850 --> 00:28:37,850
  Marina?
 
-319
+320
 00:28:37,850 --> 00:28:39,640
  No.
 
-320
-00:28:39,640 --> 00:28:42,640
- No, we will not change global counter, I think.
-
 321
+00:28:39,640 --> 00:28:40,640
+ No.
+
+322
+00:28:40,640 --> 00:28:42,640
+ We will not change global counter, I think.
+
+323
 00:28:42,640 --> 00:28:44,080
  Exactly.
 
-322
+324
 00:28:44,080 --> 00:28:46,370
  And I agree with you, right?
 
-323
+325
 00:28:46,370 --> 00:28:53,090
  So we see that our inside, the increase counter is still the inside, which is one.
 
-324
-00:28:53,090 --> 00:28:57,200
- But the global one outside is still zero, right?
+326
+00:28:53,090 --> 00:28:58,110
+ But the global one, the outside is still zero, right?
 
-325
-00:28:57,200 --> 00:29:04,090
+327
+00:28:58,110 --> 00:29:04,090
  So the assignment inside the function just created a local variable called counter.
 
-326
+328
 00:29:04,090 --> 00:29:05,060
  And that's it.
 
-327
-00:29:05,060 --> 00:29:17,670
- But what's good to remember is we're going to do this example again.
+329
+00:29:05,060 --> 00:29:14,480
+ But what's good to remember is...
 
-328
+330
+00:29:14,480 --> 00:29:17,670
+ We're going to do this example again.
+
+331
 00:29:17,670 --> 00:29:27,090
  Take this example again.
 
-329
+332
 00:29:27,090 --> 00:29:33,010
  Is that Python actually has a keyword called global.
 
-330
-00:29:33,010 --> 00:29:41,250
- So what I can do here is, let me just come here and then change that a little bit at least.
+333
+00:29:33,010 --> 00:29:38,010
+ So what I can do here is...
 
-331
+334
+00:29:38,010 --> 00:29:41,250
+ Let me just come here and then change that a little bit at least.
+
+335
 00:29:41,250 --> 00:29:47,080
  So I can put my global keyword here and write global counter.
 
-332
+336
 00:29:47,080 --> 00:29:57,300
  And then I can come down here and put counter plus equals one.
 
-333
+337
 00:29:57,300 --> 00:29:58,740
  Increase counter.
 
-334
+338
 00:29:58,740 --> 00:30:02,720
  And then we can just print the counter, right?
 
-335
+339
 00:30:02,720 --> 00:30:10,810
  And let's see what actually happens to the counter here now when we use the global keyword.
 
-336
+340
 00:30:12,990 --> 00:30:14,300
  Let's actually run this and see.
 
-337
+341
 00:30:14,300 --> 00:30:19,550
  And we get a one.
 
-338
+342
 00:30:19,550 --> 00:30:21,560
  Interesting, right?
 
-339
+343
 00:30:21,560 --> 00:30:33,420
  So what the global keyword does is to actually tell Python here that I kind of want to modify the variable from the global scope.
 
-340
+344
 00:30:33,420 --> 00:30:47,790
  And especially when it comes to, I would say, beginner, when they see this global keyword, they kind of start overusing it, right?
 
-341
+345
 00:30:47,790 --> 00:30:55,210
  So this actually does not mean that we should start using global everywhere, right?
 
-342
+346
 00:30:55,210 --> 00:31:08,280
  Because functions, well, that consistently change global state, well, becomes in the end harder to understand, right?
 
-343
+347
 00:31:08,280 --> 00:31:13,640
  It becomes harder to test and, of course, easier to break, right?
 
-344
-00:31:13,640 --> 00:31:20,680
+348
+00:31:13,640 --> 00:31:26,500
  So in many cases, I would say returning a value is much cleaner, right?
 
-345
-00:31:20,680 --> 00:31:33,390
+349
+00:31:26,500 --> 00:31:33,390
  Christian, to add something there.
 
-346
+350
 00:31:33,390 --> 00:31:37,330
  Okay, now you can hear me.
 
-347
+351
 00:31:37,330 --> 00:31:38,330
  Okay.
 
-348
+352
 00:31:38,330 --> 00:31:39,900
  Yeah, yeah, yeah.
 
-349
+353
 00:31:39,900 --> 00:31:48,280
  Well, in C#, they often define fields outside of the methods, as I remember it.
 
-350
-00:31:48,280 --> 00:31:49,280
- Maybe I'm wrong about that.
+354
+00:31:48,280 --> 00:31:53,270
+ Maybe I'm wrong about that, but is that kind of a similar thing?
 
-351
-00:31:49,280 --> 00:31:53,270
- But is that kind of a similar thing?
-
-352
+355
 00:31:53,270 --> 00:31:54,880
  Kind of.
 
-353
+356
 00:31:54,880 --> 00:31:56,190
  I would say, yeah.
 
-354
+357
 00:31:56,190 --> 00:31:57,190
  I think so.
 
-355
+358
 00:31:57,190 --> 00:31:58,190
  If I remember correctly, yes.
 
-356
+359
 00:31:58,190 --> 00:32:00,310
  Okay.
 
-357
+360
 00:32:00,310 --> 00:32:03,310
  That is actually for security reasons, I guess.
 
-358
+361
 00:32:03,310 --> 00:32:04,310
  Mm-hmm.
 
-359
+362
 00:32:04,310 --> 00:32:09,520
  But I would need to remind myself.
 
-360
+363
 00:32:09,520 --> 00:32:14,830
- It was a little wild since I sat with C#, to be honest.
+ It was a little while since I sat with C#, to be honest.
 
-361
+364
 00:32:14,830 --> 00:32:15,820
  Okay.
 
-362
-00:32:15,820 --> 00:32:20,480
- As I remember it, it's worked.
-
-363
-00:32:20,480 --> 00:32:21,480
+365
+00:32:15,820 --> 00:32:15,920
  Yeah, yeah.
 
-364
-00:32:21,480 --> 00:32:22,480
- I kind of remember the same thing.
-
-365
-00:32:22,480 --> 00:32:26,480
- Some kind of making the code more secure.
-
 366
-00:32:26,480 --> 00:32:29,480
- And then you use, like, get and set accessors.
+00:32:15,820 --> 00:32:18,450
+ As I remember it, it's...
 
 367
-00:32:29,480 --> 00:32:30,480
- Exactly.
+00:32:18,450 --> 00:32:19,450
+ Yeah, yeah.
 
 368
-00:32:30,480 --> 00:32:31,480
- Get and set accessors.
+00:32:19,450 --> 00:32:22,480
+ I kind of remember the same thing.
 
 369
-00:32:31,480 --> 00:32:32,480
- Yes, yes, yes, yes, yes.
+00:32:22,480 --> 00:32:25,480
+ Some kind of making the code more secure.
 
 370
-00:32:32,480 --> 00:32:33,480
- Stuff like that.
+00:32:25,480 --> 00:32:26,480
+ Yeah.
 
 371
+00:32:26,480 --> 00:32:28,480
+ And then you use, like, get-and-set accessors.
+
+372
+00:32:28,480 --> 00:32:29,480
+ Exactly.
+
+373
+00:32:29,480 --> 00:32:30,480
+ Get-and-set-accessors.
+
+374
+00:32:30,480 --> 00:32:31,480
+ Yes, yes, yes, yes, yes, yes.
+
+375
+00:32:31,480 --> 00:32:32,480
+ Stuff like that.
+
+376
+00:32:32,480 --> 00:32:33,480
+ Yeah.
+
+377
 00:32:33,480 --> 00:32:35,440
  But is there a similar concept in Python?
 
-372
+378
 00:32:35,440 --> 00:32:36,570
- Yes.
+ Oh, yes.
 
-373
+379
 00:32:36,570 --> 00:32:44,950
  And we will talk about that in kind of, what would that be?
 
-374
+380
 00:32:44,950 --> 00:32:52,040
  Let's say, I think it's three lessons from now.
 
-375
+381
 00:32:52,040 --> 00:32:53,040
  Something like that.
 
-376
+382
 00:32:53,040 --> 00:32:54,070
  Okay.
 
-377
+383
 00:32:54,070 --> 00:32:56,070
  Especially when we move to classes.
 
-378
+384
 00:32:56,070 --> 00:32:57,070
  So, yeah.
 
-379
+385
 00:32:57,070 --> 00:32:58,100
  Interesting.
 
-380
+386
 00:32:58,100 --> 00:32:59,100
- So, yeah.
+ Yeah.
 
-381
+387
 00:32:59,100 --> 00:33:06,170
  But it's a little bit different from C#, but you can see some resemblance.
 
-382
+388
 00:33:06,170 --> 00:33:07,170
  Okay, okay.
 
-383
+389
 00:33:07,170 --> 00:33:08,580
  Yeah.
 
-384
+390
 00:33:08,580 --> 00:33:09,930
  All right?
 
-385
+391
 00:33:09,930 --> 00:33:10,930
  Oh, thanks.
 
-386
+392
 00:33:10,930 --> 00:33:27,130
- So, I said actually, it's kind of better to sometimes, to return the value.
+ So, I said, actually, it's kind of better to, sometimes, to return the value.
 
-387
+393
 00:33:27,130 --> 00:33:29,470
  That would be considered as much cleaner.
 
-388
+394
 00:33:29,470 --> 00:33:35,280
  So, something, maybe something like this.
 
-389
-00:33:35,280 --> 00:33:45,720
- So, counter equals zero, increase counter.
+395
+00:33:35,280 --> 00:33:47,780
+ So, counter equals zero, increase counter, and I would just put a two here.
 
-390
-00:33:45,720 --> 00:33:47,780
- And I would just put a two here.
-
-391
+396
 00:33:47,780 --> 00:34:00,990
- And counter, or let me call it a current count, maybe.
+ Counter, counter, or let me call it a current count, maybe.
 
-392
+397
 00:34:00,990 --> 00:34:03,330
  Counter.
 
-393
-00:34:03,330 --> 00:34:09,530
- And then, we can just return current counter.
+398
+00:34:03,330 --> 00:34:12,740
+ And then, we can just return, current counter, input plus one.
 
-394
-00:34:09,530 --> 00:34:12,740
- And put it plus one.
-
-395
+399
 00:34:12,740 --> 00:34:14,580
  Right?
 
-396
+400
 00:34:14,580 --> 00:34:20,190
- And just turn the counter one here.
+ And, just turn the counter one here.
 
-397
+401
 00:34:20,190 --> 00:34:22,210
- Or counter two, maybe.
+ Or, counter two, maybe.
 
-398
+402
 00:34:22,210 --> 00:34:23,940
  Just to see the difference here.
 
-399
+403
 00:34:23,940 --> 00:34:25,480
  If we get a difference.
 
-400
+404
 00:34:25,480 --> 00:34:29,920
  And then, counter two.
 
-401
+405
 00:34:29,920 --> 00:34:32,070
- Two.
+ Increase counter two.
 
-402
+406
 00:34:32,070 --> 00:34:36,060
- We did increase counter two.
+ We did, well, increase counter two.
 
-403
+407
 00:34:36,060 --> 00:34:37,990
  Counter.
 
-404
-00:34:37,990 --> 00:34:47,710
+408
+00:34:37,990 --> 00:34:39,970
  Something like this.
 
-405
-00:34:47,710 --> 00:34:48,710
+409
+00:34:39,970 --> 00:34:47,710
  Print.
 
-406
-00:34:48,710 --> 00:34:56,670
+410
+00:34:47,710 --> 00:34:55,230
  I think I got it right.
 
-407
-00:34:56,670 --> 00:34:58,480
- And let's just run this.
-
-408
-00:34:58,480 --> 00:34:59,480
- And see.
-
-409
-00:34:59,480 --> 00:35:01,630
- We get the same thing.
-
-410
-00:35:01,630 --> 00:35:03,040
- Right?
-
 411
-00:35:03,040 --> 00:35:04,140
- Because they're pretty much the same thing.
+00:34:55,230 --> 00:34:59,480
+ And, let's just run this and see.
 
 412
+00:34:59,480 --> 00:35:01,630
+ We get the same thing, right?
+
+413
+00:35:01,630 --> 00:35:04,140
+ Because they're pretty much the same thing.
+
+414
 00:35:04,140 --> 00:35:06,450
  So, here we're using the global keyword.
 
-413
-00:35:06,450 --> 00:35:07,830
- And here we're just returning.
-
-414
-00:35:07,830 --> 00:35:08,800
- Right?
-
 415
+00:35:06,450 --> 00:35:08,800
+ And, here we're just returning, right?
+
+416
 00:35:08,800 --> 00:35:11,040
  Which one is better?
 
-416
+417
 00:35:11,040 --> 00:35:16,350
  As I said, this would be considered cleaner in much cases.
 
-417
+418
 00:35:16,350 --> 00:35:19,240
  This is actually possible.
 
-418
+419
 00:35:19,240 --> 00:35:22,620
  So, I'm not saying that you're not allowed to use this.
 
-419
-00:35:22,620 --> 00:35:27,900
- But just think about it at least.
-
 420
-00:35:27,900 --> 00:35:34,430
- And yeah.
+00:35:22,620 --> 00:35:27,900
+ But, just think about it, at least.
 
 421
-00:35:34,430 --> 00:35:40,240
- You could say that this makes the flow of data much clearer in a sense.
+00:35:27,900 --> 00:35:34,430
+ And, yeah.
 
 422
-00:35:40,240 --> 00:35:41,150
- Right?
+00:35:34,430 --> 00:35:41,150
+ You could say that this makes the flow of data much clearer, in a sense.
 
 423
 00:35:41,150 --> 00:35:46,100
- Hmm.
+ Right?
 
 424
 00:35:46,100 --> 00:35:53,310
  So, there you go.
 
 425
-00:35:53,310 --> 00:35:56,380
+00:35:53,310 --> 00:36:07,930
  Let's actually do this.
 
 426
-00:35:56,380 --> 00:36:09,960
- If you're coding along.
+00:36:07,930 --> 00:36:12,020
+ If you're coding along, try not to run it.
 
 427
-00:36:09,960 --> 00:36:12,020
- Try not to run it.
-
-428
 00:36:12,020 --> 00:36:14,020
  Try to wait a little bit.
 
-429
+428
 00:36:14,020 --> 00:36:22,380
  For the sake of the exercise.
 
-430
+429
 00:36:22,380 --> 00:36:26,320
- So, we put an x equals to 10 here.
+ So, we put an x equals 10 here.
+
+430
+00:36:26,320 --> 00:36:28,630
+ And, then we do, maybe, example.
 
 431
-00:36:26,320 --> 00:36:28,630
- And then we do maybe example.
-
-432
 00:36:28,630 --> 00:36:30,680
  Function called example.
 
-433
+432
 00:36:30,680 --> 00:36:32,770
- And no parameters.
+ And, no parameters.
+
+433
+00:36:32,770 --> 00:36:37,430
+ It was 20, maybe.
 
 434
-00:36:32,770 --> 00:36:37,430
- It was 20 maybe.
-
-435
 00:36:37,430 --> 00:36:45,140
  Print to make sure that everybody is following along.
 
-436
+435
 00:36:45,140 --> 00:36:46,490
  Inside.
 
-437
+436
 00:36:46,490 --> 00:36:50,330
- Right?
+ That's right.
+
+437
+00:36:50,330 --> 00:36:53,220
+ And, then we have our example here.
 
 438
-00:36:50,330 --> 00:36:53,220
- And then we have our example here.
+00:36:53,220 --> 00:36:59,840
+ And, we have print outside.
 
 439
-00:36:53,220 --> 00:37:00,840
- And we have print outside.
+00:36:59,840 --> 00:37:00,840
+ And, then, next here.
 
 440
 00:37:00,840 --> 00:37:03,820
- Something like that.
+ Alright.
 
 441
-00:37:03,820 --> 00:37:06,750
- And then it's here.
+00:37:03,820 --> 00:37:14,210
+ So, before running this, let's just see here.
 
 442
-00:37:06,750 --> 00:37:09,610
- All right.
-
-443
-00:37:09,610 --> 00:37:10,670
- So, before running this.
-
-444
-00:37:10,670 --> 00:37:14,210
- Let's just see here.
-
-445
 00:37:14,210 --> 00:37:17,060
  Well, what do you guys say?
 
-446
+443
 00:37:17,060 --> 00:37:19,060
  What do you think it will print out?
 
-447
+444
 00:37:19,060 --> 00:37:29,690
  Print out.
 
-448
+445
 00:37:29,690 --> 00:37:41,060
  Oh, Anna.
 
-449
-00:37:41,060 --> 00:37:42,060
- Yeah.
+446
+00:37:41,060 --> 00:37:43,060
+ Yeah, it will print out inside 20.
 
-450
-00:37:42,060 --> 00:37:43,060
- It will print out inside 20.
-
-451
+447
 00:37:43,060 --> 00:37:45,090
- And outside 10.
+ And, outside 10, maybe.
 
-452
+448
 00:37:45,090 --> 00:37:46,190
- Maybe.
-
-453
-00:37:46,190 --> 00:37:47,670
  Okay.
 
-454
-00:37:47,670 --> 00:37:49,640
- And the follow up question would be.
+449
+00:37:46,190 --> 00:37:48,670
+ And, the follow-up question would be.
 
-455
-00:37:49,640 --> 00:37:50,760
+450
+00:37:48,670 --> 00:37:49,640
  Why?
 
-456
-00:37:50,760 --> 00:37:52,610
- And you're actually correct.
+451
+00:37:49,640 --> 00:37:50,760
+ And, you're actually correct.
 
-457
-00:37:52,610 --> 00:37:53,850
+452
+00:37:50,760 --> 00:37:52,610
  So.
 
-458
-00:37:53,850 --> 00:37:55,810
- Maybe it's a.
+453
+00:37:52,610 --> 00:37:55,810
+ Maybe it's a local scope.
 
-459
-00:37:55,810 --> 00:37:56,810
- Local scope.
+454
+00:37:55,810 --> 00:37:57,780
+ And, yeah.
 
-460
-00:37:56,810 --> 00:37:57,780
- And.
-
-461
+455
 00:37:57,780 --> 00:37:59,640
  Yeah.
 
-462
-00:37:59,640 --> 00:38:00,640
- Yeah.
-
-463
-00:38:00,640 --> 00:38:02,640
+456
+00:37:59,640 --> 00:38:01,640
  Since x is inside the function.
 
-464
-00:38:02,640 --> 00:38:03,630
- Is actually.
+457
+00:38:01,640 --> 00:38:03,630
+ It's actually local.
 
-465
+458
 00:38:03,630 --> 00:38:04,990
- Yeah.
-
-466
-00:38:04,990 --> 00:38:06,460
- Local.
-
-467
-00:38:06,460 --> 00:38:07,460
  Right?
 
-468
-00:38:07,460 --> 00:38:08,650
+459
+00:38:04,990 --> 00:38:06,460
  Yes.
 
-469
-00:38:08,650 --> 00:38:10,290
- And it does not.
+460
+00:38:06,460 --> 00:38:10,290
+ And, it does not, well, replace the global x.
 
-470
+461
 00:38:10,290 --> 00:38:13,020
- Well, replace.
-
-471
-00:38:13,020 --> 00:38:16,670
- The global x.
-
-472
-00:38:16,670 --> 00:38:19,600
  Perfect.
 
-473
-00:38:19,600 --> 00:38:20,980
+462
+00:38:13,020 --> 00:38:16,670
  Imagine.
 
-474
-00:38:20,980 --> 00:38:22,520
+463
+00:38:16,670 --> 00:38:20,980
  Because you're with me today.
 
-475
-00:38:22,520 --> 00:38:23,620
- Imagine.
+464
+00:38:20,980 --> 00:38:24,680
+ Imagine that we got a piece of code here.
 
-476
-00:38:23,620 --> 00:38:24,680
- That we got.
-
-477
+465
 00:38:24,680 --> 00:38:25,710
- Piece of code here.
-
-478
-00:38:25,710 --> 00:38:27,140
  It looks something like this.
 
-479
+466
+00:38:25,710 --> 00:38:27,140
+ Total.
+
+467
 00:38:27,140 --> 00:38:28,280
  Total.
 
-480
+468
 00:38:28,280 --> 00:38:30,560
  Equals.
 
-481
+469
 00:38:30,560 --> 00:38:32,920
  100.
 
-482
-00:38:32,920 --> 00:38:33,890
- And then we do.
+470
+00:38:32,920 --> 00:38:34,890
+ And, then, we do something like this.
 
-483
-00:38:33,890 --> 00:38:34,890
- Something like this.
-
-484
+471
 00:38:34,890 --> 00:38:36,620
  Add.
 
-485
+472
 00:38:36,620 --> 00:38:41,810
  Tax.
 
-486
-00:38:41,810 --> 00:38:43,320
- And we're going to put.
+473
+00:38:41,810 --> 00:38:44,790
+ And, we're going to put total.
 
-487
-00:38:43,320 --> 00:38:44,790
- Total.
-
-488
+474
 00:38:44,790 --> 00:38:46,330
  Equals.
 
-489
+475
 00:38:46,330 --> 00:38:48,190
  Total.
 
-490
-00:38:48,190 --> 00:38:49,190
- Multiplied by.
+476
+00:38:48,190 --> 00:38:52,240
+ Multiplied by 1.25.
 
-491
-00:38:49,190 --> 00:38:50,890
- 1.25.
+477
+00:38:52,240 --> 00:38:58,220
+ And, then, I'm just going to put return.
 
-492
-00:38:50,890 --> 00:38:57,220
- And then I'm just going to put.
-
-493
-00:38:57,220 --> 00:38:58,220
- Return.
-
-494
+478
 00:38:58,220 --> 00:39:02,450
  Return.
 
-495
+479
 00:39:02,450 --> 00:39:05,530
  Total.
 
-496
+480
 00:39:05,530 --> 00:39:07,040
  No.
 
-497
+481
 00:39:07,040 --> 00:39:11,570
  Return.
 
-498
+482
 00:39:11,570 --> 00:39:12,730
  Total.
 
-499
+483
 00:39:12,730 --> 00:39:15,350
  There we go.
 
-500
+484
 00:39:15,350 --> 00:39:16,440
  Let me just think.
 
-501
+485
 00:39:16,440 --> 00:39:17,440
  Okay.
 
-502
+486
 00:39:17,440 --> 00:39:19,110
  So.
 
-503
+487
 00:39:19,110 --> 00:39:21,150
- If I were to call.
+ If I were to call this.
 
-504
+488
 00:39:21,150 --> 00:39:22,680
  This.
 
-505
-00:39:22,680 --> 00:39:25,020
- If I were to call.
+489
+00:39:22,680 --> 00:39:25,980
+ If I were to call this function.
 
-506
-00:39:25,020 --> 00:39:25,980
- This function.
-
-507
+490
 00:39:25,980 --> 00:39:28,140
  I will get a problem.
 
-508
+491
 00:39:28,140 --> 00:39:30,510
  Right?
 
-509
+492
 00:39:30,510 --> 00:39:31,510
  I will get something like.
 
-510
+493
 00:39:31,510 --> 00:39:32,510
  I don't know.
 
-511
+494
 00:39:32,510 --> 00:39:33,510
  I don't remember.
 
-512
+495
 00:39:33,510 --> 00:39:34,890
  Unbound.
 
-513
+496
 00:39:34,890 --> 00:39:36,820
  Unbound error.
 
-514
+497
 00:39:36,820 --> 00:39:37,780
- Or.
+ Or, unbound.
 
-515
+498
 00:39:37,780 --> 00:39:38,910
- Unbound.
-
-516
-00:39:38,910 --> 00:39:39,910
  Local error.
 
-517
-00:39:39,910 --> 00:39:42,760
+499
+00:39:38,910 --> 00:39:39,910
  Something like that.
 
-518
-00:39:42,760 --> 00:39:43,760
+500
+00:39:39,910 --> 00:39:42,760
  Right?
 
-519
-00:39:43,760 --> 00:39:43,860
- So.
+501
+00:39:42,760 --> 00:39:45,920
+ So, why will this function actually cause a problem?
 
-520
-00:39:43,760 --> 00:39:44,760
- Why will this function.
-
-521
-00:39:44,760 --> 00:39:45,920
- Actually.
-
-522
+502
 00:39:45,920 --> 00:39:48,740
- Cause a problem.
+ And, we can actually try it as well.
 
-523
+503
 00:39:48,740 --> 00:39:53,770
- And we can actually try it.
-
-524
-00:39:53,770 --> 00:39:54,770
- As well.
-
-525
-00:39:54,770 --> 00:39:56,220
  Unbound.
 
-526
-00:39:56,220 --> 00:39:57,220
+504
+00:39:53,770 --> 00:39:54,770
  Local error.
 
-527
-00:39:57,220 --> 00:39:59,080
+505
+00:39:54,770 --> 00:39:56,220
  Exactly.
 
-528
+506
+00:39:56,220 --> 00:39:57,220
+ So, why do we get an unbound.
+
+507
+00:39:57,220 --> 00:39:59,080
+ Local error here?
+
+508
 00:39:59,080 --> 00:40:15,090
- So.
+ What do you guys say?
 
-529
+509
 00:40:15,090 --> 00:40:30,360
- It's an error.
+ Is that no idea?
 
-530
+510
 00:40:30,360 --> 00:40:31,360
  Sorry.
 
-531
+511
 00:40:31,360 --> 00:40:32,380
  Sorry.
 
-532
+512
 00:40:32,380 --> 00:40:33,380
+ No problem.
+
+513
+00:40:33,380 --> 00:40:34,380
+ No problem.
+
+514
+00:40:34,380 --> 00:40:35,380
+ No problem.
+
+515
+00:40:35,380 --> 00:40:36,380
  The microphone.
 
-533
-00:40:33,380 --> 00:40:34,380
+516
+00:40:36,380 --> 00:40:37,380
  All right.
 
-534
-00:40:34,380 --> 00:40:35,380
+517
+00:40:37,380 --> 00:40:38,380
  Yeah.
 
-535
-00:40:35,380 --> 00:40:36,380
+518
+00:40:38,380 --> 00:40:39,380
+ I don't know.
+
+519
+00:40:39,380 --> 00:40:40,380
  This.
 
-536
-00:40:36,380 --> 00:40:37,380
- Maybe it's wrong.
+520
+00:40:40,380 --> 00:40:41,380
+ Maybe it's wrong, but.
 
-537
-00:40:37,380 --> 00:40:38,380
- But.
-
-538
-00:40:38,380 --> 00:40:39,380
+521
+00:40:41,380 --> 00:40:42,570
  Is there.
 
-539
-00:40:39,380 --> 00:40:40,380
- There is no.
-
-540
-00:40:40,380 --> 00:40:41,380
- Parameter.
-
-541
-00:40:41,380 --> 00:40:42,570
- In the.
-
-542
+522
 00:40:42,570 --> 00:40:43,570
+ There is no parameter in the.
+
+523
+00:40:43,570 --> 00:40:44,660
  In the function.
 
-543
-00:40:43,570 --> 00:40:44,660
+524
+00:40:44,660 --> 00:40:45,720
  There is no.
 
-544
-00:40:44,660 --> 00:40:45,720
+525
+00:40:45,720 --> 00:40:51,160
  Okay.
 
-545
-00:40:45,720 --> 00:40:51,160
+526
+00:40:51,160 --> 00:40:55,550
  There's no parameter.
 
-546
-00:40:51,160 --> 00:40:55,550
- Anything more.
-
-547
+527
 00:40:55,550 --> 00:40:56,550
- Okay.
-
-548
-00:40:56,550 --> 00:41:02,470
- Yet.
-
-549
-00:41:02,470 --> 00:41:03,470
  Can you fill in?
 
-550
-00:41:03,470 --> 00:41:04,470
- Because.
+528
+00:40:56,550 --> 00:41:06,430
+ Because this Python treat total as a local variable?
 
-551
-00:41:04,470 --> 00:41:05,430
- This.
-
-552
-00:41:05,430 --> 00:41:06,430
- Python.
-
-553
+529
 00:41:06,430 --> 00:41:08,640
- Three.
-
-554
-00:41:08,640 --> 00:41:09,640
- Total.
-
-555
-00:41:09,640 --> 00:41:10,700
- As.
-
-556
-00:41:10,700 --> 00:41:11,700
- Local.
-
-557
-00:41:11,700 --> 00:41:11,800
- Variable.
-
-558
-00:41:11,700 --> 00:41:12,700
  Yes.
 
-559
-00:41:12,700 --> 00:41:14,020
+530
+00:41:08,640 --> 00:41:09,640
  Exactly.
 
-560
-00:41:14,020 --> 00:41:15,020
- So.
+531
+00:41:09,640 --> 00:41:10,700
+ So, it.
 
-561
-00:41:15,020 --> 00:41:15,930
- Python.
+532
+00:41:10,700 --> 00:41:17,120
+ So, Python sees that we assign total inside the function.
 
-562
-00:41:15,930 --> 00:41:17,120
- Sees.
-
-563
+533
 00:41:17,120 --> 00:41:18,120
- That we assign.
-
-564
-00:41:18,120 --> 00:41:21,870
- Total.
-
-565
-00:41:21,870 --> 00:41:22,870
- Inside.
-
-566
-00:41:22,870 --> 00:41:23,930
- The function.
-
-567
-00:41:23,930 --> 00:41:24,930
  Right?
 
-568
-00:41:24,930 --> 00:41:27,460
- And.
+534
+00:41:18,120 --> 00:41:24,930
+ And, therefore, it will treat it as a local.
 
-569
-00:41:27,460 --> 00:41:28,460
- Therefore.
+535
+00:41:24,930 --> 00:41:28,460
+ This total as local.
 
-570
+536
 00:41:28,460 --> 00:41:30,770
- It will.
-
-571
-00:41:30,770 --> 00:41:31,770
- Treat it.
-
-572
-00:41:31,770 --> 00:41:32,770
- This.
-
-573
-00:41:32,770 --> 00:41:33,770
- Total.
-
-574
-00:41:33,770 --> 00:41:34,770
- As.
-
-575
-00:41:34,770 --> 00:41:35,770
- Local.
-
-576
-00:41:35,770 --> 00:41:36,770
- The value.
-
-577
-00:41:36,770 --> 00:41:38,470
- So.
-
-578
-00:41:38,470 --> 00:41:39,470
- Therefore.
-
-579
-00:41:39,470 --> 00:41:42,520
- We will get a problem.
-
-580
-00:41:42,520 --> 00:41:43,520
  Right?
 
-581
-00:41:43,520 --> 00:41:45,350
- So.
+537
+00:41:30,770 --> 00:41:36,770
+ But, when we try to read the local variable before it has actually received the value.
 
-582
-00:41:45,350 --> 00:41:46,370
- What I want you to do now.
+538
+00:41:36,770 --> 00:41:39,470
+ So, therefore, we will get a problem.
 
-583
-00:41:46,370 --> 00:41:48,290
- As a.
+539
+00:41:39,470 --> 00:41:42,520
+ Right?
 
-584
-00:41:48,290 --> 00:41:52,040
- Small exercise.
+540
+00:41:42,520 --> 00:41:59,890
+ So, what I want you to do now as a small exercise is to actually rewrite the function.
 
-585
-00:41:52,040 --> 00:41:55,050
- Is.
+541
+00:41:59,890 --> 00:42:04,570
+ I would say without.
 
-586
-00:41:55,050 --> 00:41:57,740
- To.
-
-587
-00:41:57,740 --> 00:41:59,890
- Actually.
-
-588
-00:41:59,890 --> 00:42:03,060
- Rewrite.
-
-589
-00:42:03,060 --> 00:42:04,570
- The.
-
-590
+542
 00:42:04,570 --> 00:42:07,420
- Function.
+ Without.
 
-591
+543
 00:42:07,420 --> 00:42:08,900
- I would say.
+ Right?
 
-592
-00:42:08,900 --> 00:42:09,900
- Without.
+544
+00:42:08,900 --> 00:42:12,310
+ Without using this global keyword.
 
-593
-00:42:09,900 --> 00:42:11,310
- Without.
+545
+00:42:12,310 --> 00:42:16,470
+ So, without using global, I want you to rewrite the function so it actually works.
 
-594
-00:42:11,310 --> 00:42:12,310
- Without.
-
-595
-00:42:12,310 --> 00:42:13,310
- Using.
-
-596
-00:42:13,310 --> 00:42:14,470
- This.
-
-597
-00:42:14,470 --> 00:42:15,470
- Global.
-
-598
-00:42:15,470 --> 00:42:16,470
- Keyword.
-
-599
+546
 00:42:16,470 --> 00:42:21,570
- So.
+ All right?
 
-600
+547
 00:42:21,570 --> 00:42:23,970
- Without.
+ So, yeah.
 
-601
+548
 00:42:23,970 --> 00:42:25,350
- Using.
+ You get.
 
-602
-00:42:25,350 --> 00:42:28,360
- Global.
+549
+00:42:25,350 --> 00:42:36,170
+ And, if you were listening to Christian and Jettnöjet, you should be able to solve the question.
 
-603
-00:42:28,360 --> 00:42:29,360
- I want you to rewrite.
-
-604
-00:42:29,360 --> 00:42:30,270
- The function.
-
-605
-00:42:30,270 --> 00:42:30,370
- So.
-
-606
-00:42:30,270 --> 00:42:31,360
- It actually works.
-
-607
-00:42:31,360 --> 00:42:32,360
- You should be able to.
-
-608
-00:42:32,360 --> 00:42:36,170
- To solve the question.
-
-609
+550
 00:42:36,170 --> 00:42:37,200
- So.
+ So, yeah.
 
-610
-00:42:37,200 --> 00:42:38,450
- Yeah.
+551
+00:42:37,200 --> 00:42:41,700
+ Take maybe five minutes and try to do that one.
 
-611
-00:42:38,450 --> 00:42:39,450
- Take.
+552
+00:42:41,700 --> 00:42:46,400
+ So, we can try to do this again at 9:50.
 
-612
-00:42:39,450 --> 00:42:40,670
- Maybe.
+553
+00:42:46,400 --> 00:42:49,580
+ And then we look at the answer and then we take a little break.
 
-613
-00:42:40,670 --> 00:42:41,700
- Five minutes.
-
-614
-00:42:41,700 --> 00:42:42,700
- And try to do that one.
-
-615
-00:42:42,700 --> 00:42:44,400
- So.
-
-616
-00:42:44,400 --> 00:42:45,400
- We can.
-
-617
-00:42:45,400 --> 00:42:46,400
- Try to do this again.
-
-618
-00:42:46,400 --> 00:42:47,520
- At.
-
-619
-00:42:47,520 --> 00:42:48,520
- 9:50.
-
-620
-00:42:48,520 --> 00:42:49,580
- And then we look at the answer.
-
-621
+554
 00:42:49,580 --> 00:42:53,070
- Then we take a little break.
+ All right?
 
-622
-00:42:53,070 --> 00:42:54,070
+555
+00:42:53,070 --> 00:42:55,390
+ So, try to take five minutes to solve this one.
+
+556
+00:42:55,390 --> 00:47:55,430
  All right.
 
-623
-00:42:54,070 --> 00:42:55,390
- So.
-
-624
-00:42:55,390 --> 00:47:55,430
- Try.
-
-625
+557
 00:47:55,430 --> 00:47:56,430
- To take five minutes.
+ Sorry guys.
 
-626
+558
 00:47:56,430 --> 00:47:58,230
- And.
+ Can you hear me?
 
-627
+559
 00:47:58,230 --> 00:47:59,900
- To solve this one.
+ Thumbs up if you can hear me.
 
-628
+560
 00:47:59,900 --> 00:48:01,250
- Right.
+ Yeah.
 
-629
+561
 00:48:01,250 --> 00:48:02,440
- So.
+ Ah, there we go.
 
-630
+562
 00:48:02,440 --> 00:48:03,440
  Yeah.
 
-631
-00:48:03,440 --> 00:48:04,440
- I kind of.
+563
+00:48:03,440 --> 00:48:06,440
+ I kind of, my computer restarted and got kicked out of my, of Teams.
 
-632
-00:48:04,440 --> 00:48:05,440
- My computer restarted.
-
-633
-00:48:05,440 --> 00:48:06,440
- And got kicked out of my.
-
-634
+564
 00:48:06,440 --> 00:48:07,440
- Of teams.
-
-635
-00:48:07,440 --> 00:48:08,500
  I don't know what just happened.
 
-636
-00:48:08,500 --> 00:48:09,440
- And you can see my screen.
+565
+00:48:07,440 --> 00:48:09,440
+ And you can see my screen, right?
 
-637
-00:48:09,440 --> 00:48:10,560
- Right.
+566
+00:48:09,440 --> 00:48:12,220
+ It's another thumbs up if you can see my screen.
 
-638
-00:48:10,560 --> 00:48:12,220
- It's another.
-
-639
+567
 00:48:12,220 --> 00:48:13,960
- Thumbs up if you can see my screen.
-
-640
-00:48:13,960 --> 00:48:15,850
  Okay.
 
-641
+568
+00:48:13,960 --> 00:48:15,850
+ Perfect.
+
+569
 00:48:15,850 --> 00:48:16,850
  Perfect.
 
-642
+570
 00:48:16,850 --> 00:48:18,030
  Perfect.
 
-643
+571
 00:48:18,030 --> 00:48:19,030
  All right.
 
-644
+572
 00:48:19,030 --> 00:48:22,040
+ Let's see.
+
+573
+00:48:22,040 --> 00:48:23,260
  Yeah.
 
-645
-00:48:22,040 --> 00:48:23,260
- You got an exercise.
-
-646
+574
 00:48:23,260 --> 00:48:24,480
- Right.
+ You got an exercise, right?
 
-647
+575
 00:48:24,480 --> 00:48:25,730
  Let's hear it.
 
-648
-00:48:25,730 --> 00:48:26,650
- So.
+576
+00:48:25,730 --> 00:48:28,820
+ So, anybody wants to give it a go?
 
-649
-00:48:26,650 --> 00:48:27,830
- Anybody wants to give it a.
-
-650
-00:48:27,830 --> 00:48:28,820
- A go.
-
-651
+577
 00:48:28,820 --> 00:48:33,400
  Let's hear it.
 
-652
+578
 00:48:33,400 --> 00:48:35,610
- Novita.
+ Novitsa.
 
-653
+579
 00:48:35,610 --> 00:48:37,730
  Hi.
 
-654
-00:48:37,730 --> 00:48:38,820
- Well.
+580
+00:48:37,730 --> 00:48:46,490
+ Well, here we have an example that we have a global and local variable.
 
-655
-00:48:38,820 --> 00:48:39,820
- Here we have an example.
+581
+00:48:46,490 --> 00:48:50,700
+ And we need to change in, inside total is total.
 
-656
-00:48:39,820 --> 00:48:41,360
- That.
+582
+00:48:50,700 --> 00:48:58,480
+ We need to write down, for example, total one, total one to change to be a local.
 
-657
-00:48:41,360 --> 00:48:43,360
- That we have a global and local.
+583
+00:48:58,480 --> 00:49:07,800
+ Just here, total one, total dash one, and return total dash one to return local.
 
-658
-00:48:43,360 --> 00:48:45,490
- Global and local.
+584
+00:49:07,800 --> 00:49:11,130
+ So, we don't change global.
 
-659
-00:48:45,490 --> 00:48:46,490
- Wherever.
+585
+00:49:11,130 --> 00:49:14,630
+ And then in that case, it's going to work.
 
-660
-00:48:46,490 --> 00:48:47,550
- And we need.
-
-661
-00:48:47,550 --> 00:48:48,550
- To change.
-
-662
-00:48:48,550 --> 00:48:49,550
- In size.
-
-663
-00:48:49,550 --> 00:48:50,700
- Total.
-
-664
-00:48:50,700 --> 00:48:51,760
- Is total.
-
-665
-00:48:51,760 --> 00:48:53,010
- We need.
-
-666
-00:48:53,010 --> 00:48:54,010
- To write down.
-
-667
-00:48:54,010 --> 00:48:55,010
- For example.
-
-668
-00:48:55,010 --> 00:48:56,480
- Total one.
-
-669
-00:48:56,480 --> 00:48:57,480
- Total one.
-
-670
-00:48:57,480 --> 00:48:58,480
- To change.
-
-671
-00:48:58,480 --> 00:48:59,830
- Local.
-
-672
-00:48:59,830 --> 00:49:00,830
- Just here.
-
-673
-00:49:00,830 --> 00:49:01,830
- Total one.
-
-674
-00:49:01,830 --> 00:49:03,730
- Total dash one.
-
-675
-00:49:03,730 --> 00:49:04,730
- And.
-
-676
-00:49:04,730 --> 00:49:05,730
- Return.
-
-677
-00:49:05,730 --> 00:49:06,720
- Total dash one.
-
-678
-00:49:06,720 --> 00:49:07,800
- To return local.
-
-679
-00:49:07,800 --> 00:49:08,990
- So we.
-
-680
-00:49:08,990 --> 00:49:10,130
- We don't.
-
-681
-00:49:10,130 --> 00:49:11,130
- Change.
-
-682
-00:49:11,130 --> 00:49:12,630
- Global.
-
-683
-00:49:12,630 --> 00:49:13,630
- And then.
-
-684
-00:49:13,630 --> 00:49:14,630
- In that case.
-
-685
+586
 00:49:14,630 --> 00:49:16,240
- It.
+ So, that's it.
 
-686
-00:49:16,240 --> 00:49:17,240
- It's going to work.
+587
+00:49:16,240 --> 00:49:18,360
+ This is all I need to do.
 
-687
-00:49:17,240 --> 00:49:18,360
- So that's it.
-
-688
+588
 00:49:18,360 --> 00:49:20,800
- This is all.
-
-689
-00:49:20,800 --> 00:49:21,800
- I need to do.
-
-690
-00:49:21,800 --> 00:49:22,800
  Yes.
 
-691
-00:49:22,800 --> 00:49:23,800
- And we.
+589
+00:49:20,800 --> 00:49:28,180
+ And we need to write down, for example, after total, before return, we can write down print
 
-692
-00:49:23,800 --> 00:49:24,800
- We need.
-
-693
-00:49:24,800 --> 00:49:26,120
- To write down.
-
-694
-00:49:26,120 --> 00:49:27,180
- For example.
-
-695
-00:49:27,180 --> 00:49:28,180
- After total.
-
-696
+590
 00:49:28,180 --> 00:49:29,180
- Before.
+ total one.
 
-697
-00:49:29,180 --> 00:49:30,150
- Return.
+591
+00:49:29,180 --> 00:49:33,080
+ So, then we can see what is going on.
 
-698
-00:49:30,150 --> 00:49:31,150
- We can.
+592
+00:49:33,080 --> 00:49:38,460
+ After this, new line, and print total one.
 
-699
-00:49:31,150 --> 00:49:32,150
- Write down.
-
-700
-00:49:32,150 --> 00:49:32,250
- Print.
-
-701
-00:49:32,150 --> 00:49:33,080
- Total one.
-
-702
-00:49:33,080 --> 00:49:34,180
- After this.
-
-703
-00:49:34,180 --> 00:49:35,180
- New.
-
-704
-00:49:35,180 --> 00:49:36,380
- New.
-
-705
-00:49:36,380 --> 00:49:37,460
- Line.
-
-706
-00:49:37,460 --> 00:49:38,460
- And.
-
-707
+593
 00:49:38,460 --> 00:49:40,630
- Print.
-
-708
-00:49:40,630 --> 00:49:41,630
- Total one.
-
-709
-00:49:41,630 --> 00:49:42,630
  Okay.
 
-710
-00:49:42,630 --> 00:49:43,630
- And then.
+594
+00:49:40,630 --> 00:49:43,630
+ And then we can execute.
 
-711
+595
 00:49:43,630 --> 00:49:45,070
- You can.
-
-712
-00:49:45,070 --> 00:49:46,320
  Yeah.
 
-713
-00:49:46,320 --> 00:49:49,940
+596
+00:49:45,070 --> 00:49:46,320
  Sure.
 
-714
-00:49:49,940 --> 00:49:50,940
+597
+00:49:46,320 --> 00:49:49,940
  Let's try it.
 
-715
-00:49:50,940 --> 00:49:51,940
+598
+00:49:49,940 --> 00:49:50,940
  Okay.
 
-716
-00:49:51,940 --> 00:49:53,130
- We get our.
+599
+00:49:50,940 --> 00:49:53,130
+ We get our 125.
 
-717
-00:49:53,130 --> 00:49:54,600
- 125.
+600
+00:49:53,130 --> 00:49:56,970
+ It's not actually wrong.
 
-718
-00:49:54,600 --> 00:49:56,970
- Is not actually.
-
-719
+601
 00:49:56,970 --> 00:49:57,970
- Wrong.
+ So, sure.
 
-720
+602
 00:49:57,970 --> 00:49:58,920
- So sure.
+ We get our total one.
 
-721
+603
 00:49:58,920 --> 00:50:00,120
- We get our.
-
-722
-00:50:00,120 --> 00:50:01,470
- Total one.
-
-723
-00:50:01,470 --> 00:50:03,130
  Interesting.
 
-724
-00:50:03,130 --> 00:50:04,460
- So.
+604
+00:50:00,120 --> 00:50:03,130
+ So, yeah.
 
-725
-00:50:04,460 --> 00:50:04,560
- Yeah.
+605
+00:50:03,130 --> 00:50:06,190
+ I would say, you're getting it.
 
-726
-00:50:04,460 --> 00:50:06,190
- I would say.
+606
+00:50:06,190 --> 00:50:09,190
+ You see the difference between the local and the global.
 
-727
-00:50:06,190 --> 00:50:07,190
- You're getting it.
-
-728
-00:50:07,190 --> 00:50:08,190
- See the difference.
-
-729
-00:50:08,190 --> 00:50:09,190
- Between the local.
-
-730
+607
 00:50:09,190 --> 00:50:10,450
- And the global.
-
-731
-00:50:10,450 --> 00:50:12,130
  Sure.
 
-732
-00:50:12,130 --> 00:50:13,730
- But.
+608
+00:50:10,450 --> 00:50:18,110
+ But if I were to say, don't change the variable names.
 
-733
-00:50:13,730 --> 00:50:17,110
- If.
-
-734
-00:50:17,110 --> 00:50:18,110
- I were to say.
-
-735
+609
 00:50:18,110 --> 00:50:19,110
- Don't change.
-
-736
-00:50:19,110 --> 00:50:20,110
- The variable names.
-
-737
-00:50:20,110 --> 00:50:21,780
  All right.
 
-738
-00:50:21,780 --> 00:50:22,780
- Gonna put this.
+610
+00:50:19,110 --> 00:50:21,780
+ I'm going to put this.
 
-739
-00:50:22,780 --> 00:50:22,880
- So.
+611
+00:50:21,780 --> 00:50:24,780
+ So, don't change the variable names.
 
-740
-00:50:22,780 --> 00:50:23,780
- Don't.
-
-741
-00:50:23,780 --> 00:50:24,780
- Change the variable names.
-
-742
-00:50:24,780 --> 00:50:27,420
+612
+00:50:24,780 --> 00:50:26,420
  Just to lock you up a little bit.
 
-743
-00:50:27,420 --> 00:50:29,370
+613
+00:50:26,420 --> 00:50:28,420
  To tie your hands a little bit here.
 
-744
-00:50:29,370 --> 00:50:31,320
- What can we do.
+614
+00:50:28,420 --> 00:50:31,320
+ What can we do then?
 
-745
+615
 00:50:31,320 --> 00:50:34,360
- Then.
+ That was a way.
 
-746
+616
 00:50:34,360 --> 00:50:36,000
- But that was a way.
-
-747
-00:50:36,000 --> 00:50:38,920
  Sure.
 
-748
-00:50:38,920 --> 00:50:39,920
+617
+00:50:36,000 --> 00:50:38,920
  Let's see here.
 
-749
+618
+00:50:38,920 --> 00:50:39,920
+ Anastasia.
+
+619
 00:50:39,920 --> 00:50:41,910
  Anastasia.
 
-750
+620
 00:50:41,910 --> 00:50:44,540
  Right.
 
-751
-00:50:44,540 --> 00:50:45,690
- So.
+621
+00:50:44,540 --> 00:50:50,690
+ So, the function gets confused because it doesn't know what total we're talking about.
 
-752
-00:50:45,690 --> 00:50:46,690
- The function gets confused.
+622
+00:50:50,690 --> 00:50:53,690
+ So, we need to modify the function.
 
-753
-00:50:46,690 --> 00:50:47,690
- Because it doesn't know.
+623
+00:50:53,690 --> 00:50:59,100
+ So, it takes an argument and then we have to parse.
 
-754
-00:50:47,690 --> 00:50:48,690
- What total.
+624
+00:50:59,100 --> 00:51:04,980
+ Or it takes a parameter and then we have to parse that argument when we call this function.
 
-755
-00:50:48,690 --> 00:50:49,690
- We're going.
-
-756
-00:50:49,690 --> 00:50:50,690
- We're talking about.
-
-757
-00:50:50,690 --> 00:50:51,690
- So we need to.
-
-758
-00:50:51,690 --> 00:50:52,690
- Make the.
-
-759
-00:50:52,690 --> 00:50:53,690
- Modify the function.
-
-760
-00:50:53,690 --> 00:50:54,690
- So it takes.
-
-761
-00:50:54,690 --> 00:50:55,650
- An.
-
-762
-00:50:55,650 --> 00:50:57,100
- Argument.
-
-763
-00:50:57,100 --> 00:50:58,100
- And then.
-
-764
-00:50:58,100 --> 00:50:59,100
- We have to parse.
-
-765
-00:50:59,100 --> 00:51:00,860
- Or.
-
-766
-00:51:00,860 --> 00:51:01,860
- It takes a perimeter.
-
-767
-00:51:01,860 --> 00:51:02,860
- And then.
-
-768
-00:51:02,860 --> 00:51:03,980
- We have to parse that.
-
-769
-00:51:03,980 --> 00:51:04,980
- Argument.
-
-770
+625
 00:51:04,980 --> 00:51:06,970
- When we call this function.
+ Here you go.
 
-771
-00:51:06,970 --> 00:51:07,970
- Here we go.
+626
+00:51:06,970 --> 00:51:12,220
+ So, maybe something like, did you choose any specific or can I just choose?
 
-772
-00:51:07,970 --> 00:51:08,970
- So.
+627
+00:51:12,220 --> 00:51:19,340
+ I actually just use the exact same words and it works fine because their local and global variables are separate.
 
-773
-00:51:08,970 --> 00:51:10,220
- Like.
-
-774
-00:51:10,220 --> 00:51:11,220
- Did you choose.
-
-775
-00:51:11,220 --> 00:51:12,220
- Any specific.
-
-776
-00:51:12,220 --> 00:51:13,220
- Or can I just.
-
-777
-00:51:13,220 --> 00:51:14,220
- I actually just use.
-
-778
-00:51:14,220 --> 00:51:15,220
- The exact same words.
-
-779
-00:51:15,220 --> 00:51:16,220
- And it works fine.
-
-780
-00:51:16,220 --> 00:51:17,220
- Because they're local.
-
-781
-00:51:17,220 --> 00:51:18,220
- And global variables.
-
-782
-00:51:18,220 --> 00:51:19,340
- Are.
-
-783
+628
 00:51:19,340 --> 00:51:20,460
- Separate.
+ Yeah, sure, sure, sure, sure.
 
-784
-00:51:20,460 --> 00:51:21,710
- Yeah.
+629
+00:51:20,460 --> 00:51:24,150
+ So, I just call the total in both places.
 
-785
-00:51:21,710 --> 00:51:22,710
- Sure.
-
-786
-00:51:22,710 --> 00:51:24,150
- Sure.
-
-787
+630
 00:51:24,150 --> 00:51:25,920
- Sure.
+ All right.
 
-788
+631
 00:51:25,920 --> 00:51:26,920
- Sure.
-
-789
-00:51:26,920 --> 00:51:28,850
- So I just called it total.
-
-790
-00:51:28,850 --> 00:51:29,850
- In both places.
-
-791
-00:51:29,850 --> 00:51:31,290
  All right.
 
-792
-00:51:31,290 --> 00:51:32,290
- All right.
+632
+00:51:26,920 --> 00:51:29,850
+ But what if I do something like this?
 
-793
-00:51:32,290 --> 00:51:33,220
- But what if I do something like this.
+633
+00:51:29,850 --> 00:51:32,290
+ And I'm not saying that you're wrong or something like that.
 
-794
-00:51:33,220 --> 00:51:34,580
- And I'm not saying that you're wrong.
+634
+00:51:32,290 --> 00:51:39,730
+ But what if I just do a very clean way that would be just to add this parameter called amount, for example.
 
-795
-00:51:34,580 --> 00:51:35,580
- Or something like that.
+635
+00:51:39,730 --> 00:51:44,080
+ And now, make that away.
 
-796
-00:51:35,580 --> 00:51:36,770
- But what if I just do.
+636
+00:51:44,080 --> 00:51:48,080
+ But then you have to instruct the function to work with the amount and not with the total.
 
-797
-00:51:36,770 --> 00:51:37,730
- A very clean way.
-
-798
-00:51:37,730 --> 00:51:38,730
- That would be.
-
-799
-00:51:38,730 --> 00:51:39,730
- Just to add this parameter.
-
-800
-00:51:39,730 --> 00:51:41,500
- Called amount.
-
-801
-00:51:41,500 --> 00:51:44,080
- For example.
-
-802
-00:51:44,080 --> 00:51:45,080
- By the way.
-
-803
-00:51:45,080 --> 00:51:46,080
- But then you have to instruct the function.
-
-804
-00:51:46,080 --> 00:51:47,080
- To work with the amount.
-
-805
-00:51:47,080 --> 00:51:48,080
- And not with the total.
-
-806
+637
 00:51:48,080 --> 00:51:49,300
  Exactly.
 
-807
+638
 00:51:49,300 --> 00:51:50,520
  Exactly.
 
-808
-00:51:50,520 --> 00:51:52,380
- And do something.
+639
+00:51:50,520 --> 00:51:53,440
+ And do something like this.
 
-809
-00:51:52,380 --> 00:51:53,440
- Like this.
+640
+00:51:53,440 --> 00:51:57,520
+ 0.25, for example.
 
-810
-00:51:53,440 --> 00:51:56,520
- Or 25.
-
-811
-00:51:56,520 --> 00:51:57,520
- For example.
-
-812
+641
 00:51:57,520 --> 00:51:58,680
- Oh sorry.
+ Oh, sorry.
 
-813
+642
 00:51:58,680 --> 00:52:00,510
- Or 25.
+ 0.25.
 
-814
+643
 00:52:00,510 --> 00:52:01,540
  Something like that.
 
-815
-00:52:01,540 --> 00:52:02,860
- And then.
+644
+00:52:01,540 --> 00:52:06,720
+ And then, outside here, go ahead and write total or equals.
 
-816
-00:52:02,860 --> 00:52:04,340
- Here.
-
-817
-00:52:04,340 --> 00:52:05,340
- And write total.
-
-818
-00:52:05,340 --> 00:52:06,720
- Or equals.
-
-819
-00:52:06,720 --> 00:52:07,720
+645
+00:52:06,720 --> 00:52:08,810
  And then I call my function.
 
-820
-00:52:07,720 --> 00:52:08,810
+646
+00:52:08,810 --> 00:52:10,890
  Just a clean way.
 
-821
-00:52:08,810 --> 00:52:12,980
- And that would be.
+647
+00:52:10,890 --> 00:52:15,070
+ And that would be total that we are calling.
 
-822
-00:52:12,980 --> 00:52:14,070
- Total.
+648
+00:52:15,070 --> 00:52:21,230
+ And now, here, we can actually just print our total.
 
-823
-00:52:14,070 --> 00:52:15,070
- That we are.
-
-824
-00:52:15,070 --> 00:52:16,670
- And now here.
-
-825
-00:52:16,670 --> 00:52:17,670
- We can actually just.
-
-826
-00:52:17,670 --> 00:52:20,070
- Print.
-
-827
-00:52:20,070 --> 00:52:21,230
- Our total.
-
-828
+649
 00:52:21,230 --> 00:52:25,590
  I'm not saying that this is the ultimate way.
 
-829
-00:52:25,590 --> 00:52:27,350
- As we see.
+650
+00:52:25,590 --> 00:52:29,640
+ As we see, we have different ways, different ideas, right?
 
-830
-00:52:27,350 --> 00:52:28,350
- We have different ways.
+651
+00:52:29,640 --> 00:52:39,290
+ But this would be a way I would solve that one.
 
-831
-00:52:28,350 --> 00:52:29,640
- Different ideas.
+652
+00:52:39,290 --> 00:52:41,290
+ I'm using global, using our return.
 
-832
-00:52:29,640 --> 00:52:34,510
- Right.
-
-833
-00:52:34,510 --> 00:52:35,830
- This would be a way.
-
-834
-00:52:35,830 --> 00:52:37,080
- I would.
-
-835
-00:52:37,080 --> 00:52:39,290
- I would solve them.
-
-836
-00:52:39,290 --> 00:52:40,290
- Not using global.
-
-837
-00:52:40,290 --> 00:52:41,290
- Using our return.
-
-838
+653
 00:52:41,290 --> 00:52:42,350
- It's much clean.
+ It's much cleaner.
 
-839
-00:52:42,350 --> 00:52:43,410
- I can see the workflow.
+654
+00:52:42,350 --> 00:52:44,510
+ I can see the workflow and so on.
 
-840
-00:52:43,410 --> 00:52:44,510
- And so on.
+655
+00:52:44,510 --> 00:52:55,310
+ But like I said, it's different ways of doing it.
 
-841
-00:52:44,510 --> 00:52:48,190
- But like I said.
+656
+00:52:55,310 --> 00:53:04,330
+ The main point is to actually see the difference between the local variable and the global variable, right?
 
-842
-00:52:48,190 --> 00:52:49,820
- It's.
-
-843
-00:52:49,820 --> 00:52:54,140
- It's different ways.
-
-844
-00:52:54,140 --> 00:52:55,310
- Of doing it.
-
-845
-00:52:55,310 --> 00:52:56,430
- The main point.
-
-846
-00:52:56,430 --> 00:52:57,430
- Is to actually see the difference.
-
-847
-00:52:57,430 --> 00:52:58,680
- Between.
-
-848
-00:52:58,680 --> 00:52:59,580
- The local variable.
-
-849
-00:52:59,580 --> 00:53:00,970
- And the global variable.
-
-850
-00:53:00,970 --> 00:53:04,330
- Right.
-
-851
+657
 00:53:04,330 --> 00:53:06,900
- Let's hear.
+ Let's hear it.
 
-852
+658
 00:53:06,900 --> 00:53:07,900
  Murtaza.
 
-853
+659
 00:53:07,900 --> 00:53:10,690
  Yes.
 
-854
+660
 00:53:10,690 --> 00:53:13,030
  I had a question.
 
-855
-00:53:13,030 --> 00:53:14,030
- Because.
+661
+00:53:13,030 --> 00:53:29,130
+ Because when you had, in the beginning, like total and total, as it was in the beginning, when you gave us this task, why didn't that one work and the other one before worked?
 
-856
-00:53:14,030 --> 00:53:15,030
- When you had.
+662
+00:53:29,130 --> 00:53:35,450
+ Because it looked the same, for me at least.
 
-857
-00:53:15,030 --> 00:53:16,030
- In the beginning.
-
-858
-00:53:16,030 --> 00:53:17,030
- Like.
-
-859
-00:53:17,030 --> 00:53:18,030
- Total.
-
-860
-00:53:18,030 --> 00:53:19,410
- As it was.
-
-861
-00:53:19,410 --> 00:53:20,570
- In the beginning.
-
-862
-00:53:20,570 --> 00:53:21,570
- When you gave us.
-
-863
-00:53:21,570 --> 00:53:22,850
- This task.
-
-864
-00:53:22,850 --> 00:53:23,850
- Why didn't.
-
-865
-00:53:23,850 --> 00:53:25,200
- That one.
-
-866
-00:53:25,200 --> 00:53:26,200
- Work.
-
-867
-00:53:26,200 --> 00:53:27,200
- And the other one.
-
-868
-00:53:27,200 --> 00:53:28,200
- Before.
-
-869
-00:53:28,200 --> 00:53:29,130
- Worked.
-
-870
-00:53:29,130 --> 00:53:30,080
- Because.
-
-871
-00:53:30,080 --> 00:53:32,030
- It was.
-
-872
-00:53:32,030 --> 00:53:35,450
- It looked the same.
-
-873
+663
 00:53:35,450 --> 00:53:41,820
- For me.
-
-874
-00:53:41,820 --> 00:53:43,070
- At least.
-
-875
-00:53:43,070 --> 00:53:47,590
- Here.
-
-876
-00:53:47,590 --> 00:53:50,050
- We had.
-
-877
-00:53:50,050 --> 00:53:51,050
- Total.
-
-878
-00:53:51,050 --> 00:53:52,050
- Total.
-
-879
-00:53:52,050 --> 00:53:53,050
- We got.
-
-880
-00:53:53,050 --> 00:53:54,360
- We did not have this.
-
-881
-00:53:54,360 --> 00:53:55,330
- Just try to.
-
-882
-00:53:55,330 --> 00:53:56,480
- Recreate.
-
-883
-00:53:56,480 --> 00:53:57,700
- What we had.
-
-884
-00:53:57,700 --> 00:53:58,700
- So we had something like this.
-
-885
-00:53:58,700 --> 00:54:01,440
- Right?
-
-886
-00:54:01,440 --> 00:54:02,580
  Yes.
 
-887
-00:54:02,580 --> 00:54:04,700
+664
+00:53:41,820 --> 00:53:43,070
+ Let's see here.
+
+665
+00:53:43,070 --> 00:53:47,590
+ We had total, total.
+
+666
+00:53:47,590 --> 00:53:51,050
+ We got .
+
+667
+00:53:51,050 --> 00:53:54,360
+ We did not have this.
+
+668
+00:53:54,360 --> 00:53:56,480
+ Just try to recreate what we had.
+
+669
+00:53:56,480 --> 00:53:58,700
+ So we had something like this, right?
+
+670
+00:53:58,700 --> 00:54:01,440
+ Yes.
+
+671
+00:54:01,440 --> 00:54:02,580
  And this worked for you?
 
-888
-00:54:04,700 --> 00:54:05,700
+672
+00:54:02,580 --> 00:54:04,700
  No.
 
-889
-00:54:05,700 --> 00:54:06,700
- I mean.
+673
+00:54:04,700 --> 00:54:06,700
+ I mean, this doesn't work.
 
-890
+674
 00:54:06,700 --> 00:54:07,700
- This.
-
-891
-00:54:07,700 --> 00:54:08,700
- Doesn't work.
-
-892
-00:54:08,700 --> 00:54:09,700
  All right.
 
-893
-00:54:09,700 --> 00:54:10,700
- In the previous example.
+675
+00:54:07,700 --> 00:54:10,700
+ In the previous example, it was the same, but it worked.
 
-894
-00:54:10,700 --> 00:54:12,910
- It was.
+676
+00:54:10,700 --> 00:54:13,820
+ In the previous example, it worked.
 
-895
-00:54:12,910 --> 00:54:13,820
- The same.
-
-896
+677
 00:54:13,820 --> 00:54:15,180
- But it worked.
-
-897
-00:54:15,180 --> 00:54:17,910
- The previous example.
-
-898
-00:54:17,910 --> 00:54:19,970
- It worked.
-
-899
-00:54:19,970 --> 00:54:21,150
  Did it?
 
-900
-00:54:21,150 --> 00:54:22,150
+678
+00:54:15,180 --> 00:54:17,910
  Like in this one.
 
-901
-00:54:22,150 --> 00:54:23,150
- Right?
+679
+00:54:17,910 --> 00:54:19,970
+ In this one.
 
-902
-00:54:23,150 --> 00:54:24,150
- What is the difference between this example.
+680
+00:54:19,970 --> 00:54:21,150
+ No.
 
-903
-00:54:24,150 --> 00:54:28,690
- And this example.
+681
+00:54:21,150 --> 00:54:22,150
+ Because, oh, okay.
 
-904
-00:54:28,690 --> 00:54:29,690
- You're using the same.
+682
+00:54:22,150 --> 00:54:28,690
+ What is the difference between this example and this example?
 
-905
-00:54:29,690 --> 00:54:30,690
- Total.
+683
+00:54:28,690 --> 00:54:30,690
+ You're using the same total again?
 
-906
-00:54:30,690 --> 00:54:32,390
- Again.
-
-907
-00:54:32,390 --> 00:54:33,390
+684
+00:54:33,390 --> 00:54:34,390
  Sort of.
 
-908
-00:54:33,390 --> 00:54:34,390
- Well.
+685
+00:54:34,390 --> 00:54:41,850
+ Well, the same variable name is mentioned, but we are assigning a little bit difference here, right?
 
-909
-00:54:34,390 --> 00:54:37,610
- The same variable name is mentioned.
+686
+00:54:41,850 --> 00:54:46,250
+ So we have, yeah, Gloria, go ahead.
 
-910
-00:54:37,610 --> 00:54:39,850
- But.
+687
+00:54:46,250 --> 00:54:51,250
+ I think the difference is x is being defined inside of the function.
 
-911
-00:54:39,850 --> 00:54:40,850
- We are signing a little bit difference here.
+688
+00:54:51,250 --> 00:54:52,250
+ Exactly.
 
-912
-00:54:40,850 --> 00:54:41,850
- Right?
+689
+00:54:52,250 --> 00:54:57,400
+ So here we are actually defining the x with 20.
 
-913
-00:54:41,850 --> 00:54:42,850
- So.
+690
+00:54:57,400 --> 00:54:59,690
+ But, Gloria, continue.
 
-914
-00:54:42,850 --> 00:54:43,850
- We have.
+691
+00:54:59,690 --> 00:55:01,460
+ But here.
 
-915
-00:54:43,850 --> 00:54:46,250
+692
+00:55:01,460 --> 00:55:08,090
+ There, we are not defining the local variable.
+
+693
+00:55:08,090 --> 00:55:09,210
+ Exactly.
+
+694
+00:55:09,210 --> 00:55:10,500
  Yeah.
 
-916
-00:54:46,250 --> 00:54:47,250
+695
+00:55:10,500 --> 00:55:12,500
+ So this is actually not known.
+
+696
+00:55:12,500 --> 00:55:19,660
+ So we are trying to use something, a total, that we assume is 100, right?
+
+697
+00:55:19,660 --> 00:55:22,660
+ But we have never assigned what total is actually.
+
+698
+00:55:22,660 --> 00:55:29,540
+ So here I need to create a local variable.
+
+699
+00:55:29,540 --> 00:55:31,770
+ And that could be total 100, for example.
+
+700
+00:55:31,770 --> 00:55:38,760
+ And now I can play around with the total, for example.
+
+701
+00:55:38,760 --> 00:55:39,730
+ Okay.
+
+702
+00:55:39,730 --> 00:55:40,750
+ I see now.
+
+703
+00:55:40,750 --> 00:55:43,880
+ Thank you.
+
+704
+00:55:43,880 --> 00:55:46,900
+ Anastasia, do you want to add something?
+
+705
+00:55:46,900 --> 00:56:02,830
+ Yeah, I think, to the question is, I think the problem is in the fact that what happens inside the function cannot affect the outside of the function, unless we tell it to do that.
+
+706
+00:56:02,830 --> 00:56:03,890
+ Yeah.
+
+707
+00:56:03,890 --> 00:56:10,890
+ So while it can find the global total, it cannot actually just go ahead and change it to total x 125.
+
+708
+00:56:10,890 --> 00:56:12,140
+ Yeah.
+
+709
+00:56:12,140 --> 00:56:13,420
+ Which is why it fails.
+
+710
+00:56:13,420 --> 00:56:15,060
+ Exactly.
+
+711
+00:56:15,060 --> 00:56:18,300
+ Correct.
+
+712
+00:56:18,300 --> 00:56:20,220
+ Unless we use the global keyword, right?
+
+713
+00:56:20,220 --> 00:56:24,900
+ Very good.
+
+714
+00:56:24,900 --> 00:56:27,330
+ Very good, guys.
+
+715
+00:56:27,330 --> 00:56:28,320
+ All right.
+
+716
+00:56:28,320 --> 00:56:35,730
+ I think it's perfect time to take a little break and then can move to the next part.
+
+717
+00:56:35,730 --> 00:56:38,880
+ And that's what we're going to talk about.
+
+718
+00:56:38,880 --> 00:56:49,790
+ Well, problem with fixed, let's say with fixed number of parameters, something like that.
+
+719
+00:56:49,790 --> 00:56:54,960
+ So we're going to jump into that and I think you'll find it pretty interesting.
+
+720
+00:56:54,960 --> 00:56:56,980
+ All right.
+
+721
+00:56:56,980 --> 00:57:00,950
+ So yeah, let's take 15 minutes.
+
+722
+00:57:00,950 --> 00:57:05,020
+ So 10:15 and then we can continue.
+
+723
+00:57:05,020 --> 01:13:45,580
+ I'm going to talk to myself here.
+
+724
+01:13:45,580 --> 01:13:46,670
+ All right, guys.
+
+725
+01:13:46,670 --> 01:13:48,130
+ Can you hear me?
+
+726
+01:13:48,130 --> 01:13:51,380
+ Yes.
+
+727
+01:13:51,380 --> 01:13:52,380
+ Perfect.
+
+728
+01:13:52,380 --> 01:13:53,820
+ Perfect.
+
+729
+01:13:53,820 --> 01:13:54,820
+ All right.
+
+730
+01:13:54,820 --> 01:13:59,470
+ Let's continue from where we left off.
+
+731
+01:13:59,470 --> 01:14:09,410
+ So let's move to another function problem.
+
+732
+01:14:09,410 --> 01:14:15,730
+ Imagine, and we're going to build this step by step.
+
+733
+01:14:15,730 --> 01:14:17,040
+ All right.
+
+734
+01:14:17,040 --> 01:14:28,300
+ So imagine that we create a function that actually adds numbers.
+
+735
+01:14:28,300 --> 01:14:29,730
+ Add number.
+
+736
+01:14:29,730 --> 01:14:37,720
+ And I'm just going to put an a and b here.
+
+737
+01:14:37,720 --> 01:14:39,390
+ Return.
+
+738
+01:14:39,390 --> 01:14:40,670
+ We said add, right?
+
+739
+01:14:40,670 --> 01:14:41,920
+ A plus b.
+
+740
+01:14:41,920 --> 01:14:57,790
+ And now let's print at number 10 and 20, for example.
+
+741
+01:14:57,790 --> 01:15:03,900
+ So let's run this and we see that works perfectly fine, right?
+
+742
+01:15:03,900 --> 01:15:04,920
+ This is 10 plus 20.
+
+743
+01:15:04,920 --> 01:15:05,920
+ It's actually 30, right?
+
+744
+01:15:05,920 --> 01:15:10,250
+ But what if we want to add three numbers?
+
+745
+01:15:10,250 --> 01:15:16,370
+ What if we want to add three numbers?
+
+746
+01:15:16,370 --> 01:15:20,720
+ How would one do that?
+
+747
+01:15:20,720 --> 01:15:21,720
+ What do you say, guys?
+
+748
+01:15:21,720 --> 01:15:25,360
+ It's pretty obvious.
+
+749
+01:15:25,360 --> 01:15:27,430
+ I'm just looking for an obvious answer here.
+
+750
+01:15:27,430 --> 01:15:28,620
+ Fabian.
+
+751
+01:15:28,620 --> 01:15:35,880
+ Maybe we would use the function within one of the arguments.
+
+752
+01:15:35,880 --> 01:15:40,870
+ So it would be like a plus b and then b plus c.
+
+753
+01:15:40,870 --> 01:15:41,870
+ No, wait, fuck.
+
+754
+01:15:41,870 --> 01:15:41,970
+ No, wait.
+
+755
+01:15:41,870 --> 01:15:42,860
+ Never mind.
+
+756
+01:15:42,860 --> 01:15:43,860
+ Never mind.
+
+757
+01:15:43,860 --> 01:15:45,110
+ Never mind.
+
+758
+01:15:45,110 --> 01:15:47,110
+ I was just looking for a simple answer here.
+
+759
+01:15:47,110 --> 01:15:48,110
+ Yeah.
+
+760
+01:15:48,110 --> 01:15:49,110
+ Okay.
+
+761
+01:15:49,110 --> 01:15:50,430
+ Good job.
+
+762
+01:15:50,430 --> 01:15:51,430
+ But let's see.
+
+763
+01:15:51,430 --> 01:15:53,860
  Gloria.
 
+764
+01:15:53,860 --> 01:15:53,960
+ Yeah.
+
+765
+01:15:53,860 --> 01:15:55,860
+ You can add another parameter.
+
+766
+01:15:55,860 --> 01:15:56,860
+ C.
+
+767
+01:15:56,860 --> 01:15:57,920
+ Here we go.
+
+768
+01:15:57,920 --> 01:15:58,920
+ So another parameter.
+
+769
+01:15:58,920 --> 01:16:01,920
+ I would add a c and then I would come here and do plus c, right?
+
+770
+01:16:01,920 --> 01:16:02,920
+ Plus c.
+
+771
+01:16:02,920 --> 01:16:03,920
+ Yeah, there we go.
+
+772
+01:16:03,920 --> 01:16:04,920
+ Right?
+
+773
+01:16:04,920 --> 01:16:07,910
+ And then I need to add something here as well.
+
+774
+01:16:07,910 --> 01:16:08,970
+ Maybe at 30.
+
+775
+01:16:08,970 --> 01:16:10,450
+ Let's say.
+
+776
+01:16:10,450 --> 01:16:13,820
+ Right?
+
+777
+01:16:13,820 --> 01:16:17,260
+ Let's say tomorrow I want to add four numbers.
+
+778
+01:16:17,260 --> 01:16:18,260
+ And then I need to do this.
+
+779
+01:16:18,260 --> 01:16:22,290
+ I need to come back to the code and do something like this.
+
+780
+01:16:22,290 --> 01:16:24,260
+ And then add parameter here.
+
+781
+01:16:24,260 --> 01:16:25,450
+ Right?
+
+782
+01:16:25,450 --> 01:16:27,430
+ And then add a number here.
+
+783
+01:16:27,430 --> 01:16:29,220
+ I don't know.
+
+784
+01:16:29,220 --> 01:16:30,220
+ Maybe 40.
+
+785
+01:16:30,220 --> 01:16:33,240
+ And then the next day, another number.
+
+786
+01:16:33,240 --> 01:16:36,880
+ And then maybe I want to add 10 more numbers.
+
+787
+01:16:36,880 --> 01:16:39,880
+ And so on and so on and so on and so on.
+
+788
+01:16:39,880 --> 01:16:48,150
+ And let's say, or even say, I don't even know how many numbers I want to add.
+
+789
+01:16:48,150 --> 01:16:54,640
+ Or I don't know how many numbers the user will actually provide.
+
+790
+01:16:54,640 --> 01:17:00,000
+ And this is what I'm trying to get to here.
+
+791
+01:17:00,000 --> 01:17:06,120
+ And this is where Python provides something for us.
+
+792
+01:17:06,120 --> 01:17:09,090
+ And that's something called args.
+
+793
+01:17:09,090 --> 01:17:14,360
+ With a little nice.
+
+794
+01:17:14,360 --> 01:17:15,580
+ Sorry.
+
+795
+01:17:15,580 --> 01:17:18,090
+ We don't write it like that.
+
+796
+01:17:18,090 --> 01:17:19,090
+ Right?
+
+797
+01:17:19,090 --> 01:17:20,150
+ Like that.
+
+798
+01:17:20,150 --> 01:17:21,150
+ There we go.
+
+799
+01:17:21,150 --> 01:17:25,550
+ So Python actually provides us with args.
+
+800
+01:17:25,550 --> 01:17:27,510
+ The star here or asterisk.
+
+801
+01:17:27,510 --> 01:17:30,590
+ So args.
+
+802
+01:17:30,590 --> 01:17:34,470
+ I'm just going to show it in action.
+
+803
+01:17:34,470 --> 01:17:37,740
+ And then we can take it from there.
+
+804
+01:17:37,740 --> 01:17:43,050
+ So let's say create a function here.
+
+805
+01:17:43,050 --> 01:17:44,630
+ Show.
+
+806
+01:17:44,630 --> 01:17:47,070
+ Let's call it show numbers.
+
+807
+01:17:47,070 --> 01:17:49,190
+ Right?
+
+808
+01:17:49,190 --> 01:17:52,980
+ So I'm thinking of something that actually shows us the numbers that we have.
+
+809
+01:17:52,980 --> 01:17:56,080
+ And I don't even know how many numbers that we're going to show.
+
+810
+01:17:56,080 --> 01:18:00,580
+ So here I can actually use args.
+
+811
+01:18:00,580 --> 01:18:07,440
+ And then I can just print my args.
+
+812
+01:18:07,440 --> 01:18:10,520
+ Right?
+
+813
+01:18:10,520 --> 01:18:19,130
+ And now I can call the function and then write how many numbers I want.
+
+814
+01:18:19,130 --> 01:18:23,430
+ For example, let's add.
+
+815
+01:18:23,430 --> 01:18:26,970
+ Let's write three numbers.
+
+816
+01:18:26,970 --> 01:18:28,970
+ 10, 20, and 30.
+
+817
+01:18:28,970 --> 01:18:40,040
+ So as you see here, I can write how many I want since I'm using args.
+
+818
+01:18:40,040 --> 01:18:41,040
+ And what data type?
+
+819
+01:18:41,040 --> 01:18:42,800
+ Let's start with that.
+
+820
+01:18:42,800 --> 01:18:45,900
+ What data type do you think args is?
+
+821
+01:18:45,900 --> 01:18:46,950
+ Well, let's see.
+
+822
+01:18:46,950 --> 01:18:52,030
+ If we were to run this, we actually see that it is a what, Gloria?
+
+823
+01:18:52,030 --> 01:19:00,610
+ A tuple?
+
+824
+01:19:00,610 --> 01:19:02,090
+ Yes.
+
+825
+01:19:02,090 --> 01:19:03,750
+ It's a tuple.
+
+826
+01:19:03,750 --> 01:19:05,900
+ You're perfectly right.
+
+827
+01:19:05,900 --> 01:19:06,900
+ So it's a tuple, right?
+
+828
+01:19:06,900 --> 01:19:20,350
+ So what we see here is that this star or asterisk collects these positional arguments into a tuple.
+
+829
+01:19:20,350 --> 01:19:27,280
+ Therefore, we can do show numbers 1.
+
+830
+01:19:27,280 --> 01:19:33,420
+ We can do with 1 and 2.
+
+831
+01:19:33,420 --> 01:19:43,090
+ We can do 1, 2, 3, and so on.
+
+832
+01:19:43,090 --> 01:19:48,490
+ No problem.
+
+833
+01:19:48,490 --> 01:20:02,370
+ So the function can now receive a variable number of positional arguments.
+
+834
+01:20:02,370 --> 01:20:06,020
+ No problem.
+
+835
+01:20:06,020 --> 01:20:17,340
+ An important detail here is that actually is that args itself, the word args, is only a conventional name.
+
+836
+01:20:17,340 --> 01:20:24,510
+ It is the star is what gives us the behavior.
+
+837
+01:20:24,510 --> 01:20:31,340
+ So we could have said instead of saying args here, we could have printed out numbers.
+
+838
+01:20:31,340 --> 01:20:34,550
+ Numbers here.
+
+839
+01:20:34,550 --> 01:20:37,530
+ And it will still work.
+
+840
+01:20:37,530 --> 01:20:39,100
+ It will still work.
+
+841
+01:20:39,100 --> 01:20:40,690
+ Let's run this.
+
+842
+01:20:40,690 --> 01:20:41,710
+ And yeah, it still works.
+
+843
+01:20:41,710 --> 01:20:43,320
+ Same behavior.
+
+844
+01:20:43,320 --> 01:20:44,980
+ So this actually works too.
+
+845
+01:20:44,980 --> 01:20:49,380
+ But args is actually the standard convention.
+
+846
+01:20:49,380 --> 01:21:02,460
+ So yeah, I would say use that unless another name makes the function significantly clearer.
+
+847
+01:21:02,460 --> 01:21:06,470
+ But yeah, stick to args.
+
+848
+01:21:06,470 --> 01:21:15,180
+ Now let's dive a little bit more into args.
+
+849
+01:21:15,180 --> 01:21:22,270
+ For example, we can do that with, for example, another example.
+
+850
+01:21:22,270 --> 01:21:29,190
+ Names, args.
+
+851
+01:21:29,190 --> 01:21:39,690
+ And let's say we want, at the end now, we're going to call our function, show names.
+
+852
+01:21:39,690 --> 01:21:43,380
+ And then we're going to have a bunch of names.
+
+853
+01:21:43,380 --> 01:21:49,270
+ Ada, Grace.
+
+854
+01:21:49,270 --> 01:21:50,520
+ Oh, sorry.
+
+855
+01:21:50,520 --> 01:21:52,090
+ Grace.
+
+856
+01:21:52,090 --> 01:21:53,140
+ Guido.
+
+857
+01:21:53,140 --> 01:21:57,370
+ So here we have a bunch of names.
+
+858
+01:21:57,370 --> 01:22:17,150
+ And since this args is a tuple, then we can actually iterate over it.
+
+859
+01:22:17,150 --> 01:22:21,580
+ Just like we have done previously with our tuples and list, which you already know.
+
+860
+01:22:21,580 --> 01:22:28,190
+ So here we can come now and write like this for name in what?
+
+861
+01:22:28,190 --> 01:22:31,240
+ Well, args, right?
+
+862
+01:22:31,240 --> 01:22:35,910
+ Print name.
+
+863
+01:22:35,910 --> 01:22:37,130
+ And there you go.
+
+864
+01:22:37,130 --> 01:22:47,470
+ Ada, Grace.
+
+865
+01:22:47,470 --> 01:22:56,860
+ So we can actually iterate over the tuple and with any number of position.
+
+866
+01:22:56,860 --> 01:23:06,280
+ Gloria, I will let you in in a while.
+
+867
+01:23:06,280 --> 01:23:09,280
+ Let me see if I already answer your question, okay?
+
+868
+01:23:09,280 --> 01:23:11,280
+ Because we're going to do some more examples with the args.
+
+869
+01:23:11,280 --> 01:23:14,080
+ But you can keep your hands up if you want.
+
+870
+01:23:14,080 --> 01:23:15,010
+ That's no problem.
+
+871
+01:23:15,010 --> 01:23:16,680
+ All right.
+
+872
+01:23:16,680 --> 01:23:20,320
+ So we can actually even take it a bit further.
+
+873
+01:23:20,320 --> 01:23:32,090
+ What we can do here, let's create another function where we actually add numbers with our
+
+874
+01:23:32,090 --> 01:23:35,030
+ args as we saw before.
+
+875
+01:23:35,030 --> 01:23:36,030
+ So let's see here.
+
+876
+01:23:36,030 --> 01:23:40,190
+ Def add numbers, right?
+
+877
+01:23:40,190 --> 01:23:47,860
+ Just to get back to the previous example, the first example that we looked at.
+
+878
+01:23:47,860 --> 01:23:50,810
+ So here we can do something like this.
+
+879
+01:23:50,810 --> 01:23:56,270
+ Args and then maybe some kind of counter here.
+
+880
+01:23:56,270 --> 01:23:59,460
+ So total equals zero.
+
+881
+01:23:59,460 --> 01:24:03,960
+ And then we can do a little loop here.
+
+882
+01:24:03,960 --> 01:24:29,440
+ Or number in args total plus equals number return total.
+
+883
+01:24:29,440 --> 01:24:32,160
+ There you go.
+
+884
+01:24:32,160 --> 01:24:34,940
+ We can try it out.
+
+885
+01:24:34,940 --> 01:24:41,980
+ We can try it out with maybe add numbers.
+
+886
+01:24:41,980 --> 01:24:46,010
+ 10 and 20 maybe.
+
+887
+01:24:46,010 --> 01:24:49,730
+ We can take another one.
+
+888
+01:24:49,730 --> 01:24:54,260
+ Let's say with 10, 20 and 30.
+
+889
+01:24:54,260 --> 01:25:10,830
+ And we can take another one with just maybe simply writing 1, 2, maybe something like that.
+
+890
+01:25:10,830 --> 01:25:14,640
+ Right?
+
+891
+01:25:14,640 --> 01:25:17,240
+ Let's try it out and see if it actually works.
+
+892
+01:25:17,240 --> 01:25:23,540
+ And yeah, it seems to work.
+
+893
+01:25:23,540 --> 01:25:24,860
+ 10 plus 20, 30.
+
+894
+01:25:24,860 --> 01:25:27,590
+ 10 plus 20 plus 30, 60.
+
+895
+01:25:27,590 --> 01:25:30,870
+ 1 plus 2 plus 3 plus 4 plus 5 is 15, right?
+
+896
+01:25:30,870 --> 01:25:42,330
+ So the same function works with different numbers, arguments.
+
+897
+01:25:42,330 --> 01:25:43,770
+ No problem.
+
+898
+01:25:43,770 --> 01:25:53,020
+ And now we have solved this problem using args.
+
+899
+01:25:53,020 --> 01:25:56,950
+ So let's twist and turn this a little bit more.
+
+900
+01:25:56,950 --> 01:26:03,050
+ Because what if I come and write something like this?
+
+901
+01:26:03,050 --> 01:26:09,450
+ Because we can actually use parameters and args as well.
+
+902
+01:26:09,450 --> 01:26:19,000
+ So if I were to do something like this, and I'm just guessing here, but this could be your question, Gloria.
+
+903
+01:26:19,000 --> 01:26:20,000
+ I'm just guessing.
+
+904
+01:26:20,000 --> 01:26:24,140
+ So I'm just going to put some arguments here.
+
+905
+01:26:24,140 --> 01:26:25,900
+ Oh, parameters.
+
+906
+01:26:25,900 --> 01:26:26,900
+ Sorry.
+
+907
+01:26:26,900 --> 01:26:34,830
+ This count, and then an args here.
+
+908
+01:26:34,830 --> 01:26:39,040
+ But I'm actually going to call it prices, just to throw you off a little bit.
+
+909
+01:26:39,040 --> 01:26:42,820
+ We can have a total here.
+
+910
+01:26:42,820 --> 01:26:46,220
+ Equals 0, right?
+
+911
+01:26:46,220 --> 01:26:55,100
+ Let's make a for loop for price in prices.
+
+912
+01:26:55,100 --> 01:27:02,810
+ Total plus equals price.
+
+913
+01:27:02,810 --> 01:27:19,920
+ Return total multiplied by 1 minus a discount.
+
+914
+01:27:19,920 --> 01:27:22,300
+ Something like that.
+
+915
+01:27:22,300 --> 01:27:24,710
+ Right?
+
+916
+01:27:24,710 --> 01:27:28,420
+ And now let's look at this.
+
 917
-00:54:47,250 --> 00:54:48,250
- Go ahead.
+01:27:28,420 --> 01:27:30,020
+ Print.
 
 918
-00:54:48,250 --> 00:54:56,230
- x is being defined inside of the function exactly so here we're actually defining the func the x
+01:27:30,020 --> 01:27:31,230
+ What if I do this now?
 
 919
-00:54:56,230 --> 00:55:06,160
- with 20 but gloria continue but here yeah there we are not if we are we're not defining um the local
+01:27:31,230 --> 01:27:35,160
+ Since I'm using args, what if I do something like this?
 
 920
-00:55:08,170 --> 00:55:15,930
- exactly variable yeah yeah so this is actually not known so we're trying to use something a total
+01:27:35,160 --> 01:27:38,880
+ 0.1.
 
 921
-00:55:15,930 --> 00:55:23,660
- that we assume is 100 right but we have never assigned what total is actually so here i need to
+01:27:38,880 --> 01:27:41,410
+ Or that's not 0.1.
 
 922
-00:55:23,660 --> 00:55:36,840
- create a a local variable and that could be total on this for example and now i can play around with
+01:27:41,410 --> 01:27:44,010
+ That's 1.1.
 
 923
-00:55:36,840 --> 00:55:47,540
- the total for example okay i see now thank you uh anastasia do you want to add something um yeah i
+01:27:44,010 --> 01:27:47,430
+ So let's do 0.10, for example.
 
 924
-00:55:47,540 --> 00:55:57,990
- think i to the question is i think the problem is in the fact that what happens inside the function
+01:27:47,430 --> 01:27:55,780
+ 100 and 200 and 300.
 
 925
-00:55:57,990 --> 00:56:05,410
- cannot affect the outside of the function unless we tell it to do that yeah so while it can find the
+01:27:55,780 --> 01:27:57,800
+ All right.
 
 926
-00:56:05,410 --> 00:56:13,300
- global total it cannot actually just go ahead and change it to total times 125 yeah which is why it
+01:27:57,800 --> 01:27:58,800
+ So this is interesting.
 
 927
-00:56:13,300 --> 00:56:28,610
- fails exactly correct unless we use the global keyword right very good very good guys all right i think it's
+01:27:58,800 --> 01:28:03,140
+ What actually goes into discount here?
 
 928
-00:56:28,610 --> 00:56:38,560
- perfect time to take a little break uh and then we can move to the next part and that's what we're gonna
+01:28:03,140 --> 01:28:10,740
+ What actually goes to discount here?
 
 929
-00:56:38,560 --> 00:56:50,270
- talk about well um problem with fixed let's say with fixed number of parameters something like that so
+01:28:10,740 --> 01:28:14,040
+ What do you say, guys?
 
 930
-00:56:50,270 --> 00:56:58,910
- we're gonna jump into that and i think you'll find it pretty interesting all right so yeah uh take
+01:28:14,040 --> 01:28:18,840
+ Christophe?
 
 931
-00:56:58,910 --> 01:13:45,260
- uh let's take uh let's take 15 minutes uh so 10 15 uh and then we can continue i'm gonna talk to myself
+01:28:18,840 --> 01:28:21,620
+ Yeah.
 
 932
-01:13:45,260 --> 01:13:54,740
- here all right guys can you hear me this again yes perfect perfect perfect perfect all right let's uh
+01:28:21,620 --> 01:28:25,620
+ I haven't worked with these, but I guess that the first one, the 0.10 does.
 
 933
-01:13:54,740 --> 01:14:14,650
- continue from where we left off so let's move to another function uh function problem uh imagine and we're
+01:28:25,620 --> 01:28:27,040
+ Is that the only one?
 
 934
-01:14:14,650 --> 01:14:28,060
- gonna build this step by step all right so imagine that um we create a function that actually uh adds
+01:28:27,040 --> 01:28:28,770
+ I think so.
 
 935
-01:14:28,060 --> 01:14:43,640
- numbers add number and i'm just gonna put an a and b here uh return uh we said add right a plus b
+01:28:28,770 --> 01:28:29,770
+ Yes.
 
 936
-01:14:43,640 --> 01:15:02,980
- and now let's print um add number 10 and 20 for example so let's run this and we see that works
+01:28:29,770 --> 01:28:30,770
+ Yeah.
 
 937
-01:15:02,980 --> 01:15:12,480
- perfectly fine right this is 10 plus 20 is actually 30 right but what if we want to add three numbers
+01:28:30,770 --> 01:28:31,740
+ And I agree with you.
 
 938
-01:15:12,480 --> 01:15:26,830
- if we want to add three numbers how would one do that do you say guys it's pretty obvious i'm just
+01:28:31,740 --> 01:28:35,500
+ So 0.10 is actually our discount now.
 
 939
-01:15:26,830 --> 01:15:37,040
- looking for an obvious answer here fabian uh maybe we would use the function within one of the arguments
+01:28:35,500 --> 01:28:37,530
+ So what actually goes into prices then?
 
 940
-01:15:37,040 --> 01:15:44,380
- so it would be like a plus b and then b plus no wait fuck no wait never mind never mind
+01:28:37,530 --> 01:28:42,890
+ What actually goes into prices?
 
 941
-01:15:45,190 --> 01:15:52,970
- i was i was just looking for a simple answer here yeah okay good job but uh let's see yeah gloria
+01:28:42,890 --> 01:28:43,910
+ Johanna?
 
 942
-01:15:52,970 --> 01:16:00,520
- yeah you can add another parameter c here we go so another parameter i would add a c and then i would
+01:28:43,910 --> 01:28:45,960
+ The rest.
 
 943
-01:16:00,520 --> 01:16:06,600
- come here and do plus c right yeah there we go right and then maybe and then i need to add something
+01:28:45,960 --> 01:28:47,310
+ The rest, exactly.
 
 944
-01:16:06,600 --> 01:16:17,620
- here as well uh maybe at 30 let's say right let's say tomorrow i want to add four numbers well then i
+01:28:47,310 --> 01:28:48,940
+ Packed into?
 
 945
-01:16:17,620 --> 01:16:24,500
- need to do this i need to come back to the code and do something like this and then add parameter here
+01:28:48,940 --> 01:28:53,200
+ A list.
 
 946
-01:16:25,250 --> 01:16:34,610
- b right and then add a number here i don't know maybe 40 and then the next day another number and then
+01:28:53,200 --> 01:28:54,740
+ A tuple.
 
 947
-01:16:34,610 --> 01:16:41,500
- maybe i want to add 10 more numbers and so on and so on and so on and so on and so on no one and let's
+01:28:54,740 --> 01:28:56,180
+ No, two tuples.
 
 948
-01:16:41,500 --> 01:16:53,720
- say or even say i don't even know how many numbers uh i want to add or i don't know how many numbers the user
+01:28:56,180 --> 01:28:57,140
+ Yeah.
 
 949
-01:16:53,720 --> 01:17:07,170
- will actually provide and this is what i'm trying to get to here and this is where python provides something for us
+01:28:57,140 --> 01:28:58,140
+ Very good.
 
 950
-01:17:07,170 --> 01:17:18,730
- and that's something called arcs with a little nice uh sorry we don't write it like that right
+01:28:58,140 --> 01:29:03,140
+ So 0.10 would be our discount.
 
 951
-01:17:19,830 --> 01:17:31,870
- like that there we go so uh python actually provides us with arcs with the star here or asterisk so arcs
+01:29:03,140 --> 01:29:10,170
+ And the rest, just like Johanna said, would be our prices.
 
 952
-01:17:31,870 --> 01:17:42,470
- i'm just going to show it in action and then we can take it from there so uh let's say create a function
+01:29:10,170 --> 01:29:15,620
+ And they will be packed into a tuple.
 
 953
-01:17:42,470 --> 01:17:50,990
- here show uh let's call it show numbers right so i'm thinking of something that actually shows us the
+01:29:15,620 --> 01:29:22,580
+ And if we were to run this, we get our 540.
 
 954
-01:17:50,990 --> 01:17:58,310
- numbers that we have and i don't even know how many numbers that we're gonna show so here i can actually
+01:29:22,580 --> 01:29:34,580
+ So, and what we also see is that the required position of parameters can actually come before
 
 955
-01:17:58,310 --> 01:18:16,870
- use arcs and then i can just print my arcs right and now i can call the function and then write how many
+01:29:34,580 --> 01:29:36,570
+ our args here.
 
 956
-01:18:16,870 --> 01:18:33,730
- numbers i want for example let's add let's write three numbers one 20 10 20 and 30. so as you see
+01:29:36,570 --> 01:29:42,160
+ So when is actually args useful?
 
 957
-01:18:33,730 --> 01:18:44,140
- here okay right how many i want since i'm using arcs and what data type let's start with that what data
+01:29:42,160 --> 01:29:55,510
+ Well, I would say args are useful when, can I write a little bit, useful.
 
 958
-01:18:44,140 --> 01:18:59,390
- type do you think arcs is well let's see if we were to run this we actually see that it is a what gloria
+01:29:55,510 --> 01:30:14,510
+ When the function should accept, of course, several positional values, right?
 
 959
-01:18:59,390 --> 01:19:08,220
- a tuple yes it's a tuple you're you're perfectly right so it's a tuple right so what we see here is
+01:30:14,510 --> 01:30:37,070
+ And I would say that the exact number of values is not known in advance.
 
 960
-01:19:08,220 --> 01:19:25,820
- that this star or asterisk collects these positional arguments into a tuple therefore we can do show
+01:30:37,070 --> 01:30:50,520
+ An important thing to remember is that, well, I would say, when, when, of course, when introduced
 
 961
-01:19:25,820 --> 01:19:51,390
- numbers one we can do with uh one and two we can do one two three and so on no problem so the function
+01:30:50,520 --> 01:30:55,740
+ to args, it is also a very beginner, a classical beginner mistake.
 
 962
-01:19:51,390 --> 01:20:03,200
- can now receive can now receive a variable uh well a variable uh number of positional arguments no
+01:30:55,740 --> 01:31:04,860
+ And I won't call it a mistake, but what happens usually is that we start overusing it just because
 
 963
-01:20:03,200 --> 01:20:15,950
- problem an important detail here is that actually is that um arcs itself the word arcs is only a
+01:31:04,860 --> 01:31:05,860
+ it looks advanced, right?
 
 964
-01:20:15,950 --> 01:20:27,210
- conventional name it is the star uh is what gives uh us the behavior so we could have said instead of
+01:31:05,860 --> 01:31:16,570
+ So if a function logically requires exactly two values, well, then there's no point of using args, right?
 
 965
-01:20:27,210 --> 01:20:37,500
- saying uh arcs here we could have printed out um numbers numbers numbers here and it will still work
+01:31:16,570 --> 01:31:24,090
+ So here I would say two named parameters would be much clearer, right?
 
 966
-01:20:37,500 --> 01:20:47,020
- it will still work let's run this and yeah it still works same behavior so this actually works too but
+01:31:24,090 --> 01:31:47,500
+ So I would say the better, better, just in this case, if we would, if we had something, let's say, def, calculate, calculate.
 
 967
-01:20:47,020 --> 01:20:59,390
- arcs is actually the standard convention so yeah i would say i would say use that unless another name
+01:31:47,500 --> 01:31:58,470
+ For example, area here, width and height.
 
 968
-01:20:59,390 --> 01:21:11,860
- makes the function significantly clearer but yeah stick to arcs now let's dive a little bit more into arcs
+01:31:58,470 --> 01:32:04,050
+ And then just return, just something simpler.
 
 969
-01:21:11,860 --> 01:21:34,320
- uh for example we can do that with for example another example uh names uh and let's say we want at the
+01:32:04,050 --> 01:32:11,350
+ Width would be multiplied by height, right?
 
 970
-01:21:34,320 --> 01:21:42,690
- end now and we're going to call our function show names and then we're going to have a bunch of names
+01:32:11,350 --> 01:32:20,610
+ And I would say it's less clear, maybe?
 
 971
-01:21:42,690 --> 01:22:05,690
- ada grace oh sorry uh grace uh guido so here we have a bunch of names and since this arcs is a tuple
+01:32:20,610 --> 01:32:21,810
+ Clearer, maybe?
 
 972
-01:22:05,690 --> 01:22:20,900
- then we can actually iterate over it just like we have done previously with our tuples and list which
+01:32:21,810 --> 01:32:23,330
+ Less clearer.
 
 973
-01:22:20,900 --> 01:22:36,270
- you already know so here we can come now and write like this or name in what well arcs right print name
+01:32:23,330 --> 01:32:30,350
+ If we were to write def, um, calculate area.
 
 974
-01:22:36,270 --> 01:22:57,340
- and there you go ada grace so we can actually iterate over the tuple and with any number of position position
+01:32:30,350 --> 01:32:33,040
+ Let's see.
 
 975
-01:22:57,340 --> 01:23:09,520
- uh uh gloria i will let you in in in a while let me see if i already answer your question okay because
+01:32:33,040 --> 01:32:37,180
+ Just args.
 
 976
-01:23:09,520 --> 01:23:14,320
- we're going to do some more examples with the arcs uh but you can keep your hands up if you want
+01:32:37,180 --> 01:32:48,500
+ Then doing something like this, um, and then return, because we could have done that.
 
 977
-01:23:14,320 --> 01:23:24,990
- that's no problem all right uh so we can actually even take it a bit further what we can do here
+01:32:48,500 --> 01:32:58,890
+ But yeah, args, zero, times one, right?
 
 978
-01:23:24,990 --> 01:23:36,630
- let's create another function um where we actually add numbers with our arcs as we saw before so let's see here
+01:32:58,890 --> 01:33:13,760
+ Here, I wouldn't say this flexible version is automatically the better one.
 
 979
-01:23:36,630 --> 01:23:47,700
- depth add numbers right just to get back to the previous example the first example that we looked
+01:33:13,760 --> 01:33:14,690
+ Well, it's using args.
 
 980
-01:23:47,700 --> 01:23:57,670
- at so here we can do something like this arcs and then maybe some kind of counter here so total
+01:33:14,690 --> 01:33:16,040
+ That could be nice.
 
 981
-01:23:57,670 --> 01:24:27,930
- equals zero and then we can do a little loop here uh for number in arcs total plus equals number return
+01:33:16,040 --> 01:33:20,210
+ But in this case, I would say stick to that one.
 
 982
-01:24:27,930 --> 01:24:46,530
- total there you go you can try it out you can try it out with maybe and add numbers uh 10 and 20 maybe
+01:33:20,210 --> 01:33:22,840
+ All right?
 
 983
-01:24:46,530 --> 01:24:59,960
- you can take another one let's say with one 10 20 and 30 and we can take another one with just maybe
+01:33:22,840 --> 01:33:25,500
+ Something to think about.
 
 984
-01:24:59,960 --> 01:25:17,600
- simply writing one two maybe something like that right let's try it out and see if it actually works
+01:33:25,500 --> 01:33:36,830
+ Gloria, jump in.
 
 985
-01:25:17,600 --> 01:25:31,840
- and yeah it seems to work 10 plus 20 30 10 plus 20 plus 30 60 1 plus 2 plus 3 plus 4 plus 5 is 15 right
+01:33:36,830 --> 01:33:41,450
+ Yeah.
 
 986
-01:25:31,840 --> 01:25:46,600
- so the same function works with different numbers arguments no problem and now we have solved this
+01:33:41,450 --> 01:33:48,100
+ So from the beginning, I didn't understand the first example.
 
 987
-01:25:46,600 --> 01:26:02,250
- problem using arcs so let's twist and turn this a little bit more because what if i come and write
+01:33:48,100 --> 01:34:01,610
+ So the thing is, I didn't catch what is the difference because one can print the numbers, but the other one, we need to use the for loop to go through the elements.
 
 988
-01:26:02,250 --> 01:26:11,450
- something like this um because we can actually use parameters and arcs as well so if i were to do
+01:34:01,610 --> 01:34:04,580
+ So why is that different?
 
 989
-01:26:11,450 --> 01:26:19,640
- something like this to relate and i'm just guessing here but this could be your question gloria i'm
+01:34:04,580 --> 01:34:08,550
+ Which one were you thinking about?
 
 990
-01:26:19,640 --> 01:26:31,000
- just guessing uh so i'm just going to put some arguments here uh oh parameters sorry uh this count
+01:34:08,550 --> 01:34:09,550
+ This one?
 
 991
-01:26:31,810 --> 01:26:38,840
- and then an arcs here but i'm actually going to call it price system just to throw you off a little
+01:34:09,550 --> 01:34:14,710
+ Yeah, that one and the next example.
 
 992
-01:26:38,840 --> 01:27:01,760
- bit we can have a total here equals zero right let's make a for loop or price in uh prices total plus
+01:34:14,710 --> 01:34:15,710
+ So, yeah.
 
 993
-01:27:02,190 --> 01:27:25,850
- equals facts return uh total i mean multiplied by one minus uh discount something like that right and
+01:34:15,710 --> 01:34:20,010
+ So what is the difference between this?
 
 994
-01:27:25,850 --> 01:27:35,610
- now let's look at this print what if i do this now since i'm using arcs what if i do something like this
+01:34:20,010 --> 01:34:22,160
+ Yeah, because this is the physics.
 
 995
-01:27:35,610 --> 01:27:51,250
- 0.1 or that's not 0.1 that's 1.1 so let's do 0.10 for example uh 100 and uh 200
+01:34:22,160 --> 01:34:23,290
+ Yeah.
 
 996
-01:27:51,250 --> 01:28:09,780
- and uh 200 and 300 all right so this is interesting what actually goes into discount here what actually
+01:34:23,290 --> 01:34:35,490
+ So here, I'm just showing you that since it is a tuple, that we can actually use a for loop inside our functions, if we would want to iterate, right?
 
 997
-01:28:09,780 --> 01:28:23,500
- goes to discount here what do you say guys yeah i haven't worked with these but i guess that the
+01:34:35,490 --> 01:34:38,550
+ Here, we're just doing a little print, right?
 
 998
-01:28:23,500 --> 01:28:33,940
- first one the 0.10 does is that the only one i think so yes yeah and i and i agree with you so 0.10 is
+01:34:38,550 --> 01:34:45,630
+ So we could have done just print the arcs here, and then we could have printed them out in a straight line.
 
 999
-01:28:33,940 --> 01:28:47,970
- actually our discount now so what actually goes into prices uh johanna uh the rest the rest exactly
+01:34:45,630 --> 01:34:51,690
+ But just wanted to show you, just build up on what we know about arcs here.
 
 1000
-01:28:47,970 --> 01:29:03,980
- packed into a list a tuple no right yeah very good so it so 0.10 would be our discount and the rest just
+01:34:51,690 --> 01:35:00,730
+ Is that it is, since it is a tuple, we can actually do this as well, depending on what we want to do, right?
 
 1001
-01:29:03,980 --> 01:29:20,420
- like johanna said would be our uh our prices and they will be packed into a tuple and if we were to run
+01:35:00,730 --> 01:35:02,500
+ At the end.
 
 1002
-01:29:20,420 --> 01:29:33,330
- this we get our 540. so and what we also see is that the required position of parameters can actually
+01:35:02,500 --> 01:35:07,400
+ So yeah, good question.
 
 1003
-01:29:33,330 --> 01:29:45,200
- come before our arcs here so when is actually arcs uh useful well i would say arcs are useful when
+01:35:07,400 --> 01:35:24,540
+ But what's important here as well, since what Gloria mentions here, since we're talking about arcs being a tuple, we can actually try to look at it from the other way.
 
 1004
-01:29:47,350 --> 01:30:07,040
- i can write a little bit useful uh when the function should accept of course several
+01:35:24,540 --> 01:35:36,540
+ So, we saw that arcs actually packs several arguments into a tuple, right?
 
 1005
-01:30:07,260 --> 01:30:41,120
- positional values right and i would say that the exact number of values is not known in advance an
+01:35:36,540 --> 01:35:41,820
+ But the star was the thing that actually did it, right?
 
 1006
-01:30:41,120 --> 01:30:52,420
- important thing to remember is that well i would say when when of course when introduced to arcs it is
+01:35:41,820 --> 01:35:54,840
+ But the star can also be used in the opposite direction to also unpack a collection into separate arguments.
 
 1007
-01:30:52,420 --> 01:30:59,280
- also a very beginner a classical beginner mistake and i won't call it a mistake but
+01:35:54,840 --> 01:36:06,440
+ So, let's say I have something like this.
 
 1008
-01:31:00,640 --> 01:31:10,370
- what happens usually is that we start overusing it just because it looks advanced right so if a function
+01:36:06,440 --> 01:36:12,680
+ Since I'm going to use three numbers, I'm just going to call it add three.
 
 1009
-01:31:10,370 --> 01:31:19,060
- logically requires exactly two values well then there's no point of using arcs right so here i would
+01:36:12,680 --> 01:36:22,290
+ So, here we have a, and b, and c, all right?
 
 1010
-01:31:19,060 --> 01:31:32,990
- say two named parameters would be much clearer right so i would say the better um better just in this case
+01:36:22,290 --> 01:36:34,250
+ So, we have a, b, and c, and here I'm just going to do a return, a plus b plus c, right?
 
 1011
-01:31:33,620 --> 01:31:57,090
- um if we would if we had something let's say um def calculate calculate uh for example area here width and
+01:36:34,250 --> 01:36:40,000
+ Let me also write a set of numbers here.
 
 1012
-01:31:57,090 --> 01:32:09,950
- height and then just return just something simpler um width uh would be multiplied by height right
+01:36:40,000 --> 01:36:41,970
+ Equals a list of numbers.
 
 1013
-01:32:12,430 --> 01:32:26,850
- and i would say it's less less less uh clearer maybe less clearer if we were to write def um
+01:36:41,970 --> 01:36:48,500
+ 10, 20, and 30, right?
 
 1014
-01:32:26,850 --> 01:32:48,660
- calculate area uh let's say to start then doing something like this um and then return because we could
+01:36:48,500 --> 01:36:58,260
+ Now, my question is, can I come now and write, I'm just going to comment it out, so I don't actually reveal anything.
 
 1015
-01:32:48,660 --> 01:33:12,040
- have done that but yeah arcs zero times one right here i wouldn't say this flexible uh version is
+01:36:58,260 --> 01:37:00,260
+ Can I actually write something like this?
 
 1016
-01:33:12,280 --> 01:33:20,290
- automatically the better one well it's using arcs that could be nice but in this case i would say stick
+01:37:00,260 --> 01:37:08,400
+ Add a three column and then use my numbers here.
 
 1017
-01:33:20,290 --> 01:33:46,420
- to that one all right something to think about here uh gloria jump in yeah so from the beginning i didn't
+01:37:08,400 --> 01:37:10,780
+ Does this work?
 
 1018
-01:33:46,420 --> 01:33:54,340
- understand the first example so the thing is i didn't catch what is the difference because one can print
+01:37:10,780 --> 01:37:16,580
+ What do you say, guys?
 
 1019
-01:33:54,340 --> 01:34:04,580
- the numbers but the other one we need to use the for loop to go through the elements so why is that
+01:37:16,580 --> 01:37:18,600
+ Would this work and why?
 
 1020
-01:34:04,580 --> 01:34:17,890
- different which one were you thinking about this one yeah um yeah that one and the next example so yeah
+01:37:18,600 --> 01:37:20,600
+ Why yes and or why not?
 
 1021
-01:34:17,890 --> 01:34:26,410
- so what is the difference between this yeah because this yeah so so here i'm just showing you that since it
+01:37:20,600 --> 01:37:29,010
+ Dimitri?
 
 1022
-01:34:26,410 --> 01:34:34,280
- is a tuple that we can actually use a for loop inside our uh our functions since uh if we if we would
+01:37:29,010 --> 01:37:32,200
+ I think that yes, we can use unpacking here.
 
 1023
-01:34:34,280 --> 01:34:42,440
- want to iterate right here we're just doing a little print right so uh we could have done uh just print
+01:37:34,780 --> 01:37:40,740
+ Don't agree, but you're onto something at least.
 
 1024
-01:34:42,440 --> 01:34:47,030
- the arcs here and then we could have printed them out in a straight line but just wanted to show it
+01:37:40,740 --> 01:37:45,140
+ What do you say, Christopher?
 
 1025
-01:34:47,030 --> 01:34:56,010
- just build up on uh built up on what we know about arcs here is that it is since it is a tuple we can
+01:37:45,140 --> 01:37:51,490
+ Yeah, I would guess no, because like it's, it's one object.
 
 1026
-01:34:56,010 --> 01:35:11,170
- actually do this as well depending on what we want to do right at the end so yeah uh good question uh but
+01:37:51,490 --> 01:37:52,490
+ Exactly.
 
 1027
-01:35:11,170 --> 01:35:19,810
- what's important here as well since uh what what gloria mentions here uh since we're talking about
+01:37:52,490 --> 01:37:54,750
+ It's, yeah.
 
 1028
-01:35:19,810 --> 01:35:31,440
- arcs being a tuple we can actually try to look at it from the other way so we saw that arcs actually
+01:37:54,750 --> 01:37:56,810
+ Yes.
 
 1029
-01:35:31,440 --> 01:35:41,460
- packs packs packs right uh several arguments into a tuple right but the star was the thing that actually
+01:37:56,810 --> 01:38:04,210
+ So, this would actually be passed as, this would be passed as one argument, right?
 
 1030
-01:35:41,460 --> 01:35:53,640
- did it right but the star can also be used in the opposite direction to also unpack a collection into
+01:38:04,210 --> 01:38:05,210
+ Right?
 
 1031
-01:35:53,640 --> 01:36:09,550
- separate arguments so let's say i have something like this add uh since i'm going to use three numbers
+01:38:05,210 --> 01:38:08,230
+ The whole list will be passed as one argument.
 
 1032
-01:36:09,550 --> 01:36:26,100
- i'm just going to call it at three so here we have a and b and c all right so we have a b and c and here i'm just
+01:38:08,230 --> 01:38:11,960
+ But the function actually expects what?
 
 1033
-01:36:26,100 --> 01:36:41,930
- going to do a return a plus b plus c right uh let me also write a set of numbers here uh equals a list of numbers
+01:38:11,960 --> 01:38:14,920
+ Well, three separate arguments, right?
 
 1034
-01:36:41,930 --> 01:36:56,860
- um 10 20 and 30 right now my question is can i come now and write it's going to comment it out so i don't actually
+01:38:14,920 --> 01:38:19,540
+ So, we're missing some kind of arguments here.
 
 1035
-01:36:56,860 --> 01:37:10,330
- reveal anything can i actually write something like this add uh three and then use my numbers here this
+01:38:19,540 --> 01:38:21,080
+ Okay.
 
 1036
-01:37:10,330 --> 01:37:29,850
- is work what do you say guys what this work and why why yes and or why not dimitri i think that yes
+01:38:21,080 --> 01:38:28,210
+ So, if we run this, missing two required positional arguments.
 
 1037
-01:37:30,760 --> 01:37:45,600
- can use unpacking here don't agree but you're on to something at least what do you say uh christopher
+01:38:28,210 --> 01:38:30,230
+ We're missing a B and a C.
 
 1038
-01:37:45,600 --> 01:37:58,170
- yeah i would guess no because like it's it's one object it's uh exactly yes so this would actually be
+01:38:30,230 --> 01:38:33,060
+ So, A would be the whole list, right?
 
 1039
-01:37:58,170 --> 01:38:08,380
- pass as this would be passed as one argument right right the whole list will be passed as one argument
+01:38:33,060 --> 01:38:35,860
+ So, what can we actually do?
 
 1040
-01:38:08,380 --> 01:38:18,580
- but the function actually expects what well three separate arguments right so we're missing some kind
+01:38:35,860 --> 01:38:45,180
+ Well, yes, we can actually pack it up using our magic star here.
 
 1041
-01:38:18,580 --> 01:38:29,280
- of arguments here okay so if we run this missing two required positional arguments we're missing a b
+01:38:45,180 --> 01:38:52,610
+ So, what the star here does is to actually unpack the list.
 
 1042
-01:38:29,280 --> 01:38:40,270
- and the c so a would be the whole list right so what can we actually do well yes we can actually pack it up
+01:38:52,610 --> 01:39:04,670
+ So, you could say, when we do this, what we're actually doing conceptually,
 
 1043
-01:38:40,270 --> 01:38:59,200
- using our magic star here so what the star here does is to actually unpack the list so you could say
+01:39:04,670 --> 01:39:10,860
+ conceptually, I would say we're doing something like this.
 
 1044
-01:38:59,200 --> 01:39:09,160
- uh when we do this what we're actually doing conceptually um conceptually i would say we're doing
+01:39:10,860 --> 01:39:14,110
+ Add, what do we call it?
 
 1045
-01:39:09,160 --> 01:39:25,290
- something uh like this at uh what did we call it three right at three um 10 20 and 30 when using the
+01:39:14,110 --> 01:39:15,110
+ Three, right?
 
 1046
-01:39:25,290 --> 01:39:44,060
- star it would be as writing this and the same thing goes also as you saw here this was a list right
+01:39:15,110 --> 01:39:20,860
+ Add three, 10, 20, and 30.
 
 1047
-01:39:44,060 --> 01:39:53,220
- but the same thing goes also for a tuple so if i were to do values equals let's use something else
+01:39:20,860 --> 01:39:28,030
+ When using the star, it would be as writing this.
 
 1048
-01:39:53,220 --> 01:40:03,790
- here 5 10 and 15 and let's see if we get a 5 plus 10 15 plus 15 that's 30 let's see if we actually get
+01:39:28,030 --> 01:39:43,060
+ And the same thing goes also, as you saw here, this was a list, right?
 
 1049
-01:40:03,790 --> 01:40:18,160
- a 30 so print uh add 3 but this time on our values right so this wouldn't work since this would be sent
+01:39:43,060 --> 01:39:46,060
+ But the same thing goes also for a tuple.
 
 1050
-01:40:18,160 --> 01:40:28,060
- as a the whole tuple but adding the asterix here would actually unpack the tuple as well just as we did
+01:39:46,060 --> 01:39:53,220
+ So, if I were to do values equals, let's use something else here.
 
 1051
-01:40:28,060 --> 01:40:37,150
- with the list and let's try it out yes we get 60 and we get 30 60 for our numbers and 30 for our values
+01:39:53,220 --> 01:39:57,100
+ Five, 10, and 15.
 
 1052
-01:40:37,150 --> 01:41:03,530
- and there you go guys that was a little bit about args args solves the problem
+01:39:57,100 --> 01:40:02,590
+ And let's see if we get a five plus 10, 15 plus 15, that's 30.
 
 1053
-01:41:03,530 --> 01:41:20,760
- of an unknown number of positional arguments right what if i want unknown number of instead of not
+01:40:02,590 --> 01:40:04,480
+ Let's see if we actually get a 30.
 
 1054
-01:41:20,760 --> 01:41:33,090
- positional argument but this time i want a number of name arguments now args wouldn't work right for
+01:40:04,480 --> 01:40:13,500
+ So, print, add three, but this time on our values, right?
 
 1055
-01:41:33,090 --> 01:41:47,590
- example imagine that we have function that creates a user okay so this user might have a name of course
+01:40:13,500 --> 01:40:20,880
+ So, this wouldn't work since this would be sent as A, the whole tuple.
 
 1056
-01:41:47,590 --> 01:41:57,410
- course and then age right so the the the user has a name and the age great but then we have other users
+01:40:20,880 --> 01:40:27,460
+ But adding the asterisk here would actually unpack the tuple as well,
 
 1057
-01:41:57,410 --> 01:42:03,600
- that has a little bit more maybe they have a city maybe they have an email maybe they have a role
+01:40:27,460 --> 01:40:28,460
+ just as we did with the list.
 
 1058
-01:42:04,550 --> 01:42:17,560
- maybe they have a i don't know uh department right or maybe they have only a city or maybe they have only a
+01:40:28,460 --> 01:40:30,800
+ And let's try it out.
 
 1059
-01:42:17,560 --> 01:42:28,340
- name age city and email and no role of department right so we might not know all the possible fields in
+01:40:30,800 --> 01:40:33,790
+ Yes, we get 60 and we get 30.
 
 1060
-01:42:28,340 --> 01:42:31,860
- but we might not know all of them and we might not know all of them in advance and here python actually
+01:40:33,790 --> 01:40:38,170
+ 60 for our numbers and 30 for our values.
 
 1061
-01:42:31,860 --> 01:42:46,590
- provides us what well it provides us with something called works and not arcs all right so let's take a
+01:40:38,170 --> 01:40:40,130
+ And there you go, guys.
 
 1062
-01:42:46,590 --> 01:42:54,100
- look at our first quark and then shortly we will take a little short break and then we can continue for
+01:40:40,130 --> 01:41:00,700
+ That was a little bit about args.
 
 1063
-01:42:54,100 --> 01:43:02,520
- the end so we don't have much left here let's take our first example of quarks let's say we write
+01:41:00,700 --> 01:41:10,240
+ args solves the problem of an unknown number of positional arguments, right?
 
 1064
-01:43:02,520 --> 01:43:25,570
- something like this show um show um show user for example and then works print quarks we're taking
+01:41:10,240 --> 01:41:21,840
+ What if I want unknown number of, instead of not positional argument,
 
 1065
-01:43:25,570 --> 01:43:35,790
- step by step just like we did with arcs and here let's come and write shall we show user and here
+01:41:21,840 --> 01:41:27,750
+ but this time I want a number of name arguments.
 
 1066
-01:43:35,790 --> 01:43:46,050
- now we can actually create name equals ada we can add a little bit more if we want maybe an age as well
+01:41:27,750 --> 01:41:31,220
+ Now args wouldn't work, right?
 
 1067
-01:43:46,050 --> 01:43:57,840
- equals uh 36 for example we can also um for a city if we want and we can go on and on and on let's put
+01:41:31,220 --> 01:41:41,300
+ For example, imagine that we have function that creates a user, okay?
 
 1068
-01:43:59,140 --> 01:44:11,100
- london right before running this what do you say guys what data type do you think quarks is so
+01:41:41,300 --> 01:41:49,580
+ So, this user might have a name, of course, and an age, right?
 
 1069
-01:44:11,100 --> 01:44:20,680
- that arcs was a tuple what do you say about quarks just offer give it a shot uh yeah it has to be
+01:41:49,580 --> 01:41:53,920
+ So, the user has a name and the age, great.
 
 1070
-01:44:20,680 --> 01:44:27,680
- dictionaries right it has to be dictionaries and you're perfectly right it is a dictionary so the double
+01:41:53,920 --> 01:41:58,960
+ But then we have other users that has a little bit more.
 
 1071
-01:44:27,680 --> 01:44:41,850
- star here uh uh well collects keyword arguments into dictionary into a dictionary and just like we
+01:41:58,960 --> 01:41:59,960
+ Maybe they have a city.
 
 1072
-01:44:41,850 --> 01:44:48,320
- said with arcs quarks is just a conventional name we could use something else we could have written
+01:41:59,960 --> 01:42:00,960
+ Maybe they have an email.
 
 1073
-01:44:48,320 --> 01:45:06,090
- for example information here it would have worked perfectly fine it is conventional to use quarks and
+01:42:00,960 --> 01:42:02,960
+ Maybe they have a role.
 
 1074
-01:45:06,090 --> 01:45:14,200
- as you see here when we run the code we get actually a dictionary with key and values key and value and
+01:42:02,960 --> 01:42:08,690
+ Maybe they have a, I don't know, a department, right?
 
 1075
-01:45:14,200 --> 01:45:35,500
- value packed into one dictionary yes alessandro yeah use orgs for tuples this uh quarks dictionary but
+01:42:08,690 --> 01:42:14,720
+ Or maybe they have only a city.
 
 1076
-01:45:35,500 --> 01:45:44,710
- in this case if you pass a list of dictionary if this instead of you're just passing a dictionary you
+01:42:14,720 --> 01:42:18,680
+ Or maybe they have only a name, age, city, and email.
 
 1077
-01:45:44,710 --> 01:45:49,580
- pass a list of dictionary yeah but we're gonna build on it we're gonna build on it okay and
+01:42:18,680 --> 01:42:20,870
+ And no role in the department, right?
 
 1078
-01:45:51,180 --> 01:45:56,550
- that might even be one of your questions in the lab if i remember correctly but yeah that's a great
+01:42:20,870 --> 01:42:28,300
+ So, we might not know all the possible fields in advance.
 
 1079
-01:45:56,550 --> 01:46:01,960
- question but we will get it we will get or at least you will get the tools to be able to solve that
+01:42:28,300 --> 01:42:33,370
+ And here, Python actually provides us what?
 
 1080
-01:46:01,960 --> 01:46:16,800
- question uh let's take it step by step so what we can do here is to actually access values from our quarks
+01:42:33,370 --> 01:42:42,530
+ Well, it provides us with something called Quarks, and not args.
 
 1081
-01:46:16,800 --> 01:46:53,920
- for example let's say show user quarks now let's just print here let's print for example name no name
+01:42:42,530 --> 01:42:45,090
+ All right?
 
 1082
-01:46:55,190 --> 01:47:07,360
- quarks right just like we have learned to do with our dictionaries and that would be name and here
+01:42:45,090 --> 01:42:49,200
+ So, let's take a look at our first Quark.
 
 1083
-01:47:07,360 --> 01:47:20,800
- instead of name we can put uh h for example and here we can just write h and what we can do here is to
+01:42:49,200 --> 01:42:53,610
+ And then shortly, we will take a little short break, and then we can continue for the end.
 
 1084
-01:47:20,800 --> 01:47:43,610
- call our function and say show user with the name uh equals eta and with an age equals to 36. so since
+01:42:53,610 --> 01:42:55,740
+ So, we don't have much left here.
 
 1085
-01:47:43,610 --> 01:47:54,500
- quarks is a dictionary normal dictionary rules actually apply and let's just run this and see if that
+01:42:55,740 --> 01:43:00,510
+ Let's take our first example of Quarks.
 
 1086
-01:47:54,500 --> 01:48:13,610
- everything works fine and we see name ada age 36 but what if i never provided an age here that cause a
+01:43:00,510 --> 01:43:03,480
+ Let's say we write something like this.
 
 1087
-01:48:13,610 --> 01:48:24,790
- problem well let's actually try and see we actually get a key error right since we haven't provided an
+01:43:03,480 --> 01:43:10,690
+ Show user, for example.
 
 1088
-01:48:24,790 --> 01:48:33,100
- age it is looking for an age since we're looking for a print we want to print an age here and it's looking
+01:43:10,690 --> 01:43:23,330
+ And then Quarks, print, Quarks.
 
 1089
-01:48:33,100 --> 01:48:54,020
- for a key age and it can't find it here let's see what we can do about that um so what we can do is uh
+01:43:23,330 --> 01:43:26,890
+ We are taking step by step, just like we did with args.
 
 1090
-01:48:54,020 --> 01:49:07,900
- let's say uh just that again i think somebody forgot the mic um uh so what we can do here is use
+01:43:26,890 --> 01:43:32,970
+ And here, let's come and write show user.
 
 1091
-01:49:07,900 --> 01:49:20,580
- what we have learned previously we can actually use re-write that so what we can do here is actually to
+01:43:32,970 --> 01:43:35,280
+ And here.
 
 1092
-01:49:20,580 --> 01:49:41,210
- write quarks and then we can use get method here oops we can use get and here name or we can write
+01:43:35,280 --> 01:43:42,020
+ Now, we can actually create name equals Ada.
 
 1093
-01:49:41,210 --> 01:50:03,200
- unknown we can do the same thing with our age and we can do the same thing if we want to take it even
+01:43:42,020 --> 01:43:44,790
+ We can add a little bit more if we want.
 
 1094
-01:50:03,200 --> 01:50:10,580
- further then maybe put a city here just for the sake of example so in order for it to make sense we will
+01:43:44,790 --> 01:43:49,730
+ Maybe an age as well equals 36, for example.
 
 1095
-01:50:10,580 --> 01:50:24,450
- add a city here uh so now let's say just like we saw previously that i actually call the function i
+01:43:49,730 --> 01:43:54,440
+ We can also put a city if we want.
 
 1096
-01:50:24,450 --> 01:50:43,340
- actually give a name ada and now i actually give an age 36 but i never provide a city let's actually try
+01:43:54,440 --> 01:43:56,630
+ And we can go on and on and on.
 
 1097
-01:50:43,340 --> 01:50:51,770
- it out and see if we get the same problem if we actually get a um keyboard a key error let's see
+01:43:56,630 --> 01:43:59,460
+ Let's put London.
 
 1098
-01:50:51,770 --> 01:51:00,610
- let's run it and when i run it it actually works no problems because quarks is a dictionary we can use
+01:43:59,460 --> 01:44:03,590
+ All right?
 
 1099
-01:51:00,610 --> 01:51:11,350
- dictionary methods such as for example get so uh in this case we will get unknown instead of this the
+01:44:03,590 --> 01:44:06,900
+ Before running this, what do you say, guys?
 
 1100
-01:51:11,350 --> 01:51:22,210
- actual city and since we have a dictionary you can even move a bit further here since we have a
+01:44:06,900 --> 01:44:09,930
+ What data type do you think Quarks is?
 
 1101
-01:51:22,210 --> 01:51:30,740
- dictionary and just like we saw with our arts we can do things to it right we can for example loop
+01:44:09,930 --> 01:44:12,970
+ So, that args was a tuple.
 
 1102
-01:51:30,740 --> 01:51:44,070
- through it absolutely uh let's try it uh let's create something here uh maybe call it show information
+01:44:12,970 --> 01:44:13,970
+ What do you say about Quarks?
 
 1103
-01:51:44,070 --> 01:51:58,060
- maybe and quarks and uh we said that we can loop right so if you remember the loop for the dictionary
+01:44:13,970 --> 01:44:20,040
+ Testoffer, give it a shot.
 
 1104
-01:51:58,060 --> 01:52:11,620
- we write key and value right in what well that will be in our quarks and also we need to write
+01:44:20,040 --> 01:44:22,030
+ Yeah, it has to be dictionaries, right?
 
 1105
-01:52:11,620 --> 01:52:30,140
- items in this case and then can do a nice little print uh a key and that maybe colon and also the
+01:44:22,030 --> 01:44:23,040
+ It has to be dictionaries.
 
 1106
-01:52:31,360 --> 01:52:41,750
- lesson of get the value right and since that is a dictionary we could loop through something for
+01:44:23,040 --> 01:44:24,000
+ And you're perfectly right.
 
 1107
-01:52:41,750 --> 01:53:02,680
- example um so information on um name equals uh we can take eight again uh we have an age equals 36 uh we
+01:44:24,000 --> 01:44:27,120
+ It is a dictionary.
 
 1108
-01:53:02,680 --> 01:53:25,990
- have a city of course maybe london right or we can even make it super clear here uh oh we can even add
+01:44:27,120 --> 01:44:37,510
+ So, the double star here, well, collects keyword arguments into dictionary.
 
 1109
-01:53:25,990 --> 01:54:04,190
- more here uh now we can put let's stick to python right this works perfectly fine let's try it and as you see
+01:44:37,510 --> 01:44:41,250
+ Into a dictionary.
 
 1110
-01:54:04,190 --> 01:54:15,000
- well there's nothing magical happening here uh the course has been created right it is simply a
+01:44:41,250 --> 01:44:45,220
+ And just like we said with args, Quarks is just a conventional name.
 
 1111
-01:54:15,000 --> 01:54:26,380
- dictionary so everything we have learned about dictionaries still applies as we saw but just like
+01:44:45,220 --> 01:44:47,220
+ We could use something else.
 
 1112
-01:54:26,380 --> 01:54:42,670
- like we saw with the uh with our arcs we can also have mixed normal parameters with our quarks works
+01:44:47,220 --> 01:44:51,980
+ We could have written, for example, information here.
 
 1113
-01:54:42,670 --> 01:54:58,880
- perfectly fine and for example create a user with a user name but we also have another parameters called
+01:44:51,980 --> 01:44:54,200
+ It would have worked perfectly fine.
 
 1114
-01:54:58,880 --> 01:55:10,530
- quarks here that works perfectly fine that's quite all right and we can have our username before our quarks
+01:44:54,200 --> 01:45:00,770
+ It is conventional to use Quarks.
 
 1115
-01:55:10,530 --> 01:55:17,720
- that works perfectly fine just as we saw with our arcs and let's add something here print uh maybe
+01:45:00,770 --> 01:45:11,210
+ And as you see here, when we run the code, we get actually a dictionary with key and values.
 
 1116
-01:55:18,480 --> 01:55:42,430
- the username username right uh and then maybe do a for loop here for a key uh and value in quarks uh item
+01:45:11,210 --> 01:45:14,840
+ Key and value and value.
 
 1117
-01:55:42,430 --> 01:56:06,650
- right uh and then let's just print it out uh print key and of course value and then let's use something here
+01:45:14,840 --> 01:45:17,180
+ Packed into one dictionary.
 
 1118
-01:56:06,650 --> 01:56:16,020
- uh we let's create uh we let's create a user and i'm gonna write it like this just like previously as we
+01:45:17,180 --> 01:45:21,180
+ Mm-hmm.
 
 1119
-01:56:16,020 --> 01:56:23,960
- saw here just to make it a little bit clearer what we're actually writing so um first of all we need
+01:45:21,180 --> 01:45:21,280
+ Yes, Alessandro.
 
 1120
-01:56:23,960 --> 01:56:35,900
- a username for example ada123 and then we can start filling up our quark so the first one would be for
+01:45:21,180 --> 01:45:28,010
+ Yes, Alessandro.
 
 1121
-01:56:35,900 --> 01:56:42,640
- our first parameter and the rest would be for our quarks so let's add something here for example the
+01:45:28,010 --> 01:45:29,010
+ Yeah.
 
 1122
-01:56:42,640 --> 01:57:32,890
- same thing as we saw over here so this is perfectly fine this is something is there a question are you
+01:45:29,010 --> 01:45:30,910
+ Use args for tuples.
 
 1123
-01:57:32,890 --> 01:57:41,060
- are you calling the function create user right yeah you are assigning something to that in the line 1621
+01:45:30,910 --> 01:45:33,480
+ This, Quarks for dictionary.
 
 1124
-01:57:43,520 --> 01:57:53,770
- there you go thank you uh perfect so just as we saw with our orgs before the first one will actually
+01:45:33,480 --> 01:45:38,700
+ But in this case, if you pass a list of dictionary.
 
 1125
-01:57:53,770 --> 01:58:00,800
- jump into our first parameter and the rest will be for our quarks if we run this we get our username
+01:45:38,700 --> 01:45:40,140
+ Mm-hmm.
 
 1126
-01:58:00,800 --> 01:58:30,730
- ada123 we get our age we get our city we get our language um let's see here we have left thinking if
+01:45:40,140 --> 01:45:46,230
+ If this, instead of you just passing a dictionary, you pass a list of dictionary.
 
 1127
-01:58:30,730 --> 01:58:44,290
- we should take a break or can take a break and then take the last part of the quarks and then
+01:45:46,230 --> 01:45:47,290
+ Yeah, but we're going to build on it.
 
 1128
-01:58:44,290 --> 01:58:53,730
- we can call it a day all right let's take a little bit shorter break this time um maybe 10 minutes i
+01:45:47,290 --> 01:45:48,290
+ We're going to build on it.
 
 1129
-01:58:53,730 --> 01:59:01,920
- had a small exercise but it is actually included in the the lab that you're gonna get so let's take 10
+01:45:48,290 --> 01:45:49,700
+ Okay.
 
 1130
-01:59:01,920 --> 02:07:55,190
- minutes and then we can continue with the end all right guys see you back in in all right guys i'll be
+01:45:49,700 --> 01:45:55,270
+ And that might even be one of your questions in the lab, if I remember correctly.
 
 1131
-02:07:55,190 --> 02:08:09,370
- back the thumbs up perfect i know that you also can hear me and i see that i'm sharing my screen
+01:45:55,270 --> 01:45:57,270
+ But yeah, that's a great question, Popo.
 
 1132
-02:08:09,370 --> 02:08:23,460
- so perfect all right uh let's uh continue here we don't have much left the last part here can go the
+01:45:57,270 --> 01:45:58,270
+ We will get there.
 
 1133
-02:08:23,460 --> 02:08:33,600
- exercises um so uh just like we saw with our arcs uh we can actually unpack we can go the other way
+01:45:58,270 --> 01:45:59,880
+ We will get there.
 
 1134
-02:08:33,600 --> 02:08:48,160
- and start unpack into a function call let's for example do uh something like this uh def introduce
+01:45:59,880 --> 01:46:06,050
+ Or at least you will get the tools to be able to solve that question.
 
 1135
-02:08:48,160 --> 02:09:12,900
- get some parameters here uh name uh age uh city for example and let's say i want to print print right
+01:46:06,050 --> 01:46:10,930
+ Let's take it step by step.
 
 1136
-02:09:12,900 --> 02:09:34,710
- name we said city right and now let's say we have a person generic called person and person has some
+01:46:10,930 --> 01:46:16,780
+ So what we can do here is to actually access values from our Quarks.
 
 1137
-02:09:34,710 --> 02:09:54,280
- keys and values uh first key is name value is ada here and then we have age 36 maybe and then we have
+01:46:16,780 --> 01:46:35,900
+ For example, let's say, show user Quarks.
 
 1138
-02:09:54,280 --> 02:10:19,590
- city here we have uh london right uh so we have a dictionary whose keys actually uh uh match the
+01:46:35,900 --> 01:46:41,830
+ Now let's just print here.
 
 1139
-02:10:19,590 --> 02:10:28,930
- parameter names so far so good so what we can do here is to manually write we could have done something
+01:46:41,830 --> 01:46:44,020
+ Let's print, for example, name.
 
 1140
-02:10:28,930 --> 02:10:39,550
- like this introduce and then uh just write let me do it like this just make it clear name equals person
+01:46:44,020 --> 01:46:51,720
+ No.
 
 1141
-02:10:40,060 --> 02:10:50,850
- and then come here and then write age oh sorry age uh that would be a name right and then we can uh
+01:46:51,720 --> 01:46:59,040
+ Name Quarks, right?
 
 1142
-02:10:50,850 --> 02:11:10,780
- continue here with age uh person age and then do the same thing for our city city uh person city right
+01:46:59,040 --> 01:47:03,140
+ Just like we have learned to do with our dictionaries.
 
 1143
-02:11:10,780 --> 02:11:27,370
- this works right ada 36 london no problem but what we can also do what python allows us to do is to
+01:47:03,140 --> 01:47:04,140
+ And that would be name.
 
 1144
-02:11:27,370 --> 02:11:39,360
- unpack this dictionary using these double stars that we have learned so instead of writing all of this
+01:47:04,140 --> 01:47:10,850
+ And here, instead of name, we can put age, for example.
 
 1145
-02:11:39,360 --> 02:11:55,710
- we can actually just write introduce person but our double stars here and let's try it and we get ada
+01:47:10,850 --> 01:47:18,580
+ And here we can just write age.
 
 1146
-02:11:55,710 --> 02:12:10,530
- 36 london with a single line so conceptually python actually turns uh the dictionary into well name
+01:47:18,580 --> 01:47:32,060
+ And what we can do here is to call our function and say, show user with the name equals eta.
 
 1147
-02:12:10,530 --> 02:12:21,570
- equals ada age equals 36 city equals london so this would be the same thing as writing um produce
+01:47:32,060 --> 01:47:42,630
+ And with an age equals to 36.
 
 1148
-02:12:27,100 --> 02:12:50,350
- juice name you get the point i think named ada 36 and of course uh city equals uh london right yeah
+01:47:42,630 --> 01:47:51,290
+ So since Quarks is a dictionary, normal dictionary rules actually apply.
 
 1149
-02:12:50,350 --> 02:13:05,350
- london there you go something that is important is that the keys need to match uh parameter names for
+01:47:51,290 --> 01:47:55,220
+ And let's just run this and see if that everything works fine.
 
 1150
-02:13:05,350 --> 02:13:21,630
- this example okay so the keys here need to match the parameter names now for the last absolute last part
+01:47:55,220 --> 01:48:00,070
+ And we see name, eta, age, 36.
 
 1151
-02:13:21,630 --> 02:13:51,630
- is combined just make a little bigger example where we can actually combine our arcs and quarks plus so
+01:48:00,070 --> 01:48:11,090
+ But what if I never provided an age here?
 
 1152
-02:13:51,630 --> 02:13:58,080
- you will sometimes see functions that actually combine all of these concepts that we have spoken about
+01:48:11,090 --> 01:48:13,690
+ That caused a problem.
 
 1153
-02:13:58,080 --> 02:14:09,690
- for example let's call it example uh and then let's write required as one pyramid just to make the
+01:48:13,690 --> 01:48:18,560
+ Well, let's actually try and see.
 
 1154
-02:14:09,690 --> 02:14:43,200
- example very clear arcs and you can do print right and that would be wired right and instead of required
+01:48:18,560 --> 01:48:21,450
+ We actually get a key error, right?
 
 1155
-02:14:43,200 --> 02:15:08,090
- here uh we can put our arts that would be first last last but not least and then let's call this
+01:48:21,450 --> 01:48:24,630
+ Since we haven't provided an age.
 
 1156
-02:15:08,090 --> 02:15:32,190
- function sample and now keep on adding for example hello for example for example 20 30 you can put name
+01:48:24,630 --> 01:48:26,590
+ It is looking for an age.
 
 1157
-02:15:32,190 --> 02:15:58,780
- equals data you can put uh active so the question here before we we we we run the code here with where
+01:48:26,590 --> 01:48:31,620
+ Since we're looking for a print, we want to print an age here.
 
 1158
-02:15:58,780 --> 02:16:12,760
- will the where does each value actually go would be the question here let's just run it and see and see
+01:48:31,620 --> 01:48:33,620
+ And it's looking for a key age.
 
 1159
-02:16:12,760 --> 02:16:22,110
- what actually happens and we see that required hello was actually the record will all into required
+01:48:33,620 --> 01:48:35,580
+ And it can't find it here.
 
 1160
-02:16:22,110 --> 02:16:39,570
- our first one we'll go to the first one and 10 20 30 will be arcs tuple and the name and active will be
+01:48:35,580 --> 01:48:43,390
+ Let's see what we can do about that.
 
 1161
-02:16:39,570 --> 02:16:49,460
- actually actually our quarks dictionary and functions like this well can look maybe intimidating when you
+01:48:43,390 --> 01:48:58,510
+ So what we can do is, let's say, use that again.
 
 1162
-02:16:49,460 --> 02:17:00,180
- first encounter them for example in a library but now you actually know what that syntax means right so
+01:48:58,510 --> 01:49:01,820
+ I think somebody forgot that, Michael.
 
 1163
-02:17:00,180 --> 02:17:11,290
- the library author here is actually allowing the function to accept flexible arguments and this is why
+01:49:01,820 --> 01:49:13,280
+ So what we can do here is use what we have learned previously.
 
 1164
-02:17:11,290 --> 02:17:19,640
- this is one of the reasons i want you to understand what the arcs and quarks are before we move into well
+01:49:13,280 --> 01:49:18,210
+ We can actually use, rewrite that.
 
 1165
-02:17:19,640 --> 02:17:28,300
- talking about libraries for example which we're going to do later on in this sub course and like i mentioned
+01:49:18,210 --> 01:49:22,460
+ So what we can do here is actually to write Quarks.
 
 1166
-02:17:28,300 --> 02:17:41,260
- before don't overuse uh so flexible doesn't automatically mean better we saw an example before with arcs for
+01:49:22,460 --> 01:49:27,130
+ And then we can use get method here.
 
 1167
-02:17:41,260 --> 02:17:52,330
- example uh so yeah something to think about to keep in mind after this lesson yeah that was pretty much it
+01:49:27,130 --> 01:49:33,700
+ Oops.
 
 1168
-02:17:52,330 --> 02:18:02,670
- i would say for today i think that's enough so we covered scope we talked about arcs and we talked a
+01:49:33,700 --> 01:49:38,970
+ We can use get and here, name.
 
 1169
-02:18:02,670 --> 02:18:15,590
- little bit about quirks so what i would maybe recommend now well of course take a little break i'm gonna
+01:49:38,970 --> 01:49:42,720
+ Or we can write unknown.
 
 1170
-02:18:15,590 --> 02:18:24,410
- write the lab you will get it shortly in in in the group chat just like always and yeah uh try to do your best and
+01:49:42,720 --> 01:49:53,970
+ We can do the same thing with our age.
+
+1171
+01:49:53,970 --> 01:50:03,400
+ And we can do the same thing if we want to take it even further.
+
+1172
+01:50:03,400 --> 01:50:07,610
+ And maybe put a city here, just for the sake of that example.
+
+1173
+01:50:07,610 --> 01:50:13,660
+ So in order for it to make sense, we will add a city here.
+
+1174
+01:50:13,660 --> 01:50:21,950
+ So now, let's say, just like we saw previously, that I actually call the function.
+
+1175
+01:50:21,950 --> 01:50:25,410
+ I actually give a name, Ada.
+
+1176
+01:50:25,410 --> 01:50:34,120
+ And now, I actually give an age, 36.
+
+1177
+01:50:34,120 --> 01:50:36,840
+ But I never provide a city.
+
+1178
+01:50:36,840 --> 01:50:44,780
+ Let's actually try it out and see if we get the same problem.
+
+1179
+01:50:44,780 --> 01:50:49,070
+ If we actually get a key error.
+
+1180
+01:50:49,070 --> 01:50:51,340
+ Let's see.
+
+1181
+01:50:51,340 --> 01:50:52,340
+ Let's run it.
+
+1182
+01:50:52,340 --> 01:50:55,490
+ And when I run it, it actually works.
+
+1183
+01:50:55,490 --> 01:50:56,510
+ No problems.
+
+1184
+01:50:56,510 --> 01:51:05,110
+ Because Quarks is a dictionary, we can use dictionary methods such as, for example, get.
+
+1185
+01:51:05,110 --> 01:51:12,450
+ So in this case, we will get unknown instead of the actual city.
+
+1186
+01:51:12,450 --> 01:51:20,870
+ And since we have a dictionary, we can even move a bit further here.
+
+1187
+01:51:20,870 --> 01:51:28,200
+ Since we have a dictionary, and just like we saw with our args, we can do things to it, right?
+
+1188
+01:51:28,200 --> 01:51:30,900
+ We can, for example, loop through it.
+
+1189
+01:51:30,900 --> 01:51:32,380
+ Absolutely.
+
+1190
+01:51:32,380 --> 01:51:35,610
+ Let's try it.
+
+1191
+01:51:35,610 --> 01:51:38,480
+ Let's create something here.
+
+1192
+01:51:38,480 --> 01:51:43,910
+ Maybe call it show information, maybe.
+
+1193
+01:51:43,910 --> 01:51:48,630
+ And Quarks.
+
+1194
+01:51:48,630 --> 01:51:54,380
+ And we said that we can loop, right?
+
+1195
+01:51:54,380 --> 01:52:01,770
+ So if you remember the loop for the dictionary, we write key and value, right?
+
+1196
+01:52:01,770 --> 01:52:04,300
+ In what?
+
+1197
+01:52:04,300 --> 01:52:08,120
+ Well, that will be in our Quarks.
+
+1198
+01:52:08,120 --> 01:52:12,300
+ And also, we need to write items, in this case.
+
+1199
+01:52:12,300 --> 01:52:19,090
+ And then, we can do a nice little print.
+
+1200
+01:52:19,090 --> 01:52:37,000
+ A key, and that maybe, colon, and also the lesson of get the value, right?
+
+1201
+01:52:37,000 --> 01:52:41,470
+ And since there is a dictionary, we could loop through something.
+
+1202
+01:52:41,470 --> 01:52:51,760
+ For example, show information on name equals.
+
+1203
+01:52:51,760 --> 01:52:56,640
+ We can take 80 again.
+
+1204
+01:52:56,640 --> 01:53:01,300
+ We have an age equals 36.
+
+1205
+01:53:01,300 --> 01:53:09,460
+ We have a city equals maybe London, right?
+
+1206
+01:53:09,460 --> 01:53:24,070
+ Or we can even make it super clear here.
+
+1207
+01:53:24,070 --> 01:53:26,870
+ Or we can even add more here.
+
+1208
+01:53:26,870 --> 01:53:34,560
+ We can put, let's stick to Python, right?
+
+1209
+01:53:34,560 --> 01:53:38,430
+ This works perfectly fine.
+
+1210
+01:53:38,430 --> 01:53:59,770
+ Let's try it.
+
+1211
+01:53:59,770 --> 01:54:08,850
+ And as you see, well, there's nothing magical happening here.
+
+1212
+01:54:08,850 --> 01:54:13,180
+ The Quarks has been created, right?
+
+1213
+01:54:13,180 --> 01:54:15,040
+ It is simply a dictionary.
+
+1214
+01:54:15,040 --> 01:54:22,080
+ So everything we have learned about dictionaries still applies, as we saw.
+
+1215
+01:54:22,080 --> 01:54:42,150
+ But just like we saw with our args, we can also have mixed normal parameters with our Quarks.
+
+1216
+01:54:42,150 --> 01:54:43,110
+ Works perfectly fine.
+
+1217
+01:54:43,110 --> 01:54:52,680
+ And for example, create a user with a user name.
+
+1218
+01:54:52,680 --> 01:54:58,840
+ But we also have another parameter called Quarks here.
+
+1219
+01:54:58,840 --> 01:55:01,470
+ That works perfectly fine.
+
+1220
+01:55:01,470 --> 01:55:04,800
+ That's quite all right.
+
+1221
+01:55:04,800 --> 01:55:09,770
+ And we can add our username before our Quarks.
+
+1222
+01:55:09,770 --> 01:55:12,860
+ That works perfectly fine, just as we saw with our args.
+
+1223
+01:55:12,860 --> 01:55:15,720
+ And let's add something here.
+
+1224
+01:55:15,720 --> 01:55:28,650
+ Print maybe the username, right?
+
+1225
+01:55:28,650 --> 01:55:31,650
+ And then maybe do a for loop here.
+
+1226
+01:55:31,650 --> 01:55:42,850
+ For key and value in Quarks item, right?
+
+1227
+01:55:42,850 --> 01:55:49,090
+ And then let's just print it out.
+
+1228
+01:55:49,090 --> 01:56:00,910
+ Print key and, of course, value.
+
+1229
+01:56:00,910 --> 01:56:06,650
+ And then let's use something here.
+
+1230
+01:56:06,650 --> 01:56:11,970
+ Let's create a user.
+
+1231
+01:56:11,970 --> 01:56:16,340
+ And I'm going to write it like this, just like previously, as we saw here.
+
+1232
+01:56:16,340 --> 01:56:19,660
+ Just to make it a little bit clearer what we're actually writing.
+
+1233
+01:56:19,660 --> 01:56:25,850
+ So first of all, we need a username.
+
+1234
+01:56:25,850 --> 01:56:28,840
+ For example, a.123.
+
+1235
+01:56:28,840 --> 01:56:32,960
+ And then we can start filling up our Quark.
+
+1236
+01:56:32,960 --> 01:56:36,530
+ So the first one would be for our first parameter.
+
+1237
+01:56:36,530 --> 01:56:39,490
+ And the rest would be for our Quarks.
+
+1238
+01:56:39,490 --> 01:56:41,550
+ So let's add something here.
+
+1239
+01:56:41,550 --> 01:56:43,680
+ For example, the same thing as we saw over here.
+
+1240
+01:56:43,680 --> 01:57:04,030
+ So this is perfectly fine.
+
+1241
+01:57:04,030 --> 01:57:20,130
+ Is there something?
+
+1242
+01:57:20,130 --> 01:57:30,120
+ Is there?
+
+1243
+01:57:30,120 --> 01:57:31,120
+ Question?
+
+1244
+01:57:31,120 --> 01:57:32,890
+ Yes, Gloria.
+
+1245
+01:57:32,890 --> 01:57:34,890
+ Are you calling the function createUser, right?
+
+1246
+01:57:34,890 --> 01:57:40,940
+ Yeah, you are assigning something to that in the line 1621.
+
+1247
+01:57:40,940 --> 01:57:44,020
+ There you go.
+
+1248
+01:57:44,020 --> 01:57:45,020
+ Thank you.
+
+1249
+01:57:45,020 --> 01:57:48,290
+ Perfect.
+
+1250
+01:57:48,290 --> 01:57:55,620
+ So just as we saw with our Args before, the first one will actually jump into our first parameter.
+
+1251
+01:57:55,620 --> 01:57:57,650
+ And the rest would be for our Quarks.
+
+1252
+01:57:57,650 --> 01:58:00,700
+ If we run this, we get our username.
+
+1253
+01:58:00,700 --> 01:58:01,920
+ Ada123.
+
+1254
+01:58:01,920 --> 01:58:04,630
+ We get our age.
+
+1255
+01:58:04,630 --> 01:58:05,730
+ We get our city.
+
+1256
+01:58:05,730 --> 01:58:06,850
+ We get our language.
+
+1257
+01:58:06,850 --> 01:58:23,690
+ Let's see here.
+
+1258
+01:58:23,690 --> 01:58:28,560
+ We have left.
+
+1259
+01:58:28,560 --> 01:58:31,450
+ Thinking if we should take a break.
+
+1260
+01:58:31,450 --> 01:58:43,890
+ Or we can take a break and then take the last part of the Quarks.
+
+1261
+01:58:43,890 --> 01:58:45,010
+ And then we can call it a day.
+
+1262
+01:58:45,010 --> 01:58:47,550
+ All right.
+
+1263
+01:58:47,550 --> 01:58:49,550
+ Let's take a little bit short to break this time.
+
+1264
+01:58:49,550 --> 01:58:52,500
+ Maybe 10 minutes.
+
+1265
+01:58:52,500 --> 01:59:00,250
+ I had a small exercise, but it is actually included in the lab that you're going to get.
+
+1266
+01:59:00,250 --> 01:59:03,810
+ So let's take 10 minutes and then we can continue with the end.
+
+1267
+01:59:03,810 --> 01:59:05,670
+ All right, guys.
+
+1268
+01:59:05,670 --> 01:59:12,430
+ See you back in the end.
+
+1269
+01:59:12,430 --> 02:07:54,550
+ All right, guys.
+
+1270
+02:07:54,550 --> 02:07:55,550
+ I'll be back.
+
+1271
+02:07:55,550 --> 02:07:59,440
+ The thumbs up.
+
+1272
+02:07:59,440 --> 02:08:06,050
+ Perfect.
+
+1273
+02:08:06,050 --> 02:08:09,050
+ I know that you also can hear me and I see that I'm sharing my screen.
+
+1274
+02:08:09,050 --> 02:08:10,050
+ So perfect.
+
+1275
+02:08:10,050 --> 02:08:11,050
+ All right.
+
+1276
+02:08:11,050 --> 02:08:13,010
+ Let's continue here.
+
+1277
+02:08:13,010 --> 02:08:16,480
+ We don't have much left.
+
+1278
+02:08:16,480 --> 02:08:19,810
+ The last part here.
+
+1279
+02:08:19,810 --> 02:08:23,460
+ We can go.
+
+1280
+02:08:23,460 --> 02:08:24,540
+ The exercises.
+
+1281
+02:08:24,540 --> 02:08:31,900
+ So just like we saw with our arcs, we can actually unpack.
+
+1282
+02:08:31,900 --> 02:08:37,310
+ We can go the other way and start unpack into a function call.
+
+1283
+02:08:37,310 --> 02:08:42,910
+ Let's, for example, do something like this.
+
+1284
+02:08:42,910 --> 02:08:45,210
+ Depth.
+
+1285
+02:08:45,210 --> 02:08:47,490
+ Introduce.
+
+1286
+02:08:47,490 --> 02:08:51,310
+ Get some parameters here.
+
+1287
+02:08:51,310 --> 02:08:52,560
+ Name.
+
+1288
+02:08:52,560 --> 02:08:54,420
+ Age.
+
+1289
+02:08:54,420 --> 02:08:59,900
+ City, for example.
+
+1290
+02:08:59,900 --> 02:09:03,100
+ And let's say I want to print.
+
+1291
+02:09:03,100 --> 02:09:10,470
+ Print.
+
+1292
+02:09:10,470 --> 02:09:13,160
+ Right.
+
+1293
+02:09:13,160 --> 02:09:19,430
+ Name.
+
+1294
+02:09:19,430 --> 02:09:24,330
+ We said city, right?
+
+1295
+02:09:24,330 --> 02:09:25,330
+ And now let's say we have a person.
+
+1296
+02:09:25,330 --> 02:09:29,550
+ Dictionary called person.
+
+1297
+02:09:29,550 --> 02:09:35,910
+ And person has some keys and values.
+
+1298
+02:09:35,910 --> 02:09:39,200
+ First key is name.
+
+1299
+02:09:39,200 --> 02:09:41,770
+ Value is Ada here.
+
+1300
+02:09:41,770 --> 02:09:45,650
+ And then we have age.
+
+1301
+02:09:45,650 --> 02:09:50,650
+ 36 maybe.
+
+1302
+02:09:50,650 --> 02:09:54,790
+ And then we have city.
+
+1303
+02:09:54,790 --> 02:10:04,110
+ Here we have London.
+
+1304
+02:10:04,110 --> 02:10:06,370
+ Right.
+
+1305
+02:10:06,370 --> 02:10:20,590
+ So we have a dictionary whose keys actually match the parameter names.
+
+1306
+02:10:20,590 --> 02:10:22,060
+ So far, so good.
+
+1307
+02:10:22,060 --> 02:10:27,110
+ So what we can do here is to manually write.
+
+1308
+02:10:27,110 --> 02:10:28,810
+ We could have done something like this.
+
+1309
+02:10:28,810 --> 02:10:29,810
+ Introduce.
+
+1310
+02:10:29,810 --> 02:10:33,120
+ And then just write.
+
+1311
+02:10:33,120 --> 02:10:34,790
+ Let me do it like this.
+
+1312
+02:10:34,790 --> 02:10:35,790
+ Just make it clear.
+
+1313
+02:10:35,790 --> 02:10:37,100
+ Name equals person.
+
+1314
+02:10:37,100 --> 02:10:42,690
+ And then come here and then write age.
+
+1315
+02:10:42,690 --> 02:10:43,780
+ Oh, sorry.
+
+1316
+02:10:43,780 --> 02:10:45,000
+ Not age.
+
+1317
+02:10:45,000 --> 02:10:47,670
+ That would be name, right?
+
+1318
+02:10:47,670 --> 02:10:53,260
+ And then we can continue here with age.
+
+1319
+02:10:53,260 --> 02:10:54,770
+ Person.
+
+1320
+02:10:54,770 --> 02:10:55,960
+ Age.
+
+1321
+02:10:55,960 --> 02:11:02,600
+ And then do the same thing for our city.
+
+1322
+02:11:02,600 --> 02:11:04,140
+ City.
+
+1323
+02:11:04,140 --> 02:11:06,600
+ Person.
+
+1324
+02:11:06,600 --> 02:11:10,350
+ City, right?
+
+1325
+02:11:10,350 --> 02:11:12,210
+ This works, right?
+
+1326
+02:11:12,210 --> 02:11:19,060
+ Ada.
+
+1327
+02:11:19,060 --> 02:11:20,020
+ 36 London.
+
+1328
+02:11:20,020 --> 02:11:21,440
+ No problem.
+
+1329
+02:11:21,440 --> 02:11:30,300
+ But what we can also do, what Python allows us to do is to unpack this dictionary using these
+
+1330
+02:11:30,300 --> 02:11:32,800
+ double stars that we have learned.
+
+1331
+02:11:32,800 --> 02:11:50,040
+ So instead of writing all of this, we can actually just write introduce person, but our
+
+1332
+02:11:50,040 --> 02:11:53,340
+ double stars here.
+
+1333
+02:11:53,340 --> 02:11:54,720
+ And let's try it.
+
+1334
+02:11:54,720 --> 02:11:55,710
+ And we get Ada.
+
+1335
+02:11:55,710 --> 02:11:56,750
+ 36 London.
+
+1336
+02:11:56,750 --> 02:11:58,400
+ With a single line.
+
+1337
+02:11:58,400 --> 02:12:11,490
+ So conceptually, Python actually turns the dictionary into, well, name equals Ada.
+
+1338
+02:12:11,490 --> 02:12:13,000
+ Age equals 36.
+
+1339
+02:12:13,000 --> 02:12:15,410
+ City equals London.
+
+1340
+02:12:15,410 --> 02:12:27,100
+ So this would be the same thing as writing produce.
+
+1341
+02:12:27,100 --> 02:12:36,430
+ You get the point, I think.
+
+1342
+02:12:36,430 --> 02:12:40,820
+ Ada.
+
+1343
+02:12:40,820 --> 02:12:42,270
+ 36.
+
+1344
+02:12:42,270 --> 02:12:50,070
+ And of course, city equals London, right?
+
+1345
+02:12:50,070 --> 02:12:52,230
+ Yeah.
+
+1346
+02:12:52,230 --> 02:12:59,070
+ There you go.
+
+1347
+02:12:59,070 --> 02:13:08,870
+ Something that is important is that the keys need to match parameter names for this example.
+
+1348
+02:13:08,870 --> 02:13:10,600
+ Okay.
+
+1349
+02:13:10,600 --> 02:13:13,570
+ So the keys here need to match the parameter names.
+
+1350
+02:13:13,570 --> 02:13:18,390
+ Hmm.
+
+1351
+02:13:18,390 --> 02:13:19,870
+ So the last absolute last part is combined.
+
+1352
+02:13:19,870 --> 02:13:26,990
+ So the last absolute last part is combined.
+
+1353
+02:13:26,990 --> 02:13:39,340
+ Just make a little bigger example where we can actually combine our arcs and quirks plus.
+
+1354
+02:13:39,340 --> 02:13:58,080
+ So you will sometimes see functions that actually combine all of these concepts that we have spoken about.
+
+1355
+02:13:58,080 --> 02:14:03,710
+ For example, let's call it example.
+
+1356
+02:14:03,710 --> 02:14:04,740
+ Add.
+
+1357
+02:14:04,740 --> 02:14:08,700
+ And then let's write required as one pyramid.
+
+1358
+02:14:08,700 --> 02:14:11,660
+ Just to make the example very clear.
+
+1359
+02:14:11,660 --> 02:14:15,220
+ Arcs.
+
+1360
+02:14:15,220 --> 02:14:33,460
+ And you can do print, right?
+
+1361
+02:14:33,460 --> 02:14:38,170
+ And that would be required, right?
+
+1362
+02:14:38,170 --> 02:14:45,180
+ And instead of required here, we can put our arcs.
+
+1363
+02:14:45,180 --> 02:14:47,620
+ That would be arcs.
+
+1364
+02:14:47,620 --> 02:14:51,270
+ That would be arcs.
+
+1365
+02:14:51,270 --> 02:14:54,220
+ Last but not least.
+
+1366
+02:14:54,220 --> 02:15:08,050
+ And then let's call this function.
+
+1367
+02:15:08,050 --> 02:15:09,940
+ Example.
+
+1368
+02:15:09,940 --> 02:15:14,270
+ And now keep on adding.
+
+1369
+02:15:14,270 --> 02:15:18,680
+ For example, hello.
+
+1370
+02:15:18,680 --> 02:15:23,580
+ For example.
+
+1371
+02:15:23,580 --> 02:15:27,400
+ For example, funny.
+
+1372
+02:15:27,400 --> 02:15:29,490
+ 30.
+
+1373
+02:15:29,490 --> 02:15:33,720
+ You can put name equals Ada.
+
+1374
+02:15:33,720 --> 02:15:44,170
+ We can put active.
+
+1375
+02:15:44,170 --> 02:16:02,750
+ So the question here, before we run the code here, where does each value actually go?
+
+1376
+02:16:02,750 --> 02:16:05,440
+ That would be the question here.
+
+1377
+02:16:05,440 --> 02:16:13,280
+ Let's just run it and see what actually happens.
+
+1378
+02:16:13,280 --> 02:16:16,260
+ And we see that required.
+
+1379
+02:16:16,260 --> 02:16:18,730
+ Hello.
+
+1380
+02:16:18,730 --> 02:16:21,950
+ We'll call into required.
+
+1381
+02:16:21,950 --> 02:16:23,620
+ Our first one.
+
+1382
+02:16:23,620 --> 02:16:24,870
+ We'll go to the first one.
+
+1383
+02:16:24,870 --> 02:16:32,630
+ And 10, 20, 30 will be arcs tuple.
+
+1384
+02:16:32,630 --> 02:16:43,500
+ And the name and active will be actually our quarks dictionary.
+
+1385
+02:16:43,500 --> 02:16:50,100
+ And functions like this, well, can look maybe intimidating when you first encounter them.
+
+1386
+02:16:50,100 --> 02:16:52,700
+ For example, in a library.
+
+1387
+02:16:52,700 --> 02:16:57,450
+ But now you actually know what that syntax means, right?
+
+1388
+02:16:57,450 --> 02:17:07,070
+ So the library author here is actually allowing the function to accept flexible arguments.
+
+1389
+02:17:07,070 --> 02:17:15,770
+ And this is why, this is one of the reasons I want you to understand what arcs and quarks are.
+
+1390
+02:17:15,770 --> 02:17:22,090
+ Before we move into, well, talking about libraries, for example.
+
+1391
+02:17:22,090 --> 02:17:24,830
+ Which we're going to do later on in this sub course.
+
+1392
+02:17:24,830 --> 02:17:30,800
+ And like I mentioned before, don't overuse.
+
+1393
+02:17:30,800 --> 02:17:36,900
+ So flexible doesn't automatically mean better.
+
+1394
+02:17:36,900 --> 02:17:42,450
+ We saw an example before with arcs, for example.
+
+1395
+02:17:42,450 --> 02:17:48,320
+ So yeah, something to think about, to keep in mind after this lesson.
+
+1396
+02:17:48,320 --> 02:17:54,130
+ And yeah, that was pretty much it, I would say, for today.
+
+1397
+02:17:54,130 --> 02:17:56,500
+ I think that's enough.
+
+1398
+02:17:56,500 --> 02:17:59,390
+ So we covered scope.
+
+1399
+02:17:59,390 --> 02:18:00,930
+ We talked about arcs.
+
+1400
+02:18:00,930 --> 02:18:03,270
+ And we talked a little bit about quarks.
+
+1401
+02:18:03,270 --> 02:18:13,790
+ So what I would maybe recommend now, well, of course, take a little break.
+
+1402
+02:18:13,790 --> 02:18:16,190
+ I'm going to break the lab.
+
+1403
+02:18:16,190 --> 02:18:19,190
+ You will get it shortly in the Groove chat, just like always.
+
+1404
+02:18:19,190 --> 02:18:22,860
+ And yeah, try to do your best.
+
+1405
+02:18:22,860 --> 02:18:24,410
+ And yeah.
 

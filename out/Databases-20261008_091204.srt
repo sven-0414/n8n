@@ -1,0 +1,776 @@
+1
+00:00:02,080 --> 00:00:12,190
+ hear you uh i have one suggestion maybe there is no room for more video maybe if we all uh already
+
+2
+00:00:12,190 --> 00:00:21,130
+ have downloaded uh the previous python lectures there's 25 hours there video if you need more
+
+3
+00:00:21,130 --> 00:00:27,490
+ space there maybe you can delete we have fixed that it's not that we need more space we have
+
+4
+00:00:27,490 --> 00:00:35,820
+ fixed that uh we're not gonna delete anything we yeah it's fixed but it it takes time for microsoft
+
+5
+00:00:35,820 --> 00:00:54,340
+ to synchronize so hopefully by today it should be fixed yeah okay to go back yesterday we spoke a
+
+6
+00:00:54,340 --> 00:01:02,570
+ little bit about the normalization and all of that stuff we have one more thing to talk about let me
+
+7
+00:01:02,570 --> 00:01:16,200
+ see uh today and then tomorrow uh aladdin is me and aladdin are preparing uh some quizzes for you
+
+8
+00:01:16,200 --> 00:01:24,150
+ guys so everything we have learned so far you're gonna get some questions uh which we will explain
+
+9
+00:01:24,150 --> 00:01:32,800
+ more about the quiz uh tomorrow so i suggest you do all of the labs until today we're gonna get one more
+
+10
+00:01:32,800 --> 00:01:51,980
+ today uh let me see if i can share my screen while i speak here yeah so this is the plan for today so
+
+11
+00:01:51,980 --> 00:01:59,310
+ after today we'll be able to do these things hopefully uh explaining i'm gonna explain why we need join and
+
+12
+00:01:59,310 --> 00:02:08,180
+ join two tables for example inner join here uh or maybe join three or four tables and something called
+
+13
+00:02:08,180 --> 00:02:16,410
+ left join so we'll have the theory as as usual it's not gonna be a super long lecture uh i'm just gonna
+
+14
+00:02:16,410 --> 00:02:22,490
+ go through this i know that some of you guys are not done with all of the labs so you're gonna get
+
+15
+00:02:22,490 --> 00:02:47,490
+ some time working on that as well um so yesterday we learned to split data into many tables and that's
+
+16
+00:02:47,490 --> 00:02:58,550
+ great but now if we look at for example orders we only see for example customer number one and and and
+
+17
+00:02:58,550 --> 00:03:09,210
+ who is that basically we have to go and look in the customer table basically to see that and join is how we
+
+18
+00:03:09,210 --> 00:03:18,840
+ put these pieces basically back together so the tables will stay neat and be a little bit separate as
+
+19
+00:03:18,840 --> 00:03:34,370
+ well join equals matching puzzles uh pieces well join is like it is like matching puzzles
+
+20
+00:03:34,920 --> 00:03:50,360
+ pieces we take each order and we look at its customer id and find the customer with the same id of course on is where
+
+21
+00:03:50,360 --> 00:04:02,610
+ we say which column should match so notice here we actually write the table name a dot and then the
+
+22
+00:04:02,610 --> 00:04:14,610
+ column and then orders dot customer id because both tables have column called customer id and we must say
+
+23
+00:04:14,610 --> 00:04:34,240
+ which one we mean so what inner join gives us or i mean a normal join also called inner join uh only gives rows that match in both tables
+
+24
+00:04:34,240 --> 00:04:43,520
+ so think of a school dance where people pair up okay only the people who find found the partner
+
+25
+00:04:43,520 --> 00:04:52,690
+ are on the dance floor so emma has never ordered for example anything so she has no partner in orders she
+
+26
+00:04:52,690 --> 00:05:08,090
+ won't show up for example aliasis well writing customer dot first name gets pretty long so we give tables nicknames
+
+27
+00:05:08,090 --> 00:05:23,430
+ uh orders basically means in this query i'll just call order o then we can write o dot order id uh like calling your friend
+
+28
+00:05:24,460 --> 00:05:40,230
+ uh alexander but we're calling him alex but his name is alexander joining many tables yeah you can join as
+
+29
+00:05:40,230 --> 00:05:52,610
+ as many tables as you need just add one join for each new table each with its own on on and another tip here
+
+30
+00:05:52,610 --> 00:06:01,570
+ uh if you look at the er diagram and follow the lines each line in the diagram is one join in your query
+
+31
+00:06:01,570 --> 00:06:13,400
+ actually so if you forgot this on
+
+32
+00:06:15,370 --> 00:06:24,020
+ what happens if you go if if you if you do well skl pairs every order with every customer so for
+
+33
+00:06:24,020 --> 00:06:34,440
+ example 15 to 10 times that that's i mean 15 times 10 that's 115 rows and most of them are nonsense
+
+34
+00:06:34,440 --> 00:06:46,620
+ actually like a dance where everyone dances with everyone if you ever get way too many rows check your
+
+35
+00:06:46,620 --> 00:06:57,810
+ um basically and left join sometimes you want everyone even those without the match left join keeps all of
+
+36
+00:06:57,810 --> 00:07:08,100
+ the rows from the left table uh the one after from if there is no match the column from the other table
+
+37
+00:07:08,100 --> 00:07:16,660
+ are null so go back to our dance here it's like a photo of the whole class including those standing
+
+38
+00:07:16,660 --> 00:07:35,850
+ alone here's also a useful trick left join and where uh the right side is basically is null and that gives
+
+39
+00:07:35,850 --> 00:07:47,400
+ you the one the ones without a match so customer who never bought anything uh products nobody nobody ever
+
+40
+00:07:47,400 --> 00:07:55,960
+ bought companies ask these questions all the time for example uh to send uh for example we miss you
+
+41
+00:07:55,960 --> 00:08:07,510
+ email to their customers uh to sum up a little bit here uh inner join only the pairs left join everyone
+
+42
+00:08:07,510 --> 00:08:17,040
+ from the left and null is where there is no partner if you remember the dance if you're unsure ask yourself
+
+43
+00:08:17,040 --> 00:08:28,980
+ do i want people without a match to show up if yes then do a left joint and if you sum up this uh i would say
+
+44
+00:08:28,980 --> 00:08:39,680
+ before we start coding here join puts pieces back together for the answer on says which columns must match
+
+45
+00:08:39,680 --> 00:08:49,590
+ so here's we have aliases ocmp here and we can basically make queries shorter like that
+
+46
+00:08:50,980 --> 00:09:01,160
+ inner join only only matches left join keeps everyone on the left and we have left plus is null finds what's
+
+47
+00:09:01,160 --> 00:09:22,700
+ missing okay let's go uh to db browser here and i'm gonna have gonna actually open uh webshop please open
+
+48
+00:09:22,700 --> 00:09:38,030
+ now yeah okay let's just double check that yeah looks looks correct perfect so let me just remove all of
+
+49
+00:09:38,030 --> 00:09:56,510
+ this start over today so select star from orders just do that and then we have everything is delivered
+
+50
+00:09:56,510 --> 00:10:14,880
+ here cancelled new okay sure but if we look at this list we see customer id not who the customer are not
+
+51
+00:10:14,880 --> 00:10:41,000
+ see any names so maybe let's fix that so what we can do is type select order id then customer customers there
+
+52
+00:10:41,000 --> 00:11:20,760
+ we go dot first name and order the date from orders and now i can do uh join customers on orders
+
+53
+00:11:23,000 --> 00:11:44,090
+ dot customer id equals customers customer id let's run this now we see at least the first name first name here
+
+54
+00:11:44,090 --> 00:11:59,390
+ so we have the same list but with names let's make this a little bit more interesting uh i'll save this
+
+55
+00:11:59,390 --> 00:12:04,110
+ i'm not gonna remove that because i know that some of you wants to test this yourself and of course you
+
+56
+00:12:04,110 --> 00:12:17,810
+ can do that let's do the same query with aliases instead so instead of me writing select orders dot order
+
+57
+00:12:17,810 --> 00:12:43,170
+ customer dot first name we can do it even shorter so select o dot order id then c dot first name and then
+
+58
+00:12:43,170 --> 00:13:16,070
+ o dot order date from orders we join customer the merge there we go c on oh this looks a bit strange to be
+
+59
+00:13:16,070 --> 00:13:36,690
+ honest customer id equal c customer id so a little bit shorter okay but maybe not the best uh but you get
+
+60
+00:13:36,690 --> 00:13:52,400
+ the idea so yeah we get the same results basically so same results less typing let's do another tricky
+
+61
+00:13:52,400 --> 00:14:15,480
+ tricky one and what if i do select o dot order underscore id the first name and then let me say from orders
+
+62
+00:14:15,480 --> 00:14:39,660
+ o uh join customer c what's gonna happen if i do this let's run it and see we forgot the on here can
+
+63
+00:14:39,660 --> 00:14:56,050
+ you see it 250 rows every order with every customer order one is suddenly let me see yeah uh order one is
+
+64
+00:14:56,050 --> 00:15:14,360
+ suddenly anna eric sarah juan maria everyone has order one so too many rows means check your on okay
+
+65
+00:15:15,330 --> 00:15:56,030
+ let's do another one select o dot order and c first name c city from orders o join customers c on
+
+66
+00:15:57,980 --> 00:16:31,160
+ o dot customer id equals customer underscore id where c dot city is equal to upsala and don't forget the semicolon there so we can
+
+67
+00:16:31,160 --> 00:16:39,500
+ use where together we can use where together with join so orders from order from customers in upsala so
+
+68
+00:16:39,500 --> 00:17:04,640
+ the where comes after all of the joints okay let me see here let me just see forgot the c on customer id oh yeah
+
+69
+00:17:04,640 --> 00:17:29,460
+ c dot customer id there we go there we go so now we can see well we have joined them together we can see that
+
+70
+00:17:30,010 --> 00:17:37,470
+ order one order one anna salah order three anna also upsala five view one also upsala and so on and so on
+
+71
+00:17:37,470 --> 00:17:52,670
+ what if i okay let's let's let's make one a little bit more interesting uh let's say select
+
+72
+00:17:52,670 --> 00:18:17,630
+ o dot order underscore id c dot first uh underscore name uh oh dot order underscore date so from orders
+
+73
+00:18:17,630 --> 00:18:41,600
+ oh we want to join customers uh c on o dot customer underscore id equals c dot customer id just like we did there earlier
+
+74
+00:18:41,600 --> 00:19:02,730
+ see that customer id there we go i forgot to see um order by o dot order date uh descending and we also
+
+75
+00:19:02,730 --> 00:19:20,480
+ want to have a limit here so limit five so order by and limit work just like before so this is the five
+
+76
+00:19:20,480 --> 00:19:40,220
+ newest uh worst orders with names as well in our list yeah well we can do one more thing actually uh select
+
+77
+00:19:42,850 --> 00:20:07,010
+ oh i so order id order id let's say p dot name or i or order id quantity there we go and from order
+
+78
+00:20:10,480 --> 00:20:35,820
+ items order id dot product product id equals p dot product okay now it starts to even confuse me here
+
+79
+00:20:37,280 --> 00:20:53,850
+ from that first so now order items it has product numbers and we joined products to see the names and we
+
+80
+00:20:53,850 --> 00:21:15,410
+ can see that we have let me see almost 323 the rows so one per item so that's a little bit complicated
+
+81
+00:21:15,410 --> 00:21:28,320
+ but i wanted to show you at least that it works and we can leave that now if if if if we think of it
+
+82
+00:21:28,930 --> 00:21:36,900
+ four tables let's say let's try to put all of the four tables at once
+
+83
+00:21:37,630 --> 00:21:45,930
+ uh so i'm thinking to do some left turn yes you someone is raising hands i can see it's gloria yeah
+
+84
+00:21:45,930 --> 00:21:58,270
+ that's me can you repeat what you are doing in the last query that you wrote okay uh so select
+
+85
+00:21:58,270 --> 00:22:14,550
+ order id so this is just an alias dot order id uh we have we took the product product names in this case
+
+86
+00:22:14,550 --> 00:22:23,650
+ and also the quantity if you see here we have the names and the quantity from the order items so
+
+87
+00:22:23,650 --> 00:22:43,100
+ this is our alias order id and we joined the products we joined the order id products we said
+
+88
+00:22:43,100 --> 00:22:55,050
+ that that is equal to the product id hopefully it will be clearer i mean this is confusing even me but
+
+89
+00:22:55,050 --> 00:23:13,150
+ quite hard to explain so basically this yeah yeah continue continue no you he's trying to understand
+
+90
+00:23:13,150 --> 00:23:23,230
+ so what he's doing is taking uh every order and then showing the products that he has and the quantity
+
+91
+00:23:23,230 --> 00:23:35,800
+ well that's what the table said yes and we're joining those together so we can see those uh i know this
+
+92
+00:23:35,800 --> 00:23:45,370
+ might be a little bit confusing let's do a better example with a left join maybe that will make it a
+
+93
+00:23:45,370 --> 00:23:57,000
+ bit more clearer and let's put all of the all of the four tables at once okay it's gonna be a little
+
+94
+00:23:57,000 --> 00:24:16,050
+ longer query hopefully we will understand this so select c dot first sorry first name and o dot order date
+
+95
+00:24:18,120 --> 00:24:42,830
+ and p dot name and also and we need one more dot quantity okay so from order uh items yeah item from order items
+
+96
+00:24:43,550 --> 00:25:15,380
+ order id uh join orders sorry orders o on and orders id d equals order id and we also want to join
+
+97
+00:25:15,810 --> 00:25:46,530
+ customer customer customers sorry customers uh c on o dot customer id equals c dot customer id and then
+
+98
+00:25:46,530 --> 00:26:14,150
+ we'll do a join products p on id equals p dot product id a little longer but we're gonna get i'm gonna see the
+
+99
+00:26:14,150 --> 00:26:28,060
+ full diagram here okay so this starts in order items and then we join orders so from orders we join customers
+
+100
+00:26:28,060 --> 00:26:38,660
+ and from order items we join the products and now we see who bought what and when and that is basically
+
+101
+00:26:38,660 --> 00:26:50,980
+ the full recipe so we can see that anna here had an order date of 20 26 first of january and she bought a hoodie
+
+102
+00:26:51,930 --> 00:27:15,220
+ black and then one quantity uh i see someone is raising uh hands yes who is that uh yeah it's me can you uh
+
+103
+00:27:15,220 --> 00:27:27,040
+ just add group by to be more readable like a group by a customer id for instance what do you mean
+
+104
+00:27:28,300 --> 00:27:42,540
+ i like uh i like uh i see for example anna she has three orders i but it's uh uh separate i just want to see
+
+105
+00:27:42,540 --> 00:28:00,330
+ like anna ordered um so what do you want to see exactly i want to see only uh group it by uh now i get
+
+106
+00:28:00,330 --> 00:28:16,090
+ confused so yeah it is it's it's uh i'm trying to understand uh your question here maybe we can go okay
+
+107
+00:28:16,090 --> 00:28:29,190
+ let's go through go through um let's go through it step by step here so we we start from i mean this
+
+108
+00:28:29,190 --> 00:28:36,440
+ we already know what this is but we start from if we start from from order items order items is basically
+
+109
+00:28:36,440 --> 00:28:50,010
+ our shopping bag so one row per product in an order so 23 rows in total hopefully yeah so it has numbers
+
+110
+00:28:50,010 --> 00:28:59,570
+ so we have the order id and the product id but no names so we join we basically join uh the other tables
+
+111
+00:28:59,570 --> 00:29:07,250
+ to replace the numbers with real information so we have three joints here so join join orders o on
+
+112
+00:29:07,250 --> 00:29:17,630
+ on o on o i orders dot order id of the equal equals o order id matches each item with its with its order
+
+113
+00:29:17,630 --> 00:29:31,390
+ that give us the date and the customer id okay and then we also have another join which is this uses
+
+114
+00:29:31,390 --> 00:29:43,570
+ basically the customer id we just got from orders to find the customer's name so note that this join goes
+
+115
+00:29:43,570 --> 00:29:59,590
+ through orders because order items has no customer id okay what's going on with this computer is
+
+116
+00:29:59,590 --> 00:30:11,190
+ starting excel here for some reason uh okay so the last one the last join here this go back
+
+117
+00:30:11,190 --> 00:30:28,750
+ this actually goes back to order items and matches the product id to get the product name yes someone
+
+118
+00:30:28,750 --> 00:30:36,840
+ is raising hand christian yeah uh maybe i don't know about this aliases uh i mean order date it
+
+119
+00:30:36,840 --> 00:30:44,720
+ could be named like od or it's just named though and i mean if if this is confusing i think it gets more
+
+120
+00:30:44,720 --> 00:30:54,700
+ even more confusing if we use this aliases uh like yeah where where are we exactly to show you that you
+
+121
+00:30:54,700 --> 00:31:01,020
+ can do this but this is the this is how it looks no no i i i'm not saying don't use aliases i'm just saying
+
+122
+00:31:01,020 --> 00:31:07,490
+ maybe they could be a little bit more descriptive that's that's all i'm saying yeah it's they should
+
+123
+00:31:07,490 --> 00:31:15,820
+ yeah uh my example is really bad uh that i don't want to bash on your example i'm just i'm just like
+
+124
+00:31:15,820 --> 00:31:24,710
+ for learning the learning uh experience i maybe we could call it like od for order date for example uh
+
+125
+00:31:24,710 --> 00:31:32,720
+ maybe maybe i'm wrong i don't know um you're not wrong you're right you're right so this is how it should
+
+126
+00:31:32,720 --> 00:31:46,670
+ look like so we have customers uh i mean this is our you can call this uh all this er diagram for this
+
+127
+00:31:46,670 --> 00:31:55,760
+ query here so customers well i mean orders points to customers and order items points to orders which
+
+128
+00:31:55,760 --> 00:32:05,450
+ points to customers and the order items is pointing to products and someone mentioned uh
+
+129
+00:32:06,940 --> 00:32:25,290
+ this group by this group by we can do that uh but then we have to write other stuff uh yeah it's gonna
+
+130
+00:32:25,290 --> 00:32:42,750
+ be really long we can try this and we can say for example where see that first name is equal to
+
+131
+00:32:42,750 --> 00:32:58,850
+ anna and then maybe say group by see that customers i don't know if this is gonna work
+
+132
+00:32:58,850 --> 00:33:29,830
+ we can try it customers ah id what's wrong semi-colon in the line 40 oh yeah there we go sorry a
+
+133
+00:33:29,830 --> 00:33:44,940
+ very important one and let's run it again yeah that didn't work i was hoping maybe if i
+
+134
+00:33:47,770 --> 00:34:00,990
+ order date yeah i have to redo everything here kind of no not everything hold on i can i can add uh
+
+135
+00:34:00,990 --> 00:35:06,830
+ and put there is boncat function here uh and then we say p dot name we separate as from let's see there
+
+136
+00:35:06,830 --> 00:35:46,550
+ we go no i should get more results i'll check that later for you guys but what group by should do here it
+
+137
+00:35:46,550 --> 00:35:52,270
+ should squash the rows that share the same value into one row but it's not actually working for
+
+138
+00:35:52,270 --> 00:36:10,250
+ my for my side here if i what if i remove anna here and run this again it starts looks crazy again
+
+139
+00:36:10,250 --> 00:36:30,350
+ yeah she's not i was just experimenting here i'm interested myself but let's let's not make it too
+
+140
+00:36:30,350 --> 00:36:41,520
+ complicated i'll remove all of this uh stuff we did let me just go back check this later where we
+
+141
+00:36:41,520 --> 00:36:53,300
+ where we can actually get only anna so to go back yeah so this is basically uh us joining the table
+
+142
+00:36:53,300 --> 00:36:59,710
+ yes gloria before i continue i'll take your question yeah just trying to understand the
+
+143
+00:36:59,710 --> 00:37:10,320
+ er diagram that you just draw it seems like a orders items are are not directly connected to customers
+
+144
+00:37:10,320 --> 00:37:18,240
+ so we use the join to get the names and get the emails and so on with those orders if i am yes
+
+145
+00:37:18,240 --> 00:37:29,750
+ okay yeah i i sorry i am a bit in me like a loss because i i don't know much about the databases
+
+146
+00:37:29,750 --> 00:37:36,580
+ so just trying to understand what we are doing yeah okay okay i'll try to be a little bit slower here
+
+147
+00:37:36,580 --> 00:37:47,620
+ um and i can send you some information on the join stuff you can actually go to vvv3w school let me see
+
+148
+00:37:47,620 --> 00:38:02,590
+ they have pretty good explanations of that with visuals so let me see v3 school and join girl thing
+
+149
+00:38:02,590 --> 00:38:32,660
+ no they have an okay you don't have any visuals yet uh see if i can find another one yeah this explains it
+
+150
+00:38:32,660 --> 00:38:44,670
+ pretty good uh with some cool animations i'll send this to you guys so i have inner join left join that's a
+
+151
+00:38:44,670 --> 00:38:52,650
+ right join that's b full outer join and then we have some other stuff that we don't have to look through
+
+152
+00:38:52,650 --> 00:39:34,110
+ that much left cross join so i'll send this to you guys so you can play around with this okay let's do this
+
+153
+00:39:34,110 --> 00:39:51,530
+ select c dot first name o dot order id from customer idc
+
+154
+00:39:53,490 --> 00:40:19,180
+ left join orders o on c dot customer id equals o customer v so now this is the left join so we start
+
+155
+00:40:19,180 --> 00:40:43,650
+ from customers and then left join orders so if we run this i need to i forgot here oh oh this should
+
+156
+00:40:43,650 --> 00:40:57,130
+ say customers there we go not customer id uh we should have yeah we have 17 rows affected here
+
+157
+00:40:57,130 --> 00:41:09,640
+ so this is i mean if you scroll yeah we see we can see that emma and also lucas here uh with
+
+158
+00:41:09,640 --> 00:41:16,220
+ null order id so basically what this means they never ordered see for example maria has ordered
+
+159
+00:41:16,220 --> 00:41:26,590
+ six times here i'm sorry she has the order id six and so on and so on but the null values here
+
+160
+00:41:26,590 --> 00:41:41,170
+ this means that both emma and lucas has uh never ordered anything this is quite hard to to explain
+
+161
+00:41:41,170 --> 00:41:53,500
+ just by doing it uh so that's our left to join let me see we only have done join customers and so on
+
+162
+00:41:53,500 --> 00:42:08,290
+ okay let's go through them one by one and let's do also well we did inner join somewhere yeah i think so
+
+163
+00:42:08,290 --> 00:42:48,930
+ so if i just left join now let's do inner join here we say select c dot first first name or order id from
+
+164
+00:42:48,930 --> 00:43:29,410
+ customers c and then we say join orders o on e dot customer id equals us variety do here i probably missed
+
+165
+00:43:29,410 --> 00:43:40,870
+ something you need to have an o here otherwise it doesn't know so this is our inner joins and we can
+
+166
+00:43:40,870 --> 00:43:48,850
+ see we have only 15 rows affected here and emma and lucas are gone because they have no partner
+
+167
+00:43:49,890 --> 00:44:10,400
+ if you remember that dance analogy i had earlier okay so that's our inner join what else can we do
+
+168
+00:44:10,400 --> 00:44:26,080
+ quiz stop here uh i want to give you some uh yeah some videos little visuals on how to understand this
+
+169
+00:44:26,080 --> 00:44:33,630
+ and also some uh something that you can read to to to deep dive a little bit more on this and tomorrow
+
+170
+00:44:33,630 --> 00:44:43,070
+ we're gonna have some some quiz for you guys so see it like a test so and the quiz is only gonna affect
+
+171
+00:44:43,070 --> 00:44:50,190
+ whatever we have done so far so you don't have to prepare for it i recommend at least doing the labs
+
+172
+00:44:50,190 --> 00:44:57,430
+ then you should be able to pass that quiz and we will try to do these quizzes every friday
+
+173
+00:44:59,050 --> 00:45:06,500
+ not on every section of the course but from time to time we will do that i have students that yeah they
+
+174
+00:45:06,500 --> 00:45:15,670
+ quite like it uh from previous courses is anyone raising hands because i can't see no no questions
+
+175
+00:45:16,310 --> 00:45:24,580
+ yeah if you have any questions you can of course ask them um i've got a question yeah um is this
+
+176
+00:45:24,580 --> 00:45:42,700
+ basically um like union and uh intersection operations uh what do you mean i mean like mathematically
+
+177
+00:45:42,700 --> 00:45:49,870
+ speaking you have two groups you can define a third that is either a union of the two groups
+
+178
+00:45:49,870 --> 00:45:57,590
+ or intersection of them and so on no i don't uh no that's a different thing i mean union union
+
+179
+00:45:57,590 --> 00:46:09,790
+ stacks the rows from for example two queries on top of each other and intersect if i remember it correctly
+
+180
+00:46:16,600 --> 00:46:31,410
+ so the short answer is no okay thanks is the quiz graded uh yeah we'll see uh we'll tell you all about
+
+181
+00:46:31,410 --> 00:46:38,370
+ the quiz uh tomorrow but yeah i mean if you get all all correct then uh you can you're not gonna get
+
+182
+00:46:38,370 --> 00:46:58,490
+ any more than a star from us uh and uh and uh congratulations maybe and we can also see who who's
+
+183
+00:46:59,290 --> 00:47:07,300
+ left behind and who if if we need to i mean if all of you get all of the answers correct then maybe this
+
+184
+00:47:07,300 --> 00:47:13,950
+ is too easy but if it's not then we can see we get more information about you when we do these quizzes
+
+185
+00:47:13,950 --> 00:47:25,370
+ so don't worry uh yes gloria you're still raising hands yes um yeah someone else there join and inner
+
+186
+00:47:25,370 --> 00:47:36,100
+ join is the same because in the example for inner join we use use join that's that's the same but we should
+
+187
+00:47:36,100 --> 00:47:47,630
+ write inner join in the last example i mean yes join is short for inner join okay and they basically give
+
+188
+00:47:47,630 --> 00:48:18,370
+ the exactly same result yeah so that is correct any other questions if it's confusing this is as hard
+
+189
+00:48:18,370 --> 00:48:32,220
+ as hard as it gets when it comes to join send you some cool videos and an exercise for you guys as well
+
+190
+00:48:32,220 --> 00:48:42,020
+ and you have some time today to finish all of the exercises uh until tomorrow and tomorrow we will do
+
+191
+00:48:42,020 --> 00:48:48,740
+ the quiz late so we will not have we'll have we will start a meeting at nine o'clock as well as it's normal
+
+192
+00:48:48,740 --> 00:48:55,940
+ but we will do we'll give you some time to work on on on on the labs so maybe after lunch we can start
+
+193
+00:48:55,940 --> 00:49:14,620
+ the quiz awesome so if you don't have any questions you can of course leave the meeting thank you thank you
+
+194
+00:49:14,620 --> 00:49:19,500
+ thank you thank you thank you
+

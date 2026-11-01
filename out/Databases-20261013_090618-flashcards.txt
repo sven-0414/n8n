@@ -1,0 +1,23 @@
+What is NoSQL and how does it differ from traditional SQL databases?;NoSQL stands for "Not Only SQL" and refers to database systems that handle data in flexible, non-tabular formats. Unlike SQL databases, NoSQL databases allow flexible schemas, horizontal scaling across multiple servers, and store data as documents rather than rows in tables.
+
+What are the key characteristics of NoSQL databases?;NoSQL databases have flexible schemas where documents within the same collection can have different structures, they are designed for horizontal scaling across many servers, and they store data as documents similar to Python dictionaries.
+
+Why would you choose a NoSQL database over a SQL database?;You might choose NoSQL when dealing with changing data structures, object-oriented programming needs, large-scale data that doesn't fit on one computer, or when performance is critical for read-heavy workloads.
+
+What is MongoDB and what type of database is it?;MongoDB is a popular document-based NoSQL database that stores data as documents in collections. It's designed to handle large volumes of data and scale across multiple servers.
+
+What are the main features of MongoDB?;MongoDB is a document database that stores data in flexible, JSON-like documents with schema flexibility, is built for scaling across multiple servers, and is widely used in modern applications and job ads.
+
+What is the basic terminology difference between SQL and MongoDB?;In MongoDB, a database is called a database, a table is called a collection, a row is called a document, a column is called a field, and the primary key is called _id.
+
+What data types does MongoDB support?;MongoDB supports strings, numbers (integers and floats), booleans, dates, arrays, objects (nested dictionaries), and null values.
+
+How does MongoDB handle the _id field in documents?;Every document in MongoDB must have a unique _id field that works like a primary key. If not provided, MongoDB automatically creates an ObjectID which is globally unique across all computers and time.
+
+What is PyMongo and how is it used with MongoDB?;PyMongo is a Python library that allows Python programs to communicate with MongoDB. It translates between Python types and MongoDB types automatically and returns standard Python dictionaries instead of special cursor objects.
+
+What are the core operations in MongoDB using PyMongo?;The core operations include finding one or multiple documents, inserting one or multiple documents, and counting documents in collections.
+
+How do you filter documents in MongoDB?;Filters are specified as Python dictionaries where field-value pairs match documents with those exact values. Multiple fields create AND conditions, and filters are case-sensitive like SQL.
+
+What is document embedding in MongoDB and why is it useful?;Document embedding stores related data together within a single document rather than requiring joins between multiple tables. This approach eliminates complex JOIN operations and can significantly improve read performance for related data.

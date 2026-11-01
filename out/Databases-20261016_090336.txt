@@ -1,0 +1,1163 @@
+So welcome back. We didn't have... I was planning to have this yesterday, but I saw that many of you were complaining about going too fast.
+So I gave you a day at least. Catch up a bit. You're going to have the weekend as well if you want to catch up.
+But before we start, let's have some quiz. Only three questions here, which I'm going to tell you right now.
+Or maybe I can even write it in the chat. But the first question, and you try to answer them by answering the question in the chat, like we did the other day.
+Just some recap on what we have done and see where you guys... Well, where the knowledge is, if it's there or not.
+So my first question is, can you write a filter for products that costs between 200 and 600?
+You have the question in the chat as well. I'm actually right. I'm waiting. No one?
+Yeah. Yeah, it should be in NoSQL, Novika.
+I see that some of you got it right. Almost. Yeah. Okay. I'll give my answer to you guys. That is the correct answer.
+All right. This was fun. Let's do another one.
+So, what's the difference? Let me see here. So why is Anastasia? Okay.
+Next question is trying to format this as good as possible so it doesn't disappear.
+Okay. So what is the difference between push and add to set without Googling or using AI or anything?
+Try not to cheat. Just ask yourself. If you have to, then you can.
+Interesting answers.
+Most of you have got it right.
+So the answer to that is, well, push always adds, no matter what.
+And add to set only adds if the value isn't already in the array.
+Someone said here, if it's an array. So I'll write the correct answer here, sir.
+Okay. Last question then. Just write it here first. Question three.
+So why should you run find before update many or delete many? Remember that? Make sure. Yeah.
+Or roll back. Yeah. Exactly. Yeah. Almost all of you got it, right?
+So basically this is to see exactly which documents the filter hits because there is no undo in MongoDB.
+Could be a good idea to do before we altering anything, especially for updating or deleting.
+So basically to see exactly which documents the filter, there is no undo in MongoDB.
+So there's your answer. Seems like you're learning. Today topic is something called designing documents,
+as you see in front of you, embed or reference, schema validation, and the aggregation pipeline.
+So as usual, we will of course start with this and try to explain to you all of this is.
+After today, you would be able to decide when to embed the data and when to reference it.
+Basically explain why copied data is sometimes good and sometimes a problem.
+We'll also add rules to a collection with schema validation.
+summarize data with aggregation pipelines.
+We have this match group sort project and we also use unwind and lookup.
+And don't worry if some of these words are new right now.
+We'll try to get through each one in the theory here.
+Okay, small little recap.
+So before we start, we have a quick recap here from yesterday's or the day before's topic.
+Asking better questions.
+Operatings like gtlt in ne written as, as we see written as here, field and then tm value.
+We can read inside objects.
+We can search in arrays, find this filter and all of that.
+We can update one, update many with, for example, set ink, push, pull, add to set.
+Empty filter equals basically everything.
+No undo.
+Check with find first, like we said.
+You can take a moment if you want to think which of these felt easy and which one would you like to see
+again, maybe you can take that and maybe write that to me later.
+If you have any thoughts or any questions, I have already done that.
+On the SQL days, we designed by tidying up, tidying up basically every fact in one place
+and join when we need it.
+MongoDB turns it around a bit.
+First you ask basically, how will my app use this data?
+What does it read together?
+And then you shape the document so that one read gives you what you need.
+So the rule of thumb here, data that is read together is stored together.
+So let's make this maybe a little bit more concrete.
+So what does our web shop app here show most often?
+What could it be?
+Well, it's probably the product page or the shopping cart
+or maybe the customer's order history and receipt.
+For each of those, we want as few reads as possible.
+So the receipt is a great example.
+It always shows the order and all of its items together.
+So we store them together.
+In SQL, the design question was, what are the things and how are they related?
+In MongoDB, on the other hand, we have the second question.
+Second question, not within us.
+How will they be used?
+So two apps with exactly the same data could have different MongoDB designs.
+Because they read the data differently.
+And that might feel strange after these SQL days we had, where there was one correct,
+normalized design.
+In MongoDB, design is more about trade-offs, actually.
+Embed or reference?
+You have two choices for related data.
+Embed means you put it inside the document, like the items inside an order.
+Reference means you just store the ID of another document.
+Like, for example, the customer_id in the order.
+That's like a foreign key.
+You can think of it as a foreign key.
+But MongoDB doesn't check it for you.
+Okay?
+So think of embedding like a folder with all of the papers inside it.
+Everything about the order is right there when you open the folder.
+Okay?
+But referencing is like a note that says, see the customer's file, number one or whatever.
+So you have to go and get the other folder.
+So embedding is faster to read because it's one trip to the database.
+Referencing keeps each piece of data in one place so it's easier to keep correct.
+And one important difference from SQL as well is MongoDB doesn't check references for you.
+If the order says customer ID 999 and there is no customer 999, MongoDB won't stop you.
+There are no foreign key constraints here.
+So the app here has to be careful.
+So when do we embed and when do we actually reference?
+Well, here's a simple checklist.
+Embed when you always read it together with the parent, when it belongs only to that parent.
+And also when there aren't too many and when it doesn't change that much as well.
+Reference when many documents share the same thing.
+Like a customer who has many orders or when a list could grow forever.
+Okay, let's maybe test the checklist on a few examples here.
+So let's see if this is an embed or a reference.
+A blog post and its comments.
+That's usually embed if there are few comments.
+But if a post can get thousands of reference, then that's another thing.
+Let's just say a student and their courses.
+That's also a reference.
+Many students share the same course and the course details change.
+Maybe a person and their address.
+Could that be a person and the address?
+That would be maybe embed.
+It belongs to that person and is read together with them.
+Let's take another example.
+A product and its reviews.
+That actually depends.
+A few reviews per product.
+Maybe embed thousands.
+If it's thousands then reference.
+The answer is often actually it depends.
+And that's fine.
+The point is to think about the four questions maybe on this slide.
+I mean read together one owner how many and how often it changes.
+Or it changes.
+So our webshop design here.
+Basically this is how our webshop is designed.
+Items are embedded in orders.
+The customer is a reference.
+Products are their own collection.
+And if we look for example at the last row.
+The product's name and price are copied into each other.
+Into each order item.
+And that's actually on purpose.
+Just like unit_price in SQL.
+If the hoodie gets more expensive tomorrow.
+Old receipts must still show the old price.
+So maybe let's walk through each row and give the reason in plain words.
+Order items.
+You never look at an order item without its order.
+And the item never changes basically after the order is placed.
+So it lives inside the order.
+Customer.
+One customer can have hundreds of orders.
+And if Anna here moves.
+We want to change her city in one place.
+So the order only keeps her ID.
+And third we have products.
+You look basically at products on their own all of the time.
+On the product page and search.
+And maybe stock changes with every sale.
+So they have their own collection.
+And they copied name and price in the items.
+Last one here.
+Those are basically snapshots of what the customer bought.
+At that price.
+On that day.
+So notice that this design is basically what we did in SQL.
+But with order_items moved inside orders.
+I know this could be a little tricky to understand sometimes.
+Hopefully it shouldn't be more complicated than this.
+This is the last day actually.
+I can't see if you're...
+Hold on.
+Okay.
+Copies have price.
+It says there.
+Copying data is called denormalization.
+It makes reading fast.
+Because everything is already in one place.
+But if you ask yourself.
+Should this copy change when the original changes?
+Price on a receipt maybe should freeze.
+That's a good copy.
+A customer's email should be the same everywhere.
+I mean if we had copied it into thousands of orders.
+Changing it would mean thousands of updates.
+And missing one would give wrong data.
+And that's the update problem that we had on SQL last week.
+Let's maybe do a thought experiment here.
+Experiment, sorry.
+Say we had copied Anna's email into every one of her orders.
+For convenience.
+Okay.
+Now Anna changes her email.
+We must find every order with her old email and update it.
+If our code misses one, our data disagrees with itself.
+So which email is right?
+And that's the update problem from normalization day I would say.
+And MongoDB doesn't protect us from it.
+So before you copy something, ask yourself.
+Should this copy change when the original changes?
+If the answer is no, like a price on a recipe, copy is perfect.
+If the answer is yes, like an email, store it in one place and then reference it.
+So a useful rule here.
+Copy things that describe the moment.
+Referent things that describe the present.
+Basically.
+Watch out.
+Because arrays can actually grow forever here.
+A classic mistake.
+Putting all of the customer's order inside the customer document.
+It feels natural.
+But a loyal customer might place thousands of orders.
+And the document grows and grows.
+A document can be at most 16 megabytes.
+And big documents are pretty slow.
+So orders get their own collection with the customer ID reference.
+I mean this one looks so natural that many beginners do it.
+A customer has orders.
+So let's put the orders inside the customer.
+It works fine for the first maybe 10 orders.
+But some customers will actually order every week for years.
+So the document gets bigger and bigger.
+So every time you read the customer you will get all of the orders too.
+Even if you only wanted their name.
+And every update rewrites a bigger and bigger document.
+And there is a hard limit here.
+One document can be at most 16 megabytes.
+Let's say that.
+So if I ask you guys.
+In our webshop design.
+Could any array grow forever?
+You can answer it in the chat if you want or whatever.
+So think of it is.
+In our webshop designer.
+Could any array grow forever?
+Basically items in an order.
+Well the answer here is no.
+Order has few items.
+Tags on a product.
+No.
+Sizes.
+No.
+That's why your design is safe.
+Who is speaking?
+Sorry.
+Can you mute your mic?
+Okay.
+Yeah.
+Thank you.
+So to get back.
+The answer was no.
+So I was asking.
+In our webshop design.
+Can any array grow forever?
+So if you think of items in an order.
+No.
+An order has few items.
+And you also have tags on a product.
+No.
+That cannot grow.
+The size is no.
+That's why also your design is safe.
+So the rule of thumb.
+If a list can grow without limit.
+Give it its own collection.
+Okay.
+I want you to remember.
+Flexible schema means nobody stops your mistakes.
+But you can add rules.
+And this is called schema validation.
+We say basically which fields are required.
+Which type that must have.
+And limits like for example rating between 1 and 5.
+And it's MongoDB version of not null and check basically.
+A document that breaks the rules is rejected.
+Just like in SQL.
+So schema validation is how we get some of SQL's safety back.
+A little bit.
+So we give the collection a set of rules.
+Written in format called JSON schema.
+And maybe let's read it.
+And we have here required.
+These fields must be there.
+Like written enough.
+I mean.
+Yeah.
+Like not null.
+Okay.
+And then we have properties.
+For each field.
+Type it must have.
+So here it says BSON type int.
+Means a whole number.
+And then we have also minimum and maximum.
+And that speaks for itself.
+And this works like a check constraint in SQL.
+You can also use enum for lists of allowed values.
+Like check status in in SQL.
+So when someone inserts a document that breaks the rules.
+MongoDB rejects it.
+With the error document failed validation.
+And the nice part is that it's flexible.
+You only write rules for the fields you care about.
+Other fields are still allowed.
+So you get the safety where you need it.
+And freedom everywhere else.
+And this is the second big topic.
+It's MongoDB's version of group buy.
+And much more.
+Think of an assembly line in a factory.
+Documents go in at the top.
+And each stage does one job and passes the result on.
+Here first we keep only delivered orders.
+Then group them per customer and count.
+Then sort.
+So the whole pipeline is just a python list of dictionaries.
+So if you imagine a factory that makes reports.
+At the start of the line all orders come in.
+Station one match.
+Throws away everything that isn't delivered.
+Station two.
+Group.
+Sort what's left into piles.
+One pile per customer and counts basically each pile.
+And then you have maybe station three.
+That sorts.
+Puts the piles in order.
+Maybe the biggest first.
+And at the end of the line.
+Out comes basically our report.
+So each station does one small job.
+And it only sees what the station before it passed on.
+Okay.
+So that's why the order here matters.
+If you sort before you group.
+The sorting is wasted.
+In python the pipeline is just a list of dictionaries.
+And we pass it to basically to aggregate.
+And here's a tip for you.
+When a pipeline doesn't work.
+Remove stages from the end.
+And add them back one at a time.
+To see where it goes wrong basically.
+Stages and their SQL friends.
+Most stages have a friend from SQL.
+Match is where.
+Group is group by.
+Sort is order by.
+Project is select.
+And limit is limit.
+Two are new.
+Unwind.
+Which we'll see in a moment.
+And lookup.
+Which is MongoDB's join.
+So a tip here.
+If you put match after group.
+It works like.
+Should work.
+Works like having.
+I would say.
+I mean let's translate an SQL query.
+You know.
+Into stages.
+If you for example.
+Say select.
+Maybe I can write it in the chat.
+Instead of just saying it.
+So you understand what I'm talking about here.
+So if I say.
+Select query.
+Select cut.
+And let me see.
+I'm writing.
+So that's why I'm quiet.
+You will see soon in the chat.
+So let's translate this one.
+So select category.
+If you look in the chat.
+Count star from products.
+Where stock is greater than zero.
+Group by category.
+Order by count.
+Descent.
+Limit two.
+In MongoDB.
+A match stage.
+With the stock.
+Greater than zero.
+And a group stage.
+By category.
+With a count.
+A sort stage.
+By count.
+Minus one.
+And the limit stage.
+With two.
+Same pieces.
+Written as a list.
+Instead of a sentence.
+Okay.
+So a big difference from SQL.
+In SQL.
+The order of the.
+Clauses is fixed.
+In a.
+In a pipeline.
+You choose.
+The order.
+And you can use.
+The same stage.
+The same stage.
+Several times.
+So a match.
+After a group.
+Works like.
+Having.
+Because.
+It filters.
+The groups.
+So the.
+Two.
+New.
+Ones.
+Unwind.
+And lookup.
+Are.
+What.
+We will look.
+Into.
+Maybe.
+Later.
+Because that.
+Handle.
+They handle.
+Arrays.
+And joins.
+Group.
+Needs.
+An underscore.
+ID.
+What to group by.
+Here.
+A dollar.
+Category.
+With a dollar sign.
+In a pipeline.
+A dollar.
+In front.
+Of.
+A field name.
+Means.
+The value.
+Of.
+This field.
+Then.
+We add.
+As many.
+Calculations.
+As we want.
+Some.
+One.
+Counts.
+Like.
+Count.
+Star.
+Or.
+Average dollar.
+Price.
+Is.
+The average.
+Price.
+Whatever.
+These are called.
+Accumulators.
+Actually.
+And group.
+Is.
+The stage.
+That needs.
+The most.
+Practice.
+Maybe.
+Let's read.
+This slowly.
+Underscore.
+ID.
+Says.
+What.
+To group by.
+The dollar.
+Category.
+Means.
+Make.
+One.
+Group.
+For.
+Each.
+Different.
+Value.
+Of.
+Category.
+And.
+If.
+You.
+Write.
+None.
+Instead.
+Everything.
+Goes.
+Into.
+One.
+Single.
+Group.
+Which.
+Is.
+How.
+You.
+Go.
+Is.
+Basically.
+How.
+You.
+Get.
+The.
+Grand.
+Total.
+Then.
+You.
+Name.
+Your.
+Results.
+Products.
+Colon.
+Someone.
+For.
+Each.
+Document.
+In.
+The.
+Group.
+Add.
+One.
+Basically.
+So.
+It.
+Counts.
+So.
+Average.
+Underscore.
+Price.
+Colon.
+And.
+Average.
+Of.
+Dollar.
+Price.
+That's.
+Basically.
+The.
+Average.
+Of.
+The.
+Price.
+Field.
+The.
+Dollar.
+Sign.
+Inside.
+The.
+Quotes.
+Is.
+The.
+Most.
+Common.
+Mistake.
+Because.
+Without.
+It.
+MongoDB.
+Sees.
+The.
+Text.
+Price.
+And.
+Not.
+The.
+Value.
+Of.
+The.
+Field.
+And.
+Other.
+Accumulators.
+You.
+Will.
+See.
+Is.
+Min.
+Max.
+For.
+Smallest.
+And.
+Largest.
+And.
+Push.
+Which.
+Collects.
+Values.
+Into.
+A.
+List.
+And.
+To.
+Look.
+At.
+Unwind.
+Unwind.
+Our.
+Items.
+Are.
+Inside.
+A.
+List.
+So.
+To.
+Group.
+By.
+A.
+Product.
+We.
+Need.
+To.
+Get.
+Them.
+Out.
+And.
+Unwind.
+Does.
+That.
+It.
+Does.
+That.
+But.
+It.
+Makes.
+It.
+Makes.
+One.
+Copy.
+Of.
+The.
+Document.
+For.
+Each.
+Item.
+In.
+The.
+List.
+So.
+Order.
+One.
+Has.
+Two.
+Items.
+So.
+It.
+Becomes.
+Two.
+Documents.
+Now.
+Each.
+Item.
+Can.
+Be.
+Grouped.
+And.
+Counted.
+So.
+Think.
+Of.
+It.
+As.
+Unpacking.
+A.
+Shopping.
+Bag.
+Onto.
+The.
+Table.
+On.
+A.
+Table.
+Okay.
+So.
+Why.
+Do.
+We.
+Need.
+Unwind.
+Well.
+Say.
+We.
+Want.
+To.
+Know.
+How.
+Many.
+Hoodies.
+We.
+Have.
+Sold.
+The.
+Hoodies.
+Are.
+Inside.
+The.
+Items.
+Lists.
+Of.
+Different.
+Orders.
+We.
+Unwind.
+Every.
+Order.
+With.
+Three.
+Items.
+Becomes.
+Three.
+Documents.
+Each.
+With.
+One.
+Item.
+And.
+Order.
+One.
+Had.
+A.
+Hoodie.
+And.
+A.
+Cap.
+So.
+After.
+Unwind.
+There.
+Are.
+Two.
+Documents.
+Both.
+With.
+ID.
+One.
+One.
+With.
+A.
+Hoodie.
+And.
+One.
+With.
+A.
+Cap.
+Now.
+We.
+Can.
+Group.
+By.
+Item.
+Name.
+And.
+Sum.
+The.
+Unwind.
+Exactly.
+The.
+23.
+Rows.
+We.
+Had.
+In.
+Order.
+Underscore.
+Item.
+Table.
+In.
+SQL.
+But.
+Unwind.
+Basically.
+Turns.
+The.
+Embedded.
+List.
+Back.
+Into.
+Rows.
+When.
+We.
+Basically.
+Need.
+Them.
+Okay.
+And.
+Then.
+We.
+Had.
+Another.
+One.
+Called.
+Lookup.
+MongoDB.
+Join.
+You.
+Can.
+Call it.
+From.
+Which.
+Collection.
+Which.
+Field.
+Here.
+And.
+Which.
+Field.
+There.
+And.
+What.
+To.
+Call.
+The.
+Result.
+Basically.
+The.
+Matching.
+Documents.
+Are.
+Put.
+In.
+A.
+New.
+Array.
+It.
+Works.
+But.
+If.
+You.
+Need.
+A.
+Lookup.
+In.
+Every.
+Query.
+Your.
+Design.
+Might.
+Be.
+Wrong.
+So.
+Remember.
+The.
+Data.
+That.
+Is.
+Read.
+Together.
+Is.
+Stored.
+Together.
+So.
+Let's.
+Maybe.
+Read.
+The.
+Four.
+Parts.
+So.
+Which collections.
+To look in.
+Here.
+Customers.
+So.
+From.
+Customers.
+Local.
+Field.
+We see.
+Well.
+The field.
+In.
+Our.
+Documents.
+And.
+Then.
+We have.
+The value.
+Is.
+Customer.
+ID.
+Then.
+We have.
+Another.
+One.
+Called.
+Foreign.
+Field.
+Under.
+It.
+And.
+The.
+Field.
+In.
+In.
+The.
+Other.
+Collection.
+Underscore.
+ID.
+In.
+Customers.
+As.
+The.
+Name.
+Of.
+The.
+New.
+Field.
+Where.
+The.
+Matches.
+Are.
+Put.
+So.
+The.
+Results.
+Is.
+Always.
+A.
+List.
+Even.
+If.
+There.
+Is.
+Only.
+One.
+Match.
+So.
+We.
+Usually.
+Follow.
+Lookup.
+With.
+Unwind.
+To.
+Turn.
+The.
+List.
+Into.
+A.
+Single.
+Object.
+So.
+Why.
+Not.
+Use.
+Lookup.
+All.
+The.
+Time.
+Like.
+Join.
+In.
+SQL.
+Because.
+It.
+Slower.
+Than.
+Reading.
+One.
+Document.
+And.
+MongoDB.
+Is.
+Designed.
+Around.
+Embedding.
+So.
+Use.
+Lookup.
+For.
+Reports.
+And.
+Occasional.
+Questions.
+You.
+Might.
+Have.
+So.
+If.
+Your.
+App.
+Needs.
+Lookup.
+On.
+Every.
+Single.
+Page.
+That's.
+A.
+Signed.
+That.
+The.
+Data.
+That's.
+Read.
+Together.
+Isn't.
+Stored.
+Together.
+Remember.
+Let's.
+Sum.
+Up.
+This.
+Theory.
+Here.
+Design.
+By.
+Asking.
+How.
+The.
+App.
+Copies are fast but must be updated everywhere unless they should freeze.
+Then also schema validation equals MongoDBs not null and check.
+Aggregation.
+Match.
+Group.
+Sort.
+Project.
+Unwind.
+Lookup.
+These are these are the points to keep in your head during the labs today.
+So when we when you write the code try to to see spot where well spot them.
+If something feels unclear then just ask me for the lab.
+And I also have one more slide that I want to show you.
+Let me see what time is it.
+Okay maybe I can show this slide and then we can take a break.
+I was planning to show show this as well but we don't have time because we are moving on to
+the next subject next next week.
+But a very important one.
+Let's see which one I don't know.
+Okay.
+We haven't talked about injections in MongoDB.
+And MongoDB has no SQL so there is no SQL injections in MongoDB.
+Right?
+Not quite.
+Imagine a website that sends
+json to our python code.
+A normal user sends an email address.
+An attacker sends a small dictionary.
+Instead for example maybe he can say $ne null that ends up basically inside our filter.
+And the filter now means email is not null.
+And that matches every customer.
+And the attacker gets someone else's data.
+Same idea as SQL injection.
+User input becomes part of the query.
+So maybe let's walk through an attack here step by step.
+Our website has a form where you type your email to see your orders for example.
+The website sends the email to our python code as json.
+A normal request looks like email: anna@example.com
+Okay.
+Our code puts that value in the filter.
+And all is well.
+Now the attacker sends something else.
+Email colon curly bracket $ne null dot json loads.
+And turns that into a python dictionary.
+And our code puts the dictionary straight into the filter.
+Now the filter says find the customers whose email is not null.
+And every customer matches.
+So the attacker gets the first one without knowing any email at all.
+And that's called operator injection.
+It's MongoDB's cousin of SQL injection.
+And it's on lists of the most common security problems in web apps actually.
+So how do we protect ourselves?
+Well, we build the filter yourself with values you have checked.
+Check the type.
+An email must be a string, not a dictionary.
+Convert input with str and int and catch the errors you expect.
+So the user gets a friendly message instead of a crash.
+We want to avoid crashes here.
+So how do we stop it?
+Well, the key idea is the same as with SQL.
+Never let user input become part of the query itself.
+So rule one.
+Build the filter dictionary yourself in your code.
+User input only goes in as values.
+And rule two.
+Check the type.
+An email is always a string.
+If you get a dictionary or a list, reject it.
+And rule three.
+Convert input.
+Input in Python always gives a string, which is safe.
+But if you need a number, use int.
+Inside maybe a try.
+So the program doesn't crash on ABC.
+For example.
+Rule four.
+Catch the errors you expect and give a friendly message.
+You should see that email already registered.
+Not a long trace back.
+And one more slide.
+Personal data.
+Everything from the GDPR stuff we talked about earlier still applies here.
+Two things are extra important in MongoDB.
+First, a flexible schema makes it tempting to save one more field.
+Like a birth date, for example.
+Don't unless you need it.
+Second, copies.
+If you copy the customer's name into every order,
+a request to be deleted, meaning finding and changing every copy.
+So for personal data, prefer references like I showed you earlier.
+So basically, collect only what you need.
+Keep it correct.
+Delete it when you no longer need it.
+And protect it.
+MongoDB makes two things easier to get wrong.
+First, the flexible schema.
+Adding a new field takes one line of code.
+So it's tempting to save things just in case.
+Like birthday, gender, location.
+Every extra field is personal data you are responsible for.
+Second, copies.
+If we copy a customer's name and address into every order,
+a request to be deleted means finding and changing every copy in every collection.
+So if you keep personal data in one place and reference it,
+deleting or maybe anonymizing one customer is one update.
+So for personal data, prefer references, okay?
+And copy only what the law or the receipt requires.
+Okay, that was actually it.
+I can put both of these presentations later in the channel, like always.
+And I'm going to give you some labs to do today, Friday as well.
+And you can prepare also for next week.
+We're going to talk about, I don't know what the schema says.
+It's APIs and stuff like that, I think.
+And we're also going to look into working with Agile and Scrum and all of that as well.
+So prepare for taking one step, one level up on learning.
+Hopefully we'll come back to everything.
+We will use MongoDB throughout the course or SQL, we will see.
+So we'll come back to this.
+Do you have any questions?
+Yes, Fabian.
+Yeah, I was just wondering if there were some exercises that were going to be done today.
+I was thinking, no, you know, never mind.
+It wasn't really a question.
+I was just thinking for myself.
+Never mind.
+It's fine.
+Okay.
+Okay.
+So for those that are a little bit stressed for every time I put an exercise up, don't worry.
+I mean, at least try to do as much as you can.
+You have the weekend as well, if you want to sit for an hour or two.
+If you haven't done any exercises, then I feel sorry for you.
+You should at least do half of them as much as possible in the short time we have.
+So that's my recommendation.
+For those that are done, congratulations.
+You're job ready.
+Not exactly, but just write me a message and I'll give you some challenge to do if you are done.
+Okay.
+Maybe it's time for a break and you can leave the meeting if you don't have any questions.
+thank you thank you thank you thank you thank you bye

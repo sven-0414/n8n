@@ -1,185 +1,307 @@
-## Overview of the Week
-### Plan of the Week
-- **Lectures and Labs**: The week's lessons cover various Python concepts, concluding with a small test on Thursday that is not graded but serves as a checkpoint for understanding.
-- **Catch-up Days**: Friday and the rest of the week are designated for catching up on labs and ensuring all previous assignments are completed and pushed to GitHub.
-
-## Python Concepts Recap
-### Covered Topics
-- Variables
-- Strings
-- Collections
-- Conditions
-- Loops
-- Functions
-- Scope
-- Arguments and Quarks
-
-## Pythonic Code and Common Patterns
-### What is Pythonic Code?
-Pythonic code refers to writing code that follows common Python conventions and uses the language in a natural, readable way. It prioritizes clarity over brevity.
+# Python Fundamentals: Comprehensions, Enumerate, Zip, Unpacking, and Lambda
 
 ## List Comprehensions
-### Definition
-List comprehensions offer a concise way to create lists based on existing iterables.
 
-### Example
+### Definition and Basic Syntax
+List comprehensions are a compact way to create lists by applying transformations or filtering existing collections. They follow the pattern: `[expression for item in iterable if condition]`.
+
+### Code Example
 ```python
+# Traditional approach
+numbers = [1, 2, 3, 5]
+doubled_numbers = []
+for number in numbers:
+    doubled_numbers.append(number * 2)
+print(doubled_numbers)  # Output: [2, 4, 6, 10]
+
+# List comprehension approach
 numbers = [1, 2, 3, 5]
 doubled_numbers = [number * 2 for number in numbers]
-print(doubled_numbers)
+print(doubled_numbers)  # Output: [2, 4, 6, 10]
 ```
-- **Output**: `[2, 4, 6, 10]`
 
-### Explanation
-The syntax `[expression for element in iterable]` creates a new list by applying the expression to each element in the iterable.
+### Key Points
+- The basic structure is `[expression for item in iterable]`
+- You can add filtering with `if condition` at the end
+- The square brackets `[]` create a list comprehension
+- List comprehensions are more concise and often faster than traditional loops
 
-### Use Cases
-List comprehensions are especially useful for simple transformations and filters. For complex operations, traditional loops might be more readable.
+### Why It Matters
+List comprehensions are considered Pythonic because they make code more readable and expressive. They're extremely common in Python codebases and represent idiomatic Python programming.
 
 ## Dictionary Comprehensions
-### Definition
-Dictionary comprehensions allow for concise creation of dictionaries based on existing iterables.
 
-### Example
+### Definition and Basic Syntax
+Dictionary comprehensions follow the same pattern as list comprehensions but use curly braces `{}` and require both key and value expressions: `{key_expression: value_expression for item in iterable if condition}`.
+
+### Code Example
 ```python
+# Traditional approach
 numbers = [1, 2, 3, 4, 5]
-squares = {num: num ** 2 for num in numbers}
-print(squares)
-```
-- **Output**: `{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}`
+squares_dict = {}
+for number in numbers:
+    squares_dict[number] = number ** 2
+print(squares_dict)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 
-### Explanation
-The syntax `{key_expression: value_expression for element in iterable}` creates a new dictionary by applying key and value expressions to each element in the iterable.
+# Dictionary comprehension approach
+numbers = [1, 2, 3, 4, 5]
+squares_dict = {number: number ** 2 for number in numbers}
+print(squares_dict)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
+
+### Filtering with Dictionary Comprehensions
+```python
+scores = {"Anna": 85, "Bob": 62, "Charlie": 91, "Diana": 70}
+passed_students = {name: score for name, score in scores.items() if score >= 70}
+print(passed_students)  # Output: {'Anna': 85, 'Charlie': 91, 'Diana': 70}
+```
+
+### Why It Matters
+Dictionary comprehensions make it easy to transform and filter dictionaries in a single, readable line of code. They're particularly useful when creating new dictionaries based on existing data.
 
 ## Set Comprehensions
-### Definition
-Set comprehensions create sets from iterables, ensuring unique elements.
 
-### Example
+### Definition and Basic Syntax
+Set comprehensions use curly braces `{}` without key-value pairs: `{expression for item in iterable if condition}`.
+
+### Code Example
 ```python
 words = ["Python", "Java", "Python", "C#", "Java"]
 lengths = {len(word) for word in words}
-print(lengths)
+print(lengths)  # Output: {5, 6, 2} (order may vary)
 ```
-- **Output**: `{6, 4, 5}`
 
-### Explanation
-Set comprehensions automatically remove duplicates due to the nature of sets.
+### Why It Matters
+Set comprehensions are useful for creating sets from existing collections while automatically handling duplicates. They're particularly helpful when you need unique values from a collection.
 
 ## Generator Expressions
-### Definition
-Generator expressions create generators, which are memory-efficient for large data processing.
 
-### Example
+### Definition and Basic Syntax
+Generator expressions look like list comprehensions but use parentheses `()` instead of square brackets `[]`. They create generator objects that produce items on-demand rather than storing them all in memory.
+
+### Code Example
 ```python
-numbers = range(10)
-squares = (num ** 2 for num in numbers)
-print(list(squares))
+# List comprehension (creates list)
+numbers = [number * 2 for number in range(5)]
+print(numbers)  # Output: [0, 2, 4, 6, 8]
+
+# Generator expression (creates generator object)
+numbers = (number * 2 for number in range(5))
+print(numbers)  # Output: <generator object at 0x...>
+print(list(numbers))  # Output: [0, 2, 4, 6, 8] - convert to list to see values
 ```
-- **Output**: `[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]`
 
-### Explanation
-The syntax `(expression for element in iterable)` creates a generator that can be iterated over or converted to other data types.
+### Why It Matters
+Generator expressions are memory-efficient because they generate values one at a time rather than storing all values in memory. They're particularly useful when working with large datasets.
 
-## Enumerate
-### Definition
-Enumerate provides an index and value for each element in an iterable.
+## Enumerate Function
 
-### Example
+### Definition and Basic Syntax
+The `enumerate()` function adds a counter to an iterable and returns it as an enumerate object. The syntax is `enumerate(iterable, start=0)`.
+
+### Code Example
 ```python
 languages = ["Python", "Java", "C#"]
 for index, language in enumerate(languages):
     print(f"{index}: {language}")
+# Output:
+# 0: Python
+# 1: Java
+# 2: C#
+
+# With custom starting number
+for position, language in enumerate(languages, start=1):
+    print(f"{position}: {language}")
+# Output:
+# 1: Python
+# 2: Java
+# 3: C#
 ```
-- **Output**: 
-  ```
-  0: Python
-  1: Java
-  2: C#
-  ```
 
-### Explanation
-`enumerate(iterable, start=0)` returns an iterator that generates pairs of indices and values.
+### Why It Matters
+`enumerate()` eliminates the need to manually manage index counters, making code cleaner and less error-prone. It's commonly used when both the index and value are needed.
 
-## Zip
-### Definition
-Zip combines elements from multiple iterables into tuples.
+## Zip Function
 
-### Example
+### Definition and Basic Syntax
+The `zip()` function combines multiple iterables element-wise into tuples. The syntax is `zip(iterable1, iterable2, ...)`.
+
+### Code Example
 ```python
 names = ["Anna", "Bob", "Charlie"]
 scores = [85, 62, 91]
 for name, score in zip(names, scores):
-    print(f"{name} gets {score}")
-```
-- **Output**: 
-  ```
-  Anna gets 85
-  Bob gets 62
-  Charlie gets 91
-  ```
+    print(f"{name}: {score}")
+# Output:
+# Anna: 85
+# Bob: 62
+# Charlie: 91
 
-### Explanation
-`zip(iterable1, iterable2, ...)` creates tuples containing elements from the iterables.
+# With three lists
+names = ["Anna", "Bob", "Charlie"]
+scores = [85, 62, 91]
+cities = ["Stockholm", "Göteborg", "Malma"]
+for name, score, city in zip(names, scores, cities):
+    print(f"{name}: {score}, {city}")
+# Output:
+# Anna: 85, Stockholm
+# Bob: 62, Göteborg
+# Charlie: 91, Malma
+```
+
+### Handling Different Length Lists
+```python
+names = ["Anna", "Bob", "Charlie", "Diana"]
+scores = [85, 62, 91]  # Shorter list
+for name, score in zip(names, scores):
+    print(f"{name}: {score}")
+# Output:
+# Anna: 85
+# Bob: 62
+# Charlie: 91
+# Diana is skipped because zip stops at the shortest iterable
+```
+
+### Creating Dictionaries with Zip
+```python
+names = ["Anna", "Bob", "Charlie"]
+scores = [85, 62, 91]
+student_scores = dict(zip(names, scores))
+print(student_scores)  # Output: {'Anna': 85, 'Bob': 62, 'Charlie': 91}
+```
+
+### Why It Matters
+`zip()` is essential for pairing elements from multiple collections simultaneously. It's particularly useful when you need to process corresponding elements from different data sources.
 
 ## Unpacking
-### Definition
-Unpacking assigns elements from an iterable to variables.
 
-### Example
+### Definition and Basic Syntax
+Unpacking allows assigning elements from iterables (lists, tuples) to individual variables using the assignment operator `=`.
+
+### Code Example
 ```python
-coordinates = (10, 20)
+# Basic unpacking
+coordinates = [10, 20]
 x, y = coordinates
-print(f"x: {x}, y: {y}")
-```
-- **Output**: `x: 10, y: 20`
+print(x, y)  # Output: 10 20
 
-### Explanation
-Unpacking allows for direct assignment of iterable elements to variables.
+# Unpacking with lists
+names = ["Ada", "Grace", "Vito"]
+first, second, third = names
+print(first, second, third)  # Output: Ada Grace Vito
+
+# Packing remaining elements
+numbers = [10, 20, 30, 40, 50]
+first, *rest = numbers
+print(first, rest)  # Output: 10 [20, 30, 40, 50]
+
+# Unpacking with multiple variables
+first, middle, *last = numbers
+print(first, middle, last)  # Output: 10 20 [30, 40, 50]
+```
+
+### Ignoring Values with Underscore
+```python
+person = ["Ada", 36, "London"]
+name, _, city = person
+print(name, city)  # Output: Ada London
+```
+
+### Combining Collections with Asterisks
+```python
+first_list = [1, 2, 3]
+second_list = [4, 5, 6]
+combined = [*first_list, *second_list]
+print(combined)  # Output: [1, 2, 3, 4, 5, 6]
+
+# Dictionary merging with double asterisks
+defaults = {"theme": "light", "language": "English"}
+user_settings = {"language": "Swedish", "notification": "on"}
+settings = {**defaults, **user_settings}
+print(settings)  # Output: {'theme': 'light', 'language': 'Swedish', 'notification': 'on'}
+```
+
+### Why It Matters
+Unpacking makes code more readable and concise when working with collections. It's particularly useful for handling function arguments, processing data structures, and combining multiple sequences.
 
 ## Lambda Functions
-### Definition
-Lambda functions are small anonymous functions that can take any number of arguments but have only one expression.
 
-### Example
+### Definition and Basic Syntax
+Lambda functions are small anonymous functions defined with the `lambda` keyword. The syntax is `lambda parameters: expression`.
+
+### Code Example
 ```python
-double = lambda num: num * 2
-print(double(5))
+# Traditional function
+def double(number):
+    return number * 2
+
+print(double(5))  # Output: 10
+
+# Lambda function equivalent
+double = lambda number: number * 2
+print(double(5))  # Output: 10
 ```
-- **Output**: `10`
 
-### Explanation
-`lambda arguments: expression` creates a lambda function. Useful for one-off, simple transformations.
+### Using Lambda with Sorted
+```python
+names = ["Alexander", "Lee", "Grace", "Ada"]
+# Sort by length using lambda
+sorted_by_length = sorted(names, key=lambda name: len(name))
+print(sorted_by_length)  # Output: ['Lee', 'Ada', 'Grace', 'Alexander']
+```
 
-## Map
-### Definition
-Map applies a function to every item of an iterable and returns a map object.
-
-### Example
+### Using Lambda with Map
 ```python
 numbers = [1, 2, 3, 4, 5]
-doubled = map(lambda num: num * 2, numbers)
-print(list(doubled))
+doubled = list(map(lambda number: number * 2, numbers))
+print(doubled)  # Output: [2, 4, 6, 8, 10]
 ```
-- **Output**: `[2, 4, 6, 8, 10]`
 
-### Explanation
-`map(function, iterable)` returns an iterator that applies the function to each item in the iterable.
-
-## Filter
-### Definition
-Filter filters elements from an iterable using a function that returns True or False.
-
-### Example
+### Using Lambda with Filter
 ```python
 numbers = [1, 2, 3, 4, 5, 6]
-evens = filter(lambda num: num % 2 == 0, numbers)
-print(list(evens))
+even_numbers = list(filter(lambda number: number % 2 == 0, numbers))
+print(even_numbers)  # Output: [2, 4, 6]
 ```
-- **Output**: `[2, 4, 6]`
 
-### Explanation
-`filter(function, iterable)` returns an iterator that includes only elements for which the function returns True.
+### Why It Matters
+Lambda functions are useful for creating small, one-time functions that don't need to be reused. They're commonly used as arguments to higher-order functions like `map()`, `filter()`, and `sorted()`.
 
-## Conclusion
-Understanding and utilizing these Pythonic patterns and built-in functions enhances code readability and efficiency. Always prioritize readability over brevity.
+## Best Practices
+
+### When to Use List Comprehensions vs Loops
+- **Use list comprehensions** when the transformation is simple and readable
+- **Use traditional loops** when the logic is complex or readability suffers with comprehension
+
+### Readability Guidelines
+```python
+# Good: Simple transformation
+doubled = [x * 2 for x in numbers]
+
+# Avoid: Complex logic in comprehension
+complex_result = [process(x) for x in data if condition1(x) and condition2(x) and condition3(x)]
+
+# Better: Use traditional loop for complex logic
+result = []
+for x in data:
+    if condition1(x) and condition2(x) and condition3(x):
+        result.append(process(x))
+```
+
+### Memory Considerations
+- **Use generators** when working with large datasets to avoid memory issues
+- **Use list comprehensions** when you need all values at once
+- **Use traditional loops** when processing data one item at a time
+
+## Key Takeaways
+
+1. **List comprehensions** provide a concise way to create lists by applying transformations or filtering existing collections
+2. **Dictionary comprehensions** work similarly but create dictionaries with key-value pairs
+3. **Set comprehensions** create sets from iterables, automatically handling duplicates
+4. **Generator expressions** are memory-efficient for large datasets
+5. **Enumerate** adds counters to iterables without manual index management
+6. **Zip** combines multiple iterables element-wise into tuples
+7. **Unpacking** assigns elements from collections to individual variables
+8. **Lambda functions** create small anonymous functions useful with higher-order functions
+
+These concepts form the foundation of Pythonic programming patterns and are essential for writing clean, readable, and efficient Python code.

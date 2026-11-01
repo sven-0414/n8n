@@ -1,0 +1,19 @@
+How does connecting Python to a database improve application functionality?;Connecting Python to a database allows applications to interact with data programmatically, enabling features like storing and retrieving information during user actions such as online purchases.
+
+What are the four basic steps for connecting to a SQLite3 database in Python?;The four steps are: connect to the database file, get a cursor object, execute SQL commands, and fetch or close the connection.
+
+Why is it dangerous to use f-strings for inserting user input into SQL queries?;Using f-strings can lead to SQL injection vulnerabilities, where malicious input could alter the SQL command structure and potentially execute destructive operations.
+
+How should user input be safely inserted into SQL queries in Python?;User input should be inserted using placeholders (question marks) in the SQL query and passed separately as a tuple to the execute method.
+
+What is the purpose of committing changes when modifying data in a database?;Committing ensures that changes made with INSERT, UPDATE, or DELETE statements are permanently saved to the database.
+
+What happens if foreign key constraints are not enabled in SQLite3?;Without enabling foreign keys, invalid data relationships may be allowed, leading to inconsistent or corrupted data.
+
+What is returned when using fetchall() on a database query result?;fetchall() returns a list of tuples, where each tuple represents one row from the query results.
+
+How does fetchone() differ from fetchall() in database operations?;fetchone() returns only the first row as a tuple, while fetchall() returns all rows as a list of tuples.
+
+Why is it important to enable foreign key constraints explicitly in SQLite3?;It's important because Python's SQLite3 module does not automatically enforce foreign key constraints like some other database tools do.
+
+What are the key principles for secure database interactions in Python?;Key principles include using placeholders for user input, committing changes after modifications, enabling foreign keys, handling errors properly, and closing connections after use.

@@ -1,0 +1,19 @@
+What is the purpose of a database join?;A database join combines rows from two or more tables based on a related column between them, allowing you to retrieve complete information that is split across multiple tables.
+
+What is the difference between an inner join and a left join?;An inner join returns only rows with matching values in both tables, while a left join returns all rows from the left table and matching rows from the right table, filling unmatched right columns with NULL.
+
+What happens if you forget the ON clause in a JOIN statement?;Without an ON clause, you get a Cartesian product where every row from the first table is matched with every row from the second table.
+
+Why would you use table aliases in SQL queries?;Table aliases make queries shorter and more readable, especially when dealing with long table names or multiple joins.
+
+How do you handle column name conflicts in joined tables?;You must specify which table each column comes from by using table prefixes (e.g., `table.column`) to avoid ambiguity.
+
+What is the main benefit of normalizing data into separate tables?;Normalization reduces data redundancy and improves database organization, but requires joins to retrieve complete information across related tables.
+
+What does a full outer join return?;A full outer join returns all rows from both tables, with NULL where there's no match in either table.
+
+How do you find customers who have never placed an order using a JOIN?;Use a LEFT JOIN from customers to orders and filter for NULL values in the orders table (e.g., `WHERE o.order_id IS NULL`).
+
+What is the role of the ON clause in a JOIN operation?;The ON clause defines how tables match up by specifying the relationship between columns, typically foreign key relationships.
+
+Can you join more than two tables in a single SQL query?;Yes, you can join as many tables as needed by adding one JOIN clause for each additional table and its corresponding ON condition.

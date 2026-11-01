@@ -1,0 +1,170 @@
+document is like a Python dictionary with lists and objects inside and every
+document has a unique ID if you don't specify anything. PyMongo on the other
+hand is equal to talking like talking to MongoDB from Python. Filters are
+dictionaries so city Uppsala here if you remember that. If you take a moment here
+to think maybe which of these felt easy and which one would you like to see
+again maybe you can write that to me. So quick questions here about yesterday maybe
+take two minutes and write your answer in the chat. It's not a test it's a way
+for you and me to see if someone is stuck maybe. So you can just what is a
+collection and what is it called in SQL. What does DB customers find and give you
+and how do you see documents and why why does misspelled field name give zero
+errors instead of an error. Take a couple of minutes answer those in the chat. I'm
+still waiting for answers from many of you guys. Please answer everyone right the
+best as you can. Still missing some students yeah. Wait a couple of minutes. I'll give
+you two more minutes. All right you got an extra minute even that. All right so I'll
+answer these questions as well. So the first of all first question so what is a
+collection and was what is it called in SQL? Well the answer is it's a group of
+documents and in SQL it's a table. Second question is what does DB customers find
+give you and how do you see the documents? Well the answer here is a cursor and how do
+you see the documents is you loop over it with a for loop or actually a useless
+function as well. Third answer why does a spelled field name give zero results
+instead of an error? Well MongoDB has no fixed columns so it's just it just looks for documents
+with that field name and there are none basically that's why it's not showing you anything. All
+right now that we got that out of the way comparison operators and yesterday we could only ask for
+example is equal to for example today we will learn operators they all start with a dollar sign and gt is
+basically great to them and it is less than and and the e versions here include you see not equal so
+dollar sign not equal or equal so dollar sign e would be equal in in in in in means in this list or not in
+in the list it's pretty it's pretty straightforward here and this is basically just like in in sql
+and the trick is the shape i mean the field then a small dictionary with an operator and the value
+price dollar it i mean 500 means price less than 500 basically here so why the dollar sign and that's
+basically how mongodb tells the difference between a field name and an instruction price is a field dollar
+it is an instruction i mean it lt maybe less than the name come comes of course from english gt is greater than
+l t is less than e stands for equal and e is not equal and and n i n is not in and so on and so on okay if i read if
+let me read maybe a few aloud here the way i want you to think about them so price dollar less than 500
+so that means price less than 500 basically category uh category dollar in a list so category is one of
+these so if you remember the shape field then a small dictionary with an operator you can write
+any of them of course so if i ask a question here and how would you write stock is zero or less i can
+write it here in the chat stock is zero or less so how would we write that you can answer them in the
+chat or if you want to say it out loud you can do that as well but i think it's easiest easier to to
+answer in the chat so stock is zero or less how do we write that in the same way as we're writing here
+yeah daniel almost all right i like your answers many of you are correct hi thumb yeah can i just
+leave and rejoin i see that my chat isn't moving and everyone looks like offline for some reason can
+i just oh just log in and log out that might help okay all right okay i almost got everyone's answers
+here so i will look through i would say hold on so it would be doc colon curly bracket dollar lte
+colon zero curly bracket okay i'll write that in the chat so it would be just give me a second
+here doc colon curly bracket and a dollar sign zero curly bracket there is the writer so now that we
+know a little bit about this we can move off to and and or an and is easy several fields in the same
+dictionary must all match if it's an and or is written differently dollar or and then a list of small
+filters at least one of them must match and if you want a range on the same field for example like
+price between 200 and 600 put both operators in the same same small dictionary so let's maybe translate
+this to sql the first example is where category equals to shoes and price is greater than thousand if you
+remember that the second is where category equals to shoes or stock equals to zero okay so i can write
+it here in the chat so you see what i so it would be where we did this we kind of did this where category
+is equal to shoes and price is greater than what did we say thousand or whatever and thousand and for the or
+it would be so the and version is the most common one and it's easy just add more fields to the dictionary
+the or version looks strange at first uh why a list because each item in the list is complete little
+filter and mongodb keeps a document if any of uh any of them matches and here is also a trap that some of you
+might fall in in in python you can't you can't put the same key twice in a dictionary if you write
+price or price greater than 200 and then price less than 600 as two separate keys python will silent silently
+keeps only the last one and that's why both operators go in the same small dictionary for one field so if i ask you for example a question here
+how would you find customers in upsala or customers who get the newsletter answers no question no answers at
+all so how would you find customers in upsala or customers who get the newsletter i'll i'll i'll i'll
+put that question in the chat then you can try to how would you find yeah yeah good job guys you're with me i think this might be too easy for you
+while you figure that out i'll go to the next slide here inside objects or dot notation our product have
+an object called details with color and material inside so to search inside it use a dot i mean details dot
+color the whole thing in quotes of course and watch out also for the trap on the last line if you write details
+colon a dictionary with color black mongodb looks for the details object that is exactly that nothing more
+and nothing less remember that our products have a details object with color and material so the dot notation
+is how we reach inside it is how we reach inside it like a path so like a path is gonna go go into details
+then look at color i'm sorry and you can go also several levels deep like address dot city dot post code
+if your documents of course have that the quotes here are important uh so the whole path with the dot is one string now
+the trap if you write details equals a dictionary with color black you're asking for product whose details
+object looks exactly like that with only color black and nothing else in that order so most of most of our
+products also have material so they won't match it's like asking for someone whose whole shopping bag contains
+exactly one black hat when you really wanted anyone who has a black hat in their bag so use the dot notation here
+very important searching in arrays array are where mongodb shines so if you ask tags equals winter
+mongodb checks if the list contains winter so no loop no join dollar all means it must contain all of these
+and the dollar size check the length of the list and it works with numbers to numbers too as well
+size 44 finds the shoes that come comes in size 44 and this is actually one of my favorite things
+about mongodb is about mongodb in sql to find products with the tag winter we need product underscore tag table
+and and then a join but here we we just ask tag tags equals winter and mongodb understand that the tag is
+a list and check if the list contains winter so you don't need any special operators here dollar all is for
+when it must contain several things at once winter and cotton dollar size checks how long the list is so
+size two means exactly two tags and it works with numbers i mean it works with numbers two so our shoes
+have a list of sizes so sizes 44 finds every shoe that comes in size 44 for example does the feel exist
+well with a flexible schema some some documents have a field and some don't dollar exists true finds in the
+in the documents that have the field and notice here also the true with a capital t because this is
+python a missing field and the field with the value null are different things but the filter for city
+none matches both so with a flexible schema we call it a new question becomes important does this document
+even have the field so for example in our webshop only some customers have a phone number and lucas
+has no city at all so dollar exists true finds documents where the field is there whatever the value dollar
+exists falls finds the ones where it's missing so here's also subtle point a field can be missing or it can be
+i mean it can be there with the value null in python null is none we already know that searching for city equals
+none finds both the documents where city is missing and the one where city is null gonna find both anyway and that's
+often what you want but if you need to tell them apart use dollar exists it's like a it's like the difference
+between a form where the phone box was left empty and and the form that never had a phone box at all
+projection i mean choose your fields in sql we picked columns after select if you remember that in mongodb we
+pick fields with a second dictionary called a projection one means include uh well one means include and zero
+means leave out so one special rule here underscore id is always included like we we actually missed it
+yesterday if you remember my mistake unless you say underscore id zero so why bother choosing fields
+i mean there's two reasons first readability so when you print documents you don't want to see every field every time
+second speed and privacy if a document has a big description or personal data
+you don't want to send all all of it over the network to your
+program when you only need the name so the projection is the second argument to find one means
+basically give give me this field zero means leave it out and the only special rule is underscore id it
+always includes unless you explicitly say zero okay and one more rule in one projection you either list
+what you want with ones or list what you don't want with zeros so you can't mix them except for underscore id
+if you mix mongodb gives you actually an error in this case sort and limit skip sort and limit sort
+limit and skip sorry sorting is a method you add after find so sort by price minus one means
+the most expensive first like descending in sql if you remember that and limit is limit and skip
+is offset offset in sql so you can actually chain them like this one after the other so these three
+are methods that you add after find with a dot don't forget the dot the order you write them in
+doesn't change the results so mongodb always sorts first then skips then the limits and sort takes the
+field name and the direction so one for example is ascending uh smallest first or a to z and the minus
+one is descending you can sort by several fields by giving a list of pairs like category first then a price
+if you want limit three gives uh at most three documents and skip five jumps over the first five
+so together skip and limit are how websites show page two and three and so on so skip 10
+limits limits limits 10 gives you the second page with 10 items per page okay so count documents counts of
+course the documents that match a filter distinct gives a list of the different values of a field like
+select distinct in sql if you remember that it even works on arrays actually uh this things of tags gives
+every tag that is used so count document always need a filter even if just i mean even if it is just an
+empty dictionary for everything don't confuse it with the the len of list count documents ask the database to
+count so no documents need to be sent to python and that's much faster for big collections if you have a lot
+of collections distinct gives you each each different value once and this is like select distinct in sql the
+really neat part is what it does with arrays distinct on tags looks inside every tags list and gives you
+each tag once in sql that would that would need a join with the tags table and the distinct and so on
+and one small warning here distinct doesn't promise any particular order so if you want the list sorted
+wrap it in python sorted functions uh hopefully you will try it out today in in your lab actually so you'll
+understand that even more okay changing documents i mean to change documents we use the update one or update
+many uh so two dictionaries for example the first is filter so which document the second says what to
+change using an update operator like a dollar set and then we have the update one changes for the first match
+and update many changes all matches and notice here uh the second line uh on underscore sale doesn't exist yet
+so dollar set just adds it so no no alter table here needed so every update needs two things who and what
+who is the filter exactly like in find and what is the update and it always starts with an operator like
+the dollar set in this case i mean let's read the first line here uh update uh one product the one whose id is
+and set its price to 199 okay the second line update every product in shoes category
+and set on underscore sale to true and that field didn't exist before and mongodb simply adds it if you
+compare with sql where we need alter table first would be different i mean that result object tells you what
+happened so match underscore count is how many documents the filter found modified underscore count is how
+many actually changed and they can be different so if the price was already 199 it matches but nothing
+is modified always look at these numbers when you test your code updates operators these are the update
+operators you'll use the most set and unset add or remove fields and then you have the ink adds to a number
+and with a minus number it subtracts and that's perfect for stock i mean push adds to a list i mean add to
+also adds but only if the value isn't already in the list and pull removes from the list the one okay let's go
+through them with maybe the webshop in mind dollar set change the price change the status of an order dollar
+unset remove a field completely for example when a customer asks us to delete their phone number okay
+the empty string after it doesn't matter it's just there because well the syntax needs a value so dollar ink perfect for stock
+and when someone buys two hoodies ink stock minus two so you don't need to read the all the old value first and two sales at the same time can't mess it up
+so dollar push adds to a list like adding a tag dollar add to set does the same but only if the value isn't already there so it's safer when you don't want duplicates and dollar pull removes every copy of a value from a list okay i'll upload this to you later so you can have it in your back pocket the most important slide today
+so it's okay an empty filter means every document just like missing where in sql okay so in db browser we could
+click click revert changes mongodb saves every change immediately so there is actually no undo so the habit from sql days is even more important now
+run find or count underscore documents with the exact same filter first look at the result and only then update or delete so i i i want you to really feel this one in db browser every change
+waited for us to press right changes and we had revert changes as a safety net mongodb has no safety net the moment update underscore many or delete underscore many runs the change is saved so an empty filter matches every document so the first line makes every product free
+and the second line deletes every order in a real company that means restoring from a backup if there is one
+and explaining to your boss what happened so here is the habit and i'll ask you to say it out loud with me if you want
+find it first then change run find or count underscore documents with the exact filter and look at what comes back and only then change find to change find to update or delete okay date or insert i mean or absurd absurd is
+if not a new one is created and this is handy when you don't want when you don't know if something already exists for example syncing customers from another system
+could be something upsert is a combination of the words update and insert so picture a member membership list here person comes in with their email if they're already a member
+we update their details if not we add them as a new member so without upsert you would write find underscore one then an if statement and then either update or insert but with upsert it's it's one command when mongodb creates a new document it uses the fields from the filter here basically the email plus everything
+in dollar set the results tell you what happens match underscore count is zero and upserted underscore id holds the new documents id when it was created and upserted underscore id is none when an existing document was updated
+so upsert is very common when data comes in from another system for example every night
+deletting deleting deleting works the same way delete underscore one deletes the first match delete underscore many deletes all matches and delete underscore count tells you
+how many were deleted and remember check first then delete deleting works exactly like updating just without the second dictionary so delete underscore one removes the first document that matches the filter
+and delete underscore many removes all of them the result has delete underscore count so you can you can't check how many were removed so a good habit here is to print that number every time when you're learning here so if you expected to delete one order and it says 14 you know something went wrong also think about whether you really think about whether you really want to
+delete i mean in many real systems orders are never deleted they are never deleted they are giving the standard cancelled or something like that so basically so the company still has the history of accounting and remember from sql days last week swedish accounting law says sales record must be kept for seven years and remember let's sum up the theory before
+before you guys start coding here operators gt lt okay dollar in dollar ne written as uh yeah written as field dollar op column value details dot color reaches inside objects tags colon winter search searches in array find filter or projection dot sort limit and so on update underscore one or uh or many
+and so on update underscore one or uh or uh or many with the dollar set dollar ink dollar push dollar pull dollar add to set empty filter equals everything no undo check with the find first very important uh so the basically the the these are the points to keep in your head during when you when you start coding uh okay so i'm not gonna uh do any code along today i'm just gonna give you uh
+uh a lab to work on today so we're gonna end this session right now and i know that some of you guys aren't
+aren't aren't haven't done yesterday's lab so continue with that i'll drag the handbrake a little bit here so you have some time and then you can continue with this uh this subject with the second lab that i'm gonna upload for you sorry a bit tired today we're gonna take some break as well but before we do that do you have any questions can you still hear me or am i just speaking yeah yeah okay no it's all crystal it's all crystal clear it's
+it's clear okay perfect then we don't need to talk about this again yeah yeah exactly exactly i'll i'll i'll upload this and i can give you some um some material to learn even more about this uh and upload the lab for you as well uh you can leave the meeting take some break 10 minutes go grab some coffee or something like that and while you come back you're gonna see me uploaded some stuff i'll inform you you're welcome thank you thank you
+thank you thank you thank you thank you bye-bye robert kundo and sven ericsson still here you have any questions

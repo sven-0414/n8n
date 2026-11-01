@@ -1,0 +1,323 @@
+All right. We'll also look into what an SQL injection is and some recommended way of how to
+stop it. You can't actually stop it. I mean, there is other ways, but we'll look into that.
+So we'll have some theory first, then maybe we can code some together. That's the schedule. We
+don't need to do that. So talking to just a recap from last week. No, we haven't done this yet. So
+I skipped this part with F strings and stuff like that. We don't need that for now. So we start here.
+So why connect Python to a database? I mean, so far we have talked to the database by hand in DB
+browser, but real apps don't do that. So when you click buy on a website, for example, some code
+runs an insert. Python is basically the waiter in this case. And the database is the kitchen. So the
+user talk to the waiter and the waiter brings the order to the kitchen and brings back the food to
+you if you are in a restaurant. So today we're going to build this waiter. So here it is. Four steps
+every time I say. Talking to a database from Python is always the same four steps. We first, we connect,
+we basically open the door to the database file, and then get a cursor. And that's basically your pen.
+The thing is that runs SQL. And then we execute. You run your SQL, basically. And we fetch, we get the
+answer back. And when you're done, you close the door. And SQLite3 is built into Python. So you don't need
+to install actually anything. So there it is. Can't close. So what comes back? Well, a list in this case.
+Each row is a tupple, which is like a list that can't be changed. So it's a list of rows. You can actually
+loop over it with a for loop if you can, if you want. Sorry. Just like any list. So fetch cone here,
+or fetch all. No, fetch cone gives you basically just the first row. And that could be handy if you
+want to, for example, count something. So fetch all gives a list of tupples. So one tupple, one row.
+The danger, building SQL with f-strings. Here's the most important slide of the day, maybe. It's tempting
+to put the user's input straight into SQL with an f-string. But then the user can type SQL code
+instead of a city. So if someone types this strange text, like OR, or 1 equals 1, or anything
+like that, the query becomes a bit different. So we need to make sure that the user can't
+do this. Because 1 equals 1 would give me either true or false. It's going to answer me. And if
+I get an answer, that means I have, I can control the database. That's not good. That's what we call is SQL
+rejection. And that is one of the most common ways, actually, websites get hacked. Attackers can read
+password, maybe change prices, or maybe delete anything. It has also caused huge data leaks. You've probably heard it in the news from time to time.
+The good news is there is actually a really easy fix for it. And I recommend always use it. So the fix is basically placeholders.
+Write a question mark with where the value should go and give the values separately. The database now knows this is just a value.
+It's never code. Even if someone types a strange text, it just searches for a city with a weird name and finds nothing. So if you see comma
+here after the city, that makes it topple with one item. So forgetting is a classic error. So yeah, changing the data. So when you change the data with
+insert, update, or delete, you must call con.commit, basically save. It's the same as when we do Ctrl+S in DB Browser from last week, if you
+remember that. So if you forget, your change disappears when the program ends. And con.rollback is the same as revert changes.
+And one more thing, because last week we talked about foreign keys and stuff like that. DB Browser checks foreign keys for us, but
+Python's SQLite3 doesn't, unless we ask. So right after connecting, run. We can actually run this.
+Drag my foreign keys equals on. Otherwise, Python would happily create an order for customer 999, if you remember that from last week.
+So if you sum this up a little bit before we start coding here. So we have connect, cursor, execute, fetch, close. That's how this goes.
+Oh, that rhymes. Results come back as a list of tuples. Never put user input in SQL with F strings.
+Use a question mark for placeholders, execute SQL value. Con.commit saves and con.rollback undoes.
+Turn on foreign keys for example, pragma foreign keys equals on. Okay. So what I'm gonna do, now we have worked with DB Browser last week.
+If you remember that, we had this cool, really, really cool project we're doing here. Very expensive one.
+No, just kidding. So you can save this. I did that already. So save it as a save database as whatever.
+Not as whatever. Sorry. I'm gonna show you the folder here. There we go. As webshot.db in a folder called SQL Python.
+Just doing it right now here. And what I'm gonna do is going to open up Visual Studio Code this time. Visual Studio Code.
+There we are. Hopefully not. You're not seeing my... Okay. All right. Welcome. And yeah, thank you.
+All right. So here's Visual Studio Code. Looks familiar, doesn't it? Okay. So I'm gonna open up just the folder.
+And now I'm gonna open up that SQL folder. Okay. And I'm gonna actually do it off screen.
+I just saved it in the desktop here. So select folder. Perfect.
+Now we have our webshop.db in this folder. All right. So let me see here and close this, maybe maximize that.
+Okay. I don't know what this gibberish is here. Let's just go to files. There we go. Okay. Let's make a new file in this folder.
+So I can either click here. New file. And call it read.py. Okay. And in here, I'm gonna make a really, really simple programming.
+Import SQLite3. And then we also need to do some stuff here. You can code along if you want.
+I'm actually zooming, trying to zoom in a little bit here. So you guys can see what I'm doing.
+And we can close this. We don't need that. All right. Con equals SQLite3.
+Connect. And we want to connect. Yeah, hopefully you're guessing it right.
+Webshop.db. There you go. That's our file in this folder.
+So to do this, you need to have the file in the same folder. Otherwise, you have to point it to the right path.
+If you have it in another folder. Okay. I'm happy with that.
+And then we have cursor. Like I said earlier, equals con.cursor.
+And then we have cursor.cursor.execute. And here we can just, yeah, we can just say, shouldn't do this, but we will do it.
+Select name. Price from products. Awesome. And then we have rows equals cursor.fetch.
+All. And then we can just print it here. Print rows. So clutch.
+And then we need to close it. Con.close. Not saving anything. We just...
+Okay. Let's run this. So if I want to run this, I need to open up the terminal.
+Where is the terminal? Here it is. Control + O. Okay. That's interesting.
+Let's run this file. So this is easy. Python.read.py. And then we get some SQL back.
+And this is cool. It's a bit ugly, to be honest. So maybe, maybe let's just add a loop into this.
+Okay. So we can make it a bit... Let me see. What do we do? Execute.
+And after that, we can say, I'll remove this. No, I don't remove this. Sorry.
+Thinking here. Yeah. Let's remove that. So for name price. Actually, I'm going to change this
+by price descending. Okay. So for name price in cursor fetch all, we want to print. Let's do it in a string.
+Sorry. F. Let's make this like this maybe. Actually, no. F. I'm going to understand why I removed that later.
+Name. Let's say we want less than 20 here. And price. Also, we do the same thing with price.
+Price. Sorry. Okay. That should be cool. Truner. Now we close it. Okay. Let's run this. What did I do here? What are you doing? There we go.
+A little, little bit more nicer for us. So it looks a little bit better. So we're using F string here
+for printing. It's totally fine here. We're just playing around.
+So it's only inside SQL that they are dangerous. Okay. So when we expect one value, we use fetch cone.
+If you remember that, the slides. If anyone wants to play around. Actually, I'll put it in the chat
+here. Because I know some of you want to test this maybe. Why does it say day 8 of 10? Well, I have
+jumped over a couple of days. You know, I have slides for two weeks. But because you guys were pretty good,
+actually. And you're not that slow. So we can do this a bit faster. And I have some other stuff
+we can do maybe. I'll explain later more why we did this way. It's going to make sense. So don't worry.
+Let me see. I'm just going to put some code block in here. So you guys can try this out if you want.
+Let me go.
+Yeah. Someone is raising hands.
+Murtaza.
+Yes, I had some questions, if it's okay to ask now. The first one about the cursor. What is it?
+Is it just for Python? Or is it something general?
+Well, the cursor, just like I explained, let me just bring up the slides where I just explained this.
+And then I did. Maybe I didn't. All right. That's strange. Okay, so the cursor. So why do we use it?
+Well, a cursor is basically an object that runs SQL and holds the result while you read it. So connection,
+see the connection as an open line to the database file here. Our file. Let's go back to, yeah.
+And the cursor is you use basically to send query through it and read the answer back.
+Okay, okay. So it's not like a, oh, it can't be like a connection string or something like that.
+It's just something that wants... No, no, no, no, no, no, no. It's not that enough.
+And also the question also, sorry, about this, how price is more than 8.2 F. What does that mean?
+And also less than 20. Yeah. Yeah. See if I can find a really good explanation on that stuff.
+Let me see. One thing here where I answer you. Okay, no V3 school. Should give me, find it later.
+Well, name less than 20 here means basically left aligned. And 20 means the characters width,
+if I remember it correctly. And short names get basically spaces after them, I think. So the next column
+will always start in the same place. And this 8.2 means right aligned. And 8 here means, well,
+eight characters width. So the prices basically line up on the right, we see here. And 0.2 F here means the
+decimal number with exactly two decimals. So 599 will become 599.00. So that's what we're doing here.
+But I couldn't find good... I'll try to find a really good explanation on all of those stuff.
+So you understand those a little bit more. Okay. So I'll remove this now. I have already put it in the
+chat. So you have it there in the chat. So I'll remove it. Just for convenient here. If you want to
+try it out, you can do that. Okay. So when we go back, when we expect one value, we use fetch cone,
+like I said earlier, and it gives us one tuple. And index 0 gives the first value, for example. So if I
+redo this, actually just remove all of this, then we can have... No, this needs to be changed as well.
+Let's redo this. Select count star customers count equals cursor and fetch cone. Oh, sorry.
+There we go. Index 0. And then we can do print, sorry, print customers.
+Let's run this. If you have a lot of stuff here, you can just clear and it will clear the terminal.
+Let's run the file and I'll just press up key here to get the latest history here. And we see customers 10, 10 customers.
+Okay. So here we expected one value and that's when we use fetch cone. Now a value from a variable
+is different. So what we can do, I will actually just, sorry, oops, fat fingers today.
+Okay. Do that as well. So I'll do another one here. What I can do, for example, let's just say I want city
+equals Uppsala. That looks pretty strange. There we go.
+Here I can do cursor.execute. And now say select first underscore name, last name from customers,
+where city is equal to a question mark. And then, like I said earlier, we do city and a comma. And now what I can do is,
+instead of saying customers here, we remove all of this and say print cursor dot fetch, not fetch,
+fetch all closet. The question mark in the SQL and the value in a tuple as the second argument here. And notice
+also the comma here after the city. So if I run this, I'm going to give us back a list and a tuple. So we see Anna,
+Lindqvist, Johan Bari, Oskar Persson. And this is just to prevent some SQL injections in our database.
+Okay. Let's maybe do some, let me see what time is it now? Oh, okay. I was thinking to give you one more
+example. Let's, let me see, remove this. I'll also comment out this stuff again. There is a faster way
+of doing this, but yeah. Okay. So let me give you also the bad example. Bad example would be something
+like this. So SQL equals F string. And this is a bad example. You shouldn't do this. And then we say,
+select first underscore name from customers. I can just copy all of this actually, where the equals and
+then city, for example. And of course, city would be a variable. Well, let's just say this is what the
+user is typing. We want, he's using, he's typing something that he shouldn't be typing. So for example,
+maybe he's typing an or one, sorry, one equal, I don't know. He's have done this in many different
+ways. But what the attacker is trying to do here is trying to break, trying to get something. So for
+example, if I send in a character that I shouldn't send in, for example, like this, then the database is
+going to answer me, even if it's an error is going to answer me. And then if it's, if it gives me back
+an error, then I can start to reverse engineer it and try to see what kind of messages I get back for
+each scenario here. And then of course, you do the cursor execute and so on. So I don't have to
+exactly show you. But this is just showing you different ways of breaking our database. So of
+course, you should do it like I did it here. So city equals Uppsala. And here we just set a question
+mark. And then we put the result in a tuple here, basically. So even whatever he writes is just going
+to come back as a string. Okay, so that's very simple. I suggest taking a couple of minutes of
+break. We're going to change this is just I'm going to give you a lab on this, of course. But we need to
+talk about one more thing today. And it's actually some, yeah, well, GDPR and stuff like that.
+We're going to touch on that a little bit here. So we get that out of the way as well. And then I'm
+also going to explain what we're going to do maybe for the rest of the week here. I'm going to ask you
+guys, which I think is a good idea, a good stuff to learn. And we'll take that later. So take a couple
+of minutes of break so I can prepare for the next slides as well. Are you guys back? Okay, so we're
+going to talk a little bit about personal data. So if I ask you, what is a personal data? I'm going to
+choose someone from the list to answer. Choose Mohana in our case. What is personal data? Hello.
+Yeah, you call me. Yes, I'm asking a question. I'm asking what is personal data in our situation.
+So in our database. Clothing? Sorry, again. The product you're asking? No, I'm asking about
+personal data. What is personal data? Okay, let's see. A couple of you are raising hands. Okay,
+Gloria. You can answer it. Maybe it is about the data from the customer, the name, last name,
+where they live. Exactly. So basically, personal data. Let me share the screen again. Personal data is
+any information that can be connected to a living person. Some is obvious. I mean, name, email,
+personal number, photo. But it can also be indirect. So if only one customer lives in, for example,
+Westeros, and joined in February 2023 here, that's enough to know who it is, even without a name. So if
+you look, for example, at our customer table, it's full of personal data, actually. And then we also have
+sensitive personal data. Some data is extra sensitive, especially health, religion, political opinions,
+maybe ethnic origin, sexual orientation, union membership, fingerprints, and DNA.
+The rules for these are much stricter. So as a developer, your best rule is if you don't
+absolutely, absolutely need it, don't collect it. And in Sweden, personal numbers needs extra care too.
+EDPR is the EU law about personal data. It's long. But for developers, it boils down to a few ideas. Use data
+only for the reason you collected it, basically. Collect only what you need. Keep it correct. Delete it
+when you're done. And also you need to keep it safe. So in Sweden, the authority that checks this is called
+Integrationsmyndigheten. And companies that break these rules can get pretty big fines, actually.
+So people have rights. They can ask: What do you have about me? That's basically select.
+They can ask you to fix wrong data. That's an update. And they can ask to be deleted. And that's a delete.
+But deleting isn't always simple. Which we will look into a little bit, maybe. And here is the real
+life puzzle. Anna wants to be deleted. But Swedish accounting law here says company must keep its
+accounting records, like sales, for seven years. And the foreign key won't let us delete her anyway.
+So the solution, we can basically anonymize her. We remove her name, email, and city. But we keep the orders.
+The money is still in the books. But nobody can tell it was Anna. We have
+Sevdo anonymized and versus anonymized. Two words that sounds very much alike.
+Sevdo anonymized means we replace the name with code, like customer number one.
+But somewhere there is a key that says customer number one is Anna. So it's still personal data.
+Anonymized means there is no way back to this person, ever. Only truly anonymous data is free from GDPR.
+And that's actually harder than it sounds.
+So how do we protect the data? Well, we give people only the access they need.
+The person making sales or sales charts doesn't need customer emails. So we can make a view that hides
+those columns. Never store passwords, of course, as plain text. Use placeholders to stop also in SQL
+injections, like we did before the break. And also make backups. But remember that backups contain personal
+data too. And we have SQLite, which we are working on. We have used SQLite because it's simple.
+In companies, you often meet other frameworks like PostgreSQL here, which runs on a server. It has users,
+password permissions. So you can say exactly who may see which table and so on and so on. The good news here,
+almost everything you have learned so far works also in PostgreSQL. So select join, group by, all the same.
+So SQLite lives in one file, PostgreSQL in a server. And we don't have users and password and permissions
+and stuff like that in SQLite here. So it's just for playing around and testing and stuff like that.
+So if I open up DB browser here, I mean, we can do it in Visual Studio Code as well. But I think it's
+easiest just to go back to this and do a very simple one here. So select, zoom in here, select star from
+customers. And let's just run that. We get a list. Let's do an audit here. Look at every column in
+customers. Which ones are personal data? Can you guys write the answer in the chat? Any more else?
+I mean, we are the seven students. Any of you saying all? Okay. So most of you said all. And yes,
+first name, last name, and email for sure. And join date can also point to a person together with other
+data. Even customer ID is personal data in this case, because it links to all of it. So yeah,
+all is the right answer. Okay. So if Anna sends an email to us and says, for example, what do you have
+about me? And that's actually her right of access. So what we can do, query here. So select all from
+customers where a customer ID is equal to one. So this is her, this is the customer role. Okay. But her
+orders are also data about her. So what she's, what she bought says a lot about the person actually. So what
+we can do if she asks such a question, going to be a longer query here is select order for ID or order date
+also, also all the, I think I need to make it a bit smaller here, status as well. We had e dot name,
+also quantity and units. It's pretty long here. Don't worry. From join order items, order underscore ID
+equals, they just like we did last week. And then we do join a product P on ID equals to P dot product ID
+where customers, where customers, customers, no, customer ID is equal to one. Okay, pretty long query. But yeah, so it's a
+small recap from what we did last week. And this returned with probably missed something here. What did I miss?
+I come after the name. I think so. Yeah, that's correct. There we go. Okay, so this join gives her basically her complete history, what
+she had done. Then we can start to fix this somehow. We're not going to do that today, of course. But I want to just
+wanted to show you where we can actually see the links link to this customer, customer ID equals to one.
+So we can use join and all of the stuff we have learned and get that. And this says a lot about her, what she's
+buying and stuff like that, what dates and if it's delivered, if it's shipped. Oh yeah, the status and yeah, everything basically.
+But this only works if you know the names of the other columns, right? I mean, in an ideal world,
+when you do this, it's a security type of things. If you don't know other things, you know, like,
+if there's a table called order ID, it has such things you won't be able to extract anything really.
+Yeah. Yeah, that's correct. Okay, let's make another scenario. Let's say our analyst here, he makes sales chart.
+Do they need names and emails? No, of course not. So we could make a view for our analyst here,
+only what they need. So they will need, and our analyst would only need, for example, the date,
+maybe the city, the category, and maybe the amount. In PostgreSQL, we would give the analyst access
+to this view only. So I would give you how it would do that. Let me see. So we would do something like
+this, create, view, sales, the score for analyst lists. Okay, maybe there are many. As, and then we do the select,
+o.order, id is interesting. Also, o.order date could be a good idea. The city as well,
+c.city, and also the category, p.category. Okay, we could also give him quantity, quantity, unit price
+as amount. Okay, and then you say from, orders, o. We could do a couple of joins here. So join customer, c, on customer id,
+and then we also do, sorry, join, order items, order, id, equals, let's do another one, join products, p, on product id,
+equals, so product. So that's our analyst here. And that runs without no errors, yeah. So we have now set a view
+for our analyst, so sales for analyst. So that's basically how you do it. So the analyst can still do their job.
+So what he can do is, let's just say he wants sales per city. So we do select, so this is for analysts, city,
+sales, there we go. So from sales for analysts, we do a group by, by city. This should return,
+got the sales per city, got the sales per city with no names or emails in sight. That's how you should do it.
+Let's just say our Lucas here wants to be deleted. He never ordered anything. So there are actually no recipes,
+receipts to keep. A normal delete works. So we would do something like delete from,
+let's see here. So here's number 10 here. Delete from customers, where customer id is equal to who is
+trying to join. What is going on here? Okay, that was strange. Okay, so yeah, well, this is going to
+actually delete Lucas here. So let's run that. Let's go and check. Lucas is deleted. So that's a simple,
+very simple, delete. Now Anna wants to be deleted. And if I do this, for example, well, let me see,
+what was Anna? Anna was number one. Okay, so let's just say I want to put one here. Okay, this is going to be
+interesting. I did delete her. Wow, why did I delete her? Okay, let's just take anyone else. But we must,
+hold on, we did delete the customer, but we still have her orders. So she's not actually deleted because
+we have this foreign key constraint. So okay, so it's fine. Actually, what we can do is update customers.
+Then we can set set first name equal to deleted. And her last name would be customer, whatever. Email,
+forget the comma guys, I always do that. There we go. Email equals, work with me. I want to keep it nice.
+Null and her equals null here as well. And then we can say where, where just her ID is equal to one.
+Let's go back. Yeah, we already deleted her. So yeah, but it says, let me see,
+actually without errors, query successfully zero row affected. Oh yeah. What if I do from customers
+where customer ID is equal to one? See if it's there. No, she's not there. So if you're doing this along
+with me, don't delete Anna. What you can do is update the customer. And we can actually do that for
+customer number two, for example, just to show you. There we go. If we go back to this,
+we can see that customer number two is a deleted customer. No. So if this was a foreign key,
+then we would see this. So we can't go back to who that is. So the person is gone. But customer two here
+is still there for the accounts. Maybe the join date is left and so on. Now, is that a problem?
+Could someone figure out who it was from the date and the orders? Can answer your chat answer your
+question in the chat again? What was the question? Sorry. So the question is now that we, if we look at,
+sorry, if you look at user number two here, or sorry, ID two here, we see that we have a deleted customer.
+We can't really trace back who it is. But we can still see the join, for example, date or if orders
+or whatever. Now we have to ask a question. Could someone still figure out who this is? It's basically a
+yes or no question. Yeah. Some says yes and some says no. But this is why real anonymization is pretty hard,
+actually. Can somehow still maybe figure that out. Yeah. So I would say maybe no to this.
+Maybe yes as well. But yeah. Yeah. Fingerprinting and cross-reference. If they have access to external
+data. Yeah. So yeah. I mean, yes. So it's pretty hard. So maybe that's a good idea. So before you
+actually create any database, maybe it's a good idea to plan for this before we actually start
+do any coding and setting up databases. So you have to have a real plan. Maybe write it with pen and paper
+before we start doing any code SQL. So what we can do to revert back Anna here actually changes. There it
+is. And let me see here. Where is Anna? Yeah, there's Anna. There's Eric. Well, actually we could run this.
+It's too many questions. I have a couple of labs for you. Now, if someone noticed that, why does it say day
+eight? And this is actually day nine. Well, because I, like I said earlier, it's, you don't, I mean,
+we don't need to put too much time into SQL. I want to show you also no SQL. Does any one of you guys
+know what no SQL is? So what's the difference between SQL and no SQL? Are you answering? Yeah,
+no relation something. Yeah. SQL, just like we're doing here, SQL lite and post SQL store data in tables,
+basically with fixed columns. And the structure is basically decided in advance, like I said earlier,
+with create table and then you use join to connect tables and stuff like that. But no SQL databases
+store data in other ways, most often as something called documents that look like JSON. Anyone heard
+of JSON? Probably most of you. Okay. So each document can have its own fields. So, so related data is often
+stored together instead of in separate tables like we do in SQL. So this is not going to work here,
+but I just want to show you, for example, so in no SQL, for example, if we want to see
+Anna has ordered, it would look something like this. This is not going to work in, in here. Oh,
+oh, oh, oh, oh, oh, what did I do? There we go. Oh, so it's actually changed. Okay, that's strange. So how do I do that then?
+Why is it changing? Oh, wow. Just give me a second. It would look something like this. And we will look
+into this this week, but I want to just give you a heads up here from what's coming. Order ID would be,
+then we say customer. Customer would be Anna, of course. And in here, we will type, for example,
+what am I doing? Okay. It's going to look like items. And then it's, yeah, it's actually pretty,
+this will make sense later. Product. I'm just trying to remember this product.
+Hoodie. Let's just say we want to see the quantity of that. We would say something like this quantity.
+Oops. Quantity one. And then we keep adding whatever we want to see. And this is no SQL. So I'll type it
+here. This is no SQL. Actually, it's something called MongoDB. And this works with Python as well.
+So we will go back to Python and do all of this stuff later this week in Python. So that's what's
+coming up. Most companies actually use SQL as their main database and no SQL for some special needs,
+basically. And we will touch more about that as well. So, and I think, I know that I could give you
+more labs on SQL. And I think that's good enough for now. And let's continue with no SQL for this week
+and do a little bit more complicated stuff. What do you think, guys? Do you think that's a good idea?
+Or do you want to keep me continuing with SQL? I mean, we could deep dive even more on it,
+but I don't think it's useful. Maybe raise your hands. What were the choices? Advanced or what was
+the other one? Or continue with SQL. And the hand raised is continue?
+The hand raises do not continue. The hand raises continue with no SQL. That's what I thought. I
+felt it was too easy for you guys. So I'm going to give you some challenges this week. And of course,
+we're going to have some quiz again on Friday on that as well. So we will end this day with a couple of
+labs on SQL because we have only spoke about that today. Thank you, guys. You can bring down your
+hands. If you have any questions, you can bring up your hands. I'm actually going to end the session
+now. I think that's good enough today. Yes, Alessandro, you have your hands raised. Do you have any
+questions? No, sorry. Okay, Novika. Maybe he forgot. So if you have any questions, you can, of course,
+just raise your hands and ask the question. Otherwise, you can leave a meeting. Yes. What is your
+question, Novika? We cannot hear you, Novika. You are talking. Yeah, I think, yeah. Oh, your mic is
+muted. Oh, you're talking. We don't hear you at all, actually. Something is wrong on your end.
+Maybe you can write it in the chat. Anyone else has any questions? Yes, I can, of course,
+share the presentation. I'll do that directly after this meeting. And you're going to find them under
+databases and files, as well as video from last week. They should be there. Anyone else has problems
+with seeing the videos? You're talking about the recordings, I guess. Yeah, you should be able to
+see them by just clicking. If you're clicking on the channel databases, you should see all of the days
+there. And if you click on those, then it should show you the recordings. Otherwise, you can also
+go into recordings folder. Hmm, what's happening here? Oh, they're not here. Oh, that was the last
+week's. Oh, wow. I will do a check on that to see if I can save them somehow. I see that it's only two
+recordings. And it's from, was that Friday only? Oh, wow. For the whole week? No, Friday was Wednesday.
+No, that was Wednesday. Wednesday and Thursday. But where is Friday? Where is Monday, Tuesday? All
+of the other. Hmm, strange. I'll check that. But I'll share the presentation. Yeah, I think I have them.
+Perfect. Maybe you can upload them if you have them. Sven Eriksson. Yeah, I tried to do that.
+Thank you. Thank you. Thank you. Otherwise, you can just write it to me and see if we can find a
+solution. I don't, I have no idea what happened. Because last week, we had trouble with space
+in this domain. And we fixed that the same day. But the recordings that was recorded, that they may
+not be there for some reason. But I thought I saved them anyway. But yeah, we'll see. Okay, thank you
+too, too, for today. Do you have anyone else have any other questions? Yeah, we'll see. Are we going
+to continue with the SQL or I'm going to, or is it going to be no SQL? We will continue with SQL today.
+The labs is going to be SQL, but tomorrow we will start a new subject in the same subject, same channel.
+So we're going to look into no SQL tomorrow. Yes. Okay. From tomorrow and for the rest of the week. Yeah.
+Okay. You can leave the meeting, guys, if you want. A couple of minutes of break. And I'll upload
+the presentation and the labs for you. Thank you for today. Thank you too. Bye bye. Thank you. Bye bye.
+Bye bye. Have you seen my email? No, I haven't seen my email. Okay.

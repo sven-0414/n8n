@@ -1,0 +1,4652 @@
+1
+00:00:03,490 --> 00:00:13,500
+ So welcome back. We didn't have... I was planning to have this yesterday, but I saw that many of you were complaining about going too fast.
+
+2
+00:00:14,390 --> 00:00:21,860
+ So I gave you a day at least. Catch up a bit. You're going to have the weekend as well if you want to catch up.
+
+3
+00:00:21,860 --> 00:00:39,950
+ But before we start, let's have some quiz. Only three questions here, which I'm going to tell you right now.
+
+4
+00:00:41,410 --> 00:00:49,980
+ Or maybe I can even write it in the chat. But the first question, and you try to answer them by answering the question in the chat, like we did the other day.
+
+5
+00:00:51,510 --> 00:00:59,150
+ Just some recap on what we have done and see where you guys... Well, where the knowledge is, if it's there or not.
+
+6
+00:01:00,480 --> 00:01:10,010
+ So my first question is, can you write a filter for products that costs between 200 and 600?
+
+7
+00:01:10,690 --> 00:01:58,830
+ You have the question in the chat as well. I'm actually right. I'm waiting. No one?
+
+8
+00:01:58,830 --> 00:02:20,560
+ Yeah. Yeah, it should be in NoSQL, Novika.
+
+9
+00:02:20,560 --> 00:03:29,670
+ I see that some of you got it right. Almost. Yeah. Okay. I'll give my answer to you guys. That is the correct answer.
+
+10
+00:03:29,670 --> 00:03:34,210
+ All right. This was fun. Let's do another one.
+
+11
+00:03:34,210 --> 00:03:51,280
+ So, what's the difference? Let me see here. So why is Anastasia? Okay.
+
+12
+00:03:56,230 --> 00:04:15,990
+ Next question is trying to format this as good as possible so it doesn't disappear.
+
+13
+00:04:15,990 --> 00:04:39,660
+ Okay. So what is the difference between push and add to set without Googling or using AI or anything?
+
+14
+00:04:39,660 --> 00:04:47,640
+ Try not to cheat. Just ask yourself. If you have to, then you can.
+
+15
+00:05:02,790 --> 00:05:04,330
+ Interesting answers.
+
+16
+00:05:34,260 --> 00:05:35,860
+ Most of you have got it right.
+
+17
+00:05:36,030 --> 00:05:44,060
+ So the answer to that is, well, push always adds, no matter what.
+
+18
+00:05:44,060 --> 00:05:48,800
+ And add to set only adds if the value isn't already in the array.
+
+19
+00:05:48,800 --> 00:06:03,450
+ Someone said here, if it's an array. So I'll write the correct answer here, sir.
+
+20
+00:06:03,450 --> 00:06:28,320
+ Okay. Last question then. Just write it here first. Question three.
+
+21
+00:06:28,320 --> 00:07:26,590
+ So why should you run find before update many or delete many? Remember that? Make sure. Yeah.
+
+22
+00:07:26,590 --> 00:08:01,750
+ Or roll back. Yeah. Exactly. Yeah. Almost all of you got it, right?
+
+23
+00:08:01,750 --> 00:08:14,050
+ So basically this is to see exactly which documents the filter hits because there is no undo in MongoDB.
+
+24
+00:08:14,050 --> 00:08:23,150
+ Could be a good idea to do before we altering anything, especially for updating or deleting.
+
+25
+00:08:23,150 --> 00:08:36,890
+ So basically to see exactly which documents the filter, there is no undo in MongoDB.
+
+26
+00:08:36,890 --> 00:08:54,650
+ So there's your answer. Seems like you're learning. Today topic is something called designing documents,
+
+27
+00:08:54,650 --> 00:09:05,620
+ as you see in front of you, embed or reference, schema validation, and the aggregation pipeline.
+
+28
+00:09:05,620 --> 00:09:13,980
+ So as usual, we will of course start with this and try to explain to you all of this is.
+
+29
+00:09:13,980 --> 00:09:23,680
+ After today, you would be able to decide when to embed the data and when to reference it.
+
+30
+00:09:23,680 --> 00:09:30,720
+ Basically explain why copied data is sometimes good and sometimes a problem.
+
+31
+00:09:30,720 --> 00:09:36,640
+ We'll also add rules to a collection with schema validation.
+
+32
+00:09:36,640 --> 00:09:41,020
+ summarize data with aggregation pipelines.
+
+33
+00:09:41,020 --> 00:09:51,800
+ We have this match group sort project and we also use unwind and lookup.
+
+34
+00:09:51,800 --> 00:09:56,660
+ And don't worry if some of these words are new right now.
+
+35
+00:09:56,660 --> 00:10:04,220
+ We'll try to get through each one in the theory here.
+
+36
+00:10:04,220 --> 00:10:09,190
+ Okay, small little recap.
+
+37
+00:10:09,190 --> 00:10:16,560
+ So before we start, we have a quick recap here from yesterday's or the day before's topic.
+
+38
+00:10:17,220 --> 00:10:19,820
+ Asking better questions.
+
+39
+00:10:19,820 --> 00:10:36,890
+ Operatings like gtlt in ne written as, as we see written as here, field and then tm value.
+
+40
+00:10:36,890 --> 00:10:45,450
+ We can read inside objects.
+
+41
+00:10:45,450 --> 00:10:50,090
+ We can search in arrays, find this filter and all of that.
+
+42
+00:10:50,090 --> 00:10:56,320
+ We can update one, update many with, for example, set ink, push, pull, add to set.
+
+43
+00:10:56,320 --> 00:11:00,220
+ Empty filter equals basically everything.
+
+44
+00:11:00,220 --> 00:11:02,050
+ No undo.
+
+45
+00:11:02,050 --> 00:11:04,900
+ Check with find first, like we said.
+
+46
+00:11:05,700 --> 00:11:15,000
+ You can take a moment if you want to think which of these felt easy and which one would you like to see
+
+47
+00:11:15,000 --> 00:11:24,760
+ again, maybe you can take that and maybe write that to me later.
+
+48
+00:11:24,760 --> 00:11:38,780
+ If you have any thoughts or any questions, I have already done that.
+
+49
+00:11:41,820 --> 00:11:59,100
+ On the SQL days, we designed by tidying up, tidying up basically every fact in one place
+
+50
+00:11:59,100 --> 00:12:02,400
+ and join when we need it.
+
+51
+00:12:02,400 --> 00:12:05,690
+ MongoDB turns it around a bit.
+
+52
+00:12:05,690 --> 00:12:11,560
+ First you ask basically, how will my app use this data?
+
+53
+00:12:11,560 --> 00:12:14,780
+ What does it read together?
+
+54
+00:12:14,780 --> 00:12:22,990
+ And then you shape the document so that one read gives you what you need.
+
+55
+00:12:22,990 --> 00:12:31,420
+ So the rule of thumb here, data that is read together is stored together.
+
+56
+00:12:31,420 --> 00:12:35,740
+ So let's make this maybe a little bit more concrete.
+
+57
+00:12:35,740 --> 00:12:42,110
+ So what does our web shop app here show most often?
+
+58
+00:12:42,110 --> 00:12:46,730
+ What could it be?
+
+59
+00:12:46,730 --> 00:12:51,160
+ Well, it's probably the product page or the shopping cart
+
+60
+00:12:51,160 --> 00:12:54,780
+ or maybe the customer's order history and receipt.
+
+61
+00:12:54,780 --> 00:13:01,690
+ For each of those, we want as few reads as possible.
+
+62
+00:13:01,690 --> 00:13:06,080
+ So the receipt is a great example.
+
+63
+00:13:06,080 --> 00:13:13,070
+ It always shows the order and all of its items together.
+
+64
+00:13:13,070 --> 00:13:15,520
+ So we store them together.
+
+65
+00:13:15,520 --> 00:13:26,690
+ In SQL, the design question was, what are the things and how are they related?
+
+66
+00:13:26,690 --> 00:13:33,180
+ In MongoDB, on the other hand, we have the second question.
+
+67
+00:13:33,180 --> 00:13:35,990
+ Second question, not within us.
+
+68
+00:13:36,890 --> 00:13:40,470
+ How will they be used?
+
+69
+00:13:40,470 --> 00:13:50,300
+ So two apps with exactly the same data could have different MongoDB designs.
+
+70
+00:13:50,300 --> 00:13:53,120
+ Because they read the data differently.
+
+71
+00:13:53,120 --> 00:14:01,890
+ And that might feel strange after these SQL days we had, where there was one correct,
+
+72
+00:14:01,890 --> 00:14:03,450
+ normalized design.
+
+73
+00:14:03,450 --> 00:14:08,660
+ In MongoDB, design is more about trade-offs, actually.
+
+74
+00:14:08,660 --> 00:14:14,270
+ Embed or reference?
+
+75
+00:14:14,270 --> 00:14:16,990
+ You have two choices for related data.
+
+76
+00:14:16,990 --> 00:14:25,490
+ Embed means you put it inside the document, like the items inside an order.
+
+77
+00:14:25,490 --> 00:14:30,230
+ Reference means you just store the ID of another document.
+
+78
+00:14:30,830 --> 00:14:34,270
+ Like, for example, the customer_id in the order.
+
+79
+00:14:34,270 --> 00:14:37,020
+ That's like a foreign key.
+
+80
+00:14:37,020 --> 00:14:39,430
+ You can think of it as a foreign key.
+
+81
+00:14:39,430 --> 00:14:41,790
+ But MongoDB doesn't check it for you.
+
+82
+00:14:41,790 --> 00:14:44,270
+ Okay?
+
+83
+00:14:44,870 --> 00:14:49,930
+ So think of embedding like a folder with all of the papers inside it.
+
+84
+00:14:49,930 --> 00:14:56,370
+ Everything about the order is right there when you open the folder.
+
+85
+00:14:56,370 --> 00:14:58,020
+ Okay?
+
+86
+00:14:58,020 --> 00:15:05,640
+ But referencing is like a note that says, see the customer's file, number one or whatever.
+
+87
+00:15:07,760 --> 00:15:12,360
+ So you have to go and get the other folder.
+
+88
+00:15:12,360 --> 00:15:18,260
+ So embedding is faster to read because it's one trip to the database.
+
+89
+00:15:18,900 --> 00:15:25,790
+ Referencing keeps each piece of data in one place so it's easier to keep correct.
+
+90
+00:15:25,790 --> 00:15:32,670
+ And one important difference from SQL as well is MongoDB doesn't check references for you.
+
+91
+00:15:32,670 --> 00:15:44,510
+ If the order says customer ID 999 and there is no customer 999, MongoDB won't stop you.
+
+92
+00:15:44,510 --> 00:15:47,860
+ There are no foreign key constraints here.
+
+93
+00:15:47,860 --> 00:15:51,130
+ So the app here has to be careful.
+
+94
+00:15:58,270 --> 00:16:03,500
+ So when do we embed and when do we actually reference?
+
+95
+00:16:03,500 --> 00:16:06,420
+ Well, here's a simple checklist.
+
+96
+00:16:06,420 --> 00:16:16,990
+ Embed when you always read it together with the parent, when it belongs only to that parent.
+
+97
+00:16:16,990 --> 00:16:25,820
+ And also when there aren't too many and when it doesn't change that much as well.
+
+98
+00:16:25,820 --> 00:16:36,640
+ Reference when many documents share the same thing.
+
+99
+00:16:36,640 --> 00:16:42,640
+ Like a customer who has many orders or when a list could grow forever.
+
+100
+00:16:42,640 --> 00:16:51,420
+ Okay, let's maybe test the checklist on a few examples here.
+
+101
+00:16:51,420 --> 00:16:59,630
+ So let's see if this is an embed or a reference.
+
+102
+00:16:59,630 --> 00:17:02,940
+ A blog post and its comments.
+
+103
+00:17:02,940 --> 00:17:09,710
+ That's usually embed if there are few comments.
+
+104
+00:17:09,710 --> 00:17:16,890
+ But if a post can get thousands of reference, then that's another thing.
+
+105
+00:17:16,890 --> 00:17:24,490
+ Let's just say a student and their courses.
+
+106
+00:17:24,490 --> 00:17:28,070
+ That's also a reference.
+
+107
+00:17:28,070 --> 00:17:33,690
+ Many students share the same course and the course details change.
+
+108
+00:17:33,690 --> 00:17:37,260
+ Maybe a person and their address.
+
+109
+00:17:37,260 --> 00:17:42,250
+ Could that be a person and the address?
+
+110
+00:17:42,250 --> 00:17:43,930
+ That would be maybe embed.
+
+111
+00:17:43,930 --> 00:17:50,370
+ It belongs to that person and is read together with them.
+
+112
+00:17:50,370 --> 00:17:53,410
+ Let's take another example.
+
+113
+00:17:53,410 --> 00:17:55,330
+ A product and its reviews.
+
+114
+00:17:56,400 --> 00:17:57,680
+ That actually depends.
+
+115
+00:17:58,890 --> 00:18:01,660
+ A few reviews per product.
+
+116
+00:18:01,660 --> 00:18:04,840
+ Maybe embed thousands.
+
+117
+00:18:04,840 --> 00:18:06,680
+ If it's thousands then reference.
+
+118
+00:18:07,830 --> 00:18:10,770
+ The answer is often actually it depends.
+
+119
+00:18:10,770 --> 00:18:11,710
+ And that's fine.
+
+120
+00:18:11,710 --> 00:18:18,040
+ The point is to think about the four questions maybe on this slide.
+
+121
+00:18:18,040 --> 00:18:26,050
+ I mean read together one owner how many and how often it changes.
+
+122
+00:18:26,880 --> 00:18:28,400
+ Or it changes.
+
+123
+00:18:28,400 --> 00:18:41,830
+ So our webshop design here.
+
+124
+00:18:44,880 --> 00:18:48,980
+ Basically this is how our webshop is designed.
+
+125
+00:18:48,980 --> 00:18:51,540
+ Items are embedded in orders.
+
+126
+00:18:51,540 --> 00:18:54,110
+ The customer is a reference.
+
+127
+00:18:54,110 --> 00:18:57,120
+ Products are their own collection.
+
+128
+00:18:57,120 --> 00:19:03,030
+ And if we look for example at the last row.
+
+129
+00:19:03,030 --> 00:19:07,190
+ The product's name and price are copied into each other.
+
+130
+00:19:08,310 --> 00:19:10,750
+ Into each order item.
+
+131
+00:19:10,750 --> 00:19:13,280
+ And that's actually on purpose.
+
+132
+00:19:13,280 --> 00:19:16,160
+ Just like unit_price in SQL.
+
+133
+00:19:16,160 --> 00:19:22,560
+ If the hoodie gets more expensive tomorrow.
+
+134
+00:19:22,560 --> 00:19:26,050
+ Old receipts must still show the old price.
+
+135
+00:19:26,050 --> 00:19:35,660
+ So maybe let's walk through each row and give the reason in plain words.
+
+136
+00:19:35,660 --> 00:19:37,050
+ Order items.
+
+137
+00:19:37,050 --> 00:19:43,170
+ You never look at an order item without its order.
+
+138
+00:19:43,170 --> 00:19:49,100
+ And the item never changes basically after the order is placed.
+
+139
+00:19:50,030 --> 00:19:52,190
+ So it lives inside the order.
+
+140
+00:19:54,430 --> 00:19:56,340
+ Customer.
+
+141
+00:19:56,340 --> 00:19:58,900
+ One customer can have hundreds of orders.
+
+142
+00:19:59,530 --> 00:20:01,370
+ And if Anna here moves.
+
+143
+00:20:03,070 --> 00:20:06,430
+ We want to change her city in one place.
+
+144
+00:20:06,430 --> 00:20:09,570
+ So the order only keeps her ID.
+
+145
+00:20:09,570 --> 00:20:15,950
+ And third we have products.
+
+146
+00:20:15,950 --> 00:20:24,710
+ You look basically at products on their own all of the time.
+
+147
+00:20:26,440 --> 00:20:28,570
+ On the product page and search.
+
+148
+00:20:28,570 --> 00:20:32,610
+ And maybe stock changes with every sale.
+
+149
+00:20:32,610 --> 00:20:36,290
+ So they have their own collection.
+
+150
+00:20:36,290 --> 00:20:42,400
+ And they copied name and price in the items.
+
+151
+00:20:42,400 --> 00:20:44,220
+ Last one here.
+
+152
+00:20:44,860 --> 00:20:48,540
+ Those are basically snapshots of what the customer bought.
+
+153
+00:20:48,540 --> 00:20:50,050
+ At that price.
+
+154
+00:20:50,050 --> 00:20:51,010
+ On that day.
+
+155
+00:20:51,010 --> 00:20:57,560
+ So notice that this design is basically what we did in SQL.
+
+156
+00:20:57,560 --> 00:21:03,970
+ But with order_items moved inside orders.
+
+157
+00:21:03,970 --> 00:21:08,190
+ I know this could be a little tricky to understand sometimes.
+
+158
+00:21:08,930 --> 00:21:15,540
+ Hopefully it shouldn't be more complicated than this.
+
+159
+00:21:15,540 --> 00:21:17,220
+ This is the last day actually.
+
+160
+00:21:20,870 --> 00:21:22,390
+ I can't see if you're...
+
+161
+00:21:22,390 --> 00:21:22,910
+ Hold on.
+
+162
+00:21:25,150 --> 00:21:26,010
+ Okay.
+
+163
+00:21:26,010 --> 00:21:28,000
+ Copies have price.
+
+164
+00:21:28,000 --> 00:21:28,560
+ It says there.
+
+165
+00:21:29,360 --> 00:21:32,930
+ Copying data is called denormalization.
+
+166
+00:21:32,930 --> 00:21:36,250
+ It makes reading fast.
+
+167
+00:21:36,250 --> 00:21:39,390
+ Because everything is already in one place.
+
+168
+00:21:39,390 --> 00:21:41,390
+ But if you ask yourself.
+
+169
+00:21:41,390 --> 00:21:46,300
+ Should this copy change when the original changes?
+
+170
+00:21:46,300 --> 00:21:52,940
+ Price on a receipt maybe should freeze.
+
+171
+00:21:54,220 --> 00:21:56,520
+ That's a good copy.
+
+172
+00:21:56,520 --> 00:22:00,670
+ A customer's email should be the same everywhere.
+
+173
+00:22:00,670 --> 00:22:06,690
+ I mean if we had copied it into thousands of orders.
+
+174
+00:22:06,690 --> 00:22:10,390
+ Changing it would mean thousands of updates.
+
+175
+00:22:10,800 --> 00:22:14,690
+ And missing one would give wrong data.
+
+176
+00:22:14,690 --> 00:22:23,930
+ And that's the update problem that we had on SQL last week.
+
+177
+00:22:23,930 --> 00:22:28,210
+ Let's maybe do a thought experiment here.
+
+178
+00:22:28,210 --> 00:22:29,380
+ Experiment, sorry.
+
+179
+00:22:30,330 --> 00:22:37,340
+ Say we had copied Anna's email into every one of her orders.
+
+180
+00:22:37,340 --> 00:22:39,300
+ For convenience.
+
+181
+00:22:39,300 --> 00:22:39,540
+ Okay.
+
+182
+00:22:40,830 --> 00:22:44,000
+ Now Anna changes her email.
+
+183
+00:22:44,000 --> 00:22:49,730
+ We must find every order with her old email and update it.
+
+184
+00:22:49,730 --> 00:22:56,220
+ If our code misses one, our data disagrees with itself.
+
+185
+00:22:56,220 --> 00:22:58,120
+ So which email is right?
+
+186
+00:22:58,120 --> 00:23:05,530
+ And that's the update problem from normalization day I would say.
+
+187
+00:23:05,530 --> 00:23:08,800
+ And MongoDB doesn't protect us from it.
+
+188
+00:23:08,800 --> 00:23:13,600
+ So before you copy something, ask yourself.
+
+189
+00:23:13,600 --> 00:23:17,370
+ Should this copy change when the original changes?
+
+190
+00:23:17,370 --> 00:23:24,390
+ If the answer is no, like a price on a recipe, copy is perfect.
+
+191
+00:23:24,390 --> 00:23:30,400
+ If the answer is yes, like an email, store it in one place and then reference it.
+
+192
+00:23:30,400 --> 00:23:33,170
+ So a useful rule here.
+
+193
+00:23:33,170 --> 00:23:36,740
+ Copy things that describe the moment.
+
+194
+00:23:36,740 --> 00:23:39,930
+ Referent things that describe the present.
+
+195
+00:23:40,920 --> 00:23:42,210
+ Basically.
+
+196
+00:23:42,210 --> 00:23:50,300
+ Watch out.
+
+197
+00:23:50,300 --> 00:23:53,960
+ Because arrays can actually grow forever here.
+
+198
+00:23:53,960 --> 00:23:55,100
+ A classic mistake.
+
+199
+00:23:55,100 --> 00:23:59,520
+ Putting all of the customer's order inside the customer document.
+
+200
+00:24:00,440 --> 00:24:01,790
+ It feels natural.
+
+201
+00:24:02,490 --> 00:24:06,080
+ But a loyal customer might place thousands of orders.
+
+202
+00:24:06,080 --> 00:24:09,500
+ And the document grows and grows.
+
+203
+00:24:09,500 --> 00:24:14,050
+ A document can be at most 16 megabytes.
+
+204
+00:24:14,050 --> 00:24:17,280
+ And big documents are pretty slow.
+
+205
+00:24:17,280 --> 00:24:24,890
+ So orders get their own collection with the customer ID reference.
+
+206
+00:24:24,890 --> 00:24:32,720
+ I mean this one looks so natural that many beginners do it.
+
+207
+00:24:32,720 --> 00:24:34,720
+ A customer has orders.
+
+208
+00:24:34,720 --> 00:24:38,170
+ So let's put the orders inside the customer.
+
+209
+00:24:38,170 --> 00:24:41,980
+ It works fine for the first maybe 10 orders.
+
+210
+00:24:41,980 --> 00:24:48,260
+ But some customers will actually order every week for years.
+
+211
+00:24:49,370 --> 00:24:52,320
+ So the document gets bigger and bigger.
+
+212
+00:24:52,320 --> 00:24:58,820
+ So every time you read the customer you will get all of the orders too.
+
+213
+00:24:58,820 --> 00:25:01,500
+ Even if you only wanted their name.
+
+214
+00:25:01,500 --> 00:25:08,860
+ And every update rewrites a bigger and bigger document.
+
+215
+00:25:08,860 --> 00:25:12,960
+ And there is a hard limit here.
+
+216
+00:25:12,960 --> 00:25:17,000
+ One document can be at most 16 megabytes.
+
+217
+00:25:17,000 --> 00:25:17,640
+ Let's say that.
+
+218
+00:25:18,470 --> 00:25:20,680
+ So if I ask you guys.
+
+219
+00:25:20,680 --> 00:25:22,720
+ In our webshop design.
+
+220
+00:25:22,720 --> 00:25:25,600
+ Could any array grow forever?
+
+221
+00:25:25,600 --> 00:25:33,280
+ You can answer it in the chat if you want or whatever.
+
+222
+00:25:33,280 --> 00:25:38,250
+ So think of it is.
+
+223
+00:25:38,250 --> 00:25:40,250
+ In our webshop designer.
+
+224
+00:25:40,250 --> 00:25:42,410
+ Could any array grow forever?
+
+225
+00:25:42,410 --> 00:25:50,430
+ Basically items in an order.
+
+226
+00:25:50,430 --> 00:25:59,230
+ Well the answer here is no.
+
+227
+00:25:59,230 --> 00:26:08,060
+ Order has few items.
+
+228
+00:26:08,060 --> 00:26:10,700
+ Tags on a product.
+
+229
+00:26:10,700 --> 00:26:11,670
+ No.
+
+230
+00:26:11,670 --> 00:26:12,470
+ Sizes.
+
+231
+00:26:12,470 --> 00:26:13,030
+ No.
+
+232
+00:26:13,030 --> 00:26:15,590
+ That's why your design is safe.
+
+233
+00:26:17,510 --> 00:26:18,470
+ Who is speaking?
+
+234
+00:26:18,470 --> 00:26:18,790
+ Sorry.
+
+235
+00:26:18,790 --> 00:26:19,750
+ Can you mute your mic?
+
+236
+00:26:19,750 --> 00:26:20,060
+ Okay.
+
+237
+00:26:20,060 --> 00:26:22,150
+ Yeah.
+
+238
+00:26:22,150 --> 00:26:22,780
+ Thank you.
+
+239
+00:26:22,780 --> 00:26:28,610
+ So to get back.
+
+240
+00:26:28,610 --> 00:26:30,370
+ The answer was no.
+
+241
+00:26:30,370 --> 00:26:33,500
+ So I was asking.
+
+242
+00:26:33,500 --> 00:26:36,910
+ In our webshop design.
+
+243
+00:26:36,910 --> 00:26:38,780
+ Can any array grow forever?
+
+244
+00:26:38,780 --> 00:26:41,330
+ So if you think of items in an order.
+
+245
+00:26:41,330 --> 00:26:42,330
+ No.
+
+246
+00:26:42,330 --> 00:26:43,930
+ An order has few items.
+
+247
+00:26:43,930 --> 00:26:46,530
+ And you also have tags on a product.
+
+248
+00:26:48,720 --> 00:26:49,050
+ No.
+
+249
+00:26:49,050 --> 00:26:49,850
+ That cannot grow.
+
+250
+00:26:49,850 --> 00:26:50,810
+ The size is no.
+
+251
+00:26:51,720 --> 00:26:55,510
+ That's why also your design is safe.
+
+252
+00:26:55,510 --> 00:26:56,880
+ So the rule of thumb.
+
+253
+00:26:56,880 --> 00:26:59,360
+ If a list can grow without limit.
+
+254
+00:26:59,360 --> 00:27:01,040
+ Give it its own collection.
+
+255
+00:27:01,040 --> 00:27:12,060
+ Okay.
+
+256
+00:27:12,060 --> 00:27:13,180
+ I want you to remember.
+
+257
+00:27:13,180 --> 00:27:18,180
+ Flexible schema means nobody stops your mistakes.
+
+258
+00:27:18,180 --> 00:27:21,410
+ But you can add rules.
+
+259
+00:27:21,410 --> 00:27:25,110
+ And this is called schema validation.
+
+260
+00:27:25,110 --> 00:27:31,900
+ We say basically which fields are required.
+
+261
+00:27:31,900 --> 00:27:34,200
+ Which type that must have.
+
+262
+00:27:34,200 --> 00:27:38,940
+ And limits like for example rating between 1 and 5.
+
+263
+00:27:38,940 --> 00:27:46,790
+ And it's MongoDB version of not null and check basically.
+
+264
+00:27:48,730 --> 00:27:53,950
+ A document that breaks the rules is rejected.
+
+265
+00:27:53,950 --> 00:27:55,420
+ Just like in SQL.
+
+266
+00:27:55,420 --> 00:28:03,170
+ So schema validation is how we get some of SQL's safety back.
+
+267
+00:28:03,170 --> 00:28:04,160
+ A little bit.
+
+268
+00:28:04,160 --> 00:28:06,680
+ So we give the collection a set of rules.
+
+269
+00:28:07,560 --> 00:28:11,040
+ Written in format called JSON schema.
+
+270
+00:28:11,040 --> 00:28:13,920
+ And maybe let's read it.
+
+271
+00:28:13,920 --> 00:28:18,640
+ And we have here required.
+
+272
+00:28:20,860 --> 00:28:24,290
+ These fields must be there.
+
+273
+00:28:24,290 --> 00:28:28,350
+ Like written enough.
+
+274
+00:28:28,350 --> 00:28:30,080
+ I mean.
+
+275
+00:28:30,080 --> 00:28:32,560
+ Yeah.
+
+276
+00:28:32,560 --> 00:28:34,400
+ Like not null.
+
+277
+00:28:34,400 --> 00:28:35,160
+ Okay.
+
+278
+00:28:35,800 --> 00:28:37,500
+ And then we have properties.
+
+279
+00:28:40,090 --> 00:28:41,340
+ For each field.
+
+280
+00:28:41,340 --> 00:28:44,540
+ Type it must have.
+
+281
+00:28:44,540 --> 00:28:49,050
+ So here it says BSON type int.
+
+282
+00:28:49,050 --> 00:28:51,630
+ Means a whole number.
+
+283
+00:28:51,630 --> 00:28:58,140
+ And then we have also minimum and maximum.
+
+284
+00:28:58,140 --> 00:29:04,640
+ And that speaks for itself.
+
+285
+00:29:04,640 --> 00:29:10,050
+ And this works like a check constraint in SQL.
+
+286
+00:29:10,050 --> 00:29:18,950
+ You can also use enum for lists of allowed values.
+
+287
+00:29:18,950 --> 00:29:23,660
+ Like check status in in SQL.
+
+288
+00:29:25,930 --> 00:29:31,230
+ So when someone inserts a document that breaks the rules.
+
+289
+00:29:31,230 --> 00:29:32,590
+ MongoDB rejects it.
+
+290
+00:29:33,310 --> 00:29:35,950
+ With the error document failed validation.
+
+291
+00:29:35,950 --> 00:29:41,020
+ And the nice part is that it's flexible.
+
+292
+00:29:41,020 --> 00:29:45,250
+ You only write rules for the fields you care about.
+
+293
+00:29:45,250 --> 00:29:47,840
+ Other fields are still allowed.
+
+294
+00:29:47,840 --> 00:29:52,350
+ So you get the safety where you need it.
+
+295
+00:29:52,350 --> 00:29:55,070
+ And freedom everywhere else.
+
+296
+00:30:02,170 --> 00:30:04,190
+ And this is the second big topic.
+
+297
+00:30:06,720 --> 00:30:10,240
+ It's MongoDB's version of group buy.
+
+298
+00:30:10,240 --> 00:30:11,160
+ And much more.
+
+299
+00:30:12,480 --> 00:30:16,730
+ Think of an assembly line in a factory.
+
+300
+00:30:16,730 --> 00:30:20,640
+ Documents go in at the top.
+
+301
+00:30:20,640 --> 00:30:26,470
+ And each stage does one job and passes the result on.
+
+302
+00:30:26,470 --> 00:30:31,280
+ Here first we keep only delivered orders.
+
+303
+00:30:32,290 --> 00:30:36,170
+ Then group them per customer and count.
+
+304
+00:30:36,170 --> 00:30:37,120
+ Then sort.
+
+305
+00:30:37,120 --> 00:30:41,410
+ So the whole pipeline is just a python list of dictionaries.
+
+306
+00:30:41,410 --> 00:30:46,010
+ So if you imagine a factory that makes reports.
+
+307
+00:30:46,010 --> 00:30:48,910
+ At the start of the line all orders come in.
+
+308
+00:30:49,600 --> 00:30:52,060
+ Station one match.
+
+309
+00:30:52,060 --> 00:30:55,590
+ Throws away everything that isn't delivered.
+
+310
+00:30:55,590 --> 00:30:56,840
+ Station two.
+
+311
+00:30:56,840 --> 00:30:58,400
+ Group.
+
+312
+00:30:58,400 --> 00:31:01,980
+ Sort what's left into piles.
+
+313
+00:31:03,610 --> 00:31:08,380
+ One pile per customer and counts basically each pile.
+
+314
+00:31:08,380 --> 00:31:10,600
+ And then you have maybe station three.
+
+315
+00:31:10,600 --> 00:31:11,480
+ That sorts.
+
+316
+00:31:11,480 --> 00:31:12,920
+ Puts the piles in order.
+
+317
+00:31:13,480 --> 00:31:15,040
+ Maybe the biggest first.
+
+318
+00:31:15,040 --> 00:31:17,500
+ And at the end of the line.
+
+319
+00:31:17,500 --> 00:31:20,250
+ Out comes basically our report.
+
+320
+00:31:20,250 --> 00:31:24,290
+ So each station does one small job.
+
+321
+00:31:24,290 --> 00:31:30,400
+ And it only sees what the station before it passed on.
+
+322
+00:31:30,400 --> 00:31:31,130
+ Okay.
+
+323
+00:31:31,770 --> 00:31:35,250
+ So that's why the order here matters.
+
+324
+00:31:35,250 --> 00:31:38,370
+ If you sort before you group.
+
+325
+00:31:38,370 --> 00:31:39,910
+ The sorting is wasted.
+
+326
+00:31:40,970 --> 00:31:44,010
+ In python the pipeline is just a list of dictionaries.
+
+327
+00:31:44,010 --> 00:31:47,330
+ And we pass it to basically to aggregate.
+
+328
+00:31:47,330 --> 00:31:49,120
+ And here's a tip for you.
+
+329
+00:31:49,120 --> 00:31:50,560
+ When a pipeline doesn't work.
+
+330
+00:31:51,440 --> 00:31:54,510
+ Remove stages from the end.
+
+331
+00:31:54,510 --> 00:31:56,610
+ And add them back one at a time.
+
+332
+00:31:56,610 --> 00:31:59,210
+ To see where it goes wrong basically.
+
+333
+00:31:59,210 --> 00:32:12,600
+ Stages and their SQL friends.
+
+334
+00:32:12,600 --> 00:32:16,260
+ Most stages have a friend from SQL.
+
+335
+00:32:17,380 --> 00:32:20,190
+ Match is where.
+
+336
+00:32:20,190 --> 00:32:22,800
+ Group is group by.
+
+337
+00:32:22,800 --> 00:32:25,670
+ Sort is order by.
+
+338
+00:32:25,670 --> 00:32:28,470
+ Project is select.
+
+339
+00:32:28,470 --> 00:32:30,300
+ And limit is limit.
+
+340
+00:32:30,300 --> 00:32:33,200
+ Two are new.
+
+341
+00:32:33,200 --> 00:32:34,370
+ Unwind.
+
+342
+00:32:34,370 --> 00:32:36,850
+ Which we'll see in a moment.
+
+343
+00:32:36,850 --> 00:32:41,180
+ And lookup.
+
+344
+00:32:41,180 --> 00:32:43,510
+ Which is MongoDB's join.
+
+345
+00:32:43,510 --> 00:32:48,020
+ So a tip here.
+
+346
+00:32:48,020 --> 00:32:50,300
+ If you put match after group.
+
+347
+00:32:50,300 --> 00:32:51,740
+ It works like.
+
+348
+00:32:51,740 --> 00:32:54,620
+ Should work.
+
+349
+00:32:54,620 --> 00:32:56,780
+ Works like having.
+
+350
+00:32:58,230 --> 00:32:58,850
+ I would say.
+
+351
+00:33:01,710 --> 00:33:05,800
+ I mean let's translate an SQL query.
+
+352
+00:33:05,800 --> 00:33:06,890
+ You know.
+
+353
+00:33:06,890 --> 00:33:08,610
+ Into stages.
+
+354
+00:33:08,610 --> 00:33:10,630
+ If you for example.
+
+355
+00:33:10,630 --> 00:33:11,900
+ Say select.
+
+356
+00:33:11,900 --> 00:33:17,280
+ Maybe I can write it in the chat.
+
+357
+00:33:17,280 --> 00:33:18,750
+ Instead of just saying it.
+
+358
+00:33:18,750 --> 00:33:21,690
+ So you understand what I'm talking about here.
+
+359
+00:33:21,690 --> 00:33:22,570
+ So if I say.
+
+360
+00:33:23,360 --> 00:33:29,790
+ Select query.
+
+361
+00:33:29,790 --> 00:33:49,900
+ Select cut.
+
+362
+00:33:49,900 --> 00:33:50,620
+ And let me see.
+
+363
+00:33:59,740 --> 00:34:17,930
+ I'm writing.
+
+364
+00:34:17,930 --> 00:34:20,160
+ So that's why I'm quiet.
+
+365
+00:34:20,160 --> 00:34:22,400
+ You will see soon in the chat.
+
+366
+00:34:22,400 --> 00:34:35,050
+ So let's translate this one.
+
+367
+00:34:35,050 --> 00:34:36,410
+ So select category.
+
+368
+00:34:36,410 --> 00:34:37,520
+ If you look in the chat.
+
+369
+00:34:37,520 --> 00:34:39,270
+ Count star from products.
+
+370
+00:34:39,270 --> 00:34:41,270
+ Where stock is greater than zero.
+
+371
+00:34:41,270 --> 00:34:42,390
+ Group by category.
+
+372
+00:34:42,390 --> 00:34:44,190
+ Order by count.
+
+373
+00:34:44,190 --> 00:34:45,190
+ Descent.
+
+374
+00:34:45,190 --> 00:34:46,240
+ Limit two.
+
+375
+00:34:46,240 --> 00:34:47,520
+ In MongoDB.
+
+376
+00:34:47,520 --> 00:34:50,660
+ A match stage.
+
+377
+00:34:50,660 --> 00:34:51,780
+ With the stock.
+
+378
+00:34:51,780 --> 00:34:53,050
+ Greater than zero.
+
+379
+00:34:53,050 --> 00:34:55,960
+ And a group stage.
+
+380
+00:34:55,960 --> 00:34:56,920
+ By category.
+
+381
+00:34:56,920 --> 00:34:57,950
+ With a count.
+
+382
+00:34:57,950 --> 00:35:00,440
+ A sort stage.
+
+383
+00:35:00,440 --> 00:35:01,860
+ By count.
+
+384
+00:35:01,860 --> 00:35:02,720
+ Minus one.
+
+385
+00:35:02,720 --> 00:35:03,920
+ And the limit stage.
+
+386
+00:35:03,920 --> 00:35:05,040
+ With two.
+
+387
+00:35:05,040 --> 00:35:06,070
+ Same pieces.
+
+388
+00:35:06,070 --> 00:35:07,450
+ Written as a list.
+
+389
+00:35:07,450 --> 00:35:08,890
+ Instead of a sentence.
+
+390
+00:35:08,890 --> 00:35:10,270
+ Okay.
+
+391
+00:35:10,270 --> 00:35:12,310
+ So a big difference from SQL.
+
+392
+00:35:12,310 --> 00:35:12,870
+ In SQL.
+
+393
+00:35:12,870 --> 00:35:13,830
+ The order of the.
+
+394
+00:35:14,490 --> 00:35:16,130
+ Clauses is fixed.
+
+395
+00:35:16,130 --> 00:35:17,180
+ In a.
+
+396
+00:35:17,180 --> 00:35:17,980
+ In a pipeline.
+
+397
+00:35:17,980 --> 00:35:18,780
+ You choose.
+
+398
+00:35:18,780 --> 00:35:19,490
+ The order.
+
+399
+00:35:19,490 --> 00:35:21,400
+ And you can use.
+
+400
+00:35:21,400 --> 00:35:22,600
+ The same stage.
+
+401
+00:35:22,600 --> 00:35:23,000
+ The same stage.
+
+402
+00:35:23,000 --> 00:35:24,040
+ Several times.
+
+403
+00:35:24,040 --> 00:35:25,740
+ So a match.
+
+404
+00:35:25,740 --> 00:35:27,180
+ After a group.
+
+405
+00:35:27,180 --> 00:35:28,380
+ Works like.
+
+406
+00:35:28,380 --> 00:35:29,090
+ Having.
+
+407
+00:35:29,090 --> 00:35:30,470
+ Because.
+
+408
+00:35:30,470 --> 00:35:32,620
+ It filters.
+
+409
+00:35:32,620 --> 00:35:33,800
+ The groups.
+
+410
+00:35:33,800 --> 00:35:37,330
+ So the.
+
+411
+00:35:37,330 --> 00:35:38,110
+ Two.
+
+412
+00:35:38,110 --> 00:35:38,910
+ New.
+
+413
+00:35:38,910 --> 00:35:39,390
+ Ones.
+
+414
+00:35:39,390 --> 00:35:39,950
+ Unwind.
+
+415
+00:35:39,950 --> 00:35:40,700
+ And lookup.
+
+416
+00:35:40,700 --> 00:35:41,240
+ Are.
+
+417
+00:35:41,240 --> 00:35:45,110
+ What.
+
+418
+00:35:45,110 --> 00:35:45,910
+ We will look.
+
+419
+00:35:45,910 --> 00:35:46,870
+ Into.
+
+420
+00:35:46,870 --> 00:35:47,430
+ Maybe.
+
+421
+00:35:47,430 --> 00:35:48,410
+ Later.
+
+422
+00:35:48,410 --> 00:35:49,020
+ Because that.
+
+423
+00:35:49,020 --> 00:35:49,980
+ Handle.
+
+424
+00:35:49,980 --> 00:35:50,620
+ They handle.
+
+425
+00:35:50,620 --> 00:35:51,100
+ Arrays.
+
+426
+00:35:51,100 --> 00:35:51,820
+ And joins.
+
+427
+00:35:56,090 --> 00:35:58,160
+ Group.
+
+428
+00:35:58,160 --> 00:35:58,560
+ Needs.
+
+429
+00:35:58,560 --> 00:35:59,200
+ An underscore.
+
+430
+00:35:59,200 --> 00:35:59,740
+ ID.
+
+431
+00:35:59,740 --> 00:36:01,850
+ What to group by.
+
+432
+00:36:01,850 --> 00:36:02,550
+ Here.
+
+433
+00:36:02,550 --> 00:36:03,190
+ A dollar.
+
+434
+00:36:03,190 --> 00:36:03,870
+ Category.
+
+435
+00:36:03,870 --> 00:36:05,340
+ With a dollar sign.
+
+436
+00:36:05,340 --> 00:36:07,410
+ In a pipeline.
+
+437
+00:36:07,410 --> 00:36:08,210
+ A dollar.
+
+438
+00:36:08,210 --> 00:36:08,850
+ In front.
+
+439
+00:36:08,850 --> 00:36:09,440
+ Of.
+
+440
+00:36:09,440 --> 00:36:11,040
+ A field name.
+
+441
+00:36:11,040 --> 00:36:11,440
+ Means.
+
+442
+00:36:12,190 --> 00:36:13,120
+ The value.
+
+443
+00:36:13,120 --> 00:36:13,440
+ Of.
+
+444
+00:36:13,440 --> 00:36:14,830
+ This field.
+
+445
+00:36:14,830 --> 00:36:16,110
+ Then.
+
+446
+00:36:16,110 --> 00:36:16,590
+ We add.
+
+447
+00:36:16,590 --> 00:36:17,570
+ As many.
+
+448
+00:36:17,570 --> 00:36:18,500
+ Calculations.
+
+449
+00:36:18,500 --> 00:36:19,220
+ As we want.
+
+450
+00:36:20,510 --> 00:36:20,830
+ Some.
+
+451
+00:36:21,540 --> 00:36:22,010
+ One.
+
+452
+00:36:22,010 --> 00:36:22,920
+ Counts.
+
+453
+00:36:22,920 --> 00:36:23,520
+ Like.
+
+454
+00:36:23,520 --> 00:36:24,000
+ Count.
+
+455
+00:36:24,000 --> 00:36:24,800
+ Star.
+
+456
+00:36:26,490 --> 00:36:27,070
+ Or.
+
+457
+00:36:27,070 --> 00:36:27,870
+ Average dollar.
+
+458
+00:36:27,870 --> 00:36:28,430
+ Price.
+
+459
+00:36:28,430 --> 00:36:28,670
+ Is.
+
+460
+00:36:28,670 --> 00:36:29,470
+ The average.
+
+461
+00:36:29,470 --> 00:36:29,870
+ Price.
+
+462
+00:36:29,870 --> 00:36:30,270
+ Whatever.
+
+463
+00:36:30,800 --> 00:36:31,600
+ These are called.
+
+464
+00:36:32,540 --> 00:36:33,720
+ Accumulators.
+
+465
+00:36:33,720 --> 00:36:34,040
+ Actually.
+
+466
+00:36:34,850 --> 00:36:36,190
+ And group.
+
+467
+00:36:36,190 --> 00:36:36,970
+ Is.
+
+468
+00:36:36,970 --> 00:36:37,900
+ The stage.
+
+469
+00:36:37,900 --> 00:36:38,940
+ That needs.
+
+470
+00:36:38,940 --> 00:36:39,860
+ The most.
+
+471
+00:36:39,860 --> 00:36:40,950
+ Practice.
+
+472
+00:36:40,950 --> 00:36:42,150
+ Maybe.
+
+473
+00:36:42,150 --> 00:36:42,630
+ Let's read.
+
+474
+00:36:42,630 --> 00:36:43,420
+ This slowly.
+
+475
+00:36:43,420 --> 00:36:44,770
+ Underscore.
+
+476
+00:36:44,770 --> 00:36:45,490
+ ID.
+
+477
+00:36:45,490 --> 00:36:46,380
+ Says.
+
+478
+00:36:46,380 --> 00:36:46,900
+ What.
+
+479
+00:36:47,780 --> 00:36:49,560
+ To group by.
+
+480
+00:36:49,560 --> 00:36:50,200
+ The dollar.
+
+481
+00:36:50,200 --> 00:36:50,760
+ Category.
+
+482
+00:36:50,760 --> 00:36:51,080
+ Means.
+
+483
+00:36:51,720 --> 00:36:52,200
+ Make.
+
+484
+00:36:52,200 --> 00:36:52,680
+ One.
+
+485
+00:36:52,680 --> 00:36:53,080
+ Group.
+
+486
+00:36:53,080 --> 00:36:53,480
+ For.
+
+487
+00:36:53,480 --> 00:36:53,800
+ Each.
+
+488
+00:36:53,800 --> 00:36:54,360
+ Different.
+
+489
+00:36:54,360 --> 00:36:54,840
+ Value.
+
+490
+00:36:54,840 --> 00:36:55,000
+ Of.
+
+491
+00:36:55,000 --> 00:36:56,050
+ Category.
+
+492
+00:36:56,050 --> 00:36:57,810
+ And.
+
+493
+00:36:57,810 --> 00:36:58,960
+ If.
+
+494
+00:36:58,960 --> 00:36:59,560
+ You.
+
+495
+00:36:59,560 --> 00:37:00,120
+ Write.
+
+496
+00:37:00,120 --> 00:37:00,440
+ None.
+
+497
+00:37:00,440 --> 00:37:01,080
+ Instead.
+
+498
+00:37:01,080 --> 00:37:01,720
+ Everything.
+
+499
+00:37:01,720 --> 00:37:02,040
+ Goes.
+
+500
+00:37:02,040 --> 00:37:02,520
+ Into.
+
+501
+00:37:02,520 --> 00:37:02,840
+ One.
+
+502
+00:37:02,840 --> 00:37:03,160
+ Single.
+
+503
+00:37:03,160 --> 00:37:04,650
+ Group.
+
+504
+00:37:04,650 --> 00:37:06,030
+ Which.
+
+505
+00:37:06,030 --> 00:37:06,770
+ Is.
+
+506
+00:37:06,770 --> 00:37:06,930
+ How.
+
+507
+00:37:06,930 --> 00:37:07,090
+ You.
+
+508
+00:37:07,090 --> 00:37:07,330
+ Go.
+
+509
+00:37:07,330 --> 00:37:07,810
+ Is.
+
+510
+00:37:07,810 --> 00:37:08,210
+ Basically.
+
+511
+00:37:08,210 --> 00:37:08,370
+ How.
+
+512
+00:37:08,370 --> 00:37:08,470
+ You.
+
+513
+00:37:08,450 --> 00:37:08,690
+ Get.
+
+514
+00:37:08,690 --> 00:37:08,790
+ The.
+
+515
+00:37:08,770 --> 00:37:09,090
+ Grand.
+
+516
+00:37:09,090 --> 00:37:12,740
+ Total.
+
+517
+00:37:12,740 --> 00:37:13,140
+ Then.
+
+518
+00:37:13,800 --> 00:37:14,510
+ You.
+
+519
+00:37:14,510 --> 00:37:14,830
+ Name.
+
+520
+00:37:14,830 --> 00:37:14,990
+ Your.
+
+521
+00:37:14,990 --> 00:37:15,550
+ Results.
+
+522
+00:37:15,550 --> 00:37:16,670
+ Products.
+
+523
+00:37:16,670 --> 00:37:17,230
+ Colon.
+
+524
+00:37:17,230 --> 00:37:18,920
+ Someone.
+
+525
+00:37:18,920 --> 00:37:21,570
+ For.
+
+526
+00:37:21,570 --> 00:37:21,730
+ Each.
+
+527
+00:37:21,730 --> 00:37:22,290
+ Document.
+
+528
+00:37:22,290 --> 00:37:22,450
+ In.
+
+529
+00:37:22,450 --> 00:37:22,550
+ The.
+
+530
+00:37:22,530 --> 00:37:22,850
+ Group.
+
+531
+00:37:22,850 --> 00:37:23,720
+ Add.
+
+532
+00:37:23,720 --> 00:37:23,960
+ One.
+
+533
+00:37:23,960 --> 00:37:24,440
+ Basically.
+
+534
+00:37:24,440 --> 00:37:24,680
+ So.
+
+535
+00:37:24,680 --> 00:37:24,780
+ It.
+
+536
+00:37:24,760 --> 00:37:25,320
+ Counts.
+
+537
+00:37:25,320 --> 00:37:25,880
+ So.
+
+538
+00:37:25,880 --> 00:37:26,280
+ Average.
+
+539
+00:37:26,280 --> 00:37:26,760
+ Underscore.
+
+540
+00:37:26,760 --> 00:37:27,320
+ Price.
+
+541
+00:37:27,320 --> 00:37:27,960
+ Colon.
+
+542
+00:37:27,960 --> 00:37:29,280
+ And.
+
+543
+00:37:29,280 --> 00:37:29,680
+ Average.
+
+544
+00:37:29,680 --> 00:37:29,920
+ Of.
+
+545
+00:37:29,920 --> 00:37:30,320
+ Dollar.
+
+546
+00:37:30,320 --> 00:37:30,880
+ Price.
+
+547
+00:37:30,880 --> 00:37:32,080
+ That's.
+
+548
+00:37:32,080 --> 00:37:32,640
+ Basically.
+
+549
+00:37:32,640 --> 00:37:32,880
+ The.
+
+550
+00:37:32,880 --> 00:37:33,200
+ Average.
+
+551
+00:37:33,200 --> 00:37:33,360
+ Of.
+
+552
+00:37:33,360 --> 00:37:33,520
+ The.
+
+553
+00:37:33,520 --> 00:37:33,840
+ Price.
+
+554
+00:37:33,840 --> 00:37:34,320
+ Field.
+
+555
+00:37:34,320 --> 00:37:36,570
+ The.
+
+556
+00:37:36,570 --> 00:37:36,890
+ Dollar.
+
+557
+00:37:36,890 --> 00:37:37,210
+ Sign.
+
+558
+00:37:37,210 --> 00:37:38,330
+ Inside.
+
+559
+00:37:38,330 --> 00:37:38,650
+ The.
+
+560
+00:37:38,650 --> 00:37:39,130
+ Quotes.
+
+561
+00:37:39,130 --> 00:37:39,450
+ Is.
+
+562
+00:37:39,450 --> 00:37:39,610
+ The.
+
+563
+00:37:39,610 --> 00:37:40,010
+ Most.
+
+564
+00:37:40,010 --> 00:37:40,410
+ Common.
+
+565
+00:37:40,410 --> 00:37:40,970
+ Mistake.
+
+566
+00:37:40,970 --> 00:37:41,600
+ Because.
+
+567
+00:37:41,600 --> 00:37:41,920
+ Without.
+
+568
+00:37:41,920 --> 00:37:42,120
+ It.
+
+569
+00:37:42,120 --> 00:37:42,840
+ MongoDB.
+
+570
+00:37:43,320 --> 00:37:43,880
+ Sees.
+
+571
+00:37:45,160 --> 00:37:45,400
+ The.
+
+572
+00:37:45,400 --> 00:37:45,880
+ Text.
+
+573
+00:37:45,880 --> 00:37:46,360
+ Price.
+
+574
+00:37:46,920 --> 00:37:47,160
+ And.
+
+575
+00:37:47,160 --> 00:37:47,480
+ Not.
+
+576
+00:37:47,480 --> 00:37:47,720
+ The.
+
+577
+00:37:47,720 --> 00:37:48,120
+ Value.
+
+578
+00:37:48,120 --> 00:37:48,280
+ Of.
+
+579
+00:37:48,280 --> 00:37:48,440
+ The.
+
+580
+00:37:48,440 --> 00:37:48,760
+ Field.
+
+581
+00:37:49,750 --> 00:37:49,990
+ And.
+
+582
+00:37:49,990 --> 00:37:50,230
+ Other.
+
+583
+00:37:50,230 --> 00:37:51,270
+ Accumulators.
+
+584
+00:37:51,270 --> 00:37:51,430
+ You.
+
+585
+00:37:51,430 --> 00:37:51,590
+ Will.
+
+586
+00:37:51,590 --> 00:37:51,830
+ See.
+
+587
+00:37:51,830 --> 00:37:52,070
+ Is.
+
+588
+00:37:52,070 --> 00:37:52,310
+ Min.
+
+589
+00:37:52,310 --> 00:37:52,870
+ Max.
+
+590
+00:37:52,870 --> 00:37:53,190
+ For.
+
+591
+00:37:53,190 --> 00:37:53,830
+ Smallest.
+
+592
+00:37:53,830 --> 00:37:53,990
+ And.
+
+593
+00:37:53,990 --> 00:37:54,470
+ Largest.
+
+594
+00:37:55,030 --> 00:37:55,270
+ And.
+
+595
+00:37:55,270 --> 00:37:55,670
+ Push.
+
+596
+00:37:56,470 --> 00:37:56,790
+ Which.
+
+597
+00:37:56,790 --> 00:37:57,590
+ Collects.
+
+598
+00:37:57,590 --> 00:37:58,150
+ Values.
+
+599
+00:37:58,150 --> 00:37:58,470
+ Into.
+
+600
+00:37:58,470 --> 00:37:58,630
+ A.
+
+601
+00:37:58,630 --> 00:37:58,950
+ List.
+
+602
+00:38:00,670 --> 00:38:02,420
+ And.
+
+603
+00:38:02,490 --> 00:38:03,120
+ To.
+
+604
+00:38:03,120 --> 00:38:03,280
+ Look.
+
+605
+00:38:03,280 --> 00:38:03,440
+ At.
+
+606
+00:38:03,440 --> 00:38:04,000
+ Unwind.
+
+607
+00:38:04,000 --> 00:38:04,380
+ Unwind.
+
+608
+00:38:04,380 --> 00:38:05,650
+ Our.
+
+609
+00:38:05,650 --> 00:38:06,130
+ Items.
+
+610
+00:38:06,130 --> 00:38:06,370
+ Are.
+
+611
+00:38:06,370 --> 00:38:06,930
+ Inside.
+
+612
+00:38:06,930 --> 00:38:07,030
+ A.
+
+613
+00:38:07,030 --> 00:38:07,330
+ List.
+
+614
+00:38:08,140 --> 00:38:08,380
+ So.
+
+615
+00:38:08,380 --> 00:38:08,540
+ To.
+
+616
+00:38:08,540 --> 00:38:08,940
+ Group.
+
+617
+00:38:08,940 --> 00:38:09,260
+ By.
+
+618
+00:38:09,260 --> 00:38:09,790
+ A.
+
+619
+00:38:09,790 --> 00:38:10,340
+ Product.
+
+620
+00:38:10,980 --> 00:38:11,220
+ We.
+
+621
+00:38:11,220 --> 00:38:11,460
+ Need.
+
+622
+00:38:11,460 --> 00:38:11,700
+ To.
+
+623
+00:38:11,700 --> 00:38:12,020
+ Get.
+
+624
+00:38:12,020 --> 00:38:13,060
+ Them.
+
+625
+00:38:13,060 --> 00:38:13,300
+ Out.
+
+626
+00:38:13,300 --> 00:38:14,380
+ And.
+
+627
+00:38:14,380 --> 00:38:14,940
+ Unwind.
+
+628
+00:38:14,940 --> 00:38:15,500
+ Does.
+
+629
+00:38:15,500 --> 00:38:16,060
+ That.
+
+630
+00:38:16,060 --> 00:38:18,610
+ It.
+
+631
+00:38:18,610 --> 00:38:18,850
+ Does.
+
+632
+00:38:18,850 --> 00:38:19,250
+ That.
+
+633
+00:38:19,250 --> 00:38:19,730
+ But.
+
+634
+00:38:19,730 --> 00:38:20,720
+ It.
+
+635
+00:38:20,720 --> 00:38:21,040
+ Makes.
+
+636
+00:38:21,040 --> 00:38:21,280
+ It.
+
+637
+00:38:21,280 --> 00:38:21,520
+ Makes.
+
+638
+00:38:21,520 --> 00:38:21,760
+ One.
+
+639
+00:38:21,760 --> 00:38:22,240
+ Copy.
+
+640
+00:38:22,240 --> 00:38:22,400
+ Of.
+
+641
+00:38:22,400 --> 00:38:22,560
+ The.
+
+642
+00:38:22,560 --> 00:38:23,040
+ Document.
+
+643
+00:38:23,040 --> 00:38:23,280
+ For.
+
+644
+00:38:23,280 --> 00:38:23,760
+ Each.
+
+645
+00:38:23,760 --> 00:38:24,320
+ Item.
+
+646
+00:38:24,320 --> 00:38:24,560
+ In.
+
+647
+00:38:24,560 --> 00:38:24,660
+ The.
+
+648
+00:38:24,640 --> 00:38:24,960
+ List.
+
+649
+00:38:24,960 --> 00:38:25,980
+ So.
+
+650
+00:38:25,980 --> 00:38:26,380
+ Order.
+
+651
+00:38:26,380 --> 00:38:26,780
+ One.
+
+652
+00:38:26,780 --> 00:38:27,420
+ Has.
+
+653
+00:38:27,420 --> 00:38:27,980
+ Two.
+
+654
+00:38:27,980 --> 00:38:28,540
+ Items.
+
+655
+00:38:28,540 --> 00:38:29,720
+ So.
+
+656
+00:38:29,720 --> 00:38:29,960
+ It.
+
+657
+00:38:29,960 --> 00:38:30,440
+ Becomes.
+
+658
+00:38:30,440 --> 00:38:31,000
+ Two.
+
+659
+00:38:31,000 --> 00:38:31,560
+ Documents.
+
+660
+00:38:31,560 --> 00:38:32,740
+ Now.
+
+661
+00:38:32,740 --> 00:38:33,140
+ Each.
+
+662
+00:38:33,140 --> 00:38:33,780
+ Item.
+
+663
+00:38:33,780 --> 00:38:34,100
+ Can.
+
+664
+00:38:34,100 --> 00:38:34,340
+ Be.
+
+665
+00:38:34,340 --> 00:38:34,980
+ Grouped.
+
+666
+00:38:34,980 --> 00:38:35,220
+ And.
+
+667
+00:38:35,220 --> 00:38:35,780
+ Counted.
+
+668
+00:38:36,570 --> 00:38:36,810
+ So.
+
+669
+00:38:36,810 --> 00:38:37,050
+ Think.
+
+670
+00:38:37,050 --> 00:38:37,210
+ Of.
+
+671
+00:38:37,210 --> 00:38:37,370
+ It.
+
+672
+00:38:37,370 --> 00:38:37,690
+ As.
+
+673
+00:38:37,690 --> 00:38:39,050
+ Unpacking.
+
+674
+00:38:39,050 --> 00:38:39,150
+ A.
+
+675
+00:38:39,130 --> 00:38:39,530
+ Shopping.
+
+676
+00:38:39,530 --> 00:38:39,770
+ Bag.
+
+677
+00:38:39,770 --> 00:38:40,550
+ Onto.
+
+678
+00:38:40,550 --> 00:38:40,870
+ The.
+
+679
+00:38:40,870 --> 00:38:41,270
+ Table.
+
+680
+00:38:41,270 --> 00:38:41,590
+ On.
+
+681
+00:38:41,590 --> 00:38:41,690
+ A.
+
+682
+00:38:41,670 --> 00:38:41,990
+ Table.
+
+683
+00:38:41,990 --> 00:38:43,190
+ Okay.
+
+684
+00:38:43,740 --> 00:38:45,800
+ So.
+
+685
+00:38:45,800 --> 00:38:46,040
+ Why.
+
+686
+00:38:46,040 --> 00:38:46,200
+ Do.
+
+687
+00:38:46,200 --> 00:38:46,300
+ We.
+
+688
+00:38:46,280 --> 00:38:46,520
+ Need.
+
+689
+00:38:46,520 --> 00:38:47,000
+ Unwind.
+
+690
+00:38:47,000 --> 00:38:47,810
+ Well.
+
+691
+00:38:47,810 --> 00:38:48,130
+ Say.
+
+692
+00:38:48,130 --> 00:38:48,290
+ We.
+
+693
+00:38:48,290 --> 00:38:48,530
+ Want.
+
+694
+00:38:48,530 --> 00:38:48,770
+ To.
+
+695
+00:38:48,770 --> 00:38:49,090
+ Know.
+
+696
+00:38:49,090 --> 00:38:49,330
+ How.
+
+697
+00:38:49,330 --> 00:38:49,570
+ Many.
+
+698
+00:38:49,570 --> 00:38:50,130
+ Hoodies.
+
+699
+00:38:50,130 --> 00:38:50,370
+ We.
+
+700
+00:38:50,370 --> 00:38:51,410
+ Have.
+
+701
+00:38:51,410 --> 00:38:51,730
+ Sold.
+
+702
+00:38:52,830 --> 00:38:53,270
+ The.
+
+703
+00:38:53,270 --> 00:38:53,670
+ Hoodies.
+
+704
+00:38:53,670 --> 00:38:54,150
+ Are.
+
+705
+00:38:54,150 --> 00:38:55,280
+ Inside.
+
+706
+00:38:55,280 --> 00:38:56,220
+ The.
+
+707
+00:38:56,220 --> 00:38:56,780
+ Items.
+
+708
+00:38:56,780 --> 00:38:57,340
+ Lists.
+
+709
+00:38:57,340 --> 00:38:57,740
+ Of.
+
+710
+00:38:57,740 --> 00:38:58,460
+ Different.
+
+711
+00:38:58,460 --> 00:38:59,020
+ Orders.
+
+712
+00:39:08,630 --> 00:39:09,030
+ We.
+
+713
+00:39:09,030 --> 00:39:09,730
+ Unwind.
+
+714
+00:39:09,730 --> 00:39:10,290
+ Every.
+
+715
+00:39:10,290 --> 00:39:10,930
+ Order.
+
+716
+00:39:10,930 --> 00:39:11,550
+ With.
+
+717
+00:39:11,550 --> 00:39:12,770
+ Three.
+
+718
+00:39:12,770 --> 00:39:13,330
+ Items.
+
+719
+00:39:13,330 --> 00:39:13,890
+ Becomes.
+
+720
+00:39:13,890 --> 00:39:14,290
+ Three.
+
+721
+00:39:14,290 --> 00:39:15,230
+ Documents.
+
+722
+00:39:15,230 --> 00:39:16,720
+ Each.
+
+723
+00:39:16,720 --> 00:39:17,200
+ With.
+
+724
+00:39:17,200 --> 00:39:17,520
+ One.
+
+725
+00:39:17,520 --> 00:39:18,080
+ Item.
+
+726
+00:39:18,080 --> 00:39:19,240
+ And.
+
+727
+00:39:19,240 --> 00:39:19,560
+ Order.
+
+728
+00:39:19,560 --> 00:39:19,880
+ One.
+
+729
+00:39:20,840 --> 00:39:21,160
+ Had.
+
+730
+00:39:21,160 --> 00:39:21,260
+ A.
+
+731
+00:39:21,240 --> 00:39:21,640
+ Hoodie.
+
+732
+00:39:21,640 --> 00:39:21,800
+ And.
+
+733
+00:39:21,800 --> 00:39:21,900
+ A.
+
+734
+00:39:21,800 --> 00:39:22,200
+ Cap.
+
+735
+00:39:22,740 --> 00:39:23,350
+ So.
+
+736
+00:39:23,350 --> 00:39:23,750
+ After.
+
+737
+00:39:23,750 --> 00:39:24,470
+ Unwind.
+
+738
+00:39:24,470 --> 00:39:24,790
+ There.
+
+739
+00:39:24,790 --> 00:39:25,030
+ Are.
+
+740
+00:39:25,030 --> 00:39:25,350
+ Two.
+
+741
+00:39:25,350 --> 00:39:26,150
+ Documents.
+
+742
+00:39:26,150 --> 00:39:26,470
+ Both.
+
+743
+00:39:26,470 --> 00:39:26,710
+ With.
+
+744
+00:39:26,710 --> 00:39:27,110
+ ID.
+
+745
+00:39:27,110 --> 00:39:27,510
+ One.
+
+746
+00:39:29,100 --> 00:39:29,500
+ One.
+
+747
+00:39:29,500 --> 00:39:29,740
+ With.
+
+748
+00:39:29,740 --> 00:39:29,840
+ A.
+
+749
+00:39:29,820 --> 00:39:30,300
+ Hoodie.
+
+750
+00:39:30,300 --> 00:39:30,460
+ And.
+
+751
+00:39:30,460 --> 00:39:30,700
+ One.
+
+752
+00:39:30,700 --> 00:39:30,860
+ With.
+
+753
+00:39:30,860 --> 00:39:30,960
+ A.
+
+754
+00:39:30,940 --> 00:39:32,400
+ Cap.
+
+755
+00:39:32,400 --> 00:39:33,240
+ Now.
+
+756
+00:39:33,240 --> 00:39:33,400
+ We.
+
+757
+00:39:33,400 --> 00:39:33,560
+ Can.
+
+758
+00:39:33,560 --> 00:39:33,880
+ Group.
+
+759
+00:39:33,880 --> 00:39:34,280
+ By.
+
+760
+00:39:34,280 --> 00:39:34,760
+ Item.
+
+761
+00:39:34,760 --> 00:39:35,160
+ Name.
+
+762
+00:39:35,400 --> 00:39:35,560
+ And.
+
+763
+00:39:35,560 --> 00:39:35,960
+ Sum.
+
+764
+00:39:36,120 --> 00:39:36,280
+ The.
+
+765
+00:39:46,690 --> 00:39:47,090
+ Unwind.
+
+766
+00:39:48,140 --> 00:39:48,760
+ Exactly.
+
+767
+00:39:48,760 --> 00:39:49,080
+ The.
+
+768
+00:39:49,080 --> 00:39:49,640
+ 23.
+
+769
+00:39:49,640 --> 00:39:50,280
+ Rows.
+
+770
+00:39:50,280 --> 00:39:50,440
+ We.
+
+771
+00:39:50,440 --> 00:39:50,840
+ Had.
+
+772
+00:39:50,840 --> 00:39:51,160
+ In.
+
+773
+00:39:51,160 --> 00:39:52,040
+ Order.
+
+774
+00:39:52,040 --> 00:39:52,520
+ Underscore.
+
+775
+00:39:52,520 --> 00:39:53,000
+ Item.
+
+776
+00:39:53,000 --> 00:39:53,320
+ Table.
+
+777
+00:39:53,320 --> 00:39:53,480
+ In.
+
+778
+00:39:53,480 --> 00:39:53,880
+ SQL.
+
+779
+00:39:53,880 --> 00:39:56,260
+ But.
+
+780
+00:39:56,260 --> 00:39:56,660
+ Unwind.
+
+781
+00:39:56,660 --> 00:39:57,060
+ Basically.
+
+782
+00:39:57,060 --> 00:39:57,620
+ Turns.
+
+783
+00:39:57,620 --> 00:39:57,780
+ The.
+
+784
+00:39:57,780 --> 00:39:58,500
+ Embedded.
+
+785
+00:39:58,500 --> 00:39:58,980
+ List.
+
+786
+00:39:58,980 --> 00:39:59,380
+ Back.
+
+787
+00:39:59,380 --> 00:39:59,700
+ Into.
+
+788
+00:39:59,700 --> 00:40:00,260
+ Rows.
+
+789
+00:40:00,260 --> 00:40:01,310
+ When.
+
+790
+00:40:01,310 --> 00:40:01,630
+ We.
+
+791
+00:40:01,630 --> 00:40:02,650
+ Basically.
+
+792
+00:40:02,650 --> 00:40:02,970
+ Need.
+
+793
+00:40:02,970 --> 00:40:03,290
+ Them.
+
+794
+00:40:03,290 --> 00:40:04,680
+ Okay.
+
+795
+00:40:04,680 --> 00:40:05,290
+ And.
+
+796
+00:40:05,290 --> 00:40:05,390
+ Then.
+
+797
+00:40:05,370 --> 00:40:05,530
+ We.
+
+798
+00:40:05,530 --> 00:40:05,690
+ Had.
+
+799
+00:40:05,690 --> 00:40:06,010
+ Another.
+
+800
+00:40:06,010 --> 00:40:06,250
+ One.
+
+801
+00:40:06,250 --> 00:40:06,490
+ Called.
+
+802
+00:40:06,490 --> 00:40:06,970
+ Lookup.
+
+803
+00:40:09,130 --> 00:40:09,850
+ MongoDB.
+
+804
+00:40:09,850 --> 00:40:10,970
+ Join.
+
+805
+00:40:10,970 --> 00:40:11,210
+ You.
+
+806
+00:40:11,210 --> 00:40:11,370
+ Can.
+
+807
+00:40:11,370 --> 00:40:11,770
+ Call it.
+
+808
+00:40:11,770 --> 00:40:13,030
+ From.
+
+809
+00:40:13,030 --> 00:40:13,430
+ Which.
+
+810
+00:40:13,430 --> 00:40:13,990
+ Collection.
+
+811
+00:40:13,990 --> 00:40:14,390
+ Which.
+
+812
+00:40:14,390 --> 00:40:14,790
+ Field.
+
+813
+00:40:14,790 --> 00:40:15,190
+ Here.
+
+814
+00:40:15,190 --> 00:40:15,590
+ And.
+
+815
+00:40:15,590 --> 00:40:15,830
+ Which.
+
+816
+00:40:15,830 --> 00:40:16,230
+ Field.
+
+817
+00:40:16,230 --> 00:40:16,830
+ There.
+
+818
+00:40:16,830 --> 00:40:17,710
+ And.
+
+819
+00:40:17,710 --> 00:40:18,030
+ What.
+
+820
+00:40:19,390 --> 00:40:20,600
+ To.
+
+821
+00:40:20,600 --> 00:40:20,840
+ Call.
+
+822
+00:40:20,840 --> 00:40:21,000
+ The.
+
+823
+00:40:21,000 --> 00:40:21,480
+ Result.
+
+824
+00:40:21,480 --> 00:40:22,540
+ Basically.
+
+825
+00:40:22,540 --> 00:40:25,990
+ The.
+
+826
+00:40:25,990 --> 00:40:26,390
+ Matching.
+
+827
+00:40:26,390 --> 00:40:26,870
+ Documents.
+
+828
+00:40:26,870 --> 00:40:27,110
+ Are.
+
+829
+00:40:27,110 --> 00:40:27,430
+ Put.
+
+830
+00:40:27,430 --> 00:40:27,750
+ In.
+
+831
+00:40:27,750 --> 00:40:28,230
+ A.
+
+832
+00:40:28,230 --> 00:40:28,510
+ New.
+
+833
+00:40:28,510 --> 00:40:29,120
+ Array.
+
+834
+00:40:29,120 --> 00:40:30,060
+ It.
+
+835
+00:40:30,060 --> 00:40:30,300
+ Works.
+
+836
+00:40:31,260 --> 00:40:31,820
+ But.
+
+837
+00:40:31,820 --> 00:40:31,980
+ If.
+
+838
+00:40:31,980 --> 00:40:32,380
+ You.
+
+839
+00:40:32,380 --> 00:40:32,700
+ Need.
+
+840
+00:40:32,880 --> 00:40:33,480
+ A.
+
+841
+00:40:33,480 --> 00:40:34,120
+ Lookup.
+
+842
+00:40:34,120 --> 00:40:34,520
+ In.
+
+843
+00:40:34,680 --> 00:40:35,080
+ Every.
+
+844
+00:40:35,080 --> 00:40:35,560
+ Query.
+
+845
+00:40:35,800 --> 00:40:36,090
+ Your.
+
+846
+00:40:36,090 --> 00:40:36,490
+ Design.
+
+847
+00:40:36,490 --> 00:40:36,730
+ Might.
+
+848
+00:40:36,730 --> 00:40:36,890
+ Be.
+
+849
+00:40:36,890 --> 00:40:37,130
+ Wrong.
+
+850
+00:40:37,320 --> 00:40:37,680
+ So.
+
+851
+00:40:37,680 --> 00:40:38,080
+ Remember.
+
+852
+00:40:38,080 --> 00:40:38,240
+ The.
+
+853
+00:40:38,240 --> 00:40:38,940
+ Data.
+
+854
+00:40:38,940 --> 00:40:39,340
+ That.
+
+855
+00:40:39,340 --> 00:40:39,580
+ Is.
+
+856
+00:40:39,580 --> 00:40:39,900
+ Read.
+
+857
+00:40:40,060 --> 00:40:40,620
+ Together.
+
+858
+00:40:40,620 --> 00:40:40,940
+ Is.
+
+859
+00:40:40,940 --> 00:40:41,340
+ Stored.
+
+860
+00:40:41,500 --> 00:40:41,980
+ Together.
+
+861
+00:40:42,140 --> 00:40:43,660
+ So.
+
+862
+00:40:43,660 --> 00:40:43,900
+ Let's.
+
+863
+00:40:43,900 --> 00:40:44,220
+ Maybe.
+
+864
+00:40:44,540 --> 00:40:44,940
+ Read.
+
+865
+00:40:46,300 --> 00:40:46,620
+ The.
+
+866
+00:40:46,620 --> 00:40:46,860
+ Four.
+
+867
+00:40:46,860 --> 00:40:47,490
+ Parts.
+
+868
+00:40:47,490 --> 00:40:51,190
+ So.
+
+869
+00:40:51,190 --> 00:40:52,380
+ Which collections.
+
+870
+00:40:52,380 --> 00:40:53,790
+ To look in.
+
+871
+00:40:53,790 --> 00:40:54,360
+ Here.
+
+872
+00:40:54,360 --> 00:40:55,000
+ Customers.
+
+873
+00:40:57,390 --> 00:40:57,630
+ So.
+
+874
+00:40:57,630 --> 00:40:58,190
+ From.
+
+875
+00:40:58,190 --> 00:40:58,910
+ Customers.
+
+876
+00:41:03,790 --> 00:41:04,190
+ Local.
+
+877
+00:41:04,190 --> 00:41:04,860
+ Field.
+
+878
+00:41:04,860 --> 00:41:07,240
+ We see.
+
+879
+00:41:09,610 --> 00:41:10,090
+ Well.
+
+880
+00:41:10,090 --> 00:41:10,650
+ The field.
+
+881
+00:41:10,650 --> 00:41:10,970
+ In.
+
+882
+00:41:10,970 --> 00:41:11,210
+ Our.
+
+883
+00:41:11,210 --> 00:41:11,850
+ Documents.
+
+884
+00:41:12,410 --> 00:41:12,570
+ And.
+
+885
+00:41:12,570 --> 00:41:12,730
+ Then.
+
+886
+00:41:12,730 --> 00:41:13,050
+ We have.
+
+887
+00:41:16,740 --> 00:41:17,360
+ The value.
+
+888
+00:41:17,360 --> 00:41:17,520
+ Is.
+
+889
+00:41:17,520 --> 00:41:18,080
+ Customer.
+
+890
+00:41:18,080 --> 00:41:18,690
+ ID.
+
+891
+00:41:18,690 --> 00:41:23,240
+ Then.
+
+892
+00:41:23,240 --> 00:41:23,560
+ We have.
+
+893
+00:41:23,560 --> 00:41:23,880
+ Another.
+
+894
+00:41:23,880 --> 00:41:24,040
+ One.
+
+895
+00:41:24,040 --> 00:41:24,360
+ Called.
+
+896
+00:41:24,360 --> 00:41:24,760
+ Foreign.
+
+897
+00:41:24,760 --> 00:41:25,240
+ Field.
+
+898
+00:41:25,240 --> 00:41:25,480
+ Under.
+
+899
+00:41:25,480 --> 00:41:25,800
+ It.
+
+900
+00:41:26,100 --> 00:41:26,980
+ And.
+
+901
+00:41:26,980 --> 00:41:27,140
+ The.
+
+902
+00:41:27,140 --> 00:41:27,700
+ Field.
+
+903
+00:41:27,700 --> 00:41:28,100
+ In.
+
+904
+00:41:28,250 --> 00:41:29,190
+ In.
+
+905
+00:41:29,190 --> 00:41:29,430
+ The.
+
+906
+00:41:29,430 --> 00:41:29,830
+ Other.
+
+907
+00:41:29,830 --> 00:41:30,310
+ Collection.
+
+908
+00:41:31,050 --> 00:41:33,460
+ Underscore.
+
+909
+00:41:33,460 --> 00:41:34,020
+ ID.
+
+910
+00:41:34,020 --> 00:41:34,340
+ In.
+
+911
+00:41:34,340 --> 00:41:35,140
+ Customers.
+
+912
+00:41:35,360 --> 00:41:37,730
+ As.
+
+913
+00:41:39,840 --> 00:41:40,080
+ The.
+
+914
+00:41:40,080 --> 00:41:40,400
+ Name.
+
+915
+00:41:40,400 --> 00:41:40,640
+ Of.
+
+916
+00:41:40,640 --> 00:41:40,800
+ The.
+
+917
+00:41:40,800 --> 00:41:41,040
+ New.
+
+918
+00:41:41,040 --> 00:41:41,480
+ Field.
+
+919
+00:41:41,480 --> 00:41:41,760
+ Where.
+
+920
+00:41:41,760 --> 00:41:42,160
+ The.
+
+921
+00:41:42,160 --> 00:41:42,800
+ Matches.
+
+922
+00:41:42,800 --> 00:41:43,040
+ Are.
+
+923
+00:41:43,040 --> 00:41:43,440
+ Put.
+
+924
+00:41:43,440 --> 00:41:45,710
+ So.
+
+925
+00:41:45,710 --> 00:41:45,950
+ The.
+
+926
+00:41:45,950 --> 00:41:46,590
+ Results.
+
+927
+00:41:46,590 --> 00:41:47,310
+ Is.
+
+928
+00:41:47,310 --> 00:41:47,790
+ Always.
+
+929
+00:41:47,790 --> 00:41:47,890
+ A.
+
+930
+00:41:47,870 --> 00:41:48,190
+ List.
+
+931
+00:41:48,190 --> 00:41:48,990
+ Even.
+
+932
+00:41:48,990 --> 00:41:49,090
+ If.
+
+933
+00:41:49,070 --> 00:41:49,230
+ There.
+
+934
+00:41:49,230 --> 00:41:49,390
+ Is.
+
+935
+00:41:49,390 --> 00:41:49,790
+ Only.
+
+936
+00:41:49,790 --> 00:41:50,030
+ One.
+
+937
+00:41:50,030 --> 00:41:50,510
+ Match.
+
+938
+00:41:50,510 --> 00:41:51,310
+ So.
+
+939
+00:41:51,310 --> 00:41:51,470
+ We.
+
+940
+00:41:51,470 --> 00:41:51,870
+ Usually.
+
+941
+00:41:51,870 --> 00:41:52,350
+ Follow.
+
+942
+00:41:52,350 --> 00:41:54,100
+ Lookup.
+
+943
+00:41:54,100 --> 00:41:54,580
+ With.
+
+944
+00:41:54,580 --> 00:41:55,140
+ Unwind.
+
+945
+00:41:55,140 --> 00:41:55,950
+ To.
+
+946
+00:41:55,950 --> 00:41:56,350
+ Turn.
+
+947
+00:41:56,350 --> 00:41:56,590
+ The.
+
+948
+00:41:56,590 --> 00:41:56,910
+ List.
+
+949
+00:41:56,910 --> 00:41:57,390
+ Into.
+
+950
+00:41:57,390 --> 00:41:57,840
+ A.
+
+951
+00:41:57,840 --> 00:41:58,320
+ Single.
+
+952
+00:41:58,320 --> 00:41:58,880
+ Object.
+
+953
+00:41:58,880 --> 00:42:00,290
+ So.
+
+954
+00:42:00,290 --> 00:42:00,530
+ Why.
+
+955
+00:42:00,530 --> 00:42:00,770
+ Not.
+
+956
+00:42:00,770 --> 00:42:01,330
+ Use.
+
+957
+00:42:01,330 --> 00:42:02,130
+ Lookup.
+
+958
+00:42:02,130 --> 00:42:02,370
+ All.
+
+959
+00:42:02,370 --> 00:42:02,530
+ The.
+
+960
+00:42:02,530 --> 00:42:02,930
+ Time.
+
+961
+00:42:02,930 --> 00:42:03,640
+ Like.
+
+962
+00:42:03,640 --> 00:42:03,960
+ Join.
+
+963
+00:42:03,960 --> 00:42:04,200
+ In.
+
+964
+00:42:04,200 --> 00:42:04,520
+ SQL.
+
+965
+00:42:05,370 --> 00:42:06,370
+ Because.
+
+966
+00:42:06,370 --> 00:42:06,610
+ It.
+
+967
+00:42:06,610 --> 00:42:07,250
+ Slower.
+
+968
+00:42:07,250 --> 00:42:07,810
+ Than.
+
+969
+00:42:07,810 --> 00:42:08,210
+ Reading.
+
+970
+00:42:08,210 --> 00:42:08,450
+ One.
+
+971
+00:42:08,450 --> 00:42:08,930
+ Document.
+
+972
+00:42:08,930 --> 00:42:09,760
+ And.
+
+973
+00:42:09,760 --> 00:42:10,320
+ MongoDB.
+
+974
+00:42:10,320 --> 00:42:10,480
+ Is.
+
+975
+00:42:10,480 --> 00:42:11,200
+ Designed.
+
+976
+00:42:11,200 --> 00:42:12,160
+ Around.
+
+977
+00:42:12,160 --> 00:42:13,120
+ Embedding.
+
+978
+00:42:13,120 --> 00:42:14,170
+ So.
+
+979
+00:42:14,170 --> 00:42:14,570
+ Use.
+
+980
+00:42:14,570 --> 00:42:15,290
+ Lookup.
+
+981
+00:42:15,290 --> 00:42:16,120
+ For.
+
+982
+00:42:16,120 --> 00:42:17,080
+ Reports.
+
+983
+00:42:17,080 --> 00:42:17,720
+ And.
+
+984
+00:42:17,720 --> 00:42:18,280
+ Occasional.
+
+985
+00:42:18,280 --> 00:42:19,000
+ Questions.
+
+986
+00:42:19,000 --> 00:42:21,430
+ You.
+
+987
+00:42:21,430 --> 00:42:21,670
+ Might.
+
+988
+00:42:21,670 --> 00:42:21,910
+ Have.
+
+989
+00:42:21,910 --> 00:42:22,580
+ So.
+
+990
+00:42:22,580 --> 00:42:22,680
+ If.
+
+991
+00:42:22,660 --> 00:42:22,820
+ Your.
+
+992
+00:42:22,820 --> 00:42:23,140
+ App.
+
+993
+00:42:23,140 --> 00:42:23,540
+ Needs.
+
+994
+00:42:23,540 --> 00:42:24,020
+ Lookup.
+
+995
+00:42:24,020 --> 00:42:24,260
+ On.
+
+996
+00:42:24,260 --> 00:42:24,660
+ Every.
+
+997
+00:42:24,660 --> 00:42:25,060
+ Single.
+
+998
+00:42:25,060 --> 00:42:25,460
+ Page.
+
+999
+00:42:25,460 --> 00:42:26,020
+ That's.
+
+1000
+00:42:26,020 --> 00:42:26,180
+ A.
+
+1001
+00:42:26,180 --> 00:42:26,420
+ Signed.
+
+1002
+00:42:26,420 --> 00:42:26,580
+ That.
+
+1003
+00:42:26,580 --> 00:42:26,740
+ The.
+
+1004
+00:42:26,740 --> 00:42:27,060
+ Data.
+
+1005
+00:42:27,060 --> 00:42:27,780
+ That's.
+
+1006
+00:42:27,780 --> 00:42:28,020
+ Read.
+
+1007
+00:42:28,020 --> 00:42:28,500
+ Together.
+
+1008
+00:42:28,500 --> 00:42:28,900
+ Isn't.
+
+1009
+00:42:28,900 --> 00:42:29,260
+ Stored.
+
+1010
+00:42:29,260 --> 00:42:29,620
+ Together.
+
+1011
+00:42:29,620 --> 00:42:37,150
+ Remember.
+
+1012
+00:42:37,150 --> 00:42:37,390
+ Let's.
+
+1013
+00:42:37,390 --> 00:42:37,630
+ Sum.
+
+1014
+00:42:37,630 --> 00:42:37,870
+ Up.
+
+1015
+00:42:37,870 --> 00:42:38,070
+ This.
+
+1016
+00:42:38,070 --> 00:42:38,430
+ Theory.
+
+1017
+00:42:38,430 --> 00:42:38,670
+ Here.
+
+1018
+00:42:38,670 --> 00:42:40,760
+ Design.
+
+1019
+00:42:40,760 --> 00:42:41,000
+ By.
+
+1020
+00:42:41,000 --> 00:42:41,480
+ Asking.
+
+1021
+00:42:41,480 --> 00:42:41,640
+ How.
+
+1022
+00:42:41,640 --> 00:42:41,880
+ The.
+
+1023
+00:42:41,880 --> 00:42:42,200
+ App.
+
+1024
+00:42:53,860 --> 00:43:00,940
+ Copies are fast but must be updated everywhere unless they should freeze.
+
+1025
+00:43:00,940 --> 00:43:07,770
+ Then also schema validation equals MongoDBs not null and check.
+
+1026
+00:43:07,770 --> 00:43:09,630
+ Aggregation.
+
+1027
+00:43:09,630 --> 00:43:10,680
+ Match.
+
+1028
+00:43:10,680 --> 00:43:11,000
+ Group.
+
+1029
+00:43:11,000 --> 00:43:11,400
+ Sort.
+
+1030
+00:43:11,400 --> 00:43:11,800
+ Project.
+
+1031
+00:43:11,800 --> 00:43:12,200
+ Unwind.
+
+1032
+00:43:12,200 --> 00:43:12,760
+ Lookup.
+
+1033
+00:43:12,760 --> 00:43:20,200
+ These are these are the points to keep in your head during the labs today.
+
+1034
+00:43:21,440 --> 00:43:34,400
+ So when we when you write the code try to to see spot where well spot them.
+
+1035
+00:43:35,680 --> 00:43:41,260
+ If something feels unclear then just ask me for the lab.
+
+1036
+00:43:43,600 --> 00:43:50,220
+ And I also have one more slide that I want to show you.
+
+1037
+00:43:50,220 --> 00:43:51,500
+ Let me see what time is it.
+
+1038
+00:43:51,500 --> 00:43:56,250
+ Okay maybe I can show this slide and then we can take a break.
+
+1039
+00:43:58,320 --> 00:44:04,990
+ I was planning to show show this as well but we don't have time because we are moving on to
+
+1040
+00:44:04,990 --> 00:44:06,830
+ the next subject next next week.
+
+1041
+00:44:08,990 --> 00:44:11,360
+ But a very important one.
+
+1042
+00:44:20,630 --> 00:44:26,460
+ Let's see which one I don't know.
+
+1043
+00:44:26,460 --> 00:44:27,130
+ Okay.
+
+1044
+00:44:28,090 --> 00:44:33,450
+ We haven't talked about injections in MongoDB.
+
+1045
+00:44:33,450 --> 00:44:38,100
+ And MongoDB has no SQL so there is no SQL injections in MongoDB.
+
+1046
+00:44:38,100 --> 00:44:39,450
+ Right?
+
+1047
+00:44:39,450 --> 00:44:40,900
+ Not quite.
+
+1048
+00:44:40,900 --> 00:44:42,580
+ Imagine a website that sends
+
+1049
+00:44:44,800 --> 00:44:47,420
+ json to our python code.
+
+1050
+00:44:47,420 --> 00:44:52,370
+ A normal user sends an email address.
+
+1051
+00:44:52,370 --> 00:44:55,650
+ An attacker sends a small dictionary.
+
+1052
+00:44:55,650 --> 00:45:09,530
+ Instead for example maybe he can say $ne null that ends up basically inside our filter.
+
+1053
+00:45:10,390 --> 00:45:13,790
+ And the filter now means email is not null.
+
+1054
+00:45:13,790 --> 00:45:16,710
+ And that matches every customer.
+
+1055
+00:45:16,710 --> 00:45:19,860
+ And the attacker gets someone else's data.
+
+1056
+00:45:19,860 --> 00:45:21,780
+ Same idea as SQL injection.
+
+1057
+00:45:22,650 --> 00:45:25,190
+ User input becomes part of the query.
+
+1058
+00:45:25,190 --> 00:45:31,050
+ So maybe let's walk through an attack here step by step.
+
+1059
+00:45:31,050 --> 00:45:38,690
+ Our website has a form where you type your email to see your orders for example.
+
+1060
+00:45:38,690 --> 00:45:43,840
+ The website sends the email to our python code as json.
+
+1061
+00:45:43,840 --> 00:45:54,430
+ A normal request looks like email: anna@example.com
+
+1062
+00:45:54,430 --> 00:45:55,730
+ Okay.
+
+1063
+00:45:55,730 --> 00:46:00,480
+ Our code puts that value in the filter.
+
+1064
+00:46:00,480 --> 00:46:02,930
+ And all is well.
+
+1065
+00:46:02,930 --> 00:46:06,080
+ Now the attacker sends something else.
+
+1066
+00:46:06,080 --> 00:46:14,690
+ Email colon curly bracket $ne null dot json loads.
+
+1067
+00:46:14,690 --> 00:46:18,140
+ And turns that into a python dictionary.
+
+1068
+00:46:18,140 --> 00:46:22,690
+ And our code puts the dictionary straight into the filter.
+
+1069
+00:46:22,690 --> 00:46:28,510
+ Now the filter says find the customers whose email is not null.
+
+1070
+00:46:28,510 --> 00:46:31,310
+ And every customer matches.
+
+1071
+00:46:31,310 --> 00:46:36,770
+ So the attacker gets the first one without knowing any email at all.
+
+1072
+00:46:36,770 --> 00:46:42,010
+ And that's called operator injection.
+
+1073
+00:46:42,010 --> 00:46:45,910
+ It's MongoDB's cousin of SQL injection.
+
+1074
+00:46:46,790 --> 00:46:54,750
+ And it's on lists of the most common security problems in web apps actually.
+
+1075
+00:46:54,750 --> 00:47:02,570
+ So how do we protect ourselves?
+
+1076
+00:47:02,570 --> 00:47:12,890
+ Well, we build the filter yourself with values you have checked.
+
+1077
+00:47:12,890 --> 00:47:15,230
+ Check the type.
+
+1078
+00:47:15,230 --> 00:47:18,300
+ An email must be a string, not a dictionary.
+
+1079
+00:47:18,300 --> 00:47:29,680
+ Convert input with str and int and catch the errors you expect.
+
+1080
+00:47:29,680 --> 00:47:33,170
+ So the user gets a friendly message instead of a crash.
+
+1081
+00:47:33,170 --> 00:47:35,130
+ We want to avoid crashes here.
+
+1082
+00:47:35,130 --> 00:47:40,060
+ So how do we stop it?
+
+1083
+00:47:40,060 --> 00:47:42,860
+ Well, the key idea is the same as with SQL.
+
+1084
+00:47:42,860 --> 00:47:46,620
+ Never let user input become part of the query itself.
+
+1085
+00:47:47,180 --> 00:47:48,300
+ So rule one.
+
+1086
+00:47:48,300 --> 00:47:51,180
+ Build the filter dictionary yourself in your code.
+
+1087
+00:47:52,610 --> 00:47:56,100
+ User input only goes in as values.
+
+1088
+00:47:56,100 --> 00:47:57,150
+ And rule two.
+
+1089
+00:47:57,150 --> 00:47:58,270
+ Check the type.
+
+1090
+00:47:58,270 --> 00:48:01,090
+ An email is always a string.
+
+1091
+00:48:01,090 --> 00:48:07,110
+ If you get a dictionary or a list, reject it.
+
+1092
+00:48:07,930 --> 00:48:08,930
+ And rule three.
+
+1093
+00:48:08,930 --> 00:48:10,320
+ Convert input.
+
+1094
+00:48:10,320 --> 00:48:14,050
+ Input in Python always gives a string, which is safe.
+
+1095
+00:48:14,050 --> 00:48:16,570
+ But if you need a number, use int.
+
+1096
+00:48:16,570 --> 00:48:18,430
+ Inside maybe a try.
+
+1097
+00:48:18,430 --> 00:48:21,930
+ So the program doesn't crash on ABC.
+
+1098
+00:48:22,650 --> 00:48:24,020
+ For example.
+
+1099
+00:48:24,020 --> 00:48:25,460
+ Rule four.
+
+1100
+00:48:25,460 --> 00:48:29,460
+ Catch the errors you expect and give a friendly message.
+
+1101
+00:48:30,250 --> 00:48:34,070
+ You should see that email already registered.
+
+1102
+00:48:36,210 --> 00:48:37,410
+ Not a long trace back.
+
+1103
+00:48:42,110 --> 00:48:46,940
+ And one more slide.
+
+1104
+00:48:46,940 --> 00:48:48,780
+ Personal data.
+
+1105
+00:48:48,780 --> 00:48:56,800
+ Everything from the GDPR stuff we talked about earlier still applies here.
+
+1106
+00:48:56,800 --> 00:49:00,190
+ Two things are extra important in MongoDB.
+
+1107
+00:49:00,190 --> 00:49:05,680
+ First, a flexible schema makes it tempting to save one more field.
+
+1108
+00:49:05,680 --> 00:49:08,520
+ Like a birth date, for example.
+
+1109
+00:49:08,520 --> 00:49:10,300
+ Don't unless you need it.
+
+1110
+00:49:11,060 --> 00:49:12,790
+ Second, copies.
+
+1111
+00:49:12,790 --> 00:49:16,130
+ If you copy the customer's name into every order,
+
+1112
+00:49:16,130 --> 00:49:24,730
+ a request to be deleted, meaning finding and changing every copy.
+
+1113
+00:49:24,730 --> 00:49:30,870
+ So for personal data, prefer references like I showed you earlier.
+
+1114
+00:49:30,870 --> 00:49:36,900
+ So basically, collect only what you need.
+
+1115
+00:49:37,690 --> 00:49:39,070
+ Keep it correct.
+
+1116
+00:49:39,070 --> 00:49:42,870
+ Delete it when you no longer need it.
+
+1117
+00:49:42,870 --> 00:49:44,080
+ And protect it.
+
+1118
+00:49:44,080 --> 00:49:50,670
+ MongoDB makes two things easier to get wrong.
+
+1119
+00:49:50,670 --> 00:49:52,190
+ First, the flexible schema.
+
+1120
+00:49:52,840 --> 00:49:57,140
+ Adding a new field takes one line of code.
+
+1121
+00:49:57,140 --> 00:50:01,570
+ So it's tempting to save things just in case.
+
+1122
+00:50:01,570 --> 00:50:03,770
+ Like birthday, gender, location.
+
+1123
+00:50:03,770 --> 00:50:12,570
+ Every extra field is personal data you are responsible for.
+
+1124
+00:50:12,570 --> 00:50:14,680
+ Second, copies.
+
+1125
+00:50:14,680 --> 00:50:18,360
+ If we copy a customer's name and address into every order,
+
+1126
+00:50:19,040 --> 00:50:25,890
+ a request to be deleted means finding and changing every copy in every collection.
+
+1127
+00:50:25,890 --> 00:50:32,000
+ So if you keep personal data in one place and reference it,
+
+1128
+00:50:32,000 --> 00:50:40,670
+ deleting or maybe anonymizing one customer is one update.
+
+1129
+00:50:40,670 --> 00:50:44,560
+ So for personal data, prefer references, okay?
+
+1130
+00:50:45,280 --> 00:50:51,300
+ And copy only what the law or the receipt requires.
+
+1131
+00:50:51,300 --> 00:51:01,310
+ Okay, that was actually it.
+
+1132
+00:51:01,310 --> 00:51:12,710
+ I can put both of these presentations later in the channel, like always.
+
+1133
+00:51:13,540 --> 00:51:18,350
+ And I'm going to give you some labs to do today, Friday as well.
+
+1134
+00:51:19,520 --> 00:51:25,230
+ And you can prepare also for next week.
+
+1135
+00:51:25,230 --> 00:51:27,950
+ We're going to talk about, I don't know what the schema says.
+
+1136
+00:51:27,950 --> 00:51:30,880
+ It's APIs and stuff like that, I think.
+
+1137
+00:51:30,880 --> 00:51:40,770
+ And we're also going to look into working with Agile and Scrum and all of that as well.
+
+1138
+00:51:40,770 --> 00:51:52,500
+ So prepare for taking one step, one level up on learning.
+
+1139
+00:51:54,140 --> 00:51:58,280
+ Hopefully we'll come back to everything.
+
+1140
+00:51:58,280 --> 00:52:02,040
+ We will use MongoDB throughout the course or SQL, we will see.
+
+1141
+00:52:03,160 --> 00:52:04,680
+ So we'll come back to this.
+
+1142
+00:52:04,680 --> 00:52:08,350
+ Do you have any questions?
+
+1143
+00:52:08,350 --> 00:52:17,740
+ Yes, Fabian.
+
+1144
+00:52:19,230 --> 00:52:27,720
+ Yeah, I was just wondering if there were some exercises that were going to be done today.
+
+1145
+00:52:27,720 --> 00:52:32,280
+ I was thinking, no, you know, never mind.
+
+1146
+00:52:32,280 --> 00:52:33,560
+ It wasn't really a question.
+
+1147
+00:52:33,560 --> 00:52:34,920
+ I was just thinking for myself.
+
+1148
+00:52:34,920 --> 00:52:35,480
+ Never mind.
+
+1149
+00:52:35,480 --> 00:52:35,880
+ It's fine.
+
+1150
+00:52:35,880 --> 00:52:36,870
+ Okay.
+
+1151
+00:52:38,430 --> 00:52:38,880
+ Okay.
+
+1152
+00:52:38,880 --> 00:52:46,550
+ So for those that are a little bit stressed for every time I put an exercise up, don't worry.
+
+1153
+00:52:47,610 --> 00:52:50,930
+ I mean, at least try to do as much as you can.
+
+1154
+00:52:50,930 --> 00:52:55,330
+ You have the weekend as well, if you want to sit for an hour or two.
+
+1155
+00:52:56,920 --> 00:53:00,920
+ If you haven't done any exercises, then I feel sorry for you.
+
+1156
+00:53:00,920 --> 00:53:08,130
+ You should at least do half of them as much as possible in the short time we have.
+
+1157
+00:53:08,130 --> 00:53:11,060
+ So that's my recommendation.
+
+1158
+00:53:11,060 --> 00:53:13,850
+ For those that are done, congratulations.
+
+1159
+00:53:13,850 --> 00:53:15,920
+ You're job ready.
+
+1160
+00:53:17,820 --> 00:53:27,330
+ Not exactly, but just write me a message and I'll give you some challenge to do if you are done.
+
+1161
+00:53:27,330 --> 00:53:30,480
+ Okay.
+
+1162
+00:53:30,480 --> 00:53:40,000
+ Maybe it's time for a break and you can leave the meeting if you don't have any questions.
+
+1163
+00:53:40,000 --> 00:53:48,320
+ thank you thank you thank you thank you thank you bye
+

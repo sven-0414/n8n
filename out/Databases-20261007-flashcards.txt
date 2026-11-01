@@ -1,0 +1,61 @@
+What are the four fundamental operations in database management?;CRUD stands for Create, Read, Update, and Delete.
+
+What does the CREATE operation do in a database?;The CREATE operation inserts new records into database tables.
+
+How is data retrieved from a database table?;Data is retrieved using the READ operation, typically with a SELECT statement.
+
+What is the purpose of the UPDATE operation?;The UPDATE operation modifies existing records in a database table.
+
+What happens when you use DELETE without a WHERE clause?;All rows in the table will be removed, which can be catastrophic.
+
+Why is it important to use a WHERE clause with UPDATE and DELETE?;It prevents accidentally modifying or deleting all records in a table.
+
+What is a transaction in database terms?;A transaction groups multiple operations that must all succeed or all fail together to maintain data consistency.
+
+What are the three normal forms in database normalization?;First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF).
+
+What does it mean for a database to be in First Normal Form?;Every column contains only atomic (indivisible) values, with no lists in cells.
+
+What is the main goal of database normalization?;To reduce redundancy and improve data integrity by organizing data efficiently.
+
+How do you handle many-to-many relationships in databases?;By creating a junction table to link the two related tables.
+
+What is an Entity Relationship Diagram (ERD)?;An ERD is a visual representation showing database tables and their relationships.
+
+What is the golden rule of database design?;Every fact should be stored in exactly one place.
+
+What are the risks of poor database design?;It can lead to update, delete, and insert problems that cause data inconsistency.
+
+What are some best practices for database design?;Identify nouns, create tables, find relationships, handle many-to-many with junction tables, draw ERDs, and verify against normalization rules.
+
+How do you safely perform an UPDATE operation?;Check what will be changed with a SELECT statement, then execute the update, and finally verify the results.
+
+What happens if you try to delete a record that is referenced by another table?;The operation fails due to a foreign key constraint violation.
+
+What does it mean when a database is in Second Normal Form?;Every non-key column depends on the entire primary key, not just part of it.
+
+What does Third Normal Form prevent?;It prevents non-key columns from depending on other non-key columns.
+
+Why should you always save your work after making changes in a database browser?;To permanently commit changes using the COMMIT command or Ctrl+S shortcut.
+
+What is the purpose of a junction table in database design?;To resolve many-to-many relationships by linking two tables through an intermediary table.
+
+What are common error messages in databases?;Unique constraint failed, check constraint failed, and foreign key constraint violation.
+
+How does a database ensure data consistency during complex operations?;Through transactions that group related operations together so they either all succeed or all fail.
+
+What is the difference between SELECT * and selecting specific columns?;SELECT * returns all columns while selecting specific columns retrieves only needed data, improving efficiency.
+
+What is the significance of atomic values in database design?;Atomic values ensure each cell contains a single, indivisible piece of information.
+
+How do you properly handle cascading deletes in database relationships?;By deleting related records first before deleting the parent record to avoid constraint violations.
+
+What are the key principles of good database design?;Store facts once only, use proper relationships, normalize data, and plan structure with ERDs before implementation.
+
+Why is it dangerous to perform an UPDATE without a WHERE clause?;It modifies all rows in the table, potentially causing irreversible data loss.
+
+What is a foreign key constraint in databases?;A rule that ensures referential integrity by preventing actions that would break links between related tables.
+
+How can you avoid data duplication in a database?;By applying normalization rules and storing each fact in only one place.
+
+What is the benefit of using transactions for multi-step operations?;They ensure atomicity, meaning all steps complete successfully or none are applied, maintaining consistency.

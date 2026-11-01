@@ -1683,36 +1683,36 @@
  something like that uh please go ahead uh gloria no i just want to ask it um what happens if a
 
 422
-01:23:13,850 --> 01:23:23,850
- the parent class has a new attribute then we need to update one by one of all the child classes uh in
+01:23:13,850 --> 01:23:21,840
+ the parent class has a new attribute then we need to update one by one or all the child
 
 423
-01:23:23,850 --> 01:23:36,660
- a kind of way yes uh but um uh for now yes okay so there is a way to to do it like automatically but
+01:23:22,540 --> 01:23:35,300
+ classes uh in a kind of way yes uh but um uh for now yes okay so there is a way to to do it like
 
 424
-01:23:36,660 --> 01:23:45,790
- okay yeah i think it is a normal you had the question the same question right no i don't understand the
+01:23:35,300 --> 01:23:45,070
+ automatically but okay yeah i think chris enormous you had the question the same question right no i don't
 
 425
-01:23:45,790 --> 01:23:52,110
- difference i don't understand the difference from the previous examples examples uh why we use uh why
+01:23:45,070 --> 01:23:50,270
+ understand the difference i don't understand the difference from the previous examples examples
 
 426
-01:23:52,110 --> 01:24:00,910
- we initialize because that's what we're doing between we're always doing that when uh even when
+01:23:50,910 --> 01:24:00,190
+ why we use why we initialize because that's what we're doing but we're always doing that when uh
 
 427
-01:24:00,910 --> 01:24:08,410
- inheriting let's hear i'm just gonna double check here so i don't uh reveal anything that we're actually
+01:24:00,190 --> 01:24:08,090
+ even when inheriting let's hear i'm just gonna double check here so i don't uh reveal anything that we're
 
 428
-01:24:08,410 --> 01:24:16,670
- gonna um what what's the difference between super and the pre previous examples uh so what is the
+01:24:08,090 --> 01:24:17,070
+ actually gonna um what's the difference between super and the previous examples uh so what is the difference
 
 429
-01:24:16,670 --> 01:24:30,050
- difference between uh uh what we had before right and and this right just give me one second
+01:24:17,070 --> 01:24:30,740
+ between uh uh what we had before right and and this right just give me one second uh
 
 430
 01:24:33,180 --> 01:24:40,420
@@ -1727,522 +1727,522 @@
  say um i don't know um uh color maybe something like that right so i if i understand the question
 
 433
-01:25:04,130 --> 01:25:15,500
- correctly is if we were to do something like this color equals color uh do we need to uh add also color
+01:25:04,130 --> 01:25:15,100
+ correctly is if we were to do something like this color equals color uh do we need to uh add also
 
 434
-01:25:15,500 --> 01:25:30,150
- over here right is that the question uh well we shouldn't have to i mean we're inheriting so
+01:25:15,100 --> 01:25:32,440
+ color over here right is that the question uh well we shouldn't have to i mean we're inheriting so what does
 
 435
-01:25:30,150 --> 01:25:39,600
- what does super actually do what like why are we using it we are we don't we shouldn't have to like
+01:25:32,440 --> 01:25:40,000
+ the super actually do what like why are we using it we are we don't we shouldn't have to like write
 
 436
-01:25:39,600 --> 01:25:48,270
- write everything again like because we're reusing it when we're inheriting so so what's the difference
+01:25:40,000 --> 01:25:48,270
+ everything again like uh because we're reusing it when we're inheriting so so what's the difference
 
 437
-01:25:50,720 --> 01:26:01,590
- so let's see here uh just double check that i didn't do anything wrong here no i haven't give me one
+01:25:50,720 --> 01:25:56,910
+ so let's see here uh just double check that i didn't do anything wrong here no i haven't
 
 438
-01:26:01,590 --> 01:26:09,880
- second i'll just i don't know maybe everyone else because maybe no no no it's a valid question i'm just
+01:25:58,400 --> 01:26:09,320
+ give me one second i'll just i i don't know maybe everyone else maybe i don't know it's a valid
 
 439
-01:26:09,880 --> 01:26:15,700
- i'm just thinking of an angle here uh no one else is asking so no no no no no it's a valid question
+01:26:09,320 --> 01:26:14,980
+ question i'm just i'm just thinking of an angle here uh no one else is asking so no no no no no
 
 440
-01:26:15,700 --> 01:26:20,020
- it's a very good question nothing wrong with the question at all because we want to see actually the
+01:26:14,980 --> 01:26:18,820
+ it's a valid question it's a very good question uh nothing wrong with the question at all because
 
 441
-01:26:20,020 --> 01:26:30,480
- magic of of super right uh and it kind of feels please yeah exactly uh just give me one uh so i don't
+01:26:18,820 --> 01:26:25,840
+ we want to see actually the magic of super right uh and it kind of feels please yeah exactly
 
 442
-01:26:30,480 --> 01:26:39,940
- say it wrong here i'm just going to try it out uh let's you know what guys i'm actually going to take
+01:26:27,280 --> 01:26:33,110
+ uh just give me one uh so i don't say it wrong here i'm just going to try it out
 
 443
-01:26:39,940 --> 01:26:46,490
- let's take five minutes uh i'm just gonna try one thing uh on my own here so i don't confuse anyone
+01:26:34,180 --> 01:26:42,820
+ uh let's you know what guys i'm actually gonna take let's take five minutes uh i'm just gonna try
 
 444
-01:26:46,490 --> 01:26:55,820
- uh i'm just gonna try if we can actually do one thing um yes go tell me you're kind of right uh
+01:26:42,820 --> 01:26:48,990
+ one thing uh on my own here so i don't confuse anyone uh i'm just gonna try if we can actually
 
 445
-01:26:55,820 --> 01:27:00,460
- or you're not kind of right you're actually right uh but just just give me one five minutes and then
+01:26:48,990 --> 01:26:57,260
+ do one thing um yes go tell me you're kind of right uh or you're not kind of right you're actually
 
 446
-01:27:00,460 --> 01:29:35,080
- i will actually give you a good uh answer here uh let us try something i think that will answer the
+01:26:57,260 --> 01:27:06,140
+ right uh but just just give me one five minutes and then i will actually give you a good uh answer
 
 447
-01:29:35,080 --> 01:29:46,290
- the question that we had uh i think it's a good example here uh i think we're kind of uh thinking of it
+01:27:06,140 --> 01:29:37,360
+ here uh let us try something i think that will answer the the question that we had uh i think
 
 448
-01:29:46,290 --> 01:29:57,490
- in a wrong way if we look at what uh let's see here now more let's see properties yes but this is not
+01:29:37,360 --> 01:29:50,240
+ it's a good example here uh i think we're kind of uh thinking of it in a wrong way if we look at what
 
 449
-01:29:57,490 --> 01:30:07,970
- always the case when inheriting without using super uh yeah something that is a good question we didn't
+01:29:50,240 --> 01:29:58,850
+ uh let's see here now more let's see properties yes but this is not always the case when inheriting
 
 450
-01:30:07,970 --> 01:30:15,740
- use anything in child class before but now we're using it as a difference or is it same just in writing
+01:29:58,850 --> 01:30:09,170
+ without using super uh yeah something that is a good question we didn't use anything in child
 
 451
-01:30:15,740 --> 01:30:25,940
- way yes uh all right so let me let me let me let me show you something what if we come here and add some new
+01:30:09,170 --> 01:30:15,740
+ class before but now we're using it it's a difference or is it say interested in writing
 
 452
-01:30:25,940 --> 01:30:38,400
- logic to animal right uh let's say instead of adding a parameter here uh let's actually add a
+01:30:15,740 --> 01:30:23,260
+ way yes uh all right so let me let me let me let me show you something what if we come here
 
 453
-01:30:38,400 --> 01:31:01,400
- a logic here let's say we put self harsh but is alive all right let's put it to and just for
+01:30:23,260 --> 01:30:36,590
+ and add some new logic to animal right uh let's say instead of adding a parameter here uh let's actually
 
 454
-01:31:02,210 --> 01:31:16,180
- value error here so if age uh is is uh less than zero open oh sorry uh then uh we want to kind of raise
+01:30:36,590 --> 01:31:01,400
+ add a logic here let's say we put self is alive all right let's put it to and just for
 
 455
-01:31:16,180 --> 01:31:38,050
- say something here raise uh value error age cannot negative right something like that now what we see
+01:31:02,120 --> 01:31:15,700
+ value error here so if age uh is is uh less than zero oh then oh sorry uh then uh we want to kind
 
 456
-01:31:38,050 --> 01:31:59,430
- here is no let's add something here print look at this dog okay is alive if we were to run this we'll
+01:31:15,700 --> 01:31:30,310
+ of raise something here raise uh value error age cannot negative right something like that
 
 457
-01:31:59,430 --> 01:32:07,970
- see that it actually works so what do we notice here think about it for a second here what do we actually
+01:31:32,770 --> 01:31:56,510
+ now what we see here is no let's add something here print look at this dog okay is alive if we were to run
 
 458
-01:32:07,970 --> 01:32:21,290
- notice here well what we notice is that we actually changed the initialization logic inside animal but we
+01:31:56,510 --> 01:32:07,490
+ run this we'll see that it actually works so what do we notice here think about it for a second here what
 
 459
-01:32:21,290 --> 01:32:34,080
- didn't have to come down here and change the dog right so dog actually gets its new this is alive um
+01:32:07,490 --> 01:32:18,650
+ do we actually notice here well what we notice is that we actually changed the initialization logic
 
 460
-01:32:34,080 --> 01:32:42,050
- what do you call it attribute right and and and the age uh validation uh because because it it kind of calls
+01:32:18,650 --> 01:32:29,680
+ inside animal but we didn't have to come down here and change the dog right so dog actually gets its
 
 461
-01:32:42,050 --> 01:32:55,690
- uh the um let's say uh animals uh down there in it right um but super does not mean that dog will actually
+01:32:30,550 --> 01:32:40,210
+ new this new this is alive um what do you call it attribute right and and and the age uh validation uh
 
 462
-01:32:55,690 --> 01:33:01,630
- never change uh because if we were to change the interface of animal for example by adding a new
+01:32:40,210 --> 01:32:51,690
+ because because it kind of calls uh the the let's say uh animals uh down there in it right um but super
 
 463
-01:33:01,630 --> 01:33:10,810
- required parameter uh then the dog also needs to be updated so maybe a kind of a slip from me or was kind of
+01:32:51,690 --> 01:33:00,590
+ does not mean that dog will actually never change uh because if we were to change the interface of animal for
 
 464
-01:33:10,810 --> 01:33:20,030
- was kind of confusing so that would change but not in this case so if we were to look at it the the
+01:33:00,590 --> 01:33:09,850
+ example by adding a new required parameter uh then the dog also needs to be updated so maybe a kind of a
 
 465
-01:33:20,030 --> 01:33:30,640
- the benefits is just that we we do not need to um duplicate the implementation that we have added
+01:33:09,850 --> 01:33:19,230
+ slip from me or was kind of confusing so that would change but not in this case so if we were to look at
 
 466
-01:33:30,640 --> 01:33:41,110
- here for animal inside every well subclass that we might create dog cat or whatever so you can actually
+01:33:19,230 --> 01:33:31,840
+ look at it the the the the benefits is just that we we do not need to um duplicate the implementation that we have added here for animal
 
 467
-01:33:41,110 --> 01:33:51,750
- think about that to try to without super here uh how would it actually look like well if we didn't have
+01:33:31,840 --> 01:33:43,220
+ inside every well subclass that we might create dog cat or whatever so you can actually think about that to
 
 468
-01:33:51,750 --> 01:34:00,510
- super and i'm gonna get rid of that uh so it doesn't confuse you if you were to come back to the notes
+01:33:43,220 --> 01:34:00,190
+ try to without super here uh how would it actually look like well if we didn't have super and i'm gonna get rid of that uh so it doesn't confuse you if you were to come back to the notes if we were to remove
 
 469
-01:34:00,510 --> 01:34:08,630
- if we were to remove super and i'm gonna try to do this without uh making a mistake here uh you can also
+01:34:00,190 --> 01:34:09,670
+ super and i'm gonna try to do this without uh making a mistake here uh you can also pay attention with me here
 
 470
-01:34:08,630 --> 01:34:15,410
- pay attention with me here i might uh so i don't slip uh that would be well of course we need to put
+01:34:09,670 --> 01:34:22,010
+ i might uh so i don't slip uh that would be well of course we need to put self dot name equals what name
 
 471
-01:34:15,410 --> 01:34:35,310
- self dot name equals what name right we need to put uh self dot age equals age so far so good
+01:34:22,010 --> 01:34:46,940
+ right we need to put uh self dot age equals age so far so good and would this be enough do you say guys
 
 472
-01:34:38,080 --> 01:34:58,550
- and would this be enough to say guys would this be enough christian no i i i actually have a
+01:34:46,940 --> 01:35:01,440
+ would this be enough christian no i i i actually have a previous question and you mentioned the
 
 473
-01:34:58,550 --> 01:35:07,610
- previous question you mentioned the interfaces uh it does this mean that there there is another layer
+01:35:01,440 --> 01:35:11,190
+ interfaces uh it does this mean that the there there is another layer here to this problematic problem
 
 474
-01:35:07,610 --> 01:35:17,700
- here to this problematic uh problem like we have to we have to implement the uh the properties in
+01:35:12,470 --> 01:35:19,140
+ like we have to we have to implement the uh the properties in like it works like you know that's
 
 475
-01:35:17,700 --> 01:35:24,930
- like it works like no that's it no i was actually talking about the properties in this case uh uh yeah
+01:35:20,180 --> 01:35:29,470
+ no i was actually talking about the properties in this case uh uh yeah uh but but not nothing uh nothing
 
 476
-01:35:27,550 --> 01:35:32,590
- but but not nothing uh nothing the it wasn't in a deep meaning with that but okay
+01:35:29,470 --> 01:35:37,820
+ the it wasn't in a deep meaning with that but okay but would you say that this is enough um maybe i can
 
 477
-01:35:34,140 --> 01:35:42,360
- but would you say that this is enough um maybe i can switch it to maybe gloria i don't think so
+01:35:37,820 --> 01:35:46,150
+ switch it to maybe gloria i don't think so because now you are like a overwriting they need if i understood
 
 478
-01:35:42,360 --> 01:35:48,610
- because now you are like uh overwriting the need if i understood correctly okay so what if i come here
+01:35:46,150 --> 01:35:57,510
+ it correctly okay so what if i come here and say self dot um is alive it was true would that be enough
 
 479
-01:35:48,610 --> 01:36:09,050
- and say self that um is alive it was true would that be enough gloria i can uh keep up that be enough yes
+01:35:57,510 --> 01:36:36,650
+ gloria i can uh keep up that be enough yes though that could work that's right uh yes did uh it did kind of work right
 
 480
-01:36:09,050 --> 01:36:38,620
- yes though that could work that's right uh yes uh it did uh it did kind of work right uh but i would
+01:36:36,650 --> 01:36:51,180
+ uh but i would actually hmm yes it does that would be enough uh interesting i thought it was i think
 
 481
-01:36:38,620 --> 01:36:52,460
- actually hmm yes it does that would be enough uh interesting i thought it was i think if you remove it
+01:36:51,180 --> 01:36:59,110
+ if you remove it from the line 285 it will not work yeah yeah yeah obviously but yeah i actually thought
 
 482
-01:36:52,460 --> 01:37:00,550
- from the line 285 it will not work yeah yeah yeah obviously well yeah i actually thought that i also need
+01:36:59,110 --> 01:37:09,970
+ that i also need to add this uh should have tried it myself uh so my point was gonna show you that i need
 
 483
-01:37:00,550 --> 01:37:10,690
- to add this uh should have tried it myself uh so my point was gonna show you that i need to actually
+01:37:09,970 --> 01:37:16,290
+ to actually add this as well but it seems that it doesn't need i need to just look into it again uh
 
 484
-01:37:10,690 --> 01:37:17,150
- add this as well but it seems that it doesn't need i need to just look into it again uh just to be sure
+01:37:16,290 --> 01:37:30,010
+ just to be sure but as you see here uh so with our super um we don't actually need to change dog right
 
 485
-01:37:17,150 --> 01:37:33,890
- but as you see here uh so with our super um we don't actually need to change dog right and now think about
+01:37:30,010 --> 01:37:38,530
+ and now think about it if we had a dog and we had a cat and we had a cow and we had a horse and so on
 
 486
-01:37:33,890 --> 01:37:40,220
- it if we had a dog and we had a cat and we had a cow and we had a horse and so on then we had to change
+01:37:38,530 --> 01:37:47,290
+ then we had to change on all of these right but with our um down there in it or super uh we kind of
 
 487
-01:37:40,220 --> 01:37:49,230
- on all of these right but with our um down there in it or super uh we kind of don't if we were to add
+01:37:47,290 --> 01:38:05,020
+ don't if we were to add some new logic so any change any uh if there is some kind of shared
 
 488
-01:37:49,230 --> 01:38:09,920
- some new logic so any change any uh if there is some kind of shared initialization logic it stays
+01:38:06,150 --> 01:38:13,250
+ initialization logic it stays just in one place and we don't have to worry about that
 
 489
-01:38:09,920 --> 01:38:29,110
- just in one place and we don't have to worry about that do you kind of see why super is super nice uh
+01:38:13,250 --> 01:38:35,860
+ do you kind of see why super is super nice uh yes well uh are there rules of uh to inheritance maybe
 
 490
-01:38:29,110 --> 01:38:37,540
- christian yes well uh are there rules of uh to inheritance maybe there are some rules that we missed
+01:38:35,860 --> 01:38:43,230
+ there are some rules that we missed because uh like with an interface for instance you have to
 
 491
-01:38:37,540 --> 01:38:46,430
- because uh like with an interface for instance you have to you're like forced to implement uh
+01:38:43,230 --> 01:38:52,440
+ you're like forced to implement uh some properties of the of the interface and of course we're gonna dive
 
 492
-01:38:47,870 --> 01:38:55,000
- some properties of the the interface and of course we're gonna dive more into inheritance and we're
+01:38:52,440 --> 01:39:00,910
+ more into inheritance and we're gonna build on this and as you will see yeah i would i would read up on
 
 493
-01:38:55,000 --> 01:39:02,350
- gonna build on this okay as you will see yeah i would i would read up on it i would read up on it
+01:39:00,910 --> 01:39:06,590
+ it i would read up on it because yeah it seems really powerful and i want to understand it so
 
 494
-01:39:02,350 --> 01:39:08,950
- because yeah it seems it seems really powerful and i want to understand it so yeah and hopefully we will
+01:39:06,590 --> 01:39:14,400
+ yeah and hopefully we will actually uh answer your question along the way but uh yeah and some
 
 495
-01:39:08,950 --> 01:39:17,390
- actually uh answer your question along the way but uh yeah and some pitfalls and so on so yeah just
+01:39:14,400 --> 01:39:25,190
+ pitfalls and so on so yeah just let's keep it uh let's keep the red line as we say in swedish i don't know how to say that in english
 
 496
-01:39:17,390 --> 01:39:25,110
- let's keep it um let's keep the red line as we say in swedish i don't know how to say that in english
+01:39:25,190 --> 01:39:39,770
+ uh no yeah exactly the red thread not the red line yeah yeah uh all right uh we can actually keep this
 
 497
-01:39:28,420 --> 01:39:40,080
- no yeah exactly the red thread not the red line yeah uh all right uh we can actually keep this let's
+01:39:39,770 --> 01:39:53,140
+ let's keep this so you can see the uh what we what we came from right dimitri yes i just wanted to add
 
 498
-01:39:40,080 --> 01:39:53,690
- keep this so you can see the uh what we what we came from right dimitri yes i just wanted to add that
+01:39:53,140 --> 01:40:03,500
+ that uh in this case uh if we omit super we will miss uh age validation as well so we can for
 
 499
-01:39:53,690 --> 01:40:03,900
- uh in this case uh if we omit super we will miss uh h validation as well so we can for example
+01:40:03,500 --> 01:40:10,440
+ example make the dog with a negative age yeah yes yes yes yes yes thank you thank you thank you thank
 
 500
-01:40:03,900 --> 01:40:10,780
- create the duck with a negative age yeah yes yes thank you thank you thank you thank you thank you
+01:40:10,440 --> 01:40:17,700
+ you thank you of course yeah just like if we were to that's why we need to add this right of course it
 
 501
-01:40:10,780 --> 01:40:17,540
- thank you of course yeah just like if we were to that's why we need to add this right of course
+01:40:17,700 --> 01:40:23,640
+ will work but at the same time if we had an age that is negative we wouldn't have this logic thank you for
 
 502
-01:40:17,540 --> 01:40:23,400
- it will work but at the same time if we had an age that is negative we wouldn't have this logic thank
+01:40:23,640 --> 01:40:41,100
+ that one dimitri i don't know might be my cold uh all right right all right all right let's move uh
 
 503
-01:40:23,400 --> 01:40:38,680
- you for that one dimitri i don't know might be my cold uh all right right all right all right let's
+01:40:41,900 --> 01:40:52,420
+ carefully forward what was next uh we spoke about a little bit of super spoke about a little bit of
 
 504
-01:40:39,940 --> 01:40:52,020
- move uh carefully forward what was next uh we spoke about a little bit of super talk about a little
+01:40:52,420 --> 01:41:04,450
+ self that will be an exercise uh i'm gonna save that for you guys uh for the lab uh let's see
 
 505
-01:40:52,020 --> 01:41:04,530
- bit of self that will be an exercise uh i'm gonna save that for you guys uh for the lab uh let's see
+01:41:04,450 --> 01:41:26,270
+ here okay so uh we save polymorphism for tomorrow perfect all right uh so we're just going to talk
 
 506
-01:41:04,530 --> 01:41:26,510
- here okay so uh we save polymorphism for tomorrow perfect all right uh so we're just gonna talk a little
+01:41:26,270 --> 01:41:34,710
+ a little bit about uh method overriding and that would be uh probably the end of the day uh so what
 
 507
-01:41:26,510 --> 01:41:35,270
- bit about uh method overriding and that would be uh probably the end of the day uh so what we have seen
+01:41:34,710 --> 01:41:46,750
+ we have seen so far is uh take care uh so what we have seen so far well uh uh subclasses have
 
 508
-01:41:35,270 --> 01:41:50,550
- so far is uh take care uh so what we have seen so far well uh uh subclasses have either inherited a
+01:41:46,750 --> 01:41:58,430
+ either inherited a method and maybe need needs a different version of that method right a subclass can
 
 509
-01:41:50,550 --> 01:41:59,870
- method and maybe need needs a different version of that method right a subclass can actually replace
+01:41:58,430 --> 01:42:05,960
+ actually replace an inherited method with its own implementation and this is what we call method
 
 510
-01:41:59,870 --> 01:42:08,310
- an inherited method with its own implementation and this is what we call method overriding uh let me just
+01:42:05,960 --> 01:42:24,460
+ of writing uh let me just put it as a title here method over writing uh so uh let's just create a just
 
 511
-01:42:08,310 --> 01:42:26,140
- put it as a title here method overriding uh so uh let's just create a just to show it in a very simple
+01:42:24,460 --> 01:42:38,430
+ to show it in a very simple example here and then we can build on that a little bit um in it super
 
 512
-01:42:26,140 --> 01:42:44,410
- example here and then we can build on that a little bit um in it super simple name is enough and name
+01:42:38,430 --> 01:43:02,300
+ simple name is enough and name equals name right uh yeah let's also make sound let's put itself return
 
 513
-01:42:44,410 --> 01:43:24,830
- equals name right uh yeah let's also make sound let's put self return some animal class dog animal animal
+01:43:02,300 --> 01:43:39,840
+ some animal class dog animal animal death sound and i'm not gonna use super here uh actually i'm gonna do
 
 514
-01:43:24,830 --> 01:43:44,200
- death sound and i'm not gonna use super here uh actually i'm gonna do return just so we get the
+01:43:39,840 --> 01:44:00,040
+ return just so we get the point here woof all right and then for our cat cat makes sounds of uh that would be
 
 515
-01:43:44,200 --> 01:44:02,160
- point here woof all right and then for our cat cat makes sounds of uh that would be wolf right uh let's
+01:44:00,040 --> 01:44:35,180
+ wolf right uh let's say uh yeah right now let's create our animal why did i do that uh dog rex and
 
 516
-01:44:02,160 --> 01:44:36,730
- say uh yeah right now let's create our animal why did i do that uh dog rex and then we have our cat
+01:44:35,180 --> 01:44:48,420
+ then we have our cat equals cat and let's call her luna all right and now that we have created them we
 
 517
-01:44:36,730 --> 01:44:49,300
- equals cat and let's call her lula all right and now that we have created them we can actually do some
+01:44:48,420 --> 01:45:02,430
+ we can actually do some prints here print uh animal make sound right and then we can do another print
 
 518
-01:44:49,300 --> 01:45:12,730
- prints here print uh animal make sound right and then we can do another print uh dog make sound and also
+01:45:02,430 --> 01:45:22,130
+ uh dog make sound and also cat make sound right just to show you uh even though they inherit from animal
 
 519
-01:45:12,730 --> 01:45:28,220
- cat make sound right just to show you uh even though they inherit from animal we see that in our terminal
+01:45:22,130 --> 01:45:34,660
+ we see that in our terminal we will see some uh yeah exactly some animal sound we see meow uh woof and then we
 
 520
-01:45:28,220 --> 01:45:36,890
- we will see some uh yeah exactly some animal sound we see meow woof and then we see meow right so dog and
+01:45:34,660 --> 01:45:41,670
+ see meow right so dog and cat can either even though they they both inherit from animal but they actually
 
 521
-01:45:36,890 --> 01:45:44,360
- cat can either even though they they both inherit from animal but they actually define their own version
+01:45:41,670 --> 01:45:51,450
+ define their own version of what well uh this method make sound so when we call make sound uh on the dog
 
 522
-01:45:44,360 --> 01:45:52,740
- cat and then we see a cat or cat we see that in the cat or cat we see the cat version of what well uh this method makes sound so when we call make sound uh on the dog
+01:45:51,450 --> 01:46:02,190
+ uh on the dog python will actually use dogs version and when we call it on cat well python we use the cat
 
 523
-01:45:52,740 --> 01:46:04,520
- python will actually use dogs version and when we call it on cat well python we use the cat version right uh so the subclass
+01:46:02,190 --> 01:46:14,880
+ version right uh so the subclass implementation actually will override the inherited one and that's
 
 524
-01:46:04,520 --> 01:46:14,800
- implementation actually will override the inherited one and that's important to remember but of course overriding does not always mean that we want to completely ignore the paragon
+01:46:14,880 --> 01:46:24,030
+ important to remember but of course overriding does not always mean that we want to completely
 
 525
-01:46:14,800 --> 01:46:36,210
- the parent method sometimes maybe we want to use the parent method uh or the or use the parent behavior and then add
+01:46:24,030 --> 01:46:34,030
+ ignore the parent method sometimes maybe we want to use the parent method uh or the or use the parent
 
 526
-01:46:36,210 --> 01:46:49,820
- maybe something to it here we can actually use what guys what do you say something that we discussed previously
+01:46:34,030 --> 01:46:42,780
+ behavior and then add maybe something to it here we can actually use what guys what do you say
 
 527
-01:46:49,820 --> 01:47:12,040
- previously with me guys last part fabian no never mind of my i thought i thought about it i thought
+01:46:42,780 --> 01:47:10,280
+ something that we discussed previously with me guys last part fabian no never mind of my i thought i
 
 528
-01:47:12,040 --> 01:47:18,370
- if it was you called something on the class directly but i can't explain it so never mind no no no no
+01:47:10,920 --> 01:47:16,200
+ thought about it i thought if it was you called something on the class directly but i can't explain it so
 
 529
-01:47:18,370 --> 01:47:29,600
- saranya yeah some of the uh methods like sleeping or eating those things it can be a common one
+01:47:20,160 --> 01:47:31,030
+ yeah some of the uh methods like sleeping or eating those things it can be a common one well i was
 
 530
-01:47:29,600 --> 01:47:37,230
- well i was actually thank you but i was actually thinking of super so we can use super for this as well
+01:47:31,030 --> 01:47:39,360
+ actually thank you but i was actually thinking of super so we can use super for this as well all right
 
 531
-01:47:38,140 --> 01:47:50,940
- all right so let's make super super uh so let's use them let's use a different example let's save this one
+01:47:39,360 --> 01:47:54,160
+ so let's make super super uh so let's use um let's use a different example let's save this one so we
 
 532
-01:47:50,940 --> 01:47:59,600
- so we want to still override but we want to keep something maybe or add something and so on all right
+01:47:54,160 --> 01:47:59,280
+ want to still override but we want to keep something maybe or add something and so on all right
 
 533
-01:47:59,600 --> 01:48:18,220
- so let's say we have a class uh employee all right and then uh we we we uh get uh information or something
+01:47:59,360 --> 01:48:17,900
+ so let's say we have a class uh employee all right and then uh we we we uh get uh information or
 
 534
-01:48:18,220 --> 01:48:38,090
- like that all right uh self uh return let's say employee uh uh information all right um
+01:48:17,900 --> 01:48:35,470
+ something like that all right self uh return let's say employee uh information all right
 
 535
-01:48:38,090 --> 01:48:52,730
- um now let's create another class uh let's say a developer developer who's also an employee right
+01:48:35,470 --> 01:48:52,810
+ uh and now let's create another class uh let's say a developer developer who's also an employee right
 
 536
-01:48:52,730 --> 01:49:08,610
- um and now we do something like this get information ah perfect uh but i'm just gonna make it a little bit clearer
+01:48:55,630 --> 01:49:09,010
+ um and now we do something like this get information ah perfect uh but i'm just gonna make it a little
 
 537
-01:49:08,610 --> 01:49:15,480
- make it a little bit clearer so let's keep that uh let's do it like that so uh here get information
+01:49:09,010 --> 01:49:16,940
+ bit clearer here so let's keep that let's do it like that so uh here get information right so what we can do
 
 538
-01:49:15,480 --> 01:49:24,730
- right so what we can do just keep it in a variable here so base let's say base information right just
+01:49:16,940 --> 01:49:25,610
+ just keep it in a variable here so base let's say base information right just to make it super clear
 
 539
-01:49:24,730 --> 01:49:37,020
- to make it super clear uh you can write something like that super and then uh get uh what was it get in or
+01:49:26,250 --> 01:49:42,310
+ uh you can write something like that super and then uh get uh what was it get in or may sean right and
 
 540
-01:49:37,020 --> 01:49:55,380
- right and then let's do it right and then let's actually return uh base information uh something like this
+01:49:42,310 --> 01:49:58,460
+ then let's actually return uh base information uh something like this right base information plus equal
 
 541
-01:49:55,380 --> 01:50:05,160
- right base information plus equal no not that plus equals i would say uh uh just about this
+01:49:59,280 --> 01:50:12,880
+ no not a sequence i would say uh uh just about this let's keep it simple role i don't know it's a
 
 542
-01:50:05,160 --> 01:50:22,690
- let's keep it simple roll i don't know say developer this is a developer class all right now uh let's create a developer
+01:50:12,880 --> 01:50:29,880
+ developer this is it's a developer class all right now uh let's create a developer the developer is a
 
 543
-01:50:22,690 --> 01:50:38,040
- developer developer developer is a developer let's take a look at this now let's print out our uh developer
+01:50:29,880 --> 01:50:41,530
+ developer let's take a look at this now let's print out our uh developer where we get actually
 
 544
-01:50:38,040 --> 01:51:08,000
- where we get actually information let's see what actually will be printed out here uh employee information
+01:50:41,530 --> 01:51:10,920
+ information let's see what actually will be printed out here uh employee information role developer and there
 
 545
-01:51:08,000 --> 01:51:22,830
- role developer and there you go so what did we see that the developer actually overrides get information
+01:51:10,920 --> 01:51:24,260
+ you go so what did we see that the developer actually overrides get information here right
 
 546
-01:51:22,830 --> 01:51:34,720
- here right inside its own actually its own version so it first calls of course the parent the parent
+01:51:24,260 --> 01:51:35,120
+ inside its own actually its own version so it first calls of course the parent the parent version
 
 547
-01:51:34,720 --> 01:51:48,480
- version uh using the super and then it actually adds some information here so we're kind of extending
+01:51:36,310 --> 01:51:48,480
+ using the super and then it actually adds some information here so we're kind of extending
 
 548
-01:51:48,480 --> 01:51:58,310
- the parent behavior rather than just completely replacing it right so there you go a little bit
+01:51:48,480 --> 01:51:58,790
+ the parent behavior rather than just completely replacing it right so there you go a little bit more about
 
 549
-01:51:58,310 --> 01:52:12,730
- more about super and since super was discussed i think this was a perfect place to actually end the
+01:51:58,790 --> 01:52:16,430
+ super and since super was discussed i think this was a perfect place to actually end the lesson uh yeah
 
 550
-01:52:12,730 --> 01:52:21,520
- lesson uh yeah and tomorrow we're gonna talk a little bit more polymorphism so if you were looking for
+01:52:16,430 --> 01:52:22,560
+ and tomorrow we're gonna talk a little bit more polymorphism so if you were looking for that uh we
 
 551
-01:52:21,520 --> 01:52:27,750
- that uh we will talk about it tomorrow we will talk a little bit of polymorphism with inheritance as
+01:52:22,560 --> 01:52:30,450
+ will talk about it tomorrow we will talk a little bit of polymorphism with inheritance as well uh if
 
 552
-01:52:27,750 --> 01:52:40,690
- well uh if you're familiar with duck typing we will talk about python and duck typing um maybe jump
+01:52:30,450 --> 01:52:41,760
+ you're familiar with duck typing we will talk about python and duck typing um maybe jump depending on the time
 
 553
-01:52:40,690 --> 01:52:48,240
- depending on the time something that we will also talk about is another another dunder method uh down
+01:52:41,760 --> 01:52:51,390
+ uh something that we will also talk about is another another dunder method uh down the string uh just to add
 
 554
-01:52:48,240 --> 01:52:57,000
- the string uh just to add another um just another method and a little bit with inheritance as well
+01:52:51,390 --> 01:52:59,270
+ another um just another method and a little bit with inheritance as well we have a lot to talk about
 
 555
-01:52:58,150 --> 01:53:05,740
- we have a lot to talk about tomorrow now that that will be actually it okay and maybe discuss like we
+01:52:59,270 --> 01:53:07,020
+ tomorrow now that that will be actually it okay and maybe discuss like we did in the la in the beginning
 
 556
-01:53:05,740 --> 01:53:14,030
- did in the last in the beginning here uh where we discussed class versus uh dictionary we will do
+01:53:07,020 --> 01:53:16,830
+ here uh where we discussed class versus uh dictionary we will do kind of the same thing uh we will uh look
 
 557
-01:53:14,030 --> 01:53:22,880
- kind of the same thing uh we will uh look at inheritance versus composition so yeah uh
+01:53:16,830 --> 01:53:26,080
+ at inheritance versus composition so yeah uh which one is better and in what in what sense and so on
 
 558
-01:53:22,880 --> 01:53:28,540
- which one is better and in what in what sense and so on but we will start off with polymorphism
+01:53:26,080 --> 01:53:30,940
+ but we will start off with polymorphism and take it from there and see where we actually land and if
 
 559
-01:53:28,540 --> 01:53:32,540
- and take it from there and see where we actually land and if we need more days we will take more
+01:53:30,940 --> 01:53:36,040
+ we need more days we will take more days for for the fundamental part but i think tomorrow will be the
 
 560
-01:53:32,540 --> 01:53:39,520
- days for for the fundamental part but i think tomorrow will be the last the last day we actually uh
+01:53:36,040 --> 01:53:48,060
+ last the last day we actually uh talk uh the last lesson for fundamentals i hope i have answered your
 
 561
-01:53:39,520 --> 01:53:52,600
- talk uh the last lesson for fundamentals i hope i have answered your questions uh if i have missed any
+01:53:48,060 --> 01:53:57,420
+ questions uh if i have missed any question i mean uh we're doing our best here uh with with the questions
 
 562
-01:53:52,600 --> 01:54:02,560
- question i mean uh we're doing our best here uh with the questions and uh with the call that i'm having i can't
+01:53:58,050 --> 01:54:02,560
+ and uh with the call that i'm having i can't
 

@@ -419,144 +419,144 @@ we're going to do a little bit more before let's see here if if it's a question 
 you do i might think about that i'm gonna add a little bit more stuff we're going to do some method
 overriding and so on uh so that might answer some questions but if it's something that i missed or
 something like that uh please go ahead uh gloria no i just want to ask it um what happens if a
-the parent class has a new attribute then we need to update one by one of all the child classes uh in
-a kind of way yes uh but um uh for now yes okay so there is a way to to do it like automatically but
-okay yeah i think it is a normal you had the question the same question right no i don't understand the
-difference i don't understand the difference from the previous examples examples uh why we use uh why
-we initialize because that's what we're doing between we're always doing that when uh even when
-inheriting let's hear i'm just gonna double check here so i don't uh reveal anything that we're actually
-gonna um what what's the difference between super and the pre previous examples uh so what is the
-difference between uh uh what we had before right and and this right just give me one second
+the parent class has a new attribute then we need to update one by one or all the child
+classes uh in a kind of way yes uh but um uh for now yes okay so there is a way to to do it like
+automatically but okay yeah i think chris enormous you had the question the same question right no i don't
+understand the difference i don't understand the difference from the previous examples examples
+why we use why we initialize because that's what we're doing but we're always doing that when uh
+even when inheriting let's hear i'm just gonna double check here so i don't uh reveal anything that we're
+actually gonna um what's the difference between super and the previous examples uh so what is the difference
+between uh uh what we had before right and and this right just give me one second uh
 so so we have we have to if we don't use super we have to uh write the properties in in in the
 subclass sure sure in in in this case yes uh if we were to add something right uh so for example a let's
 say um i don't know um uh color maybe something like that right so i if i understand the question
-correctly is if we were to do something like this color equals color uh do we need to uh add also color
-over here right is that the question uh well we shouldn't have to i mean we're inheriting so
-what does super actually do what like why are we using it we are we don't we shouldn't have to like
-write everything again like because we're reusing it when we're inheriting so so what's the difference
-so let's see here uh just double check that i didn't do anything wrong here no i haven't give me one
-second i'll just i don't know maybe everyone else because maybe no no no it's a valid question i'm just
-i'm just thinking of an angle here uh no one else is asking so no no no no no it's a valid question
-it's a very good question nothing wrong with the question at all because we want to see actually the
-magic of of super right uh and it kind of feels please yeah exactly uh just give me one uh so i don't
-say it wrong here i'm just going to try it out uh let's you know what guys i'm actually going to take
-let's take five minutes uh i'm just gonna try one thing uh on my own here so i don't confuse anyone
-uh i'm just gonna try if we can actually do one thing um yes go tell me you're kind of right uh
-or you're not kind of right you're actually right uh but just just give me one five minutes and then
-i will actually give you a good uh answer here uh let us try something i think that will answer the
-the question that we had uh i think it's a good example here uh i think we're kind of uh thinking of it
-in a wrong way if we look at what uh let's see here now more let's see properties yes but this is not
-always the case when inheriting without using super uh yeah something that is a good question we didn't
-use anything in child class before but now we're using it as a difference or is it same just in writing
-way yes uh all right so let me let me let me let me show you something what if we come here and add some new
-logic to animal right uh let's say instead of adding a parameter here uh let's actually add a
-a logic here let's say we put self harsh but is alive all right let's put it to and just for
-value error here so if age uh is is uh less than zero open oh sorry uh then uh we want to kind of raise
-say something here raise uh value error age cannot negative right something like that now what we see
-here is no let's add something here print look at this dog okay is alive if we were to run this we'll
-see that it actually works so what do we notice here think about it for a second here what do we actually
-notice here well what we notice is that we actually changed the initialization logic inside animal but we
-didn't have to come down here and change the dog right so dog actually gets its new this is alive um
-what do you call it attribute right and and and the age uh validation uh because because it it kind of calls
-uh the um let's say uh animals uh down there in it right um but super does not mean that dog will actually
-never change uh because if we were to change the interface of animal for example by adding a new
-required parameter uh then the dog also needs to be updated so maybe a kind of a slip from me or was kind of
-was kind of confusing so that would change but not in this case so if we were to look at it the the
-the benefits is just that we we do not need to um duplicate the implementation that we have added
-here for animal inside every well subclass that we might create dog cat or whatever so you can actually
-think about that to try to without super here uh how would it actually look like well if we didn't have
-super and i'm gonna get rid of that uh so it doesn't confuse you if you were to come back to the notes
-if we were to remove super and i'm gonna try to do this without uh making a mistake here uh you can also
-pay attention with me here i might uh so i don't slip uh that would be well of course we need to put
-self dot name equals what name right we need to put uh self dot age equals age so far so good
-and would this be enough to say guys would this be enough christian no i i i actually have a
-previous question you mentioned the interfaces uh it does this mean that there there is another layer
-here to this problematic uh problem like we have to we have to implement the uh the properties in
-like it works like no that's it no i was actually talking about the properties in this case uh uh yeah
-but but not nothing uh nothing the it wasn't in a deep meaning with that but okay
-but would you say that this is enough um maybe i can switch it to maybe gloria i don't think so
-because now you are like uh overwriting the need if i understood correctly okay so what if i come here
-and say self that um is alive it was true would that be enough gloria i can uh keep up that be enough yes
-yes though that could work that's right uh yes uh it did uh it did kind of work right uh but i would
-actually hmm yes it does that would be enough uh interesting i thought it was i think if you remove it
-from the line 285 it will not work yeah yeah yeah obviously well yeah i actually thought that i also need
-to add this uh should have tried it myself uh so my point was gonna show you that i need to actually
-add this as well but it seems that it doesn't need i need to just look into it again uh just to be sure
-but as you see here uh so with our super um we don't actually need to change dog right and now think about
-it if we had a dog and we had a cat and we had a cow and we had a horse and so on then we had to change
-on all of these right but with our um down there in it or super uh we kind of don't if we were to add
-some new logic so any change any uh if there is some kind of shared initialization logic it stays
-just in one place and we don't have to worry about that do you kind of see why super is super nice uh
-christian yes well uh are there rules of uh to inheritance maybe there are some rules that we missed
-because uh like with an interface for instance you have to you're like forced to implement uh
-some properties of the the interface and of course we're gonna dive more into inheritance and we're
-gonna build on this okay as you will see yeah i would i would read up on it i would read up on it
-because yeah it seems it seems really powerful and i want to understand it so yeah and hopefully we will
-actually uh answer your question along the way but uh yeah and some pitfalls and so on so yeah just
-let's keep it um let's keep the red line as we say in swedish i don't know how to say that in english
-no yeah exactly the red thread not the red line yeah uh all right uh we can actually keep this let's
-keep this so you can see the uh what we what we came from right dimitri yes i just wanted to add that
-uh in this case uh if we omit super we will miss uh h validation as well so we can for example
-create the duck with a negative age yeah yes yes thank you thank you thank you thank you thank you
-thank you of course yeah just like if we were to that's why we need to add this right of course
-it will work but at the same time if we had an age that is negative we wouldn't have this logic thank
-you for that one dimitri i don't know might be my cold uh all right right all right all right let's
-move uh carefully forward what was next uh we spoke about a little bit of super talk about a little
-bit of self that will be an exercise uh i'm gonna save that for you guys uh for the lab uh let's see
-here okay so uh we save polymorphism for tomorrow perfect all right uh so we're just gonna talk a little
-bit about uh method overriding and that would be uh probably the end of the day uh so what we have seen
-so far is uh take care uh so what we have seen so far well uh uh subclasses have either inherited a
-method and maybe need needs a different version of that method right a subclass can actually replace
-an inherited method with its own implementation and this is what we call method overriding uh let me just
-put it as a title here method overriding uh so uh let's just create a just to show it in a very simple
-example here and then we can build on that a little bit um in it super simple name is enough and name
-equals name right uh yeah let's also make sound let's put self return some animal class dog animal animal
-death sound and i'm not gonna use super here uh actually i'm gonna do return just so we get the
-point here woof all right and then for our cat cat makes sounds of uh that would be wolf right uh let's
-say uh yeah right now let's create our animal why did i do that uh dog rex and then we have our cat
-equals cat and let's call her lula all right and now that we have created them we can actually do some
-prints here print uh animal make sound right and then we can do another print uh dog make sound and also
-cat make sound right just to show you uh even though they inherit from animal we see that in our terminal
-we will see some uh yeah exactly some animal sound we see meow woof and then we see meow right so dog and
-cat can either even though they they both inherit from animal but they actually define their own version
-cat and then we see a cat or cat we see that in the cat or cat we see the cat version of what well uh this method makes sound so when we call make sound uh on the dog
-python will actually use dogs version and when we call it on cat well python we use the cat version right uh so the subclass
-implementation actually will override the inherited one and that's important to remember but of course overriding does not always mean that we want to completely ignore the paragon
-the parent method sometimes maybe we want to use the parent method uh or the or use the parent behavior and then add
-maybe something to it here we can actually use what guys what do you say something that we discussed previously
-previously with me guys last part fabian no never mind of my i thought i thought about it i thought
-if it was you called something on the class directly but i can't explain it so never mind no no no no
-saranya yeah some of the uh methods like sleeping or eating those things it can be a common one
-well i was actually thank you but i was actually thinking of super so we can use super for this as well
-all right so let's make super super uh so let's use them let's use a different example let's save this one
-so we want to still override but we want to keep something maybe or add something and so on all right
-so let's say we have a class uh employee all right and then uh we we we uh get uh information or something
-like that all right uh self uh return let's say employee uh uh information all right um
-um now let's create another class uh let's say a developer developer who's also an employee right
-um and now we do something like this get information ah perfect uh but i'm just gonna make it a little bit clearer
-make it a little bit clearer so let's keep that uh let's do it like that so uh here get information
-right so what we can do just keep it in a variable here so base let's say base information right just
-to make it super clear uh you can write something like that super and then uh get uh what was it get in or
-right and then let's do it right and then let's actually return uh base information uh something like this
-right base information plus equal no not that plus equals i would say uh uh just about this
-let's keep it simple roll i don't know say developer this is a developer class all right now uh let's create a developer
-developer developer developer is a developer let's take a look at this now let's print out our uh developer
-where we get actually information let's see what actually will be printed out here uh employee information
-role developer and there you go so what did we see that the developer actually overrides get information
-here right inside its own actually its own version so it first calls of course the parent the parent
-version uh using the super and then it actually adds some information here so we're kind of extending
-the parent behavior rather than just completely replacing it right so there you go a little bit
-more about super and since super was discussed i think this was a perfect place to actually end the
-lesson uh yeah and tomorrow we're gonna talk a little bit more polymorphism so if you were looking for
-that uh we will talk about it tomorrow we will talk a little bit of polymorphism with inheritance as
-well uh if you're familiar with duck typing we will talk about python and duck typing um maybe jump
-depending on the time something that we will also talk about is another another dunder method uh down
-the string uh just to add another um just another method and a little bit with inheritance as well
-we have a lot to talk about tomorrow now that that will be actually it okay and maybe discuss like we
-did in the last in the beginning here uh where we discussed class versus uh dictionary we will do
-kind of the same thing uh we will uh look at inheritance versus composition so yeah uh
-which one is better and in what in what sense and so on but we will start off with polymorphism
-and take it from there and see where we actually land and if we need more days we will take more
-days for for the fundamental part but i think tomorrow will be the last the last day we actually uh
-talk uh the last lesson for fundamentals i hope i have answered your questions uh if i have missed any
-question i mean uh we're doing our best here uh with the questions and uh with the call that i'm having i can't
+correctly is if we were to do something like this color equals color uh do we need to uh add also
+color over here right is that the question uh well we shouldn't have to i mean we're inheriting so what does
+the super actually do what like why are we using it we are we don't we shouldn't have to like write
+everything again like uh because we're reusing it when we're inheriting so so what's the difference
+so let's see here uh just double check that i didn't do anything wrong here no i haven't
+give me one second i'll just i i don't know maybe everyone else maybe i don't know it's a valid
+question i'm just i'm just thinking of an angle here uh no one else is asking so no no no no no
+it's a valid question it's a very good question uh nothing wrong with the question at all because
+we want to see actually the magic of super right uh and it kind of feels please yeah exactly
+uh just give me one uh so i don't say it wrong here i'm just going to try it out
+uh let's you know what guys i'm actually gonna take let's take five minutes uh i'm just gonna try
+one thing uh on my own here so i don't confuse anyone uh i'm just gonna try if we can actually
+do one thing um yes go tell me you're kind of right uh or you're not kind of right you're actually
+right uh but just just give me one five minutes and then i will actually give you a good uh answer
+here uh let us try something i think that will answer the the question that we had uh i think
+it's a good example here uh i think we're kind of uh thinking of it in a wrong way if we look at what
+uh let's see here now more let's see properties yes but this is not always the case when inheriting
+without using super uh yeah something that is a good question we didn't use anything in child
+class before but now we're using it it's a difference or is it say interested in writing
+way yes uh all right so let me let me let me let me show you something what if we come here
+and add some new logic to animal right uh let's say instead of adding a parameter here uh let's actually
+add a logic here let's say we put self is alive all right let's put it to and just for
+value error here so if age uh is is uh less than zero oh then oh sorry uh then uh we want to kind
+of raise something here raise uh value error age cannot negative right something like that
+now what we see here is no let's add something here print look at this dog okay is alive if we were to run
+run this we'll see that it actually works so what do we notice here think about it for a second here what
+do we actually notice here well what we notice is that we actually changed the initialization logic
+inside animal but we didn't have to come down here and change the dog right so dog actually gets its
+new this new this is alive um what do you call it attribute right and and and the age uh validation uh
+because because it kind of calls uh the the let's say uh animals uh down there in it right um but super
+does not mean that dog will actually never change uh because if we were to change the interface of animal for
+example by adding a new required parameter uh then the dog also needs to be updated so maybe a kind of a
+slip from me or was kind of confusing so that would change but not in this case so if we were to look at
+look at it the the the the benefits is just that we we do not need to um duplicate the implementation that we have added here for animal
+inside every well subclass that we might create dog cat or whatever so you can actually think about that to
+try to without super here uh how would it actually look like well if we didn't have super and i'm gonna get rid of that uh so it doesn't confuse you if you were to come back to the notes if we were to remove
+super and i'm gonna try to do this without uh making a mistake here uh you can also pay attention with me here
+i might uh so i don't slip uh that would be well of course we need to put self dot name equals what name
+right we need to put uh self dot age equals age so far so good and would this be enough do you say guys
+would this be enough christian no i i i actually have a previous question and you mentioned the
+interfaces uh it does this mean that the there there is another layer here to this problematic problem
+like we have to we have to implement the uh the properties in like it works like you know that's
+no i was actually talking about the properties in this case uh uh yeah uh but but not nothing uh nothing
+the it wasn't in a deep meaning with that but okay but would you say that this is enough um maybe i can
+switch it to maybe gloria i don't think so because now you are like a overwriting they need if i understood
+it correctly okay so what if i come here and say self dot um is alive it was true would that be enough
+gloria i can uh keep up that be enough yes though that could work that's right uh yes did uh it did kind of work right
+uh but i would actually hmm yes it does that would be enough uh interesting i thought it was i think
+if you remove it from the line 285 it will not work yeah yeah yeah obviously but yeah i actually thought
+that i also need to add this uh should have tried it myself uh so my point was gonna show you that i need
+to actually add this as well but it seems that it doesn't need i need to just look into it again uh
+just to be sure but as you see here uh so with our super um we don't actually need to change dog right
+and now think about it if we had a dog and we had a cat and we had a cow and we had a horse and so on
+then we had to change on all of these right but with our um down there in it or super uh we kind of
+don't if we were to add some new logic so any change any uh if there is some kind of shared
+initialization logic it stays just in one place and we don't have to worry about that
+do you kind of see why super is super nice uh yes well uh are there rules of uh to inheritance maybe
+there are some rules that we missed because uh like with an interface for instance you have to
+you're like forced to implement uh some properties of the of the interface and of course we're gonna dive
+more into inheritance and we're gonna build on this and as you will see yeah i would i would read up on
+it i would read up on it because yeah it seems really powerful and i want to understand it so
+yeah and hopefully we will actually uh answer your question along the way but uh yeah and some
+pitfalls and so on so yeah just let's keep it uh let's keep the red line as we say in swedish i don't know how to say that in english
+uh no yeah exactly the red thread not the red line yeah yeah uh all right uh we can actually keep this
+let's keep this so you can see the uh what we what we came from right dimitri yes i just wanted to add
+that uh in this case uh if we omit super we will miss uh age validation as well so we can for
+example make the dog with a negative age yeah yes yes yes yes yes thank you thank you thank you thank
+you thank you of course yeah just like if we were to that's why we need to add this right of course it
+will work but at the same time if we had an age that is negative we wouldn't have this logic thank you for
+that one dimitri i don't know might be my cold uh all right right all right all right let's move uh
+carefully forward what was next uh we spoke about a little bit of super spoke about a little bit of
+self that will be an exercise uh i'm gonna save that for you guys uh for the lab uh let's see
+here okay so uh we save polymorphism for tomorrow perfect all right uh so we're just going to talk
+a little bit about uh method overriding and that would be uh probably the end of the day uh so what
+we have seen so far is uh take care uh so what we have seen so far well uh uh subclasses have
+either inherited a method and maybe need needs a different version of that method right a subclass can
+actually replace an inherited method with its own implementation and this is what we call method
+of writing uh let me just put it as a title here method over writing uh so uh let's just create a just
+to show it in a very simple example here and then we can build on that a little bit um in it super
+simple name is enough and name equals name right uh yeah let's also make sound let's put itself return
+some animal class dog animal animal death sound and i'm not gonna use super here uh actually i'm gonna do
+return just so we get the point here woof all right and then for our cat cat makes sounds of uh that would be
+wolf right uh let's say uh yeah right now let's create our animal why did i do that uh dog rex and
+then we have our cat equals cat and let's call her luna all right and now that we have created them we
+we can actually do some prints here print uh animal make sound right and then we can do another print
+uh dog make sound and also cat make sound right just to show you uh even though they inherit from animal
+we see that in our terminal we will see some uh yeah exactly some animal sound we see meow uh woof and then we
+see meow right so dog and cat can either even though they they both inherit from animal but they actually
+define their own version of what well uh this method make sound so when we call make sound uh on the dog
+uh on the dog python will actually use dogs version and when we call it on cat well python we use the cat
+version right uh so the subclass implementation actually will override the inherited one and that's
+important to remember but of course overriding does not always mean that we want to completely
+ignore the parent method sometimes maybe we want to use the parent method uh or the or use the parent
+behavior and then add maybe something to it here we can actually use what guys what do you say
+something that we discussed previously with me guys last part fabian no never mind of my i thought i
+thought about it i thought if it was you called something on the class directly but i can't explain it so
+yeah some of the uh methods like sleeping or eating those things it can be a common one well i was
+actually thank you but i was actually thinking of super so we can use super for this as well all right
+so let's make super super uh so let's use um let's use a different example let's save this one so we
+want to still override but we want to keep something maybe or add something and so on all right
+so let's say we have a class uh employee all right and then uh we we we uh get uh information or
+something like that all right self uh return let's say employee uh information all right
+uh and now let's create another class uh let's say a developer developer who's also an employee right
+um and now we do something like this get information ah perfect uh but i'm just gonna make it a little
+bit clearer here so let's keep that let's do it like that so uh here get information right so what we can do
+just keep it in a variable here so base let's say base information right just to make it super clear
+uh you can write something like that super and then uh get uh what was it get in or may sean right and
+then let's actually return uh base information uh something like this right base information plus equal
+no not a sequence i would say uh uh just about this let's keep it simple role i don't know it's a
+developer this is it's a developer class all right now uh let's create a developer the developer is a
+developer let's take a look at this now let's print out our uh developer where we get actually
+information let's see what actually will be printed out here uh employee information role developer and there
+you go so what did we see that the developer actually overrides get information here right
+inside its own actually its own version so it first calls of course the parent the parent version
+using the super and then it actually adds some information here so we're kind of extending
+the parent behavior rather than just completely replacing it right so there you go a little bit more about
+super and since super was discussed i think this was a perfect place to actually end the lesson uh yeah
+and tomorrow we're gonna talk a little bit more polymorphism so if you were looking for that uh we
+will talk about it tomorrow we will talk a little bit of polymorphism with inheritance as well uh if
+you're familiar with duck typing we will talk about python and duck typing um maybe jump depending on the time
+uh something that we will also talk about is another another dunder method uh down the string uh just to add
+another um just another method and a little bit with inheritance as well we have a lot to talk about
+tomorrow now that that will be actually it okay and maybe discuss like we did in the la in the beginning
+here uh where we discussed class versus uh dictionary we will do kind of the same thing uh we will uh look
+at inheritance versus composition so yeah uh which one is better and in what in what sense and so on
+but we will start off with polymorphism and take it from there and see where we actually land and if
+we need more days we will take more days for for the fundamental part but i think tomorrow will be the
+last the last day we actually uh talk uh the last lesson for fundamentals i hope i have answered your
+questions uh if i have missed any question i mean uh we're doing our best here uh with with the questions
+and uh with the call that i'm having i can't

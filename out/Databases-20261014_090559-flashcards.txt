@@ -1,0 +1,31 @@
+What is a document in MongoDB?;A document in MongoDB is similar to a Python dictionary but can contain lists and nested objects, with each document having a unique `_id` field.
+
+Why is understanding document structure important in MongoDB?;Understanding document structure is crucial because it determines how data is stored and retrieved, allowing flexible schemas compared to traditional SQL tables.
+
+What is PyMongo used for?;PyMongo is a Python driver that enables communication with MongoDB from Python applications, supporting CRUD operations on collections.
+
+How are filters represented in MongoDB queries?;Filters in MongoDB are represented as Python dictionaries specifying the criteria for finding documents.
+
+What do dollar-sign prefixed operators like `$gt` and `$lt` signify in MongoDB?;Dollar-sign prefixed operators tell MongoDB to treat the key as an operator rather than a field name, enabling comparison operations.
+
+How do you perform AND and OR conditions in MongoDB queries?;AND conditions are added as multiple fields in the same dictionary, while OR conditions use the `$or` operator with a list of filter dictionaries.
+
+What is dot notation used for in MongoDB?;Dot notation is used to access nested fields within documents, such as `address.city` to reach into nested objects.
+
+How do you search for specific values within arrays in MongoDB?;You can search directly for array elements or use operators like `$all` to match multiple items, and `$size` to check array length.
+
+What are the update operations available in MongoDB using PyMongo?;Common update operations include `$set` to change field values, `$unset` to remove fields, `$inc` to increment numeric values, and array operations like `$push`, `$addToSet`, and `$pull`.
+
+What is an upsert operation in MongoDB?;An upsert combines update and insert operations, creating a new document if no matching record exists, otherwise updating the existing one.
+
+How do you safely delete documents in MongoDB?;Always run a `find()` or `count_documents()` with your exact filter first to verify results before performing deletion operations.
+
+What is the purpose of projection in MongoDB queries?;Projection allows specifying which fields to include or exclude from query results, helping optimize data retrieval and reduce bandwidth usage.
+
+How do you implement pagination in MongoDB using PyMongo?;Pagination is implemented by chaining `skip()` and `limit()` methods after `find()`, calculating skip values based on page number and items per page.
+
+What does the `$exists` operator do in MongoDB?;The `$exists` operator checks whether a field exists in documents, distinguishing between missing fields and those with null values.
+
+How do you count documents matching specific criteria in MongoDB?;Use `count_documents()` method with a filter dictionary to count how many documents match given criteria.
+
+What are some best practices when working with MongoDB through PyMongo?;Best practices include always checking results before updates/deletes, understanding update result objects, and using dot notation properly for nested fields.
