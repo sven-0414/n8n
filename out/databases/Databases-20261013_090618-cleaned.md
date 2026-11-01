@@ -1,44 +1,27 @@
-# Python NoSQL and MongoDB Study Notes
+# NoSQL and MongoDB
 
-## Introduction to NoSQL Databases
+## What is NoSQL?
 
-### What is NoSQL?
-NoSQL stands for "Not Only SQL" and refers to a family of databases that are different from traditional SQL databases. It's not that SQL is bad - it's just another tool in the toolbox. NoSQL databases are designed to handle data differently, often with more flexibility than traditional relational databases.
+### Definition
+NoSQL stands for "Not Only SQL" and refers to a family of database systems that differ from traditional relational SQL databases. These databases are designed to handle data in flexible, non-tabular formats and can scale across multiple servers more easily than SQL databases.
+
+### Key Characteristics
+- **Flexible Schema**: Unlike SQL databases where you must define all columns upfront, NoSQL allows documents within the same collection to have different structures
+- **Horizontal Scaling**: Built to distribute data across many servers from the start
+- **Document-Oriented**: Data is stored as documents (similar to Python dictionaries) rather than rows in tables
 
 ### Why Use NoSQL?
-There are several common reasons to use NoSQL databases:
-1. **Data changes shape frequently** - New product types with new properties every week
-2. **Data naturally fits into objects** - Python dictionaries map easily to NoSQL documents
-3. **Need for horizontal scaling** - NoSQL databases can spread data across many servers
-4. **Complex relationships** - Instead of joins, data that belongs together stays together
+1. **Changing Data Structure**: When your data schema changes frequently, NoSQL adapts more easily
+2. **Object-Oriented Programming**: NoSQL works naturally with Python dictionaries and objects
+3. **Large Scale Data**: Handles massive amounts of data that don't fit on a single computer
+4. **Performance**: Often faster for specific operations like read-heavy workloads
 
-### Key Differences from SQL
-| SQL | NoSQL |
-|-----|-------|
-| Tables with fixed columns | Documents with flexible schema |
-| Join operations to connect data | Embedded documents store related data together |
-| Predefined structure | Schema-less by default |
-| Primary keys in tables | Unique `_id` field in documents |
-
-## MongoDB Overview
-
-### What is MongoDB?
-MongoDB is a document database, one of the most popular NoSQL databases. It's built to handle large amounts of data and can spread across multiple servers. The name comes from "humongous" - referring to its ability to handle massive datasets.
-
-### Key Concepts
-- **Database**: Same as SQL - contains collections
-- **Collection**: Similar to SQL tables but more flexible
-- **Document**: Similar to SQL rows but stored as JSON-like documents
-- **Field**: Similar to SQL columns
-- **Primary Key**: Always called `_id`
-
-### Document Structure
-MongoDB documents look like Python dictionaries:
+### Code Example
 ```python
-{
-    "_id": ObjectId("..."),
+# This is how you might see data in NoSQL vs SQL
+# NoSQL document structure (similar to Python dict):
+product = {
     "name": "hoodie black",
-    "category": "clothing",
     "price": 599,
     "tags": ["winter", "casual", "black"],
     "details": {
@@ -48,15 +31,189 @@ MongoDB documents look like Python dictionaries:
 }
 ```
 
-## PyMongo Library
+### Why It Matters
+NoSQL databases provide a different approach to data storage that's particularly useful for modern web applications where data structures change frequently and scalability is crucial. Understanding both SQL and NoSQL gives you more tools to choose the right database for your specific needs.
 
-### Installation
-To use MongoDB with Python, you need to install the PyMongo library:
+## MongoDB Overview
+
+### Definition
+MongoDB is a popular document-based NoSQL database that stores data as documents in collections. It's designed to handle large volumes of data and scale across multiple servers.
+
+### Key Features
+- **Document Database**: Stores data in flexible, JSON-like documents
+- **Schema Flexibility**: Documents within the same collection can have different fields
+- **Built for Scaling**: Designed to work across multiple servers from the beginning
+- **Popular Usage**: Widely used in job ads and modern applications
+
+### Installation and Setup
+MongoDB can be installed locally on your computer for free. The database runs as a background service (like a kitchen) that Python programs communicate with through libraries like PyMongo.
+
+### Code Example
+```python
+# MongoDB connection example
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017/")
+db = client["webshop"]
+```
+
+### Why It Matters
+MongoDB is the most widely used NoSQL database and understanding it gives you access to many modern application architectures that require flexible, scalable data storage solutions.
+
+## MongoDB Terminology
+
+### Key Terms
+| SQL Term | MongoDB Term |
+|----------|--------------|
+| Database | Database |
+| Table | Collection |
+| Row | Document |
+| Column | Field |
+| Primary Key | _id (always called underscore ID) |
+
+### Document Structure
+- Every document in MongoDB must have a unique `_id` field (primary key equivalent)
+- Documents can contain nested objects and arrays
+- Data types include strings, numbers, booleans, dates, arrays, and objects
+
+### Code Example
+```python
+# A MongoDB document structure example:
+{
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "name": "hoodie black",
+    "price": 599,
+    "category": "clothing",
+    "tags": ["winter", "casual", "black"],
+    "details": {
+        "color": "black",
+        "material": "cotton"
+    }
+}
+```
+
+### Why It Matters
+Understanding these terms is crucial because they form the foundation of how you'll interact with MongoDB throughout this course. The terminology differences from SQL can be confusing at first but become intuitive with practice.
+
+## Data Types in MongoDB
+
+### Supported Data Types
+- **Strings**: Text data (like Python strings)
+- **Numbers**: Integers, floats (stored as double in MongoDB)
+- **Booleans**: True/False values
+- **Dates**: Date and time information
+- **Arrays**: Lists of values
+- **Objects**: Nested dictionaries
+- **Null**: Represents missing or empty values
+
+### PyMongo Translation Rules
+PyMongo automatically translates between Python types and MongoDB types:
+- Python `str` → MongoDB `string`
+- Python `int` → MongoDB `int`
+- Python `float` → MongoDB `double`
+- Python `list` → MongoDB `array`
+- Python `dict` → MongoDB `object`
+- Python `datetime` → MongoDB `date`
+- Python `None` → MongoDB `null`
+
+### Code Example
+```python
+# Python to MongoDB type conversion examples
+import datetime
+
+# Python data types
+python_data = {
+    "name": "Anna",           # str → string
+    "age": 30,                # int → int
+    "height": 5.6,            # float → double
+    "active": True,           # bool → boolean
+    "birth_date": datetime.datetime.now(),  # datetime → date
+    "hobbies": ["reading", "swimming"],     # list → array
+    "address": {              # dict → object
+        "street": "123 Main St",
+        "city": "Uppsala"
+    },
+    "middle_name": None       # None → null
+}
+```
+
+### Gotchas and Edge Cases
+- **Case Sensitivity**: In Python, `true` is not the same as `True` (lowercase vs uppercase)
+- **JSON Format**: MongoDB uses JSON format which requires lowercase boolean values
+- **Automatic Type Conversion**: PyMongo handles most conversions automatically but be aware of potential issues
+
+## Database Structure and Collections
+
+### Flexible Schema Concept
+Unlike SQL databases where every row must have the same columns, MongoDB allows documents in the same collection to have different structures. This flexibility is called "flexible schema."
+
+### Code Example
+```python
+# Two products in the same collection with different fields
+product1 = {
+    "name": "sneakers",
+    "price": 899,
+    "size": 42,  # Only sneakers have size
+    "_id": 1
+}
+
+product2 = {
+    "name": "t-shirt",
+    "price": 199,
+    "color": "blue",  # T-shirts don't have size
+    "_id": 2
+}
+```
+
+### Why It Matters
+This flexibility allows you to store data that naturally changes over time without having to modify database schema or create complex join operations.
+
+## The _id Field
+
+### Definition and Properties
+- Every document in MongoDB must have a unique `_id` field
+- It works like a primary key in SQL databases
+- If you don't provide an `_id`, MongoDB automatically creates one called an ObjectID
+- ObjectIDs are globally unique across all computers and time
+
+### ObjectID Structure
+ObjectIDs contain:
+1. Timestamp (4 bytes)
+2. Machine identifier (3 bytes)
+3. Process ID (2 bytes)
+4. Counter (3 bytes)
+
+This ensures no two ObjectIDs will ever collide, even when created simultaneously on different computers.
+
+### Code Example
+```python
+# Manual ID assignment vs automatic creation
+manual_product = {
+    "_id": 1,
+    "name": "hoodie black",
+    "price": 599
+}
+
+auto_product = {
+    "name": "scarf",
+    "price": 299
+}
+# MongoDB automatically adds: "_id": ObjectId("...")
+
+# Both are valid, but automatic creates ObjectID
+```
+
+### Why It Matters
+Understanding the `_id` field is crucial because it's how documents are uniquely identified. Missing or duplicate IDs will cause errors in your database operations.
+
+## PyMongo Library Basics
+
+### Installation and Setup
 ```bash
 pip install pymongo
 ```
 
-### Basic Connection Setup
+### Basic Connection Pattern
 ```python
 from pymongo import MongoClient
 
@@ -67,33 +224,236 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client["webshop"]
 
 # Access collection
-collection = db["products"]
+collection = db["customers"]
 ```
+
+### Code Example
+```python
+from pymongo import MongoClient
+
+# Establish connection
+client = MongoClient("mongodb://localhost:27017/")
+db = client["webshop"]
+
+# Find one document
+customer = db.customers.find_one()
+print(customer)  # Returns a Python dictionary
+
+# Find multiple documents
+customers = db.customers.find()
+for customer in customers:
+    print(customer)
+```
+
+### Why It Matters
+PyMongo makes MongoDB feel like regular Python code. You get back standard Python dictionaries instead of special cursor objects, making it intuitive for Python developers.
 
 ## Core Operations
 
-### 1. Finding Documents
-
-#### Find One Document
+### Find One Document
 ```python
-# Find first document that matches criteria
-product = db.products.find_one({"name": "Beanie"})
-print(product)  # Returns a Python dictionary
+# Returns a single document or None if not found
+customer = db.customers.find_one()
+print(customer)  # Direct Python dictionary
 ```
 
-#### Find Many Documents
+### Find Multiple Documents
 ```python
-# Find all documents matching criteria
+# Returns a cursor - must iterate over results
+customers = db.customers.find()  # All customers
+for customer in customers:
+    print(customer)
+
+# With filter
 customers = db.customers.find({"city": "Uppsala"})
 for customer in customers:
-    print(customer["first_name"])
+    print(customer)
 ```
 
-### 2. Inserting Documents
-
-#### Insert One Document
+### Insert One Document
 ```python
-# Insert a single document
+new_customer = {
+    "first_name": "Noah",
+    "last_name": "Svensson",
+    "email": "noah@gmail.com"
+}
+
+result = db.customers.insert_one(new_customer)
+print(result.inserted_id)  # Shows the new document's ID
+```
+
+### Insert Multiple Documents
+```python
+new_customers = [
+    {
+        "first_name": "Olivia",
+        "last_name": "Johnson",
+        "email": "olivia@gmail.com"
+    },
+    {
+        "first_name": "Liam",
+        "last_name": "Williams",
+        "email": "liam@gmail.com"
+    }
+]
+
+result = db.customers.insert_many(new_customers)
+print(result.inserted_ids)  # Shows all new document IDs
+```
+
+### Count Documents
+```python
+count = db.products.count_documents({})
+print(f"Total products: {count}")
+
+# Count with filter
+shoe_count = db.products.count_documents({"category": "shoes"})
+print(f"Shoes: {shoe_count}")
+```
+
+### Why It Matters
+These basic operations form the foundation of working with MongoDB. Understanding how they work and their differences from SQL operations is essential for effective database programming.
+
+## Filters in MongoDB
+
+### Filter Syntax
+Filters are Python dictionaries that specify conditions for finding documents:
+- Empty dictionary `{}` returns all documents
+- Field-value pairs match documents where the field equals that value
+- Multiple fields must match (AND operation)
+
+### Code Examples
+```python
+# Find all documents
+all_customers = db.customers.find({})
+
+# Find by single field
+customers_in_uppsala = db.customers.find({"city": "Uppsala"})
+
+# Find by multiple fields (AND)
+customers_in_uppsala_with_newsletter = db.customers.find({
+    "city": "Uppsala",
+    "newsletter": True
+})
+
+# Find with different operators
+# Note: MongoDB supports various comparison operators in queries
+```
+
+### Case Sensitivity
+MongoDB filters are case-sensitive like SQL:
+```python
+# This will return no results (case mismatch)
+customers = db.customers.find({"city": "uppsala"})  # Wrong capitalization
+
+# This will work correctly
+customers = db.customers.find({"city": "Uppsala"})  # Correct capitalization
+```
+
+### Why It Matters
+Filtering is one of the most important aspects of database operations. Understanding how to properly structure filters helps you retrieve exactly the data you need.
+
+## Document Embedding vs Normalization
+
+### Concept
+In SQL, related data often requires joining multiple tables. In MongoDB, related data can be stored together within a single document (embedding).
+
+### Example Comparison
+```python
+# SQL approach - requires joins
+# Orders table
+{
+    "order_id": 1,
+    "customer_id": 101
+}
+
+# Order_items table  
+{
+    "item_id": 1,
+    "order_id": 1,
+    "product_name": "hoodie",
+    "price": 599
+}
+
+# MongoDB approach - embedded
+{
+    "_id": 1,
+    "customer_id": 101,
+    "items": [
+        {
+            "product_name": "hoodie",
+            "price": 599,
+            "quantity": 2
+        }
+    ]
+}
+```
+
+### Why It Matters
+This approach eliminates the need for complex JOIN operations and can significantly improve read performance for related data.
+
+## Working with Collections
+
+### Collection Creation
+Collections are created automatically when you insert the first document:
+```python
+# This creates the 'customers' collection automatically
+db.customers.insert_one({"name": "Anna"})
+```
+
+### Why It Matters
+This automatic creation makes MongoDB very easy to start working with, but it also means typos in collection names won't throw errors - they'll create new empty collections instead.
+
+## Error Handling and Best Practices
+
+### Common Issues
+1. **Typo in collection name**: Creates new collection instead of error
+2. **Missing ID field**: Automatically creates ObjectID
+3. **Case sensitivity**: Filters are case-sensitive like SQL
+4. **No rollback capability**: Operations happen immediately
+
+### Code Example for Safe Access
+```python
+# Safely access potentially missing fields
+customer = db.customers.find_one({"first_name": "Anna"})
+if customer:
+    city = customer.get("city", "Unknown")  # Returns "Unknown" if city missing
+    print(f"City: {city}")
+```
+
+### Why It Matters
+Understanding these potential issues helps prevent common mistakes and makes your database code more robust.
+
+## Database Management with Compass
+
+### MongoDB Compass Overview
+MongoDB Compass is a GUI tool for exploring and managing MongoDB databases:
+- Visual interface to view data
+- Easy connection management
+- Database and collection browsing
+- Data manipulation capabilities
+
+### Connection Process
+1. Download MongoDB Compass from official website
+2. Connect using the address: `mongodb://localhost:27017/`
+3. Refresh to see available databases
+4. Navigate through collections and documents
+
+### Why It Matters
+Compass provides a visual way to understand your data structure and verify that your Python operations are working correctly.
+
+## Practical Implementation
+
+### Complete Working Example
+```python
+from pymongo import MongoClient
+import pprint
+
+# Connect to database
+client = MongoClient("mongodb://localhost:27017/")
+db = client["webshop"]
+
+# Insert a new product
 new_product = {
     "name": "gloves",
     "category": "accessories",
@@ -102,291 +462,16 @@ new_product = {
 }
 
 result = db.products.insert_one(new_product)
-print(result.inserted_id)  # Shows the generated _id
-```
+print(f"Inserted product with ID: {result.inserted_id}")
 
-#### Insert Multiple Documents
-```python
-# Insert multiple documents at once
-products = [
-    {
-        "name": "scarf",
-        "category": "accessories",
-        "price": 149,
-        "stock": 15,
-        "tags": ["winter", "casual"],
-        "details": {"color": "red"}
-    },
-    {
-        "name": "gloves",
-        "category": "accessories",
-        "price": 199,
-        "stock": 20,
-        "tags": ["winter", "casual"],
-        "details": {"color": "black"}
-    }
-]
+# Find the inserted product
+product = db.products.find_one({"name": "gloves"})
+pprint.pprint(product)  # Pretty print for better readability
 
-result = db.products.insert_many(products)
-print(result.inserted_ids)  # Shows all generated _ids
-```
-
-### 3. Counting Documents
-```python
-# Count documents in a collection
+# Count documents
 count = db.products.count_documents({})
 print(f"Total products: {count}")
-
-# Count documents with filter
-shoe_count = db.products.count_documents({"category": "shoes"})
-print(f"Shoe products: {shoe_count}")
 ```
 
-### 4. Deleting Documents
-```python
-# Delete one document
-result = db.products.delete_one({"name": "gloves"})
-print(f"Deleted {result.deleted_count} documents")
-
-# Delete multiple documents
-result = db.products.delete_many({"category": "shoes"})
-print(f"Deleted {result.deleted_count} documents")
-```
-
-## Data Types in MongoDB
-
-MongoDB supports various data types that map to Python equivalents:
-- **String**: Text values (Python str)
-- **Number**: Integers and floating-point numbers (Python int/float)
-- **Boolean**: True or false (Python True/False)
-- **Date**: Date and time values (Python datetime)
-- **Array**: Lists of values (Python list)
-- **Object**: Nested documents (Python dict)
-- **Null**: Missing or empty values (Python None)
-
-### Important Note About Data Types
-In Python, you must use correct capitalization:
-```python
-# Correct - Python uses capital T/F and None
-{"active": True, "name": "John", "email": None}
-
-# Incorrect - JSON uses lowercase true/false/null
-# {"active": true, "name": "John", "email": null}
-```
-
-## Working with Filters
-
-Filters in MongoDB are Python dictionaries that specify search criteria:
-```python
-# Find all customers from Uppsala
-customers = db.customers.find({"city": "Uppsala"})
-
-# Find products with price > 100 and category = 'shoes'
-expensive_shoes = db.products.find({
-    "price": {"$gt": 100},
-    "category": "shoes"
-})
-
-# Find documents where field doesn't exist
-no_email = db.customers.find({"email": {"$exists": False}})
-```
-
-## Flexible Schema
-
-### What is Flexible Schema?
-In MongoDB, documents in the same collection can have different structures. This contrasts with SQL where all rows must have the same columns.
-
-### Example of Flexible Schema
-```python
-# These are both valid products in the same collection
-product1 = {
-    "name": "sneakers",
-    "category": "shoes",
-    "price": 899,
-    "size": 42  # Only sneakers have size
-}
-
-product2 = {
-    "name": "t-shirt",
-    "category": "clothing",
-    "price": 199
-    # No size field - that's okay!
-}
-```
-
-### Important Considerations
-- **No automatic validation**: MongoDB doesn't check data consistency by default
-- **Typo risk**: Writing "pric" instead of "price" will create a new field
-- **Manual enforcement**: You need to implement validation rules yourself
-
-## The _id Field
-
-### Primary Key in MongoDB
-Every document must have an `_id` field, similar to primary keys in SQL:
-```python
-# Manual ID assignment (recommended for comparison with SQL)
-product = {
-    "_id": 1,
-    "name": "hoodie black",
-    "price": 599
-}
-
-# Automatic ID generation
-product = {
-    "name": "hoodie black",
-    "price": 599
-}
-# MongoDB automatically creates an ObjectId for _id
-```
-
-### Object IDs
-When no `_id` is provided, MongoDB generates an ObjectId:
-- **Format**: 24-character hexadecimal string
-- **Structure**: Built from timestamp + unique parts
-- **Uniqueness**: Guaranteed to be unique across computers
-- **Use case**: Perfect for distributed systems
-
-## Practical Examples and Code Patterns
-
-### Basic Data Access Pattern
-```python
-from pymongo import MongoClient
-import pprint  # For pretty printing dictionaries
-
-# Connect to database
-client = MongoClient("mongodb://localhost:27017/")
-db = client["webshop"]
-
-# Find one document
-product = db.products.find_one({"name": "Beanie"})
-print(product)
-
-# Loop through multiple documents
-for customer in db.customers.find({"city": "Uppsala"}):
-    print(customer["first_name"])
-
-# Insert new document
-new_customer = {
-    "first_name": "Noah",
-    "last_name": "Svensson",
-    "email": "noah@gmail.com",
-    "city": "Stockholm"
-}
-
-result = db.customers.insert_one(new_customer)
-print(f"Inserted customer with ID: {result.inserted_id}")
-```
-
-### Safe Dictionary Access
-When field might not exist:
-```python
-# This would cause KeyError if city field doesn't exist
-# print(customer["city"])
-
-# Safe approach using .get()
-city = customer.get("city", "Unknown")
-print(f"City: {city}")
-```
-
-## Common Gotchas and Best Practices
-
-### 1. Case Sensitivity
-MongoDB filters are case-sensitive like SQL:
-```python
-# This finds nothing because of capitalization
-db.customers.find({"city": "Uppsala"})  # Finds customers from Uppsala
-db.customers.find({"city": "uppsala"})  # Finds nothing
-
-# If you want to ignore case, use regex:
-db.customers.find({"city": {"$regex": "^uppsala$", "$options": "i"}})
-```
-
-### 2. Missing Fields and Null Values
-```python
-# Document without city field
-customer = {"first_name": "Lucas"}
-
-# This will cause KeyError
-# print(customer["city"])
-
-# Safe approach
-city = customer.get("city", "Unknown")
-print(f"City: {city}")  # Prints: City: Unknown
-```
-
-### 3. Schema Validation
-Since MongoDB doesn't enforce schema by default, be careful about typos:
-```python
-# This creates a new field called "pric" instead of "price"
-product = {"name": "hat", "pric": 49}  # Notice the typo
-
-# The document will have both fields!
-```
-
-### 4. Document Size Limits
-MongoDB has a 16MB limit per document, so avoid creating overly large documents.
-
-## Database Operations Summary
-
-| SQL Operation | MongoDB Equivalent |
-|---------------|-------------------|
-| SELECT * FROM customers WHERE city = 'Uppsala' | db.customers.find({"city": "Uppsala"}) |
-| INSERT INTO customers VALUES (...) | db.customers.insert_one(document) |
-| DELETE FROM customers WHERE name = 'John' | db.customers.delete_one({"name": "John"}) |
-| SELECT COUNT(*) FROM products | db.products.count_documents({}) |
-
-## Complete Working Example
-
-```python
-from pymongo import MongoClient
-import pprint
-
-# Connect to MongoDB
-client = MongoClient("mongodb://localhost:27017/")
-db = client["webshop"]
-
-# Check collections
-print("Database collections:", db.list_collection_names())
-
-# Find a specific product
-product = db.products.find_one({"name": "Beanie"})
-print("Product found:")
-pprint.pprint(product)
-
-# Count documents in each collection
-for collection_name in db.list_collection_names():
-    count = db[collection_name].count_documents({})
-    print(f"{collection_name}: {count} documents")
-
-# Find customers from Uppsala
-print("\nCustomers from Uppsala:")
-for customer in db.customers.find({"city": "Uppsala"}):
-    print(f"- {customer['first_name']} {customer['last_name']}")
-
-# Insert new product
-new_product = {
-    "name": "sweater",
-    "category": "clothing",
-    "price": 299,
-    "stock": 15
-}
-
-result = db.products.insert_one(new_product)
-print(f"\nInserted product with ID: {result.inserted_id}")
-
-# Verify insertion
-print("New product:")
-pprint.pprint(db.products.find_one({"name": "sweater"}))
-```
-
-## Key Takeaways
-
-1. **MongoDB is document-based** - Data stored as JSON-like documents
-2. **Flexible schema** - Documents in same collection can have different structures
-3. **No joins required** - Related data stored together in one document
-4. **PyMongo translates data types automatically** - Python lists become arrays, dicts become objects
-5. **Always have _id field** - Either manual or auto-generated ObjectId
-6. **Case-sensitive searches** - Like SQL, but no automatic error checking for typos
-7. **Immediate persistence** - Changes are saved immediately, no rollback capability
-
-This comprehensive understanding of MongoDB and PyMongo will allow you to work effectively with document databases in Python applications.
+### Why This Matters
+This example demonstrates the complete workflow from connection through insertion, retrieval, and counting - all fundamental operations you'll use regularly when working with MongoDB.

@@ -1,0 +1,33 @@
+What is an API and what role does it play in software communication?;An API (Application Programming Interface) is a set of rules that allows programs to communicate with each other, acting as an intermediary between different software systems to exchange data and functionality.
+
+What are the three main components involved in how APIs work?;The three main components are the Client (program requesting data), the Server (system providing the data or service), and the API (interface handling requests and responses between client and server).
+
+Why are APIs useful for data sharing, security, and scalability?;APIs enable same data to be served to multiple clients, protect databases by standing between them and external access, and allow systems to efficiently handle many different types of requests.
+
+What four components make up every API request structure?;Every API request consists of an Endpoint (address of the resource), Method (action like GET or POST), Headers (extra request information), and Body (data sent with the request for certain methods).
+
+How do you make a basic GET request using Python's requests library?;You use requests.get() with the URL as an argument, such as response = requests.get('https://api.example.com/data').
+
+What does the response object contain after making an API request?;The response object contains Status Code (success/failure indicator), Headers (information about the response), and Body (actual data returned by the API).
+
+What do common HTTP status codes indicate in API responses?;2xx codes indicate success, 3xx are redirects, 4xx are client errors (like 404 Not Found or 401 Unauthorized), and 5xx are server errors.
+
+What is the difference between a 401 and 403 HTTP status code?;A 401 Unauthorized means you're not authenticated (system doesn't know who you are), while 403 Forbidden means you're authenticated but lack permission to access the resource.
+
+How does JSON data map to Python data types when parsed from an API response?;JSON objects become Python dictionaries, arrays become lists, strings stay strings, numbers become integers/floats, booleans become True/False, and null becomes None.
+
+What is the purpose of query parameters in API requests?;Query parameters are additional instructions sent with an API request to specify how data should be returned (like limiting results or sorting).
+
+How do you add query parameters using the Python requests library?;You can pass a dictionary to the params parameter, such as response = requests.get(url, params={'limit': 5, 'sort': 'desc'}), which is cleaner than building URLs manually.
+
+What are headers in API requests and what information do they typically contain?;Headers contain extra information about the request including content type, authentication information, and acceptance preferences for how data should be formatted.
+
+Why is error handling important when making API requests?;API calls can fail due to network issues, server timeouts, invalid requests, or unexpected data formats, so proper error handling prevents crashes and provides meaningful feedback.
+
+What are some best practices for securing API keys and sensitive information?;Never commit secrets to version control, use environment files with .gitignore to exclude them, revoke compromised tokens immediately, and avoid sending sensitive data via query parameters.
+
+What are the main HTTP methods used in API requests and what do they typically do?;GET retrieves data, POST creates new resources, PUT replaces entire resources, PATCH updates partial resources, and DELETE removes resources.
+
+How do you properly handle different types of exceptions when making API calls with Python?;Use try/except blocks to catch specific exceptions like HTTPError, ConnectionError, Timeout, and RequestException, with appropriate error messages for debugging.
+
+What are the key components of a robust API client class in Python?;A robust API client includes proper session management, timeout handling, error catching, authentication headers, and reusable methods for GET, POST, PUT, PATCH, and DELETE requests.

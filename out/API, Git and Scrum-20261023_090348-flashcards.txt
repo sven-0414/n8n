@@ -1,0 +1,37 @@
+What is version control and what does it track?;Version control is a system that tracks changes to files over time, including who made the change, when it was made, and what the change was.
+
+Why is version control useful for developers?;It provides full history tracking, rollback capability, supports collaboration, and acts as a backup system.
+
+What is the difference between Git and GitHub?;Git is a local version control program that tracks changes to files. GitHub is an online platform that hosts Git repositories and enables collaboration features like pull requests and issue tracking.
+
+What is a Git repository?;A repository (or "repo") is a project folder that Git keeps track of.
+
+What does it mean to commit in Git?;A commit is a saved snapshot of the whole project at a moment in time with a message describing the change.
+
+What is a branch in Git and why would you use one?;A branch is a separate line of work that allows you to experiment without affecting the main codebase, enabling parallel development.
+
+What does it mean to clone a repository?;Cloning means downloading a repository to your local computer from a remote source like GitHub.
+
+How do you push and pull changes in Git?;Push sends commits to a remote repository, while pull retrieves new commits from the remote repository.
+
+What is the purpose of the staging area in Git?;The staging area allows you to selectively choose which changes go into each commit, ensuring one logical change per commit.
+
+Why should commit messages be descriptive and concise?;Descriptive messages explain what changed and why, making code review easier and helping others understand the history.
+
+How often should you commit your changes?;You should commit often with small, frequent commits that represent one logical change.
+
+What is a .gitignore file used for?;It excludes files or folders from being tracked by Git, such as cache files, virtual environments, and sensitive data.
+
+What does it mean to merge branches in Git?;Merging combines two branches together, integrating changes from one into another.
+
+What is the purpose of a pull request on GitHub?;A pull request proposes changes to be merged into the main branch and allows team members to review code before merging.
+
+How do you handle conflicts when merging branches?;Conflicts occur when both branches modify the same line. You manually resolve them by choosing which version to keep and removing conflict markers.
+
+What is the recommended branching strategy for feature development?;Create a feature branch from main, work on it, push it to GitHub, create a pull request, get reviewed, then merge into main.
+
+What are some best practices for working with Git remotes?;Always check your remote repositories, set upstream branches when pushing for the first time, and pull new changes regularly.
+
+How can you undo changes in Git safely?;Use commands like git restore to unstage or discard changes, or git revert to create a new commit that undoes previous changes.
+
+What is the relationship between Git and Agile/Scrum methodologies?;Git supports Scrum by enabling feature branches for user stories, pull requests for code review, and merging as part of the "Definition of Done."

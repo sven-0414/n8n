@@ -1,0 +1,79 @@
+What is FastAPI and what makes it different from Flask?;FastAPI is a modern, high-performance web framework for building APIs with Python that uses type hints for validation and documentation, offering automatic data validation, built-in interactive API docs, and simplified code compared to Flask.
+
+How does FastAPI handle data validation?;FastAPI automatically validates incoming data using Pydantic models based on type hints, ensuring required fields are present and have correct types without writing additional validation logic.
+
+What is the purpose of the `[all]` flag when installing FastAPI?;The `[all]` flag installs additional dependencies needed for running the server, such as uvicorn, which is required to serve the FastAPI application.
+
+What does FastAPI automatically convert Python objects into when returning from routes?;FastAPI automatically converts Python objects like dictionaries or Pydantic models into JSON responses with proper headers (Content-Type: application/json).
+
+How does FastAPI generate API documentation?;FastAPI automatically generates interactive API documentation at `/docs` based on route definitions and type hints, showing endpoints, parameters, request/response examples, and allowing direct testing.
+
+What is the difference between path parameters and query parameters in FastAPI?;Path parameters are part of the URL path (required) and defined using curly braces like `{parameter_name}`, while query parameters are optional values after `?` in the URL and defined as function parameters.
+
+How does FastAPI respond when invalid data is sent to an endpoint?;FastAPI returns HTTP 422 Unprocessable Entity error with a clear message indicating which validation rules were violated, thanks to Pydantic's automatic validation.
+
+What happens if you try to access a non-existent resource in a FastAPI API?;FastAPI raises an HTTPException with status code 404 Not Found, which can be customized to return specific error messages.
+
+What is the purpose of using Pydantic models in FastAPI?;Pydantic models define data structures with type hints that validate input data against defined schemas, ensuring data integrity and providing automatic documentation and error handling.
+
+Which HTTP status code should you use when successfully creating a new resource in FastAPI?;Use status code 201 Created to indicate successful resource creation, typically returned after POST requests.
+
+What are the key advantages of using type hints in FastAPI?;Type hints provide automatic validation, generate API documentation, offer better IDE support with code completion and error detection, and help enforce data consistency.
+
+How does FastAPI handle route definitions for different HTTP methods?;FastAPI uses decorators like @app.get(), @app.post(), @app.put(), and @app.delete() to map specific HTTP methods to functions that handle requests for those routes.
+
+What is the role of uvicorn in a FastAPI application?;Uvicorn is an ASGI server that runs FastAPI applications, handling HTTP requests and serving the API endpoints defined in your code.
+
+How do you define a required path parameter in FastAPI?;You define a required path parameter by including it in the URL path using curly braces like `/books/{book_id}` and matching it with a function parameter of the same name.
+
+What does FastAPI automatically generate for each endpoint?;FastAPI automatically generates documentation that includes interactive testing capabilities, code examples (curl commands), request/response inspection, and updates dynamically as routes are added.
+
+How can you test your FastAPI endpoints interactively?;You can test FastAPI endpoints directly in the browser at the `/docs` URL where an interactive interface allows sending requests and viewing responses for each endpoint.
+
+What happens when you use the `--reload` flag with uvicorn?;The `--reload` flag automatically restarts the server whenever code changes are detected, making development faster by avoiding manual restarts after each edit.
+
+How does FastAPI handle JSON serialization of response data?;FastAPI automatically serializes Python objects like dictionaries and Pydantic models into JSON format, sets proper Content-Type headers, and handles encoding correctly.
+
+What is the recommended way to define optional query parameters in FastAPI?;Optional query parameters are defined as function parameters with default values set to None (e.g., `author: str = None`), making them optional while still being validated.
+
+How does FastAPI handle error responses for missing resources?;FastAPI raises HTTPException with status code 404 Not Found when a requested resource cannot be found, which is automatically converted into an appropriate JSON error response.
+
+What are the main benefits of using Pydantic models in FastAPI beyond validation?;Pydantic models also provide automatic documentation generation, IDE support with type checking and completion, and structured data handling for API inputs and outputs.
+
+How does FastAPI manage HTTP status codes in responses?;FastAPI allows setting explicit status codes in route decorators (like `status_code=201`) or raising HTTPException with appropriate codes to indicate success or error conditions.
+
+What is the purpose of the `find_book` helper function in CRUD operations?;The `find_book` function encapsulates logic for locating a specific book by ID, raising an HTTP 404 exception if not found, and reducing code duplication across different routes.
+
+How does FastAPI integrate with Python's type hinting system?;FastAPI uses Python's type hints to automatically validate input data, generate API documentation, provide IDE support, and enforce correct data types throughout the application.
+
+What is the significance of using `@app.post()` instead of `@app.get()` for creating resources?;`@app.post()` indicates that a route handles POST requests used for creating new resources, while `@app.get()` handles GET requests for retrieving existing ones.
+
+How does FastAPI handle updates to resources using PUT requests?;FastAPI uses Pydantic models with type hints in PUT request parameters to validate the updated data structure, then updates and returns the modified resource.
+
+What happens when a DELETE request is made successfully in FastAPI?;A successful DELETE request returns HTTP status code 204 No Content, indicating that the resource was deleted without returning any response body.
+
+How does FastAPI process multiple query parameters in a GET request?;FastAPI processes multiple query parameters by defining them as function parameters with appropriate types and default values, automatically parsing and validating their values from the URL.
+
+What is the role of `HTTPException` in FastAPI error handling?;HTTPException allows raising specific HTTP status codes with custom error messages, which are automatically converted into proper error responses with correct headers and content.
+
+How does FastAPI manage automatic validation for path parameters?;FastAPI automatically validates path parameters using type hints (e.g., `book_id: int`) and returns HTTP 422 errors if the value doesn't match the expected type.
+
+What is the purpose of the `status_code` parameter in FastAPI route decorators?;The `status_code` parameter explicitly sets the HTTP status code returned by a route, useful for indicating resource creation (201), deletion (204), or other specific conditions.
+
+How does FastAPI handle partial updates to resources?;FastAPI supports partial updates using PATCH requests, which can be implemented with optional fields in Pydantic models and targeted data updates without requiring all fields to be present.
+
+What is the difference between `@app.get()` and `@app.post()` decorators?;`@app.get()` maps GET requests for retrieving data while `@app.post()` maps POST requests for creating new resources, each handling different API interaction patterns.
+
+How does FastAPI ensure proper headers are set in responses?;FastAPI automatically sets Content-Type headers to application/json for JSON responses and manages other HTTP headers appropriately without requiring manual configuration.
+
+What is the role of the `BaseModel` class from Pydantic in FastAPI applications?;The `BaseModel` class defines data structures with type hints that validate input data, provide automatic documentation generation, and ensure consistent data handling across API endpoints.
+
+How does FastAPI handle data conversion between Python objects and JSON responses?;FastAPI automatically converts Python dictionaries, lists, and Pydantic models into JSON format with proper encoding, setting Content-Type headers, and managing serialization correctly.
+
+What are the key features of FastAPI's auto-generated documentation interface?;The auto-generated documentation includes interactive testing, code examples (curl commands), request/response inspection, automatic updates as routes change, and visual representation of endpoints.
+
+How does FastAPI process multiple parameters in a single route function?;FastAPI processes multiple parameters by defining them in the function signature with appropriate types, allowing mixing path parameters, query parameters, and request body data models.
+
+What is the benefit of using type hints for both input and output data in FastAPI?;Type hints provide validation for incoming data, automatic documentation generation, better IDE support, and ensure consistent structure for both API inputs and outputs.
+
+How does FastAPI handle multiple routes with different HTTP methods for the same path?;FastAPI allows defining multiple routes with different HTTP methods (GET, POST, PUT, DELETE) for the same URL path, each mapped to specific functions based on the method used.
