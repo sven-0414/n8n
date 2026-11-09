@@ -1,0 +1,1663 @@
+There we go.
+All right.
+Sorry for that.
+And just for the recording, this was a little bit short of what we're going to do this week,
+what data analysis and visualization is all about.
+So reading, cleaning, describing, visualize, and then a drop conclusion.
+We're going to do this during these two weeks.
+Just trying to summarize because we started recording a little bit late.
+Thank you guys for that.
+So yeah, this first week, reading and cleaning.
+And then we're going to use the tools for the next week, clean a little bit more,
+and then describe, visualize, and draw a conclusion if we can trust the data or not.
+I don't think I've missed anything.
+And this is, of course, included into AI machine learning.
+Because, like I said, the module is as good as the data you give it right.
+And we're actually going to use Jupyter Notebooks, and we're going to use Pandas
+during these two weeks, and I'm going to talk more about that along the way.
+Well, we can start a little bit here.
+So what is Pandas?
+Well, Pandas is actually just a Python library for working with tables.
+And the name comes from panel data, a term for tables of observations.
+It started around 2008, and it is open source.
+And yeah, today it's a standard tool for tables in Python.
+It's actually built on NumPy.
+And, well, I'm not going to spend too much time talking about NumPy,
+but it's going to be mentioned here and there.
+But NumPy is just another Python library, and it is like the foundation for almost all number work in Python.
+So NumPy actually gives us arrays.
+You can calculate on a whole array at once.
+You don't need a loop, for example.
+Much faster than looping over a normal Python list.
+And this is why Pandas actually can handle large tables.
+So you would not use NumPy directly much yourself, because Pandas uses it behind the scenes.
+And it was actually installed automatically when you installed Pandas.
+We will actually use it directly a few times.
+For example, we're going to use something called MPWare.
+But yeah, we will talk more about them when we get there.
+And many other Python tools for data and machine learning are actually built on NumPy or work with it.
+So this is why you will meet this again, probably in later modules as well.
+But back to Pandas.
+So you load the table into Python, a table full of data, of course.
+And then you can select, you can filter, you can sort, you can group, you can join, you can clean.
+And summarize it with a few lines of code.
+And you will see that it's super, super simple.
+You just need to know about it.
+And of course, get into it.
+And actually, you already know the idea from SQL, right?
+It is the same thinking, but with different words.
+So why don't we just use Excel or SQL or SQL?
+Well, Excel, I would say, is great for small tables.
+But you cannot see what someone did to the data, right?
+While with Pandas, the code is actually the documentation.
+So anyone can run it again and get the same result.
+SQL will ask questions of a database.
+Pandas works on data you have loaded into Python.
+So you can go straight onto charts and later machine learning.
+And what you will see today, and I'm going to get back to this, of course, you will see, well, you will meet two objects Pandas is built on.
+And that's a data frame, data frame.
+And what is a data frame?
+Well, I would say the whole table, whole table.
+And we, of course, we're going to see a whole table in a minute.
+And we're going to work with series.
+And when I say series, I mean just one.
+All right.
+And before we actually start or start looking at the data, the data that we're going to use, we're going to just look at some basics, how we actually work in the notebook.
+So I'm going to create a new file, just a test notebook, and then we're going to take it from there.
+All right.
+So now, if you want to code along, it's a perfect time to do that.
+So I'm just going to create a new file here, test.ipynb.
+I-P-Y-N-B.
+So the file ends with I-P-Y-N-B.
+And it actually stands for I Python Notebook, which was actually the original name.
+Today, people will usually just say Jupyter Notebooks or simply a notebook.
+And what is so special about the notebook?
+Well, it's that we can actually mix text and code in the same file.
+We can also draw charts in it and work with data step by step.
+So what we have here is that we can create code cell or two kind of cells, a code cell and the markdown cell.
+Code cell is for where we write Python code.
+A markdown cell is where you can write text.
+So it's a slightly different way of coding.
+So you write a little code, you look at the result, write some text, and then continue.
+And it's also good to know where these notebooks fit in, right?
+Because when you work with machine learning, you usually start in a notebook, at least at first,
+while you look at the data and, yeah, try things out.
+So later on, when the real modules are built, well, maybe people would move the code into ordinary Python files,
+like the programs you have written before.
+So, yeah, the notebook is more of a tool we use to get to know the data.
+So, yeah, let's get started and try some basics here for the notebook.
+And then we can look at the data that we're going to work with today or the table.
+So I'm going to start up with creating a code cell here and just write some code here.
+Simple.
+X equals 10.
+Oh, that's not a 10.
+That's a 10.
+So I'm just creating a variable with the value of 10.
+And then I can run the code here.
+And there is a shortcut, depending on what you have.
+If you have a Mac, maybe it's a bit different.
+So you just run the code, connects to the kernel, the one that we have here.
+And what we see now, after running it, nothing actually happens, right?
+But what we see is a small number one on the left here.
+And that just indicates the order in which we run the cells.
+So we can have a lot of cells and start with a different cell if we want,
+if we don't want to go in this order.
+But usually we wouldn't, right?
+But maybe there is an idea of doing it sometimes.
+So this tells us in what order we have run the cells.
+We can create a new cell here.
+And when I actually created X equals 10, it is now stored in memory.
+So now it's just enough for me just to write X and then run it.
+And I will see the value of X.
+So no writing print X or whatever.
+So just like this.
+Of course, a question that I usually get is, well, what if I create a third cell?
+Yeah, I shouldn't have done it over there.
+But that's all right.
+What if I did something like, do I need to separate those cells?
+No, obviously not.
+I could have done something like this.
+Y equals 20.
+And then just come here and say Y directly.
+And that would be these two code cells, right?
+And if I run this, I will get my 20.
+So why did I separate them?
+Well, it's just for learning purposes, right?
+So obviously, I wouldn't divide it into two cells when they come after each other.
+But maybe just to show that I can, in 100 cells later, I can write X and see what X was, which I actually created 100 cells before.
+All right?
+And you see the order now.
+One, two, and then three.
+I'm just going to get rid of that.
+All right?
+If we want to restart, we can actually restart.
+Yep.
+And that's perfectly fine.
+We can run all if we want.
+And then it will run in order.
+Like this.
+Any questions up to now?
+I think it's pretty clear, right?
+All right.
+What if we test an error?
+How that might look like?
+So what if I come now?
+I have X equals 10.
+I have an X.
+I run everything.
+I get my green tick.
+And now I create another code cell and I write X equals Y plus 2.
+And you can see clearly that it's already complaining here.
+But whatever.
+I just want to see an error, right?
+So if I run this, it actually says that Y is not defined.
+So now I can come up here and then create a new code cell here in between and just write the missing value.
+So Y equals maybe, I don't know, 10 or whatever.
+All right?
+Or maybe we can change it to something else.
+20.
+And I can come back here, run that one.
+And you see that this is not fixed yet.
+I need to run it again.
+And now I have.
+Now it's not complaining anymore.
+And if I were to run X again, I see that X is not 10 anymore.
+X is actually 22.
+All right?
+I mentioned also that we have something called a markdown cell.
+Simply just click on markdown.
+And you can write some text.
+I can do, and you will see more along the way, but just to get started, I'll do hashtags like this and just write, this is some text.
+And then go ahead and just write blah, blah, blah, blah, blah.
+All right?
+Some important information.
+And then I can run it.
+And then I can run it, run it, or shift enter usually works better.
+There we go.
+And then you see that this some text will be kind of a title, since I did those two hashtags there.
+And then I can run it, and then my text is like normal.
+This becomes, what do you call it, a heading, right?
+And the rest would be just a normal text.
+And when I run the text, well, it turned into, what do you call it, formatted text, right?
+So this is pretty neat, a cool way to work at the beginning of your project.
+You work part by part, and then you can code and write some text.
+Of course, you can also write functions, and you can write complex code as you want.
+Let's try to just write that function.
+So, for example, simple, useless function here.
+Another function, A, B, return, rewrite, and then we can try to, okay, we can separate them.
+So now we have a function that is available for use whenever I want.
+So if I now create a new cell, and I call my function, or use my function here, my add function,
+I need to, of course, give two numbers, two and three.
+And then I can run it, and I get my five.
+Of course, I can also, like we have learned everything that we have done before.
+So, yeah, I can create an f-string.
+The result is two and three.
+No problem.
+The result is fine.
+Yeah.
+And that's the basics, the basic idea of notebooks.
+Any questions?
+As you see, it's a pretty cool way of working.
+I love it.
+I love the notebooks.
+All right.
+So that was just getting started.
+And now it's time.
+I'm actually going to create a new file.
+And you can do it as you want.
+I want a clean one today's lesson, which I call demo.
+So before we start, we're actually going to do two small things.
+So I'm just going to write here.
+We're actually going to import.
+So it's like this.
+Import pandas as PD.
+And just to make sure that everything works, try it yourselves as well.
+Version.
+Print.
+PD.
+Sorry.
+There we go.
+So we just import pandas.
+Because Python, of course, does not load every library automatically, right?
+So when we write import pandas, we tell Python that we want to use this library now.
+And I also write it as PD.
+So just a short nickname.
+So we don't need to write pandas anymore.
+We just write PD every time we want to use it.
+And you will see this in any tutorial or example or wherever you look up online.
+And we're also just double-checking the version of Python and of pandas.
+Just to make sure that we're all on the same page here.
+So when we run this, perfect.
+I get 3.14.
+And this is what was written on teams before that I want you to be on the range of 12 to 14.
+And if you have something 3.12, 3.13 something, 3.14 something, you are set.
+Here's another important.
+I want you all to have, when it comes to pandas, I want you all to have 3.0.5.
+So why am I going about the version?
+Well, this is actually pandas 3.0.5 and pandas 3.0.5 have changed some behavior.
+It is not the whole world if you don't have pandas 3.0.5, but I would actually appreciate it if you do.
+So because the changes are mostly small things, but they matter, right?
+So for example, how a text document is stored and what happens when you change the table, it is a bit different.
+And I will try to point them out as we go.
+I will try to remember those.
+So you don't have to remember everything in advance, of course.
+But an important thing to know is that many tutorials online, because I can imagine that you will go into some tutorials, maybe look up things, and also many answers from AI tools.
+And this is something, I hope you're listening carefully now.
+So yeah, many answers from AI tools actually are written for pandas 1 and 2.
+And we're using pandas 3, right?
+So if you copy some code from them, it might behave differently.
+Or maybe, yeah.
+And if you're using some AI or whatever, and it doesn't work on your pandas, well, the version is probably the reason.
+However, make sure that you see 3.0.5 in the second line.
+And if you see something else, well, I'm more than happy to help you after the lesson.
+So you can still follow along in the meantime.
+Okay?
+Right.
+Now I can imagine that you want to see, want to get started.
+So for these two weeks, we will mostly work with one data set.
+And I think I'm only sharing a particular, I'm not actually sharing the whole screen.
+So I'm just going to share again here.
+And go.
+There we go.
+Perfect.
+Because I just wanted to show you guys that, no, correct.
+Where are these teams?
+There we are.
+Oh, I don't want to show any conversation I'm having here.
+There we go.
+A bit of this.
+That's all right.
+Like I mentioned, in these two weeks, we work with one data set.
+And I've actually uploaded it in here.
+So if you go to the channel that we are in right now, data analysis and visualization, and I've created some folders, like always, recordings and the labs and so on.
+And also, I'm going to upload the code that we work during the day, because it's going to involve some notes as well.
+But the data is actually over here.
+So whenever I have a new data, you will find it over here.
+So today, we're actually going to work with something called listings.
+And this comes from, this data set, well, is an Airbnb listings in Stockholm.
+And it comes from a project called Inside Airbnb, which collects the public information from Airbnb's website and then publish it for anyone to use.
+And something I actually need to mention, according to their license, well, we may use the data as long as we credit the source.
+So remember the name, InsideAirbnb.com.
+So they collected the data, not me.
+And our Snapchat was actually collected at the end of September, when I finalized the planning of this module.
+One thing I actually have done is to change the file slightly.
+I've actually removed some columns, some of it because teaching purposes and because we're going to get back to those.
+And some of them contains actually some personal information about the hosts, their name, their profile text, links to the profile page, profile picture, locations and so on.
+So I've removed those.
+But everything else is exactly as it was published.
+And like I said, I've uploaded on Teams in this channel.
+So yeah, please download the file, especially if you want to code along.
+And what I'm going to do is I'm going to put it in a folder called Data.
+So next to the notebook that we are working in.
+And I'm actually going to do that while you try to do that.
+So I'll give you a little time to do it.
+So Data Folder, and I want it over here.
+So we need the Data Folder with the file.
+And we're going to take a look at it.
+I don't know.
+It looks like this.
+Yeah, I'm going to take it step by step.
+Hopefully you are with me now.
+Just open the file here.
+So what is this?
+Well, this is actually a, it's called a CSV file, as you see, a comma separated, comma separated values.
+And it's just plain text, as you see here.
+So the first line holds the column names.
+And every line after it is one row.
+The values are separated by commas, as you see here.
+So if a value is empty, you see two commas right after each other.
+And you can see one over here.
+So this part is empty.
+And if the text itself, no, I don't see directly an example of it.
+But if the text itself has a comma, they put the comma inside quotation marks.
+So it's not mistaken for a separator.
+So you need to put it in the quotation marks.
+That's what they usually do.
+So there is no formatting.
+And there are no formulas.
+Only text.
+And that is why CSV is one of the most common ways to share data.
+And this data has a lot.
+It is messy.
+I know.
+It actually has 4,000.
+And I know this by heart now because I have looked into this data a lot.
+But you might not.
+So it has actually 4,574.
+I'm not saying 75 since one is the column names.
+So 4,574.
+This is a number that you will learn by heart.
+Because we're going to come back to that over and over again.
+So it has 4,574 rows.
+And actually 84,84 columns.
+And yeah.
+And which is far too much to read by eye.
+And this is why we use Pandas.
+All right.
+But before we do that, we actually need to load this data, this table.
+But since you have never seen this data before, I've actually done it.
+I've looked at it.
+So I kind of know what it's all about.
+But since it's new for you, and you will pick it up along the way.
+But I was a little bit scared, worried yesterday that you might need.
+Well, it's going to be a little bit abstract since you haven't seen the data before.
+So I tried to write some notes for you.
+And I'm actually going to put it here.
+So what this old data is all about.
+Or what the columns is all about.
+So I'm going to just get that.
+No.
+Let me just copy my notes here.
+And then that.
+And go through it together.
+There we go.
+There we go.
+So what is in the data?
+Well, it's the 84 columns.
+Are roughly these kinds.
+So they're about listings.
+The name, the type of home.
+And their names are actually property type, room type.
+How many guests it fits.
+That would be called accommodates.
+And the number of bedrooms and beds.
+All right.
+Where it is.
+The neighborhood.
+So the column name is called neighborhood cleanse.
+14 areas in Stockholm.
+And the coordinates.
+It has the price and the rules.
+The price per night is actually called price.
+And the minimum number of nights is actually called minimum nights.
+It has information about availability.
+How many days the listings can be booked.
+For example, during the next year.
+And it's called availability 365.
+It has information about reviews.
+So how many reviews the listings has.
+Number of reviews.
+The rating.
+Review scores rating.
+And the dates of the first and the last review.
+It has information about the host.
+For example, whether the host is a super host.
+Host is a super host.
+The column name.
+And some technical columns like links, ID numbers, and the date of collection.
+And we will not use them so much.
+Some of the columns are completely empty.
+And we will come back to those on Monday next week.
+Hopefully.
+When we clean this table.
+And over the days.
+Over the coming days.
+We will mostly use a handful of columns.
+Not all.
+All right.
+And the columns that are of interest for us.
+Is room type.
+Neighborhood cleansed.
+Accommodates.
+Bedrooms.
+Beds.
+Price.
+Number of reviews.
+Review score ratings.
+Avability.
+365.
+And minimum nights.
+And you don't need to learn these by heart.
+I will try to remind you guys what they were along the way.
+But yeah.
+So these are what we're going to look at.
+And of course, it's a little bit difficult to grasp it at the beginning.
+Of course, it's a little bit confusing.
+But I think the lab at the end of the day will actually help.
+And we're going to talk about the lab at the end of the day.
+Or at the end of the lesson.
+And in the labs, you will actually get the chance to explore other columns on your own.
+So yeah.
+It's stuff that catches your eye today.
+Write it down.
+And an important thing to know, especially for today and tomorrow.
+And no, this is actually for today and tomorrow.
+We will not do so much with the data.
+So we're not going to create anything like that.
+Mostly.
+So today and tomorrow, we will mostly just dissect it.
+Look through it.
+Get to know it.
+While we actually learn the Pandas tools.
+So the real questions and the cleaning of the data comes actually later.
+So as you notice, we will spend two days just getting to know the data.
+And then we're actually going to take a break from listings and look at another data frame, which is much simpler.
+And we will learn how to clean and then use those steps that we have learned during Wednesday, Thursday to clean this data.
+So yeah.
+Cleaning comes later.
+All right.
+Now let's load it into Python.
+So we'll just create a code cell here.
+And I'm just going to call it listings.
+pd read csv.
+And it's in data.
+Listings.
+In here, of course, spelling is crucial.
+So we're just loading the file into a table called listings.
+So this will be our data frame.
+Okay.
+So I run this.
+Of course, nothing is written.
+Or nothing is printed out.
+But the table is now loaded.
+So now we have a data frame, a table with rows and columns.
+And we have stored it in a variable called listings.
+And something I should mention about the name, actually, because somebody might be raising their eyebrow,
+especially if you have been on Friday or the weekend.
+Maybe you were looking into a little bit of data analysis or some tutorials or whatever.
+You would probably see that they don't use names like I've done here.
+Maybe they have called it, and that's the standard way, is to call it DF instead of listing.
+And DF is short for data frame.
+So DF works perfectly fine, of course.
+But we will actually call it listings.
+And that's not because I'm stubborn.
+It's just I just want to make it as clear as possible, actually, which table we're actually working with, since we're going to switch between.
+And we will actually have several tables at the same time later on.
+And then if we call them DF, well, we wouldn't be able to call which one, we wouldn't tell which one is which, right?
+Okay.
+So now we have this.
+And now let's just take a look at how big it is.
+And we already know, because I've already mentioned it, that it's 4,574 rows and 84 columns.
+So let's see if that is correct, listings, and then we write shape.
+So when we run this, we actually get 4,574 rows and 84 columns.
+Therefore, 4,574 listings with 84 pieces of information about each listing.
+Okay.
+Now we can take a look at the table itself.
+And we do that using something called head.
+And since I'm not specifying any number, it's actually going to use five.
+So it will actually show the first five rows.
+And that's it.
+Just five rows.
+Excuse me.
+And when it comes to columns, Pandas cannot fit all 84 columns.
+So it hides the middle columns with these dots like this.
+But they're there.
+All right.
+I could have specified a specific number, maybe not five rows.
+I could have said six, like this, or whatever.
+But if I don't write anything, it will always choose five.
+So what are the 84 column names?
+Okay.
+How do I do that?
+Well, I just write listings.
+I can write columns, and then I can write to list.
+And let's run this.
+And there we go.
+Of course, you don't need to memorize all the column names.
+Because we look them up when you actually need them.
+But this is, so like I said, they're about the listings, right?
+Name, room type, beds, so on, so on.
+About the host, price and booking rules, availability, reviews, and so on.
+And there is actually a better way to get an overview off the table than reading the 84 names like we did now.
+So I'm usually going to write a markdown cell, and just write first look, maybe, where we're actually using info.
+Wow.
+So let's try it.
+So listings, info.
+And we can run this together.
+See what we got here.
+Non-null count here is how many rows that have a value in this column.
+So 4,574, well, would mean that it's complete.
+Anything lower, well, just means that we're missing values.
+So if you look at here, we're missing all the values.
+Here, we're missing some values.
+Here, we're missing much more.
+And that could be for different reasons, right?
+We can also see the D type or the data type.
+The data type hand us chose.
+So in 64 would be whole numbers, float, well, decimal numbers, and yeah, and the string for text.
+And we can see here that, like I said, some values are missing.
+All of the values are missing.
+For example, in neighborhood overview, we have no values.
+Hostsins, we have no values.
+And so on.
+And these are complete.
+For the IDs are complete.
+Scrape ID, complete.
+Source, not complete.
+Name, complete.
+And so on.
+And this is good for us.
+So we actually have something to teach here.
+So yeah.
+So with info, we actually saw the data type for every column.
+And it is important because the type decides actually what you can do with the column.
+So you can actually calculate an average of a number, right?
+But you can never do that for a string, right?
+You can't do that for a text.
+But 84 lines, well, is a lot to read.
+So let's actually ask a simpler question.
+Let's ask the question of how many columns, how many columns of each.
+So how many columns of each type do we actually have?
+Well, we do that actually in two steps.
+Something like this.
+These things.
+D types.
+And then we're going to use value counts.
+So D types is the type of each column, like I mentioned before.
+Just like the column D type, as we saw here.
+And then value counts, well, counts how many times each value appears.
+So let's run this.
+And then we see, all right.
+So we have only three types.
+38 of decimal numbers, 24 of whole numbers, and 22 of text.
+And if you notice here, it actually says string for text.
+And in Pandas 2, or older versions, or even older tutorials, you will actually see object here.
+You won't see string.
+So, yeah, in Pandas 3, the text columns have their own type called string.
+So this is why I actually want to work with the latest, right?
+Now let's get back to info.
+Well, if you remember, we had a column called non-null count, right?
+So it told us how many rows have a value in each column.
+So most of the columns actually says 4,574, which means that they are complete.
+Like I said, there are some strange numbers here.
+We have zero non-null, which means that in all 4,574 rows, there is not a single value in them.
+They exist in the file with a name, but they are completely empty, like a blank column in the spreadsheet.
+So how many are there?
+Well, we could scroll down or scroll through all the 84 lines and count them.
+But that is slow and, of course, easy to get wrong.
+So let's ask Pandas instead.
+And we will do that in three simple steps.
+And it's not that hard.
+So we will use something called count.
+We will use something called sort values.
+And we will use head again.
+All right.
+And this time I'm actually going to specify to 16.
+And I've chosen 16 on purpose, of course, for teaching purposes.
+But so count, well, gives us the number of values per column.
+So that would be the same number as non-null count.
+Sort values, well, put the columns in order with the smallest number first.
+All right.
+And here we chose head 16.
+Well, we want to show the first 16.
+And like I said, I asked for 16 on purpose.
+And why I do that?
+So when I run this, because the 16th column actually has something just to compare, right?
+So we see that the first 15 columns here have count zero.
+So they exist in the file, but they are completely empty.
+So these are the ones who are empty.
+So even if I had written, let's say, 18, we would still see the first 15 that are empty.
+And we will see the ones that are not empty, but not full.
+And we can continue like that.
+But we're not going to remove, like I said, we're not going to remove any empty columns today.
+And we will do that.
+Maybe remove, maybe do something else when we talk about cleaning the data.
+Just like I said before, today, we're just looking at the data and trying to learn some tools in Panasonic.
+So that's basically the idea.
+All right.
+I think it's a perfect time to take a little break.
+And then we will continue with a little title here.
+We will select columns and describe.
+And there we go.
+All right.
+Any questions before I let you go and break?
+Okay.
+See you back at, well, 10.04.
+Okay.
+We can say 10.15.
+So back at 10.15.
+See you soon, guys.
+Can you hear me, guys?
+Yes.
+Oh, okay.
+Perfect.
+All right.
+There was a little discussion here about the versions.
+All right.
+So, yes, we're supposed to run it in 3.0.5.
+And why?
+Well, the latest version, sure, it is 3.1.1.
+So why are we not using the latest?
+Well, sure.
+So if you have a latest version, this, everything that we do should work.
+But I have only, and I'm just emphasizing on this, I've only tested everything on 3.0.5.
+So if you get anything strange or anything like that, maybe there's an update or anything like that, I wouldn't know.
+All right.
+So if you're using another version and you get another output than I get, that would be probably because of the version.
+But if you have the latest version, sure, it will be okay.
+So you don't need to downgrade or anything like that.
+Okay.
+Because the biggest changes actually came after 3.0.
+And 3.1 is actually a build on 3.0.
+So, yeah.
+Okay.
+That's the answer to the question.
+Is everybody with me?
+Questions about the versions or anything like that.
+So we can move past this.
+All right.
+But it's a fair question because there is newer versions.
+Okay.
+So, so far, we have looked at the table as a whole, but we saw that it has 84 columns, which is far too many, far too many to think, to think about at the same time.
+Right.
+So when you work with data, you almost always pick out only the columns you need.
+Right.
+And this is kind of the same idea as select in SQL.
+So in SQL, you would write column names after select.
+In Pandas, you just write the column name inside square brackets right after the name of the table.
+And yeah, we're just going to start with one column and then move forward.
+So one column and we're going to choose a column of the columns that I said that we're going to work with before.
+So I'm not going to do this every time.
+But like I said, we're going to work mostly with these columns.
+And the one I'm choosing now is room type.
+Right.
+So if you ever want to go back and look what was that again, and you can get the information that we put here.
+So let's take a look at the column room type.
+So we just write listings and then type.
+And that's it.
+The name of the table and then square brackets.
+And then inside the column name in quotation marks, of course.
+And yeah, we write it in quotation marks because the name is text, right?
+So let's see what we got.
+All right, all right, all right, all right, all right.
+So on the left, we see that we have some numbers from zero all the way to 4,573.
+So that is the row number of each listing.
+And it's actually called index.
+And we will come back to it later, a little bit more about the index.
+And on the right side are the values.
+So we have some private room.
+We see entire home, apartment, and so on for each listing.
+Yeah, and the dots in the middle.
+It's just that it does not print all of the 4,574 rows.
+It shows the first five and the last five and hides the rest.
+Excuse me.
+Okay, and at the bottom, we get the name, it's room type, and the name of the column, of course.
+And we get the length.
+So 4,574 is the number of rows.
+And we see that the D type here, data type, is text.
+So one pair of brackets and one name gives you one column.
+We can also look at what type of object it is.
+So we just write type.
+And then, so let's run this and see.
+All right.
+So a single column, like I mentioned earlier, a single column is called a series.
+And the whole table is actually called data frame.
+So my question now is, how do we actually get several columns and not just one?
+Well, in order to get several columns, we need to put a list inside these brackets.
+So therefore, we need two pairs of brackets.
+So now let's do some more columns.
+I'm going to actually choose room type.
+I'm going to choose name.
+And I'm going to choose price.
+All right.
+So how would that look like?
+Listing, just like previously.
+Just like I mentioned, two pair of brackets.
+And then we have name.
+We have room type.
+Of course, spelling is crucial.
+And price.
+So the inner brackets makes the Python list with name, room, type, and price.
+Outer brackets is, well, are these brackets.
+The outer brackets are the panda selection, right?
+And the result we will get, well, is a data frame with only those three columns.
+Right?
+Name, room type, and price.
+With their index.
+Just as we saw before.
+Buy first.
+Hide the rest.
+Five last.
+4574 rows.
+Three columns.
+So a very common mistake is to forget the double bracket.
+All right?
+So if we were to write the same thing, just to see how it looks like, forget these.
+It won't complain when writing it.
+That is enough.
+All right?
+So if I run this, I actually get a key error, right?
+So, exactly.
+So key error, name, and room type.
+So without the list, tandas looks for one column with the name, where the name is a pair,
+where we have name and room type.
+But there is no such column.
+So the fix here would be double brackets.
+Same problem anymore.
+All right?
+So I'm going to keep those.
+And just for your notes.
+Now, let's ask pandas for a summary of the data.
+I'm going to write a little mark down here.
+So you remember what we're working with.
+Summary of the data.
+And here we use a method called describe.
+So what it does, well, it calculates statistics for the numeric columns, how many values there
+are, the average, the smallest, and the largest, and actually a few more.
+And we will go through what each statistic means in a minute.
+First, we're going to start with the, well, let's do, first, let's do the simplest thing
+and ask for a summary for the whole table.
+All right?
+So listings.
+No, I'm going to mark myself.
+There we go.
+Listings.
+And describe.
+No.
+There we go.
+Okay?
+So for the whole table.
+And just let's take a look at what we got here.
+Okay.
+So it's a table with eight rows and 62 columns.
+Because describe includes every column that holds a number.
+And it's far too wide to read.
+And if you look very closely here, there is several problems.
+Well, problem one, I would say the numbers are hard to read.
+So if you look at, for example, the ID here, the average, the mean, or the average, is 8.350318e plus 17.
+So this is called a scientific notation.
+So, yeah, it means something like, and you can correct me if I'm wrong here, but it's 8.35 with followed by 70 zeros or something like that.
+So Pandas would switch to it when the numbers are very large or very small.
+So that's one of the problems that we see now.
+Problem two is that many columns are empty.
+So if we look at, for example, neighborhood overview, the count is zero, right?
+And everything else is N-A-N or none, which means not a number.
+And that's Pandas' way of showing that a value is missing.
+So remember that the empty columns we found earlier with info, well, they will show up here too.
+And then we have problem three.
+Some of these are not really numbers.
+So if we look at AID or scrape ID or host ID, they are stored as numbers.
+So describe actually calculates an average for them and so on.
+But what does actually an average of ID tell us?
+Well, nothing, right?
+We never add or subtract or average an ID, right?
+Because they're just labels.
+And also, if we look at scrape ID at the STD here, the standard deviation,
+and we're going to talk more about standard deviation later on.
+So don't get hooked on that right now.
+But it says zero because every single row has the same value.
+But we will get back to that.
+So describe actually worked as it should do, but it described everything, including the columns that make no sense to describe.
+So what we will do now, just to get comfortable with describe, is to first select the column we actually care about.
+And then we will use describe again to make sense of it, right?
+So, like I mentioned, when I prepared the list and so on, I actually chose which columns we will care about.
+So we will actually stick to that.
+And then we're going to save the list in a variable called columns.
+And the ones I want to choose is accommodate, bed, rooms, beds, nights, number, number, review.
+And then I'm just going to say listings here that we just created.
+And we want to describe, right?
+Just like previously, nothing new.
+But I'm actually also, so describe only these or only those.
+Accommodate, bedrooms, beds, minimum nights, number of reviews, review score ratings.
+And I'm actually also going to add a round here.
+So we want to round it up to two decimals.
+All right.
+So now let's run this.
+So now we can actually read it, right?
+So each column is one of the things that we have selected.
+And each row is a different statistic.
+So let's go through each row here.
+Count.
+How many rows have a value in this column?
+So we can see that all of them, nearly all of them are completed.
+Mean is the average.
+STD, standard deviation.
+How spread out the values are.
+But we will come back to that.
+Min and max.
+The smallest and the largest value.
+50% is the median.
+So whenever you hear me say median, you know that it's the 50%.
+So if you line up all the listings from smallest to largest, this would be the one in the middle.
+And then we have 25% and 75%.
+Well, it's the same idea.
+Basically, a quarter and three quarters of the way along the line, right?
+But there are three things I want you to notice.
+So if you first of all look at the count row, it says 4,574 for some columns, but not for all.
+For bedrooms, it actually says 4,572.
+And the review scores rating has only 3,930.
+So that means that some of our listings have no rating at all.
+So these are missing values, so they have not been counted in the average.
+And we have to remember them when we draw our conclusions.
+And second of all, let's look at minimum nights here.
+So the mean is 6.36, but the median is actually 2.
+And the maximum is 500.
+So most listings require, well, one or two nights, right?
+So a few numbers with very high numbers will actually put the average up.
+Is it really possible to require 500 nights?
+It's a bit over a year, right?
+So we will put that on our list of questions, and we will come back to it.
+So we will stumble on these things along the way now when we're looking at the data.
+And we will just put it in a list of things that we need to look up later on.
+Third is if we compare the mean and the median of a number of reviews.
+So the mean is about 36, but the median is only 9.
+So half of all listings have 9 reviews or fewer, while the most popular has 1,293.
+So it is the same pattern here.
+So a few extreme values will pull the average up.
+So when the mean and the median is far apart, it is actually a sign for us that tells us that the data is a little bit uneven, right?
+But like I said, we will go through all of this properly when it comes to this data set on Tuesday, next week.
+All right?
+These are things just to notice and just to get familiar with our data.
+Now, we have only described numbers.
+About half of our columns are not numbers, are actually text, such as the room type, such as the neighborhood.
+So what happens if we use describe on those?
+So let's actually use two text columns and find out what happens if I use describe on those.
+And I'm actually going to use listings and I'm going to use room type.
+And let's use one called nay.
+Trust me, during these two weeks, I will do a misspelling.
+We're just looking for the first one.
+So yeah, neighborhood cleanse was which part of Stockholm it is in.
+All right?
+And use describe.
+Okay.
+Try to think now, before I run the code.
+So if you think about it, what do you think will happen?
+Will it be able to do this?
+Let's run it to see.
+Uh-huh.
+So as we see now, we're using describe again, just like before.
+So we're using describe.
+But we get a, our table looks different now, right?
+There's no mean, no minimum, no maximum, because it makes no sense to calculate the average of a text, right?
+So instead, we get four other rows.
+We get a count.
+So that means how many rows have a value.
+And we see that it's 4,574 for both columns.
+So nothing is missing here.
+Unique, how many different values the column contain.
+So therefore, we know now there are two, four types of, types of rooms.
+So four, the room temp has four different values.
+And the neighborhood, there are 14 of those.
+So 14 neighborhoods in this data set.
+Top, well, that is the value that appears most often.
+So the most common room in our data is the one called entire home apartment.
+And the most common neighborhood is actually seven months.
+And the frequency here is how many times the top value actually appears.
+All right?
+So if you read this together here, we have entire home apartment appears 3,760 times.
+And that is 3,760 out of 4,574 listings.
+So which is actually more than eight out of 10, right?
+So Airbnb in Stockholm, at least in the data set, is mostly about whole apartments and houses, right?
+Not about renting a room.
+So now we can actually draw a small conclusion here, right?
+So the mom appears 1,145 times.
+It's about a quarter of the fall listings in one single neighborhood out of 14, which is called seven months, right?
+So if we notice here, well, this table tells us the most common value, but not what the other values are or how common they are.
+So for that, we actually need two more tools.
+So first of all, which are the values, right?
+Describe told us that the room type had four different values, but it did not tell us which ones.
+So we still don't know which four we have.
+And here we can use something called unique, all right?
+Unique, well, gives us every different value in the column, each one only once.
+So let's try it out.
+So listings, and let's do it on the room type, of course.
+Excuse me.
+And we're going to write to unique here.
+And let's run this.
+All right, all right, all right, all right.
+So we see here that we have four kind of listings, just as we saw before, right?
+Private room, entire home apartment, shared room, and hotel room, right?
+So private room, well, you rent a room in someone's home and then share the rest.
+Entire home apartment, well, you rent the whole place for yourself, right?
+Shared room, you share even the sleeping space here.
+And the hotel room, well, it's a hotel or similar.
+And if you notice the order, so it is not actually stored, and it's not by how common they are, right?
+Because we know already for a fact that entire home apartment is the most common one, right?
+But here it actually comes second.
+So the values come in the order in which Pandas first finds them when it reads down the columns.
+So the first one was actually private room.
+So that came first.
+And we see also that it says D type string here and string array.
+So that is Pandas 3 again.
+So in older versions, this would have said object.
+And sometimes we don't actually need the values.
+We only want to know how many there are.
+And for this, we use a sibling to unique.
+We use something called N.
+N unique.
+So N stands for the number.
+So let's try it out.
+Listings.
+Room type.
+Or let's use...
+Let's not use room type.
+Let me use this one this time.
+Neighborhood cleansed.
+And this time I will use N unique, right?
+Turn on this.
+14 neighborhoods.
+And that means exactly the same as we saw earlier that the scribe gave us, right?
+So now we know what to call them, right?
+The scribe gave us unique.
+And there we got the same number from N unique.
+So we know that there are four room types and 14 neighborhoods.
+But we still do not know how many listings each one has.
+And that's something we're going to do tomorrow when we learn to group and count and so on.
+So we need to save a little bit for tomorrow as well, okay?
+But we still have some more things to cover today.
+One more column I want to look at because it is one everybody wants to use.
+And that's usually the price, right?
+So whenever people see a data set about housing, the first thing they would ask is how much does it cost?
+So let's look at the first few values and then we will learn some more tools.
+So print, listings, price, head, three, list.
+And I'm going to explain everything that I'm doing, of course.
+And use your hands today.
+God, what's wrong with me?
+There we go.
+All right.
+So the first three, price, shown as a plain Python list.
+Therefore, I'm using to list here.
+And the data type of the price column, okay?
+So let's take a look at that.
+So just by looking at three, we can draw a lot of conclusions here, right?
+So if you look at the first value here, we see $1,091.
+It holds a dollar sign.
+It has a comma in between the thousands, right?
+And it's wrapped also in quotation marks.
+And the type, the D type here, says it's actually a string.
+So this is actually a text, not a number.
+So to us, it looks like a price, right?
+But to Pandas, it's just a string of characters.
+And just to see, I think you know where I'm going with this.
+But let's just see what that means for the things that we have just learned.
+So what if I do, so instead of room type, I use describe again.
+That's not describe, sorry.
+Price.
+And instead of unique.
+So let's try that and see what we get.
+Ah, and you see the problem here, right?
+So if you compare this to the numeric columns that we saw before, it is quite different, right?
+So there is no mean that we might need to use when it comes to prices, right?
+No mean, no minimum, no maximum.
+We get a count.
+We get unique.
+We get a top.
+We get the freck.
+Exactly the same four rows we got for text columns.
+So Pandas treats this as the price, the price as a text, right?
+Because that's what it is.
+And also, if we look at the count here, we see that it's 2,957.
+And we have 4,574 listings.
+So that means that 1,617 of these listings have no price at all.
+And that's more than a third.
+And we will come back to why later on.
+But here's when it gets interesting.
+Let's try to sort by price to find the cheapest listings.
+So that would be something like this, right?
+Listings.
+So we need the name and the price.
+And you notice that I'm using double brackets, right?
+We need to sort the values.
+And we're going to sort it on price.
+And we're also going to use add here.
+No specific.
+Yeah.
+We can use five.
+All right.
+So here we're saying pick two columns, the name and the price, right?
+Sort the rows by the price column.
+Lowest first.
+That would be the standard, right?
+Show only the first five rows since we're not specifying any number here.
+Okay?
+Now let's run this.
+And it actually says that the cheapest listings is $1,000 a night.
+And we know for a fact that the cheapest one is not $1,000.
+Because we've already seen cheaper prices.
+$702, $999 is actually cheaper than $1,000.
+And there is probably more that are cheaper.
+So what happened is that Pandas sorted the prices as text the way you sort words in a dictionary, right?
+So it compares one character at a time from the left.
+So every price starts with a dollar sign.
+So it looks at the next character.
+And the next character is a 1.
+And the 1, well, is smaller than, for example, a 7, right?
+Or if I were to compare it to 200, that would be a 2.
+So 1 is smaller than a 2, right?
+1 comes before 2.
+So 1,000 is placed first, even though 1,000 is bigger than 200 or 7, or whatever.
+So this is a classical problem.
+The data looks like numbers, but it's actually not.
+So that's important to remember.
+And this will happen to any calculations we do.
+So you cannot take the average of text.
+You cannot compare it properly.
+You cannot draw a chart of it.
+So we cannot use the price yet.
+So we need to convert it to real numbers.
+And we will learn the tools for cleaning text on Wednesday this week.
+And then on Monday, we will use the tools that we learn on Wednesday, Thursday on this data.
+So yeah, we will fix the prices on this data set.
+So until then, we will not do any calculation on the price, right?
+So far, let me just do something like this.
+Filter rows, right?
+So, so far, we have actually chosen which colors look at, right?
+Now we will do the opposite.
+We choose, we will choose which rows.
+And this is what we call filtering.
+So in SQL, this would be quite equivalent to where.
+So let's start with a simple question here.
+And that is, how many listings are entire homes?
+How many listings are entire homes?
+So to answer this, Pandas first need to check every single row.
+Is the listing an entire home?
+Yes or no.
+And we do that with a comparison, just as we have learned during the fundamentals.
+So listings, and now we're in the markdown zone.
+How will we do that more times?
+Listings, we said the room type, compare it to entire, and it's written like this, home apartment.
+So you can read it like a question, right?
+Is the room type equal to entire home apartment, right?
+And of course, notice that we use double equal size, right?
+Because we're comparing, right?
+We're not assigning a variable.
+And if we look at what we got here, well, we got the list with one answer for each row.
+So false for the first three, then true for rows three and four, and so on.
+And we see that it's 4,573 or 4,574 actually, of them, because yeah, zero is included as well.
+So one for each listing.
+And the type is a bool, right?
+And if you remember, first row in our table, we can actually look at it.
+So the first row in our table, we can actually see here just by looking at the name here.
+So I don't need to scroll.
+Double room, one room, single room.
+So we know it's about rooms, right?
+So yeah, these were actually private rooms.
+And that is why it actually says false.
+So it's not an entire home, right?
+And the fourth and fifth, they are entire homes.
+So they actually say true.
+So a list of true or false like this has a name, and it's called a mask.
+And try to think of it as a stencil that you lay over the table.
+Where it says true, you can see the row.
+Where it says false, the row is hidden.
+But a list of 4,574 answers is not the answer to my question, right?
+I actually asked how many.
+So let's save this mask into a variable and then count, right?
+So now we're going to save this, put it in a variable, which I will just call mask.
+So we remember that it's actually called mask.
+So we're saving all this true and false into mask, right?
+And inside Python, true is counted as 1 and false counts as 0.
+And I'm pretty sure that you already know this.
+Either way, so true is counted as 1, false is counted as 0.
+We can use that, right?
+So that means that when we calculate the mask, so if we add all the values, every true adds 1.
+And every false will add nothing.
+And therefore, we will know how many truths we have, right?
+So what we can do now is do something like this.
+Print, mask, sum.
+And we can also, at the same time, not only sum, we can actually look at the mean as well.
+So like I said, true counts as 1.
+So the sum would be the number of entire rooms and the mean, the average of all those 1s and 0s.
+So that's the share of entire homes.
+Okay, so let's run this.
+Excuse me.
+I see that there's 3,760 listings that are entire homes.
+And that is the same number that Describe gave us as Freck earlier.
+You can go back and look.
+And the mean is about 0.82, means 82%.
+So 4 out of 5 listings are homes, as we saw earlier when we used Describe, right?
+Notice that we did not loop through the rows.
+We did not count anything by hand.
+So we just simply asked one question about the whole column and let pandas answer it for every row at once.
+Okay, this is why I actually love pandas.
+But so far, we only counted the entire homes.
+Often, we want to actually see them or work with them.
+And for that, we actually use mask as a filter.
+I'm just going to write that down.
+Mask as a filter is what we were talking about here.
+So if you go back to your notes later on.
+So what we can do is something like this.
+Let's start with these things.
+And then we can take a break shortly, right?
+Shape.
+So shape was rows and columns, if you remember.
+We used it at the beginning of the lesson.
+So we use it to count the rows without printing all of them, all right?
+So if I run this, I see the result is 3760 rows and 84 columns.
+So we still have all 84 columns.
+But only where the mask said true are actually left.
+And that's exactly the 3760 rows and that's exactly the 3760 entire homes we counted a moment ago, right?
+And as you see here, we used shape here instead of printing the table because we only wanted to know how many rows we got.
+And 3760 is a lot to look at, right?
+And something I can also add is that a mask does not have to be equals comparison.
+So any comparisons will work.
+So any comparison will actually give us true or false for every row.
+So we can filter numbers as well, right?
+So I could have done, obviously, I could have done this, I could have done that, I could have done this and so on, all right?
+That would have worked as well.
+And you can try it out later on.
+If I remember correctly, one of the lab questions actually makes you compare, I don't remember because I've done so many versions now.
+So I don't remember which question I actually stick to.
+I'm going to look at that later on.
+So I'm up to date with you guys.
+Okay.
+It's 11.05.
+We have a little bit left.
+I think it's, yeah, we actually should take a little break.
+So let's take a little break and then we can actually continue.
+Any questions before I let you go on the break?
+Okay, now I don't know what is joke and what is the question in China.
+I can explain the joke if you want.
+Let's take a break.
+No, no, they actually created Paris in China.
+Oh, okay.
+They actually did that.
+Or a version of Paris.
+Okay.
+And with the Eiffel Tower and everything.
+And hopefully there were crates of the moment as well, right?
+Yeah, they could have.
+All right.
+All right, guys.
+Let's take a short break.
+And yeah, just to get some oxygen in the brain, just move a little bit and then, yeah, we can continue.
+We're not going to take a super long break.
+Just five minutes.
+That's quite enough.
+All right.
+Oh, you know what?
+Let's take seven minutes.
+All right.
+So, back at 11.12.
+All right, guys.
+See you back soon.
+All right, guys.
+Can you hear me?
+All right.
+Perfect.
+So, a little longer lesson today since we had some introduction and so on.
+That took a lot of time, of course.
+But I promise you, the lessons are going to get a little bit shorter.
+Anyways, bear with me now.
+So, so far, we have used one condition at a time, right?
+But real questions usually have more than one, right?
+For example, this question here.
+Which listings are inside mom and also have room for four or more guests, right?
+So, that is kind of two conditions, right?
+And the role has to fulfill both.
+So, in normal Python, you would combine two conditions with the word and.
+So, let's do exactly that and see what happens.
+And, of course, it will not work.
+So, so, let's take it step by step.
+So, listings, listings, right?
+Neighborhood cleansed equals their malms and listings and versus greater equal to.
+So, the neighborhood is at the malm and the listing has room for four or more.
+And, like you see here, I'm combining them with and the way we would do in normal Python.
+And if we run this, we see that we get a value error.
+And if we look at the bottom here, the truth value of a series is ambiguous.
+So, we don't panic here.
+Errors are normal.
+It will happen.
+You will see them a lot.
+So, the trick is to know how to read them.
+And, actually, that's part of your lab today as well.
+So, we look at the bottom line first.
+We see that we get a value error.
+The truth value of a series is ambiguous.
+That is the message.
+And, the long block above shows us where in the code, where inside Pandas the error actually happened.
+So, we don't need to read that part right now.
+But, what does this message actually mean?
+Well, the word and in Python is built for one true or false on each side.
+But, now, we actually, here, we have a whole column with 4,574 answers, right?
+And, Python does not know what to do with that.
+So, is a column of 4,574 values true or false?
+Well, we cannot decide, obviously.
+So, it will say to us, ambiguous, which means it could mean several things, right?
+So, and the message also suggests things like any or all.
+And, those are not what we want.
+So, we do not want one answer for the whole column.
+We want the combination row by row.
+So, is the listings in Söder Malm and big enough?
+So, for that, we actually need a different tool, okay?
+So, how we would write that, and I'm actually going to start fresh.
+I'm actually not going to copy and modify.
+So, what we do is to write like this, listings, listings, and I'm going to take it step by step in a second.
+Maybe it cleansed, gloss, Söder Malms.
+And that's annoying that it actually says Söder Malm and not Söder Malm.
+And, well, I didn't choose that, obviously.
+Listings, accommodates, also not listing.
+All right.
+So, what have we changed compared to the cell that actually failed?
+We can just clear the outputs here.
+And became and like this.
+So, this is the pandas version of and, and it goes row by row.
+And each condition, as you see here, is wrapped in its own parentheses.
+And, of course, I just made a note before, so you can take this.
+There we go.
+So, and means and, and, yeah, that means or, and that means not.
+All right.
+And now let's run this, see what happens.
+Okay, since we're making it bigger.
+Okay.
+So, what we see here, if I scroll down, it works.
+First of all, we see that we get 454 rows and 84 columns.
+So, 454, 454 listings are in Söder Malm and have room for four or more.
+All right.
+So, if we see how, how, how that fits together, well, each condition on its own, well, makes a mask, right?
+So, the first mask would be Söder Malm has 1,000, in this case would be that 1,145, we said, right?
+Two values.
+When we looked at the, described, Söder Malm was the most common neighborhood with 1,145 listings, right?
+And the second mask, four or more guests, had 2,169 true values, right?
+And I think we saw that number a few minutes ago.
+So, the and here goes through both masks row by row, and the result is true only where both are true.
+So, that leaves us with 454 rows, about 40% of the listings in Söder Malm are big enough for four.
+So, yeah.
+And remember the rule, one pair of parentheses around each conditions, okay?
+So far, we have made masks with comparisons, just like equals and so on, but Pandas has a few more helpers that make common filters shorter.
+And I'm going to actually show you four of them, and each case, we again count the true values with sum, just like before, okay?
+And I've actually prepared some notes for you here, which you can use, of course.
+Let me just, yes.
+So, isIn is the value in a list.
+It is much shorter than writing one condition for every value and joining them with, I always forget the symbols.
+Between is a number between two values.
+The not sign, it turns every true into false, and other way around.
+And then we have isna, is the value missing.
+And we're going to meet is in between isna a lot along the way.
+Let's actually give you this, actually, that I wanted to show you, so I don't need to write it again.
+It needs just a little bit of help.
+We're not going to dive into it too much, if you ever want to look at that, if it's over.
+All right.
+So, just some useful helpers.
+So, is the value in this list between two and four?
+So, both ends included, actually, not in the entire home.
+So, missing ratings.
+So, let's take a look at that.
+So, 1,911 listings, well, are in one to three central neighborhoods.
+So, the Malm, and we have a little bit more.
+So, the Malm, the Malm, the Malm.
+And that is more than, well, four out of ten, right?
+So, without is in, we would have had to write three conditions.
+And join them with this side, or.
+And the 2,968 listings have room for between two and four guests.
+And maybe you can notice here that we're using between, which includes both ends.
+So, two, three, and four are all counted.
+Okay.
+So, a little bit different here, right?
+And that is, maybe.
+I've actually already calculated this before the list.
+So, 65% of all the listings.
+814 are not entire homes.
+That is the mask from before, with the not sign in front.
+The mask, because we have already used mask before, if you remember, when we created it.
+So, yeah.
+You can check it again with what we already know.
+So, we know that 3,760 entire homes plus the 814 gives us the total 4,574, which we always come back to, which is realistic, right?
+So, not gives us exactly the rows that were actually left out.
+So, that's quite useful as well, if we want to look at the opposite of some.
+So, and 644 here have no ratings.
+So, yeah.
+Isna is true where a value is actually missing, right?
+And if you remember, that count, for ratings, we had 3,930 when we used the scribe, right?
+So, 4,574 minus that 3,930, that would give us the 644.
+So, yeah.
+So, it's the same number.
+We just found it in a different way.
+So, missing values, as you see, is something we have run into several times a day.
+But like I said, on Thursday, at the end of this week, we will learn what to do about them and then implement those tools into this data.
+Okay.
+We are reaching the end of the lesson.
+So, one of the last things that I want to talk about is how we sort and pick rows and columns.
+Not that complicated at all, but we take it step by step.
+So, let's do some sorting.
+A very common question about data is which one is the biggest, the smallest, the most popular?
+And to answer that, well, we sort the table.
+So, in SQL, that would be equivalent to order by, right?
+So, one practical thing first.
+Our table actually has 84 columns, which is too wide to read.
+So, before we sort, I will make a list of six columns I actually want to see.
+And I will just call that, actually, I will call that view.
+All right.
+And then we can look at the result later.
+So, the ones I want to use is name.
+I want to use, let's put it in there.
+Or the selection.
+Name, neighborhood, cleansed, room, type, com, date, date, number of views, scores, things.
+No, it's actually called rating, not ratings.
+Scores.
+Yeah.
+All right.
+And then I'm going to write listings, views, view.
+I want to sort the values, views.
+And I'm actually also going to write sending calls.
+We're going to put the head.
+And what am I trying to do here?
+It's just right.
+So, we're trying to find the five listings with the most reviews.
+So, keep only the only six columns that I want to see.
+One, two, three, four, five, six.
+Right.
+Sort by number of reviews.
+Right.
+Sort by number of reviews.
+Ascending false.
+So, biggest first.
+And show only the first five rows.
+All right.
+So, when we run this, if we look at number of reviews here, it goes down.
+From top to bottom.
+And that is the sort, right?
+So, these are the five listings with the most reviews, of course.
+So, the top one has 1,293 reviews.
+And then 867, 855, 754, 734.
+And if we look at the ratings, 4.5, 4.46, 4.93, and so on.
+All of them are high, even for the popular listings.
+So, yeah.
+We can keep that in mind a little bit.
+Because we will come back to it on Thursday next week.
+And also, the first listing is a studio for two, right?
+And the second one, well, is a bed in a dorm.
+So, that means something, well, a conclusion that we can draw here is that listings with the
+most reviews are not the big, fancy places or anything like that.
+And what do you think, guys?
+Is that a coincidence?
+Well, maybe it's just that small, cheap places get booked more often.
+And everyone just can leave a review, right?
+So, we cannot tell anything from this table.
+But it's a good thing to ask, right?
+Now, what if we want to sort two things?
+Let's try that as well.
+So, listings, view, sort, values.
+And I simply can just do in one single line, right?
+So, accommodates and reviews, sending, and I can post, false.
+And then, and let's put just for a second.
+So, what am I trying to do here?
+Find the biggest listings, and among equally big ones, right?
+The most reviewed.
+So, first, sort by accommodates, right?
+So, when two rows have the same value, sort those on number of reviews.
+So, the order here matters.
+And you see that we said false, false here.
+So, one true, false for each column.
+Biggest first for both, right?
+So, let's see here.
+Something accommodates.
+So, all listings have room for 16 guests, all right?
+So, that's the first sort.
+The biggest first, right?
+But a lot of listings have room for exactly, since both have exactly for 16.
+Actually, in fact, there are 11.
+I've already looked that up.
+So, it's not only these that have accommodates for 16.
+There's 11 of them.
+So, how does actually Pandas choose the order between them?
+Well, that is where the second column comes in, the number of reviews.
+So, among the listings with 16 guests, the ones with the most reviews actually comes first.
+So, 344, then 308, 27, 17, 10, and so on.
+And, yeah, we see that the number goes down.
+So, the rule is the first column decides, and the second column, when the first one is a tie, right?
+There is actually a shortcut for the top five.
+Sorry, top few, not top five.
+Top few case, which we do all the time.
+And it looks like something like this.
+Listings.
+And we put something in largest, right?
+Let's put the five here.
+And then view, right?
+There we go.
+And let's run this.
+And, yeah, again, five listings with the room of 16.
+This is not the same list as before, because we had, well, a large town at the top.
+And now it's not a large town at the top.
+Now it's Stockholm House, close to fair, close to fair in town.
+So, it's a little bit different from before.
+And why is that?
+Well, because the 11 listings share the same number, 16, right?
+And we only asked for five.
+There's no rule here for choosing between listings that are tied.
+So, Panda simply takes the one that comes first in our table.
+So, in our earlier sort, we told it how to break the tie with the number of reviews.
+And here, we did not.
+So, it's a big difference, right?
+And also, if you notice the last two rows here, they have zero reviews.
+And the rating says none or not a number.
+So, yeah, listing with no reviews has no rating, right?
+And those are actually the part of the 644 missing ratings we counted before, right?
+So, the lesson here is just if there are ties and the order matters, well, add a second column to sort by.
+And if we look at this, so, if we look at the numbers on the far left here, on the table that we just made, 825, 997, 15, and 417, and 596, well, that is an index.
+So, it is a number or a label that every row carries around with it, like name tag, right?
+And I'm pretty sure that you already know what an index is.
+So, when we first loaded the table, the index was simply 0, 1, 2, 3, and so on, one for each row.
+But when we sort of filter, the row keeps its own name tag, of course.
+So, that's why the top is still called 825.
+The top here is called 892, and so on.
+So, that actually gives us two different ways to point at the row.
+We can point to that by label.
+So, give me the row called 825, or by position.
+Give me the first row, whatever it is called, right?
+And we can actually try both on our top five.
+Let's try that out.
+So, and then print top, I'll follow you just blindly here, 825 name.
+And here, we're going to say, e-lock, and we'll write it a little differently.
+So, 0 and name, right?
+So, what are we trying to do here?
+Well, we're trying to get the name of the top listing in two different ways, right?
+So, we're saving the five most previewed listings in a variable called top.
+And here, we are using lock, right?
+So, the row labeled 825, column called name.
+And here is the row position, row position 0, the first one, right?
+And the column called name, okay?
+And notice here that lock and e-lock always uses square brackets, not parentheses.
+So, both lines print the same name, studio, apartment, double bed.
+We find, we found the same listings in two ways, right?
+And here, they just happen to give the same answer because the row called 825 is also the first row.
+But they're not the same thing, okay?
+Yeah.
+So, lock uses the name and e-lock uses the position.
+And lock can actually do more than pick one row.
+It can pick rows and columns in one go.
+Listings, lock, listings, accommodate, 10, view.
+So, what are we trying to do here?
+Well, show the listings with room for 10 or more guests with only my six columns that I chose earlier in view, right?
+Yeah.
+So, let's try that out.
+And there we go.
+So, here are the first five listings with room for 10 or more.
+A big one with 16, 16, and a few villas, family house for 12 also.
+Yeah.
+So, that is sometimes useful.
+But sometimes, it might look just messy.
+And maybe we would like a clean 0, 1, 2 here.
+And for that, there is a method that we could do.
+And we will use the top here.
+So, instead of having these indexes, sorry, instead of having the indexes that we saw before when using top, we're going to change it to 0, 0, 1, 2, 3, 4, and so on.
+So, there is a method for that.
+So, what we can do is top, yeah, reset, reset index, and then we just drop, and then we put it to true.
+Yeah, that's it.
+0, 1, 2, 3, 4.
+Same thing as we saw before.
+So, the old names 825 and 997 and so on are gone.
+But everything else is the same list or the same five listings in the same order.
+So, we just wrote a drop true just to throw the old index away.
+And if we have left this out, actually, if we dropped false or something like that, the pandas would keep the old numbers and put them in a new column.
+So, we would get both of them.
+So, we would have an extra column called index.
+And we don't want that for now.
+So, there you go.
+Now, we can actually read the table.
+We can look at its parts, pick columns, filter rows, sort, and point at specific rows.
+And yeah, I think that's too much it.
+And we could wrap it up with a question.
+And I'm actually going to go through it because I will share this code if you want to look into it more.
+You can do that.
+But at the end of the lesson, I'm going to try to remember to always do a wrap it up question, which I have actually prepared for Lee.
+And it looks like something like this.
+And I've already prepared the answer as well.
+So, there we go.
+So, the question is to wrap up the whole lesson.
+Inside the mall, among entire homes, for four or more guests, which five listings have the most reviews and how are they rated?
+So, how would I write that in super speed?
+Well, something like this.
+So, the same four steps as in the list above.
+One per block of code, right?
+As you see.
+So, we are picking the rows in order to fulfill all the three conditions that we have in the question.
+We are sorting the values, right?
+By number of reviews.
+We want the biggest first, sending false.
+Keep the top five.
+We could have changed this to six or something like that.
+Or we could have written anything.
+I think that would be all right.
+And show only these one, two, three, four columns.
+And that would quite answer the question.
+And then we might want to print it out as well so we can see it.
+So, let's actually run this.
+And then when we finish, try this question out yourself without looking at my answer.
+That's a good check if you have been able to.
+And that can help you also with the lab.
+And I'm going to show you the lab in a second.
+But what I want to say before we celebrate, because this answer doesn't actually tell us some things, right?
+So, a table actually gives us a number, but it does not tell us what the number means, right?
+So, if we look at two things here, a lot of reviews here does not actually tell us, does not mean automatically that it's the best, right?
+So, because a review is only left by a guest who has stayed there.
+So, a number of reviews is just measures how many guests have stayed and written something, not how good the place actually is.
+So, a listing that has been on Airbnb for 10 years, well, would have collected 10 years of reviews.
+And a brand new listing, even a wonderful one, would never reach maybe CF 734.
+And our table here cannot tell us how long each listing has existed.
+We actually have a column called the first review with the date of the review, but it's actually sorted as text.
+So, we cannot calculate with it quite yet.
+And that's something that we're going to learn when we're going to clean the data and come back to it.
+So, yeah, when we read the table here, the honest sentence is, these are the best listings.
+Sure, but is it really?
+I would rather say, these are the listings that have collected the most reviews, not the best, not used the best, right?
+And the ratings also hardly tells us anything.
+4.66, 4.58, 4.80, and so on.
+They look different.
+But if you remember the Scribe table from earlier, the average rating for all listings were 4.82, right?
+So, the median, I think, was 4.92 or something like that.
+And I think 75% of the rows said actually 5.
+So, that means at least a quarter of all listings have a perfect score of 5.
+So, almost everything is actually rated very high.
+So, the difference between 4.51 and 4.80 is actually quite tiny, right?
+Compared to the whole scale.
+So, we cannot say that one is good and the other one is bad because when nearly everyone gets close to the top score, the score stops telling us good from bad.
+And that's quite good for us to stumble on in this course.
+And one more thing.
+We looked at five rows, right?
+Our filter found, well, earlier we found 499 listings in Southern Mound, entire homes, and it was for four or more guests.
+So, the other 444 are actually not in the answer.
+So, a table actually gives us an answer very quickly.
+But it is our job to ask what the answer is really saying.
+And we will actually practice that on next week when we do this on this table.
+And yeah, that was pretty much it.
+And before I actually end the lesson, like I said, longer lesson today.
+It's going to get shorter along the way because we don't have the same preparations and so on.
+But before I let you go, I actually want to show you the lab so there's no confusion.
+So, please pay attention now.
+So, there is no confusion, no panics.
+Let me just stop sharing because I think I'm only sharing one particular window.
+Or, yeah.
+So, let me actually share the whole screen.
+And let me just show you the lab.
+I haven't uploaded it yet, so you can't find it quite yet.
+But the lab for today looks like this.
+And I'm going to read it together with you guys.
+So, today, well, we started on a new area.
+And it can feel confusing at first.
+So, I understand.
+It can feel confusing at first, especially if it's news for you.
+This is the first time doing it and so on.
+So, we introduced Jupyter Notebooks.
+We introduced Pandas for the first time and so on.
+Therefore, this lab, and this is going to be for the whole week, actually.
+So, this lab for this week, and we will see how we will do next week.
+I will talk to some of you guys and pick some info from you guys.
+So, this lab has two parts, and you choose.
+So, if one just looks directly, four pages, a lot of questions, maybe a little bit of panic.
+Oh, my God, do I need to do all of this?
+No.
+You choose.
+So, you have a part one, which I call practice.
+It repeats every step we did today, but with other columns and other questions.
+Principle is the same.
+So, do this part if you want to try all the steps once, once more, and feel sure about them.
+And then we have a part two.
+You can go deeper.
+And this is for you who felt, well, I understood this, and I want to go further.
+The questions here are more open, and you combine the tools from today.
+So, I do not expect you to do both parts.
+It is your own choice.
+Can you do both?
+Sure.
+If you find time enough to do it, sure.
+And on Friday, we might have a little bit of catch-up.
+So, you can also save a little bit for Friday.
+Because, yeah, most certainly, we will have a little bit of catch-up.
+And you're also welcome to contact me if you want to talk about which part to take.
+So, sometimes it's not black and white.
+I understand that.
+So, sometimes I might say, well, I was a little bit confused.
+Should I do some of the practice and then go?
+Sure.
+We can discuss it.
+So, there might be a special case for just you.
+So, just contact me and we can discuss it.
+And, of course, you work in your own notebook and so on.
+And then there's some descriptions of what to do.
+And the questions.
+And wrong on purpose and so on.
+And what is expected.
+Same thing for Go Deeper.
+So, you choose which one you want to do.
+And I will upload the lab.
+But now it's time for lunch.
+So, first of all, take lunch.
+And then you can start with the lab.
+Choose the lab that you want to work with.
+Lab one.
+Either the practice or go deeper.
+All right, guys.
+Longer lesson today.
+I understand.
+But sometimes you do have longer lessons.
+And sometimes they're shorter.
+Any questions before I let you go?
+Any questions about the lab, first of all?
+You just want me to be quiet now.
+So, you can't go too much.
+Oh, no.
+Actually, I have a question.
+You have some notes that you copied and pasted into the editor.
+Are you going to share those notes?
+Those are all my notes that I actually have.
+And, of course, I have a little, you could say, a cheat sheet that I follow.
+But, yeah, those notes would make no sense to you, to you guys.
+It's more...
+No, no.
+I mean, like, about this data.
+Oh, yeah, yeah, yeah.
+Oh, okay.
+Everything, everything that I've written here, I'm actually going to share that in, if you
+remember the folders in the DLA, the shared folder that we have in Teams.
+There is a folder, a specific folder where you find recordings, a specific folder where you
+find labs, and a specific folder where you find data, but also a specific folder called
+code, and that's where you're going to keep the lesson.
+So, I'm going to call it lesson one or something like that.
+All right.
+All right.
+Okay.
+And then you can find everything that we have written together today.
+All right.
+Thanks.
+Thank you.
+Any more questions?
+Perfect question.
+Any more questions?
+I do have another question, but it connects to installation notes that you've written last
+Friday.
+Sure.
+Could, if it's more specific for you, maybe...
+Probably.
+Yeah.
+So, maybe we can take that after lunch together.
+Okay.
+Sounds all right?
+Thank you.
+Okay.
+So, when you get back from lunch, just write to me and, yeah, we can take it from there.
+And if I find something that involves the whole class, of course, I can take it with all of
+you guys, of course.
+All right.
+I will end the recording there.
+And...

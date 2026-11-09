@@ -1,0 +1,41 @@
+What is Pandas and what is it used for?;Pandas is a Python library designed for working with tabular data, created around 2008 to become the standard tool for handling tables in Python.
+
+Why is Pandas considered better than Excel or SQL for data analysis?;Unlike Excel, code serves as documentation allowing anyone to reproduce results; unlike SQL, it works on loaded data rather than querying databases, enabling direct transition from exploration to visualization and machine learning.
+
+What are the key features of Pandas?;Pandas is built on NumPy arrays, enables data reading, cleaning, selection, filtering, sorting, grouping, joining, and summarizing, and works efficiently with large datasets.
+
+How do you import Pandas in Python?;You import Pandas using `import pandas as pd`, and it's common to check the version with `pd.__version__`.
+
+What is a DataFrame in Pandas?;A DataFrame is a two-dimensional data structure with labeled rows and columns, representing the whole table of data.
+
+What is a Series in Pandas?;A Series is a single column from a DataFrame, which is a one-dimensional array with axis labels.
+
+How do you load data into a DataFrame using Pandas?;You use `pd.read_csv('filename.csv')` to load data from a CSV file into a DataFrame.
+
+What does the shape attribute of a DataFrame tell you?;The shape attribute returns a tuple showing the number of rows and columns in the DataFrame, e.g., (4574, 84).
+
+How can you view the first few rows of a DataFrame?;Use the `.head()` method to display the first 5 rows by default, or specify how many with `.head(n)`.
+
+What does the .info() method provide?;The `.info()` method gives detailed information about the DataFrame including column names, data types, and memory usage.
+
+How do you identify missing values in a DataFrame?;You can use `.count()` to see how many non-null values each column has, or check columns with zero count for empty data.
+
+What is the difference between single and double brackets when selecting columns?;Single brackets select one column (returning a Series), while double brackets select multiple columns (returning a DataFrame).
+
+How do you filter data using boolean conditions in Pandas?;You create a boolean mask by applying comparison operators to columns, then use that mask to filter rows with `df[mask]`.
+
+What are the correct operators for combining multiple boolean conditions?;Use `&` for "and", `|` for "or", and `~` for "not" instead of `and`, `or`, and `not`.
+
+How do you sort data in a DataFrame by one column?;Use `.sort_values('column_name', ascending=False)` to sort in descending order, or `ascending=True` for ascending.
+
+How do you sort by multiple columns?;Pass a list of column names to `.sort_values(['col1', 'col2'], ascending=[True, False])` to sort by each column in order.
+
+What is the purpose of the .describe() method?;The `.describe()` method provides statistical summary including count, mean, standard deviation, min, quartiles, and max for numeric columns.
+
+How do you handle text data that looks like numbers in Pandas?;Text representations of numbers (like prices with $ signs) must be converted to numeric types before performing numerical operations.
+
+What is the difference between .loc[] and .iloc[] in accessing rows?;.loc[] accesses rows by label/index name, while .iloc[] accesses rows by position (0-based index).
+
+How do you reset the index after filtering data?;Use `.reset_index(drop=True)` to reset the index to sequential numbering starting from 0.
+
+What is the recommended way to check for specific values in a column?;Use the `.isin()` method to check if values are present in a given list of options.

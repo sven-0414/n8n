@@ -1,0 +1,6652 @@
+1
+00:00:05,790 --> 00:00:06,130
+ There we go.
+
+2
+00:00:06,730 --> 00:00:07,030
+ All right.
+
+3
+00:00:07,650 --> 00:00:08,590
+ Sorry for that.
+
+4
+00:00:08,790 --> 00:00:13,450
+ And just for the recording, this was a little bit short of what we're going to do this week,
+
+5
+00:00:13,930 --> 00:00:16,870
+ what data analysis and visualization is all about.
+
+6
+00:00:17,190 --> 00:00:22,610
+ So reading, cleaning, describing, visualize, and then a drop conclusion.
+
+7
+00:00:23,130 --> 00:00:24,950
+ We're going to do this during these two weeks.
+
+8
+00:00:26,600 --> 00:00:29,540
+ Just trying to summarize because we started recording a little bit late.
+
+9
+00:00:29,980 --> 00:00:30,880
+ Thank you guys for that.
+
+10
+00:00:31,700 --> 00:00:35,300
+ So yeah, this first week, reading and cleaning.
+
+11
+00:00:36,300 --> 00:00:40,650
+ And then we're going to use the tools for the next week, clean a little bit more,
+
+12
+00:00:40,890 --> 00:00:48,620
+ and then describe, visualize, and draw a conclusion if we can trust the data or not.
+
+13
+00:00:50,460 --> 00:00:53,150
+ I don't think I've missed anything.
+
+14
+00:00:54,710 --> 00:01:03,040
+ And this is, of course, included into AI machine learning.
+
+15
+00:01:04,570 --> 00:01:12,660
+ Because, like I said, the module is as good as the data you give it right.
+
+16
+00:01:14,600 --> 00:01:23,790
+ And we're actually going to use Jupyter Notebooks, and we're going to use Pandas
+
+17
+00:01:23,850 --> 00:01:29,300
+ during these two weeks, and I'm going to talk more about that along the way.
+
+18
+00:01:29,300 --> 00:01:39,910
+ Well, we can start a little bit here.
+
+19
+00:01:39,910 --> 00:01:42,310
+ So what is Pandas?
+
+20
+00:01:42,470 --> 00:01:49,760
+ Well, Pandas is actually just a Python library for working with tables.
+
+21
+00:01:50,570 --> 00:02:02,510
+ And the name comes from panel data, a term for tables of observations.
+
+22
+00:02:02,890 --> 00:02:09,910
+ It started around 2008, and it is open source.
+
+23
+00:02:11,700 --> 00:02:14,660
+ And yeah, today it's a standard tool for tables in Python.
+
+24
+00:02:15,290 --> 00:02:20,140
+ It's actually built on NumPy.
+
+25
+00:02:23,180 --> 00:02:26,980
+ And, well, I'm not going to spend too much time talking about NumPy,
+
+26
+00:02:27,040 --> 00:02:28,720
+ but it's going to be mentioned here and there.
+
+27
+00:02:28,930 --> 00:02:38,460
+ But NumPy is just another Python library, and it is like the foundation for almost all number work in Python.
+
+28
+00:02:39,650 --> 00:02:41,910
+ So NumPy actually gives us arrays.
+
+29
+00:02:43,940 --> 00:02:51,770
+ You can calculate on a whole array at once.
+
+30
+00:02:52,130 --> 00:02:53,890
+ You don't need a loop, for example.
+
+31
+00:02:54,560 --> 00:02:58,860
+ Much faster than looping over a normal Python list.
+
+32
+00:03:00,210 --> 00:03:03,410
+ And this is why Pandas actually can handle large tables.
+
+33
+00:03:04,200 --> 00:03:13,180
+ So you would not use NumPy directly much yourself, because Pandas uses it behind the scenes.
+
+34
+00:03:14,160 --> 00:03:18,680
+ And it was actually installed automatically when you installed Pandas.
+
+35
+00:03:19,760 --> 00:03:24,840
+ We will actually use it directly a few times.
+
+36
+00:03:25,740 --> 00:03:32,010
+ For example, we're going to use something called MPWare.
+
+37
+00:03:33,620 --> 00:03:36,520
+ But yeah, we will talk more about them when we get there.
+
+38
+00:03:40,050 --> 00:03:49,770
+ And many other Python tools for data and machine learning are actually built on NumPy or work with it.
+
+39
+00:03:51,080 --> 00:03:56,650
+ So this is why you will meet this again, probably in later modules as well.
+
+40
+00:04:00,480 --> 00:04:01,640
+ But back to Pandas.
+
+41
+00:04:01,900 --> 00:04:10,620
+ So you load the table into Python, a table full of data, of course.
+
+42
+00:04:11,300 --> 00:04:21,050
+ And then you can select, you can filter, you can sort, you can group, you can join, you can clean.
+
+43
+00:04:21,930 --> 00:04:24,850
+ And summarize it with a few lines of code.
+
+44
+00:04:25,240 --> 00:04:28,050
+ And you will see that it's super, super simple.
+
+45
+00:04:29,230 --> 00:04:30,610
+ You just need to know about it.
+
+46
+00:04:31,410 --> 00:04:33,330
+ And of course, get into it.
+
+47
+00:04:36,700 --> 00:04:40,140
+ And actually, you already know the idea from SQL, right?
+
+48
+00:04:40,920 --> 00:04:45,320
+ It is the same thinking, but with different words.
+
+49
+00:04:47,620 --> 00:04:53,780
+ So why don't we just use Excel or SQL or SQL?
+
+50
+00:04:54,370 --> 00:04:59,840
+ Well, Excel, I would say, is great for small tables.
+
+51
+00:05:00,720 --> 00:05:04,140
+ But you cannot see what someone did to the data, right?
+
+52
+00:05:05,130 --> 00:05:09,740
+ While with Pandas, the code is actually the documentation.
+
+53
+00:05:10,260 --> 00:05:13,730
+ So anyone can run it again and get the same result.
+
+54
+00:05:15,240 --> 00:05:18,340
+ SQL will ask questions of a database.
+
+55
+00:05:18,920 --> 00:05:22,520
+ Pandas works on data you have loaded into Python.
+
+56
+00:05:22,520 --> 00:05:28,640
+ So you can go straight onto charts and later machine learning.
+
+57
+00:05:31,080 --> 00:05:43,380
+ And what you will see today, and I'm going to get back to this, of course, you will see, well, you will meet two objects Pandas is built on.
+
+58
+00:05:44,620 --> 00:05:51,290
+ And that's a data frame, data frame.
+
+59
+00:05:52,450 --> 00:05:53,670
+ And what is a data frame?
+
+60
+00:05:53,790 --> 00:05:58,270
+ Well, I would say the whole table, whole table.
+
+61
+00:05:58,890 --> 00:06:01,910
+ And we, of course, we're going to see a whole table in a minute.
+
+62
+00:06:04,110 --> 00:06:06,160
+ And we're going to work with series.
+
+63
+00:06:07,120 --> 00:06:11,810
+ And when I say series, I mean just one.
+
+64
+00:06:12,930 --> 00:06:16,640
+ All right.
+
+65
+00:06:16,640 --> 00:06:39,160
+ And before we actually start or start looking at the data, the data that we're going to use, we're going to just look at some basics, how we actually work in the notebook.
+
+66
+00:06:39,420 --> 00:06:47,800
+ So I'm going to create a new file, just a test notebook, and then we're going to take it from there.
+
+67
+00:06:49,300 --> 00:06:49,540
+ All right.
+
+68
+00:06:50,680 --> 00:06:57,720
+ So now, if you want to code along, it's a perfect time to do that.
+
+69
+00:06:57,720 --> 00:07:04,720
+ So I'm just going to create a new file here, test.ipynb.
+
+70
+00:07:05,240 --> 00:07:07,270
+ I-P-Y-N-B.
+
+71
+00:07:08,020 --> 00:07:10,360
+ So the file ends with I-P-Y-N-B.
+
+72
+00:07:10,900 --> 00:07:20,840
+ And it actually stands for I Python Notebook, which was actually the original name.
+
+73
+00:07:22,450 --> 00:07:27,230
+ Today, people will usually just say Jupyter Notebooks or simply a notebook.
+
+74
+00:07:28,890 --> 00:07:31,590
+ And what is so special about the notebook?
+
+75
+00:07:31,590 --> 00:07:39,290
+ Well, it's that we can actually mix text and code in the same file.
+
+76
+00:07:39,390 --> 00:07:47,350
+ We can also draw charts in it and work with data step by step.
+
+77
+00:07:49,500 --> 00:08:03,260
+ So what we have here is that we can create code cell or two kind of cells, a code cell and the markdown cell.
+
+78
+00:08:04,680 --> 00:08:09,050
+ Code cell is for where we write Python code.
+
+79
+00:08:09,050 --> 00:08:14,600
+ A markdown cell is where you can write text.
+
+80
+00:08:16,860 --> 00:08:19,580
+ So it's a slightly different way of coding.
+
+81
+00:08:20,770 --> 00:08:27,400
+ So you write a little code, you look at the result, write some text, and then continue.
+
+82
+00:08:31,220 --> 00:08:36,040
+ And it's also good to know where these notebooks fit in, right?
+
+83
+00:08:36,580 --> 00:08:43,940
+ Because when you work with machine learning, you usually start in a notebook, at least at first,
+
+84
+00:08:45,380 --> 00:08:48,800
+ while you look at the data and, yeah, try things out.
+
+85
+00:08:50,540 --> 00:09:00,500
+ So later on, when the real modules are built, well, maybe people would move the code into ordinary Python files,
+
+86
+00:09:03,630 --> 00:09:04,970
+ like the programs you have written before.
+
+87
+00:09:06,830 --> 00:09:11,590
+ So, yeah, the notebook is more of a tool we use to get to know the data.
+
+88
+00:09:11,590 --> 00:09:19,400
+ So, yeah, let's get started and try some basics here for the notebook.
+
+89
+00:09:19,500 --> 00:09:22,790
+ And then we can look at the data that we're going to work with today or the table.
+
+90
+00:09:25,520 --> 00:09:31,580
+ So I'm going to start up with creating a code cell here and just write some code here.
+
+91
+00:09:32,090 --> 00:09:32,390
+ Simple.
+
+92
+00:09:33,010 --> 00:09:35,290
+ X equals 10.
+
+93
+00:09:35,550 --> 00:09:36,370
+ Oh, that's not a 10.
+
+94
+00:09:37,010 --> 00:09:37,390
+ That's a 10.
+
+95
+00:09:38,940 --> 00:09:43,090
+ So I'm just creating a variable with the value of 10.
+
+96
+00:09:44,550 --> 00:09:46,850
+ And then I can run the code here.
+
+97
+00:09:47,320 --> 00:09:49,880
+ And there is a shortcut, depending on what you have.
+
+98
+00:09:49,940 --> 00:09:52,690
+ If you have a Mac, maybe it's a bit different.
+
+99
+00:09:54,330 --> 00:10:02,780
+ So you just run the code, connects to the kernel, the one that we have here.
+
+100
+00:10:05,020 --> 00:10:09,710
+ And what we see now, after running it, nothing actually happens, right?
+
+101
+00:10:10,010 --> 00:10:14,630
+ But what we see is a small number one on the left here.
+
+102
+00:10:14,630 --> 00:10:19,580
+ And that just indicates the order in which we run the cells.
+
+103
+00:10:19,770 --> 00:10:25,180
+ So we can have a lot of cells and start with a different cell if we want,
+
+104
+00:10:25,280 --> 00:10:26,840
+ if we don't want to go in this order.
+
+105
+00:10:28,340 --> 00:10:29,420
+ But usually we wouldn't, right?
+
+106
+00:10:30,810 --> 00:10:35,250
+ But maybe there is an idea of doing it sometimes.
+
+107
+00:10:37,530 --> 00:10:40,570
+ So this tells us in what order we have run the cells.
+
+108
+00:10:41,570 --> 00:10:44,280
+ We can create a new cell here.
+
+109
+00:10:46,990 --> 00:10:54,020
+ And when I actually created X equals 10, it is now stored in memory.
+
+110
+00:10:54,020 --> 00:11:03,340
+ So now it's just enough for me just to write X and then run it.
+
+111
+00:11:05,660 --> 00:11:08,020
+ And I will see the value of X.
+
+112
+00:11:10,190 --> 00:11:12,070
+ So no writing print X or whatever.
+
+113
+00:11:12,980 --> 00:11:13,680
+ So just like this.
+
+114
+00:11:17,230 --> 00:11:25,060
+ Of course, a question that I usually get is, well, what if I create a third cell?
+
+115
+00:11:25,060 --> 00:11:27,060
+ Yeah, I shouldn't have done it over there.
+
+116
+00:11:27,120 --> 00:11:27,800
+ But that's all right.
+
+117
+00:11:28,320 --> 00:11:32,390
+ What if I did something like, do I need to separate those cells?
+
+118
+00:11:32,800 --> 00:11:34,190
+ No, obviously not.
+
+119
+00:11:34,640 --> 00:11:36,200
+ I could have done something like this.
+
+120
+00:11:36,440 --> 00:11:44,510
+ Y equals 20.
+
+121
+00:11:44,750 --> 00:11:48,580
+ And then just come here and say Y directly.
+
+122
+00:11:49,280 --> 00:11:52,080
+ And that would be these two code cells, right?
+
+123
+00:11:52,390 --> 00:11:54,440
+ And if I run this, I will get my 20.
+
+124
+00:11:55,250 --> 00:11:56,560
+ So why did I separate them?
+
+125
+00:11:56,680 --> 00:11:58,360
+ Well, it's just for learning purposes, right?
+
+126
+00:11:59,030 --> 00:12:04,200
+ So obviously, I wouldn't divide it into two cells when they come after each other.
+
+127
+00:12:04,420 --> 00:12:13,070
+ But maybe just to show that I can, in 100 cells later, I can write X and see what X was, which I actually created 100 cells before.
+
+128
+00:12:14,610 --> 00:12:14,890
+ All right?
+
+129
+00:12:15,070 --> 00:12:16,270
+ And you see the order now.
+
+130
+00:12:16,310 --> 00:12:17,710
+ One, two, and then three.
+
+131
+00:12:18,290 --> 00:12:21,110
+ I'm just going to get rid of that.
+
+132
+00:12:22,170 --> 00:12:22,350
+ All right?
+
+133
+00:12:24,290 --> 00:12:27,020
+ If we want to restart, we can actually restart.
+
+134
+00:12:28,280 --> 00:12:28,560
+ Yep.
+
+135
+00:12:30,310 --> 00:12:31,890
+ And that's perfectly fine.
+
+136
+00:12:32,360 --> 00:12:34,610
+ We can run all if we want.
+
+137
+00:12:35,100 --> 00:12:36,460
+ And then it will run in order.
+
+138
+00:12:36,920 --> 00:12:37,080
+ Like this.
+
+139
+00:12:41,770 --> 00:12:42,990
+ Any questions up to now?
+
+140
+00:12:43,070 --> 00:12:47,270
+ I think it's pretty clear, right?
+
+141
+00:12:48,570 --> 00:12:50,020
+ All right.
+
+142
+00:12:53,320 --> 00:12:56,750
+ What if we test an error?
+
+143
+00:12:57,130 --> 00:12:58,490
+ How that might look like?
+
+144
+00:12:59,150 --> 00:13:01,300
+ So what if I come now?
+
+145
+00:13:01,660 --> 00:13:02,830
+ I have X equals 10.
+
+146
+00:13:03,200 --> 00:13:04,280
+ I have an X.
+
+147
+00:13:04,520 --> 00:13:05,460
+ I run everything.
+
+148
+00:13:05,900 --> 00:13:07,020
+ I get my green tick.
+
+149
+00:13:07,340 --> 00:13:17,300
+ And now I create another code cell and I write X equals Y plus 2.
+
+150
+00:13:19,570 --> 00:13:23,800
+ And you can see clearly that it's already complaining here.
+
+151
+00:13:24,120 --> 00:13:24,570
+ But whatever.
+
+152
+00:13:24,790 --> 00:13:26,230
+ I just want to see an error, right?
+
+153
+00:13:26,460 --> 00:13:30,070
+ So if I run this, it actually says that Y is not defined.
+
+154
+00:13:32,090 --> 00:13:39,650
+ So now I can come up here and then create a new code cell here in between and just write the missing value.
+
+155
+00:13:40,560 --> 00:13:46,530
+ So Y equals maybe, I don't know, 10 or whatever.
+
+156
+00:13:46,530 --> 00:13:48,180
+ All right?
+
+157
+00:13:48,640 --> 00:13:50,580
+ Or maybe we can change it to something else.
+
+158
+00:13:50,660 --> 00:13:50,900
+ 20.
+
+159
+00:13:51,770 --> 00:13:54,010
+ And I can come back here, run that one.
+
+160
+00:13:54,230 --> 00:13:56,150
+ And you see that this is not fixed yet.
+
+161
+00:13:56,350 --> 00:13:57,470
+ I need to run it again.
+
+162
+00:13:58,290 --> 00:13:59,800
+ And now I have.
+
+163
+00:14:03,010 --> 00:14:05,600
+ Now it's not complaining anymore.
+
+164
+00:14:05,600 --> 00:14:15,250
+ And if I were to run X again, I see that X is not 10 anymore.
+
+165
+00:14:15,470 --> 00:14:16,590
+ X is actually 22.
+
+166
+00:14:17,960 --> 00:14:18,510
+ All right?
+
+167
+00:14:19,980 --> 00:14:28,000
+ I mentioned also that we have something called a markdown cell.
+
+168
+00:14:32,560 --> 00:14:33,680
+ Simply just click on markdown.
+
+169
+00:14:34,210 --> 00:14:36,380
+ And you can write some text.
+
+170
+00:14:36,380 --> 00:14:51,480
+ I can do, and you will see more along the way, but just to get started, I'll do hashtags like this and just write, this is some text.
+
+171
+00:14:51,660 --> 00:14:58,760
+ And then go ahead and just write blah, blah, blah, blah, blah.
+
+172
+00:15:00,040 --> 00:15:00,780
+ All right?
+
+173
+00:15:01,000 --> 00:15:02,860
+ Some important information.
+
+174
+00:15:02,860 --> 00:15:05,280
+ And then I can run it.
+
+175
+00:15:05,280 --> 00:15:13,530
+ And then I can run it, run it, or shift enter usually works better.
+
+176
+00:15:13,960 --> 00:15:14,410
+ There we go.
+
+177
+00:15:17,080 --> 00:15:24,540
+ And then you see that this some text will be kind of a title, since I did those two hashtags there.
+
+178
+00:15:24,900 --> 00:15:27,180
+ And then I can run it, and then my text is like normal.
+
+179
+00:15:27,180 --> 00:15:33,740
+ This becomes, what do you call it, a heading, right?
+
+180
+00:15:34,950 --> 00:15:37,390
+ And the rest would be just a normal text.
+
+181
+00:15:39,880 --> 00:15:49,840
+ And when I run the text, well, it turned into, what do you call it, formatted text, right?
+
+182
+00:15:50,010 --> 00:15:57,540
+ So this is pretty neat, a cool way to work at the beginning of your project.
+
+183
+00:15:58,180 --> 00:16:04,410
+ You work part by part, and then you can code and write some text.
+
+184
+00:16:05,810 --> 00:16:11,820
+ Of course, you can also write functions, and you can write complex code as you want.
+
+185
+00:16:12,960 --> 00:16:15,640
+ Let's try to just write that function.
+
+186
+00:16:16,920 --> 00:16:20,760
+ So, for example, simple, useless function here.
+
+187
+00:16:21,520 --> 00:16:37,200
+ Another function, A, B, return, rewrite, and then we can try to, okay, we can separate them.
+
+188
+00:16:37,600 --> 00:16:45,340
+ So now we have a function that is available for use whenever I want.
+
+189
+00:16:45,980 --> 00:16:53,230
+ So if I now create a new cell, and I call my function, or use my function here, my add function,
+
+190
+00:16:54,310 --> 00:16:59,470
+ I need to, of course, give two numbers, two and three.
+
+191
+00:17:00,400 --> 00:17:02,990
+ And then I can run it, and I get my five.
+
+192
+00:17:03,930 --> 00:17:16,340
+ Of course, I can also, like we have learned everything that we have done before.
+
+193
+00:17:16,750 --> 00:17:18,750
+ So, yeah, I can create an f-string.
+
+194
+00:17:19,470 --> 00:17:28,570
+ The result is two and three.
+
+195
+00:17:28,800 --> 00:17:29,710
+ No problem.
+
+196
+00:17:30,770 --> 00:17:34,910
+ The result is fine.
+
+197
+00:17:37,530 --> 00:17:38,420
+ Yeah.
+
+198
+00:17:38,420 --> 00:17:44,020
+ And that's the basics, the basic idea of notebooks.
+
+199
+00:17:45,800 --> 00:17:46,720
+ Any questions?
+
+200
+00:17:48,730 --> 00:17:55,550
+ As you see, it's a pretty cool way of working.
+
+201
+00:17:55,750 --> 00:17:56,290
+ I love it.
+
+202
+00:17:57,020 --> 00:17:58,640
+ I love the notebooks.
+
+203
+00:18:01,820 --> 00:18:02,700
+ All right.
+
+204
+00:18:03,240 --> 00:18:05,100
+ So that was just getting started.
+
+205
+00:18:05,730 --> 00:18:06,970
+ And now it's time.
+
+206
+00:18:09,590 --> 00:18:12,230
+ I'm actually going to create a new file.
+
+207
+00:18:14,630 --> 00:18:20,320
+ And you can do it as you want.
+
+208
+00:18:20,780 --> 00:18:29,320
+ I want a clean one today's lesson, which I call demo.
+
+209
+00:18:34,110 --> 00:18:39,790
+ So before we start, we're actually going to do two small things.
+
+210
+00:18:41,090 --> 00:18:45,410
+ So I'm just going to write here.
+
+211
+00:18:45,950 --> 00:18:47,830
+ We're actually going to import.
+
+212
+00:18:51,100 --> 00:18:55,060
+ So it's like this.
+
+213
+00:18:55,790 --> 00:19:00,910
+ Import pandas as PD.
+
+214
+00:19:02,630 --> 00:19:09,760
+ And just to make sure that everything works, try it yourselves as well.
+
+215
+00:19:11,260 --> 00:19:12,280
+ Version.
+
+216
+00:19:14,010 --> 00:19:15,400
+ Print.
+
+217
+00:19:16,220 --> 00:19:18,580
+ PD.
+
+218
+00:19:20,110 --> 00:19:20,840
+ Sorry.
+
+219
+00:19:23,180 --> 00:19:25,650
+ There we go.
+
+220
+00:19:28,570 --> 00:19:34,590
+ So we just import pandas.
+
+221
+00:19:38,580 --> 00:19:42,600
+ Because Python, of course, does not load every library automatically, right?
+
+222
+00:19:42,820 --> 00:19:48,640
+ So when we write import pandas, we tell Python that we want to use this library now.
+
+223
+00:19:50,180 --> 00:19:51,920
+ And I also write it as PD.
+
+224
+00:19:52,680 --> 00:19:54,650
+ So just a short nickname.
+
+225
+00:19:56,050 --> 00:19:57,730
+ So we don't need to write pandas anymore.
+
+226
+00:19:58,050 --> 00:20:00,990
+ We just write PD every time we want to use it.
+
+227
+00:20:06,360 --> 00:20:12,440
+ And you will see this in any tutorial or example or wherever you look up online.
+
+228
+00:20:13,730 --> 00:20:20,570
+ And we're also just double-checking the version of Python and of pandas.
+
+229
+00:20:20,760 --> 00:20:24,380
+ Just to make sure that we're all on the same page here.
+
+230
+00:20:26,890 --> 00:20:34,240
+ So when we run this, perfect.
+
+231
+00:20:34,380 --> 00:20:35,820
+ I get 3.14.
+
+232
+00:20:35,920 --> 00:20:44,500
+ And this is what was written on teams before that I want you to be on the range of 12 to 14.
+
+233
+00:20:45,840 --> 00:20:52,440
+ And if you have something 3.12, 3.13 something, 3.14 something, you are set.
+
+234
+00:20:53,870 --> 00:20:55,870
+ Here's another important.
+
+235
+00:20:56,920 --> 00:21:02,480
+ I want you all to have, when it comes to pandas, I want you all to have 3.0.5.
+
+236
+00:21:03,070 --> 00:21:07,040
+ So why am I going about the version?
+
+237
+00:21:07,040 --> 00:21:14,380
+ Well, this is actually pandas 3.0.5 and pandas 3.0.5 have changed some behavior.
+
+238
+00:21:15,000 --> 00:21:25,250
+ It is not the whole world if you don't have pandas 3.0.5, but I would actually appreciate it if you do.
+
+239
+00:21:27,530 --> 00:21:33,870
+ So because the changes are mostly small things, but they matter, right?
+
+240
+00:21:34,210 --> 00:21:43,890
+ So for example, how a text document is stored and what happens when you change the table, it is a bit different.
+
+241
+00:21:44,860 --> 00:21:47,020
+ And I will try to point them out as we go.
+
+242
+00:21:47,760 --> 00:21:49,000
+ I will try to remember those.
+
+243
+00:21:51,160 --> 00:21:55,060
+ So you don't have to remember everything in advance, of course.
+
+244
+00:21:58,170 --> 00:22:14,320
+ But an important thing to know is that many tutorials online, because I can imagine that you will go into some tutorials, maybe look up things, and also many answers from AI tools.
+
+245
+00:22:14,320 --> 00:22:18,410
+ And this is something, I hope you're listening carefully now.
+
+246
+00:22:18,910 --> 00:22:24,710
+ So yeah, many answers from AI tools actually are written for pandas 1 and 2.
+
+247
+00:22:26,610 --> 00:22:28,470
+ And we're using pandas 3, right?
+
+248
+00:22:28,710 --> 00:22:35,560
+ So if you copy some code from them, it might behave differently.
+
+249
+00:22:37,580 --> 00:22:38,920
+ Or maybe, yeah.
+
+250
+00:22:40,800 --> 00:22:50,850
+ And if you're using some AI or whatever, and it doesn't work on your pandas, well, the version is probably the reason.
+
+251
+00:22:53,040 --> 00:23:02,010
+ However, make sure that you see 3.0.5 in the second line.
+
+252
+00:23:03,150 --> 00:23:09,500
+ And if you see something else, well, I'm more than happy to help you after the lesson.
+
+253
+00:23:10,260 --> 00:23:13,490
+ So you can still follow along in the meantime.
+
+254
+00:23:17,370 --> 00:23:17,510
+ Okay?
+
+255
+00:23:18,990 --> 00:23:21,200
+ Right.
+
+256
+00:23:21,800 --> 00:23:25,850
+ Now I can imagine that you want to see, want to get started.
+
+257
+00:23:30,210 --> 00:23:38,950
+ So for these two weeks, we will mostly work with one data set.
+
+258
+00:23:40,140 --> 00:23:44,440
+ And I think I'm only sharing a particular, I'm not actually sharing the whole screen.
+
+259
+00:23:44,760 --> 00:23:47,260
+ So I'm just going to share again here.
+
+260
+00:23:49,180 --> 00:23:50,510
+ And go.
+
+261
+00:23:52,170 --> 00:23:54,230
+ There we go.
+
+262
+00:23:54,640 --> 00:23:55,110
+ Perfect.
+
+263
+00:23:56,140 --> 00:24:03,290
+ Because I just wanted to show you guys that, no, correct.
+
+264
+00:24:04,190 --> 00:24:05,070
+ Where are these teams?
+
+265
+00:24:05,810 --> 00:24:07,180
+ There we are.
+
+266
+00:24:07,180 --> 00:24:12,230
+ Oh, I don't want to show any conversation I'm having here.
+
+267
+00:24:12,310 --> 00:24:17,790
+ There we go.
+
+268
+00:24:35,320 --> 00:24:40,210
+ A bit of this.
+
+269
+00:24:56,720 --> 00:25:01,170
+ That's all right.
+
+270
+00:25:06,910 --> 00:25:22,800
+ Like I mentioned, in these two weeks, we work with one data set.
+
+271
+00:25:23,970 --> 00:25:30,010
+ And I've actually uploaded it in here.
+
+272
+00:25:30,690 --> 00:25:43,210
+ So if you go to the channel that we are in right now, data analysis and visualization, and I've created some folders, like always, recordings and the labs and so on.
+
+273
+00:25:43,390 --> 00:25:52,720
+ And also, I'm going to upload the code that we work during the day, because it's going to involve some notes as well.
+
+274
+00:25:52,800 --> 00:25:55,960
+ But the data is actually over here.
+
+275
+00:25:56,260 --> 00:25:58,800
+ So whenever I have a new data, you will find it over here.
+
+276
+00:26:01,200 --> 00:26:03,560
+ So today, we're actually going to work with something called listings.
+
+277
+00:26:03,560 --> 00:26:17,010
+ And this comes from, this data set, well, is an Airbnb listings in Stockholm.
+
+278
+00:26:18,210 --> 00:26:38,770
+ And it comes from a project called Inside Airbnb, which collects the public information from Airbnb's website and then publish it for anyone to use.
+
+279
+00:26:38,770 --> 00:26:52,050
+ And something I actually need to mention, according to their license, well, we may use the data as long as we credit the source.
+
+280
+00:26:53,460 --> 00:26:58,060
+ So remember the name, InsideAirbnb.com.
+
+281
+00:26:59,420 --> 00:27:01,650
+ So they collected the data, not me.
+
+282
+00:27:02,580 --> 00:27:14,320
+ And our Snapchat was actually collected at the end of September, when I finalized the planning of this module.
+
+283
+00:27:17,120 --> 00:27:22,450
+ One thing I actually have done is to change the file slightly.
+
+284
+00:27:23,490 --> 00:27:32,180
+ I've actually removed some columns, some of it because teaching purposes and because we're going to get back to those.
+
+285
+00:27:32,260 --> 00:27:47,120
+ And some of them contains actually some personal information about the hosts, their name, their profile text, links to the profile page, profile picture, locations and so on.
+
+286
+00:27:48,120 --> 00:27:49,440
+ So I've removed those.
+
+287
+00:27:49,920 --> 00:27:52,380
+ But everything else is exactly as it was published.
+
+288
+00:28:00,210 --> 00:28:08,000
+ And like I said, I've uploaded on Teams in this channel.
+
+289
+00:28:08,160 --> 00:28:15,020
+ So yeah, please download the file, especially if you want to code along.
+
+290
+00:28:16,380 --> 00:28:21,010
+ And what I'm going to do is I'm going to put it in a folder called Data.
+
+291
+00:28:21,300 --> 00:28:24,140
+ So next to the notebook that we are working in.
+
+292
+00:28:24,200 --> 00:28:28,880
+ And I'm actually going to do that while you try to do that.
+
+293
+00:28:29,920 --> 00:28:32,750
+ So I'll give you a little time to do it.
+
+294
+00:28:34,350 --> 00:28:37,230
+ So Data Folder, and I want it over here.
+
+295
+00:28:37,740 --> 00:28:45,380
+ So we need the Data Folder with the file.
+
+296
+00:28:45,380 --> 00:28:47,640
+ And we're going to take a look at it.
+
+297
+00:28:48,380 --> 00:28:48,660
+ I don't know.
+
+298
+00:28:48,840 --> 00:28:49,650
+ It looks like this.
+
+299
+00:29:04,000 --> 00:29:05,890
+ Yeah, I'm going to take it step by step.
+
+300
+00:29:15,830 --> 00:29:22,370
+ Hopefully you are with me now.
+
+301
+00:29:29,170 --> 00:29:31,520
+ Just open the file here.
+
+302
+00:29:31,800 --> 00:29:32,620
+ So what is this?
+
+303
+00:29:32,740 --> 00:29:44,880
+ Well, this is actually a, it's called a CSV file, as you see, a comma separated, comma separated values.
+
+304
+00:29:46,160 --> 00:29:49,760
+ And it's just plain text, as you see here.
+
+305
+00:29:51,520 --> 00:29:56,970
+ So the first line holds the column names.
+
+306
+00:29:57,810 --> 00:30:01,770
+ And every line after it is one row.
+
+307
+00:30:04,540 --> 00:30:08,680
+ The values are separated by commas, as you see here.
+
+308
+00:30:11,490 --> 00:30:18,040
+ So if a value is empty, you see two commas right after each other.
+
+309
+00:30:18,140 --> 00:30:19,260
+ And you can see one over here.
+
+310
+00:30:19,380 --> 00:30:20,580
+ So this part is empty.
+
+311
+00:30:23,190 --> 00:30:31,230
+ And if the text itself, no, I don't see directly an example of it.
+
+312
+00:30:31,270 --> 00:30:42,000
+ But if the text itself has a comma, they put the comma inside quotation marks.
+
+313
+00:30:43,100 --> 00:30:45,140
+ So it's not mistaken for a separator.
+
+314
+00:30:45,830 --> 00:30:47,450
+ So you need to put it in the quotation marks.
+
+315
+00:30:50,140 --> 00:30:51,340
+ That's what they usually do.
+
+316
+00:30:53,640 --> 00:30:56,080
+ So there is no formatting.
+
+317
+00:30:57,000 --> 00:30:58,640
+ And there are no formulas.
+
+318
+00:30:59,310 --> 00:31:00,150
+ Only text.
+
+319
+00:31:01,360 --> 00:31:05,820
+ And that is why CSV is one of the most common ways to share data.
+
+320
+00:31:07,650 --> 00:31:10,000
+ And this data has a lot.
+
+321
+00:31:10,980 --> 00:31:11,540
+ It is messy.
+
+322
+00:31:11,760 --> 00:31:12,120
+ I know.
+
+323
+00:31:13,370 --> 00:31:17,280
+ It actually has 4,000.
+
+324
+00:31:17,340 --> 00:31:20,980
+ And I know this by heart now because I have looked into this data a lot.
+
+325
+00:31:21,830 --> 00:31:22,930
+ But you might not.
+
+326
+00:31:23,310 --> 00:31:28,110
+ So it has actually 4,574.
+
+327
+00:31:28,110 --> 00:31:32,210
+ I'm not saying 75 since one is the column names.
+
+328
+00:31:32,630 --> 00:31:34,670
+ So 4,574.
+
+329
+00:31:34,810 --> 00:31:37,090
+ This is a number that you will learn by heart.
+
+330
+00:31:37,980 --> 00:31:40,700
+ Because we're going to come back to that over and over again.
+
+331
+00:31:41,460 --> 00:31:44,340
+ So it has 4,574 rows.
+
+332
+00:31:44,340 --> 00:31:50,300
+ And actually 84,84 columns.
+
+333
+00:31:51,590 --> 00:31:52,120
+ And yeah.
+
+334
+00:31:54,850 --> 00:31:59,090
+ And which is far too much to read by eye.
+
+335
+00:31:59,880 --> 00:32:03,010
+ And this is why we use Pandas.
+
+336
+00:32:04,210 --> 00:32:04,410
+ All right.
+
+337
+00:32:05,840 --> 00:32:15,070
+ But before we do that, we actually need to load this data, this table.
+
+338
+00:32:22,000 --> 00:32:28,530
+ But since you have never seen this data before, I've actually done it.
+
+339
+00:32:28,650 --> 00:32:29,350
+ I've looked at it.
+
+340
+00:32:29,550 --> 00:32:31,890
+ So I kind of know what it's all about.
+
+341
+00:32:32,320 --> 00:32:36,660
+ But since it's new for you, and you will pick it up along the way.
+
+342
+00:32:37,210 --> 00:32:42,190
+ But I was a little bit scared, worried yesterday that you might need.
+
+343
+00:32:42,730 --> 00:32:46,500
+ Well, it's going to be a little bit abstract since you haven't seen the data before.
+
+344
+00:32:47,460 --> 00:32:51,230
+ So I tried to write some notes for you.
+
+345
+00:32:51,990 --> 00:32:54,670
+ And I'm actually going to put it here.
+
+346
+00:32:55,690 --> 00:32:57,630
+ So what this old data is all about.
+
+347
+00:32:58,390 --> 00:33:02,940
+ Or what the columns is all about.
+
+348
+00:33:03,200 --> 00:33:05,100
+ So I'm going to just get that.
+
+349
+00:33:05,360 --> 00:33:05,480
+ No.
+
+350
+00:33:06,780 --> 00:33:08,680
+ Let me just copy my notes here.
+
+351
+00:33:09,370 --> 00:33:11,300
+ And then that.
+
+352
+00:33:12,250 --> 00:33:16,490
+ And go through it together.
+
+353
+00:33:17,700 --> 00:33:18,940
+ There we go.
+
+354
+00:33:22,560 --> 00:33:23,760
+ There we go.
+
+355
+00:33:26,420 --> 00:33:28,960
+ So what is in the data?
+
+356
+00:33:29,240 --> 00:33:32,200
+ Well, it's the 84 columns.
+
+357
+00:33:32,680 --> 00:33:34,600
+ Are roughly these kinds.
+
+358
+00:33:34,780 --> 00:33:36,400
+ So they're about listings.
+
+359
+00:33:37,350 --> 00:33:40,230
+ The name, the type of home.
+
+360
+00:33:41,710 --> 00:33:44,690
+ And their names are actually property type, room type.
+
+361
+00:33:44,860 --> 00:33:47,520
+ How many guests it fits.
+
+362
+00:33:48,040 --> 00:33:49,420
+ That would be called accommodates.
+
+363
+00:33:49,600 --> 00:33:53,790
+ And the number of bedrooms and beds.
+
+364
+00:33:55,320 --> 00:33:55,540
+ All right.
+
+365
+00:33:57,120 --> 00:33:58,140
+ Where it is.
+
+366
+00:33:59,740 --> 00:34:00,520
+ The neighborhood.
+
+367
+00:34:01,220 --> 00:34:03,600
+ So the column name is called neighborhood cleanse.
+
+368
+00:34:05,370 --> 00:34:06,940
+ 14 areas in Stockholm.
+
+369
+00:34:08,220 --> 00:34:10,120
+ And the coordinates.
+
+370
+00:34:11,660 --> 00:34:13,860
+ It has the price and the rules.
+
+371
+00:34:15,210 --> 00:34:17,650
+ The price per night is actually called price.
+
+372
+00:34:19,170 --> 00:34:22,950
+ And the minimum number of nights is actually called minimum nights.
+
+373
+00:34:22,950 --> 00:34:26,360
+ It has information about availability.
+
+374
+00:34:28,750 --> 00:34:32,170
+ How many days the listings can be booked.
+
+375
+00:34:32,600 --> 00:34:35,350
+ For example, during the next year.
+
+376
+00:34:36,460 --> 00:34:38,540
+ And it's called availability 365.
+
+377
+00:34:39,540 --> 00:34:41,890
+ It has information about reviews.
+
+378
+00:34:43,020 --> 00:34:45,510
+ So how many reviews the listings has.
+
+379
+00:34:48,110 --> 00:34:49,390
+ Number of reviews.
+
+380
+00:34:49,750 --> 00:34:50,610
+ The rating.
+
+381
+00:34:52,410 --> 00:34:53,690
+ Review scores rating.
+
+382
+00:34:54,420 --> 00:34:56,480
+ And the dates of the first and the last review.
+
+383
+00:34:57,770 --> 00:34:59,720
+ It has information about the host.
+
+384
+00:34:59,840 --> 00:35:02,680
+ For example, whether the host is a super host.
+
+385
+00:35:03,730 --> 00:35:04,990
+ Host is a super host.
+
+386
+00:35:05,420 --> 00:35:05,960
+ The column name.
+
+387
+00:35:07,650 --> 00:35:12,770
+ And some technical columns like links, ID numbers, and the date of collection.
+
+388
+00:35:13,340 --> 00:35:15,110
+ And we will not use them so much.
+
+389
+00:35:16,360 --> 00:35:19,620
+ Some of the columns are completely empty.
+
+390
+00:35:20,490 --> 00:35:23,210
+ And we will come back to those on Monday next week.
+
+391
+00:35:23,290 --> 00:35:23,550
+ Hopefully.
+
+392
+00:35:24,330 --> 00:35:25,610
+ When we clean this table.
+
+393
+00:35:29,450 --> 00:35:30,730
+ And over the days.
+
+394
+00:35:30,990 --> 00:35:31,990
+ Over the coming days.
+
+395
+00:35:31,990 --> 00:35:33,830
+ We will mostly use a handful of columns.
+
+396
+00:35:34,010 --> 00:35:34,570
+ Not all.
+
+397
+00:35:36,430 --> 00:35:36,630
+ All right.
+
+398
+00:35:36,870 --> 00:35:39,450
+ And the columns that are of interest for us.
+
+399
+00:35:39,810 --> 00:35:40,570
+ Is room type.
+
+400
+00:35:41,300 --> 00:35:42,300
+ Neighborhood cleansed.
+
+401
+00:35:43,030 --> 00:35:43,550
+ Accommodates.
+
+402
+00:35:44,250 --> 00:35:44,750
+ Bedrooms.
+
+403
+00:35:45,350 --> 00:35:45,630
+ Beds.
+
+404
+00:35:46,050 --> 00:35:46,350
+ Price.
+
+405
+00:35:47,140 --> 00:35:47,920
+ Number of reviews.
+
+406
+00:35:49,000 --> 00:35:50,040
+ Review score ratings.
+
+407
+00:35:50,560 --> 00:35:51,000
+ Avability.
+
+408
+00:35:51,240 --> 00:35:51,640
+ 365.
+
+409
+00:35:52,120 --> 00:35:52,960
+ And minimum nights.
+
+410
+00:35:55,200 --> 00:35:59,070
+ And you don't need to learn these by heart.
+
+411
+00:35:59,630 --> 00:36:03,130
+ I will try to remind you guys what they were along the way.
+
+412
+00:36:05,990 --> 00:36:06,990
+ But yeah.
+
+413
+00:36:07,730 --> 00:36:10,210
+ So these are what we're going to look at.
+
+414
+00:36:10,800 --> 00:36:13,960
+ And of course, it's a little bit difficult to grasp it at the beginning.
+
+415
+00:36:14,400 --> 00:36:16,080
+ Of course, it's a little bit confusing.
+
+416
+00:36:16,260 --> 00:36:19,390
+ But I think the lab at the end of the day will actually help.
+
+417
+00:36:19,470 --> 00:36:22,550
+ And we're going to talk about the lab at the end of the day.
+
+418
+00:36:23,460 --> 00:36:24,540
+ Or at the end of the lesson.
+
+419
+00:36:26,030 --> 00:36:32,270
+ And in the labs, you will actually get the chance to explore other columns on your own.
+
+420
+00:36:33,210 --> 00:36:34,400
+ So yeah.
+
+421
+00:36:34,540 --> 00:36:36,300
+ It's stuff that catches your eye today.
+
+422
+00:36:36,520 --> 00:36:37,050
+ Write it down.
+
+423
+00:36:41,670 --> 00:36:45,200
+ And an important thing to know, especially for today and tomorrow.
+
+424
+00:36:45,200 --> 00:36:47,530
+ And no, this is actually for today and tomorrow.
+
+425
+00:36:48,270 --> 00:36:51,650
+ We will not do so much with the data.
+
+426
+00:36:51,650 --> 00:36:57,810
+ So we're not going to create anything like that.
+
+427
+00:36:57,970 --> 00:36:58,410
+ Mostly.
+
+428
+00:36:59,180 --> 00:37:02,100
+ So today and tomorrow, we will mostly just dissect it.
+
+429
+00:37:03,020 --> 00:37:03,840
+ Look through it.
+
+430
+00:37:04,480 --> 00:37:05,400
+ Get to know it.
+
+431
+00:37:06,720 --> 00:37:09,190
+ While we actually learn the Pandas tools.
+
+432
+00:37:10,960 --> 00:37:16,390
+ So the real questions and the cleaning of the data comes actually later.
+
+433
+00:37:16,390 --> 00:37:21,400
+ So as you notice, we will spend two days just getting to know the data.
+
+434
+00:37:23,180 --> 00:37:28,260
+ And then we're actually going to take a break from listings and look at another data frame, which is much simpler.
+
+435
+00:37:28,780 --> 00:37:40,880
+ And we will learn how to clean and then use those steps that we have learned during Wednesday, Thursday to clean this data.
+
+436
+00:37:42,350 --> 00:37:42,750
+ So yeah.
+
+437
+00:37:42,970 --> 00:37:43,830
+ Cleaning comes later.
+
+438
+00:37:45,910 --> 00:37:46,210
+ All right.
+
+439
+00:37:46,390 --> 00:37:48,270
+ Now let's load it into Python.
+
+440
+00:37:50,710 --> 00:37:52,590
+ So we'll just create a code cell here.
+
+441
+00:37:53,010 --> 00:37:56,070
+ And I'm just going to call it listings.
+
+442
+00:37:58,670 --> 00:38:04,650
+ pd read csv.
+
+443
+00:38:07,760 --> 00:38:09,980
+ And it's in data.
+
+444
+00:38:13,600 --> 00:38:14,620
+ Listings.
+
+445
+00:38:16,400 --> 00:38:19,840
+ In here, of course, spelling is crucial.
+
+446
+00:38:21,270 --> 00:38:27,430
+ So we're just loading the file into a table called listings.
+
+447
+00:38:27,710 --> 00:38:30,310
+ So this will be our data frame.
+
+448
+00:38:33,770 --> 00:38:33,870
+ Okay.
+
+449
+00:38:34,080 --> 00:38:35,910
+ So I run this.
+
+450
+00:38:35,910 --> 00:38:37,310
+ Of course, nothing is written.
+
+451
+00:38:38,420 --> 00:38:39,880
+ Or nothing is printed out.
+
+452
+00:38:41,130 --> 00:38:43,390
+ But the table is now loaded.
+
+453
+00:38:47,330 --> 00:38:52,100
+ So now we have a data frame, a table with rows and columns.
+
+454
+00:38:52,750 --> 00:38:56,120
+ And we have stored it in a variable called listings.
+
+455
+00:38:58,100 --> 00:39:05,060
+ And something I should mention about the name, actually, because somebody might be raising their eyebrow,
+
+456
+00:39:05,700 --> 00:39:10,150
+ especially if you have been on Friday or the weekend.
+
+457
+00:39:10,150 --> 00:39:15,570
+ Maybe you were looking into a little bit of data analysis or some tutorials or whatever.
+
+458
+00:39:15,930 --> 00:39:20,310
+ You would probably see that they don't use names like I've done here.
+
+459
+00:39:20,350 --> 00:39:26,790
+ Maybe they have called it, and that's the standard way, is to call it DF instead of listing.
+
+460
+00:39:27,270 --> 00:39:29,030
+ And DF is short for data frame.
+
+461
+00:39:29,930 --> 00:39:33,840
+ So DF works perfectly fine, of course.
+
+462
+00:39:34,660 --> 00:39:37,140
+ But we will actually call it listings.
+
+463
+00:39:37,140 --> 00:39:39,390
+ And that's not because I'm stubborn.
+
+464
+00:39:39,390 --> 00:39:48,990
+ It's just I just want to make it as clear as possible, actually, which table we're actually working with, since we're going to switch between.
+
+465
+00:39:49,350 --> 00:39:53,350
+ And we will actually have several tables at the same time later on.
+
+466
+00:39:53,780 --> 00:40:00,840
+ And then if we call them DF, well, we wouldn't be able to call which one, we wouldn't tell which one is which, right?
+
+467
+00:40:02,840 --> 00:40:03,810
+ Okay.
+
+468
+00:40:04,780 --> 00:40:06,930
+ So now we have this.
+
+469
+00:40:09,070 --> 00:40:14,200
+ And now let's just take a look at how big it is.
+
+470
+00:40:14,200 --> 00:40:24,970
+ And we already know, because I've already mentioned it, that it's 4,574 rows and 84 columns.
+
+471
+00:40:26,240 --> 00:40:34,510
+ So let's see if that is correct, listings, and then we write shape.
+
+472
+00:40:34,510 --> 00:40:41,410
+ So when we run this, we actually get 4,574 rows and 84 columns.
+
+473
+00:40:42,660 --> 00:40:53,600
+ Therefore, 4,574 listings with 84 pieces of information about each listing.
+
+474
+00:40:56,300 --> 00:40:56,420
+ Okay.
+
+475
+00:40:57,210 --> 00:41:01,490
+ Now we can take a look at the table itself.
+
+476
+00:41:01,690 --> 00:41:08,830
+ And we do that using something called head.
+
+477
+00:41:09,850 --> 00:41:15,040
+ And since I'm not specifying any number, it's actually going to use five.
+
+478
+00:41:17,630 --> 00:41:21,800
+ So it will actually show the first five rows.
+
+479
+00:41:22,040 --> 00:41:22,680
+ And that's it.
+
+480
+00:41:23,230 --> 00:41:24,460
+ Just five rows.
+
+481
+00:41:28,460 --> 00:41:29,240
+ Excuse me.
+
+482
+00:41:29,240 --> 00:41:38,450
+ And when it comes to columns, Pandas cannot fit all 84 columns.
+
+483
+00:41:39,610 --> 00:41:43,270
+ So it hides the middle columns with these dots like this.
+
+484
+00:41:45,190 --> 00:41:45,690
+ But they're there.
+
+485
+00:41:47,480 --> 00:41:47,930
+ All right.
+
+486
+00:41:48,700 --> 00:41:53,860
+ I could have specified a specific number, maybe not five rows.
+
+487
+00:41:54,180 --> 00:41:57,510
+ I could have said six, like this, or whatever.
+
+488
+00:41:58,480 --> 00:42:02,950
+ But if I don't write anything, it will always choose five.
+
+489
+00:42:09,200 --> 00:42:15,910
+ So what are the 84 column names?
+
+490
+00:42:17,090 --> 00:42:17,370
+ Okay.
+
+491
+00:42:17,530 --> 00:42:18,550
+ How do I do that?
+
+492
+00:42:18,730 --> 00:42:22,740
+ Well, I just write listings.
+
+493
+00:42:22,740 --> 00:42:32,390
+ I can write columns, and then I can write to list.
+
+494
+00:42:38,380 --> 00:42:39,680
+ And let's run this.
+
+495
+00:42:40,720 --> 00:42:41,260
+ And there we go.
+
+496
+00:42:44,770 --> 00:42:47,390
+ Of course, you don't need to memorize all the column names.
+
+497
+00:42:48,860 --> 00:42:52,360
+ Because we look them up when you actually need them.
+
+498
+00:42:53,710 --> 00:43:01,530
+ But this is, so like I said, they're about the listings, right?
+
+499
+00:43:02,060 --> 00:43:06,680
+ Name, room type, beds, so on, so on.
+
+500
+00:43:07,140 --> 00:43:12,000
+ About the host, price and booking rules, availability, reviews, and so on.
+
+501
+00:43:14,160 --> 00:43:26,630
+ And there is actually a better way to get an overview off the table than reading the 84 names like we did now.
+
+502
+00:43:29,920 --> 00:43:45,350
+ So I'm usually going to write a markdown cell, and just write first look, maybe, where we're actually using info.
+
+503
+00:43:45,750 --> 00:43:45,850
+ Wow.
+
+504
+00:43:52,970 --> 00:43:58,810
+ So let's try it.
+
+505
+00:43:59,310 --> 00:44:02,940
+ So listings, info.
+
+506
+00:44:06,920 --> 00:44:08,940
+ And we can run this together.
+
+507
+00:44:09,720 --> 00:44:10,700
+ See what we got here.
+
+508
+00:44:21,820 --> 00:44:34,140
+ Non-null count here is how many rows that have a value in this column.
+
+509
+00:44:35,740 --> 00:44:40,430
+ So 4,574, well, would mean that it's complete.
+
+510
+00:44:43,050 --> 00:44:47,850
+ Anything lower, well, just means that we're missing values.
+
+511
+00:44:47,850 --> 00:44:52,200
+ So if you look at here, we're missing all the values.
+
+512
+00:44:52,740 --> 00:44:53,900
+ Here, we're missing some values.
+
+513
+00:44:54,540 --> 00:44:55,810
+ Here, we're missing much more.
+
+514
+00:44:56,990 --> 00:44:59,070
+ And that could be for different reasons, right?
+
+515
+00:44:59,390 --> 00:45:03,290
+ We can also see the D type or the data type.
+
+516
+00:45:04,460 --> 00:45:06,880
+ The data type hand us chose.
+
+517
+00:45:08,520 --> 00:45:18,320
+ So in 64 would be whole numbers, float, well, decimal numbers, and yeah, and the string for text.
+
+518
+00:45:23,610 --> 00:45:33,310
+ And we can see here that, like I said, some values are missing.
+
+519
+00:45:33,390 --> 00:45:36,110
+ All of the values are missing.
+
+520
+00:45:36,370 --> 00:45:39,290
+ For example, in neighborhood overview, we have no values.
+
+521
+00:45:40,740 --> 00:45:42,200
+ Hostsins, we have no values.
+
+522
+00:45:44,320 --> 00:45:44,700
+ And so on.
+
+523
+00:45:45,090 --> 00:45:46,320
+ And these are complete.
+
+524
+00:45:46,320 --> 00:45:48,200
+ For the IDs are complete.
+
+525
+00:45:48,830 --> 00:45:50,630
+ Scrape ID, complete.
+
+526
+00:45:52,450 --> 00:45:55,220
+ Source, not complete.
+
+527
+00:45:55,680 --> 00:45:56,860
+ Name, complete.
+
+528
+00:45:56,940 --> 00:45:57,320
+ And so on.
+
+529
+00:45:57,930 --> 00:45:59,620
+ And this is good for us.
+
+530
+00:46:00,820 --> 00:46:02,820
+ So we actually have something to teach here.
+
+531
+00:46:02,820 --> 00:46:05,450
+ So yeah.
+
+532
+00:46:05,450 --> 00:46:11,130
+ So with info, we actually saw the data type for every column.
+
+533
+00:46:11,130 --> 00:46:18,110
+ And it is important because the type decides actually what you can do with the column.
+
+534
+00:46:19,190 --> 00:46:24,080
+ So you can actually calculate an average of a number, right?
+
+535
+00:46:24,080 --> 00:46:26,820
+ But you can never do that for a string, right?
+
+536
+00:46:26,820 --> 00:46:29,190
+ You can't do that for a text.
+
+537
+00:46:29,190 --> 00:46:34,350
+ But 84 lines, well, is a lot to read.
+
+538
+00:46:34,490 --> 00:46:38,250
+ So let's actually ask a simpler question.
+
+539
+00:46:40,730 --> 00:46:54,250
+ Let's ask the question of how many columns, how many columns of each.
+
+540
+00:46:54,430 --> 00:47:02,690
+ So how many columns of each type do we actually have?
+
+541
+00:47:03,180 --> 00:47:06,240
+ Well, we do that actually in two steps.
+
+542
+00:47:09,800 --> 00:47:11,360
+ Something like this.
+
+543
+00:47:12,500 --> 00:47:13,340
+ These things.
+
+544
+00:47:16,220 --> 00:47:16,840
+ D types.
+
+545
+00:47:19,370 --> 00:47:25,060
+ And then we're going to use value counts.
+
+546
+00:47:29,480 --> 00:47:33,990
+ So D types is the type of each column, like I mentioned before.
+
+547
+00:47:37,300 --> 00:47:39,810
+ Just like the column D type, as we saw here.
+
+548
+00:47:39,810 --> 00:47:45,260
+ And then value counts, well, counts how many times each value appears.
+
+549
+00:47:47,220 --> 00:47:48,680
+ So let's run this.
+
+550
+00:47:49,150 --> 00:47:50,750
+ And then we see, all right.
+
+551
+00:47:52,610 --> 00:47:54,570
+ So we have only three types.
+
+552
+00:47:57,330 --> 00:48:07,070
+ 38 of decimal numbers, 24 of whole numbers, and 22 of text.
+
+553
+00:48:08,020 --> 00:48:13,080
+ And if you notice here, it actually says string for text.
+
+554
+00:48:13,630 --> 00:48:22,160
+ And in Pandas 2, or older versions, or even older tutorials, you will actually see object here.
+
+555
+00:48:23,110 --> 00:48:24,110
+ You won't see string.
+
+556
+00:48:25,980 --> 00:48:32,630
+ So, yeah, in Pandas 3, the text columns have their own type called string.
+
+557
+00:48:32,630 --> 00:48:37,010
+ So this is why I actually want to work with the latest, right?
+
+558
+00:48:40,150 --> 00:48:41,970
+ Now let's get back to info.
+
+559
+00:48:44,670 --> 00:48:56,000
+ Well, if you remember, we had a column called non-null count, right?
+
+560
+00:48:56,460 --> 00:49:01,070
+ So it told us how many rows have a value in each column.
+
+561
+00:49:01,610 --> 00:49:08,160
+ So most of the columns actually says 4,574, which means that they are complete.
+
+562
+00:49:10,930 --> 00:49:13,780
+ Like I said, there are some strange numbers here.
+
+563
+00:49:13,780 --> 00:49:28,070
+ We have zero non-null, which means that in all 4,574 rows, there is not a single value in them.
+
+564
+00:49:29,700 --> 00:49:38,660
+ They exist in the file with a name, but they are completely empty, like a blank column in the spreadsheet.
+
+565
+00:49:42,000 --> 00:49:43,610
+ So how many are there?
+
+566
+00:49:43,610 --> 00:49:53,330
+ Well, we could scroll down or scroll through all the 84 lines and count them.
+
+567
+00:49:53,870 --> 00:49:56,820
+ But that is slow and, of course, easy to get wrong.
+
+568
+00:49:57,400 --> 00:49:58,760
+ So let's ask Pandas instead.
+
+569
+00:49:58,760 --> 00:50:01,930
+ And we will do that in three simple steps.
+
+570
+00:50:06,660 --> 00:50:13,690
+ And it's not that hard.
+
+571
+00:50:15,110 --> 00:50:16,990
+ So we will use something called count.
+
+572
+00:50:17,210 --> 00:50:22,840
+ We will use something called sort values.
+
+573
+00:50:24,940 --> 00:50:27,040
+ And we will use head again.
+
+574
+00:50:28,590 --> 00:50:28,750
+ All right.
+
+575
+00:50:29,260 --> 00:50:32,760
+ And this time I'm actually going to specify to 16.
+
+576
+00:50:32,860 --> 00:50:37,010
+ And I've chosen 16 on purpose, of course, for teaching purposes.
+
+577
+00:50:37,790 --> 00:50:42,650
+ But so count, well, gives us the number of values per column.
+
+578
+00:50:44,030 --> 00:50:47,240
+ So that would be the same number as non-null count.
+
+579
+00:50:49,580 --> 00:50:58,990
+ Sort values, well, put the columns in order with the smallest number first.
+
+580
+00:51:01,450 --> 00:51:01,610
+ All right.
+
+581
+00:51:01,610 --> 00:51:06,460
+ And here we chose head 16.
+
+582
+00:51:07,060 --> 00:51:09,860
+ Well, we want to show the first 16.
+
+583
+00:51:10,350 --> 00:51:14,670
+ And like I said, I asked for 16 on purpose.
+
+584
+00:51:16,190 --> 00:51:19,310
+ And why I do that?
+
+585
+00:51:19,450 --> 00:51:24,700
+ So when I run this, because the 16th column actually has something just to compare, right?
+
+586
+00:51:26,800 --> 00:51:36,420
+ So we see that the first 15 columns here have count zero.
+
+587
+00:51:37,570 --> 00:51:41,570
+ So they exist in the file, but they are completely empty.
+
+588
+00:51:42,150 --> 00:51:45,210
+ So these are the ones who are empty.
+
+589
+00:51:45,210 --> 00:51:55,530
+ So even if I had written, let's say, 18, we would still see the first 15 that are empty.
+
+590
+00:51:55,930 --> 00:52:01,250
+ And we will see the ones that are not empty, but not full.
+
+591
+00:52:04,070 --> 00:52:06,440
+ And we can continue like that.
+
+592
+00:52:07,650 --> 00:52:11,270
+ But we're not going to remove, like I said, we're not going to remove any empty columns today.
+
+593
+00:52:12,140 --> 00:52:13,980
+ And we will do that.
+
+594
+00:52:14,920 --> 00:52:19,210
+ Maybe remove, maybe do something else when we talk about cleaning the data.
+
+595
+00:52:21,970 --> 00:52:29,540
+ Just like I said before, today, we're just looking at the data and trying to learn some tools in Panasonic.
+
+596
+00:52:30,400 --> 00:52:31,520
+ So that's basically the idea.
+
+597
+00:52:34,120 --> 00:52:34,420
+ All right.
+
+598
+00:52:34,740 --> 00:52:37,360
+ I think it's a perfect time to take a little break.
+
+599
+00:52:38,600 --> 00:52:46,180
+ And then we will continue with a little title here.
+
+600
+00:52:46,580 --> 00:52:55,230
+ We will select columns and describe.
+
+601
+00:53:01,150 --> 00:53:01,500
+ And there we go.
+
+602
+00:53:03,480 --> 00:53:04,100
+ All right.
+
+603
+00:53:05,050 --> 00:53:07,890
+ Any questions before I let you go and break?
+
+604
+00:53:24,880 --> 00:53:25,640
+ Okay.
+
+605
+00:53:26,220 --> 00:53:29,340
+ See you back at, well, 10.04.
+
+606
+00:53:29,620 --> 00:53:29,840
+ Okay.
+
+607
+00:53:30,020 --> 00:53:31,560
+ We can say 10.15.
+
+608
+00:53:32,110 --> 00:53:33,170
+ So back at 10.15.
+
+609
+00:53:34,350 --> 00:53:36,820
+ See you soon, guys.
+
+610
+01:00:20,970 --> 01:04:50,790
+ Can you hear me, guys?
+
+611
+01:04:52,330 --> 01:04:53,480
+ Yes.
+
+612
+01:04:54,030 --> 01:04:54,410
+ Oh, okay.
+
+613
+01:04:54,450 --> 01:04:54,610
+ Perfect.
+
+614
+01:04:55,040 --> 01:04:55,410
+ All right.
+
+615
+01:04:57,030 --> 01:05:00,410
+ There was a little discussion here about the versions.
+
+616
+01:05:00,590 --> 01:05:00,770
+ All right.
+
+617
+01:05:01,030 --> 01:05:05,410
+ So, yes, we're supposed to run it in 3.0.5.
+
+618
+01:05:07,000 --> 01:05:07,670
+ And why?
+
+619
+01:05:08,250 --> 01:05:11,900
+ Well, the latest version, sure, it is 3.1.1.
+
+620
+01:05:13,820 --> 01:05:15,720
+ So why are we not using the latest?
+
+621
+01:05:15,980 --> 01:05:16,340
+ Well, sure.
+
+622
+01:05:16,860 --> 01:05:20,940
+ So if you have a latest version, this, everything that we do should work.
+
+623
+01:05:21,750 --> 01:05:28,140
+ But I have only, and I'm just emphasizing on this, I've only tested everything on 3.0.5.
+
+624
+01:05:28,260 --> 01:05:34,850
+ So if you get anything strange or anything like that, maybe there's an update or anything like that, I wouldn't know.
+
+625
+01:05:35,820 --> 01:05:36,100
+ All right.
+
+626
+01:05:36,100 --> 01:05:43,090
+ So if you're using another version and you get another output than I get, that would be probably because of the version.
+
+627
+01:05:44,550 --> 01:05:50,170
+ But if you have the latest version, sure, it will be okay.
+
+628
+01:05:51,050 --> 01:05:54,020
+ So you don't need to downgrade or anything like that.
+
+629
+01:05:54,810 --> 01:05:55,070
+ Okay.
+
+630
+01:05:55,380 --> 01:06:00,410
+ Because the biggest changes actually came after 3.0.
+
+631
+01:06:01,510 --> 01:06:08,780
+ And 3.1 is actually a build on 3.0.
+
+632
+01:06:09,400 --> 01:06:09,720
+ So, yeah.
+
+633
+01:06:13,370 --> 01:06:14,390
+ Okay.
+
+634
+01:06:16,210 --> 01:06:17,880
+ That's the answer to the question.
+
+635
+01:06:18,360 --> 01:06:19,370
+ Is everybody with me?
+
+636
+01:06:19,370 --> 01:06:24,120
+ Questions about the versions or anything like that.
+
+637
+01:06:24,760 --> 01:06:25,980
+ So we can move past this.
+
+638
+01:06:26,330 --> 01:06:26,690
+ All right.
+
+639
+01:06:31,660 --> 01:06:38,240
+ But it's a fair question because there is newer versions.
+
+640
+01:06:40,430 --> 01:06:40,590
+ Okay.
+
+641
+01:06:40,990 --> 01:06:56,500
+ So, so far, we have looked at the table as a whole, but we saw that it has 84 columns, which is far too many, far too many to think, to think about at the same time.
+
+642
+01:06:56,540 --> 01:06:56,720
+ Right.
+
+643
+01:06:57,950 --> 01:07:07,330
+ So when you work with data, you almost always pick out only the columns you need.
+
+644
+01:07:07,450 --> 01:07:07,630
+ Right.
+
+645
+01:07:09,250 --> 01:07:14,960
+ And this is kind of the same idea as select in SQL.
+
+646
+01:07:15,970 --> 01:07:22,390
+ So in SQL, you would write column names after select.
+
+647
+01:07:23,330 --> 01:07:31,780
+ In Pandas, you just write the column name inside square brackets right after the name of the table.
+
+648
+01:07:33,740 --> 01:07:41,640
+ And yeah, we're just going to start with one column and then move forward.
+
+649
+01:07:43,850 --> 01:07:51,030
+ So one column and we're going to choose a column of the columns that I said that we're going to work with before.
+
+650
+01:07:51,740 --> 01:07:53,130
+ So I'm not going to do this every time.
+
+651
+01:07:53,370 --> 01:07:57,310
+ But like I said, we're going to work mostly with these columns.
+
+652
+01:07:57,650 --> 01:07:59,890
+ And the one I'm choosing now is room type.
+
+653
+01:08:00,550 --> 01:08:00,710
+ Right.
+
+654
+01:08:01,440 --> 01:08:08,530
+ So if you ever want to go back and look what was that again, and you can get the information that we put here.
+
+655
+01:08:09,990 --> 01:08:18,750
+ So let's take a look at the column room type.
+
+656
+01:08:19,070 --> 01:08:26,050
+ So we just write listings and then type.
+
+657
+01:08:27,390 --> 01:08:27,890
+ And that's it.
+
+658
+01:08:32,730 --> 01:08:37,220
+ The name of the table and then square brackets.
+
+659
+01:08:37,220 --> 01:08:41,820
+ And then inside the column name in quotation marks, of course.
+
+660
+01:08:44,910 --> 01:08:52,730
+ And yeah, we write it in quotation marks because the name is text, right?
+
+661
+01:08:53,070 --> 01:08:56,220
+ So let's see what we got.
+
+662
+01:08:57,700 --> 01:08:59,420
+ All right, all right, all right, all right, all right.
+
+663
+01:08:59,700 --> 01:09:10,350
+ So on the left, we see that we have some numbers from zero all the way to 4,573.
+
+664
+01:09:10,470 --> 01:09:19,950
+ So that is the row number of each listing.
+
+665
+01:09:21,290 --> 01:09:22,890
+ And it's actually called index.
+
+666
+01:09:24,970 --> 01:09:29,620
+ And we will come back to it later, a little bit more about the index.
+
+667
+01:09:30,860 --> 01:09:34,080
+ And on the right side are the values.
+
+668
+01:09:34,910 --> 01:09:36,270
+ So we have some private room.
+
+669
+01:09:37,520 --> 01:09:44,020
+ We see entire home, apartment, and so on for each listing.
+
+670
+01:09:46,130 --> 01:09:47,540
+ Yeah, and the dots in the middle.
+
+671
+01:09:47,740 --> 01:09:53,220
+ It's just that it does not print all of the 4,574 rows.
+
+672
+01:09:53,780 --> 01:09:58,640
+ It shows the first five and the last five and hides the rest.
+
+673
+01:09:59,710 --> 01:10:00,420
+ Excuse me.
+
+674
+01:10:02,320 --> 01:10:14,560
+ Okay, and at the bottom, we get the name, it's room type, and the name of the column, of course.
+
+675
+01:10:15,060 --> 01:10:16,480
+ And we get the length.
+
+676
+01:10:17,700 --> 01:10:20,640
+ So 4,574 is the number of rows.
+
+677
+01:10:20,830 --> 01:10:26,770
+ And we see that the D type here, data type, is text.
+
+678
+01:10:26,770 --> 01:10:36,950
+ So one pair of brackets and one name gives you one column.
+
+679
+01:10:41,880 --> 01:10:46,960
+ We can also look at what type of object it is.
+
+680
+01:10:49,190 --> 01:10:50,880
+ So we just write type.
+
+681
+01:10:53,760 --> 01:11:14,600
+ And then, so let's run this and see.
+
+682
+01:11:16,440 --> 01:11:16,700
+ All right.
+
+683
+01:11:17,120 --> 01:11:22,990
+ So a single column, like I mentioned earlier, a single column is called a series.
+
+684
+01:11:24,490 --> 01:11:27,910
+ And the whole table is actually called data frame.
+
+685
+01:11:30,550 --> 01:11:37,900
+ So my question now is, how do we actually get several columns and not just one?
+
+686
+01:11:39,270 --> 01:11:47,270
+ Well, in order to get several columns, we need to put a list inside these brackets.
+
+687
+01:11:49,130 --> 01:11:52,150
+ So therefore, we need two pairs of brackets.
+
+688
+01:11:52,950 --> 01:11:56,610
+ So now let's do some more columns.
+
+689
+01:11:56,930 --> 01:11:58,810
+ I'm going to actually choose room type.
+
+690
+01:11:58,810 --> 01:11:59,850
+ I'm going to choose name.
+
+691
+01:11:59,930 --> 01:12:00,970
+ And I'm going to choose price.
+
+692
+01:12:01,740 --> 01:12:01,920
+ All right.
+
+693
+01:12:03,240 --> 01:12:04,800
+ So how would that look like?
+
+694
+01:12:05,900 --> 01:12:07,510
+ Listing, just like previously.
+
+695
+01:12:09,680 --> 01:12:12,330
+ Just like I mentioned, two pair of brackets.
+
+696
+01:12:12,810 --> 01:12:14,170
+ And then we have name.
+
+697
+01:12:14,870 --> 01:12:20,850
+ We have room type.
+
+698
+01:12:21,120 --> 01:12:24,840
+ Of course, spelling is crucial.
+
+699
+01:12:25,870 --> 01:12:26,950
+ And price.
+
+700
+01:12:29,790 --> 01:12:38,300
+ So the inner brackets makes the Python list with name, room, type, and price.
+
+701
+01:12:39,960 --> 01:12:45,830
+ Outer brackets is, well, are these brackets.
+
+702
+01:12:45,830 --> 01:12:48,310
+ The outer brackets are the panda selection, right?
+
+703
+01:12:50,690 --> 01:12:56,750
+ And the result we will get, well, is a data frame with only those three columns.
+
+704
+01:12:56,770 --> 01:12:59,300
+ Right?
+
+705
+01:12:59,300 --> 01:13:01,760
+ Name, room type, and price.
+
+706
+01:13:02,250 --> 01:13:03,020
+ With their index.
+
+707
+01:13:03,180 --> 01:13:04,100
+ Just as we saw before.
+
+708
+01:13:05,160 --> 01:13:06,270
+ Buy first.
+
+709
+01:13:06,940 --> 01:13:07,590
+ Hide the rest.
+
+710
+01:13:08,180 --> 01:13:08,900
+ Five last.
+
+711
+01:13:10,610 --> 01:13:12,900
+ 4574 rows.
+
+712
+01:13:13,100 --> 01:13:13,560
+ Three columns.
+
+713
+01:13:14,210 --> 01:13:17,950
+ So a very common mistake is to forget the double bracket.
+
+714
+01:13:19,890 --> 01:13:20,110
+ All right?
+
+715
+01:13:20,670 --> 01:13:28,970
+ So if we were to write the same thing, just to see how it looks like, forget these.
+
+716
+01:13:29,830 --> 01:13:34,170
+ It won't complain when writing it.
+
+717
+01:13:35,730 --> 01:13:40,130
+ That is enough.
+
+718
+01:13:40,910 --> 01:13:41,110
+ All right?
+
+719
+01:13:41,290 --> 01:13:45,540
+ So if I run this, I actually get a key error, right?
+
+720
+01:13:49,120 --> 01:13:53,260
+ So, exactly.
+
+721
+01:13:53,580 --> 01:13:54,900
+ So key error, name, and room type.
+
+722
+01:13:55,100 --> 01:14:04,620
+ So without the list, tandas looks for one column with the name, where the name is a pair,
+
+723
+01:14:05,130 --> 01:14:06,910
+ where we have name and room type.
+
+724
+01:14:07,550 --> 01:14:08,710
+ But there is no such column.
+
+725
+01:14:08,710 --> 01:14:12,690
+ So the fix here would be double brackets.
+
+726
+01:14:18,500 --> 01:14:19,180
+ Same problem anymore.
+
+727
+01:14:20,590 --> 01:14:20,810
+ All right?
+
+728
+01:14:21,520 --> 01:14:22,850
+ So I'm going to keep those.
+
+729
+01:14:23,670 --> 01:14:28,560
+ And just for your notes.
+
+730
+01:14:29,770 --> 01:14:35,920
+ Now, let's ask pandas for a summary of the data.
+
+731
+01:14:36,370 --> 01:14:40,210
+ I'm going to write a little mark down here.
+
+732
+01:14:40,930 --> 01:14:42,760
+ So you remember what we're working with.
+
+733
+01:14:44,990 --> 01:14:49,350
+ Summary of the data.
+
+734
+01:14:50,480 --> 01:14:54,890
+ And here we use a method called describe.
+
+735
+01:14:58,990 --> 01:15:07,380
+ So what it does, well, it calculates statistics for the numeric columns, how many values there
+
+736
+01:15:07,380 --> 01:15:15,420
+ are, the average, the smallest, and the largest, and actually a few more.
+
+737
+01:15:16,660 --> 01:15:20,880
+ And we will go through what each statistic means in a minute.
+
+738
+01:15:22,060 --> 01:15:28,260
+ First, we're going to start with the, well, let's do, first, let's do the simplest thing
+
+739
+01:15:28,260 --> 01:15:31,770
+ and ask for a summary for the whole table.
+
+740
+01:15:33,210 --> 01:15:33,450
+ All right?
+
+741
+01:15:35,610 --> 01:15:36,810
+ So listings.
+
+742
+01:15:43,680 --> 01:15:45,560
+ No, I'm going to mark myself.
+
+743
+01:15:46,400 --> 01:15:47,770
+ There we go.
+
+744
+01:15:48,630 --> 01:15:49,070
+ Listings.
+
+745
+01:15:51,350 --> 01:15:52,810
+ And describe.
+
+746
+01:15:53,650 --> 01:15:53,810
+ No.
+
+747
+01:15:56,280 --> 01:15:57,350
+ There we go.
+
+748
+01:15:58,500 --> 01:15:58,910
+ Okay?
+
+749
+01:15:59,270 --> 01:16:00,150
+ So for the whole table.
+
+750
+01:16:02,220 --> 01:16:04,280
+ And just let's take a look at what we got here.
+
+751
+01:16:06,030 --> 01:16:06,270
+ Okay.
+
+752
+01:16:06,270 --> 01:16:12,950
+ So it's a table with eight rows and 62 columns.
+
+753
+01:16:15,480 --> 01:16:19,990
+ Because describe includes every column that holds a number.
+
+754
+01:16:21,210 --> 01:16:24,920
+ And it's far too wide to read.
+
+755
+01:16:25,750 --> 01:16:32,040
+ And if you look very closely here, there is several problems.
+
+756
+01:16:33,220 --> 01:16:37,440
+ Well, problem one, I would say the numbers are hard to read.
+
+757
+01:16:38,420 --> 01:16:52,950
+ So if you look at, for example, the ID here, the average, the mean, or the average, is 8.350318e plus 17.
+
+758
+01:16:53,330 --> 01:16:56,970
+ So this is called a scientific notation.
+
+759
+01:16:58,430 --> 01:17:07,630
+ So, yeah, it means something like, and you can correct me if I'm wrong here, but it's 8.35 with followed by 70 zeros or something like that.
+
+760
+01:17:08,010 --> 01:17:14,650
+ So Pandas would switch to it when the numbers are very large or very small.
+
+761
+01:17:15,390 --> 01:17:17,070
+ So that's one of the problems that we see now.
+
+762
+01:17:18,330 --> 01:17:21,600
+ Problem two is that many columns are empty.
+
+763
+01:17:23,490 --> 01:17:29,950
+ So if we look at, for example, neighborhood overview, the count is zero, right?
+
+764
+01:17:30,290 --> 01:17:35,680
+ And everything else is N-A-N or none, which means not a number.
+
+765
+01:17:37,390 --> 01:17:42,890
+ And that's Pandas' way of showing that a value is missing.
+
+766
+01:17:46,300 --> 01:17:52,280
+ So remember that the empty columns we found earlier with info, well, they will show up here too.
+
+767
+01:17:52,280 --> 01:17:56,620
+ And then we have problem three.
+
+768
+01:17:57,970 --> 01:18:01,590
+ Some of these are not really numbers.
+
+769
+01:18:02,770 --> 01:18:10,920
+ So if we look at AID or scrape ID or host ID, they are stored as numbers.
+
+770
+01:18:12,410 --> 01:18:19,330
+ So describe actually calculates an average for them and so on.
+
+771
+01:18:19,840 --> 01:18:26,880
+ But what does actually an average of ID tell us?
+
+772
+01:18:26,880 --> 01:18:28,400
+ Well, nothing, right?
+
+773
+01:18:28,800 --> 01:18:33,360
+ We never add or subtract or average an ID, right?
+
+774
+01:18:33,870 --> 01:18:35,070
+ Because they're just labels.
+
+775
+01:18:38,480 --> 01:18:46,170
+ And also, if we look at scrape ID at the STD here, the standard deviation,
+
+776
+01:18:46,350 --> 01:18:48,950
+ and we're going to talk more about standard deviation later on.
+
+777
+01:18:49,570 --> 01:18:51,570
+ So don't get hooked on that right now.
+
+778
+01:18:51,890 --> 01:18:56,360
+ But it says zero because every single row has the same value.
+
+779
+01:18:56,460 --> 01:18:57,600
+ But we will get back to that.
+
+780
+01:18:59,010 --> 01:19:13,150
+ So describe actually worked as it should do, but it described everything, including the columns that make no sense to describe.
+
+781
+01:19:13,150 --> 01:19:24,290
+ So what we will do now, just to get comfortable with describe, is to first select the column we actually care about.
+
+782
+01:19:26,000 --> 01:19:30,980
+ And then we will use describe again to make sense of it, right?
+
+783
+01:19:32,130 --> 01:19:38,920
+ So, like I mentioned, when I prepared the list and so on, I actually chose which columns we will care about.
+
+784
+01:19:39,130 --> 01:19:40,660
+ So we will actually stick to that.
+
+785
+01:19:44,350 --> 01:19:50,780
+ And then we're going to save the list in a variable called columns.
+
+786
+01:19:52,990 --> 01:20:49,920
+ And the ones I want to choose is accommodate, bed, rooms, beds, nights, number, number, review.
+
+787
+01:20:53,300 --> 01:21:13,950
+ And then I'm just going to say listings here that we just created.
+
+788
+01:21:14,300 --> 01:21:19,420
+ And we want to describe, right?
+
+789
+01:21:19,580 --> 01:21:21,280
+ Just like previously, nothing new.
+
+790
+01:21:21,420 --> 01:21:25,850
+ But I'm actually also, so describe only these or only those.
+
+791
+01:21:26,460 --> 01:21:35,330
+ Accommodate, bedrooms, beds, minimum nights, number of reviews, review score ratings.
+
+792
+01:21:38,430 --> 01:21:42,300
+ And I'm actually also going to add a round here.
+
+793
+01:21:43,310 --> 01:21:46,100
+ So we want to round it up to two decimals.
+
+794
+01:21:47,560 --> 01:21:47,760
+ All right.
+
+795
+01:21:49,060 --> 01:21:50,960
+ So now let's run this.
+
+796
+01:21:53,220 --> 01:21:56,590
+ So now we can actually read it, right?
+
+797
+01:21:57,580 --> 01:22:03,270
+ So each column is one of the things that we have selected.
+
+798
+01:22:04,750 --> 01:22:07,870
+ And each row is a different statistic.
+
+799
+01:22:08,940 --> 01:22:10,520
+ So let's go through each row here.
+
+800
+01:22:11,330 --> 01:22:11,890
+ Count.
+
+801
+01:22:13,630 --> 01:22:19,640
+ How many rows have a value in this column?
+
+802
+01:22:20,000 --> 01:22:23,140
+ So we can see that all of them, nearly all of them are completed.
+
+803
+01:22:25,300 --> 01:22:27,580
+ Mean is the average.
+
+804
+01:22:29,840 --> 01:22:31,960
+ STD, standard deviation.
+
+805
+01:22:32,640 --> 01:22:34,520
+ How spread out the values are.
+
+806
+01:22:34,520 --> 01:22:36,160
+ But we will come back to that.
+
+807
+01:22:37,110 --> 01:22:38,110
+ Min and max.
+
+808
+01:22:38,820 --> 01:22:40,980
+ The smallest and the largest value.
+
+809
+01:22:42,550 --> 01:22:45,860
+ 50% is the median.
+
+810
+01:22:47,110 --> 01:22:51,280
+ So whenever you hear me say median, you know that it's the 50%.
+
+811
+01:22:51,280 --> 01:22:56,800
+ So if you line up all the listings from smallest to largest, this would be the one in the middle.
+
+812
+01:22:58,770 --> 01:23:01,690
+ And then we have 25% and 75%.
+
+813
+01:23:01,690 --> 01:23:03,130
+ Well, it's the same idea.
+
+814
+01:23:03,900 --> 01:23:10,760
+ Basically, a quarter and three quarters of the way along the line, right?
+
+815
+01:23:10,920 --> 01:23:15,280
+ But there are three things I want you to notice.
+
+816
+01:23:15,490 --> 01:23:26,600
+ So if you first of all look at the count row, it says 4,574 for some columns, but not for all.
+
+817
+01:23:28,250 --> 01:23:33,900
+ For bedrooms, it actually says 4,572.
+
+818
+01:23:35,390 --> 01:23:45,730
+ And the review scores rating has only 3,930.
+
+819
+01:23:45,730 --> 01:23:53,310
+ So that means that some of our listings have no rating at all.
+
+820
+01:23:53,310 --> 01:24:01,280
+ So these are missing values, so they have not been counted in the average.
+
+821
+01:24:02,330 --> 01:24:06,920
+ And we have to remember them when we draw our conclusions.
+
+822
+01:24:09,570 --> 01:24:12,880
+ And second of all, let's look at minimum nights here.
+
+823
+01:24:14,420 --> 01:24:20,460
+ So the mean is 6.36, but the median is actually 2.
+
+824
+01:24:21,160 --> 01:24:26,620
+ And the maximum is 500.
+
+825
+01:24:27,430 --> 01:24:34,120
+ So most listings require, well, one or two nights, right?
+
+826
+01:24:35,210 --> 01:24:43,680
+ So a few numbers with very high numbers will actually put the average up.
+
+827
+01:24:44,090 --> 01:24:50,440
+ Is it really possible to require 500 nights?
+
+828
+01:24:50,980 --> 01:24:52,560
+ It's a bit over a year, right?
+
+829
+01:24:53,740 --> 01:25:00,920
+ So we will put that on our list of questions, and we will come back to it.
+
+830
+01:25:00,960 --> 01:25:05,020
+ So we will stumble on these things along the way now when we're looking at the data.
+
+831
+01:25:05,310 --> 01:25:10,490
+ And we will just put it in a list of things that we need to look up later on.
+
+832
+01:25:14,780 --> 01:25:25,710
+ Third is if we compare the mean and the median of a number of reviews.
+
+833
+01:25:27,700 --> 01:25:33,690
+ So the mean is about 36, but the median is only 9.
+
+834
+01:25:35,790 --> 01:25:45,120
+ So half of all listings have 9 reviews or fewer, while the most popular has 1,293.
+
+835
+01:25:45,670 --> 01:25:47,830
+ So it is the same pattern here.
+
+836
+01:25:49,670 --> 01:25:53,510
+ So a few extreme values will pull the average up.
+
+837
+01:25:54,910 --> 01:26:07,250
+ So when the mean and the median is far apart, it is actually a sign for us that tells us that the data is a little bit uneven, right?
+
+838
+01:26:07,250 --> 01:26:18,080
+ But like I said, we will go through all of this properly when it comes to this data set on Tuesday, next week.
+
+839
+01:26:20,450 --> 01:26:20,670
+ All right?
+
+840
+01:26:21,210 --> 01:26:25,780
+ These are things just to notice and just to get familiar with our data.
+
+841
+01:26:30,470 --> 01:26:36,270
+ Now, we have only described numbers.
+
+842
+01:26:38,290 --> 01:26:46,320
+ About half of our columns are not numbers, are actually text, such as the room type, such as the neighborhood.
+
+843
+01:26:47,380 --> 01:26:51,710
+ So what happens if we use describe on those?
+
+844
+01:26:51,710 --> 01:27:01,440
+ So let's actually use two text columns and find out what happens if I use describe on those.
+
+845
+01:27:01,900 --> 01:27:16,230
+ And I'm actually going to use listings and I'm going to use room type.
+
+846
+01:27:19,590 --> 01:27:29,960
+ And let's use one called nay.
+
+847
+01:27:29,960 --> 01:27:39,970
+ Trust me, during these two weeks, I will do a misspelling.
+
+848
+01:27:41,650 --> 01:27:42,890
+ We're just looking for the first one.
+
+849
+01:27:43,720 --> 01:27:48,720
+ So yeah, neighborhood cleanse was which part of Stockholm it is in.
+
+850
+01:27:49,820 --> 01:27:49,960
+ All right?
+
+851
+01:27:52,500 --> 01:27:53,480
+ And use describe.
+
+852
+01:27:55,910 --> 01:27:56,070
+ Okay.
+
+853
+01:27:58,760 --> 01:28:02,500
+ Try to think now, before I run the code.
+
+854
+01:28:02,880 --> 01:28:04,620
+ So if you think about it, what do you think will happen?
+
+855
+01:28:05,390 --> 01:28:06,490
+ Will it be able to do this?
+
+856
+01:28:10,120 --> 01:28:12,140
+ Let's run it to see.
+
+857
+01:28:14,080 --> 01:28:14,380
+ Uh-huh.
+
+858
+01:28:15,160 --> 01:28:18,810
+ So as we see now, we're using describe again, just like before.
+
+859
+01:28:20,350 --> 01:28:21,170
+ So we're using describe.
+
+860
+01:28:23,280 --> 01:28:27,750
+ But we get a, our table looks different now, right?
+
+861
+01:28:28,480 --> 01:28:37,440
+ There's no mean, no minimum, no maximum, because it makes no sense to calculate the average of a text, right?
+
+862
+01:28:37,920 --> 01:28:40,680
+ So instead, we get four other rows.
+
+863
+01:28:41,100 --> 01:28:42,430
+ We get a count.
+
+864
+01:28:43,710 --> 01:28:46,520
+ So that means how many rows have a value.
+
+865
+01:28:47,050 --> 01:28:50,170
+ And we see that it's 4,574 for both columns.
+
+866
+01:28:50,170 --> 01:28:51,710
+ So nothing is missing here.
+
+867
+01:28:53,220 --> 01:28:59,220
+ Unique, how many different values the column contain.
+
+868
+01:29:00,060 --> 01:29:06,430
+ So therefore, we know now there are two, four types of, types of rooms.
+
+869
+01:29:07,820 --> 01:29:12,100
+ So four, the room temp has four different values.
+
+870
+01:29:13,050 --> 01:29:16,850
+ And the neighborhood, there are 14 of those.
+
+871
+01:29:18,100 --> 01:29:20,820
+ So 14 neighborhoods in this data set.
+
+872
+01:29:23,490 --> 01:29:27,850
+ Top, well, that is the value that appears most often.
+
+873
+01:29:27,850 --> 01:29:36,010
+ So the most common room in our data is the one called entire home apartment.
+
+874
+01:29:36,910 --> 01:29:40,230
+ And the most common neighborhood is actually seven months.
+
+875
+01:29:43,230 --> 01:29:48,770
+ And the frequency here is how many times the top value actually appears.
+
+876
+01:29:52,790 --> 01:29:53,010
+ All right?
+
+877
+01:29:53,380 --> 01:30:05,470
+ So if you read this together here, we have entire home apartment appears 3,760 times.
+
+878
+01:30:05,470 --> 01:30:14,490
+ And that is 3,760 out of 4,574 listings.
+
+879
+01:30:16,120 --> 01:30:19,660
+ So which is actually more than eight out of 10, right?
+
+880
+01:30:20,020 --> 01:30:29,840
+ So Airbnb in Stockholm, at least in the data set, is mostly about whole apartments and houses, right?
+
+881
+01:30:30,330 --> 01:30:32,530
+ Not about renting a room.
+
+882
+01:30:32,810 --> 01:30:36,580
+ So now we can actually draw a small conclusion here, right?
+
+883
+01:30:36,580 --> 01:30:42,270
+ So the mom appears 1,145 times.
+
+884
+01:30:43,440 --> 01:31:01,920
+ It's about a quarter of the fall listings in one single neighborhood out of 14, which is called seven months, right?
+
+885
+01:31:02,080 --> 01:31:13,920
+ So if we notice here, well, this table tells us the most common value, but not what the other values are or how common they are.
+
+886
+01:31:14,750 --> 01:31:20,570
+ So for that, we actually need two more tools.
+
+887
+01:31:22,030 --> 01:31:24,270
+ So first of all, which are the values, right?
+
+888
+01:31:33,970 --> 01:31:45,570
+ Describe told us that the room type had four different values, but it did not tell us which ones.
+
+889
+01:31:45,670 --> 01:31:48,530
+ So we still don't know which four we have.
+
+890
+01:31:49,290 --> 01:32:01,690
+ And here we can use something called unique, all right?
+
+891
+01:32:03,500 --> 01:32:09,100
+ Unique, well, gives us every different value in the column, each one only once.
+
+892
+01:32:11,110 --> 01:32:14,680
+ So let's try it out.
+
+893
+01:32:16,100 --> 01:32:23,420
+ So listings, and let's do it on the room type, of course.
+
+894
+01:32:24,760 --> 01:32:25,770
+ Excuse me.
+
+895
+01:32:26,710 --> 01:32:28,900
+ And we're going to write to unique here.
+
+896
+01:32:30,000 --> 01:32:31,540
+ And let's run this.
+
+897
+01:32:32,700 --> 01:32:35,220
+ All right, all right, all right, all right.
+
+898
+01:32:36,030 --> 01:32:42,320
+ So we see here that we have four kind of listings, just as we saw before, right?
+
+899
+01:32:44,130 --> 01:32:54,310
+ Private room, entire home apartment, shared room, and hotel room, right?
+
+900
+01:32:54,960 --> 01:33:05,660
+ So private room, well, you rent a room in someone's home and then share the rest.
+
+901
+01:33:07,450 --> 01:33:10,710
+ Entire home apartment, well, you rent the whole place for yourself, right?
+
+902
+01:33:11,450 --> 01:33:16,470
+ Shared room, you share even the sleeping space here.
+
+903
+01:33:17,090 --> 01:33:19,900
+ And the hotel room, well, it's a hotel or similar.
+
+904
+01:33:19,900 --> 01:33:36,860
+ And if you notice the order, so it is not actually stored, and it's not by how common they are, right?
+
+905
+01:33:37,100 --> 01:33:42,730
+ Because we know already for a fact that entire home apartment is the most common one, right?
+
+906
+01:33:44,160 --> 01:33:46,330
+ But here it actually comes second.
+
+907
+01:33:47,450 --> 01:33:56,450
+ So the values come in the order in which Pandas first finds them when it reads down the columns.
+
+908
+01:33:57,900 --> 01:33:59,720
+ So the first one was actually private room.
+
+909
+01:34:00,710 --> 01:34:01,570
+ So that came first.
+
+910
+01:34:04,290 --> 01:34:11,940
+ And we see also that it says D type string here and string array.
+
+911
+01:34:13,430 --> 01:34:15,700
+ So that is Pandas 3 again.
+
+912
+01:34:16,360 --> 01:34:19,120
+ So in older versions, this would have said object.
+
+913
+01:34:21,440 --> 01:34:23,920
+ And sometimes we don't actually need the values.
+
+914
+01:34:25,100 --> 01:34:29,790
+ We only want to know how many there are.
+
+915
+01:34:31,090 --> 01:34:35,030
+ And for this, we use a sibling to unique.
+
+916
+01:34:35,030 --> 01:34:39,250
+ We use something called N.
+
+917
+01:34:39,650 --> 01:34:43,140
+ N unique.
+
+918
+01:34:48,770 --> 01:34:53,220
+ So N stands for the number.
+
+919
+01:34:55,820 --> 01:34:57,120
+ So let's try it out.
+
+920
+01:34:57,750 --> 01:34:58,150
+ Listings.
+
+921
+01:35:01,730 --> 01:35:04,430
+ Room type.
+
+922
+01:35:05,630 --> 01:35:06,510
+ Or let's use...
+
+923
+01:35:06,510 --> 01:35:09,290
+ Let's not use room type.
+
+924
+01:35:09,590 --> 01:35:11,340
+ Let me use this one this time.
+
+925
+01:35:15,140 --> 01:35:16,000
+ Neighborhood cleansed.
+
+926
+01:35:16,220 --> 01:35:22,820
+ And this time I will use N unique, right?
+
+927
+01:35:24,940 --> 01:35:26,240
+ Turn on this.
+
+928
+01:35:28,450 --> 01:35:30,760
+ 14 neighborhoods.
+
+929
+01:35:32,400 --> 01:35:41,610
+ And that means exactly the same as we saw earlier that the scribe gave us, right?
+
+930
+01:35:43,640 --> 01:35:52,520
+ So now we know what to call them, right?
+
+931
+01:35:52,880 --> 01:35:54,380
+ The scribe gave us unique.
+
+932
+01:35:54,530 --> 01:35:58,770
+ And there we got the same number from N unique.
+
+933
+01:35:58,770 --> 01:36:05,480
+ So we know that there are four room types and 14 neighborhoods.
+
+934
+01:36:06,450 --> 01:36:11,140
+ But we still do not know how many listings each one has.
+
+935
+01:36:12,420 --> 01:36:18,780
+ And that's something we're going to do tomorrow when we learn to group and count and so on.
+
+936
+01:36:19,040 --> 01:36:23,150
+ So we need to save a little bit for tomorrow as well, okay?
+
+937
+01:36:23,480 --> 01:36:25,410
+ But we still have some more things to cover today.
+
+938
+01:36:26,880 --> 01:36:32,170
+ One more column I want to look at because it is one everybody wants to use.
+
+939
+01:36:32,570 --> 01:36:34,530
+ And that's usually the price, right?
+
+940
+01:36:34,870 --> 01:36:41,010
+ So whenever people see a data set about housing, the first thing they would ask is how much does it cost?
+
+941
+01:36:42,270 --> 01:36:50,490
+ So let's look at the first few values and then we will learn some more tools.
+
+942
+01:36:50,490 --> 01:37:11,740
+ So print, listings, price, head, three, list.
+
+943
+01:37:11,960 --> 01:37:13,920
+ And I'm going to explain everything that I'm doing, of course.
+
+944
+01:37:15,980 --> 01:37:26,950
+ And use your hands today.
+
+945
+01:37:30,400 --> 01:37:31,330
+ God, what's wrong with me?
+
+946
+01:37:32,020 --> 01:37:32,430
+ There we go.
+
+947
+01:37:33,800 --> 01:37:45,670
+ All right.
+
+948
+01:37:45,910 --> 01:37:51,990
+ So the first three, price, shown as a plain Python list.
+
+949
+01:37:52,660 --> 01:37:53,820
+ Therefore, I'm using to list here.
+
+950
+01:37:54,290 --> 01:37:58,170
+ And the data type of the price column, okay?
+
+951
+01:37:58,330 --> 01:38:00,890
+ So let's take a look at that.
+
+952
+01:38:03,050 --> 01:38:06,830
+ So just by looking at three, we can draw a lot of conclusions here, right?
+
+953
+01:38:07,150 --> 01:38:12,020
+ So if you look at the first value here, we see $1,091.
+
+954
+01:38:13,010 --> 01:38:15,820
+ It holds a dollar sign.
+
+955
+01:38:17,250 --> 01:38:20,570
+ It has a comma in between the thousands, right?
+
+956
+01:38:21,450 --> 01:38:23,910
+ And it's wrapped also in quotation marks.
+
+957
+01:38:25,580 --> 01:38:29,560
+ And the type, the D type here, says it's actually a string.
+
+958
+01:38:30,330 --> 01:38:34,100
+ So this is actually a text, not a number.
+
+959
+01:38:36,490 --> 01:38:39,120
+ So to us, it looks like a price, right?
+
+960
+01:38:39,460 --> 01:38:42,120
+ But to Pandas, it's just a string of characters.
+
+961
+01:38:43,500 --> 01:38:47,700
+ And just to see, I think you know where I'm going with this.
+
+962
+01:38:47,900 --> 01:38:51,740
+ But let's just see what that means for the things that we have just learned.
+
+963
+01:38:52,220 --> 01:39:02,730
+ So what if I do, so instead of room type, I use describe again.
+
+964
+01:39:03,140 --> 01:39:04,240
+ That's not describe, sorry.
+
+965
+01:39:05,250 --> 01:39:06,000
+ Price.
+
+966
+01:39:07,140 --> 01:39:09,040
+ And instead of unique.
+
+967
+01:39:10,850 --> 01:39:16,390
+ So let's try that and see what we get.
+
+968
+01:39:18,440 --> 01:39:20,310
+ Ah, and you see the problem here, right?
+
+969
+01:39:21,150 --> 01:39:29,040
+ So if you compare this to the numeric columns that we saw before, it is quite different, right?
+
+970
+01:39:30,180 --> 01:39:36,580
+ So there is no mean that we might need to use when it comes to prices, right?
+
+971
+01:39:37,100 --> 01:39:39,380
+ No mean, no minimum, no maximum.
+
+972
+01:39:40,190 --> 01:39:41,270
+ We get a count.
+
+973
+01:39:41,890 --> 01:39:42,870
+ We get unique.
+
+974
+01:39:43,390 --> 01:39:44,350
+ We get a top.
+
+975
+01:39:44,790 --> 01:39:45,810
+ We get the freck.
+
+976
+01:39:46,410 --> 01:39:49,810
+ Exactly the same four rows we got for text columns.
+
+977
+01:39:50,370 --> 01:39:55,600
+ So Pandas treats this as the price, the price as a text, right?
+
+978
+01:39:56,280 --> 01:39:57,480
+ Because that's what it is.
+
+979
+01:39:59,350 --> 01:40:03,510
+ And also, if we look at the count here, we see that it's 2,957.
+
+980
+01:40:04,040 --> 01:40:07,100
+ And we have 4,574 listings.
+
+981
+01:40:07,100 --> 01:40:15,700
+ So that means that 1,617 of these listings have no price at all.
+
+982
+01:40:16,660 --> 01:40:18,300
+ And that's more than a third.
+
+983
+01:40:18,860 --> 01:40:21,610
+ And we will come back to why later on.
+
+984
+01:40:24,590 --> 01:40:27,410
+ But here's when it gets interesting.
+
+985
+01:40:27,810 --> 01:40:32,760
+ Let's try to sort by price to find the cheapest listings.
+
+986
+01:40:35,160 --> 01:40:37,380
+ So that would be something like this, right?
+
+987
+01:40:37,780 --> 01:40:38,260
+ Listings.
+
+988
+01:40:40,770 --> 01:40:47,220
+ So we need the name and the price.
+
+989
+01:40:47,280 --> 01:40:49,360
+ And you notice that I'm using double brackets, right?
+
+990
+01:40:50,540 --> 01:40:52,380
+ We need to sort the values.
+
+991
+01:40:54,240 --> 01:40:58,290
+ And we're going to sort it on price.
+
+992
+01:41:01,950 --> 01:41:04,810
+ And we're also going to use add here.
+
+993
+01:41:06,700 --> 01:41:07,420
+ No specific.
+
+994
+01:41:07,620 --> 01:41:07,800
+ Yeah.
+
+995
+01:41:08,070 --> 01:41:08,650
+ We can use five.
+
+996
+01:41:09,940 --> 01:41:10,460
+ All right.
+
+997
+01:41:11,140 --> 01:41:16,110
+ So here we're saying pick two columns, the name and the price, right?
+
+998
+01:41:17,260 --> 01:41:21,660
+ Sort the rows by the price column.
+
+999
+01:41:23,180 --> 01:41:23,900
+ Lowest first.
+
+1000
+01:41:24,320 --> 01:41:25,480
+ That would be the standard, right?
+
+1001
+01:41:25,950 --> 01:41:30,680
+ Show only the first five rows since we're not specifying any number here.
+
+1002
+01:41:32,340 --> 01:41:32,460
+ Okay?
+
+1003
+01:41:33,820 --> 01:41:35,340
+ Now let's run this.
+
+1004
+01:41:35,340 --> 01:41:47,960
+ And it actually says that the cheapest listings is $1,000 a night.
+
+1005
+01:41:51,620 --> 01:41:57,840
+ And we know for a fact that the cheapest one is not $1,000.
+
+1006
+01:41:58,300 --> 01:42:00,500
+ Because we've already seen cheaper prices.
+
+1007
+01:42:00,840 --> 01:42:04,140
+ $702, $999 is actually cheaper than $1,000.
+
+1008
+01:42:04,240 --> 01:42:06,600
+ And there is probably more that are cheaper.
+
+1009
+01:42:08,070 --> 01:42:16,200
+ So what happened is that Pandas sorted the prices as text the way you sort words in a dictionary, right?
+
+1010
+01:42:16,760 --> 01:42:20,430
+ So it compares one character at a time from the left.
+
+1011
+01:42:20,800 --> 01:42:24,220
+ So every price starts with a dollar sign.
+
+1012
+01:42:25,060 --> 01:42:28,310
+ So it looks at the next character.
+
+1013
+01:42:28,430 --> 01:42:29,750
+ And the next character is a 1.
+
+1014
+01:42:30,170 --> 01:42:36,270
+ And the 1, well, is smaller than, for example, a 7, right?
+
+1015
+01:42:37,270 --> 01:42:42,110
+ Or if I were to compare it to 200, that would be a 2.
+
+1016
+01:42:42,210 --> 01:42:43,590
+ So 1 is smaller than a 2, right?
+
+1017
+01:42:44,140 --> 01:42:45,500
+ 1 comes before 2.
+
+1018
+01:42:46,660 --> 01:42:54,260
+ So 1,000 is placed first, even though 1,000 is bigger than 200 or 7, or whatever.
+
+1019
+01:42:55,730 --> 01:42:58,280
+ So this is a classical problem.
+
+1020
+01:42:59,450 --> 01:43:03,370
+ The data looks like numbers, but it's actually not.
+
+1021
+01:43:04,280 --> 01:43:05,810
+ So that's important to remember.
+
+1022
+01:43:07,560 --> 01:43:09,960
+ And this will happen to any calculations we do.
+
+1023
+01:43:10,440 --> 01:43:12,520
+ So you cannot take the average of text.
+
+1024
+01:43:12,620 --> 01:43:13,840
+ You cannot compare it properly.
+
+1025
+01:43:13,840 --> 01:43:17,340
+ You cannot draw a chart of it.
+
+1026
+01:43:17,980 --> 01:43:20,240
+ So we cannot use the price yet.
+
+1027
+01:43:20,930 --> 01:43:23,970
+ So we need to convert it to real numbers.
+
+1028
+01:43:24,870 --> 01:43:29,070
+ And we will learn the tools for cleaning text on Wednesday this week.
+
+1029
+01:43:30,250 --> 01:43:38,500
+ And then on Monday, we will use the tools that we learn on Wednesday, Thursday on this data.
+
+1030
+01:43:40,080 --> 01:43:45,400
+ So yeah, we will fix the prices on this data set.
+
+1031
+01:43:46,100 --> 01:43:51,100
+ So until then, we will not do any calculation on the price, right?
+
+1032
+01:43:52,550 --> 01:44:00,090
+ So far, let me just do something like this.
+
+1033
+01:44:02,790 --> 01:44:06,470
+ Filter rows, right?
+
+1034
+01:44:06,630 --> 01:44:13,630
+ So, so far, we have actually chosen which colors look at, right?
+
+1035
+01:44:14,720 --> 01:44:16,040
+ Now we will do the opposite.
+
+1036
+01:44:17,340 --> 01:44:21,710
+ We choose, we will choose which rows.
+
+1037
+01:44:22,920 --> 01:44:24,120
+ And this is what we call filtering.
+
+1038
+01:44:25,460 --> 01:44:28,840
+ So in SQL, this would be quite equivalent to where.
+
+1039
+01:44:30,160 --> 01:44:32,500
+ So let's start with a simple question here.
+
+1040
+01:44:33,370 --> 01:44:45,280
+ And that is, how many listings are entire homes?
+
+1041
+01:44:46,590 --> 01:44:50,730
+ How many listings are entire homes?
+
+1042
+01:44:51,880 --> 01:44:56,310
+ So to answer this, Pandas first need to check every single row.
+
+1043
+01:44:56,310 --> 01:44:59,070
+ Is the listing an entire home?
+
+1044
+01:44:59,560 --> 01:45:00,160
+ Yes or no.
+
+1045
+01:45:00,810 --> 01:45:07,300
+ And we do that with a comparison, just as we have learned during the fundamentals.
+
+1046
+01:45:08,440 --> 01:45:12,510
+ So listings, and now we're in the markdown zone.
+
+1047
+01:45:13,490 --> 01:45:14,630
+ How will we do that more times?
+
+1048
+01:45:17,300 --> 01:45:36,570
+ Listings, we said the room type, compare it to entire, and it's written like this, home apartment.
+
+1049
+01:45:38,230 --> 01:45:40,650
+ So you can read it like a question, right?
+
+1050
+01:45:40,650 --> 01:45:43,550
+ Is the room type equal to entire home apartment, right?
+
+1051
+01:45:44,270 --> 01:45:48,410
+ And of course, notice that we use double equal size, right?
+
+1052
+01:45:48,410 --> 01:45:49,730
+ Because we're comparing, right?
+
+1053
+01:45:49,770 --> 01:45:51,150
+ We're not assigning a variable.
+
+1054
+01:45:51,150 --> 01:45:59,980
+ And if we look at what we got here, well, we got the list with one answer for each row.
+
+1055
+01:46:01,000 --> 01:46:09,700
+ So false for the first three, then true for rows three and four, and so on.
+
+1056
+01:46:10,080 --> 01:46:19,150
+ And we see that it's 4,573 or 4,574 actually, of them, because yeah, zero is included as well.
+
+1057
+01:46:20,590 --> 01:46:21,650
+ So one for each listing.
+
+1058
+01:46:21,650 --> 01:46:24,740
+ And the type is a bool, right?
+
+1059
+01:46:27,720 --> 01:46:36,340
+ And if you remember, first row in our table, we can actually look at it.
+
+1060
+01:46:36,480 --> 01:46:47,100
+ So the first row in our table, we can actually see here just by looking at the name here.
+
+1061
+01:46:47,240 --> 01:46:48,480
+ So I don't need to scroll.
+
+1062
+01:46:49,450 --> 01:46:51,830
+ Double room, one room, single room.
+
+1063
+01:46:52,810 --> 01:46:57,180
+ So we know it's about rooms, right?
+
+1064
+01:46:58,250 --> 01:47:00,890
+ So yeah, these were actually private rooms.
+
+1065
+01:47:01,490 --> 01:47:04,060
+ And that is why it actually says false.
+
+1066
+01:47:04,960 --> 01:47:07,080
+ So it's not an entire home, right?
+
+1067
+01:47:07,780 --> 01:47:11,040
+ And the fourth and fifth, they are entire homes.
+
+1068
+01:47:11,240 --> 01:47:12,820
+ So they actually say true.
+
+1069
+01:47:13,350 --> 01:47:20,290
+ So a list of true or false like this has a name, and it's called a mask.
+
+1070
+01:47:22,050 --> 01:47:34,460
+ And try to think of it as a stencil that you lay over the table.
+
+1071
+01:47:34,860 --> 01:47:37,710
+ Where it says true, you can see the row.
+
+1072
+01:47:38,150 --> 01:47:41,200
+ Where it says false, the row is hidden.
+
+1073
+01:47:41,900 --> 01:47:48,530
+ But a list of 4,574 answers is not the answer to my question, right?
+
+1074
+01:47:48,530 --> 01:47:51,280
+ I actually asked how many.
+
+1075
+01:47:53,200 --> 01:47:59,510
+ So let's save this mask into a variable and then count, right?
+
+1076
+01:48:00,570 --> 01:48:09,120
+ So now we're going to save this, put it in a variable, which I will just call mask.
+
+1077
+01:48:09,280 --> 01:48:13,080
+ So we remember that it's actually called mask.
+
+1078
+01:48:22,300 --> 01:48:26,960
+ So we're saving all this true and false into mask, right?
+
+1079
+01:48:28,040 --> 01:48:35,670
+ And inside Python, true is counted as 1 and false counts as 0.
+
+1080
+01:48:35,670 --> 01:48:38,200
+ And I'm pretty sure that you already know this.
+
+1081
+01:48:38,550 --> 01:48:42,060
+ Either way, so true is counted as 1, false is counted as 0.
+
+1082
+01:48:42,120 --> 01:48:43,300
+ We can use that, right?
+
+1083
+01:48:43,900 --> 01:48:50,360
+ So that means that when we calculate the mask, so if we add all the values, every true adds 1.
+
+1084
+01:48:50,980 --> 01:48:52,580
+ And every false will add nothing.
+
+1085
+01:48:53,000 --> 01:48:55,220
+ And therefore, we will know how many truths we have, right?
+
+1086
+01:48:56,230 --> 01:49:01,240
+ So what we can do now is do something like this.
+
+1087
+01:49:01,380 --> 01:49:05,600
+ Print, mask, sum.
+
+1088
+01:49:09,580 --> 01:49:16,150
+ And we can also, at the same time, not only sum, we can actually look at the mean as well.
+
+1089
+01:49:17,460 --> 01:49:19,670
+ So like I said, true counts as 1.
+
+1090
+01:49:20,590 --> 01:49:28,660
+ So the sum would be the number of entire rooms and the mean, the average of all those 1s and 0s.
+
+1091
+01:49:30,750 --> 01:49:33,660
+ So that's the share of entire homes.
+
+1092
+01:49:35,740 --> 01:49:38,130
+ Okay, so let's run this.
+
+1093
+01:49:40,860 --> 01:49:42,850
+ Excuse me.
+
+1094
+01:49:43,540 --> 01:49:49,770
+ I see that there's 3,760 listings that are entire homes.
+
+1095
+01:49:50,600 --> 01:49:57,810
+ And that is the same number that Describe gave us as Freck earlier.
+
+1096
+01:49:58,030 --> 01:49:59,030
+ You can go back and look.
+
+1097
+01:49:59,720 --> 01:50:03,720
+ And the mean is about 0.82, means 82%.
+
+1098
+01:50:03,720 --> 01:50:11,280
+ So 4 out of 5 listings are homes, as we saw earlier when we used Describe, right?
+
+1099
+01:50:12,790 --> 01:50:16,500
+ Notice that we did not loop through the rows.
+
+1100
+01:50:17,540 --> 01:50:19,720
+ We did not count anything by hand.
+
+1101
+01:50:20,420 --> 01:50:28,590
+ So we just simply asked one question about the whole column and let pandas answer it for every row at once.
+
+1102
+01:50:30,650 --> 01:50:34,800
+ Okay, this is why I actually love pandas.
+
+1103
+01:50:37,030 --> 01:50:44,370
+ But so far, we only counted the entire homes.
+
+1104
+01:50:45,680 --> 01:50:50,450
+ Often, we want to actually see them or work with them.
+
+1105
+01:50:51,390 --> 01:50:54,450
+ And for that, we actually use mask as a filter.
+
+1106
+01:50:55,100 --> 01:50:56,840
+ I'm just going to write that down.
+
+1107
+01:50:57,080 --> 01:51:01,660
+ Mask as a filter is what we were talking about here.
+
+1108
+01:51:02,170 --> 01:51:03,890
+ So if you go back to your notes later on.
+
+1109
+01:51:06,560 --> 01:51:09,880
+ So what we can do is something like this.
+
+1110
+01:51:10,280 --> 01:51:12,050
+ Let's start with these things.
+
+1111
+01:51:12,980 --> 01:51:16,800
+ And then we can take a break shortly, right?
+
+1112
+01:51:17,520 --> 01:51:17,970
+ Shape.
+
+1113
+01:51:17,970 --> 01:51:23,300
+ So shape was rows and columns, if you remember.
+
+1114
+01:51:24,320 --> 01:51:25,680
+ We used it at the beginning of the lesson.
+
+1115
+01:51:26,330 --> 01:51:31,800
+ So we use it to count the rows without printing all of them, all right?
+
+1116
+01:51:32,150 --> 01:51:42,820
+ So if I run this, I see the result is 3760 rows and 84 columns.
+
+1117
+01:51:43,000 --> 01:51:45,930
+ So we still have all 84 columns.
+
+1118
+01:51:48,410 --> 01:51:54,400
+ But only where the mask said true are actually left.
+
+1119
+01:51:54,400 --> 01:52:00,740
+ And that's exactly the 3760 rows and that's exactly the 3760 entire homes we counted a moment ago, right?
+
+1120
+01:52:00,740 --> 01:52:11,250
+ And as you see here, we used shape here instead of printing the table because we only wanted to know how many rows we got.
+
+1121
+01:52:12,740 --> 01:52:15,430
+ And 3760 is a lot to look at, right?
+
+1122
+01:52:15,430 --> 01:52:25,870
+ And something I can also add is that a mask does not have to be equals comparison.
+
+1123
+01:52:25,870 --> 01:52:28,330
+ So any comparisons will work.
+
+1124
+01:52:28,330 --> 01:52:37,270
+ So any comparison will actually give us true or false for every row.
+
+1125
+01:52:37,270 --> 01:52:40,610
+ So we can filter numbers as well, right?
+
+1126
+01:52:42,260 --> 01:52:54,740
+ So I could have done, obviously, I could have done this, I could have done that, I could have done this and so on, all right?
+
+1127
+01:52:55,580 --> 01:52:57,040
+ That would have worked as well.
+
+1128
+01:52:57,200 --> 01:52:58,600
+ And you can try it out later on.
+
+1129
+01:52:59,180 --> 01:53:08,160
+ If I remember correctly, one of the lab questions actually makes you compare, I don't remember because I've done so many versions now.
+
+1130
+01:53:08,600 --> 01:53:12,780
+ So I don't remember which question I actually stick to.
+
+1131
+01:53:12,900 --> 01:53:15,230
+ I'm going to look at that later on.
+
+1132
+01:53:15,640 --> 01:53:17,320
+ So I'm up to date with you guys.
+
+1133
+01:53:19,340 --> 01:53:23,740
+ Okay.
+
+1134
+01:53:27,260 --> 01:53:28,280
+ It's 11.05.
+
+1135
+01:53:29,480 --> 01:53:31,850
+ We have a little bit left.
+
+1136
+01:53:31,850 --> 01:53:37,950
+ I think it's, yeah, we actually should take a little break.
+
+1137
+01:53:39,520 --> 01:53:42,960
+ So let's take a little break and then we can actually continue.
+
+1138
+01:53:47,300 --> 01:53:49,760
+ Any questions before I let you go on the break?
+
+1139
+01:53:54,540 --> 01:54:09,450
+ Okay, now I don't know what is joke and what is the question in China.
+
+1140
+01:54:10,230 --> 01:54:12,190
+ I can explain the joke if you want.
+
+1141
+01:54:14,080 --> 01:54:15,650
+ Let's take a break.
+
+1142
+01:54:16,520 --> 01:54:19,880
+ No, no, they actually created Paris in China.
+
+1143
+01:54:19,880 --> 01:54:20,810
+ Oh, okay.
+
+1144
+01:54:21,290 --> 01:54:22,250
+ They actually did that.
+
+1145
+01:54:22,690 --> 01:54:25,080
+ Or a version of Paris.
+
+1146
+01:54:25,300 --> 01:54:25,400
+ Okay.
+
+1147
+01:54:25,640 --> 01:54:27,280
+ And with the Eiffel Tower and everything.
+
+1148
+01:54:28,730 --> 01:54:31,150
+ And hopefully there were crates of the moment as well, right?
+
+1149
+01:54:32,120 --> 01:54:33,020
+ Yeah, they could have.
+
+1150
+01:54:34,700 --> 01:54:36,040
+ All right.
+
+1151
+01:54:36,440 --> 01:54:37,060
+ All right, guys.
+
+1152
+01:54:37,240 --> 01:54:38,460
+ Let's take a short break.
+
+1153
+01:54:39,420 --> 01:54:44,720
+ And yeah, just to get some oxygen in the brain, just move a little bit and then, yeah, we can continue.
+
+1154
+01:54:44,940 --> 01:54:46,480
+ We're not going to take a super long break.
+
+1155
+01:54:46,620 --> 01:54:49,780
+ Just five minutes.
+
+1156
+01:54:49,980 --> 01:54:51,400
+ That's quite enough.
+
+1157
+01:54:51,810 --> 01:54:52,050
+ All right.
+
+1158
+01:54:52,610 --> 01:54:53,310
+ Oh, you know what?
+
+1159
+01:54:53,350 --> 01:54:54,350
+ Let's take seven minutes.
+
+1160
+01:54:54,470 --> 01:54:54,630
+ All right.
+
+1161
+01:54:55,790 --> 01:54:59,280
+ So, back at 11.12.
+
+1162
+01:55:01,570 --> 01:55:03,410
+ All right, guys.
+
+1163
+01:55:04,550 --> 01:55:05,250
+ See you back soon.
+
+1164
+02:00:05,020 --> 02:01:20,540
+ All right, guys.
+
+1165
+02:01:21,570 --> 02:01:23,270
+ Can you hear me?
+
+1166
+02:01:26,560 --> 02:01:26,880
+ All right.
+
+1167
+02:01:26,940 --> 02:01:27,040
+ Perfect.
+
+1168
+02:01:40,760 --> 02:01:46,710
+ So, a little longer lesson today since we had some introduction and so on.
+
+1169
+02:01:46,810 --> 02:01:48,240
+ That took a lot of time, of course.
+
+1170
+02:01:48,900 --> 02:01:52,780
+ But I promise you, the lessons are going to get a little bit shorter.
+
+1171
+02:01:57,860 --> 02:01:59,670
+ Anyways, bear with me now.
+
+1172
+02:02:01,260 --> 02:02:06,800
+ So, so far, we have used one condition at a time, right?
+
+1173
+02:02:08,210 --> 02:02:12,010
+ But real questions usually have more than one, right?
+
+1174
+02:02:12,090 --> 02:02:13,770
+ For example, this question here.
+
+1175
+02:02:14,210 --> 02:02:26,820
+ Which listings are inside mom and also have room for four or more guests, right?
+
+1176
+02:02:26,820 --> 02:02:29,530
+ So, that is kind of two conditions, right?
+
+1177
+02:02:31,120 --> 02:02:33,520
+ And the role has to fulfill both.
+
+1178
+02:02:34,520 --> 02:02:39,080
+ So, in normal Python, you would combine two conditions with the word and.
+
+1179
+02:02:40,060 --> 02:02:43,420
+ So, let's do exactly that and see what happens.
+
+1180
+02:02:44,150 --> 02:02:46,710
+ And, of course, it will not work.
+
+1181
+02:02:47,310 --> 02:02:50,950
+ So, so, let's take it step by step.
+
+1182
+02:02:51,400 --> 02:02:57,600
+ So, listings, listings, right?
+
+1183
+02:02:59,550 --> 02:03:39,360
+ Neighborhood cleansed equals their malms and listings and versus greater equal to.
+
+1184
+02:03:41,360 --> 02:03:48,030
+ So, the neighborhood is at the malm and the listing has room for four or more.
+
+1185
+02:03:48,030 --> 02:03:54,310
+ And, like you see here, I'm combining them with and the way we would do in normal Python.
+
+1186
+02:03:56,210 --> 02:04:00,520
+ And if we run this, we see that we get a value error.
+
+1187
+02:04:00,700 --> 02:04:06,060
+ And if we look at the bottom here, the truth value of a series is ambiguous.
+
+1188
+02:04:09,700 --> 02:04:12,210
+ So, we don't panic here.
+
+1189
+02:04:12,690 --> 02:04:13,410
+ Errors are normal.
+
+1190
+02:04:13,710 --> 02:04:14,580
+ It will happen.
+
+1191
+02:04:14,960 --> 02:04:16,020
+ You will see them a lot.
+
+1192
+02:04:17,020 --> 02:04:20,190
+ So, the trick is to know how to read them.
+
+1193
+02:04:20,250 --> 02:04:24,000
+ And, actually, that's part of your lab today as well.
+
+1194
+02:04:25,270 --> 02:04:27,200
+ So, we look at the bottom line first.
+
+1195
+02:04:27,670 --> 02:04:29,270
+ We see that we get a value error.
+
+1196
+02:04:30,370 --> 02:04:32,310
+ The truth value of a series is ambiguous.
+
+1197
+02:04:32,700 --> 02:04:33,790
+ That is the message.
+
+1198
+02:04:34,790 --> 02:04:44,690
+ And, the long block above shows us where in the code, where inside Pandas the error actually happened.
+
+1199
+02:04:45,500 --> 02:04:48,330
+ So, we don't need to read that part right now.
+
+1200
+02:04:48,890 --> 02:04:50,690
+ But, what does this message actually mean?
+
+1201
+02:04:51,070 --> 02:04:59,150
+ Well, the word and in Python is built for one true or false on each side.
+
+1202
+02:04:59,150 --> 02:05:10,840
+ But, now, we actually, here, we have a whole column with 4,574 answers, right?
+
+1203
+02:05:11,760 --> 02:05:15,840
+ And, Python does not know what to do with that.
+
+1204
+02:05:17,770 --> 02:05:26,280
+ So, is a column of 4,574 values true or false?
+
+1205
+02:05:26,710 --> 02:05:28,680
+ Well, we cannot decide, obviously.
+
+1206
+02:05:28,680 --> 02:05:38,000
+ So, it will say to us, ambiguous, which means it could mean several things, right?
+
+1207
+02:05:39,770 --> 02:05:48,210
+ So, and the message also suggests things like any or all.
+
+1208
+02:05:49,270 --> 02:05:50,990
+ And, those are not what we want.
+
+1209
+02:05:51,850 --> 02:05:57,670
+ So, we do not want one answer for the whole column.
+
+1210
+02:05:58,000 --> 02:06:00,150
+ We want the combination row by row.
+
+1211
+02:06:00,320 --> 02:06:05,810
+ So, is the listings in Söder Malm and big enough?
+
+1212
+02:06:07,560 --> 02:06:11,730
+ So, for that, we actually need a different tool, okay?
+
+1213
+02:06:13,010 --> 02:06:17,570
+ So, how we would write that, and I'm actually going to start fresh.
+
+1214
+02:06:17,750 --> 02:06:20,010
+ I'm actually not going to copy and modify.
+
+1215
+02:06:20,950 --> 02:06:36,780
+ So, what we do is to write like this, listings, listings, and I'm going to take it step by step in a second.
+
+1216
+02:06:37,170 --> 02:06:45,300
+ Maybe it cleansed, gloss, Söder Malms.
+
+1217
+02:06:45,300 --> 02:06:50,400
+ And that's annoying that it actually says Söder Malm and not Söder Malm.
+
+1218
+02:06:51,860 --> 02:06:56,780
+ And, well, I didn't choose that, obviously.
+
+1219
+02:06:58,200 --> 02:07:15,510
+ Listings, accommodates, also not listing.
+
+1220
+02:07:16,810 --> 02:07:17,430
+ All right.
+
+1221
+02:07:17,930 --> 02:07:23,360
+ So, what have we changed compared to the cell that actually failed?
+
+1222
+02:07:24,340 --> 02:07:27,960
+ We can just clear the outputs here.
+
+1223
+02:07:30,070 --> 02:07:32,860
+ And became and like this.
+
+1224
+02:07:34,650 --> 02:07:39,640
+ So, this is the pandas version of and, and it goes row by row.
+
+1225
+02:07:40,760 --> 02:07:46,810
+ And each condition, as you see here, is wrapped in its own parentheses.
+
+1226
+02:07:50,230 --> 02:07:59,100
+ And, of course, I just made a note before, so you can take this.
+
+1227
+02:08:02,070 --> 02:08:02,690
+ There we go.
+
+1228
+02:08:03,250 --> 02:08:06,690
+ So, and means and, and, yeah, that means or, and that means not.
+
+1229
+02:08:06,850 --> 02:08:07,130
+ All right.
+
+1230
+02:08:08,310 --> 02:08:13,630
+ And now let's run this, see what happens.
+
+1231
+02:08:14,840 --> 02:08:16,330
+ Okay, since we're making it bigger.
+
+1232
+02:08:17,010 --> 02:08:17,480
+ Okay.
+
+1233
+02:08:18,210 --> 02:08:22,710
+ So, what we see here, if I scroll down, it works.
+
+1234
+02:08:23,210 --> 02:08:28,250
+ First of all, we see that we get 454 rows and 84 columns.
+
+1235
+02:08:28,610 --> 02:08:38,500
+ So, 454, 454 listings are in Söder Malm and have room for four or more.
+
+1236
+02:08:42,770 --> 02:08:42,930
+ All right.
+
+1237
+02:08:43,580 --> 02:08:53,520
+ So, if we see how, how, how that fits together, well, each condition on its own, well, makes a mask, right?
+
+1238
+02:08:54,030 --> 02:09:05,980
+ So, the first mask would be Söder Malm has 1,000, in this case would be that 1,145, we said, right?
+
+1239
+02:09:06,240 --> 02:09:06,940
+ Two values.
+
+1240
+02:09:08,900 --> 02:09:18,040
+ When we looked at the, described, Söder Malm was the most common neighborhood with 1,145 listings, right?
+
+1241
+02:09:18,040 --> 02:09:28,860
+ And the second mask, four or more guests, had 2,169 true values, right?
+
+1242
+02:09:29,220 --> 02:09:32,360
+ And I think we saw that number a few minutes ago.
+
+1243
+02:09:33,270 --> 02:09:46,490
+ So, the and here goes through both masks row by row, and the result is true only where both are true.
+
+1244
+02:09:46,490 --> 02:10:03,100
+ So, that leaves us with 454 rows, about 40% of the listings in Söder Malm are big enough for four.
+
+1245
+02:10:05,640 --> 02:10:05,940
+ So, yeah.
+
+1246
+02:10:09,510 --> 02:10:17,000
+ And remember the rule, one pair of parentheses around each conditions, okay?
+
+1247
+02:10:20,470 --> 02:10:40,020
+ So far, we have made masks with comparisons, just like equals and so on, but Pandas has a few more helpers that make common filters shorter.
+
+1248
+02:10:40,020 --> 02:10:51,690
+ And I'm going to actually show you four of them, and each case, we again count the true values with sum, just like before, okay?
+
+1249
+02:10:52,850 --> 02:10:57,270
+ And I've actually prepared some notes for you here, which you can use, of course.
+
+1250
+02:10:59,200 --> 02:11:07,290
+ Let me just, yes.
+
+1251
+02:11:10,480 --> 02:11:16,940
+ So, isIn is the value in a list.
+
+1252
+02:11:18,140 --> 02:11:25,560
+ It is much shorter than writing one condition for every value and joining them with, I always forget the symbols.
+
+1253
+02:11:26,280 --> 02:11:28,390
+ Between is a number between two values.
+
+1254
+02:11:29,580 --> 02:11:35,210
+ The not sign, it turns every true into false, and other way around.
+
+1255
+02:11:36,010 --> 02:11:38,780
+ And then we have isna, is the value missing.
+
+1256
+02:11:38,920 --> 02:11:44,190
+ And we're going to meet is in between isna a lot along the way.
+
+1257
+02:11:47,110 --> 02:12:24,600
+ Let's actually give you this, actually, that I wanted to show you, so I don't need to write it again.
+
+1258
+02:12:26,270 --> 02:12:27,810
+ It needs just a little bit of help.
+
+1259
+02:12:27,890 --> 02:12:38,790
+ We're not going to dive into it too much, if you ever want to look at that, if it's over.
+
+1260
+02:12:41,890 --> 02:12:42,230
+ All right.
+
+1261
+02:12:42,650 --> 02:12:45,860
+ So, just some useful helpers.
+
+1262
+02:12:46,560 --> 02:12:56,720
+ So, is the value in this list between two and four?
+
+1263
+02:12:57,830 --> 02:13:04,150
+ So, both ends included, actually, not in the entire home.
+
+1264
+02:13:07,180 --> 02:13:08,140
+ So, missing ratings.
+
+1265
+02:13:09,400 --> 02:13:11,410
+ So, let's take a look at that.
+
+1266
+02:13:12,620 --> 02:13:19,210
+ So, 1,911 listings, well, are in one to three central neighborhoods.
+
+1267
+02:13:19,470 --> 02:13:21,970
+ So, the Malm, and we have a little bit more.
+
+1268
+02:13:22,270 --> 02:13:23,730
+ So, the Malm, the Malm, the Malm.
+
+1269
+02:13:24,870 --> 02:13:27,860
+ And that is more than, well, four out of ten, right?
+
+1270
+02:13:28,390 --> 02:13:33,230
+ So, without is in, we would have had to write three conditions.
+
+1271
+02:13:33,530 --> 02:13:43,970
+ And join them with this side, or.
+
+1272
+02:13:48,060 --> 02:13:55,350
+ And the 2,968 listings have room for between two and four guests.
+
+1273
+02:13:55,990 --> 02:14:01,600
+ And maybe you can notice here that we're using between, which includes both ends.
+
+1274
+02:14:02,850 --> 02:14:06,150
+ So, two, three, and four are all counted.
+
+1275
+02:14:07,370 --> 02:14:07,610
+ Okay.
+
+1276
+02:14:07,810 --> 02:14:09,130
+ So, a little bit different here, right?
+
+1277
+02:14:09,130 --> 02:14:11,720
+ And that is, maybe.
+
+1278
+02:14:13,700 --> 02:14:16,750
+ I've actually already calculated this before the list.
+
+1279
+02:14:16,870 --> 02:14:19,690
+ So, 65% of all the listings.
+
+1280
+02:14:21,420 --> 02:14:24,920
+ 814 are not entire homes.
+
+1281
+02:14:26,250 --> 02:14:33,910
+ That is the mask from before, with the not sign in front.
+
+1282
+02:14:36,110 --> 02:14:40,410
+ The mask, because we have already used mask before, if you remember, when we created it.
+
+1283
+02:14:42,140 --> 02:14:44,250
+ So, yeah.
+
+1284
+02:14:44,430 --> 02:14:47,710
+ You can check it again with what we already know.
+
+1285
+02:14:49,020 --> 02:15:03,540
+ So, we know that 3,760 entire homes plus the 814 gives us the total 4,574, which we always come back to, which is realistic, right?
+
+1286
+02:15:04,570 --> 02:15:09,440
+ So, not gives us exactly the rows that were actually left out.
+
+1287
+02:15:10,570 --> 02:15:14,500
+ So, that's quite useful as well, if we want to look at the opposite of some.
+
+1288
+02:15:14,500 --> 02:15:22,870
+ So, and 644 here have no ratings.
+
+1289
+02:15:23,730 --> 02:15:24,150
+ So, yeah.
+
+1290
+02:15:26,600 --> 02:15:32,800
+ Isna is true where a value is actually missing, right?
+
+1291
+02:15:34,260 --> 02:15:50,020
+ And if you remember, that count, for ratings, we had 3,930 when we used the scribe, right?
+
+1292
+02:15:51,380 --> 02:15:59,730
+ So, 4,574 minus that 3,930, that would give us the 644.
+
+1293
+02:16:00,360 --> 02:16:00,980
+ So, yeah.
+
+1294
+02:16:01,560 --> 02:16:02,620
+ So, it's the same number.
+
+1295
+02:16:02,800 --> 02:16:04,100
+ We just found it in a different way.
+
+1296
+02:16:04,100 --> 02:16:13,010
+ So, missing values, as you see, is something we have run into several times a day.
+
+1297
+02:16:13,560 --> 02:16:28,190
+ But like I said, on Thursday, at the end of this week, we will learn what to do about them and then implement those tools into this data.
+
+1298
+02:16:30,510 --> 02:16:31,660
+ Okay.
+
+1299
+02:16:32,020 --> 02:16:34,280
+ We are reaching the end of the lesson.
+
+1300
+02:16:35,030 --> 02:16:51,230
+ So, one of the last things that I want to talk about is how we sort and pick rows and columns.
+
+1301
+02:16:51,510 --> 02:16:56,220
+ Not that complicated at all, but we take it step by step.
+
+1302
+02:16:58,950 --> 02:17:02,980
+ So, let's do some sorting.
+
+1303
+02:17:04,380 --> 02:17:11,540
+ A very common question about data is which one is the biggest, the smallest, the most popular?
+
+1304
+02:17:12,380 --> 02:17:15,320
+ And to answer that, well, we sort the table.
+
+1305
+02:17:16,640 --> 02:17:19,120
+ So, in SQL, that would be equivalent to order by, right?
+
+1306
+02:17:20,140 --> 02:17:22,160
+ So, one practical thing first.
+
+1307
+02:17:22,920 --> 02:17:27,270
+ Our table actually has 84 columns, which is too wide to read.
+
+1308
+02:17:27,770 --> 02:17:33,510
+ So, before we sort, I will make a list of six columns I actually want to see.
+
+1309
+02:17:33,860 --> 02:17:39,670
+ And I will just call that, actually, I will call that view.
+
+1310
+02:17:41,110 --> 02:17:42,070
+ All right.
+
+1311
+02:17:43,420 --> 02:17:47,940
+ And then we can look at the result later.
+
+1312
+02:17:48,740 --> 02:17:50,740
+ So, the ones I want to use is name.
+
+1313
+02:17:51,640 --> 02:17:56,620
+ I want to use, let's put it in there.
+
+1314
+02:17:56,880 --> 02:17:59,770
+ Or the selection.
+
+1315
+02:18:01,130 --> 02:19:05,830
+ Name, neighborhood, cleansed, room, type, com, date, date, number of views, scores, things.
+
+1316
+02:19:07,450 --> 02:19:09,310
+ No, it's actually called rating, not ratings.
+
+1317
+02:19:12,730 --> 02:19:13,330
+ Scores.
+
+1318
+02:19:13,940 --> 02:19:14,100
+ Yeah.
+
+1319
+02:19:14,490 --> 02:19:14,870
+ All right.
+
+1320
+02:19:17,180 --> 02:19:27,360
+ And then I'm going to write listings, views, view.
+
+1321
+02:19:28,480 --> 02:19:42,930
+ I want to sort the values, views.
+
+1322
+02:19:44,060 --> 02:20:13,180
+ And I'm actually also going to write sending calls.
+
+1323
+02:20:14,880 --> 02:20:17,630
+ We're going to put the head.
+
+1324
+02:20:18,230 --> 02:20:24,370
+ And what am I trying to do here?
+
+1325
+02:20:24,740 --> 02:20:25,410
+ It's just right.
+
+1326
+02:20:26,250 --> 02:20:32,640
+ So, we're trying to find the five listings with the most reviews.
+
+1327
+02:20:35,590 --> 02:20:40,350
+ So, keep only the only six columns that I want to see.
+
+1328
+02:20:41,090 --> 02:20:43,370
+ One, two, three, four, five, six.
+
+1329
+02:20:43,650 --> 02:20:43,790
+ Right.
+
+1330
+02:20:46,270 --> 02:20:50,560
+ Sort by number of reviews.
+
+1331
+02:20:51,230 --> 02:20:51,830
+ Right.
+
+1332
+02:20:52,130 --> 02:20:53,130
+ Sort by number of reviews.
+
+1333
+02:20:53,330 --> 02:20:54,070
+ Ascending false.
+
+1334
+02:20:54,290 --> 02:20:55,750
+ So, biggest first.
+
+1335
+02:20:56,910 --> 02:20:58,850
+ And show only the first five rows.
+
+1336
+02:21:00,070 --> 02:21:00,460
+ All right.
+
+1337
+02:21:00,460 --> 02:21:13,780
+ So, when we run this, if we look at number of reviews here, it goes down.
+
+1338
+02:21:14,490 --> 02:21:16,410
+ From top to bottom.
+
+1339
+02:21:17,500 --> 02:21:18,740
+ And that is the sort, right?
+
+1340
+02:21:20,410 --> 02:21:24,230
+ So, these are the five listings with the most reviews, of course.
+
+1341
+02:21:24,960 --> 02:21:28,410
+ So, the top one has 1,293 reviews.
+
+1342
+02:21:28,860 --> 02:21:36,020
+ And then 867, 855, 754, 734.
+
+1343
+02:21:36,910 --> 02:21:43,880
+ And if we look at the ratings, 4.5, 4.46, 4.93, and so on.
+
+1344
+02:21:43,880 --> 02:21:51,490
+ All of them are high, even for the popular listings.
+
+1345
+02:21:52,520 --> 02:21:53,360
+ So, yeah.
+
+1346
+02:21:53,460 --> 02:21:55,160
+ We can keep that in mind a little bit.
+
+1347
+02:21:57,550 --> 02:22:01,030
+ Because we will come back to it on Thursday next week.
+
+1348
+02:22:02,640 --> 02:22:12,720
+ And also, the first listing is a studio for two, right?
+
+1349
+02:22:14,510 --> 02:22:19,370
+ And the second one, well, is a bed in a dorm.
+
+1350
+02:22:21,420 --> 02:22:27,490
+ So, that means something, well, a conclusion that we can draw here is that listings with the
+
+1351
+02:22:27,490 --> 02:22:32,730
+ most reviews are not the big, fancy places or anything like that.
+
+1352
+02:22:33,810 --> 02:22:35,930
+ And what do you think, guys?
+
+1353
+02:22:35,930 --> 02:22:36,690
+ Is that a coincidence?
+
+1354
+02:22:37,540 --> 02:22:45,860
+ Well, maybe it's just that small, cheap places get booked more often.
+
+1355
+02:22:47,150 --> 02:22:49,810
+ And everyone just can leave a review, right?
+
+1356
+02:22:50,510 --> 02:22:53,120
+ So, we cannot tell anything from this table.
+
+1357
+02:22:54,130 --> 02:22:55,920
+ But it's a good thing to ask, right?
+
+1358
+02:22:57,480 --> 02:23:00,600
+ Now, what if we want to sort two things?
+
+1359
+02:23:03,300 --> 02:23:04,440
+ Let's try that as well.
+
+1360
+02:23:06,550 --> 02:23:18,890
+ So, listings, view, sort, values.
+
+1361
+02:23:19,710 --> 02:23:23,380
+ And I simply can just do in one single line, right?
+
+1362
+02:23:23,860 --> 02:23:56,290
+ So, accommodates and reviews, sending, and I can post, false.
+
+1363
+02:23:58,820 --> 02:24:05,470
+ And then, and let's put just for a second.
+
+1364
+02:24:05,840 --> 02:24:07,090
+ So, what am I trying to do here?
+
+1365
+02:24:07,090 --> 02:24:14,130
+ Find the biggest listings, and among equally big ones, right?
+
+1366
+02:24:14,410 --> 02:24:15,820
+ The most reviewed.
+
+1367
+02:24:17,490 --> 02:24:24,530
+ So, first, sort by accommodates, right?
+
+1368
+02:24:25,940 --> 02:24:34,240
+ So, when two rows have the same value, sort those on number of reviews.
+
+1369
+02:24:34,580 --> 02:24:37,230
+ So, the order here matters.
+
+1370
+02:24:39,050 --> 02:24:44,470
+ And you see that we said false, false here.
+
+1371
+02:24:44,810 --> 02:24:47,030
+ So, one true, false for each column.
+
+1372
+02:24:48,100 --> 02:24:52,370
+ Biggest first for both, right?
+
+1373
+02:24:54,660 --> 02:24:57,960
+ So, let's see here.
+
+1374
+02:24:58,240 --> 02:25:00,480
+ Something accommodates.
+
+1375
+02:25:05,370 --> 02:25:18,370
+ So, all listings have room for 16 guests, all right?
+
+1376
+02:25:19,550 --> 02:25:21,250
+ So, that's the first sort.
+
+1377
+02:25:23,290 --> 02:25:24,770
+ The biggest first, right?
+
+1378
+02:25:25,460 --> 02:25:32,740
+ But a lot of listings have room for exactly, since both have exactly for 16.
+
+1379
+02:25:33,980 --> 02:25:36,460
+ Actually, in fact, there are 11.
+
+1380
+02:25:36,560 --> 02:25:37,700
+ I've already looked that up.
+
+1381
+02:25:38,160 --> 02:25:41,740
+ So, it's not only these that have accommodates for 16.
+
+1382
+02:25:42,110 --> 02:25:42,990
+ There's 11 of them.
+
+1383
+02:25:44,080 --> 02:25:47,120
+ So, how does actually Pandas choose the order between them?
+
+1384
+02:25:47,610 --> 02:25:52,330
+ Well, that is where the second column comes in, the number of reviews.
+
+1385
+02:25:53,050 --> 02:25:58,880
+ So, among the listings with 16 guests, the ones with the most reviews actually comes first.
+
+1386
+02:26:00,080 --> 02:26:04,980
+ So, 344, then 308, 27, 17, 10, and so on.
+
+1387
+02:26:07,730 --> 02:26:11,340
+ And, yeah, we see that the number goes down.
+
+1388
+02:26:13,790 --> 02:26:22,970
+ So, the rule is the first column decides, and the second column, when the first one is a tie, right?
+
+1389
+02:26:25,610 --> 02:26:31,300
+ There is actually a shortcut for the top five.
+
+1390
+02:26:31,780 --> 02:26:33,660
+ Sorry, top few, not top five.
+
+1391
+02:26:34,050 --> 02:26:37,220
+ Top few case, which we do all the time.
+
+1392
+02:26:37,460 --> 02:26:39,240
+ And it looks like something like this.
+
+1393
+02:26:42,080 --> 02:26:42,600
+ Listings.
+
+1394
+02:26:44,820 --> 02:26:48,840
+ And we put something in largest, right?
+
+1395
+02:26:50,670 --> 02:26:52,050
+ Let's put the five here.
+
+1396
+02:26:57,940 --> 02:27:03,600
+ And then view, right?
+
+1397
+02:27:04,460 --> 02:27:05,840
+ There we go.
+
+1398
+02:27:06,100 --> 02:27:07,020
+ And let's run this.
+
+1399
+02:27:08,270 --> 02:27:14,450
+ And, yeah, again, five listings with the room of 16.
+
+1400
+02:27:15,780 --> 02:27:24,700
+ This is not the same list as before, because we had, well, a large town at the top.
+
+1401
+02:27:25,350 --> 02:27:27,050
+ And now it's not a large town at the top.
+
+1402
+02:27:27,260 --> 02:27:32,910
+ Now it's Stockholm House, close to fair, close to fair in town.
+
+1403
+02:27:34,360 --> 02:27:37,800
+ So, it's a little bit different from before.
+
+1404
+02:27:38,160 --> 02:27:38,760
+ And why is that?
+
+1405
+02:27:38,880 --> 02:27:42,500
+ Well, because the 11 listings share the same number, 16, right?
+
+1406
+02:27:43,460 --> 02:27:45,180
+ And we only asked for five.
+
+1407
+02:27:46,060 --> 02:27:51,220
+ There's no rule here for choosing between listings that are tied.
+
+1408
+02:27:51,220 --> 02:27:56,000
+ So, Panda simply takes the one that comes first in our table.
+
+1409
+02:27:59,240 --> 02:28:07,670
+ So, in our earlier sort, we told it how to break the tie with the number of reviews.
+
+1410
+02:28:08,330 --> 02:28:09,550
+ And here, we did not.
+
+1411
+02:28:10,130 --> 02:28:11,370
+ So, it's a big difference, right?
+
+1412
+02:28:12,450 --> 02:28:18,350
+ And also, if you notice the last two rows here, they have zero reviews.
+
+1413
+02:28:19,710 --> 02:28:24,350
+ And the rating says none or not a number.
+
+1414
+02:28:26,080 --> 02:28:29,950
+ So, yeah, listing with no reviews has no rating, right?
+
+1415
+02:28:32,590 --> 02:28:43,320
+ And those are actually the part of the 644 missing ratings we counted before, right?
+
+1416
+02:28:43,780 --> 02:28:53,660
+ So, the lesson here is just if there are ties and the order matters, well, add a second column to sort by.
+
+1417
+02:28:53,660 --> 02:29:24,010
+ And if we look at this, so, if we look at the numbers on the far left here, on the table that we just made, 825, 997, 15, and 417, and 596, well, that is an index.
+
+1418
+02:29:25,070 --> 02:29:34,780
+ So, it is a number or a label that every row carries around with it, like name tag, right?
+
+1419
+02:29:34,960 --> 02:29:37,980
+ And I'm pretty sure that you already know what an index is.
+
+1420
+02:29:38,740 --> 02:29:45,940
+ So, when we first loaded the table, the index was simply 0, 1, 2, 3, and so on, one for each row.
+
+1421
+02:29:46,370 --> 02:29:51,460
+ But when we sort of filter, the row keeps its own name tag, of course.
+
+1422
+02:29:53,040 --> 02:29:55,760
+ So, that's why the top is still called 825.
+
+1423
+02:29:56,090 --> 02:29:58,570
+ The top here is called 892, and so on.
+
+1424
+02:30:01,220 --> 02:30:06,770
+ So, that actually gives us two different ways to point at the row.
+
+1425
+02:30:07,270 --> 02:30:09,950
+ We can point to that by label.
+
+1426
+02:30:09,950 --> 02:30:15,470
+ So, give me the row called 825, or by position.
+
+1427
+02:30:15,860 --> 02:30:20,480
+ Give me the first row, whatever it is called, right?
+
+1428
+02:30:23,400 --> 02:30:28,200
+ And we can actually try both on our top five.
+
+1429
+02:30:30,500 --> 02:30:31,200
+ Let's try that out.
+
+1430
+02:30:33,920 --> 02:31:21,980
+ So, and then print top, I'll follow you just blindly here, 825 name.
+
+1431
+02:31:21,980 --> 02:31:36,040
+ And here, we're going to say, e-lock, and we'll write it a little differently.
+
+1432
+02:31:36,740 --> 02:31:44,230
+ So, 0 and name, right?
+
+1433
+02:31:44,380 --> 02:31:47,160
+ So, what are we trying to do here?
+
+1434
+02:31:47,300 --> 02:31:52,270
+ Well, we're trying to get the name of the top listing in two different ways, right?
+
+1435
+02:31:53,010 --> 02:31:59,770
+ So, we're saving the five most previewed listings in a variable called top.
+
+1436
+02:32:01,610 --> 02:32:04,820
+ And here, we are using lock, right?
+
+1437
+02:32:04,820 --> 02:32:15,060
+ So, the row labeled 825, column called name.
+
+1438
+02:32:16,940 --> 02:32:22,980
+ And here is the row position, row position 0, the first one, right?
+
+1439
+02:32:23,540 --> 02:32:27,470
+ And the column called name, okay?
+
+1440
+02:32:28,750 --> 02:32:34,280
+ And notice here that lock and e-lock always uses square brackets, not parentheses.
+
+1441
+02:32:35,740 --> 02:32:43,780
+ So, both lines print the same name, studio, apartment, double bed.
+
+1442
+02:32:44,850 --> 02:32:51,190
+ We find, we found the same listings in two ways, right?
+
+1443
+02:32:52,480 --> 02:32:59,440
+ And here, they just happen to give the same answer because the row called 825 is also the first row.
+
+1444
+02:33:00,040 --> 02:33:02,090
+ But they're not the same thing, okay?
+
+1445
+02:33:05,410 --> 02:33:07,200
+ Yeah.
+
+1446
+02:33:07,860 --> 02:33:15,540
+ So, lock uses the name and e-lock uses the position.
+
+1447
+02:33:21,680 --> 02:33:24,300
+ And lock can actually do more than pick one row.
+
+1448
+02:33:24,960 --> 02:33:28,940
+ It can pick rows and columns in one go.
+
+1449
+02:33:34,950 --> 02:33:58,980
+ Listings, lock, listings, accommodate, 10, view.
+
+1450
+02:34:02,010 --> 02:34:08,460
+ So, what are we trying to do here?
+
+1451
+02:34:08,580 --> 02:34:19,410
+ Well, show the listings with room for 10 or more guests with only my six columns that I chose earlier in view, right?
+
+1452
+02:34:21,420 --> 02:34:28,430
+ Yeah.
+
+1453
+02:34:28,570 --> 02:34:30,290
+ So, let's try that out.
+
+1454
+02:34:31,710 --> 02:34:32,570
+ And there we go.
+
+1455
+02:34:33,350 --> 02:34:37,290
+ So, here are the first five listings with room for 10 or more.
+
+1456
+02:34:37,290 --> 02:34:55,370
+ A big one with 16, 16, and a few villas, family house for 12 also.
+
+1457
+02:34:57,500 --> 02:34:57,720
+ Yeah.
+
+1458
+02:34:57,960 --> 02:35:02,680
+ So, that is sometimes useful.
+
+1459
+02:35:04,250 --> 02:35:07,880
+ But sometimes, it might look just messy.
+
+1460
+02:35:09,310 --> 02:35:16,260
+ And maybe we would like a clean 0, 1, 2 here.
+
+1461
+02:35:17,360 --> 02:35:20,510
+ And for that, there is a method that we could do.
+
+1462
+02:35:21,610 --> 02:35:23,330
+ And we will use the top here.
+
+1463
+02:35:26,930 --> 02:35:44,610
+ So, instead of having these indexes, sorry, instead of having the indexes that we saw before when using top, we're going to change it to 0, 0, 1, 2, 3, 4, and so on.
+
+1464
+02:35:45,930 --> 02:35:48,900
+ So, there is a method for that.
+
+1465
+02:35:49,410 --> 02:36:01,970
+ So, what we can do is top, yeah, reset, reset index, and then we just drop, and then we put it to true.
+
+1466
+02:36:03,340 --> 02:36:04,860
+ Yeah, that's it.
+
+1467
+02:36:05,760 --> 02:36:06,760
+ 0, 1, 2, 3, 4.
+
+1468
+02:36:07,020 --> 02:36:08,450
+ Same thing as we saw before.
+
+1469
+02:36:08,450 --> 02:36:15,930
+ So, the old names 825 and 997 and so on are gone.
+
+1470
+02:36:16,920 --> 02:36:24,120
+ But everything else is the same list or the same five listings in the same order.
+
+1471
+02:36:25,870 --> 02:36:29,740
+ So, we just wrote a drop true just to throw the old index away.
+
+1472
+02:36:33,360 --> 02:36:43,300
+ And if we have left this out, actually, if we dropped false or something like that, the pandas would keep the old numbers and put them in a new column.
+
+1473
+02:36:43,920 --> 02:36:45,400
+ So, we would get both of them.
+
+1474
+02:36:46,520 --> 02:36:48,600
+ So, we would have an extra column called index.
+
+1475
+02:36:48,600 --> 02:36:51,640
+ And we don't want that for now.
+
+1476
+02:36:57,310 --> 02:36:57,990
+ So, there you go.
+
+1477
+02:36:59,300 --> 02:37:03,810
+ Now, we can actually read the table.
+
+1478
+02:37:05,350 --> 02:37:13,670
+ We can look at its parts, pick columns, filter rows, sort, and point at specific rows.
+
+1479
+02:37:16,250 --> 02:37:20,250
+ And yeah, I think that's too much it.
+
+1480
+02:37:23,210 --> 02:37:29,410
+ And we could wrap it up with a question.
+
+1481
+02:37:30,300 --> 02:37:35,870
+ And I'm actually going to go through it because I will share this code if you want to look into it more.
+
+1482
+02:37:36,830 --> 02:37:37,670
+ You can do that.
+
+1483
+02:37:37,710 --> 02:37:48,880
+ But at the end of the lesson, I'm going to try to remember to always do a wrap it up question, which I have actually prepared for Lee.
+
+1484
+02:37:49,120 --> 02:37:50,880
+ And it looks like something like this.
+
+1485
+02:37:51,100 --> 02:37:55,640
+ And I've already prepared the answer as well.
+
+1486
+02:37:57,200 --> 02:37:58,550
+ So, there we go.
+
+1487
+02:37:58,550 --> 02:38:01,330
+ So, the question is to wrap up the whole lesson.
+
+1488
+02:38:01,590 --> 02:38:11,200
+ Inside the mall, among entire homes, for four or more guests, which five listings have the most reviews and how are they rated?
+
+1489
+02:38:12,370 --> 02:38:18,380
+ So, how would I write that in super speed?
+
+1490
+02:38:19,850 --> 02:38:23,960
+ Well, something like this.
+
+1491
+02:38:26,580 --> 02:38:32,330
+ So, the same four steps as in the list above.
+
+1492
+02:38:33,600 --> 02:38:35,710
+ One per block of code, right?
+
+1493
+02:38:36,030 --> 02:38:36,650
+ As you see.
+
+1494
+02:38:38,660 --> 02:38:48,140
+ So, we are picking the rows in order to fulfill all the three conditions that we have in the question.
+
+1495
+02:38:50,000 --> 02:38:54,090
+ We are sorting the values, right?
+
+1496
+02:38:54,640 --> 02:38:56,310
+ By number of reviews.
+
+1497
+02:38:56,910 --> 02:38:59,590
+ We want the biggest first, sending false.
+
+1498
+02:39:01,290 --> 02:39:02,590
+ Keep the top five.
+
+1499
+02:39:02,880 --> 02:39:05,120
+ We could have changed this to six or something like that.
+
+1500
+02:39:05,900 --> 02:39:07,820
+ Or we could have written anything.
+
+1501
+02:39:08,630 --> 02:39:10,430
+ I think that would be all right.
+
+1502
+02:39:11,560 --> 02:39:16,550
+ And show only these one, two, three, four columns.
+
+1503
+02:39:17,540 --> 02:39:20,690
+ And that would quite answer the question.
+
+1504
+02:39:23,380 --> 02:39:26,640
+ And then we might want to print it out as well so we can see it.
+
+1505
+02:39:27,360 --> 02:39:32,060
+ So, let's actually run this.
+
+1506
+02:39:34,230 --> 02:39:39,630
+ And then when we finish, try this question out yourself without looking at my answer.
+
+1507
+02:39:40,080 --> 02:39:43,280
+ That's a good check if you have been able to.
+
+1508
+02:39:43,280 --> 02:39:45,420
+ And that can help you also with the lab.
+
+1509
+02:39:45,800 --> 02:39:47,260
+ And I'm going to show you the lab in a second.
+
+1510
+02:39:48,730 --> 02:40:01,950
+ But what I want to say before we celebrate, because this answer doesn't actually tell us some things, right?
+
+1511
+02:40:02,240 --> 02:40:09,080
+ So, a table actually gives us a number, but it does not tell us what the number means, right?
+
+1512
+02:40:10,470 --> 02:40:21,950
+ So, if we look at two things here, a lot of reviews here does not actually tell us, does not mean automatically that it's the best, right?
+
+1513
+02:40:24,280 --> 02:40:28,290
+ So, because a review is only left by a guest who has stayed there.
+
+1514
+02:40:28,290 --> 02:40:37,760
+ So, a number of reviews is just measures how many guests have stayed and written something, not how good the place actually is.
+
+1515
+02:40:39,830 --> 02:40:47,940
+ So, a listing that has been on Airbnb for 10 years, well, would have collected 10 years of reviews.
+
+1516
+02:40:48,420 --> 02:40:55,830
+ And a brand new listing, even a wonderful one, would never reach maybe CF 734.
+
+1517
+02:40:58,330 --> 02:41:04,400
+ And our table here cannot tell us how long each listing has existed.
+
+1518
+02:41:06,390 --> 02:41:15,090
+ We actually have a column called the first review with the date of the review, but it's actually sorted as text.
+
+1519
+02:41:17,270 --> 02:41:19,490
+ So, we cannot calculate with it quite yet.
+
+1520
+02:41:19,930 --> 02:41:26,300
+ And that's something that we're going to learn when we're going to clean the data and come back to it.
+
+1521
+02:41:26,660 --> 02:41:33,360
+ So, yeah, when we read the table here, the honest sentence is, these are the best listings.
+
+1522
+02:41:34,530 --> 02:41:37,420
+ Sure, but is it really?
+
+1523
+02:41:37,960 --> 02:41:43,860
+ I would rather say, these are the listings that have collected the most reviews, not the best, not used the best, right?
+
+1524
+02:41:46,430 --> 02:41:49,450
+ And the ratings also hardly tells us anything.
+
+1525
+02:41:50,510 --> 02:41:53,750
+ 4.66, 4.58, 4.80, and so on.
+
+1526
+02:41:54,230 --> 02:41:55,070
+ They look different.
+
+1527
+02:41:56,310 --> 02:42:04,630
+ But if you remember the Scribe table from earlier, the average rating for all listings were 4.82, right?
+
+1528
+02:42:05,050 --> 02:42:09,450
+ So, the median, I think, was 4.92 or something like that.
+
+1529
+02:42:10,770 --> 02:42:14,670
+ And I think 75% of the rows said actually 5.
+
+1530
+02:42:15,030 --> 02:42:20,970
+ So, that means at least a quarter of all listings have a perfect score of 5.
+
+1531
+02:42:22,010 --> 02:42:24,920
+ So, almost everything is actually rated very high.
+
+1532
+02:42:24,920 --> 02:42:32,650
+ So, the difference between 4.51 and 4.80 is actually quite tiny, right?
+
+1533
+02:42:33,050 --> 02:42:34,300
+ Compared to the whole scale.
+
+1534
+02:42:35,910 --> 02:42:49,170
+ So, we cannot say that one is good and the other one is bad because when nearly everyone gets close to the top score, the score stops telling us good from bad.
+
+1535
+02:42:49,170 --> 02:42:54,550
+ And that's quite good for us to stumble on in this course.
+
+1536
+02:42:57,780 --> 02:43:00,170
+ And one more thing.
+
+1537
+02:43:00,170 --> 02:43:02,270
+ We looked at five rows, right?
+
+1538
+02:43:03,020 --> 02:43:18,110
+ Our filter found, well, earlier we found 499 listings in Southern Mound, entire homes, and it was for four or more guests.
+
+1539
+02:43:18,870 --> 02:43:26,510
+ So, the other 444 are actually not in the answer.
+
+1540
+02:43:26,510 --> 02:43:31,310
+ So, a table actually gives us an answer very quickly.
+
+1541
+02:43:32,250 --> 02:43:37,970
+ But it is our job to ask what the answer is really saying.
+
+1542
+02:43:39,780 --> 02:43:48,750
+ And we will actually practice that on next week when we do this on this table.
+
+1543
+02:43:50,680 --> 02:43:52,720
+ And yeah, that was pretty much it.
+
+1544
+02:43:54,800 --> 02:44:01,000
+ And before I actually end the lesson, like I said, longer lesson today.
+
+1545
+02:44:01,280 --> 02:44:06,940
+ It's going to get shorter along the way because we don't have the same preparations and so on.
+
+1546
+02:44:07,800 --> 02:44:13,260
+ But before I let you go, I actually want to show you the lab so there's no confusion.
+
+1547
+02:44:13,460 --> 02:44:14,780
+ So, please pay attention now.
+
+1548
+02:44:15,700 --> 02:44:18,710
+ So, there is no confusion, no panics.
+
+1549
+02:44:19,650 --> 02:44:24,920
+ Let me just stop sharing because I think I'm only sharing one particular window.
+
+1550
+02:44:26,900 --> 02:44:27,440
+ Or, yeah.
+
+1551
+02:44:28,320 --> 02:44:31,830
+ So, let me actually share the whole screen.
+
+1552
+02:44:33,590 --> 02:44:35,270
+ And let me just show you the lab.
+
+1553
+02:44:36,350 --> 02:44:39,430
+ I haven't uploaded it yet, so you can't find it quite yet.
+
+1554
+02:44:42,000 --> 02:44:43,960
+ But the lab for today looks like this.
+
+1555
+02:44:43,980 --> 02:44:45,420
+ And I'm going to read it together with you guys.
+
+1556
+02:44:46,180 --> 02:44:50,060
+ So, today, well, we started on a new area.
+
+1557
+02:44:50,060 --> 02:44:53,200
+ And it can feel confusing at first.
+
+1558
+02:44:53,280 --> 02:44:54,480
+ So, I understand.
+
+1559
+02:44:54,910 --> 02:44:58,070
+ It can feel confusing at first, especially if it's news for you.
+
+1560
+02:44:58,430 --> 02:45:00,570
+ This is the first time doing it and so on.
+
+1561
+02:45:00,870 --> 02:45:03,470
+ So, we introduced Jupyter Notebooks.
+
+1562
+02:45:04,090 --> 02:45:07,550
+ We introduced Pandas for the first time and so on.
+
+1563
+02:45:07,900 --> 02:45:12,470
+ Therefore, this lab, and this is going to be for the whole week, actually.
+
+1564
+02:45:13,210 --> 02:45:16,810
+ So, this lab for this week, and we will see how we will do next week.
+
+1565
+02:45:16,850 --> 02:45:22,040
+ I will talk to some of you guys and pick some info from you guys.
+
+1566
+02:45:22,560 --> 02:45:27,850
+ So, this lab has two parts, and you choose.
+
+1567
+02:45:27,850 --> 02:45:36,370
+ So, if one just looks directly, four pages, a lot of questions, maybe a little bit of panic.
+
+1568
+02:45:36,590 --> 02:45:37,910
+ Oh, my God, do I need to do all of this?
+
+1569
+02:45:38,050 --> 02:45:38,310
+ No.
+
+1570
+02:45:38,730 --> 02:45:39,390
+ You choose.
+
+1571
+02:45:40,140 --> 02:45:43,640
+ So, you have a part one, which I call practice.
+
+1572
+02:45:44,490 --> 02:45:51,180
+ It repeats every step we did today, but with other columns and other questions.
+
+1573
+02:45:52,990 --> 02:45:55,080
+ Principle is the same.
+
+1574
+02:45:56,340 --> 02:46:06,290
+ So, do this part if you want to try all the steps once, once more, and feel sure about them.
+
+1575
+02:46:08,520 --> 02:46:10,040
+ And then we have a part two.
+
+1576
+02:46:10,570 --> 02:46:11,580
+ You can go deeper.
+
+1577
+02:46:13,380 --> 02:46:18,880
+ And this is for you who felt, well, I understood this, and I want to go further.
+
+1578
+02:46:19,750 --> 02:46:23,750
+ The questions here are more open, and you combine the tools from today.
+
+1579
+02:46:24,310 --> 02:46:27,680
+ So, I do not expect you to do both parts.
+
+1580
+02:46:28,140 --> 02:46:29,270
+ It is your own choice.
+
+1581
+02:46:30,360 --> 02:46:31,160
+ Can you do both?
+
+1582
+02:46:31,520 --> 02:46:31,920
+ Sure.
+
+1583
+02:46:31,920 --> 02:46:34,280
+ If you find time enough to do it, sure.
+
+1584
+02:46:35,030 --> 02:46:37,650
+ And on Friday, we might have a little bit of catch-up.
+
+1585
+02:46:37,770 --> 02:46:40,250
+ So, you can also save a little bit for Friday.
+
+1586
+02:46:41,330 --> 02:46:44,350
+ Because, yeah, most certainly, we will have a little bit of catch-up.
+
+1587
+02:46:47,090 --> 02:46:52,210
+ And you're also welcome to contact me if you want to talk about which part to take.
+
+1588
+02:46:52,310 --> 02:46:54,050
+ So, sometimes it's not black and white.
+
+1589
+02:46:54,170 --> 02:46:54,950
+ I understand that.
+
+1590
+02:46:55,350 --> 02:46:58,910
+ So, sometimes I might say, well, I was a little bit confused.
+
+1591
+02:46:59,010 --> 02:47:00,850
+ Should I do some of the practice and then go?
+
+1592
+02:47:01,090 --> 02:47:01,530
+ Sure.
+
+1593
+02:47:02,250 --> 02:47:03,350
+ We can discuss it.
+
+1594
+02:47:03,890 --> 02:47:06,910
+ So, there might be a special case for just you.
+
+1595
+02:47:07,640 --> 02:47:09,360
+ So, just contact me and we can discuss it.
+
+1596
+02:47:09,930 --> 02:47:12,540
+ And, of course, you work in your own notebook and so on.
+
+1597
+02:47:13,170 --> 02:47:15,550
+ And then there's some descriptions of what to do.
+
+1598
+02:47:16,070 --> 02:47:16,910
+ And the questions.
+
+1599
+02:47:17,550 --> 02:47:21,210
+ And wrong on purpose and so on.
+
+1600
+02:47:21,730 --> 02:47:22,890
+ And what is expected.
+
+1601
+02:47:23,580 --> 02:47:25,980
+ Same thing for Go Deeper.
+
+1602
+02:47:26,780 --> 02:47:29,510
+ So, you choose which one you want to do.
+
+1603
+02:47:31,730 --> 02:47:33,080
+ And I will upload the lab.
+
+1604
+02:47:33,220 --> 02:47:34,240
+ But now it's time for lunch.
+
+1605
+02:47:34,820 --> 02:47:36,520
+ So, first of all, take lunch.
+
+1606
+02:47:36,740 --> 02:47:38,640
+ And then you can start with the lab.
+
+1607
+02:47:38,900 --> 02:47:40,500
+ Choose the lab that you want to work with.
+
+1608
+02:47:40,660 --> 02:47:41,200
+ Lab one.
+
+1609
+02:47:42,540 --> 02:47:44,530
+ Either the practice or go deeper.
+
+1610
+02:47:46,980 --> 02:47:47,640
+ All right, guys.
+
+1611
+02:47:50,030 --> 02:47:50,790
+ Longer lesson today.
+
+1612
+02:47:50,870 --> 02:47:51,290
+ I understand.
+
+1613
+02:47:51,700 --> 02:47:54,140
+ But sometimes you do have longer lessons.
+
+1614
+02:47:54,300 --> 02:47:55,480
+ And sometimes they're shorter.
+
+1615
+02:47:56,380 --> 02:47:57,900
+ Any questions before I let you go?
+
+1616
+02:47:59,680 --> 02:48:01,440
+ Any questions about the lab, first of all?
+
+1617
+02:48:07,110 --> 02:48:09,150
+ You just want me to be quiet now.
+
+1618
+02:48:09,270 --> 02:48:10,990
+ So, you can't go too much.
+
+1619
+02:48:11,670 --> 02:48:12,170
+ Oh, no.
+
+1620
+02:48:12,270 --> 02:48:13,770
+ Actually, I have a question.
+
+1621
+02:48:14,410 --> 02:48:21,110
+ You have some notes that you copied and pasted into the editor.
+
+1622
+02:48:23,470 --> 02:48:26,510
+ Are you going to share those notes?
+
+1623
+02:48:28,100 --> 02:48:31,510
+ Those are all my notes that I actually have.
+
+1624
+02:48:33,170 --> 02:48:38,640
+ And, of course, I have a little, you could say, a cheat sheet that I follow.
+
+1625
+02:48:38,820 --> 02:48:43,570
+ But, yeah, those notes would make no sense to you, to you guys.
+
+1626
+02:48:44,270 --> 02:48:44,810
+ It's more...
+
+1627
+02:48:44,810 --> 02:48:45,270
+ No, no.
+
+1628
+02:48:45,310 --> 02:48:48,090
+ I mean, like, about this data.
+
+1629
+02:48:48,700 --> 02:48:49,440
+ Oh, yeah, yeah, yeah.
+
+1630
+02:48:49,820 --> 02:48:50,420
+ Oh, okay.
+
+1631
+02:48:50,420 --> 02:48:57,470
+ Everything, everything that I've written here, I'm actually going to share that in, if you
+
+1632
+02:48:57,470 --> 02:49:03,930
+ remember the folders in the DLA, the shared folder that we have in Teams.
+
+1633
+02:49:04,630 --> 02:49:08,570
+ There is a folder, a specific folder where you find recordings, a specific folder where you
+
+1634
+02:49:08,570 --> 02:49:13,550
+ find labs, and a specific folder where you find data, but also a specific folder called
+
+1635
+02:49:13,550 --> 02:49:16,750
+ code, and that's where you're going to keep the lesson.
+
+1636
+02:49:17,270 --> 02:49:19,350
+ So, I'm going to call it lesson one or something like that.
+
+1637
+02:49:19,910 --> 02:49:20,070
+ All right.
+
+1638
+02:49:20,070 --> 02:49:20,270
+ All right.
+
+1639
+02:49:20,310 --> 02:49:20,490
+ Okay.
+
+1640
+02:49:20,890 --> 02:49:23,430
+ And then you can find everything that we have written together today.
+
+1641
+02:49:24,030 --> 02:49:24,630
+ All right.
+
+1642
+02:49:24,710 --> 02:49:24,990
+ Thanks.
+
+1643
+02:49:25,290 --> 02:49:25,640
+ Thank you.
+
+1644
+02:49:26,280 --> 02:49:27,210
+ Any more questions?
+
+1645
+02:49:27,530 --> 02:49:28,240
+ Perfect question.
+
+1646
+02:49:28,340 --> 02:49:28,920
+ Any more questions?
+
+1647
+02:49:28,920 --> 02:49:37,160
+ I do have another question, but it connects to installation notes that you've written last
+
+1648
+02:49:37,160 --> 02:49:37,580
+ Friday.
+
+1649
+02:49:38,360 --> 02:49:38,540
+ Sure.
+
+1650
+02:49:39,240 --> 02:49:43,300
+ Could, if it's more specific for you, maybe...
+
+1651
+02:49:43,300 --> 02:49:43,760
+ Probably.
+
+1652
+02:49:44,560 --> 02:49:45,050
+ Yeah.
+
+1653
+02:49:45,350 --> 02:49:48,510
+ So, maybe we can take that after lunch together.
+
+1654
+02:49:48,570 --> 02:49:48,790
+ Okay.
+
+1655
+02:49:49,700 --> 02:49:50,500
+ Sounds all right?
+
+1656
+02:49:51,360 --> 02:49:52,360
+ Thank you.
+
+1657
+02:49:52,480 --> 02:49:52,680
+ Okay.
+
+1658
+02:49:53,000 --> 02:49:57,400
+ So, when you get back from lunch, just write to me and, yeah, we can take it from there.
+
+1659
+02:49:57,400 --> 02:50:04,440
+ And if I find something that involves the whole class, of course, I can take it with all of
+
+1660
+02:50:04,440 --> 02:50:05,000
+ you guys, of course.
+
+1661
+02:50:06,110 --> 02:50:07,370
+ All right.
+
+1662
+02:50:07,630 --> 02:50:08,690
+ I will end the recording there.
+
+1663
+02:50:09,110 --> 02:50:09,470
+ And...
+
