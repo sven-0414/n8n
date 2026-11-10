@@ -1,0 +1,760 @@
+1
+00:00:02,050 --> 00:00:20,410
+ right uh let's see here um well um what can i say welcome back uh so yesterday we we learned to to
+
+2
+00:00:20,410 --> 00:00:32,530
+ read um a table and yeah to to to look at it uh pick columns and filter and filter rows
+
+3
+00:00:33,820 --> 00:00:50,750
+ and then and sort a little bit right and point at that as well uh and along the way we we created some
+
+4
+00:00:50,750 --> 00:01:00,930
+ questions right and two of the questions that i have um written down here i'm actually gonna add them
+
+5
+00:01:00,930 --> 00:01:20,390
+ here and let me just say um yeah so two questions that that we did not answer uh was uh i'm actually
+
+6
+00:01:20,390 --> 00:01:36,430
+ written them down so i can actually copy them um it was this one so how many listings are there in each
+
+7
+00:01:36,430 --> 00:01:56,170
+ neighborhood and what is the typical number of guests for each type of room right um if we look
+
+8
+00:01:56,170 --> 00:02:05,060
+ at these two questions well both are if you think about it two groups right or sorry not two groups
+
+9
+00:02:05,060 --> 00:02:15,060
+ but are about groups uh and we do not want to know something about one listing if you compare it to
+
+10
+00:02:15,060 --> 00:02:22,180
+ yesterday's lesson right we want to know something about all the listings for example in sodomal more
+
+11
+00:02:23,030 --> 00:02:32,800
+ about all private rooms for example and answering questions like that is uh what today is all about
+
+12
+00:02:32,800 --> 00:02:43,210
+ so still looking at the data still learning how to look at the data uh we will count per group um
+
+13
+00:02:43,210 --> 00:02:54,050
+ calculate per group and then create um new columns of our own so that we can make groups uh then that are
+
+14
+00:02:54,050 --> 00:03:06,250
+ not in the table yet okay other than this we also uh wrote down some questions i'm not going to write
+
+15
+00:03:06,250 --> 00:03:19,210
+ uh because yeah well let me look at the questions first well we talked about the the price and we
+
+16
+00:03:19,210 --> 00:03:27,140
+ said that the price is actually text so that that would be a problem right because we can't make any
+
+17
+00:03:27,140 --> 00:03:44,910
+ calculations and so on uh we talked about that 15 of our columns were empty some columns have missing values
+
+18
+00:03:44,910 --> 00:03:54,910
+ and we had a problem with minimum nights if you remember that it goes up to 500 and we still won't
+
+19
+00:03:54,910 --> 00:04:07,730
+ fix that today we won't fix them today right uh because well we're going to take it step by step right
+
+20
+00:04:07,730 --> 00:04:14,350
+ so so we're still looking at the data and uh tomorrow we're going to start the cleaning uh of the data
+
+21
+00:04:14,350 --> 00:04:20,710
+ and of course we always have to be careful uh and only calculate on columns that are already numbers
+
+22
+00:04:20,710 --> 00:04:27,530
+ we talked a little bit about that yesterday as well all right so let's continue from where we
+
+23
+00:04:27,530 --> 00:04:36,820
+ um from where we uh finished yesterday uh and of course a notebook does not remember everything that
+
+24
+00:04:36,820 --> 00:04:44,010
+ we did uh or anything that we did from yesterday so um we need to import pandas and load the file
+
+25
+00:04:44,010 --> 00:04:58,550
+ obviously so import um import pandas has pd and uh we're still going to call it listings let's not
+
+26
+00:04:58,550 --> 00:05:10,400
+ create a new name uh we said pd read csv um and we have it in the data folder still the same folder
+
+27
+00:05:10,400 --> 00:05:21,800
+ nothing new and csv the same file as yesterday and just to make sure that everything is there
+
+28
+00:05:23,740 --> 00:05:30,220
+ listings shape so i'm doing all this in one step and that's quite hard we also talked about that
+
+29
+00:05:33,370 --> 00:05:47,900
+ see what happens all right perfect so the same table as yesterday right 4574 rows and 84 columns and
+
+30
+00:05:47,900 --> 00:05:57,630
+ still as yesterday one role there's still one listing right so we're going to start with a simple
+
+31
+00:05:57,630 --> 00:06:09,110
+ question uh and that is just we can break it down like this how many are there in each right i'm just
+
+32
+00:06:09,110 --> 00:06:19,500
+ going to write a little mark down here create a little mark down uh and just write um let's call it count
+
+33
+00:06:20,020 --> 00:06:30,350
+ um her group here we're going to use something that we actually met yesterday uh but we didn't speak
+
+34
+00:06:30,350 --> 00:06:50,780
+ about it too much uh but yeah value accounts yesterday we used describe if you remember right like that
+
+35
+00:06:50,780 --> 00:07:01,040
+ and we used describe to tell us um to to tell us that that there are four different uh types of rooms
+
+36
+00:07:01,040 --> 00:07:12,350
+ right um and the most common one was the entire home apartment right with according to my notes here
+
+37
+00:07:12,350 --> 00:07:21,600
+ 3760 listings right but it did not tell us how many there are of the other three we only knew that
+
+38
+00:07:21,600 --> 00:07:28,460
+ there are four different we we looked at the names and we saw the one with the most uh listings and that
+
+39
+00:07:28,460 --> 00:07:40,220
+ was 3760 entire home so what if we want to know how many of each so this is a perfect way to start
+
+40
+00:07:40,220 --> 00:07:50,220
+ because we only have four types of uh room types right that you could read and for that we will actually
+
+41
+00:07:50,220 --> 00:07:59,870
+ use value count and like i mentioned we've already met it once right uh and that's that was when we um
+
+42
+00:08:00,730 --> 00:08:09,670
+ counted how many columns there are of each data type and it actually does the same thing uh on any
+
+43
+00:08:09,670 --> 00:08:20,090
+ column uh so it counts how many times each different value actually appears so it's nothing complex at all
+
+44
+00:08:20,090 --> 00:08:38,780
+ listings uh rule we said on uh we're gonna do it on room type and we just use value counts count how many
+
+45
+00:08:38,780 --> 00:08:48,680
+ listings there are of each room this is room obviously the column and value counts we're just
+
+46
+00:08:48,680 --> 00:08:58,050
+ telling it to count how many times each value appears and there we go so here are the four rooms it was
+
+47
+00:08:58,050 --> 00:09:05,780
+ entire uh entire home apartment private room shared room and hotel room and we get also the
+
+48
+00:09:05,780 --> 00:09:14,750
+ number of listings uh for each and one thing i want you to notice is the order right so if you remember
+
+49
+00:09:14,750 --> 00:09:27,900
+ yesterday when we used unique it gave us the the values in the order pandas found them right why if
+
+50
+00:09:27,900 --> 00:09:37,530
+ you look at this value counts uh sorted by um they call it counts right instead with the biggest group
+
+51
+00:09:37,530 --> 00:09:45,980
+ first so if we take a look at the numbers here and stop a minute
+
+52
+00:09:45,980 --> 00:09:54,850
+ well entire homes has 3760 right uh which is the same number that we got from describe
+
+53
+00:09:56,830 --> 00:09:59,150
+ which gave us a frequency right or freck
+
+54
+00:10:00,510 --> 00:10:12,540
+ and if we add all of these 3760 plus 787 plus 24 plus three we actually get 4574
+
+55
+00:10:12,540 --> 00:10:19,690
+ so which is every listing nothing is lost right that's an also an important observation
+
+56
+00:10:22,320 --> 00:10:32,640
+ if we look at the smallest the smaller groups here uh well we have 24 shared rooms and only three
+
+57
+00:10:32,640 --> 00:10:44,150
+ hotel rooms right in the whole data set and i want you to try to remember that um because it will
+
+58
+00:10:44,150 --> 00:10:53,690
+ matter in a few minutes so if we take a look at this number on its own and we just look at okay private
+
+59
+00:10:53,690 --> 00:11:07,460
+ room 707 787 well it's not it's not easy actually to judge it on its own is that a lot is it a few
+
+60
+00:11:08,720 --> 00:11:16,260
+ of this kind of rooms i would rather say especially if it's on if it's on its own if you don't have
+
+61
+00:11:16,260 --> 00:11:22,430
+ anything to compare with it yet right so just draw a conclusion from a number could be difficult sometimes
+
+62
+00:11:22,430 --> 00:11:34,710
+ and that's why i always say well it's easier if we see it as a share of a listing so we're gonna do
+
+63
+00:11:34,710 --> 00:11:49,230
+ pretty much the same thing with a slight tweak in order to see the the share uh so what i'm gonna add
+
+64
+00:11:49,230 --> 00:12:01,060
+ here is normalize true and then i'm gonna round it up as well so round to three decimals right so the
+
+65
+00:12:01,060 --> 00:12:15,260
+ same count as we just did uh but the share of uh all listings so uh shares um uh all the shares
+
+66
+00:12:15,260 --> 00:12:23,070
+ together will add up to one so if we add all the shares together later on we will get one right now
+
+67
+00:12:23,070 --> 00:12:42,200
+ now let's see perfect so we see that the shares are uh 0.822 means 82.2 percent uh are actually entire
+
+68
+00:12:42,200 --> 00:12:54,740
+ homes so now we don't know that um and it's actually the same 0.82 uh 8 0.822 that we got yesterday right
+
+69
+00:12:54,740 --> 00:13:06,680
+ when we uh took the mean of the mask private rooms are uh well slightly 17 17.2 percent right 17 and shared
+
+70
+00:13:06,680 --> 00:13:20,880
+ rooms and uh the hotel rooms are together less than one percent right so airbnb in stockholm is well at
+
+71
+00:13:20,880 --> 00:13:32,990
+ least in in this data set mostly all apartments and houses um and then private rooms so the others
+
+72
+00:13:32,990 --> 00:13:42,790
+ uh the other two types are almost invisible so now we can answer the first question from that we have
+
+73
+00:13:42,790 --> 00:13:54,630
+ from yesterday how many lists are there in each uh neighborhood right so how would we do that because
+
+74
+00:13:54,630 --> 00:14:02,490
+ we're using valid counts now we have the tools and now we can actually answer this question so instead
+
+75
+00:14:02,490 --> 00:14:14,970
+ of doing this on the room type we will view it you use it on the column on the right column right same
+
+76
+00:14:14,970 --> 00:14:29,300
+ method but different columns and if you remember the column for neighborhoods was uh neighborhood
+
+77
+00:14:33,570 --> 00:14:44,670
+ right so now we're trying to just count the listings in each of them and if you remember there were 14
+
+78
+00:14:44,670 --> 00:14:52,590
+ neighborhoods right we never saw them we only saw sodomalm if i remember correctly and then your lab
+
+79
+00:14:52,590 --> 00:15:06,460
+ made you look at others maybe but well that's another thing so here we go all 14 of them the biggest
+
+80
+00:15:06,460 --> 00:15:20,340
+ first sodomalm which is far ahead with the 1145 listings uh the next one is normal which has 469
+
+81
+00:15:20,340 --> 00:15:33,860
+ so a quick conclusion is that sodomalm has more than twice as many as number two right and also four
+
+82
+00:15:33,860 --> 00:15:43,190
+ four times more than maybe östermalm here as well uh which has 297 so just some quick conclusions that we
+
+83
+00:15:43,190 --> 00:15:57,270
+ can make and at the end we see sponga tn stuff with the which has only 89 right so now we know that
+
+84
+00:15:57,270 --> 00:16:18,840
+ before we move on one more thing to know about value counts is that it actually leaves out missing
+
+85
+00:16:18,840 --> 00:16:27,570
+ values by default so we can actually take a look at that uh let's see what uh what that looks like on a
+
+86
+00:16:27,570 --> 00:16:37,410
+ column that we actually know as a few of them and that is actually bedrooms um so let's actually try
+
+87
+00:16:37,410 --> 00:16:47,770
+ that um so this time i'm actually gonna do it a little bit um let's change first of all let's take
+
+88
+00:16:47,770 --> 00:17:00,010
+ it step by step bedrooms right value counts and here i'm gonna use drop now i'm gonna put false and then
+
+89
+00:17:00,010 --> 00:17:14,430
+ i'm gonna just write sort index excuse me so we're counting the the the number of bedrooms and we also
+
+90
+00:17:14,430 --> 00:17:21,640
+ want to count the missing values so here we're just saying with the drop now false we're actually saying
+
+91
+00:17:21,640 --> 00:17:35,130
+ um well do not leave the missing values count them as well and sort uh by the values itself and not by
+
+92
+00:17:35,130 --> 00:17:56,570
+ not by count right now let's run this so now um that the the list is sorted by number of bedrooms uh zero
+
+93
+00:17:56,570 --> 00:18:09,700
+ and up and at the bottom we see uh that we have a row called nan or none uh not a number with two right
+
+94
+00:18:09,700 --> 00:18:22,680
+ with two listings uh where the number of bedrooms are actually missing and if you if you have a great
+
+95
+00:18:22,680 --> 00:18:29,800
+ memory uh when we use describe yesterday it gave us actually four thousand five hundred and seventy two
+
+96
+00:18:29,800 --> 00:18:34,920
+ bedrooms we can actually go back and look it up i have actually written down in my notes here
+
+97
+00:18:34,920 --> 00:18:43,310
+ so we had actually four thousand seven four thousand five hundred seventy two uh out of the four thousand
+
+98
+00:18:43,310 --> 00:18:50,910
+ five hundred seventy four well uh four thousand five hundred seventy four minus two is actually um uh four thousand
+
+99
+00:18:50,910 --> 00:18:58,630
+ five hundred seventy two so that was actually correct from yesterday's uh when we used the scrap the two
+
+100
+00:18:58,630 --> 00:19:07,700
+ other things to notice here well first the first row with 0.0 well there are 200 uh 257 listings with
+
+101
+00:19:07,700 --> 00:19:19,860
+ zero bedrooms so that is probably maybe a studio or something like that the table does not say so right
+
+102
+00:19:19,860 --> 00:19:32,170
+ so we should not be too sure right second uh if we look at the bottom of the list we see 12 has number
+
+103
+00:19:32,170 --> 00:19:43,360
+ four so that means that four listings actually have 12 bedrooms we should at least write uh raise an eyebrow
+
+104
+00:19:43,360 --> 00:19:55,060
+ here uh that might be real uh a big house or a villa i don't know or it might be a what it might be a
+
+105
+00:19:55,060 --> 00:20:03,570
+ mistake right so this is things that we put in our list of questions right that we will try to to look
+
+106
+00:20:03,570 --> 00:20:17,450
+ at along the way so value counts is one of the first uh tools uh you use uh when you meet a column um
+
+107
+00:20:19,260 --> 00:20:33,710
+ with categories how many are actually of each next uh we're gonna go uh one step further not only
+
+108
+00:20:33,710 --> 00:20:51,050
+ counting but calculating something for each group sorry for the coughing today all right uh so uh we're
+
+109
+00:20:51,050 --> 00:21:09,530
+ gonna add them um so we want now to uh group and um you're late and here we're gonna use group by the
+
+110
+00:21:09,530 --> 00:21:24,330
+ magic word all right so the idea before we do that uh before i go into the idea well this is
+
+111
+00:21:25,530 --> 00:21:35,390
+ going going into the second question uh what is the typical number of guests for each type of room
+
+112
+00:21:35,390 --> 00:21:50,480
+ so in sql um that is a group by in in pandas uh we use group by but we write it like this uh and the
+
+113
+00:21:50,480 --> 00:22:10,950
+ idea like i said uh is actually three steps so we actually split uh we split we accumulate and we
+
+114
+00:22:11,810 --> 00:22:23,530
+ buy so we split the table into groups one for each room type for example if we want to answer that
+
+115
+00:22:23,530 --> 00:22:31,570
+ question we calculate something for each group for example uh the average of accommodates because the
+
+116
+00:22:31,570 --> 00:22:40,330
+ the the column is actually called accommodates and we combine the result into a new small table so let's
+
+117
+00:22:40,330 --> 00:22:59,410
+ actually do that step by step so listings i'm using group by just like mentioned we're doing it on the
+
+118
+00:22:59,410 --> 00:23:27,600
+ room uh room type dates right and we're gonna run we're trying to find the average number of guests for
+
+119
+00:23:27,600 --> 00:23:42,750
+ each room type so split the table into one group per room type look at this column in uh every in every
+
+120
+00:23:42,750 --> 00:23:58,480
+ group calculate the average for each group and round it up to two distance all right let's run it let's see
+
+121
+00:23:58,480 --> 00:24:13,590
+ what we get so now we actually got one number per uh per room type right uh and the result is actually uh
+
+122
+00:24:13,590 --> 00:24:27,870
+ well is a series and if we uh if we look at the left before always on the left we had the index right
+
+123
+00:24:27,870 --> 00:24:37,820
+ uh so yesterday there were numbers but now the name tags are the room types themselves because that's
+
+124
+00:24:37,820 --> 00:24:53,500
+ how we actually grouped so an entire home takes on average 3.97 guests about four guests per per room right
+
+125
+00:24:53,500 --> 00:25:06,300
+ private room takes 1.93 so about two and that makes kind of sense right private room two people yeah
+
+126
+00:25:06,300 --> 00:25:17,620
+ uh but something looks looks a little bit strange uh the shared room has 4.46 guests on average
+
+127
+00:25:19,250 --> 00:25:32,620
+ more than an entire home and a hotel uh takes 1.33 guests which is uh well not a whole number of
+
+128
+00:25:32,620 --> 00:25:42,170
+ people of course it is an average i understand uh but should we trust these numbers well to judge that
+
+129
+00:25:42,170 --> 00:25:50,910
+ we need to know how many listeners are behind each number and we remember uh that there are only um
+
+130
+00:25:50,910 --> 00:26:00,990
+ if you remember there are only 24 uh shared rooms right and three hotel rooms uh so we so we can actually
+
+131
+00:26:00,990 --> 00:26:12,410
+ ask uh for for several um calculations at the same time with something called ag which is short for
+
+132
+00:26:12,410 --> 00:26:22,200
+ aggregate and we give it a list of what we want and i'm actually going to show you here so what we can do
+
+133
+00:26:26,920 --> 00:26:41,760
+ borrow that one and tweak it a little bit um so here instead of saying mean we're going to put aggregate
+
+134
+00:26:41,760 --> 00:26:58,110
+ do something like that and we do something like this so we want the count we also want the mean we also
+
+135
+00:26:58,110 --> 00:27:15,550
+ want the median and we also want the max and we want to run it to two numbers just like before so we're just
+
+136
+00:27:15,550 --> 00:27:23,940
+ trying to do several calculations for each uh group at once and as you see here i have a list of
+
+137
+00:27:23,940 --> 00:27:40,620
+ calculations we want each one written as text right count is for how many values there are in each
+
+138
+00:27:40,620 --> 00:27:49,520
+ in the group mean and median uh the average and the middle value and the largest value that is what i
+
+139
+00:27:49,520 --> 00:28:01,240
+ chose and if we run this now we actually get the whole picture so if we look at the count column
+
+140
+00:28:01,240 --> 00:28:15,560
+ first uh 3760 entire homes but only three hotel rooms uh and 24 shared rooms so an average of uh three
+
+141
+00:28:15,560 --> 00:28:25,920
+ listings is not worth um too much right uh and one one more listing would have changed it a lot right
+
+142
+00:28:25,920 --> 00:28:37,250
+ and now if we take a look at the shared rooms again uh the mean is 4.46 but the median is actually 2.5
+
+143
+00:28:37,250 --> 00:28:45,100
+ and the maximum is 14 and we have actually seen this pattern before right when we looked at minimum
+
+144
+00:28:45,100 --> 00:28:53,920
+ nights yesterday so a few big listings pull the average up right while the middle one is much smaller
+
+145
+00:28:57,600 --> 00:29:10,260
+ for this group i would say that the median is more of the honest number right then what the mean is
+
+146
+00:29:10,260 --> 00:29:27,600
+ one more thing we can look at is um the max column in um in um in uh private room it says 16 so sure uh
+
+147
+00:29:27,600 --> 00:29:34,490
+ that might be a room in a big house where the host uh into the capacity of the whole house i don't know
+
+148
+00:29:35,330 --> 00:29:46,270
+ it might be a mistake we do not know and but we note it and we put it in our list of questions so the
+
+149
+00:29:46,270 --> 00:29:52,180
+ lesson here is just never read a group average without looking at how many are actually in the
+
+150
+00:29:52,180 --> 00:30:00,540
+ group so you can actually build a big picture here or look at the bigger picture we can actually take
+
+151
+00:30:00,540 --> 00:30:14,370
+ several columns at once uh do you remember how well it was to put a list inside uh the brackets so two
+
+152
+00:30:14,370 --> 00:30:28,840
+ pairs of brackets and it was also one of your uh tasks in the in the in the lab let's try it
+
+153
+00:30:30,810 --> 00:30:48,810
+ so listings uh group by uh on the room type uh room type right but now we can actually put a list
+
+154
+00:30:48,810 --> 00:31:05,250
+ so we want to look at that maybe uh dates we might maybe look at the bed rooms and maybe also the the
+
+155
+00:31:05,250 --> 00:31:22,000
+ beds bed for its beds uh we want to look at the mean and let's also round here so what am i trying to
+
+156
+00:31:22,000 --> 00:31:35,890
+ do here well uh the average of three columns uh for each room type and notice again it's a list of
+
+157
+00:31:38,860 --> 00:31:49,650
+ it's a list of columns so uh double brackets just like yesterday let's run this see what we get so we
+
+158
+00:31:49,650 --> 00:32:00,280
+ get one table three columns one room uh one one one one not one room one row right one row uh for each room
+
+159
+00:32:00,280 --> 00:32:19,360
+ time uh so an entire home has an average of 1.87 bedrooms and 2.48 beds uh the shared rooms is a bit odd
+
+160
+00:32:19,360 --> 00:32:40,130
+ one once once again uh so 0.79 bedrooms but 4.58 beds well is it strange well it fits what a shared room is
+
+161
+00:32:40,130 --> 00:32:48,780
+ right so a room with several beds right but at the same time it's still 24 listings so yeah you might
+
+162
+00:32:48,780 --> 00:32:58,220
+ raise an eyebrow so now the um so these are the things that we look at we put some questions and
+
+163
+00:32:58,220 --> 00:33:13,780
+ then we can uh look it up and then do something about it at the end if you want to uh now the question
+
+164
+00:33:13,780 --> 00:33:20,250
+ everybody wants to ask if you remember from yesterday that was about the price right so if we try now to
+
+165
+00:33:20,250 --> 00:33:28,420
+ look at the average uh price for each room uh we know how to do it uh since we have just done it
+
+166
+00:33:29,300 --> 00:33:54,580
+ uh but let's try it uh for the price as well and see what happens listings group by type this time
+
+167
+00:33:54,580 --> 00:34:10,880
+ one price so the average price of uh of each room time nothing new here right so what will happen
+
+168
+00:34:10,880 --> 00:34:27,880
+ what do you think guys do you guys think will happen anybody obviously without trying it yourself
+
+169
+00:34:28,840 --> 00:34:40,770
+ christopher uh yeah price wasn't the number right if i remember correctly yes and let's now try it
+
+170
+00:34:40,770 --> 00:34:50,130
+ thank you sofia you're perfectly right so we get an error actually a good one right so if we read the
+
+171
+00:34:50,130 --> 00:35:01,200
+ bottom here so it says well the type string does not support operation mean so panda says to us that you
+
+172
+00:35:01,200 --> 00:35:08,140
+ you cannot calculate an average of text just like christopher was mentioning here and that is exactly
+
+173
+00:35:08,140 --> 00:35:16,890
+ what price is right now if you remember we had uh according to my notes a number that i that i wrote
+
+174
+00:35:16,890 --> 00:35:25,670
+ down was 1091 dollars it had a dollar sign it had a comma uh so to pandas that is not a number it is
+
+175
+00:35:25,670 --> 00:35:37,520
+ actually a piece of text so the most interesting um uh one of the most interesting questions that we could
+
+176
+00:35:37,520 --> 00:35:45,180
+ ask is which neighborhood is the most expensive and so on but we cannot answer that today because we
+
+177
+00:35:45,180 --> 00:35:53,510
+ need to clean the price first and we will learn the tools for that actually uh on wednesday meaning
+
+178
+00:35:53,510 --> 00:36:00,110
+ tomorrow and on thursday so that's where we're going to spend time cleaning and actually i'm going
+
+179
+00:36:00,110 --> 00:36:09,100
+ to do that in a different data uh so we're not going to use this one for that just to learn the tools
+
+180
+00:36:09,100 --> 00:36:14,730
+ and then we're going to uh amplify everything that we have learned on wednesday and thursday on monday
+
+181
+00:36:14,730 --> 00:36:24,460
+ on this uh on listings all right so that's the plan at least and then we can come back to that question
+
+182
+00:36:24,460 --> 00:36:34,780
+ what is the most expensive uh which neighborhood is the most expensive all right so we write it on our list
+
+183
+00:36:34,780 --> 00:36:48,630
+ so let's go back to what we can do uh so often we want a clean um readable um summary uh summary table
+
+184
+00:36:48,630 --> 00:36:58,540
+ uh with with names that we choose ourselves and for that ag if you remember that we just saw aggregate
+
+185
+00:37:03,260 --> 00:37:11,500
+ has a actually a second way of working where we can actually name each column in the result so let's try
+
+186
+00:37:11,500 --> 00:37:30,550
+ that out summary right over here listings uh let let me just write it down and then we can take it step
+
+187
+00:37:30,550 --> 00:37:45,970
+ by step so group by uh new type nothing new but now here comes the interesting part here ag and i'm
+
+188
+00:37:45,970 --> 00:38:24,860
+ actually going to do that and then we can use something called n and listings the count yes equals
+
+189
+00:38:44,930 --> 00:39:12,170
+ let's also write another one median equals uh number called number of let's actually take the median there
+
+190
+00:39:12,170 --> 00:39:31,460
+ yeah that's pretty enough then we can also round to two so we're just trying to create a small summary table
+

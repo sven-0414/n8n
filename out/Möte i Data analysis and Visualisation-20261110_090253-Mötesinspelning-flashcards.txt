@@ -1,0 +1,19 @@
+What does the `value_counts()` method do in pandas?;It counts how many times each unique value appears in a column and returns a Series sorted by count in descending order.
+
+How does `value_counts()` handle missing values by default?;It automatically excludes missing values (NaN) from the calculation unless `dropna=False` is specified.
+
+What are the three steps involved in a group by operation?;Split: divide data into groups based on criteria, Apply: calculate statistics for each group, Combine: merge results back into a structured output.
+
+What is the purpose of the `aggregate()` method in grouped data?;It allows multiple calculations to be performed on grouped data simultaneously and returns a structured result table.
+
+Why should you examine sample sizes when analyzing grouped data?;Small sample sizes can lead to unreliable averages and may indicate the presence of outliers, making median a more reliable measure than mean.
+
+How do you include missing values in `value_counts()` results?;By setting the parameter `dropna=False` in the method call.
+
+What happens if you try to perform mathematical operations on a price column stored as strings?;The operation will fail because pandas cannot perform numeric calculations on text data directly.
+
+What is one key takeaway about using averages in grouped analysis?;Averages can be misleading without examining sample sizes, especially when dealing with small samples or outliers.
+
+How can you group data by multiple columns in pandas?;By passing a list of column names to the `groupby()` method, such as `df.groupby(['col1', 'col2'])`.
+
+What should you document during data analysis to ensure reliable results?;Missing values, unusual patterns, data type inconsistencies, and sample sizes for each group.
