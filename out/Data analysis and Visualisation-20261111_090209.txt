@@ -1,0 +1,510 @@
+all right we are actually going to continue on our data analysis journey and visual visualization but
+uh more of this was visualization uh during the next week just get notes here and also i want to
+show you something here so now i would say if something is my favorite part during the course
+or during the course of doing this this uh module i would say this is the part that i enjoy most but
+everybody's different i think all parts are interesting but i don't know i have an extra
+heart for this part um so yesterday well um we we would learn to ask questions about groups right
+and we well we counted we grouped um we created also a new columns of our own and you
+had the opportunity to try it as well during the lab right uh but if you think about it all the time
+during these two lessons that we've had we have kind of christ christian not christian created right
+created a list of problems that uh that we have not fixed right so for example um the price is text
+right some of the columns uh there are actually 15 of them that are empty uh some values are missing
+and today we're actually um gonna start fixing those things but at least learn the tools for it right
+and this is the part that i that we call cleaning and of course it's a big part of working with data will
+all the answers be answered will all the questions be answered today uh well yes and no uh but you will
+see so um almost every every real table has to be kind of cleaned before it can be trusted right and what
+you decide while you clean actually decides what your numbers mean right so that's the part where we
+don't always answer all the questions we're actually going to take a little break from um this table that
+we have the airbnb table that we have been working with um it has well 84 columns and many different
+problems at once right and and it's quite hard to see each problem clearly right so to learn the tools
+we're actually going to work with a we want a smaller table uh where we can look at one problem
+at a time right so today we're going to use a different table it's called orders and let's take
+a look together here in our uh shared folder in the data analysis and visualization channel uh you can
+find well these four folders uh just like before and if you click on data you will find the second um
+table which is called orders so i will give you for the ones who want to come along i will give you a
+minute to uh to at least try to download it put it in the data folder so yeah uh take a little time
+just to um get started and i will try to keep quiet once yeah please just raise your hand when you feel
+that you're done or if you're not going to download it now uh you just want to listen to it do it less
+and then you can raise your hand as well and i know that you're also done so i know when to continue
+so if you're not downloading it now and doing it later on and you just want to follow along and not
+hold along that's perfectly fine but just raise your hand then and i know that you're also um you're
+set to to for me to continue see you i'll give it one more minute here
+right uh anastasia uh govtami yetnayet tell me yetnayet is it all right if i continue tell me are you
+there yes thank you yetnayet and koftami all right uh you can take down your hands now uh thank you uh
+all right uh so let's look at so like i mentioned before uh today we're using this uh table of orders
+from a web shop uh one important thing uh this data is totally made up all right it's generated and
+kind of modified as well to fit uh the course itself okay so the shop does not exist and there are no
+real customers or anything like that but i've actually built it uh to to to have the same kind of problems
+that uh that real data has of course um and the tools that we're going to learn here um are going
+to become handy when when we're going to look at the other table uh next week and uh amplify the things
+that we have learned today and tomorrow all right so the cleaning part takes two days and then we're
+gonna amplify everything on this table on monday and then we'll start some visualization as well uh
+cleaning sure to code later uh well cleaning um follows a let me say a routine right moana did you have a
+question was it the hand from before moana sorry all right i know it's not functioning uh a little bit
+because i opened a visual studio code of side by side ah okay okay yeah no problem all right uh so it
+follows a kind of routine and and and we will try to follow it today so the first thing we will do is to
+look at the data will problems we will fix them one at a time uh number four and if you did the lab
+called part two you might have stumbled a little bit on this uh so we will talk a little bit about that
+but we never um change the original and five um write steps as code right so we look at the data
+we find the problems and try to write them down right what we have been doing along the way right fix them
+one at a time and check the result after each fix right we try to never change the original we work on
+a copy and we write the steps as code so that anyone can run them again and get the same result right
+so that's the routine we are going to try to follow but first things first let's let's actually um
+uh just uh um import uh and and yeah start loading the the file as well so we need to import sorry there we go
+there we go import uh ambas as pd and then um we will also load in the data and i'm this time i'm actually
+going to call it orders like i've mentioned earlier in any tutorial you might see it as um df uh we try
+to specify the names here in this course so pd read csv right uh it's still in the data folder but
+now actually loading the table that's called uh orders csv all right so this is the file exactly as we
+received it but i'm also with another variable call it orders and then take the orders raw and make
+copy it so that's the copy that we're actually going to clean and that's this one all right now let's take
+a look at the shape orders uh and therefore we can well look at the table black and white uh the columns
+and the rows and at the same time see that we actually have loaded everything successfully right
+by that see what happens and there we go so without even looking here uh we know that we have 825
+rows and 10 columns one row is one order line uh one product ordered by one customer on one day uh
+and just like i said uh we have two variables right order raw which is the file exactly as we got it and
+orders with which is a copy and we will clean orders and orders orders raw we stay exactly as it is so if we
+make any mistake we can always start again from the original let's look at the table the same way as
+monday and i know guys that you haven't had time to actually uh look at it at the table and then just
+get a an idea of it but we can take a look at at least one order so it has an order id as a customer id
+an order date the product uh category so this one was called clothing a rain jacket the category clothing
+uh we got the unit price and we kind of see the problem here already quantity it was express or not
+if it had a coupon code and if it had a gift message and we can see here that there is no gift message at
+least for this order and i can't see anyone from these orders but there are 825 of them so we don't
+know yet but we're not gonna look at every single one like this we're actually gonna use a little bit
+of code for that right so look at the data before we trust it at least and i don't know if i've mentioned
+this before but uh the colors you might not have these uh lovely colors and that that are quite helpful
+and it's just an extension uh and uh what was it called again and it's here rainbow csv yeah exactly
+so that's the one i'm using so rainbow csv and there might be others that are lovely as well but i like
+this one that's the usual one i go with you can choose whatever you want first step we are going
+to take a first call it first look maybe something we uh usually start with something like this orders
+i will actually choose eight why not if i hadn't written anything i would have could get a five but
+you already know this right so let's run that one and see what we get uh and if it's too small uh or
+how is it all right the size could i make it bigger yeah i could turn thumbs up and the yes i got from
+yetnet that's what was from before all right so it's all right let's just tell me if it's too small
+and i can make it a little bit bigger um so let's go through the columns uh so we've got an order id uh
+the number uh well is the number of the order um we got a customer id which is the customer uh an order date of course is the date
+product and category uh well tells us what we bought uh unit price is the price of one item
+and quantity is how many were bought uh express says if you have uh well if the customer paid for an express
+the delivery uh coupon code discount code uh if the customer actually used one uh and a gift message
+well it's a message for a gift which looks empty so far and if we take a look at the unit price it says
+1000 for the first one here 1199 kroner with a space in the middle right a comma for decimal and the letter
+kroner at the end just like how we write the prices in swedish right but not the way a computer writes a number
+right so let's ask pandas uh for the uh overview like we did with the airbnb table as well
+and uh so we can write orders in phone from this i take at the look at the order date we can see that the
+dates a text right and not the dates that's one thing we can see like we have already mentioned the unit price
+is also as text not numbers and we know that already and if we look at the quantity it actually says um
+whole numbers right so this is quite fine excuse me and if we look at the uh non-null here the column
+we can see that we have 824 for the dates this should be 825 right so we already know that one date is
+missing uh when it comes to the coupon code uh we got 170 of them so most orders do not have a uh have no
+a coupon code uh we can take a look at that as well uh we are going to take a look at that as well
+might be missing for a reason and we see also that the gift message says zero so completely empty just
+like the 15 empty columns in the airbnb table right so i would say first of all uh we have three problems
+that are already visible the dates uh the dates are to text the prices are text and the column gift is
+completely empty so these are the three big problems to begin with uh and if we uh well we can start with
+the text columns where we expect the same few values to come back again and again for example uh category
+uh should only have a few different values such as maybe shoes or books and so on and express should
+only say maybe yes or no right so those are the columns where it's easy to go wrong because the same
+thing can be written in this in different ways right and we actually know how to count the values in a
+column right so let's start with that and let me just create a markdown i'm actually going to say text
+that is not an i stands for one uh so we're gonna start with spaces and capital letters the the category
+should tell us what kind of product it is right and in this shop i already know that there are six
+categories there are shoes clothing home and garden sports electronics and books uh well so how many
+different values does the column have well it should be six then right now let's take a look at that
+orders the gory excuse me and unique now let's run that 38 right not six right 38 so something is wrong
+now let's actually take a look at the values as well orders category and what should we do now value
+counts right count how many times each value actually appears the tool that we used yesterday a lot let's
+try it out and see what we get okay let's see what actually happened so the category clothing
+well appears in different ways right so we have it over here we have it over here we have it over here
+we have it over here and maybe some other place right uh so we have it in capital letters uh starts with
+a capital letter uh all small letters maybe a space somewhere maybe at the beginning or after it i don't know
+uh also if we take a look at the look at electronics same thing here i see electronics over here and
+electronics over here and here we see a clear space at the beginning so they might look the same to us
+but to pandas there are different values right because every single character counts of course including
+capital letters and spaces and this is a very common problem in real data people typing things in in
+different ways or different system write them in different ways and and it of course matters right
+because of what we learned yesterday uh so let's see what it does to count so how many orders are there
+for example in category clothing okay uh so let's add that out so if i write it plainly like this print orders
+um um the gory uh equals talking like this with my sister right there we go and then uh let's take some
+so when i run this i write it with a mask right the trick that we learned from monday two counts as one
+and we get back 128 so that is the number that we would have reported right we're going to see in a moment
+that the real number is much higher uh so all the orders written as clothing with small letters or
+clothing with big letters and clothing uh with a space were actually left out so a group by on this
+column would do the same um it would make a separate group for every spelling and no total would be right
+so we have to make the values the same and for that we use the text tools for pandas uh and they all live
+under something called str and they work on well every value in the column at once so we use
+three steps we will first strip which removes the spaces at the beginning and and at them and then
+the second is actually lower which makes everything lowercase and let's see uh how much uh how much
+they help one step at a time by counting the the different values after each one all right so let's
+start here so i'm just going to do many prints here so that we can see the the steps here black and white
+so orders um category we can start with um and unique so that is before and now print uh orders uh the gory
+then also use uh now use the tr and then and after that look at and unique so after the strip right and also
+last but not least uh strip but at the same time also use uh lower and then also use um of course let's
+not forget like that so after the strip and lower okay so when we run this so first we see 38 different
+values after the strip there are 20 so all the values with spaces in front or behind are actually gone
+and after lower we only have seven left okay a huge step forward right but uh uh but it's still
+one too many we expect six right so there's one more problem uh and it's not about space or capital
+letter so let's look at these seven and see what the problem could be orders category then do a value
+count so let's take a look at those seven seven uh values that are actually left we see the problem
+right here it is home and garden we see it twice right so someone wrote the word and in one place
+and the sign and another right so these two are actually the same category uh but written in two ways
+so no capital letter will fix that right so we have to tell pandas to replace one with the other so for
+that we will actually use replace uh and and you will notice that when we use uh replace uh we do not
+use uh string um because it actually replaces whole values uh so every value that is exactly home and
+the garden will become home and garden like this it's going to be much clearer as as we move along and
+then we will also do one more thing uh lowercase is is is is a bit ugly in the table uh so we will
+finish with a title which gives every word a capital letter at the start so now we write all the steps
+together and at the same time we're going to save the result back into the column right let's try to do
+that so orders green equals orders they are nothing new uh strip where and replace without the str because
+we're changing the whole thing and what we want to change here home garden and and attend we also want to
+see them right so orders yeah you have a mistake there for you okay thank you tell me where's the
+mistake homer and garden in replace which is funny though so uh thank you for that uh so um we remove the
+spaces at the beginning and at the end right everything should be uh lowercase uh and we have uh something
+to fix here right uh
+and we want a capital letter at the start of every word and then we want to write uh the result back
+into the column sorry over here right all right and like i've mentioned i think before uh the parentheses
+around is uh in order to let us write one step on every line let's run it let's see one two three four
+five six six six categories exactly as we wanted and if we look at clothing it has 180 orders uh and the
+count we made before cleaning is 128 right so we would have missed 52 orders more than uh water uh just
+because of capital letter and space so yeah and if we check the total here 180 plus 151 plus 148 and so far
+all the way to 70 we actually get 825 so every order is still there uh and one thing to remember is the
+replace part here so we have actually replace and we have actually bring replace like this uh but there
+there is a uh they sound the same uh but they're not the same so replace uh like this is uh replaces the whole
+values so the value has to be exactly what you wrote while using cr like this uh replaces a part of the text
+inside every value and we will use this one this this this this way uh uh in a few minutes uh actually on
+the prices okay so far so good now let's check that the product product columns does not have the same
+problem so it actually has to say 24 different products now let's look at that um so orders
+fact same way unique so yeah uh checking just that the product names are consistent and we get 24 so
+that column is actually fine so this is also a part of the cleaning right you do not only fix what is
+broken you also check what is not broken right so now kind of come to the second part here of text
+so let me just write that text two is going to be more about yes or no and prices that are text
+so the other column with categories uh with the category with categories is express uh it says if the
+order had an express delivery or not right uh press no no yes no all right okay let's take a look at that
+so if we take a value count on express and see what we get uh so let's try that so orders um express
+value counts so count the values in the express column uh hopefully we will get two right yes or no
+there you go one two three four five six so six different values for something that can only be
+yes or no so we have no like this no like this no like this yes like this yes like this and yes like this
+right just the why uh so we want maybe what we want is maybe a column of
+true or false maybe because then we can use everything we learned on monday filtering counting
+and taking the mean to get a share right so we will do that with two sets so first we will use lower
+to take care of the capital letters and then we will use map which works like a dictionary so for every
+value in the column pandas looks it up in a dictionary uh that we write it and and and then replaces it
+all right you will see it in action in a second so orders express equals orders press which i'm going
+to use lower and now let's use map and when you use map it looks something like this so what we know
+now is when using lower we will get no no yes no sorry no and yes and why that's the three that we're
+going to be left right because these are the same only with the cap uh capital or not capital same thing
+with yes these two yeses but we cannot forget this one right so uh let's actually use that so we have yes
+yes that we want to be true we also have a y that we want to be true and we have last but not least a
+null that we want to be false
+now print there's s is now sum and also let's do a orders express use um value counts all right uh and
+an important thing here uh just an important note here is the value that is not in a dictionary always
+becomes missing an am or none not a number so that's why uh the the first one counts the missing missing
+values right so this should be zero hopefully okay and there we go so zero missing values perfect thumbs
+up for us so this means that every value was found in our dictionary and the column that says false as
+uh 554 times and true 271 times and together that is actually 825 so this is the check we should always
+do after map so um if something had been spelled in a way we didn't we did not think of uh it would have
+uh become a missing and the count would not have been zero right uh see here uh actually marked when to take
+a break uh yeah we can continue a little bit more before taking a break okay so the next problem we have
+well is a bigger one right that's the price and on monday we actually saw that the airbnb price is
+is text and here we have the same problem which is convenient for us and we're going to fix that
+step by step but first let's just take a look at it again orders and this column is called unit price
+add eight to list right so yeah just uh as a first step look at eight price eight prices uh as a plain
+list right and there we go so here we can take a look at the uh the difference between the prices
+so there is currency donor at the end some of the prices have a space and some don't for example
+1199 and 1299 one with space one without space and some have a comma we already know that right
+no the comma is actually for the um the decimals right so here we go here we have a comma for the
+decimal so why does a price like this actually exist that's also something that we should
+think about if we take a look a little look here at the uh uh train trail running shoes we see
+1299 but here we also see trail running shoes but here it says actually 1039.20 so it is the same shoe
+so what has actually happened here well with a little bit of quick math here uh 1299 minus 20
+is actually 1039.20 so in this made up shoe is not a shoe shop but made up shop uh some items were
+actually on sale and that that is why some prices are not round numbers so all of these different uh
+ways of writing a price uh right and and and uh and and they are text right so what we want is the
+opposite plain numbers that python can calculate with no letters no spaces no spaces inside
+uh and a dot instead of a comma for the decimal so 1199 with a space should be 1199 comma zero with a dot
+349 should be 349.0 all right and obviously 1039 no space 0.20 or 0.2 let's try the quickest way
+first we will ask pandas to change the type of the whole column to decimal numbers and let's see what
+happens and i think you already know where i'm going with this but just to make it super clear unit price
+so we're going to use as type here uh as type float so let's see if magic actually happens here
+uh so just change the data type right in one step and there we go and the the the the the error actually
+tells us uh what is the what is wrong right so if you read the last one here could not convert
+string to float uh and uh and it says it's on this price right so prime does try to turn the text
+1199 comma zero zero kroner to a number and it could not and it actually stopped at the very first
+value uh that that does not work and it shows it to us right and of course it cannot there are letters
+there is a space and a comment so we actually have to clean the text uh first so that only
+a number is left and only then can we change the type and we will do it one step at a time and yeah
+and then look at the result after each step and this time we will actually use string replace the one
+that actually replaces a part of a text all right step by step with different prints uh just like we did
+before so price equals here's unit price place no not replace let's start with strip uh so remove the
+spaces at the beginning and at the end and then of course print price let's take the first three
+enough uh to play the list step two price we've already done this use the variable that we just created and
+now let's use replace and stream replace this time so remove the currency right and then take print just
+to see the difference all right we also want to remove the spaces inside the number so price equals
+price place let's use replace again here base to no space and then print and last but not least price
+was price bring place so that the comma the comma actually becomes a dot which is how python actually
+writes decimals right so clean the price text one step at a time and look at uh and look at the values
+uh at the first three values after each step and i save like you see every step in a variable price
+and the table orders is not actually changed yet right four steps and every step did one small thing right
+first uh the spaces uh at the edges are gone and the krona gone then the spaces inside the number
+finally the comma became a dot and what is left now is actually to uh it looks at least like like a number
+and yeah of course we need a dot not a comma like python likes it and not how we write numbers in swedish
+and on monday when we clean the airbnb price the steps will be the same but only that the characters
+are different and there we have to maybe remove a dollar sign and comma or whatever but we will take
+that on monday when we get there so now that the text is clean we can change the type and save the
+result into the table so let's try that again right so orders unit price equals price as type load and
+let's do a print to make sure here orders uh unit price and then the type and also orders unit price use
+describe here describe and then round the two so change the clean text to real numbers and then save it
+back into the table and now and also uh check that the result actually makes sense now let's run this
+let's see what we get there we go so first of all it says that it's a float and we also see the scribe
+works like it did for numbers as we saw on monday because that's what we wanted right now let's
+actually uh just uh check that the result actually makes sense uh because that is the step that people
+forget um and we can see that the cheapest item cost 59 and the most expensive one cost 1499.
+the average is about 429 so for a shop that actually sells socks and notebooks and winter boots that
+looks quite right right so if the minimum had been zero or negative or the maximum is like 149 900 or
+something like that we would know that something uh something went wrong so now uh we can actually
+calculate with the price but before that let's actually take a little break so i will leave
+you with that cliffhanger what time should we be back oh yeah yeah a valid question uh well let's say 10
+15 right back beautiful numbers yeah i agree can you do it in one pass instead of four uh because if there are
+millions of rows four different passes four different passes can be expensive yes i agree uh and yes you
+can uh and i was not actually gonna uh cover that part but sure uh here you can actually use regex um
+so just a pattern um that matches several things at once and yeah you can also look up regex when you have
+time during the during the lab if you want uh on how that works uh so just like you say say here we
+well step one two three right we we we we they all remove something right so they actually fit
+into one regex so let me uh buy uh that one that would be price and orders uh price and then we can
+just say stream uh replace place uh and in order to use regex we put the r i'll explain to serve
+something like this regex true comma so here we're using two passes instead of four right uh so the
+comma actually needs its own step uh the s here means actually in regex it's actually means um the white space
+this one means or and kroner is uh the currency so yeah and like i mentioned here the comma actually
+needs uh its own step because it's actually replaced with a dot instead instead of removed like we did
+over here with r extra yeah so that's how you would do that and i can actually save that for you because
+i'm gonna share the code at the end of the lesson um but i did it like this uh just to see it clearly
+step by step see exactly what each part does uh and i can think a little bit about uh maybe
+including regex on when we're going to do it for real on the listings table all right did that answer
+your question victor well we have cleaned the text in in in category uh yeah in in category and express
+and we have turned the price into numbers so the next column to look at is we know already that the
+dates are uh text should it be to be a date right so let's actually take a look at what that means in
+practice so if a date is text we cannot ask what the first and the last day uh what the last first and
+last they are or how many days there are between them or how many orders they were on march for example
+uh so for that pandas has to know that it's actually a date right and for this uh for this we use the tool
+uh pd uh pd uh to no sorry to date uh time let's actually try it so let's try it uh the quickest way
+so pd uh to date time on what well orders uh order date okay so turn the text into real dates just like
+like this read every text uh text value as a date and boom go uh so we get another error and again it
+actually tells us what what is wrong right uh so the the message actually says time data unknown doesn't
+match the format all right so uh pandas looked at the first values and and and decided that the dates are
+written as uh as year month and day right uh for example 2026 uh whatever zero one zero five uh then it's
+actually found if we look at the uh the dates here uh something called unknown and here it actually stops so
+there are values in the columns that are not dates at all we could of course fix them by hand
+if we we knew what was right but we cannot invent dates right what we can do is to tell pandas if you
+find something that is not a date do not stop just mark it as missing and that is uh we will see how
+that is done uh so a missing date is actually not called none it's actually called uh nat not uh not
+a time uh which is the same idea as uh as not nan for numbers and this setting it can be a little bit
+dangerous uh because it turns problems into missing values quietly uh with no warning so we must always count
+the missing values before and after to see how many values we actually lost all right so i'm just
+going to make sure of that so we actually see black and white so let's take the dates here uh
+to uh daytime uh orders date errors uh and then where's uh and now print orders order date is now
+okay so let's see what's missing right and this okay so here is actually where what's missing uh
+what's missing uh before and then also print um dates that we just created over here right uh and do the
+same thing here is not uh some right so this would be missing too right here i'm actually going to use
+orders lock is now d so turn the text into dates right and and see which value did uh which value did not
+work uh so error squares here uh a value that is not a date becomes uh not this not not a uh not a time
+right uh missing so instead of stopping with an error like we saw before uh and also count the the missing
+values before and after and show the rows where the new date is missing with only two columns all right
+so now let's run this so before one date was actually missing and after four so three values were turned
+into missing coerce uh and now we can we can see exactly which ones uh so one was already missing that would
+have been an empty date right and one says unknown right and two of them just looks like uh normal dates
+they are quite impossible right uh because uh well there is not 30 days in february right and april actually
+only has 30 days so this is something typical that actually looks right oh sorry these two uh
+that looks right but it's not so what do we do with these four dates uh well we do not know the real date
+and we should not guess so yeah we can maybe let them stay missing because the orders themselves
+are fine they just do not have a date and how to handle missing values is something we actually uh
+dig into to tomorrow all right so now uh let's save the dates into uh into the table uh so orders date
+equals dates uh so save the real dates into into the the the table instead of the text right and let's do
+some prints here uh print orders uh order date let's look at the d type uh d type let's use the main here
+let's use the uh max let's use fourth one minus uh let's try that so first let's look at the the data
+type hopefully it says actually date time and not stream the first uh date in the data the last date in
+in the data and the last minus the first so uh in order to see the number of days in between uh
+the orders the first and the last order okay and also uh maybe the most important stuff that
+will save the real dates into the table and then use them for something let's take a look
+all right uh so now the column has the type uh daytime uh and the uh us uh here uh it's not it doesn't
+stand for us uh america or anything like that it stands for microseconds uh because uh that's how pandas
+store the time uh so the first order if is from 5th of january and the last one
+from 28th of june so our data covers 174 days and with text this would have been impossible and of
+course a date column can do much more uh we can for example pick a part of the date um can pick that
+maybe the year the month the weekday um let's try something let's count the the orders per month for
+example uh i can maybe write that orders uh per month uh and i'm actually looking at here using we were
+using dot dt orders order uh date t um two period right two period um uh and we can explain in a second
+that value counts and index uh count the orders in each month right so this is date tool uh or date tools
+uh uh of pandas uh as the same as we saw with the string right dot str which is the text tools uh change
+so change every date to the month it actually belongs to right so for example uh 2026
+zero one zero five becomes uh 2026 zero one count how many orders uh there are in in in each month
+and put the months in order right and since they are from january to to to uh june uh hopefully we will get
+six months now let's see ah perfect january february mars may june with between uh 118 orders which is
+the lowest up to 162 orders in each and we can also see that the four orders uh uh without the date are
+not in any uh are not in any month right because if we add up these numbers we get 821 and not 825
+so you should remember that for later uh and the numbers still include a problem but we have not
+found yet okay let's actually look for it let's take it step by step here so here i'm just gonna write
+uh the next step that we're going to look at which is duplicates and then we can uh step by step uh so
+here's something that actually can happen in in any real system and that is that the same row
+is actually registered twice maybe an export uh ran two times or a customer clicked the button twice
+uh so an order should only exist once so it duplicates makes the numbers too big and pandas has a method
+to find them uh and that's what we are going to use right now and it's called duplicated so let me just
+put it there uh and it works at every row and says true if the row is an exact copy of of a row above it
+so it gives us a mask like the ones we made on monday so we can actually count it with some so now let's
+see it in action here print orders but uh plicated um sum right so count the rows that are an exact copy
+uh of an earlier row so if true so for for uh we will get true for for a row that is identical to the
+earlier row remember that earlier row in all comments of course uh and the sum well true will count as one
+just like always as we have seen before let's run this 25 so we have 25 duplicates right now let's take
+a look at some of them by default duplicated only marks the second copy so the first one is not shown
+right uh so in order to see both copies of each pair uh we can write keep false uh which means uh well in in
+this case it will mean mark all of them right uh so now let's try that out so orders orders duplicated
+keep balls and there we go like i said before uh take a look at the duplicated rows both copies of each
+to be sure that the real uh that that there are actually real duplicates right keep false will uh keep
+the first one too and we're using the filter that we used from monday and we just want to look at the
+first uh first how many pairs well three pairs right that's why i'm writing six here let's run this
+because they come in pairs of course and there we go all right so pairs of rows right that are the same
+in every column but the uh with the same um order number with the order id uh 227
+200 27 to 34 34 39 39 so each appear twice right uh and an order number well should be unique right
+so these are real duplicates now if you think a little bit about the order in which we did things
+uh do you remember that we cleaned the text before we looked for duplicates and that was not a
+coincidence let's see what would have happened if we had looked for duplicates in the original table
+okay before cleaning so therefore i will use not orders i need to use orders raw right because that's
+the original this is the copy that we are modifying so now let's see what would have happened so here
+we got 25 right and now let's do the exact same thing boom boom boom and boom uh but not for orders
+orders raw uh let's run it ah so only 20 and not 25 so five of the copies uh were actually written a
+little differently maybe with a capital letter or with a space in the category so for duplicated uh those rows
+are not identical so it actually missed them so after we cleaned the text they actually became identical
+and we could find them so that is kind of an important rule right so clean the text first
+and look for the duplicates afterwards there is another way to check uh which which does not depend
+on the text uh because if we know that the order number should be unique we can actually look for
+duplicates in that column uh in that column only right and and that is actually what the subset is for uh so
+let me actually um try that out as well um so print and yeah we can do it here in orders that's all right
+um and duplicated um and then we use subset um and then we use subset on order uh order id
+and the sum here so uh count the rows with with an order uh order id uh that has happened and not happened
+and then you say appeared before uh whether the the the whatever the other column says okay so let's run
+this uh and we get the 25 same number so that is actually a good sign so two different ways of check
+checking gave the same answer so if the numbers had been different we would have rows with the same order
+number but different content and then we would have to find out which one is right before we could actually
+remove anything right so two ways to uh and great to use as well in order to see that they actually
+that you actually get the same values how much does this it doesn't matter well let's calculate how much
+money the orders actually add up to uh with the duplicated and without them okay so we will multiply
+the price by the quantity uh to get the amount for every row and then add it up uh so that is a new
+column uh like the ones we created yesterday all right so let's try that out in order to actually see
+how much it actually uh matters so total uh i will call this total width orders um unit price uh multiplied
+by the orders uh we said the quantity right uh quantity and then the sum and then let's do like this orders
+uh uh equals orders uh uh uh duplicate uh and also a reset index drop and now total instead of total with
+without and pretty much the same thing right so orders uh unit price um multiplied by orders uh one tt
+and and and also let's do some other prints so print the orders shape let's uh print round the total width
+to uh print without two and um print uh round total with uh with minus total without uh okay
+so we're removing the duplicates so we're removing the duplicates and see how much they change a
+the total amount so total width the total amount with the duplicates uh we we drop the duplicates
+so remove uh sorry uh remove every row uh that is an exact copy uh of an earlier row and keep the first one
+uh uh and reset uh and reset index so uh the number the rows so so number the rows zero one two uh again just
+like we did on monday right and then uh uh so so drop duplicates does not change the table it actually
+gives a new one uh so so we save it right let's see one two three ah lovely okay uh so now the table has
+has 800 rows and not 825 which means to 825 minus 25 duplicates perfect and if we take a look and still
+the team 10 columns uh and if we take a look at the money uh so with with the the the what you call it
+with the duplicates the total amount was 591 385 through them uh without them it is 572 783 so the difference
+is 18 601 and that is about according to my notes at three percent too much so nothing was actually wrong
+with any single role but the total would have been actually wrong and notice that drop duplicates actually
+works a little bit like sort values data on monday so it does it does not change the table it gives us
+a new table so we actually have to save it and that is why we write orders equals so now we actually have
+one problem left from our list and that's the empty column um drop and now we can kind of tell you what
+what what we're gonna do but anyways uh drop what we do not need right and then we're also gonna put it
+together uh there we go the column that we looked at before the gift messenger was uh when we when we use
+describe uh in it was completely empty right so 825 rows at not a single value so for us it is of no use
+so we're actually gonna remove it and for that we're actually gonna use right and and we say which of
+course which column we actually meet so let's take that as well orders equals orders drop columns uh
+equals uh one called gift such columns gift message no uh nothing wrong with the spelling right and now let's
+look at the shape here so orders shape okay so hopefully we will get nine columns and there we go
+nine columns right so we dropped the completely useless one now now we are at the question about the
+coupon code column right it was many missing values and uh if you noted it down or you can look at
+previously you you would see that it's 635 out of the 800 so now we come to the question as we asked
+ourselves over here should we remove that one as well well i actually vote no because these values are
+missing for a reason most customers did not use a coupon so there's nothing to write so that is not a
+problem in it in the data it is information right and we will actually come back to different kind
+of missing values tomorrow but now we're just cleaning the table now let's use it to to answer a question
+and use the tools from yesterday uh so a new column and group by uh and the question that's gonna wrap
+it up is and that's probably the last thing we're gonna do right yeah according to my notes it should be
+we'll see uh so the question i want to answer here uh so let me just copy it let's save a little bit of
+time there we go okay so uh which category brought in the most money so first the amount for every order
+line price times the quantity right now let's try that out so orders total equals orders unit unit
+price um multiplied by the orders uh we said uh quantity orders but group by category total round uh sort
+the values uh ascending uh false right so add up the money for each category and put the biggest first
+so here we're just creating a new column with amount for every row right price times quantity and then
+uh the sum of the amounts for each category no decimals and we want the biggest first now let's run this
+let's see what we get all right all right all right so shoes brings in the cash right so uh 207 382
+uh even though uh even though there are fewer orders for shoes than for clothes and that is because
+shoes are maybe expensive uh books are at the bottom uh with 16 680 and we can pretty much trust this
+because every category now exists in only one spelling and remember the the group counts that
+we made before cleaning every number would have been wrong right uh so what about the money per month
+because the dates are real dates now so we can actually group on months right so let's actually
+do that as well uh month monthly once orders uh group by orders order date dt to period right uh
+the month and i want to do it on the total total uh okay there's what dates period just like we did
+previously but now we're using group by and let's do some prints here as well so print monthly round to
+no decimals so the money for every month without decimals uh and also print round monthly uh thumb and
+two so all the months added together and let's print round um orders total um
+so the total of all orders to compare with the line above so add up the money for every month and check
+that the money uh that the the the the months add up to the total right uh so we can see may was actually
+the best month with 126 000 something like that uh but if we look at the uh uh last two numbers here
+we have uh 570 041 nearly uh but the total is actually 572 783
+so about 2700 kronor are missing so where are they well oh what do you think guys where are they took
+them during the break now do you think guys any hypothesis thank you jacob for orders without the day
+uh without the date right so yes the 2700 kronor uh other four orders that have no date so group by
+actually leaves out the rows where the group name is missing silently and there's no month uh for an
+order without the date so so so the monthly numbers are a little too low and the only way to know it
+is to actually check that the the parts actually add up to the whole so that is a habit worth having
+so now we have actually fixed one problem at a time in many cells uh look at what we have the steps are
+scattered all over the notebook with errors and tests in between and if you want to do the same
+cleaning again next week or if a colleague wants to check what we did it would have been very hard so so
+remember the rule from the beginning uh we said write the steps as code so that anyone can run them again
+so yeah let's actually put the whole cleaning in one single cell from the um uh from the original
+file to the clean table using only the steps that actually worked and sure i could take it step by
+step here but we have already done it once and i don't think you want to see me do it twice so i'm
+already prepared with some notes here as well uh so when you when i share the code it's good to have a
+little bit of comments so you remember what we actually did uh so i'm actually gonna copy that
+so just give me one second and uh there we go so everything we did uh pretty much the six steps
+in one code so put a little bit of comments i think you can find them useful if you want to go back
+so there we go did all this clean uh yes or no the true false the dates the duplicates and the
+empty column goes right let's run this we get our the same table and we get true uh so the the the the
+the the single cell did exactly uh what all other cells actually that they are the same right um
+as the other cells did together so this is what what we mean when we say that the code is the
+documentation so anyone who reads this cell knows exactly uh what was done to the original
+data and in which order and can actually run it again the last thing is to save the clean data
+so we don't we do not have to do this all over again so we will actually write it to a new file
+so we do not touch the original when we're going to work tomorrow so now let's create that and um i can
+actually share it with you no but if you're coding along you should have the exact same thing right so
+i don't think i don't think i need to share that uh and since i'm also going to share the code
+there is no way that it can go wrong right so orders clean uh to this is the orders clean right so to
+uh csv and then uh exactly so uh to the data folder should be orders uh clean dot csv index index um false okay so uh to csv uh write the file into a csv file and do not write uh the row numbers zero one two as an
+as an extra column so if i put this true i will get a zero one two as an extra column and we don't need
+that uh at least not for this uh now let's take a look here so we have only listings csv and order csv
+and let's see what happens now kablam and now we have the clean version and you see that if you compare
+it to the orders uh here we had a gift message we don't anymore now we have a total column instead
+which we actually created yeah and that's pretty much it so just let's just be honest about one thing
+or at least of what we did because every step in the cleaning was a decision right and every decision
+has an effect on the numbers we decided that home and garden and the home and garden are the same
+category the home and garden with the symbol right that is almost certainly true right but it was our
+judgment at the end of the day if we had been wrong well the numbers would have been wrong we decided that
+two rows with the same order number and the same content are one order that is safe here because the
+order numbers is actually unique so if the table had no order number we would have to guess and two
+customers could have actually really have bought the same thing on the same day why not we decided to
+leave four orders without a date they are in the totals but not not in the monthly numbers we did not invent the
+date and that is honest choice right but it actually changed the numbers and as we saw about 2700 krona
+disappeared from the months right and also we can remember that this data is made up so so so so it
+problems are actually a bit tidy right and they were easy to find because i i actually put them there
+but real data is a bit messier and you often find a problem only when a number looks strange maybe
+three steps later so the tools are the same but the real change is to or i would rather say a challenge
+is is is is actually to notice that something is wrong so a clean table well is not a correct table it is a
+table where we actually know um what has been done to it all right so that's my actually honest take on
+everything all right that was actually it uh is there anything more that i wanted to mention yes one more
+thing uh so there are no confusions later uh just let me get it for you guys here uh uh just take a look at
+the lab here so you can actually ask the questions if you if you want to uh so the lab looks something
+like this and again uh there is a practice part or go deeper you choose and you already know this
+pattern but for this lab uh so today we clean the messy table step by step uh text type data so cleaning is
+something you you learn by doing it and the best test uh is a table you have not seen before so
+in this lab you get new data the loans of a library right so in order for not be any confusions uh you're
+not going to use the same table that we use today here in class so you have actually something to clean
+and of course uh that data is made up as well uh and they kind of represent what real data has and you
+you choose which part to work with so i'm actually gonna uh um share that with you guys the lab and
+also the the new table notice that we have a lone csv that i'm gonna upload on teams in the same folder
+as always uh but uh i'm also gonna send you a direct link just like always in the in the info chat all
+right that was actually it uh any questions before i let you go

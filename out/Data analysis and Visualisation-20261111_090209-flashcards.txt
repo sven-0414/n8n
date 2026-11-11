@@ -1,0 +1,37 @@
+What is the primary purpose of data cleaning in data analysis?;Data cleaning ensures accurate analysis and reliable results by identifying and correcting errors, inconsistencies, and missing values in datasets.
+
+What are the key steps involved in the data cleaning process?;The process involves examining the data to identify problems, fixing them systematically, and documenting all steps taken during the cleaning process.
+
+Why is it important to clean data before performing analysis?;Clean data ensures accurate analysis and reliable results, as decisions made during cleaning determine what the final numbers mean.
+
+What are some common issues found in real-world datasets?;Common issues include text format dates, text format prices with currency symbols and commas, empty or inconsistent columns, and inconsistent text formatting.
+
+How do you standardize category values in a dataset using pandas?;You use pandas string methods like `str.strip()`, `str.lower()`, and `str.replace()` to remove whitespace, normalize case, and replace variations with consistent formats.
+
+What is the difference between `str.replace()` and `.replace()` in pandas?;`str.replace()` replaces parts of text within values (like removing currency symbols), while `.replace()` replaces entire values (like changing one category name to another).
+
+How do you clean text format prices that contain currency symbols, spaces, and commas?;You strip whitespace, remove currency symbols, replace internal spaces, and convert commas to decimal points before converting the column to numeric type.
+
+What happens when you use `pd.to_datetime()` with invalid date formats and `errors='coerce'`?;Invalid dates are converted to NaN (Not a Time) instead of raising errors, allowing processing to continue without interruption.
+
+How can you identify and remove duplicate records in a dataset?;Use the `duplicated()` method to identify duplicates and `drop_duplicates()` to remove them, optionally specifying which columns to check for duplication.
+
+What is the best practice for handling missing values during data cleaning?;Always document the reason for missing data, handle it appropriately (remove, impute, or flag), and validate that the approach makes sense for the analysis.
+
+How do you verify that your data cleaning steps were successful?;You can cross-check totals, verify consistency of values, and ensure calculated columns make logical sense after cleaning.
+
+What should you do before checking for duplicates in a dataset?;Clean text data first by removing extra spaces and normalizing capitalization to ensure accurate duplicate detection.
+
+How do you remove an entirely empty column from a dataset?;Use the `drop(columns=['column_name'])` method to remove columns that contain no useful data.
+
+What is the significance of documenting decisions made during data cleaning?;Documentation ensures transparency, allows for reproducibility, and helps others understand how the final numbers were derived.
+
+How do you calculate total revenue for each order line after cleaning?;Multiply `unit_price` by `quantity` to create a new column called `total`.
+
+What are some validation techniques used after cleaning data?;Cross-check totals, verify consistency of values, and ensure calculated results make logical sense in the context of the dataset.
+
+Why should you be cautious when using `pd.to_numeric()` with text data?;Because it can convert invalid entries to NaN instead of raising errors, which might mask underlying issues in the data.
+
+What are some common pitfalls to avoid during data cleaning?;Not handling missing values properly, converting data types without error handling, and checking for duplicates before cleaning text fields.
+
+How does data cleaning impact future analysis workflows?;Cleaned data provides a reliable foundation for deeper analysis, enabling accurate calculations of revenue by category, seasonal trends, and customer purchasing patterns.

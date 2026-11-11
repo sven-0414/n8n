@@ -1,0 +1,2040 @@
+1
+00:00:03,140 --> 00:00:18,010
+ all right we are actually going to continue on our data analysis journey and visual visualization but
+
+2
+00:00:18,010 --> 00:00:35,850
+ uh more of this was visualization uh during the next week just get notes here and also i want to
+
+3
+00:00:35,850 --> 00:00:48,670
+ show you something here so now i would say if something is my favorite part during the course
+
+4
+00:00:49,230 --> 00:00:56,510
+ or during the course of doing this this uh module i would say this is the part that i enjoy most but
+
+5
+00:00:56,510 --> 00:01:03,690
+ everybody's different i think all parts are interesting but i don't know i have an extra
+
+6
+00:01:03,690 --> 00:01:22,700
+ heart for this part um so yesterday well um we we would learn to ask questions about groups right
+
+7
+00:01:22,700 --> 00:01:31,910
+ and we well we counted we grouped um we created also a new columns of our own and you
+
+8
+00:01:32,470 --> 00:01:42,110
+ had the opportunity to try it as well during the lab right uh but if you think about it all the time
+
+9
+00:01:42,110 --> 00:01:48,970
+ during these two lessons that we've had we have kind of christ christian not christian created right
+
+10
+00:01:50,170 --> 00:02:01,600
+ created a list of problems that uh that we have not fixed right so for example um the price is text
+
+11
+00:02:01,600 --> 00:02:12,400
+ right some of the columns uh there are actually 15 of them that are empty uh some values are missing
+
+12
+00:02:12,400 --> 00:02:24,510
+ and today we're actually um gonna start fixing those things but at least learn the tools for it right
+
+13
+00:02:24,510 --> 00:02:37,470
+ and this is the part that i that we call cleaning and of course it's a big part of working with data will
+
+14
+00:02:37,470 --> 00:02:48,340
+ all the answers be answered will all the questions be answered today uh well yes and no uh but you will
+
+15
+00:02:48,340 --> 00:03:00,700
+ see so um almost every every real table has to be kind of cleaned before it can be trusted right and what
+
+16
+00:03:00,700 --> 00:03:12,210
+ you decide while you clean actually decides what your numbers mean right so that's the part where we
+
+17
+00:03:12,210 --> 00:03:22,220
+ don't always answer all the questions we're actually going to take a little break from um this table that
+
+18
+00:03:22,220 --> 00:03:35,510
+ we have the airbnb table that we have been working with um it has well 84 columns and many different
+
+19
+00:03:35,510 --> 00:03:47,260
+ problems at once right and and it's quite hard to see each problem clearly right so to learn the tools
+
+20
+00:03:47,900 --> 00:03:56,890
+ we're actually going to work with a we want a smaller table uh where we can look at one problem
+
+21
+00:03:57,830 --> 00:04:07,330
+ at a time right so today we're going to use a different table it's called orders and let's take
+
+22
+00:04:07,330 --> 00:04:17,980
+ a look together here in our uh shared folder in the data analysis and visualization channel uh you can
+
+23
+00:04:17,980 --> 00:04:31,800
+ find well these four folders uh just like before and if you click on data you will find the second um
+
+24
+00:04:31,800 --> 00:04:38,980
+ table which is called orders so i will give you for the ones who want to come along i will give you a
+
+25
+00:04:38,980 --> 00:04:47,860
+ minute to uh to at least try to download it put it in the data folder so yeah uh take a little time
+
+26
+00:04:47,860 --> 00:05:24,130
+ just to um get started and i will try to keep quiet once yeah please just raise your hand when you feel
+
+27
+00:05:24,130 --> 00:05:30,320
+ that you're done or if you're not going to download it now uh you just want to listen to it do it less
+
+28
+00:05:30,320 --> 00:05:37,650
+ and then you can raise your hand as well and i know that you're also done so i know when to continue
+
+29
+00:05:37,650 --> 00:06:42,140
+ so if you're not downloading it now and doing it later on and you just want to follow along and not
+
+30
+00:06:42,280 --> 00:06:50,670
+ hold along that's perfectly fine but just raise your hand then and i know that you're also um you're
+
+31
+00:06:50,670 --> 00:07:26,230
+ set to to for me to continue see you i'll give it one more minute here
+
+32
+00:07:51,650 --> 00:08:21,310
+ right uh anastasia uh govtami yetnayet tell me yetnayet is it all right if i continue tell me are you
+
+33
+00:08:21,310 --> 00:08:47,110
+ there yes thank you yetnayet and koftami all right uh you can take down your hands now uh thank you uh
+
+34
+00:08:47,110 --> 00:09:15,380
+ all right uh so let's look at so like i mentioned before uh today we're using this uh table of orders
+
+35
+00:09:15,380 --> 00:09:30,550
+ from a web shop uh one important thing uh this data is totally made up all right it's generated and
+
+36
+00:09:31,010 --> 00:09:39,720
+ kind of modified as well to fit uh the course itself okay so the shop does not exist and there are no
+
+37
+00:09:39,720 --> 00:09:49,080
+ real customers or anything like that but i've actually built it uh to to to have the same kind of problems
+
+38
+00:09:49,080 --> 00:09:58,120
+ that uh that real data has of course um and the tools that we're going to learn here um are going
+
+39
+00:09:58,120 --> 00:10:04,740
+ to become handy when when we're going to look at the other table uh next week and uh amplify the things
+
+40
+00:10:04,740 --> 00:10:12,100
+ that we have learned today and tomorrow all right so the cleaning part takes two days and then we're
+
+41
+00:10:12,100 --> 00:10:24,250
+ gonna amplify everything on this table on monday and then we'll start some visualization as well uh
+
+42
+00:10:24,250 --> 00:10:49,970
+ cleaning sure to code later uh well cleaning um follows a let me say a routine right moana did you have a
+
+43
+00:10:49,970 --> 00:11:09,570
+ question was it the hand from before moana sorry all right i know it's not functioning uh a little bit
+
+44
+00:11:09,570 --> 00:11:17,010
+ because i opened a visual studio code of side by side ah okay okay yeah no problem all right uh so it
+
+45
+00:11:17,010 --> 00:11:25,690
+ follows a kind of routine and and and we will try to follow it today so the first thing we will do is to
+
+46
+00:11:25,690 --> 00:11:57,240
+ look at the data will problems we will fix them one at a time uh number four and if you did the lab
+
+47
+00:11:58,200 --> 00:12:09,580
+ called part two you might have stumbled a little bit on this uh so we will talk a little bit about that
+
+48
+00:12:10,140 --> 00:12:32,130
+ but we never um change the original and five um write steps as code right so we look at the data
+
+49
+00:12:32,130 --> 00:12:41,450
+ we find the problems and try to write them down right what we have been doing along the way right fix them
+
+50
+00:12:41,450 --> 00:12:52,230
+ one at a time and check the result after each fix right we try to never change the original we work on
+
+51
+00:12:52,230 --> 00:13:02,910
+ a copy and we write the steps as code so that anyone can run them again and get the same result right
+
+52
+00:13:02,910 --> 00:13:15,460
+ so that's the routine we are going to try to follow but first things first let's let's actually um
+
+53
+00:13:15,460 --> 00:13:30,270
+ uh just uh um import uh and and yeah start loading the the file as well so we need to import sorry there we go
+
+54
+00:13:30,270 --> 00:13:49,010
+ there we go import uh ambas as pd and then um we will also load in the data and i'm this time i'm actually
+
+55
+00:13:49,010 --> 00:14:09,940
+ going to call it orders like i've mentioned earlier in any tutorial you might see it as um df uh we try
+
+56
+00:14:09,940 --> 00:14:23,470
+ to specify the names here in this course so pd read csv right uh it's still in the data folder but
+
+57
+00:14:24,700 --> 00:14:40,400
+ now actually loading the table that's called uh orders csv all right so this is the file exactly as we
+
+58
+00:14:40,400 --> 00:14:53,690
+ received it but i'm also with another variable call it orders and then take the orders raw and make
+
+59
+00:14:53,690 --> 00:15:06,950
+ copy it so that's the copy that we're actually going to clean and that's this one all right now let's take
+
+60
+00:15:06,950 --> 00:15:16,640
+ a look at the shape orders uh and therefore we can well look at the table black and white uh the columns
+
+61
+00:15:16,640 --> 00:15:21,840
+ and the rows and at the same time see that we actually have loaded everything successfully right
+
+62
+00:15:21,840 --> 00:15:40,410
+ by that see what happens and there we go so without even looking here uh we know that we have 825
+
+63
+00:15:40,410 --> 00:15:58,400
+ rows and 10 columns one row is one order line uh one product ordered by one customer on one day uh
+
+64
+00:15:58,400 --> 00:16:10,150
+ and just like i said uh we have two variables right order raw which is the file exactly as we got it and
+
+65
+00:16:10,150 --> 00:16:21,600
+ orders with which is a copy and we will clean orders and orders orders raw we stay exactly as it is so if we
+
+66
+00:16:21,600 --> 00:16:33,390
+ make any mistake we can always start again from the original let's look at the table the same way as
+
+67
+00:16:33,390 --> 00:16:39,660
+ monday and i know guys that you haven't had time to actually uh look at it at the table and then just
+
+68
+00:16:39,660 --> 00:16:47,960
+ get a an idea of it but we can take a look at at least one order so it has an order id as a customer id
+
+69
+00:16:48,450 --> 00:17:01,270
+ an order date the product uh category so this one was called clothing a rain jacket the category clothing
+
+70
+00:17:01,270 --> 00:17:11,560
+ uh we got the unit price and we kind of see the problem here already quantity it was express or not
+
+71
+00:17:11,560 --> 00:17:21,250
+ if it had a coupon code and if it had a gift message and we can see here that there is no gift message at
+
+72
+00:17:21,250 --> 00:17:33,450
+ least for this order and i can't see anyone from these orders but there are 825 of them so we don't
+
+73
+00:17:33,450 --> 00:17:39,290
+ know yet but we're not gonna look at every single one like this we're actually gonna use a little bit
+
+74
+00:17:39,290 --> 00:17:51,950
+ of code for that right so look at the data before we trust it at least and i don't know if i've mentioned
+
+75
+00:17:51,950 --> 00:18:04,890
+ this before but uh the colors you might not have these uh lovely colors and that that are quite helpful
+
+76
+00:18:04,890 --> 00:18:15,820
+ and it's just an extension uh and uh what was it called again and it's here rainbow csv yeah exactly
+
+77
+00:18:15,820 --> 00:18:28,130
+ so that's the one i'm using so rainbow csv and there might be others that are lovely as well but i like
+
+78
+00:18:28,130 --> 00:18:50,140
+ this one that's the usual one i go with you can choose whatever you want first step we are going
+
+79
+00:18:50,140 --> 00:19:12,790
+ to take a first call it first look maybe something we uh usually start with something like this orders
+
+80
+00:19:12,790 --> 00:19:23,760
+ i will actually choose eight why not if i hadn't written anything i would have could get a five but
+
+81
+00:19:23,760 --> 00:19:32,530
+ you already know this right so let's run that one and see what we get uh and if it's too small uh or
+
+82
+00:19:33,170 --> 00:19:46,930
+ how is it all right the size could i make it bigger yeah i could turn thumbs up and the yes i got from
+
+83
+00:19:46,930 --> 00:19:53,230
+ yetnet that's what was from before all right so it's all right let's just tell me if it's too small
+
+84
+00:19:53,230 --> 00:20:01,320
+ and i can make it a little bit bigger um so let's go through the columns uh so we've got an order id uh
+
+85
+00:20:01,320 --> 00:20:13,750
+ the number uh well is the number of the order um we got a customer id which is the customer uh an order date of course is the date
+
+86
+00:20:13,750 --> 00:20:23,060
+ product and category uh well tells us what we bought uh unit price is the price of one item
+
+87
+00:20:24,070 --> 00:20:34,200
+ and quantity is how many were bought uh express says if you have uh well if the customer paid for an express
+
+88
+00:20:34,200 --> 00:20:48,970
+ the delivery uh coupon code discount code uh if the customer actually used one uh and a gift message
+
+89
+00:20:48,970 --> 00:21:00,470
+ well it's a message for a gift which looks empty so far and if we take a look at the unit price it says
+
+90
+00:21:00,470 --> 00:21:13,850
+ 1000 for the first one here 1199 kroner with a space in the middle right a comma for decimal and the letter
+
+91
+00:21:13,850 --> 00:21:27,570
+ kroner at the end just like how we write the prices in swedish right but not the way a computer writes a number
+
+92
+00:21:27,570 --> 00:21:36,490
+ right so let's ask pandas uh for the uh overview like we did with the airbnb table as well
+
+93
+00:21:41,730 --> 00:22:19,000
+ and uh so we can write orders in phone from this i take at the look at the order date we can see that the
+
+94
+00:22:19,000 --> 00:22:34,570
+ dates a text right and not the dates that's one thing we can see like we have already mentioned the unit price
+
+95
+00:22:34,570 --> 00:22:47,120
+ is also as text not numbers and we know that already and if we look at the quantity it actually says um
+
+96
+00:22:47,120 --> 00:23:01,510
+ whole numbers right so this is quite fine excuse me and if we look at the uh non-null here the column
+
+97
+00:23:01,510 --> 00:23:13,600
+ we can see that we have 824 for the dates this should be 825 right so we already know that one date is
+
+98
+00:23:13,600 --> 00:23:27,500
+ missing uh when it comes to the coupon code uh we got 170 of them so most orders do not have a uh have no
+
+99
+00:23:27,500 --> 00:23:37,600
+ a coupon code uh we can take a look at that as well uh we are going to take a look at that as well
+
+100
+00:23:38,170 --> 00:23:50,890
+ might be missing for a reason and we see also that the gift message says zero so completely empty just
+
+101
+00:23:50,890 --> 00:24:01,880
+ like the 15 empty columns in the airbnb table right so i would say first of all uh we have three problems
+
+102
+00:24:01,880 --> 00:24:11,310
+ that are already visible the dates uh the dates are to text the prices are text and the column gift is
+
+103
+00:24:11,310 --> 00:24:23,540
+ completely empty so these are the three big problems to begin with uh and if we uh well we can start with
+
+104
+00:24:23,540 --> 00:24:31,650
+ the text columns where we expect the same few values to come back again and again for example uh category
+
+105
+00:24:31,650 --> 00:24:44,110
+ uh should only have a few different values such as maybe shoes or books and so on and express should
+
+106
+00:24:44,110 --> 00:24:53,880
+ only say maybe yes or no right so those are the columns where it's easy to go wrong because the same
+
+107
+00:24:53,880 --> 00:25:03,580
+ thing can be written in this in different ways right and we actually know how to count the values in a
+
+108
+00:25:03,580 --> 00:25:16,170
+ column right so let's start with that and let me just create a markdown i'm actually going to say text
+
+109
+00:25:17,730 --> 00:25:38,700
+ that is not an i stands for one uh so we're gonna start with spaces and capital letters the the category
+
+110
+00:25:38,700 --> 00:25:46,430
+ should tell us what kind of product it is right and in this shop i already know that there are six
+
+111
+00:25:46,430 --> 00:26:01,090
+ categories there are shoes clothing home and garden sports electronics and books uh well so how many
+
+112
+00:26:01,090 --> 00:26:08,020
+ different values does the column have well it should be six then right now let's take a look at that
+
+113
+00:26:08,020 --> 00:26:36,290
+ orders the gory excuse me and unique now let's run that 38 right not six right 38 so something is wrong
+
+114
+00:26:36,290 --> 00:26:59,230
+ now let's actually take a look at the values as well orders category and what should we do now value
+
+115
+00:26:59,230 --> 00:27:12,950
+ counts right count how many times each value actually appears the tool that we used yesterday a lot let's
+
+116
+00:27:12,950 --> 00:27:25,440
+ try it out and see what we get okay let's see what actually happened so the category clothing
+
+117
+00:27:25,440 --> 00:27:36,440
+ well appears in different ways right so we have it over here we have it over here we have it over here
+
+118
+00:27:36,440 --> 00:27:49,750
+ we have it over here and maybe some other place right uh so we have it in capital letters uh starts with
+
+119
+00:27:49,750 --> 00:27:57,590
+ a capital letter uh all small letters maybe a space somewhere maybe at the beginning or after it i don't know
+
+120
+00:27:57,590 --> 00:28:06,690
+ uh also if we take a look at the look at electronics same thing here i see electronics over here and
+
+121
+00:28:06,690 --> 00:28:18,050
+ electronics over here and here we see a clear space at the beginning so they might look the same to us
+
+122
+00:28:18,050 --> 00:28:27,510
+ but to pandas there are different values right because every single character counts of course including
+
+123
+00:28:27,510 --> 00:28:36,200
+ capital letters and spaces and this is a very common problem in real data people typing things in in
+
+124
+00:28:36,200 --> 00:28:42,330
+ different ways or different system write them in different ways and and it of course matters right
+
+125
+00:28:42,330 --> 00:28:54,880
+ because of what we learned yesterday uh so let's see what it does to count so how many orders are there
+
+126
+00:28:54,880 --> 00:29:10,910
+ for example in category clothing okay uh so let's add that out so if i write it plainly like this print orders
+
+127
+00:29:10,910 --> 00:29:41,700
+ um um the gory uh equals talking like this with my sister right there we go and then uh let's take some
+
+128
+00:29:44,290 --> 00:29:56,640
+ so when i run this i write it with a mask right the trick that we learned from monday two counts as one
+
+129
+00:29:56,640 --> 00:30:07,400
+ and we get back 128 so that is the number that we would have reported right we're going to see in a moment
+
+130
+00:30:07,400 --> 00:30:15,390
+ that the real number is much higher uh so all the orders written as clothing with small letters or
+
+131
+00:30:15,390 --> 00:30:24,630
+ clothing with big letters and clothing uh with a space were actually left out so a group by on this
+
+132
+00:30:24,630 --> 00:30:34,810
+ column would do the same um it would make a separate group for every spelling and no total would be right
+
+133
+00:30:34,810 --> 00:30:46,460
+ so we have to make the values the same and for that we use the text tools for pandas uh and they all live
+
+134
+00:30:46,460 --> 00:31:09,720
+ under something called str and they work on well every value in the column at once so we use
+
+135
+00:31:10,840 --> 00:31:18,840
+ three steps we will first strip which removes the spaces at the beginning and and at them and then
+
+136
+00:31:19,650 --> 00:31:26,460
+ the second is actually lower which makes everything lowercase and let's see uh how much uh how much
+
+137
+00:31:26,460 --> 00:31:37,030
+ they help one step at a time by counting the the different values after each one all right so let's
+
+138
+00:31:37,030 --> 00:31:46,300
+ start here so i'm just going to do many prints here so that we can see the the steps here black and white
+
+139
+00:31:46,300 --> 00:32:14,460
+ so orders um category we can start with um and unique so that is before and now print uh orders uh the gory
+
+140
+00:32:14,460 --> 00:32:44,890
+ then also use uh now use the tr and then and after that look at and unique so after the strip right and also
+
+141
+00:32:44,890 --> 00:33:06,500
+ last but not least uh strip but at the same time also use uh lower and then also use um of course let's
+
+142
+00:33:06,500 --> 00:33:28,450
+ not forget like that so after the strip and lower okay so when we run this so first we see 38 different
+
+143
+00:33:28,450 --> 00:33:40,610
+ values after the strip there are 20 so all the values with spaces in front or behind are actually gone
+
+144
+00:33:40,610 --> 00:33:57,580
+ and after lower we only have seven left okay a huge step forward right but uh uh but it's still
+
+145
+00:33:57,580 --> 00:34:08,070
+ one too many we expect six right so there's one more problem uh and it's not about space or capital
+
+146
+00:34:08,070 --> 00:34:46,850
+ letter so let's look at these seven and see what the problem could be orders category then do a value
+
+147
+00:34:46,850 --> 00:35:03,990
+ count so let's take a look at those seven seven uh values that are actually left we see the problem
+
+148
+00:35:03,990 --> 00:35:20,640
+ right here it is home and garden we see it twice right so someone wrote the word and in one place
+
+149
+00:35:20,640 --> 00:35:32,690
+ and the sign and another right so these two are actually the same category uh but written in two ways
+
+150
+00:35:32,690 --> 00:35:44,230
+ so no capital letter will fix that right so we have to tell pandas to replace one with the other so for
+
+151
+00:35:44,230 --> 00:35:52,860
+ that we will actually use replace uh and and you will notice that when we use uh replace uh we do not
+
+152
+00:35:52,860 --> 00:36:08,450
+ use uh string um because it actually replaces whole values uh so every value that is exactly home and
+
+153
+00:36:08,450 --> 00:36:20,890
+ the garden will become home and garden like this it's going to be much clearer as as we move along and
+
+154
+00:36:20,890 --> 00:36:30,820
+ then we will also do one more thing uh lowercase is is is is a bit ugly in the table uh so we will
+
+155
+00:36:30,820 --> 00:36:39,680
+ finish with a title which gives every word a capital letter at the start so now we write all the steps
+
+156
+00:36:39,680 --> 00:36:53,040
+ together and at the same time we're going to save the result back into the column right let's try to do
+
+157
+00:36:53,040 --> 00:37:38,770
+ that so orders green equals orders they are nothing new uh strip where and replace without the str because
+
+158
+00:37:38,770 --> 00:38:17,170
+ we're changing the whole thing and what we want to change here home garden and and attend we also want to
+
+159
+00:38:17,170 --> 00:38:32,580
+ see them right so orders yeah you have a mistake there for you okay thank you tell me where's the
+
+160
+00:38:32,580 --> 00:38:52,790
+ mistake homer and garden in replace which is funny though so uh thank you for that uh so um we remove the
+
+161
+00:38:52,790 --> 00:39:09,490
+ spaces at the beginning and at the end right everything should be uh lowercase uh and we have uh something
+
+162
+00:39:09,490 --> 00:39:13,070
+ to fix here right uh
+
+163
+00:39:13,790 --> 00:39:22,210
+ and we want a capital letter at the start of every word and then we want to write uh the result back
+
+164
+00:39:22,210 --> 00:39:35,200
+ into the column sorry over here right all right and like i've mentioned i think before uh the parentheses
+
+165
+00:39:35,200 --> 00:39:51,220
+ around is uh in order to let us write one step on every line let's run it let's see one two three four
+
+166
+00:39:51,220 --> 00:40:04,050
+ five six six six categories exactly as we wanted and if we look at clothing it has 180 orders uh and the
+
+167
+00:40:04,050 --> 00:40:19,050
+ count we made before cleaning is 128 right so we would have missed 52 orders more than uh water uh just
+
+168
+00:40:19,050 --> 00:40:29,480
+ because of capital letter and space so yeah and if we check the total here 180 plus 151 plus 148 and so far
+
+169
+00:40:29,480 --> 00:40:43,940
+ all the way to 70 we actually get 825 so every order is still there uh and one thing to remember is the
+
+170
+00:40:43,940 --> 00:40:52,600
+ replace part here so we have actually replace and we have actually bring replace like this uh but there
+
+171
+00:40:52,600 --> 00:41:05,040
+ there is a uh they sound the same uh but they're not the same so replace uh like this is uh replaces the whole
+
+172
+00:41:05,040 --> 00:41:20,510
+ values so the value has to be exactly what you wrote while using cr like this uh replaces a part of the text
+
+173
+00:41:20,510 --> 00:41:33,000
+ inside every value and we will use this one this this this this way uh uh in a few minutes uh actually on
+
+174
+00:41:33,000 --> 00:41:50,570
+ the prices okay so far so good now let's check that the product product columns does not have the same
+
+175
+00:41:50,570 --> 00:42:04,070
+ problem so it actually has to say 24 different products now let's look at that um so orders
+
+176
+00:42:04,070 --> 00:42:25,760
+ fact same way unique so yeah uh checking just that the product names are consistent and we get 24 so
+
+177
+00:42:25,760 --> 00:42:33,300
+ that column is actually fine so this is also a part of the cleaning right you do not only fix what is
+
+178
+00:42:33,300 --> 00:42:45,380
+ broken you also check what is not broken right so now kind of come to the second part here of text
+
+179
+00:42:47,520 --> 00:43:04,450
+ so let me just write that text two is going to be more about yes or no and prices that are text
+
+180
+00:43:08,510 --> 00:43:24,030
+ so the other column with categories uh with the category with categories is express uh it says if the
+
+181
+00:43:24,030 --> 00:43:37,740
+ order had an express delivery or not right uh press no no yes no all right okay let's take a look at that
+
+182
+00:43:42,110 --> 00:43:53,950
+ so if we take a value count on express and see what we get uh so let's try that so orders um express
+
+183
+00:43:56,080 --> 00:44:08,220
+ value counts so count the values in the express column uh hopefully we will get two right yes or no
+
+184
+00:44:08,220 --> 00:44:18,510
+ there you go one two three four five six so six different values for something that can only be
+
+185
+00:44:18,510 --> 00:44:29,400
+ yes or no so we have no like this no like this no like this yes like this yes like this and yes like this
+
+186
+00:44:29,400 --> 00:44:44,630
+ right just the why uh so we want maybe what we want is maybe a column of
+
+187
+00:44:44,630 --> 00:44:54,370
+ true or false maybe because then we can use everything we learned on monday filtering counting
+
+188
+00:44:54,370 --> 00:45:03,510
+ and taking the mean to get a share right so we will do that with two sets so first we will use lower
+
+189
+00:45:03,510 --> 00:45:11,740
+ to take care of the capital letters and then we will use map which works like a dictionary so for every
+
+190
+00:45:11,740 --> 00:45:19,860
+ value in the column pandas looks it up in a dictionary uh that we write it and and and then replaces it
+
+191
+00:45:19,860 --> 00:45:48,960
+ all right you will see it in action in a second so orders express equals orders press which i'm going
+
+192
+00:45:48,960 --> 00:46:05,210
+ to use lower and now let's use map and when you use map it looks something like this so what we know
+
+193
+00:46:05,210 --> 00:46:16,190
+ now is when using lower we will get no no yes no sorry no and yes and why that's the three that we're
+
+194
+00:46:16,190 --> 00:46:24,790
+ going to be left right because these are the same only with the cap uh capital or not capital same thing
+
+195
+00:46:24,790 --> 00:46:36,930
+ with yes these two yeses but we cannot forget this one right so uh let's actually use that so we have yes
+
+196
+00:46:36,930 --> 00:46:56,430
+ yes that we want to be true we also have a y that we want to be true and we have last but not least a
+
+197
+00:46:56,430 --> 00:47:00,650
+ null that we want to be false
+
+198
+00:47:17,670 --> 00:48:01,590
+ now print there's s is now sum and also let's do a orders express use um value counts all right uh and
+
+199
+00:48:01,590 --> 00:48:09,730
+ an important thing here uh just an important note here is the value that is not in a dictionary always
+
+200
+00:48:09,730 --> 00:48:27,670
+ becomes missing an am or none not a number so that's why uh the the first one counts the missing missing
+
+201
+00:48:27,670 --> 00:48:45,070
+ values right so this should be zero hopefully okay and there we go so zero missing values perfect thumbs
+
+202
+00:48:45,070 --> 00:48:54,960
+ up for us so this means that every value was found in our dictionary and the column that says false as
+
+203
+00:48:55,670 --> 00:49:09,760
+ uh 554 times and true 271 times and together that is actually 825 so this is the check we should always
+
+204
+00:49:09,760 --> 00:49:20,400
+ do after map so um if something had been spelled in a way we didn't we did not think of uh it would have
+
+205
+00:49:20,400 --> 00:49:37,890
+ uh become a missing and the count would not have been zero right uh see here uh actually marked when to take
+
+206
+00:49:37,890 --> 00:49:50,940
+ a break uh yeah we can continue a little bit more before taking a break okay so the next problem we have
+
+207
+00:49:50,940 --> 00:50:02,590
+ well is a bigger one right that's the price and on monday we actually saw that the airbnb price is
+
+208
+00:50:02,590 --> 00:50:08,180
+ is text and here we have the same problem which is convenient for us and we're going to fix that
+
+209
+00:50:08,180 --> 00:50:23,970
+ step by step but first let's just take a look at it again orders and this column is called unit price
+
+210
+00:50:23,970 --> 00:50:45,390
+ add eight to list right so yeah just uh as a first step look at eight price eight prices uh as a plain
+
+211
+00:50:45,390 --> 00:50:56,080
+ list right and there we go so here we can take a look at the uh the difference between the prices
+
+212
+00:50:56,080 --> 00:51:10,270
+ so there is currency donor at the end some of the prices have a space and some don't for example
+
+213
+00:51:10,270 --> 00:51:22,080
+ 1199 and 1299 one with space one without space and some have a comma we already know that right
+
+214
+00:51:22,080 --> 00:51:36,180
+ no the comma is actually for the um the decimals right so here we go here we have a comma for the
+
+215
+00:51:36,180 --> 00:51:48,910
+ decimal so why does a price like this actually exist that's also something that we should
+
+216
+00:51:49,550 --> 00:52:10,380
+ think about if we take a look a little look here at the uh uh train trail running shoes we see
+
+217
+00:52:10,380 --> 00:52:24,350
+ 1299 but here we also see trail running shoes but here it says actually 1039.20 so it is the same shoe
+
+218
+00:52:24,350 --> 00:52:36,410
+ so what has actually happened here well with a little bit of quick math here uh 1299 minus 20
+
+219
+00:52:37,130 --> 00:52:49,010
+ is actually 1039.20 so in this made up shoe is not a shoe shop but made up shop uh some items were
+
+220
+00:52:49,010 --> 00:53:00,330
+ actually on sale and that that is why some prices are not round numbers so all of these different uh
+
+221
+00:53:00,330 --> 00:53:10,150
+ ways of writing a price uh right and and and uh and and they are text right so what we want is the
+
+222
+00:53:10,150 --> 00:53:18,350
+ opposite plain numbers that python can calculate with no letters no spaces no spaces inside
+
+223
+00:53:19,550 --> 00:53:33,400
+ uh and a dot instead of a comma for the decimal so 1199 with a space should be 1199 comma zero with a dot
+
+224
+00:53:33,400 --> 00:53:51,140
+ 349 should be 349.0 all right and obviously 1039 no space 0.20 or 0.2 let's try the quickest way
+
+225
+00:53:51,140 --> 00:53:57,010
+ first we will ask pandas to change the type of the whole column to decimal numbers and let's see what
+
+226
+00:53:57,010 --> 00:54:08,960
+ happens and i think you already know where i'm going with this but just to make it super clear unit price
+
+227
+00:54:08,960 --> 00:54:20,860
+ so we're going to use as type here uh as type float so let's see if magic actually happens here
+
+228
+00:54:20,860 --> 00:54:34,070
+ uh so just change the data type right in one step and there we go and the the the the the error actually
+
+229
+00:54:34,070 --> 00:54:40,650
+ tells us uh what is the what is wrong right so if you read the last one here could not convert
+
+230
+00:54:40,650 --> 00:54:48,930
+ string to float uh and uh and it says it's on this price right so prime does try to turn the text
+
+231
+00:54:49,410 --> 00:54:59,430
+ 1199 comma zero zero kroner to a number and it could not and it actually stopped at the very first
+
+232
+00:54:59,430 --> 00:55:07,890
+ value uh that that does not work and it shows it to us right and of course it cannot there are letters
+
+233
+00:55:07,890 --> 00:55:16,440
+ there is a space and a comment so we actually have to clean the text uh first so that only
+
+234
+00:55:16,440 --> 00:55:26,170
+ a number is left and only then can we change the type and we will do it one step at a time and yeah
+
+235
+00:55:26,170 --> 00:55:35,970
+ and then look at the result after each step and this time we will actually use string replace the one
+
+236
+00:55:35,970 --> 00:55:44,690
+ that actually replaces a part of a text all right step by step with different prints uh just like we did
+
+237
+00:55:44,690 --> 00:56:24,040
+ before so price equals here's unit price place no not replace let's start with strip uh so remove the
+
+238
+00:56:24,040 --> 00:56:39,250
+ spaces at the beginning and at the end and then of course print price let's take the first three
+
+239
+00:56:39,250 --> 00:57:17,460
+ enough uh to play the list step two price we've already done this use the variable that we just created and
+
+240
+00:57:17,460 --> 00:57:40,400
+ now let's use replace and stream replace this time so remove the currency right and then take print just
+
+241
+00:57:40,400 --> 00:57:55,200
+ to see the difference all right we also want to remove the spaces inside the number so price equals
+
+242
+00:57:55,200 --> 00:58:24,350
+ price place let's use replace again here base to no space and then print and last but not least price
+
+243
+00:58:24,350 --> 00:58:56,430
+ was price bring place so that the comma the comma actually becomes a dot which is how python actually
+
+244
+00:58:56,430 --> 00:59:10,090
+ writes decimals right so clean the price text one step at a time and look at uh and look at the values
+
+245
+00:59:10,090 --> 00:59:25,210
+ uh at the first three values after each step and i save like you see every step in a variable price
+
+246
+00:59:25,210 --> 00:59:52,830
+ and the table orders is not actually changed yet right four steps and every step did one small thing right
+
+247
+00:59:52,830 --> 01:00:05,920
+ first uh the spaces uh at the edges are gone and the krona gone then the spaces inside the number
+
+248
+01:00:05,920 --> 01:00:19,770
+ finally the comma became a dot and what is left now is actually to uh it looks at least like like a number
+
+249
+01:00:19,770 --> 01:00:30,490
+ and yeah of course we need a dot not a comma like python likes it and not how we write numbers in swedish
+
+250
+01:00:30,490 --> 01:00:41,490
+ and on monday when we clean the airbnb price the steps will be the same but only that the characters
+
+251
+01:00:41,490 --> 01:00:50,260
+ are different and there we have to maybe remove a dollar sign and comma or whatever but we will take
+
+252
+01:00:50,260 --> 01:00:58,850
+ that on monday when we get there so now that the text is clean we can change the type and save the
+
+253
+01:00:58,850 --> 01:01:32,300
+ result into the table so let's try that again right so orders unit price equals price as type load and
+
+254
+01:01:32,300 --> 01:02:02,220
+ let's do a print to make sure here orders uh unit price and then the type and also orders unit price use
+
+255
+01:02:02,220 --> 01:02:19,540
+ describe here describe and then round the two so change the clean text to real numbers and then save it
+
+256
+01:02:19,540 --> 01:02:39,780
+ back into the table and now and also uh check that the result actually makes sense now let's run this
+
+257
+01:02:39,780 --> 01:02:54,430
+ let's see what we get there we go so first of all it says that it's a float and we also see the scribe
+
+258
+01:02:54,430 --> 01:03:05,380
+ works like it did for numbers as we saw on monday because that's what we wanted right now let's
+
+259
+01:03:05,380 --> 01:03:12,330
+ actually uh just uh check that the result actually makes sense uh because that is the step that people
+
+260
+01:03:12,330 --> 01:03:23,970
+ forget um and we can see that the cheapest item cost 59 and the most expensive one cost 1499.
+
+261
+01:03:23,970 --> 01:03:38,480
+ the average is about 429 so for a shop that actually sells socks and notebooks and winter boots that
+
+262
+01:03:38,480 --> 01:03:49,890
+ looks quite right right so if the minimum had been zero or negative or the maximum is like 149 900 or
+
+263
+01:03:49,890 --> 01:03:58,600
+ something like that we would know that something uh something went wrong so now uh we can actually
+
+264
+01:03:58,600 --> 01:04:05,870
+ calculate with the price but before that let's actually take a little break so i will leave
+
+265
+01:04:05,870 --> 01:04:21,470
+ you with that cliffhanger what time should we be back oh yeah yeah a valid question uh well let's say 10
+
+266
+01:04:21,470 --> 01:13:47,070
+ 15 right back beautiful numbers yeah i agree can you do it in one pass instead of four uh because if there are
+
+267
+01:13:47,070 --> 01:13:58,580
+ millions of rows four different passes four different passes can be expensive yes i agree uh and yes you
+
+268
+01:13:58,580 --> 01:14:12,930
+ can uh and i was not actually gonna uh cover that part but sure uh here you can actually use regex um
+
+269
+01:14:12,930 --> 01:14:23,560
+ so just a pattern um that matches several things at once and yeah you can also look up regex when you have
+
+270
+01:14:23,560 --> 01:14:34,190
+ time during the during the lab if you want uh on how that works uh so just like you say say here we
+
+271
+01:14:34,190 --> 01:14:51,990
+ well step one two three right we we we we they all remove something right so they actually fit
+
+272
+01:14:51,990 --> 01:15:20,220
+ into one regex so let me uh buy uh that one that would be price and orders uh price and then we can
+
+273
+01:15:20,220 --> 01:15:55,610
+ just say stream uh replace place uh and in order to use regex we put the r i'll explain to serve
+
+274
+01:15:55,610 --> 01:16:34,100
+ something like this regex true comma so here we're using two passes instead of four right uh so the
+
+275
+01:16:34,100 --> 01:16:50,770
+ comma actually needs its own step uh the s here means actually in regex it's actually means um the white space
+
+276
+01:16:50,770 --> 01:17:18,850
+ this one means or and kroner is uh the currency so yeah and like i mentioned here the comma actually
+
+277
+01:17:18,850 --> 01:17:25,880
+ needs uh its own step because it's actually replaced with a dot instead instead of removed like we did
+
+278
+01:17:25,880 --> 01:17:33,280
+ over here with r extra yeah so that's how you would do that and i can actually save that for you because
+
+279
+01:17:33,280 --> 01:17:42,380
+ i'm gonna share the code at the end of the lesson um but i did it like this uh just to see it clearly
+
+280
+01:17:42,380 --> 01:17:51,180
+ step by step see exactly what each part does uh and i can think a little bit about uh maybe
+
+281
+01:17:51,180 --> 01:18:05,260
+ including regex on when we're going to do it for real on the listings table all right did that answer
+
+282
+01:18:05,260 --> 01:18:36,640
+ your question victor well we have cleaned the text in in in category uh yeah in in category and express
+
+283
+01:18:36,640 --> 01:19:02,850
+ and we have turned the price into numbers so the next column to look at is we know already that the
+
+284
+01:19:02,850 --> 01:19:13,970
+ dates are uh text should it be to be a date right so let's actually take a look at what that means in
+
+285
+01:19:13,970 --> 01:19:21,830
+ practice so if a date is text we cannot ask what the first and the last day uh what the last first and
+
+286
+01:19:21,830 --> 01:19:29,380
+ last they are or how many days there are between them or how many orders they were on march for example
+
+287
+01:19:29,940 --> 01:19:40,390
+ uh so for that pandas has to know that it's actually a date right and for this uh for this we use the tool
+
+288
+01:19:40,390 --> 01:20:04,700
+ uh pd uh pd uh to no sorry to date uh time let's actually try it so let's try it uh the quickest way
+
+289
+01:20:04,700 --> 01:20:24,370
+ so pd uh to date time on what well orders uh order date okay so turn the text into real dates just like
+
+290
+01:20:24,370 --> 01:20:45,470
+ like this read every text uh text value as a date and boom go uh so we get another error and again it
+
+291
+01:20:45,470 --> 01:20:55,240
+ actually tells us what what is wrong right uh so the the message actually says time data unknown doesn't
+
+292
+01:20:55,240 --> 01:21:05,540
+ match the format all right so uh pandas looked at the first values and and and decided that the dates are
+
+293
+01:21:05,540 --> 01:21:23,560
+ written as uh as year month and day right uh for example 2026 uh whatever zero one zero five uh then it's
+
+294
+01:21:23,560 --> 01:21:44,810
+ actually found if we look at the uh the dates here uh something called unknown and here it actually stops so
+
+295
+01:21:44,810 --> 01:21:53,720
+ there are values in the columns that are not dates at all we could of course fix them by hand
+
+296
+01:21:54,520 --> 01:22:04,720
+ if we we knew what was right but we cannot invent dates right what we can do is to tell pandas if you
+
+297
+01:22:04,720 --> 01:22:17,720
+ find something that is not a date do not stop just mark it as missing and that is uh we will see how
+
+298
+01:22:17,720 --> 01:22:27,480
+ that is done uh so a missing date is actually not called none it's actually called uh nat not uh not
+
+299
+01:22:27,480 --> 01:22:38,430
+ a time uh which is the same idea as uh as not nan for numbers and this setting it can be a little bit
+
+300
+01:22:38,430 --> 01:22:48,280
+ dangerous uh because it turns problems into missing values quietly uh with no warning so we must always count
+
+301
+01:22:48,280 --> 01:22:59,340
+ the missing values before and after to see how many values we actually lost all right so i'm just
+
+302
+01:22:59,340 --> 01:23:08,380
+ going to make sure of that so we actually see black and white so let's take the dates here uh
+
+303
+01:23:08,860 --> 01:23:51,410
+ to uh daytime uh orders date errors uh and then where's uh and now print orders order date is now
+
+304
+01:23:52,860 --> 01:24:05,190
+ okay so let's see what's missing right and this okay so here is actually where what's missing uh
+
+305
+01:24:05,190 --> 01:24:22,180
+ what's missing uh before and then also print um dates that we just created over here right uh and do the
+
+306
+01:24:22,180 --> 01:24:53,370
+ same thing here is not uh some right so this would be missing too right here i'm actually going to use
+
+307
+01:24:53,370 --> 01:25:47,710
+ orders lock is now d so turn the text into dates right and and see which value did uh which value did not
+
+308
+01:25:47,710 --> 01:26:11,790
+ work uh so error squares here uh a value that is not a date becomes uh not this not not a uh not a time
+
+309
+01:26:11,790 --> 01:26:24,890
+ right uh missing so instead of stopping with an error like we saw before uh and also count the the missing
+
+310
+01:26:24,890 --> 01:26:37,980
+ values before and after and show the rows where the new date is missing with only two columns all right
+
+311
+01:26:37,980 --> 01:27:02,150
+ so now let's run this so before one date was actually missing and after four so three values were turned
+
+312
+01:27:02,150 --> 01:27:15,340
+ into missing coerce uh and now we can we can see exactly which ones uh so one was already missing that would
+
+313
+01:27:15,340 --> 01:27:27,840
+ have been an empty date right and one says unknown right and two of them just looks like uh normal dates
+
+314
+01:27:27,840 --> 01:27:42,650
+ they are quite impossible right uh because uh well there is not 30 days in february right and april actually
+
+315
+01:27:42,650 --> 01:27:53,780
+ only has 30 days so this is something typical that actually looks right oh sorry these two uh
+
+316
+01:27:53,780 --> 01:28:07,040
+ that looks right but it's not so what do we do with these four dates uh well we do not know the real date
+
+317
+01:28:07,040 --> 01:28:17,690
+ and we should not guess so yeah we can maybe let them stay missing because the orders themselves
+
+318
+01:28:17,690 --> 01:28:27,260
+ are fine they just do not have a date and how to handle missing values is something we actually uh
+
+319
+01:28:28,380 --> 01:28:51,350
+ dig into to tomorrow all right so now uh let's save the dates into uh into the table uh so orders date
+
+320
+01:28:51,350 --> 01:29:06,440
+ equals dates uh so save the real dates into into the the the table instead of the text right and let's do
+
+321
+01:29:06,440 --> 01:29:44,350
+ some prints here uh print orders uh order date let's look at the d type uh d type let's use the main here
+
+322
+01:29:44,350 --> 01:30:31,380
+ let's use the uh max let's use fourth one minus uh let's try that so first let's look at the the data
+
+323
+01:30:31,380 --> 01:30:43,030
+ type hopefully it says actually date time and not stream the first uh date in the data the last date in
+
+324
+01:30:43,030 --> 01:30:54,180
+ in the data and the last minus the first so uh in order to see the number of days in between uh
+
+325
+01:30:54,180 --> 01:31:02,930
+ the orders the first and the last order okay and also uh maybe the most important stuff that
+
+326
+01:31:02,930 --> 01:31:12,130
+ will save the real dates into the table and then use them for something let's take a look
+
+327
+01:31:12,130 --> 01:31:30,230
+ all right uh so now the column has the type uh daytime uh and the uh us uh here uh it's not it doesn't
+
+328
+01:31:30,230 --> 01:31:37,470
+ stand for us uh america or anything like that it stands for microseconds uh because uh that's how pandas
+
+329
+01:31:39,030 --> 01:31:49,670
+ store the time uh so the first order if is from 5th of january and the last one
+
+330
+01:31:49,670 --> 01:32:07,110
+ from 28th of june so our data covers 174 days and with text this would have been impossible and of
+
+331
+01:32:07,110 --> 01:32:18,110
+ course a date column can do much more uh we can for example pick a part of the date um can pick that
+
+332
+01:32:18,990 --> 01:32:27,750
+ maybe the year the month the weekday um let's try something let's count the the orders per month for
+
+333
+01:32:27,750 --> 01:32:42,960
+ example uh i can maybe write that orders uh per month uh and i'm actually looking at here using we were
+
+334
+01:32:42,960 --> 01:33:12,810
+ using dot dt orders order uh date t um two period right two period um uh and we can explain in a second
+
+335
+01:33:12,810 --> 01:33:37,190
+ that value counts and index uh count the orders in each month right so this is date tool uh or date tools
+
+336
+01:33:37,190 --> 01:33:52,190
+ uh uh of pandas uh as the same as we saw with the string right dot str which is the text tools uh change
+
+337
+01:33:57,640 --> 01:34:07,710
+ so change every date to the month it actually belongs to right so for example uh 2026
+
+338
+01:34:08,350 --> 01:34:20,160
+ zero one zero five becomes uh 2026 zero one count how many orders uh there are in in in each month
+
+339
+01:34:20,160 --> 01:34:34,960
+ and put the months in order right and since they are from january to to to uh june uh hopefully we will get
+
+340
+01:34:34,960 --> 01:34:53,880
+ six months now let's see ah perfect january february mars may june with between uh 118 orders which is
+
+341
+01:34:53,880 --> 01:35:09,130
+ the lowest up to 162 orders in each and we can also see that the four orders uh uh without the date are
+
+342
+01:35:09,130 --> 01:35:21,370
+ not in any uh are not in any month right because if we add up these numbers we get 821 and not 825
+
+343
+01:35:21,370 --> 01:35:44,860
+ so you should remember that for later uh and the numbers still include a problem but we have not
+
+344
+01:35:44,860 --> 01:35:55,030
+ found yet okay let's actually look for it let's take it step by step here so here i'm just gonna write
+
+345
+01:35:55,030 --> 01:36:16,500
+ uh the next step that we're going to look at which is duplicates and then we can uh step by step uh so
+
+346
+01:36:16,500 --> 01:36:25,140
+ here's something that actually can happen in in any real system and that is that the same row
+
+347
+01:36:25,740 --> 01:36:39,670
+ is actually registered twice maybe an export uh ran two times or a customer clicked the button twice
+
+348
+01:36:40,220 --> 01:36:51,920
+ uh so an order should only exist once so it duplicates makes the numbers too big and pandas has a method
+
+349
+01:36:51,920 --> 01:37:02,030
+ to find them uh and that's what we are going to use right now and it's called duplicated so let me just
+
+350
+01:37:02,030 --> 01:37:16,200
+ put it there uh and it works at every row and says true if the row is an exact copy of of a row above it
+
+351
+01:37:16,200 --> 01:37:26,020
+ so it gives us a mask like the ones we made on monday so we can actually count it with some so now let's
+
+352
+01:37:26,020 --> 01:37:50,010
+ see it in action here print orders but uh plicated um sum right so count the rows that are an exact copy
+
+353
+01:37:50,010 --> 01:38:03,860
+ uh of an earlier row so if true so for for uh we will get true for for a row that is identical to the
+
+354
+01:38:03,860 --> 01:38:13,570
+ earlier row remember that earlier row in all comments of course uh and the sum well true will count as one
+
+355
+01:38:13,570 --> 01:38:27,990
+ just like always as we have seen before let's run this 25 so we have 25 duplicates right now let's take
+
+356
+01:38:27,990 --> 01:38:37,660
+ a look at some of them by default duplicated only marks the second copy so the first one is not shown
+
+357
+01:38:37,660 --> 01:38:48,640
+ right uh so in order to see both copies of each pair uh we can write keep false uh which means uh well in in
+
+358
+01:38:48,640 --> 01:39:07,930
+ this case it will mean mark all of them right uh so now let's try that out so orders orders duplicated
+
+359
+01:39:07,930 --> 01:39:33,090
+ keep balls and there we go like i said before uh take a look at the duplicated rows both copies of each
+
+360
+01:39:33,090 --> 01:39:44,150
+ to be sure that the real uh that that there are actually real duplicates right keep false will uh keep
+
+361
+01:39:44,150 --> 01:39:53,890
+ the first one too and we're using the filter that we used from monday and we just want to look at the
+
+362
+01:39:54,610 --> 01:40:13,000
+ first uh first how many pairs well three pairs right that's why i'm writing six here let's run this
+
+363
+01:40:13,000 --> 01:40:26,220
+ because they come in pairs of course and there we go all right so pairs of rows right that are the same
+
+364
+01:40:26,220 --> 01:40:42,340
+ in every column but the uh with the same um order number with the order id uh 227
+
+365
+01:40:42,340 --> 01:40:57,790
+ 200 27 to 34 34 39 39 so each appear twice right uh and an order number well should be unique right
+
+366
+01:40:57,790 --> 01:41:07,840
+ so these are real duplicates now if you think a little bit about the order in which we did things
+
+367
+01:41:07,920 --> 01:41:15,600
+ uh do you remember that we cleaned the text before we looked for duplicates and that was not a
+
+368
+01:41:15,600 --> 01:41:23,580
+ coincidence let's see what would have happened if we had looked for duplicates in the original table
+
+369
+01:41:23,580 --> 01:41:33,390
+ okay before cleaning so therefore i will use not orders i need to use orders raw right because that's
+
+370
+01:41:33,390 --> 01:41:42,570
+ the original this is the copy that we are modifying so now let's see what would have happened so here
+
+371
+01:41:42,570 --> 01:41:56,060
+ we got 25 right and now let's do the exact same thing boom boom boom and boom uh but not for orders
+
+372
+01:41:56,060 --> 01:42:12,960
+ orders raw uh let's run it ah so only 20 and not 25 so five of the copies uh were actually written a
+
+373
+01:42:12,960 --> 01:42:22,430
+ little differently maybe with a capital letter or with a space in the category so for duplicated uh those rows
+
+374
+01:42:22,430 --> 01:42:33,410
+ are not identical so it actually missed them so after we cleaned the text they actually became identical
+
+375
+01:42:33,410 --> 01:42:40,790
+ and we could find them so that is kind of an important rule right so clean the text first
+
+376
+01:42:40,790 --> 01:42:51,860
+ and look for the duplicates afterwards there is another way to check uh which which does not depend
+
+377
+01:42:51,860 --> 01:42:57,940
+ on the text uh because if we know that the order number should be unique we can actually look for
+
+378
+01:42:57,940 --> 01:43:05,420
+ duplicates in that column uh in that column only right and and that is actually what the subset is for uh so
+
+379
+01:43:05,420 --> 01:43:16,580
+ let me actually um try that out as well um so print and yeah we can do it here in orders that's all right
+
+380
+01:43:16,580 --> 01:43:33,190
+ um and duplicated um and then we use subset um and then we use subset on order uh order id
+
+381
+01:43:35,260 --> 01:43:49,300
+ and the sum here so uh count the rows with with an order uh order id uh that has happened and not happened
+
+382
+01:43:49,300 --> 01:44:00,840
+ and then you say appeared before uh whether the the the whatever the other column says okay so let's run
+
+383
+01:44:00,840 --> 01:44:12,320
+ this uh and we get the 25 same number so that is actually a good sign so two different ways of check
+
+384
+01:44:12,320 --> 01:44:20,950
+ checking gave the same answer so if the numbers had been different we would have rows with the same order
+
+385
+01:44:20,950 --> 01:44:29,190
+ number but different content and then we would have to find out which one is right before we could actually
+
+386
+01:44:29,190 --> 01:44:41,730
+ remove anything right so two ways to uh and great to use as well in order to see that they actually
+
+387
+01:44:41,730 --> 01:44:54,310
+ that you actually get the same values how much does this it doesn't matter well let's calculate how much
+
+388
+01:44:54,310 --> 01:45:03,760
+ money the orders actually add up to uh with the duplicated and without them okay so we will multiply
+
+389
+01:45:03,760 --> 01:45:12,090
+ the price by the quantity uh to get the amount for every row and then add it up uh so that is a new
+
+390
+01:45:12,090 --> 01:45:20,910
+ column uh like the ones we created yesterday all right so let's try that out in order to actually see
+
+391
+01:45:20,910 --> 01:45:41,340
+ how much it actually uh matters so total uh i will call this total width orders um unit price uh multiplied
+
+392
+01:45:41,340 --> 01:46:00,000
+ by the orders uh we said the quantity right uh quantity and then the sum and then let's do like this orders
+
+393
+01:46:00,000 --> 01:46:36,060
+ uh uh equals orders uh uh uh duplicate uh and also a reset index drop and now total instead of total with
+
+394
+01:46:36,060 --> 01:46:56,840
+ without and pretty much the same thing right so orders uh unit price um multiplied by orders uh one tt
+
+395
+01:46:58,980 --> 01:47:36,160
+ and and and also let's do some other prints so print the orders shape let's uh print round the total width
+
+396
+01:47:36,160 --> 01:48:14,550
+ to uh print without two and um print uh round total with uh with minus total without uh okay
+
+397
+01:48:14,790 --> 01:48:21,210
+ so we're removing the duplicates so we're removing the duplicates and see how much they change a
+
+398
+01:48:21,210 --> 01:48:35,460
+ the total amount so total width the total amount with the duplicates uh we we drop the duplicates
+
+399
+01:48:35,460 --> 01:48:46,250
+ so remove uh sorry uh remove every row uh that is an exact copy uh of an earlier row and keep the first one
+
+400
+01:48:46,250 --> 01:48:59,470
+ uh uh and reset uh and reset index so uh the number the rows so so number the rows zero one two uh again just
+
+401
+01:48:59,470 --> 01:49:13,780
+ like we did on monday right and then uh uh so so drop duplicates does not change the table it actually
+
+402
+01:49:13,780 --> 01:49:33,090
+ gives a new one uh so so we save it right let's see one two three ah lovely okay uh so now the table has
+
+403
+01:49:33,090 --> 01:49:43,400
+ has 800 rows and not 825 which means to 825 minus 25 duplicates perfect and if we take a look and still
+
+404
+01:49:43,400 --> 01:49:50,890
+ the team 10 columns uh and if we take a look at the money uh so with with the the the what you call it
+
+405
+01:49:50,890 --> 01:50:06,350
+ with the duplicates the total amount was 591 385 through them uh without them it is 572 783 so the difference
+
+406
+01:50:06,350 --> 01:50:18,220
+ is 18 601 and that is about according to my notes at three percent too much so nothing was actually wrong
+
+407
+01:50:18,220 --> 01:50:28,480
+ with any single role but the total would have been actually wrong and notice that drop duplicates actually
+
+408
+01:50:28,480 --> 01:50:35,490
+ works a little bit like sort values data on monday so it does it does not change the table it gives us
+
+409
+01:50:35,490 --> 01:50:48,210
+ a new table so we actually have to save it and that is why we write orders equals so now we actually have
+
+410
+01:50:48,210 --> 01:51:08,780
+ one problem left from our list and that's the empty column um drop and now we can kind of tell you what
+
+411
+01:51:08,780 --> 01:51:19,970
+ what what we're gonna do but anyways uh drop what we do not need right and then we're also gonna put it
+
+412
+01:51:19,970 --> 01:51:37,200
+ together uh there we go the column that we looked at before the gift messenger was uh when we when we use
+
+413
+01:51:37,200 --> 01:51:52,510
+ describe uh in it was completely empty right so 825 rows at not a single value so for us it is of no use
+
+414
+01:51:52,510 --> 01:52:08,690
+ so we're actually gonna remove it and for that we're actually gonna use right and and we say which of
+
+415
+01:52:08,690 --> 01:52:25,850
+ course which column we actually meet so let's take that as well orders equals orders drop columns uh
+
+416
+01:52:25,850 --> 01:52:45,700
+ equals uh one called gift such columns gift message no uh nothing wrong with the spelling right and now let's
+
+417
+01:52:45,700 --> 01:52:57,440
+ look at the shape here so orders shape okay so hopefully we will get nine columns and there we go
+
+418
+01:52:57,440 --> 01:53:12,180
+ nine columns right so we dropped the completely useless one now now we are at the question about the
+
+419
+01:53:12,180 --> 01:53:25,250
+ coupon code column right it was many missing values and uh if you noted it down or you can look at
+
+420
+01:53:25,250 --> 01:53:35,160
+ previously you you would see that it's 635 out of the 800 so now we come to the question as we asked
+
+421
+01:53:35,160 --> 01:53:44,910
+ ourselves over here should we remove that one as well well i actually vote no because these values are
+
+422
+01:53:44,910 --> 01:53:54,910
+ missing for a reason most customers did not use a coupon so there's nothing to write so that is not a
+
+423
+01:53:54,910 --> 01:54:02,980
+ problem in it in the data it is information right and we will actually come back to different kind
+
+424
+01:54:02,980 --> 01:54:12,420
+ of missing values tomorrow but now we're just cleaning the table now let's use it to to answer a question
+
+425
+01:54:13,300 --> 01:54:23,430
+ and use the tools from yesterday uh so a new column and group by uh and the question that's gonna wrap
+
+426
+01:54:23,430 --> 01:54:31,430
+ it up is and that's probably the last thing we're gonna do right yeah according to my notes it should be
+
+427
+01:54:31,430 --> 01:54:49,350
+ we'll see uh so the question i want to answer here uh so let me just copy it let's save a little bit of
+
+428
+01:54:49,350 --> 01:55:04,650
+ time there we go okay so uh which category brought in the most money so first the amount for every order
+
+429
+01:55:04,650 --> 01:55:36,720
+ line price times the quantity right now let's try that out so orders total equals orders unit unit
+
+430
+01:55:36,720 --> 01:56:22,430
+ price um multiplied by the orders uh we said uh quantity orders but group by category total round uh sort
+
+431
+01:56:22,430 --> 01:56:37,130
+ the values uh ascending uh false right so add up the money for each category and put the biggest first
+
+432
+01:56:37,130 --> 01:56:52,120
+ so here we're just creating a new column with amount for every row right price times quantity and then
+
+433
+01:56:52,120 --> 01:57:06,840
+ uh the sum of the amounts for each category no decimals and we want the biggest first now let's run this
+
+434
+01:57:06,840 --> 01:57:19,790
+ let's see what we get all right all right all right so shoes brings in the cash right so uh 207 382
+
+435
+01:57:19,790 --> 01:57:28,890
+ uh even though uh even though there are fewer orders for shoes than for clothes and that is because
+
+436
+01:57:28,890 --> 01:57:41,500
+ shoes are maybe expensive uh books are at the bottom uh with 16 680 and we can pretty much trust this
+
+437
+01:57:41,500 --> 01:57:48,120
+ because every category now exists in only one spelling and remember the the group counts that
+
+438
+01:57:48,120 --> 01:57:56,090
+ we made before cleaning every number would have been wrong right uh so what about the money per month
+
+439
+01:57:57,370 --> 01:58:04,610
+ because the dates are real dates now so we can actually group on months right so let's actually
+
+440
+01:58:04,610 --> 01:58:35,390
+ do that as well uh month monthly once orders uh group by orders order date dt to period right uh
+
+441
+01:58:36,160 --> 01:59:07,250
+ the month and i want to do it on the total total uh okay there's what dates period just like we did
+
+442
+01:59:07,250 --> 01:59:20,250
+ previously but now we're using group by and let's do some prints here as well so print monthly round to
+
+443
+01:59:21,910 --> 01:59:41,720
+ no decimals so the money for every month without decimals uh and also print round monthly uh thumb and
+
+444
+01:59:42,990 --> 02:00:12,570
+ two so all the months added together and let's print round um orders total um
+
+445
+02:00:12,570 --> 02:00:23,580
+ so the total of all orders to compare with the line above so add up the money for every month and check
+
+446
+02:00:23,580 --> 02:00:45,350
+ that the money uh that the the the the months add up to the total right uh so we can see may was actually
+
+447
+02:00:45,350 --> 02:00:57,760
+ the best month with 126 000 something like that uh but if we look at the uh uh last two numbers here
+
+448
+02:00:57,760 --> 02:01:08,240
+ we have uh 570 041 nearly uh but the total is actually 572 783
+
+449
+02:01:08,880 --> 02:01:25,710
+ so about 2700 kronor are missing so where are they well oh what do you think guys where are they took
+
+450
+02:01:25,710 --> 02:01:44,350
+ them during the break now do you think guys any hypothesis thank you jacob for orders without the day
+
+451
+02:01:44,350 --> 02:01:57,180
+ uh without the date right so yes the 2700 kronor uh other four orders that have no date so group by
+
+452
+02:01:57,180 --> 02:02:08,790
+ actually leaves out the rows where the group name is missing silently and there's no month uh for an
+
+453
+02:02:08,790 --> 02:02:18,700
+ order without the date so so so the monthly numbers are a little too low and the only way to know it
+
+454
+02:02:19,500 --> 02:02:26,520
+ is to actually check that the the parts actually add up to the whole so that is a habit worth having
+
+455
+02:02:26,520 --> 02:02:37,840
+ so now we have actually fixed one problem at a time in many cells uh look at what we have the steps are
+
+456
+02:02:37,840 --> 02:02:44,320
+ scattered all over the notebook with errors and tests in between and if you want to do the same
+
+457
+02:02:44,320 --> 02:02:51,900
+ cleaning again next week or if a colleague wants to check what we did it would have been very hard so so
+
+458
+02:02:51,900 --> 02:03:00,810
+ remember the rule from the beginning uh we said write the steps as code so that anyone can run them again
+
+459
+02:03:00,810 --> 02:03:14,200
+ so yeah let's actually put the whole cleaning in one single cell from the um uh from the original
+
+460
+02:03:14,200 --> 02:03:23,210
+ file to the clean table using only the steps that actually worked and sure i could take it step by
+
+461
+02:03:23,210 --> 02:03:30,640
+ step here but we have already done it once and i don't think you want to see me do it twice so i'm
+
+462
+02:03:30,640 --> 02:03:37,440
+ already prepared with some notes here as well uh so when you when i share the code it's good to have a
+
+463
+02:03:37,440 --> 02:03:42,860
+ little bit of comments so you remember what we actually did uh so i'm actually gonna copy that
+
+464
+02:03:45,580 --> 02:03:59,360
+ so just give me one second and uh there we go so everything we did uh pretty much the six steps
+
+465
+02:03:59,360 --> 02:04:08,730
+ in one code so put a little bit of comments i think you can find them useful if you want to go back
+
+466
+02:04:08,730 --> 02:04:33,350
+ so there we go did all this clean uh yes or no the true false the dates the duplicates and the
+
+467
+02:04:33,350 --> 02:04:56,690
+ empty column goes right let's run this we get our the same table and we get true uh so the the the the
+
+468
+02:04:56,690 --> 02:05:09,090
+ the the single cell did exactly uh what all other cells actually that they are the same right um
+
+469
+02:05:09,090 --> 02:05:19,070
+ as the other cells did together so this is what what we mean when we say that the code is the
+
+470
+02:05:19,070 --> 02:05:27,540
+ documentation so anyone who reads this cell knows exactly uh what was done to the original
+
+471
+02:05:27,540 --> 02:05:39,040
+ data and in which order and can actually run it again the last thing is to save the clean data
+
+472
+02:05:39,040 --> 02:05:47,040
+ so we don't we do not have to do this all over again so we will actually write it to a new file
+
+473
+02:05:47,040 --> 02:05:59,290
+ so we do not touch the original when we're going to work tomorrow so now let's create that and um i can
+
+474
+02:05:59,290 --> 02:06:05,140
+ actually share it with you no but if you're coding along you should have the exact same thing right so
+
+475
+02:06:05,140 --> 02:06:10,120
+ i don't think i don't think i need to share that uh and since i'm also going to share the code
+
+476
+02:06:10,910 --> 02:06:26,120
+ there is no way that it can go wrong right so orders clean uh to this is the orders clean right so to
+
+477
+02:06:26,810 --> 02:07:19,650
+ uh csv and then uh exactly so uh to the data folder should be orders uh clean dot csv index index um false okay so uh to csv uh write the file into a csv file and do not write uh the row numbers zero one two as an
+
+478
+02:07:19,650 --> 02:07:25,090
+ as an extra column so if i put this true i will get a zero one two as an extra column and we don't need
+
+479
+02:07:25,090 --> 02:07:37,900
+ that uh at least not for this uh now let's take a look here so we have only listings csv and order csv
+
+480
+02:07:37,900 --> 02:07:47,100
+ and let's see what happens now kablam and now we have the clean version and you see that if you compare
+
+481
+02:07:47,100 --> 02:07:55,870
+ it to the orders uh here we had a gift message we don't anymore now we have a total column instead
+
+482
+02:07:55,870 --> 02:08:09,550
+ which we actually created yeah and that's pretty much it so just let's just be honest about one thing
+
+483
+02:08:10,970 --> 02:08:21,860
+ or at least of what we did because every step in the cleaning was a decision right and every decision
+
+484
+02:08:21,860 --> 02:08:31,150
+ has an effect on the numbers we decided that home and garden and the home and garden are the same
+
+485
+02:08:31,150 --> 02:08:39,550
+ category the home and garden with the symbol right that is almost certainly true right but it was our
+
+486
+02:08:39,550 --> 02:08:48,800
+ judgment at the end of the day if we had been wrong well the numbers would have been wrong we decided that
+
+487
+02:08:48,800 --> 02:08:57,780
+ two rows with the same order number and the same content are one order that is safe here because the
+
+488
+02:08:57,780 --> 02:09:06,510
+ order numbers is actually unique so if the table had no order number we would have to guess and two
+
+489
+02:09:06,510 --> 02:09:16,540
+ customers could have actually really have bought the same thing on the same day why not we decided to
+
+490
+02:09:16,540 --> 02:09:28,290
+ leave four orders without a date they are in the totals but not not in the monthly numbers we did not invent the
+
+491
+02:09:28,290 --> 02:09:38,140
+ date and that is honest choice right but it actually changed the numbers and as we saw about 2700 krona
+
+492
+02:09:38,140 --> 02:09:46,380
+ disappeared from the months right and also we can remember that this data is made up so so so so it
+
+493
+02:09:46,380 --> 02:09:52,680
+ problems are actually a bit tidy right and they were easy to find because i i actually put them there
+
+494
+02:09:53,640 --> 02:10:03,130
+ but real data is a bit messier and you often find a problem only when a number looks strange maybe
+
+495
+02:10:03,130 --> 02:10:15,350
+ three steps later so the tools are the same but the real change is to or i would rather say a challenge
+
+496
+02:10:15,350 --> 02:10:28,550
+ is is is is actually to notice that something is wrong so a clean table well is not a correct table it is a
+
+497
+02:10:28,550 --> 02:10:38,880
+ table where we actually know um what has been done to it all right so that's my actually honest take on
+
+498
+02:10:38,880 --> 02:10:55,130
+ everything all right that was actually it uh is there anything more that i wanted to mention yes one more
+
+499
+02:10:55,130 --> 02:11:14,040
+ thing uh so there are no confusions later uh just let me get it for you guys here uh uh just take a look at
+
+500
+02:11:14,040 --> 02:11:25,190
+ the lab here so you can actually ask the questions if you if you want to uh so the lab looks something
+
+501
+02:11:25,190 --> 02:11:34,380
+ like this and again uh there is a practice part or go deeper you choose and you already know this
+
+502
+02:11:34,380 --> 02:11:46,610
+ pattern but for this lab uh so today we clean the messy table step by step uh text type data so cleaning is
+
+503
+02:11:46,610 --> 02:11:54,920
+ something you you learn by doing it and the best test uh is a table you have not seen before so
+
+504
+02:11:54,920 --> 02:12:05,870
+ in this lab you get new data the loans of a library right so in order for not be any confusions uh you're
+
+505
+02:12:05,870 --> 02:12:12,670
+ not going to use the same table that we use today here in class so you have actually something to clean
+
+506
+02:12:12,670 --> 02:12:23,220
+ and of course uh that data is made up as well uh and they kind of represent what real data has and you
+
+507
+02:12:23,220 --> 02:12:32,990
+ you choose which part to work with so i'm actually gonna uh um share that with you guys the lab and
+
+508
+02:12:32,990 --> 02:12:48,280
+ also the the new table notice that we have a lone csv that i'm gonna upload on teams in the same folder
+
+509
+02:12:48,280 --> 02:12:59,450
+ as always uh but uh i'm also gonna send you a direct link just like always in the in the info chat all
+
+510
+02:12:59,450 --> 02:13:05,430
+ right that was actually it uh any questions before i let you go
+
