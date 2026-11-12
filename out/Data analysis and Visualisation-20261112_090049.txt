@@ -1,0 +1,66 @@
+Right. Get rid of, not of you, but the window.
+So yesterday, we're actually going to continue from where we left off, right?
+Because yesterday, we will clean the text.
+So we cleaned the text.
+Sorry.
+So we cleaned the text, the types, the duplicates in this order table, right?
+And we saved the result as a new CSV file, right?
+That we called orders clean.
+And today, we will continue with the shop.
+And here, we actually have to do two things.
+Well, the first part, well, the first thing we have to think about is the cleaning that we skipped yesterday.
+And that was actually the missing values, right?
+So we have met them many times already.
+The coupon codes, the four dates that we could not read, and the ratings in the Airbnb table, right?
+So today, we will learn how to find them, how to understand them, and how to decide what to do with them.
+And the answer is actually not always clear, right?
+So there is no, what do you call it?
+Well, there is no answer to the question always.
+It is a decision, right?
+And we're going to discuss that a little bit, a little bit, a little bit, a little bit, a little bit, a little bit, a little bit.
+So that's the first part we're going to get, or the first block, which can be divided into smaller parts, of course.
+The second block would be, well, is a problem that you will meet in almost every real project?
+Is that the information about the same thing or the same topic might be spread over several tables?
+So, yeah, we have just looked at one table, right?
+The listings, right?
+Or, sorry, in this case, orders.
+Every information about orders could be divided into several tables.
+So the order table that we have, that we looked at yesterday, that we cleaned, tells us what was bought, right?
+But nothing about who bought it, right?
+So if I were to look here, orders clean, in this case.
+So there's no information about who bought it.
+Well, I have a customer ID, and that's it.
+So to answer a question, like, which city actually buys the most, or which, or something like that.
+So we don't have any information about the customer.
+So we need to know the city of every customer.
+And that information is not in our orders table.
+So what I have created is a second file, which we have not seen before.
+And that is the customer's CSV.
+It belongs to the same made-up workshop.
+And it has one row for each customer.
+With the customer's city and the customer's age.
+I've actually put it up in, what do you call it, in Teams.
+And I will give you a minute to actually...
+So we will do the same thing as we did yesterday, all right?
+So take a minute and, yeah, download it so you can actually code along or follow along
+or however you want to, however you do it.
+And just raise your hand when you are...
+But it is in the same folder as we looked at yesterday.
+So the data analysis and visualization channel folder, and you find it in the folder called data.
+And, Alex, I guess, if you are going to do it after the lesson or whatever,
+then you can raise your hand as well, of course.
+So I'm not waiting.
+Kritika, Govtami, you found the file.
+Govtami, can I continue?
+Yeah.
+Yeah, you can take that with your hand.
+Let's see here if I do that.
+And I do this.
+There we go.
+All right.
+So...
+The idea is that...
+Basically, the idea is that the customer ID is in both files, right?
+So we can actually use it to connect them.
+Like I said, talk about it more before we get there.
+Once again, the data is...

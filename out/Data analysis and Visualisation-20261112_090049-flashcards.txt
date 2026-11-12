@@ -1,0 +1,23 @@
+What is the standard representation of missing values in pandas?;In pandas, missing values are typically represented as `NaN` (Not a Number) or `None`.
+
+How can you detect missing values in a pandas DataFrame?;You can use the `isnull()` or `isna()` methods to detect missing values and return boolean masks indicating their locations.
+
+How do you count the number of missing values per column in a DataFrame?;Use `df.isnull().sum()` to count missing values for each column.
+
+Why is it important to handle missing values properly in data analysis?;Improper handling of missing values can lead to biased conclusions, reduced statistical power, or errors in computations.
+
+What are some basic strategies for dealing with missing values?;Common strategies include removing rows/columns with missing data using `dropna()` or filling them with estimates like mean, median, or constant values through imputation.
+
+What does an inner join do when merging two DataFrames?;An inner join returns only the rows where matching records exist in both tables based on the specified key column.
+
+How does a left join differ from an inner join?;A left join keeps all rows from the left DataFrame and adds matching rows from the right DataFrame, filling non-matching entries with NaN.
+
+What happens during a right join operation?;A right join retains all rows from the right DataFrame and matches them with corresponding rows from the left DataFrame.
+
+What is the result of performing an outer join between two DataFrames?;An outer join includes all rows from both DataFrames, combining matching records and filling unmatched entries with NaN.
+
+What should be checked before joining two DataFrames to ensure successful merging?;You must verify that the columns used for joining have identical data types and values to avoid mismatches or errors.
+
+How can duplicate keys in joined tables affect the outcome of a merge operation?;Duplicate keys may cause a Cartesian product effect, resulting in more rows than expected in the merged output.
+
+What are some best practices for performing efficient joins on large datasets?;Best practices include verifying data types, checking for duplicates, choosing appropriate join types, handling missing values beforehand, and optimizing performance with indexes or filtering.
