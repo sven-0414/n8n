@@ -1,0 +1,1100 @@
+1
+00:00:02,370 --> 00:00:10,720
+ let's take it uh step by step and just like always if you have any questions uh just let me know
+
+2
+00:00:10,720 --> 00:00:31,900
+ all right uh so uh well what can i say welcome back to a new week um somewhere i want to stand
+
+3
+00:00:31,900 --> 00:00:41,550
+ i'll just do that but uh it's called this would be demo one two three four fifth lesson right
+
+4
+00:00:44,230 --> 00:01:00,960
+ just create a notebook here uh so last week well we learned about the data or not the data but to
+
+5
+00:01:00,960 --> 00:01:08,440
+ look at the data right to group it uh and to to count it and to clean it and what we did was to
+
+6
+00:01:08,440 --> 00:01:26,430
+ clean up a made up web shop text that is written in many ways right numbers that are really text
+
+7
+00:01:27,070 --> 00:01:35,370
+ dates that are not not dates uh we talked about duplicates right missing values and
+
+8
+00:01:35,900 --> 00:01:46,360
+ two tables that were actually merged right or put together today we will do it on the real and then
+
+9
+00:01:46,360 --> 00:01:54,810
+ we got this word is clean right and today we are uh gonna implement things that we have learned uh we're
+
+10
+00:01:54,810 --> 00:02:03,360
+ gonna use all of that on the real data so we will be back on the airbnb table from stockholm the same
+
+11
+00:02:03,360 --> 00:02:14,520
+ file as we have looked at in the first two lessons uh because now for three lessons i think yeah i think
+
+12
+00:02:14,520 --> 00:02:20,390
+ it's a home maybe four even uh we have been saying or mentioning uh we will come back on the back to
+
+13
+00:02:20,390 --> 00:02:24,550
+ that on monday back to that on monday we will take that on monday and we will learn here we're gonna do
+
+14
+00:02:24,550 --> 00:02:39,230
+ that on monday so now it's monday uh so yeah let's take it step by step so what do we actually know
+
+15
+00:02:39,230 --> 00:02:48,900
+ well and what have we actually promised ourselves well we have said that the price is um the price is actually
+
+16
+00:02:48,900 --> 00:03:02,360
+ a text uh with a dollar sign we have seen that and a comma so we could not even calculate uh the average
+
+17
+00:03:02,360 --> 00:03:13,860
+ right uh we had 15 i think it was yeah 15 columns uh that are completely empty some listings have no
+
+18
+00:03:13,860 --> 00:03:22,490
+ rating and we actually never answered the question which neighborhood is the most expensive so this is
+
+19
+00:03:22,490 --> 00:03:31,090
+ something that we're going to come back to uh during the lesson so uh today plan today's plan is actually
+
+20
+00:03:31,090 --> 00:03:40,590
+ very simple um we will go through the table from the left to the right one problem at a time and
+
+21
+00:03:40,590 --> 00:03:48,780
+ actually the same order that you would do yourself right and then for every problem we do the same three
+
+22
+00:03:48,780 --> 00:03:58,520
+ things and what did we mentioned last week well it was to look at the problem decide what to do and we
+
+23
+00:03:58,520 --> 00:04:07,580
+ check that it actually worked right and then at the end of the lesson we will put everything in one cell
+
+24
+00:04:07,580 --> 00:04:12,750
+ so that anyone can repeat the cleaning and see exactly what we did so if you're not coding along you
+
+25
+00:04:12,750 --> 00:04:18,910
+ will actually well i will distribute these uh the notes from today since we're writing a lot of notes in
+
+26
+00:04:18,910 --> 00:04:26,010
+ the markdown cells sometimes so in the last cell we'll actually have everything summarized so you can't
+
+27
+00:04:26,010 --> 00:04:32,160
+ actually just take that one cell yeah if you're not coding along to create the new file that we're gonna
+
+28
+00:04:33,040 --> 00:04:45,670
+ create yeah that's basically it so let's actually load the file load the file again uh and we will
+
+29
+00:04:45,670 --> 00:04:55,200
+ do like we did last week um save the original in a since this table is called listings so we're gonna save
+
+30
+00:04:55,200 --> 00:05:02,840
+ the original in the listings raw and work on a copy instead that we will call listings and that will be our
+
+31
+00:05:02,840 --> 00:05:15,110
+ data frame right and then we can always go back and start over but first things first import hundas as
+
+32
+00:05:17,670 --> 00:05:28,990
+ as pd right let me just double check that i don't have to restart my uh visual studio code it happens
+
+33
+00:05:28,990 --> 00:05:56,660
+ sometimes interesting okay uh so listings uh we said listings raw right equals um pd uh something that i don't like
+
+34
+00:05:56,660 --> 00:06:12,800
+ about this uh like about this uh we'll see read so now we get the shortcuts and so on data listings dot csv
+
+35
+00:06:12,800 --> 00:06:35,960
+ and then we add listings uh listings just copy it's gonna take forever to to write like this so we're
+
+36
+00:06:35,960 --> 00:06:51,240
+ working copy right and then uh let's just print the shape listings okay you know what uh just give me one
+
+37
+00:06:51,240 --> 00:06:57,040
+ second i'm just gonna restart my visual studio code this happens sometimes i don't know why um actually
+
+38
+00:06:57,040 --> 00:07:05,730
+ looked into it but yeah it seems to work since i get the the correct uh i get my original table right
+
+39
+00:07:08,580 --> 00:07:17,960
+ i get the the the columns right so 4574 listings and 84 columns uh but let me just restart and see what
+
+40
+00:07:17,960 --> 00:08:20,150
+ happens one second i think somebody forgot the mic on uh here hexagon no much better right uh all right
+
+41
+00:08:24,370 --> 00:08:42,070
+ now let's take a look we will start with um the the um empty columns right empty columns so like i've
+
+42
+00:08:42,070 --> 00:08:54,490
+ mentioned step by step so we know that our um table has 84 columns right and we said several times that
+
+43
+00:08:54,490 --> 00:09:04,580
+ that some of them are completely empty right so first thing we do uh in the cleaning is well to remove
+
+44
+00:09:04,580 --> 00:09:12,390
+ what is actually useless right because then there is less to look at uh but first we look which columns
+
+45
+00:09:12,390 --> 00:09:22,080
+ are they and are they really empty so a column is completely empty if every value in it is missing
+
+46
+00:09:22,080 --> 00:09:30,990
+ so for that we will have uh two tools from last week is not that gives us true for every missing
+
+47
+00:09:30,990 --> 00:09:38,720
+ value and all that asks is it true in every row
+
+48
+00:09:38,850 --> 00:09:44,560
+ so now let's use them uh on the whole table at once and and then see that that um what they call
+
+49
+00:09:44,560 --> 00:10:13,470
+ it the column names right so empty equals uh listings um columns uh on our listings uh snap and all
+
+50
+00:10:13,470 --> 00:10:33,070
+ right so the names of the columns uh where every value is missing let's print the length let not empty and
+
+51
+00:10:33,070 --> 00:11:03,080
+ let's also uh sorry that's my message to a student let's see here and uh and there we go so let's take a
+
+52
+00:11:03,080 --> 00:11:19,650
+ look here at the empty columns and then we get it like this yeah those are the empty columns right so 15
+
+53
+00:11:20,190 --> 00:11:34,010
+ uh columns and if we look at the name we have eight actually eight of them that starts with host right so
+
+54
+00:11:34,010 --> 00:11:43,950
+ so therefore we can we know that uh that they are about hosts for example host sins uh when was uh the
+
+55
+00:11:43,950 --> 00:11:53,980
+ host joined um we have the host response time uh how fast the host answers and then we have a little
+
+56
+00:11:53,980 --> 00:12:09,990
+ bit of mix right uh neighborhood uh license and yeah and things like that calendar update um an instant bookable
+
+57
+00:12:09,990 --> 00:12:20,510
+ and so on so on so the columns uh column names are there but not a single value and to be honest i don't know exactly why
+
+58
+00:12:20,510 --> 00:12:29,170
+ uh and for us it does not matter because a column with nothing in it gives uh nothing to to actually analyze
+
+59
+00:12:29,170 --> 00:12:38,230
+ um and actually uh before the the lesson or before what uh when planning these lessons
+
+60
+00:12:38,230 --> 00:12:45,010
+ i actually went through the list of columns in in uh in a certain extent and i will speak more about that on thursday
+
+61
+00:12:45,010 --> 00:12:52,540
+ of what i have done before the lessons and so on uh and one of the empty empty columns actually uh caught my
+
+62
+00:12:52,540 --> 00:13:04,540
+ attention and that was uh something called bathrooms so uh uh because the number of bathrooms is something we would like to to
+
+63
+00:13:04,540 --> 00:13:13,790
+ to have for example to to compare uh listings but that column is actually empty and when i looked further
+
+64
+00:13:13,790 --> 00:13:20,680
+ uh i actually found another column uh that i have not mentioned before and that is called
+
+65
+00:13:20,680 --> 00:13:29,450
+ bathroom underscore text so it actually contains the same information but written as
+
+66
+00:13:29,450 --> 00:13:40,320
+ as text like for example one bath or 1.5 shared baths and so on so the information is not lost it's just
+
+67
+00:13:40,320 --> 00:13:47,350
+ stored in a different way right and we will actually come back to the column in in the later part uh
+
+68
+00:13:47,350 --> 00:13:58,090
+ later on when we turn it into numbers uh but i have actually made a decision what to do with
+
+69
+00:13:58,090 --> 00:14:08,960
+ these 15 columns um and that is to actually remove them so a column where every value is missing well
+
+70
+00:14:08,960 --> 00:14:19,580
+ contains no information and it only makes the table wider and harder to read so this is a i would say
+
+71
+00:14:20,460 --> 00:14:26,410
+ i would say like i'll put it like this well this is the the the the most common choice and it is
+
+72
+00:14:26,410 --> 00:14:34,790
+ actually a very safe one um because we actually lose nothing uh but there are other things we could do
+
+73
+00:14:34,790 --> 00:14:42,130
+ we could keep them to columns just in case but then they are in the way every time we look at the table
+
+74
+00:14:42,130 --> 00:14:47,810
+ right uh we could also try to fill them with the invented values for example numbers that follow some
+
+75
+00:14:47,810 --> 00:14:56,850
+ formula and actually look believable and filling in missing values is a real technique and we actually
+
+76
+00:14:57,490 --> 00:15:05,210
+ use kind of it in on thursday but only when most of the values exist and we actually have um
+
+77
+00:15:05,760 --> 00:15:11,500
+ something to base the guess on like for example the median of the the outer age or something like
+
+78
+00:15:11,500 --> 00:15:19,940
+ that but here we have actually nothing to to base it on so every value in these colors would have been
+
+79
+00:15:19,940 --> 00:15:31,130
+ made up right and invented data that looks real is kind of dangerous isn't it because well later nobody
+
+80
+00:15:32,160 --> 00:15:44,270
+ can tell what is true and what is not right uh so we will remove them uh and we will use droplet uh from
+
+81
+00:15:44,270 --> 00:15:57,230
+ thursday uh and we will use axis uh one uh because we're removing columns and not rows and we will put
+
+82
+00:15:57,230 --> 00:16:09,220
+ them how all uh because we only want to remove a column if all of its values are actually missing uh so let's do that
+
+83
+00:16:09,220 --> 00:16:45,230
+ so listings equals listings use now and we said axis one how uh now let's print uh the listings uh shape
+
+84
+00:16:45,230 --> 00:17:10,770
+ and let's print um first things um is now all so how many empty columns uh are left right so let's look at
+
+85
+00:17:10,770 --> 00:17:17,890
+ at the shape after the drop and also let's see how many empty columns we actually have okay hopefully we
+
+86
+00:17:17,890 --> 00:17:29,700
+ will get a zero here right let's see so now we have uh 69 right so 84 columns minus the 15
+
+87
+00:17:33,100 --> 00:17:39,900
+ and we have checked that there is no empty columns left right since we get a zero here uh and the same
+
+88
+00:17:39,900 --> 00:17:49,820
+ number of rows so we haven't lost any listings right and now we actually have the problem with the price
+
+89
+00:17:49,820 --> 00:17:58,250
+ let's take that uh let's put a mark down here know what we're actually working with here so here we're
+
+90
+00:17:58,250 --> 00:18:15,490
+ going to work with the price um and we want to get from text to numbers right uh so let's look first
+
+91
+00:18:15,490 --> 00:18:22,110
+ let's see what the prices look like and what type it actually has and i know we have already seen this
+
+92
+00:18:22,110 --> 00:18:39,420
+ before but uh i know it has been a weekend and so on listings uh price let's look at the type here we go
+
+93
+00:18:39,420 --> 00:18:58,480
+ and then we have listings um price uh ahead and let's just take a look at it uh eight first ones all
+
+94
+00:18:58,480 --> 00:19:07,490
+ right so the price is text as we saw on the i think was the first ever lesson uh it has a dollar sign
+
+95
+00:19:07,490 --> 00:19:20,310
+ at the beginning and a comma for every thousand uh some prices have uh decimals uh that are not zero
+
+96
+00:19:20,310 --> 00:19:30,870
+ like for example this one with an 83 so we cannot just cut off the three last characters right so this
+
+97
+00:19:30,870 --> 00:19:38,370
+ is exactly as the same problem as we saw with the kroner uh in the webshop on wednesday the steps are the
+
+98
+00:19:38,370 --> 00:19:48,640
+ same uh only the characters are different so last time we just removed kroner uh we removed the space
+
+99
+00:19:49,780 --> 00:19:57,510
+ comma to a dot so today we need to remove the dollar sign um and the comma and the dot can actually
+
+100
+00:19:57,510 --> 00:20:11,190
+ stay because well python already writes uh decimals but a dot and i will do it in steps and i will look
+
+101
+00:20:11,190 --> 00:20:24,350
+ at the first value after every step right uh so we will just look at the first price here that looks
+
+102
+00:20:24,350 --> 00:20:32,540
+ like this so hopefully after the first step we will remove the dollar sign and the second step uh
+
+103
+00:20:32,540 --> 00:20:49,890
+ hopefully the comma will be removed and then uh we are where we are and i will talk a little bit
+
+104
+00:20:49,890 --> 00:20:55,140
+ about if you're reacting a little bit on the prices i will actually talk about it in a minute
+
+105
+00:20:56,980 --> 00:21:07,480
+ so step by step so first of course we could have done it in one step but i like to divide stuff just
+
+106
+00:21:07,480 --> 00:21:19,170
+ to make it as clear as possible right uh so listings uh we set the price and we could use to replace here
+
+107
+00:21:19,170 --> 00:21:54,010
+ dollar sign for regex um false and then print this uh head and we can actually look at the first three
+
+108
+00:21:54,010 --> 00:22:17,500
+ uh to list now let's see okay the dollar sign is removed perfect and why i'm writing regex false it's
+
+109
+00:22:17,500 --> 00:22:28,750
+ just that um um uh just to say that the dollar sign here means actually um a dollar sign because in regex uh
+
+110
+00:22:28,750 --> 00:22:36,730
+ this is actually a a a special character that means uh uh it means um end of the text
+
+111
+00:22:40,500 --> 00:22:51,300
+ right uh and we're actually going to mention uh regex uh later on uh in another lesson i think it's
+
+112
+00:22:51,300 --> 00:23:02,530
+ tomorrow uh so we can look at both ways now let's uh do every uh the same thing here uh but with the price so price um
+
+113
+00:23:02,530 --> 00:23:23,640
+ um uh string replace uh comma with nothing right then let's just borrow that line of code and now let's see
+
+114
+00:23:23,640 --> 00:23:38,150
+ so there we go now only the digits uh and uh dot is is is left uh so the numbers can the text now is uh
+
+115
+00:23:38,150 --> 00:23:49,740
+ kind of numbers right uh last time when we used as type float it gave us an error when the text was not clean
+
+116
+00:23:49,740 --> 00:23:58,410
+ and now it should work uh and we also need to save it back to the table uh so and then we can check
+
+117
+00:23:58,410 --> 00:24:05,630
+ the result with the describe right so let's actually do that and we will do it in a separate step here
+
+118
+00:24:05,630 --> 00:24:29,520
+ so listings be on price um price hopefully this will work last time now it's a float written back to the
+
+119
+00:24:29,520 --> 00:25:03,460
+ column right and then print uh listings price and also things use describe describe and then we can just
+
+120
+00:25:03,460 --> 00:25:18,070
+ uh round okay so just get that summary of uh of the column with one decimal and if it has worked it will
+
+121
+00:25:18,070 --> 00:25:30,820
+ actually give us the um the uh the things that we're looking for let's see and there we go it works
+
+122
+00:25:30,820 --> 00:25:43,570
+ and now describe actually shows us something real so the uh the price is now afloat so we can actually
+
+123
+00:25:43,570 --> 00:25:56,420
+ calculate with the two thousand something listings uh that have a price to 2957 uh so that is not
+
+124
+00:25:56,420 --> 00:26:06,840
+ actually 4574 right uh so a lot of prices are actually missing uh and that is actually what we're
+
+125
+00:26:06,840 --> 00:26:19,270
+ going to talk about in the next part but the the the middle listing uh the median is 1791 a night the
+
+126
+00:26:19,270 --> 00:26:35,550
+ mean is uh slightly higher 2327 or 28 if we round up and the max is actually 40 000 so the distance
+
+127
+00:26:35,550 --> 00:26:47,400
+ between the median and the mean uh well is a sign for us right that a few very expensive listings pulled
+
+128
+00:26:47,400 --> 00:26:55,620
+ the mean up right and we will come back to that to tomorrow uh because we will actually talk about
+
+129
+00:26:55,620 --> 00:27:06,790
+ median uh more properly and we also see that the cheapest listing cost 120. so a little little side
+
+130
+00:27:06,790 --> 00:27:13,830
+ note here or it's not a side note i would say it's an important note actually about the currency so yeah
+
+131
+00:27:13,830 --> 00:27:25,660
+ i know the file actually had a dollar sign and the median is uh 1791 dollars a night in stockholm so if
+
+132
+00:27:25,660 --> 00:27:37,270
+ that's true that would be absurd right 1791 dollars per night in uh uh in apartment or in housing in in
+
+133
+00:27:37,270 --> 00:27:47,060
+ in stockholm i don't think so right i would rather say that this is actually swedish kroner so that the
+
+134
+00:27:47,060 --> 00:27:58,120
+ the the amounts are in in kroner uh but i want you to notice the habit here uh the sign and the data and
+
+135
+00:27:58,120 --> 00:28:06,880
+ the real unit must not be the the same thing and we should actually check the documentation uh of the
+
+136
+00:28:06,880 --> 00:28:13,610
+ data before we see dollars or kroner in the report but like i said on thursday we're going to talk more
+
+137
+00:28:13,610 --> 00:28:19,650
+ about that um about source checking so i'm saving that for last even though maybe we should have done
+
+138
+00:28:19,650 --> 00:28:27,970
+ that in the beginning but i i i kind of have a plan with that right uh which i will mention more on
+
+139
+00:28:27,970 --> 00:28:36,550
+ thursday and why i did that so now uh let's look at the most expensive listing before we continue because
+
+140
+00:28:36,550 --> 00:28:45,140
+ i would say 40 000 for one night is quite a lot isn't it uh or maybe not but let's let's take a look at
+
+141
+00:28:45,140 --> 00:28:55,330
+ it and then we can get a an idea at least that's something that we should do right so listings uh sort
+
+142
+00:28:55,330 --> 00:29:13,070
+ values for the price and then we're gonna put uh ascending falls um and let's look at the first three
+
+143
+00:29:14,750 --> 00:29:26,560
+ and then let's take a look at the name let's take a look at the uh room uh it's called room type and
+
+144
+00:29:26,560 --> 00:29:44,940
+ let's look at the um dates and let's also look at the price of course all right uh so look at the three
+
+145
+00:29:44,940 --> 00:30:16,160
+ most expensive listings uh with only these four columns okay uh uh maybe i misspelled my uh what did i
+
+146
+00:30:16,160 --> 00:30:27,320
+ forget what do you say guys let's see if you're awake with me maybe you're writing in the chat yeah
+
+147
+00:30:27,320 --> 00:30:34,290
+ there we go thank you i forgot the square brackets inside the square brackets right since we have a
+
+148
+00:30:34,290 --> 00:31:06,020
+ list here um and there we go so a penthouse is a big house and then we have a small hotel owned hotel
+
+149
+00:31:06,020 --> 00:31:16,720
+ 12 rooms and 22 beds right and the grand house so i wouldn't say that these are mistakes they seem to be
+
+150
+00:31:16,720 --> 00:31:30,990
+ real but a little bit unusual listings right well are they outliers meaning values uh that are far away
+
+151
+00:31:30,990 --> 00:31:40,070
+ from from the rest well yes should we remove them well that that would that question we can actually
+
+152
+00:31:40,070 --> 00:31:50,890
+ save it for tomorrow because we will learn to find the outliers uh in a careful way and today we only
+
+153
+00:31:50,890 --> 00:31:58,580
+ clean uh so we do not remove anything uh so we won't remove the the values just because they're large
+
+154
+00:31:58,580 --> 00:32:08,710
+ uh so the cleaning of the price is actually done uh or is it uh we actually said that two thousand
+
+155
+00:32:11,060 --> 00:32:18,250
+ and nine hundred fifty seven of the four thousand five hundred and seventy four uh listings have a price
+
+156
+00:32:18,980 --> 00:32:25,390
+ and that is actually uh the neck the next part so let's actually take a look at the the um the
+
+157
+00:32:26,500 --> 00:32:49,930
+ the missing uh prices if you remember the question from thursday well for a missing value we ask first
+
+158
+00:32:49,930 --> 00:32:59,460
+ what how many and why right so let's actually count the first with the isna and some uh and
+
+159
+00:33:00,860 --> 00:33:07,360
+ which will give us the number and isna mean will give us the share right so let's take a look at that
+
+160
+00:33:07,360 --> 00:33:25,830
+ and then we can uh build on that later on so print listings so uh how many right uh price uh we said
+
+161
+00:33:25,830 --> 00:34:03,400
+ this now um and also the sum print listings this is now so the share this time right i mean we need to
+
+162
+00:34:03,400 --> 00:34:20,960
+ uh multiply it uh with uh i think uh multiply it with 100 and then uh let's uh round the whole thing up to one
+
+163
+00:34:20,960 --> 00:34:31,560
+ right so the number of the missing values oh sorry the number of the missing values and uh what they call
+
+164
+00:34:31,560 --> 00:34:44,930
+ it uh the the share of the missing values okay so let's run this okay so 1670 listings have no price
+
+165
+00:34:44,930 --> 00:34:58,000
+ and that is roughly or not roughly it's exactly 35.4 right so my conclusion here is it's actually uh one
+
+166
+00:34:58,680 --> 00:35:07,070
+ listing out of three right so that is not a small detail so it means that every number we calculate
+
+167
+00:35:07,070 --> 00:35:18,380
+ about the price is based on only about two-thirds of the listings so why are they missing well we cannot
+
+168
+00:35:18,380 --> 00:35:25,880
+ look at the price to find out because it's no nothing there uh but uh we actually have to look at another
+
+169
+00:35:25,880 --> 00:35:31,910
+ column that might explain that might explain it and that column is something that we have already
+
+170
+00:35:31,910 --> 00:35:42,540
+ mentioned before is um is a availability uh 365 365 that tells us how many days uh in the next year the
+
+171
+00:35:42,540 --> 00:35:51,920
+ listing can be booked uh according to its calendar so listing with zero is closed well that would be it
+
+172
+00:35:51,920 --> 00:36:02,600
+ is booked uh the whole year or if maybe the the host has blocked the calendar uh my guess is that a
+
+173
+00:36:02,600 --> 00:36:10,780
+ listing that cannot be booked has no price right so let's test that guess uh with a crosstab uh which
+
+174
+00:36:10,780 --> 00:36:20,700
+ we did on thursday uh and we will compare uh two uh true and false question false questions is the price
+
+175
+00:36:20,700 --> 00:36:35,230
+ missing and is the availability zero all right so great reminder from uh last uh last week so no price
+
+176
+00:36:35,230 --> 00:37:00,730
+ equals listings price is now the truth that the price is missing right and then uh closed listings and
+
+177
+00:37:00,730 --> 00:37:07,280
+ let's look at that column that we mentioned availability 365 so true if the listings cannot be booked in the
+
+178
+00:37:07,280 --> 00:37:17,850
+ next uh 365 days and we're going to need to put a zero right in order to get the true pulse here okay
+
+179
+00:37:17,850 --> 00:37:34,690
+ and then we're going to use the crosstab pandas first tab uh there would be no price and uh closed okay
+
+180
+00:37:34,690 --> 00:37:48,790
+ so test our guess here uh no price uh cannot be booked but still counting uh all four uh combinations
+
+181
+00:37:48,790 --> 00:37:58,430
+ okay so we have a crosstab with an a and a b so how many rows have every combination of a and b right
+
+182
+00:37:58,430 --> 00:38:14,700
+ let's see here so we get the four numbers and this is how we could read them so 1490 listings
+
+183
+00:38:14,700 --> 00:38:27,390
+ um have no price and cannot be booked right and they are most of the missing prices uh because 1490
+
+184
+00:38:27,390 --> 00:38:38,310
+ out of the 1617 which is uh according to my calculation 92 percent right and then another 127
+
+185
+00:38:38,310 --> 00:38:50,060
+ uh have no price although they can be booked and four uh have a price although they are closed and
+
+186
+00:38:50,060 --> 00:38:58,090
+ two thousand nine hundred and fifty three listings have both a price uh and an ability uh which is well
+
+187
+00:38:58,090 --> 00:39:06,810
+ the normal one right the normal case here so the guess was well i would say almost right uh so this is
+
+188
+00:39:06,810 --> 00:39:16,300
+ a pattern is not a proof uh and we cannot say for sure why the prices is missing because the data
+
+189
+00:39:16,300 --> 00:39:26,120
+ actually does not tell us but what we can say is that the missing prices are not random right so they are
+
+190
+00:39:26,120 --> 00:39:35,260
+ actually uh um they're they're they're mostly the the listings that that are closed as we see here and
+
+191
+00:39:35,260 --> 00:39:50,330
+ that matters uh for what we are allowed to say right so what we can uh uh so we can actually say
+
+192
+00:39:50,330 --> 00:40:00,660
+ something like um how can we say it well maybe we can say the price we have are the price of the
+
+193
+00:40:00,660 --> 00:40:09,100
+ listings that can be booked right because if we say the average price in stockholm well then we mean the
+
+194
+00:40:09,100 --> 00:40:16,410
+ average among the bookable ones right and that is a sentence we have to be able to write in a report
+
+195
+00:40:16,410 --> 00:40:28,290
+ so let's make a decision about the 1617 missing prices so we actually have three options uh that we that we saw on
+
+196
+00:40:28,290 --> 00:40:38,740
+ thursday we could we we cut we could uh remove them with with the drop now just as we did before so
+
+197
+00:40:38,740 --> 00:40:49,790
+ but that would actually remove third of the listings but we also need them for other questions
+
+198
+00:40:49,790 --> 00:40:59,330
+ um maybe like how many listings there are per neighborhood uh so i don't think that is a good idea
+
+199
+00:40:59,330 --> 00:41:11,530
+ we could fill the price with the median that's something we could do but at the same time 1617
+
+200
+00:41:11,530 --> 00:41:21,270
+ invented prices would be actually more than a third of the column and the filled in values well it's a
+
+201
+00:41:21,270 --> 00:41:30,290
+ guess that makes the spread smaller uh just like the ages so i would rather choose actually uh a third
+
+202
+00:41:30,290 --> 00:41:37,810
+ option and that is to leave the missing prices as they are because mean and median um and described
+
+203
+00:41:37,810 --> 00:41:45,950
+ will skip them for us so we just need to remember to look at the count every time like we did with the
+
+204
+00:41:45,950 --> 00:41:55,540
+ with the series right for last last week and like i mentioned this is a a important decision and it is a
+
+205
+00:41:55,540 --> 00:42:09,960
+ decision it's not a failure uh and to leave it like it is uh is a solution right uh and be honest about
+
+206
+00:42:09,960 --> 00:42:30,650
+ that that is a solution to our problem here now uh let's move back to our question uh back to uh our
+
+207
+00:42:30,650 --> 00:43:07,680
+ question which is which uh nay uh we're heard is the most expensive right but before we do that let's
+
+208
+00:43:07,680 --> 00:43:12,160
+ take a little break because this is a perfect place to take actually a break so we don't take a break in
+
+209
+00:43:12,160 --> 00:43:26,210
+ the middle of something right so when we get back uh we will get back to our question uh 46 okay uh maybe
+
+210
+00:43:26,210 --> 00:43:33,130
+ yeah go grab some coffee uh maybe you want to read up on what we have done up to now maybe you took
+
+211
+00:43:33,130 --> 00:43:40,110
+ weekend not dreaming about this so a little longer break than 10 minutes maybe yeah we could take 14
+
+212
+00:43:40,110 --> 00:44:02,240
+ so yeah uh we get back at the 10 o'clock sounds all right guys all right okay uh so i will continue
+
+213
+00:44:02,240 --> 00:58:43,110
+ at uh see you guys soon right come back let's dive right into it um back to our question right so in in
+
+214
+00:58:43,110 --> 00:58:52,320
+ lesson two we actually asked this this this this uh this question right uh and we got an error uh since
+
+215
+00:58:52,320 --> 00:59:02,240
+ the the price was text right but now we have a price that is a number so we can actually answer uh
+
+216
+00:59:02,240 --> 00:59:09,390
+ uh we know the tools we can use group by and ag uh with names that we actually choose ourselves
+
+217
+00:59:10,000 --> 00:59:19,790
+ uh and since we just learned that a third of the prices are actually missing uh we actually want
+
+218
+00:59:19,790 --> 00:59:29,890
+ to want the count of listings that have a price uh next to next to every price and remember what we said
+
+219
+00:59:29,890 --> 00:59:39,380
+ about the cities uh a number without its count is not worth so much right uh so let's do that
+
+220
+00:59:39,700 --> 01:00:03,420
+ so by uh let's call it by area equals listings group by uh let me not misspell this neighborhood
+
+221
+01:00:05,830 --> 01:00:47,450
+ and lens tag of this one with uh price which will equal uh price count count the mean is which actually
+
+222
+01:00:47,450 --> 01:01:40,510
+ equals price equals price and obviously the mean uh median equals and then we can uh sort sort values median
+
+223
+01:01:40,510 --> 01:02:08,470
+ this have a little bit of stiff fingers today round zero and then let's actually show it also so by
+
+224
+01:02:09,460 --> 01:02:20,480
+ area so yeah just calculate the the the mean and the median and then sort it by the median uh so count
+
+225
+01:02:20,480 --> 01:02:28,000
+ well counts uh only the values that are not missing so on the price column it actually gives us the exact
+
+226
+01:02:28,000 --> 01:02:39,240
+ number we want so we want the price per neighborhood the number of listings with the price the mean and
+
+227
+01:02:39,240 --> 01:02:53,240
+ the median the listings have a price uh the average price and the middle price and we want the highest
+
+228
+01:02:53,240 --> 01:03:07,240
+ median first all right and this is just like we did on tuesday um where we use the group plus ag with the
+
+229
+01:03:07,240 --> 01:03:18,840
+ names that we choose all right let's see right all right all right uh so we get the 14 neighborhoods uh
+
+230
+01:03:18,840 --> 01:03:27,300
+ and the the the answer is actually not that simple as the one at the top so let's actually read the three
+
+231
+01:03:27,300 --> 01:03:37,820
+ shapes here so first let's look at the top here uh by the median uh forsta uh is the most expensive
+
+232
+01:03:37,820 --> 01:03:52,200
+ 2214 2214 a night right then we have so the malm with 2119 the broma with 2089 as the malm
+
+233
+01:03:55,010 --> 01:04:08,380
+ with 1960 normal 1834 and so on but if we take a look at the first column uh farsta only has 130
+
+234
+01:04:08,380 --> 01:04:22,210
+ listings with a price and so the malm actually has 714 the median of 130 listings moves more actually if
+
+235
+01:04:22,210 --> 01:04:32,330
+ a few listings are different so i actually trust so the malm's number more than i do forstas even though
+
+236
+01:04:32,330 --> 01:04:39,200
+ forsta is first here right so this is actually the same lesson as we saw with the cities on thursday
+
+237
+01:04:39,200 --> 01:04:48,880
+ second of all the mean uh so if we have sorted uh by the mean instead of uh instead well then bromma
+
+238
+01:04:50,460 --> 01:05:00,390
+ and that's the malm with 2756 uh our first and forsta kind of drops to four to fifth place something
+
+239
+01:05:00,390 --> 01:05:10,000
+ like that uh so the mean is higher than the median in every neighborhood because of the uh because of the
+
+240
+01:05:10,000 --> 01:05:22,700
+ expensive listings right so inside the months the mean is 2646 and the median is 2119 uh and that is
+
+241
+01:05:22,700 --> 01:05:28,540
+ actually the penthouse effect again right so the question is which neighborhood is the most expensive
+
+242
+01:05:29,100 --> 01:05:35,130
+ has a little bit different answers depending how we measure right and tomorrow we will actually speak
+
+243
+01:05:35,130 --> 01:05:47,130
+ more about uh why and when uh to use which right third of all uh that we can look at is the the the what
+
+244
+01:05:47,130 --> 01:05:55,850
+ you call it the bottom and here i would say that the picture is pretty clear square home men uh 850
+
+245
+01:05:57,210 --> 01:06:08,140
+ 945 and sponga telsa 1026 well they are the cheapest uh and the difference to the rest is quite large
+
+246
+01:06:08,140 --> 01:06:18,000
+ uh so much larger than uh than the difference at the top right uh so this is something that we could
+
+247
+01:06:18,000 --> 01:06:30,720
+ say with more um what do you call it with more um confidence right but there is one more thing that
+
+248
+01:06:30,720 --> 01:06:39,000
+ we should ask a listing can be expensive because of of the neighborhood or because of the kind of place
+
+249
+01:06:39,000 --> 01:06:49,340
+ it is and those are two different things right and now the kind of um well they are mixed together right
+
+250
+01:06:49,340 --> 01:07:00,630
+ so let's actually see if that that is a real problem so the first uh uh let's actually write it down
+
+251
+01:07:00,630 --> 01:07:23,880
+ here uh just as a little small note so uh first does um does the kind of place um matter for the price
+
+252
+01:07:24,040 --> 01:08:07,110
+ okay let's uh listings uh group by um room type price since we need to uh count and uh median
+
+253
+01:08:07,510 --> 01:08:20,000
+ right so how many have a price uh and the median per room type so i'm just comparing the price of
+
+254
+01:08:20,000 --> 01:08:29,200
+ different room types right so let's run this and see okay mm-hmm so we actually see a big difference
+
+255
+01:08:29,200 --> 01:08:50,460
+ right so an entire home has a median price of 2168 and the private room only has 808 right uh so and
+
+256
+01:08:50,460 --> 01:08:57,240
+ also if you notice the count here for for uh for the hotel room it actually has one listing with the
+
+257
+01:08:57,240 --> 01:09:04,330
+ price uh so we won't say anything about the room uh about the hotel rooms right uh well anyways so so
+
+258
+01:09:04,330 --> 01:09:13,070
+ the kind of place actually matter a lot right so now the question is do all neighborhoods have the same
+
+259
+01:09:13,070 --> 01:09:22,580
+ mix of room types right so we can calculate the share of listings that are entire homes in every
+
+260
+01:09:22,580 --> 01:09:29,730
+ neighborhood so here we can use a true false column uh that gives us a share when we take the mean like
+
+261
+01:09:29,730 --> 01:09:42,590
+ we did on wednesday let me just uh write that as a side note here um do all let me say do all may
+
+262
+01:09:43,300 --> 01:10:08,300
+ where hoods um have the same mix of room uh types something like that all right is entire equals
+
+263
+01:10:09,670 --> 01:10:30,720
+ listings um room type for equal equals uh entire uh direct that entire home apartment something like that
+
+264
+01:10:30,720 --> 01:11:03,630
+ right uh is entire group by listings um neighborhood plans right uh mean by 100 and then let's round
+
+265
+01:11:04,870 --> 01:11:19,180
+ decimal shares and also let's not forget to sort values so just get the share per night in in percent
+
+266
+01:11:19,180 --> 01:11:29,040
+ so we're just calculating the share of entire homes in every neighborhood now let's run this and see here
+
+267
+01:11:30,960 --> 01:11:42,240
+ so we can see that the mix is is is not the same so in bromma we have 92 percent uh are uh of the
+
+268
+01:11:42,240 --> 01:11:50,920
+ listings are actually entire homes in skärholmen it's only 58 percent are uh listings of entire homes
+
+269
+01:11:50,920 --> 01:11:59,580
+ and this bongatensda where we have 61 percent so bromma has more of the expensive kind of listings
+
+270
+01:11:59,580 --> 01:12:08,830
+ and that alone actually pushes its median up even if a room in broma costs the same as a room in kairholmen
+
+271
+01:12:08,830 --> 01:12:21,020
+ and to find out if the neighborhood itself mattered well we would compare like with like right so the
+
+272
+01:12:21,020 --> 01:12:30,580
+ same kind of uh the same kind of place in every neighborhood uh and we do that by filtering uh only entire
+
+273
+01:12:30,580 --> 01:12:43,740
+ homes homes and then the same table and then the same table again so like with like like like with like oops
+
+274
+01:12:52,070 --> 01:13:26,010
+ so entire um was listings things oops these things um type was uh it's an entire entire uh home
+
+275
+01:13:26,010 --> 01:13:48,090
+ apartment so the only the entire homes tire uh group by uh hood
+

@@ -1,0 +1,19 @@
+What is the purpose of creating a working copy of the original dataset during data cleaning?;Creating a working copy allows you to modify the data without altering the original, which is useful if you need to restart or revert changes.
+
+Why should empty columns be removed from a dataset?;Empty columns contain no useful information, increase dataset width, and make analysis more difficult, so they are typically removed.
+
+How do you convert a price column with text formatting into a numeric format in pandas?;Remove the dollar sign and commas using str.replace(), then use pd.to_numeric() to convert to numbers.
+
+What does it mean when the mean price is higher than the median price in a dataset?;It indicates the presence of extreme outliers that pull the average upward, suggesting a "penthouse effect" in pricing.
+
+Why might missing prices in an Airbnb dataset not be random?;Missing prices often correlate with closed listings, suggesting systematic data collection issues rather than random absence.
+
+What is the benefit of analyzing only entire homes when comparing neighborhood prices?;It controls for room type differences, allowing for more accurate comparisons of neighborhood-specific pricing factors.
+
+How can you determine if missing values in a dataset follow a pattern?;Cross-tabulate the missing values against other variables like availability to identify systematic relationships.
+
+Why is it important to document assumptions made during data analysis?;Documentation ensures transparency, allows others to understand limitations, and supports reproducibility of results.
+
+What are the key steps in a data cleaning workflow for this Airbnb dataset?;Load data, remove empty columns, transform price data, analyze missing values, perform grouped statistical analysis, and make controlled comparisons.
+
+What does it mean when a dataset has "like-with-like" comparisons in analysis?;It refers to comparing similar types of items (e.g., entire homes) across different groups (e.g., neighborhoods) to isolate the effect of one variable.

@@ -1,0 +1,275 @@
+let's take it uh step by step and just like always if you have any questions uh just let me know
+all right uh so uh well what can i say welcome back to a new week um somewhere i want to stand
+i'll just do that but uh it's called this would be demo one two three four fifth lesson right
+just create a notebook here uh so last week well we learned about the data or not the data but to
+look at the data right to group it uh and to to count it and to clean it and what we did was to
+clean up a made up web shop text that is written in many ways right numbers that are really text
+dates that are not not dates uh we talked about duplicates right missing values and
+two tables that were actually merged right or put together today we will do it on the real and then
+we got this word is clean right and today we are uh gonna implement things that we have learned uh we're
+gonna use all of that on the real data so we will be back on the airbnb table from stockholm the same
+file as we have looked at in the first two lessons uh because now for three lessons i think yeah i think
+it's a home maybe four even uh we have been saying or mentioning uh we will come back on the back to
+that on monday back to that on monday we will take that on monday and we will learn here we're gonna do
+that on monday so now it's monday uh so yeah let's take it step by step so what do we actually know
+well and what have we actually promised ourselves well we have said that the price is um the price is actually
+a text uh with a dollar sign we have seen that and a comma so we could not even calculate uh the average
+right uh we had 15 i think it was yeah 15 columns uh that are completely empty some listings have no
+rating and we actually never answered the question which neighborhood is the most expensive so this is
+something that we're going to come back to uh during the lesson so uh today plan today's plan is actually
+very simple um we will go through the table from the left to the right one problem at a time and
+actually the same order that you would do yourself right and then for every problem we do the same three
+things and what did we mentioned last week well it was to look at the problem decide what to do and we
+check that it actually worked right and then at the end of the lesson we will put everything in one cell
+so that anyone can repeat the cleaning and see exactly what we did so if you're not coding along you
+will actually well i will distribute these uh the notes from today since we're writing a lot of notes in
+the markdown cells sometimes so in the last cell we'll actually have everything summarized so you can't
+actually just take that one cell yeah if you're not coding along to create the new file that we're gonna
+create yeah that's basically it so let's actually load the file load the file again uh and we will
+do like we did last week um save the original in a since this table is called listings so we're gonna save
+the original in the listings raw and work on a copy instead that we will call listings and that will be our
+data frame right and then we can always go back and start over but first things first import hundas as
+as pd right let me just double check that i don't have to restart my uh visual studio code it happens
+sometimes interesting okay uh so listings uh we said listings raw right equals um pd uh something that i don't like
+about this uh like about this uh we'll see read so now we get the shortcuts and so on data listings dot csv
+and then we add listings uh listings just copy it's gonna take forever to to write like this so we're
+working copy right and then uh let's just print the shape listings okay you know what uh just give me one
+second i'm just gonna restart my visual studio code this happens sometimes i don't know why um actually
+looked into it but yeah it seems to work since i get the the correct uh i get my original table right
+i get the the the columns right so 4574 listings and 84 columns uh but let me just restart and see what
+happens one second i think somebody forgot the mic on uh here hexagon no much better right uh all right
+now let's take a look we will start with um the the um empty columns right empty columns so like i've
+mentioned step by step so we know that our um table has 84 columns right and we said several times that
+that some of them are completely empty right so first thing we do uh in the cleaning is well to remove
+what is actually useless right because then there is less to look at uh but first we look which columns
+are they and are they really empty so a column is completely empty if every value in it is missing
+so for that we will have uh two tools from last week is not that gives us true for every missing
+value and all that asks is it true in every row
+so now let's use them uh on the whole table at once and and then see that that um what they call
+it the column names right so empty equals uh listings um columns uh on our listings uh snap and all
+right so the names of the columns uh where every value is missing let's print the length let not empty and
+let's also uh sorry that's my message to a student let's see here and uh and there we go so let's take a
+look here at the empty columns and then we get it like this yeah those are the empty columns right so 15
+uh columns and if we look at the name we have eight actually eight of them that starts with host right so
+so therefore we can we know that uh that they are about hosts for example host sins uh when was uh the
+host joined um we have the host response time uh how fast the host answers and then we have a little
+bit of mix right uh neighborhood uh license and yeah and things like that calendar update um an instant bookable
+and so on so on so the columns uh column names are there but not a single value and to be honest i don't know exactly why
+uh and for us it does not matter because a column with nothing in it gives uh nothing to to actually analyze
+um and actually uh before the the lesson or before what uh when planning these lessons
+i actually went through the list of columns in in uh in a certain extent and i will speak more about that on thursday
+of what i have done before the lessons and so on uh and one of the empty empty columns actually uh caught my
+attention and that was uh something called bathrooms so uh uh because the number of bathrooms is something we would like to to
+to have for example to to compare uh listings but that column is actually empty and when i looked further
+uh i actually found another column uh that i have not mentioned before and that is called
+bathroom underscore text so it actually contains the same information but written as
+as text like for example one bath or 1.5 shared baths and so on so the information is not lost it's just
+stored in a different way right and we will actually come back to the column in in the later part uh
+later on when we turn it into numbers uh but i have actually made a decision what to do with
+these 15 columns um and that is to actually remove them so a column where every value is missing well
+contains no information and it only makes the table wider and harder to read so this is a i would say
+i would say like i'll put it like this well this is the the the the most common choice and it is
+actually a very safe one um because we actually lose nothing uh but there are other things we could do
+we could keep them to columns just in case but then they are in the way every time we look at the table
+right uh we could also try to fill them with the invented values for example numbers that follow some
+formula and actually look believable and filling in missing values is a real technique and we actually
+use kind of it in on thursday but only when most of the values exist and we actually have um
+something to base the guess on like for example the median of the the outer age or something like
+that but here we have actually nothing to to base it on so every value in these colors would have been
+made up right and invented data that looks real is kind of dangerous isn't it because well later nobody
+can tell what is true and what is not right uh so we will remove them uh and we will use droplet uh from
+thursday uh and we will use axis uh one uh because we're removing columns and not rows and we will put
+them how all uh because we only want to remove a column if all of its values are actually missing uh so let's do that
+so listings equals listings use now and we said axis one how uh now let's print uh the listings uh shape
+and let's print um first things um is now all so how many empty columns uh are left right so let's look at
+at the shape after the drop and also let's see how many empty columns we actually have okay hopefully we
+will get a zero here right let's see so now we have uh 69 right so 84 columns minus the 15
+and we have checked that there is no empty columns left right since we get a zero here uh and the same
+number of rows so we haven't lost any listings right and now we actually have the problem with the price
+let's take that uh let's put a mark down here know what we're actually working with here so here we're
+going to work with the price um and we want to get from text to numbers right uh so let's look first
+let's see what the prices look like and what type it actually has and i know we have already seen this
+before but uh i know it has been a weekend and so on listings uh price let's look at the type here we go
+and then we have listings um price uh ahead and let's just take a look at it uh eight first ones all
+right so the price is text as we saw on the i think was the first ever lesson uh it has a dollar sign
+at the beginning and a comma for every thousand uh some prices have uh decimals uh that are not zero
+like for example this one with an 83 so we cannot just cut off the three last characters right so this
+is exactly as the same problem as we saw with the kroner uh in the webshop on wednesday the steps are the
+same uh only the characters are different so last time we just removed kroner uh we removed the space
+comma to a dot so today we need to remove the dollar sign um and the comma and the dot can actually
+stay because well python already writes uh decimals but a dot and i will do it in steps and i will look
+at the first value after every step right uh so we will just look at the first price here that looks
+like this so hopefully after the first step we will remove the dollar sign and the second step uh
+hopefully the comma will be removed and then uh we are where we are and i will talk a little bit
+about if you're reacting a little bit on the prices i will actually talk about it in a minute
+so step by step so first of course we could have done it in one step but i like to divide stuff just
+to make it as clear as possible right uh so listings uh we set the price and we could use to replace here
+dollar sign for regex um false and then print this uh head and we can actually look at the first three
+uh to list now let's see okay the dollar sign is removed perfect and why i'm writing regex false it's
+just that um um uh just to say that the dollar sign here means actually um a dollar sign because in regex uh
+this is actually a a a special character that means uh uh it means um end of the text
+right uh and we're actually going to mention uh regex uh later on uh in another lesson i think it's
+tomorrow uh so we can look at both ways now let's uh do every uh the same thing here uh but with the price so price um
+um uh string replace uh comma with nothing right then let's just borrow that line of code and now let's see
+so there we go now only the digits uh and uh dot is is is left uh so the numbers can the text now is uh
+kind of numbers right uh last time when we used as type float it gave us an error when the text was not clean
+and now it should work uh and we also need to save it back to the table uh so and then we can check
+the result with the describe right so let's actually do that and we will do it in a separate step here
+so listings be on price um price hopefully this will work last time now it's a float written back to the
+column right and then print uh listings price and also things use describe describe and then we can just
+uh round okay so just get that summary of uh of the column with one decimal and if it has worked it will
+actually give us the um the uh the things that we're looking for let's see and there we go it works
+and now describe actually shows us something real so the uh the price is now afloat so we can actually
+calculate with the two thousand something listings uh that have a price to 2957 uh so that is not
+actually 4574 right uh so a lot of prices are actually missing uh and that is actually what we're
+going to talk about in the next part but the the the middle listing uh the median is 1791 a night the
+mean is uh slightly higher 2327 or 28 if we round up and the max is actually 40 000 so the distance
+between the median and the mean uh well is a sign for us right that a few very expensive listings pulled
+the mean up right and we will come back to that to tomorrow uh because we will actually talk about
+median uh more properly and we also see that the cheapest listing cost 120. so a little little side
+note here or it's not a side note i would say it's an important note actually about the currency so yeah
+i know the file actually had a dollar sign and the median is uh 1791 dollars a night in stockholm so if
+that's true that would be absurd right 1791 dollars per night in uh uh in apartment or in housing in in
+in stockholm i don't think so right i would rather say that this is actually swedish kroner so that the
+the the amounts are in in kroner uh but i want you to notice the habit here uh the sign and the data and
+the real unit must not be the the same thing and we should actually check the documentation uh of the
+data before we see dollars or kroner in the report but like i said on thursday we're going to talk more
+about that um about source checking so i'm saving that for last even though maybe we should have done
+that in the beginning but i i i kind of have a plan with that right uh which i will mention more on
+thursday and why i did that so now uh let's look at the most expensive listing before we continue because
+i would say 40 000 for one night is quite a lot isn't it uh or maybe not but let's let's take a look at
+it and then we can get a an idea at least that's something that we should do right so listings uh sort
+values for the price and then we're gonna put uh ascending falls um and let's look at the first three
+and then let's take a look at the name let's take a look at the uh room uh it's called room type and
+let's look at the um dates and let's also look at the price of course all right uh so look at the three
+most expensive listings uh with only these four columns okay uh uh maybe i misspelled my uh what did i
+forget what do you say guys let's see if you're awake with me maybe you're writing in the chat yeah
+there we go thank you i forgot the square brackets inside the square brackets right since we have a
+list here um and there we go so a penthouse is a big house and then we have a small hotel owned hotel
+12 rooms and 22 beds right and the grand house so i wouldn't say that these are mistakes they seem to be
+real but a little bit unusual listings right well are they outliers meaning values uh that are far away
+from from the rest well yes should we remove them well that that would that question we can actually
+save it for tomorrow because we will learn to find the outliers uh in a careful way and today we only
+clean uh so we do not remove anything uh so we won't remove the the values just because they're large
+uh so the cleaning of the price is actually done uh or is it uh we actually said that two thousand
+and nine hundred fifty seven of the four thousand five hundred and seventy four uh listings have a price
+and that is actually uh the neck the next part so let's actually take a look at the the um the
+the missing uh prices if you remember the question from thursday well for a missing value we ask first
+what how many and why right so let's actually count the first with the isna and some uh and
+which will give us the number and isna mean will give us the share right so let's take a look at that
+and then we can uh build on that later on so print listings so uh how many right uh price uh we said
+this now um and also the sum print listings this is now so the share this time right i mean we need to
+uh multiply it uh with uh i think uh multiply it with 100 and then uh let's uh round the whole thing up to one
+right so the number of the missing values oh sorry the number of the missing values and uh what they call
+it uh the the share of the missing values okay so let's run this okay so 1670 listings have no price
+and that is roughly or not roughly it's exactly 35.4 right so my conclusion here is it's actually uh one
+listing out of three right so that is not a small detail so it means that every number we calculate
+about the price is based on only about two-thirds of the listings so why are they missing well we cannot
+look at the price to find out because it's no nothing there uh but uh we actually have to look at another
+column that might explain that might explain it and that column is something that we have already
+mentioned before is um is a availability uh 365 365 that tells us how many days uh in the next year the
+listing can be booked uh according to its calendar so listing with zero is closed well that would be it
+is booked uh the whole year or if maybe the the host has blocked the calendar uh my guess is that a
+listing that cannot be booked has no price right so let's test that guess uh with a crosstab uh which
+we did on thursday uh and we will compare uh two uh true and false question false questions is the price
+missing and is the availability zero all right so great reminder from uh last uh last week so no price
+equals listings price is now the truth that the price is missing right and then uh closed listings and
+let's look at that column that we mentioned availability 365 so true if the listings cannot be booked in the
+next uh 365 days and we're going to need to put a zero right in order to get the true pulse here okay
+and then we're going to use the crosstab pandas first tab uh there would be no price and uh closed okay
+so test our guess here uh no price uh cannot be booked but still counting uh all four uh combinations
+okay so we have a crosstab with an a and a b so how many rows have every combination of a and b right
+let's see here so we get the four numbers and this is how we could read them so 1490 listings
+um have no price and cannot be booked right and they are most of the missing prices uh because 1490
+out of the 1617 which is uh according to my calculation 92 percent right and then another 127
+uh have no price although they can be booked and four uh have a price although they are closed and
+two thousand nine hundred and fifty three listings have both a price uh and an ability uh which is well
+the normal one right the normal case here so the guess was well i would say almost right uh so this is
+a pattern is not a proof uh and we cannot say for sure why the prices is missing because the data
+actually does not tell us but what we can say is that the missing prices are not random right so they are
+actually uh um they're they're they're mostly the the listings that that are closed as we see here and
+that matters uh for what we are allowed to say right so what we can uh uh so we can actually say
+something like um how can we say it well maybe we can say the price we have are the price of the
+listings that can be booked right because if we say the average price in stockholm well then we mean the
+average among the bookable ones right and that is a sentence we have to be able to write in a report
+so let's make a decision about the 1617 missing prices so we actually have three options uh that we that we saw on
+thursday we could we we cut we could uh remove them with with the drop now just as we did before so
+but that would actually remove third of the listings but we also need them for other questions
+um maybe like how many listings there are per neighborhood uh so i don't think that is a good idea
+we could fill the price with the median that's something we could do but at the same time 1617
+invented prices would be actually more than a third of the column and the filled in values well it's a
+guess that makes the spread smaller uh just like the ages so i would rather choose actually uh a third
+option and that is to leave the missing prices as they are because mean and median um and described
+will skip them for us so we just need to remember to look at the count every time like we did with the
+with the series right for last last week and like i mentioned this is a a important decision and it is a
+decision it's not a failure uh and to leave it like it is uh is a solution right uh and be honest about
+that that is a solution to our problem here now uh let's move back to our question uh back to uh our
+question which is which uh nay uh we're heard is the most expensive right but before we do that let's
+take a little break because this is a perfect place to take actually a break so we don't take a break in
+the middle of something right so when we get back uh we will get back to our question uh 46 okay uh maybe
+yeah go grab some coffee uh maybe you want to read up on what we have done up to now maybe you took
+weekend not dreaming about this so a little longer break than 10 minutes maybe yeah we could take 14
+so yeah uh we get back at the 10 o'clock sounds all right guys all right okay uh so i will continue
+at uh see you guys soon right come back let's dive right into it um back to our question right so in in
+lesson two we actually asked this this this this uh this question right uh and we got an error uh since
+the the price was text right but now we have a price that is a number so we can actually answer uh
+uh we know the tools we can use group by and ag uh with names that we actually choose ourselves
+uh and since we just learned that a third of the prices are actually missing uh we actually want
+to want the count of listings that have a price uh next to next to every price and remember what we said
+about the cities uh a number without its count is not worth so much right uh so let's do that
+so by uh let's call it by area equals listings group by uh let me not misspell this neighborhood
+and lens tag of this one with uh price which will equal uh price count count the mean is which actually
+equals price equals price and obviously the mean uh median equals and then we can uh sort sort values median
+this have a little bit of stiff fingers today round zero and then let's actually show it also so by
+area so yeah just calculate the the the mean and the median and then sort it by the median uh so count
+well counts uh only the values that are not missing so on the price column it actually gives us the exact
+number we want so we want the price per neighborhood the number of listings with the price the mean and
+the median the listings have a price uh the average price and the middle price and we want the highest
+median first all right and this is just like we did on tuesday um where we use the group plus ag with the
+names that we choose all right let's see right all right all right uh so we get the 14 neighborhoods uh
+and the the the answer is actually not that simple as the one at the top so let's actually read the three
+shapes here so first let's look at the top here uh by the median uh forsta uh is the most expensive
+2214 2214 a night right then we have so the malm with 2119 the broma with 2089 as the malm
+with 1960 normal 1834 and so on but if we take a look at the first column uh farsta only has 130
+listings with a price and so the malm actually has 714 the median of 130 listings moves more actually if
+a few listings are different so i actually trust so the malm's number more than i do forstas even though
+forsta is first here right so this is actually the same lesson as we saw with the cities on thursday
+second of all the mean uh so if we have sorted uh by the mean instead of uh instead well then bromma
+and that's the malm with 2756 uh our first and forsta kind of drops to four to fifth place something
+like that uh so the mean is higher than the median in every neighborhood because of the uh because of the
+expensive listings right so inside the months the mean is 2646 and the median is 2119 uh and that is
+actually the penthouse effect again right so the question is which neighborhood is the most expensive
+has a little bit different answers depending how we measure right and tomorrow we will actually speak
+more about uh why and when uh to use which right third of all uh that we can look at is the the the what
+you call it the bottom and here i would say that the picture is pretty clear square home men uh 850
+945 and sponga telsa 1026 well they are the cheapest uh and the difference to the rest is quite large
+uh so much larger than uh than the difference at the top right uh so this is something that we could
+say with more um what do you call it with more um confidence right but there is one more thing that
+we should ask a listing can be expensive because of of the neighborhood or because of the kind of place
+it is and those are two different things right and now the kind of um well they are mixed together right
+so let's actually see if that that is a real problem so the first uh uh let's actually write it down
+here uh just as a little small note so uh first does um does the kind of place um matter for the price
+okay let's uh listings uh group by um room type price since we need to uh count and uh median
+right so how many have a price uh and the median per room type so i'm just comparing the price of
+different room types right so let's run this and see okay mm-hmm so we actually see a big difference
+right so an entire home has a median price of 2168 and the private room only has 808 right uh so and
+also if you notice the count here for for uh for the hotel room it actually has one listing with the
+price uh so we won't say anything about the room uh about the hotel rooms right uh well anyways so so
+the kind of place actually matter a lot right so now the question is do all neighborhoods have the same
+mix of room types right so we can calculate the share of listings that are entire homes in every
+neighborhood so here we can use a true false column uh that gives us a share when we take the mean like
+we did on wednesday let me just uh write that as a side note here um do all let me say do all may
+where hoods um have the same mix of room uh types something like that all right is entire equals
+listings um room type for equal equals uh entire uh direct that entire home apartment something like that
+right uh is entire group by listings um neighborhood plans right uh mean by 100 and then let's round
+decimal shares and also let's not forget to sort values so just get the share per night in in percent
+so we're just calculating the share of entire homes in every neighborhood now let's run this and see here
+so we can see that the mix is is is not the same so in bromma we have 92 percent uh are uh of the
+listings are actually entire homes in skärholmen it's only 58 percent are uh listings of entire homes
+and this bongatensda where we have 61 percent so bromma has more of the expensive kind of listings
+and that alone actually pushes its median up even if a room in broma costs the same as a room in kairholmen
+and to find out if the neighborhood itself mattered well we would compare like with like right so the
+same kind of uh the same kind of place in every neighborhood uh and we do that by filtering uh only entire
+homes homes and then the same table and then the same table again so like with like like like with like oops
+so entire um was listings things oops these things um type was uh it's an entire entire uh home
+apartment so the only the entire homes tire uh group by uh hood
