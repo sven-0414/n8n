@@ -1,0 +1,1808 @@
+1
+00:00:02,110 --> 00:00:10,280
+ part uh can we trust uh can we trust the source and so on so wrapping it up basically yeah that
+
+2
+00:00:10,280 --> 00:00:16,490
+ will be basically it for this module and then friday uh i need to speak to item a little bit
+
+3
+00:00:16,490 --> 00:00:28,550
+ but uh might have a little uh catch-up day i think they're a little bit important because
+
+4
+00:00:28,550 --> 00:00:33,970
+ of course during the week you keep stacking up of course maybe you don't finish with all the labs
+
+5
+00:00:33,970 --> 00:00:38,010
+ not all the questions something you want to go back to if you had a little bit more time you
+
+6
+00:00:38,010 --> 00:00:43,780
+ could have come back to it and dissected the other question or maybe change the variable or
+
+7
+00:00:43,780 --> 00:00:49,590
+ whatever uh so there's always something to do right uh so that's why i think friday in essence are
+
+8
+00:00:49,590 --> 00:00:58,070
+ the friday catch-up days are super important yeah yeah yeah yeah you had the pre-plan yeah of course
+
+9
+00:00:58,070 --> 00:01:06,770
+ we will see uh i don't think it's going to take that whole day uh but forever for whatever is left
+
+10
+00:01:06,770 --> 00:01:18,240
+ out uh maybe you can have a catch-up day or left over oh yeah yeah you had the seminar
+
+11
+00:01:18,240 --> 00:01:35,250
+ uh you're perfectly right sorry my mistake there uh all right let's dive into it actually we're just
+
+12
+00:01:35,250 --> 00:01:49,520
+ gonna create a share the demo file yesterday with you guys if i didn't i'm so sorry nobody reminded
+
+13
+00:01:49,520 --> 00:01:58,030
+ me so uh so since nobody complained maybe i did it all right uh i can go back and see and then
+
+14
+00:01:58,030 --> 00:02:10,270
+ i can upload the demo five and demo six for today but you also had the recording to lean on right
+
+15
+00:02:10,270 --> 00:02:29,240
+ so yeah yesterday we uh cleaned the airbnb table uh table right uh the price is now a number the dates
+
+16
+00:02:29,240 --> 00:02:40,830
+ are dates and don't forget this boom boom uh and the letters t and f uh we fixed those two right
+
+17
+00:02:40,830 --> 00:02:48,040
+ with true and false we also made some decisions uh and the most important one was uh to leave the
+
+18
+00:02:48,040 --> 00:02:59,950
+ missing prices as they are and at the end we saved the results in a new file called uh listings clean
+
+19
+00:02:59,950 --> 00:03:19,250
+ right so today uh well we will start to describe the um the table um we will start to describe the table
+
+20
+00:03:19,250 --> 00:03:36,340
+ with with uh numbers right do that uh that uh so until now well we we have mostly asked uh how many
+
+21
+00:03:36,340 --> 00:03:45,640
+ so today we will ask better questions what is a typical listing um how much do uh do the listings
+
+22
+00:03:45,640 --> 00:03:53,480
+ differ from each other um which ones are so unusual that we should look at them maybe separately
+
+23
+00:03:53,480 --> 00:04:03,790
+ and do two columns like the price and the number of guests move together so if one goes up does the
+
+24
+00:04:03,790 --> 00:04:11,530
+ other one go up if one goes up does the other one go down or do they not have any relation at all
+
+25
+00:04:11,530 --> 00:04:23,930
+ well these are the things that we're gonna look at together uh well we have met some tools we have
+
+26
+00:04:23,930 --> 00:04:33,050
+ used mean and median a lot many times and last thursday we also met the standard deviation or the std
+
+27
+00:04:33,050 --> 00:04:42,060
+ but we have never stopped and asked us which one is more preferable or which one which one should
+
+28
+00:04:42,060 --> 00:04:52,020
+ be used which one should be used to which scenario right and that is what today is all about uh so we
+
+29
+00:04:52,020 --> 00:05:05,640
+ will start uh with the file from yesterday obviously and remember what we have learned uh csv file well
+
+30
+00:05:05,640 --> 00:05:16,140
+ does not save the types so i should not forget to uh use parse dates right and then i should those also
+
+31
+00:05:16,140 --> 00:05:32,650
+ check that the types came back so import uh pandas as pd listings equals uh pd read csv
+
+32
+00:05:37,270 --> 00:05:58,040
+ listings uh no it's got listings clean right uh let's not forget that not csv uh parse dates um and those are
+
+33
+00:05:58,930 --> 00:06:44,200
+ last grape those are um calendar last grape uh those are first uh red view and uh last review um and then we
+
+34
+00:06:44,200 --> 00:07:29,370
+ we can just uh print uh listings uh listings shape and also print these things these types listings view
+
+35
+00:07:29,370 --> 00:07:53,790
+ all right let's see here we're off to a good start uh let me see here uh missing call provided to parse this
+
+36
+00:07:53,790 --> 00:08:36,660
+ when the last grape interesting we get rid of anything like that um just in case maybe i misspelled there is something uh probably i had misspelled something uh probably i had misspelled something so same shape as yesterday
+
+37
+00:08:36,660 --> 00:08:54,440
+ 4 574 and 73 columns uh the 69 plus four that were added and we see that uh yeah uh we got everything
+
+38
+00:08:54,440 --> 00:09:04,060
+ as as we want and right but on float we got on with date time the prices of a price uh a number and last
+
+39
+00:09:04,060 --> 00:09:27,340
+ review are also dates so everything holds up all right uh the first thing we're going to look at is the mean and the median why
+
+40
+00:09:29,000 --> 00:09:35,400
+ uh and this is something we have gone into but just gonna deep dive into it a little bit and then yeah
+
+41
+00:09:36,510 --> 00:09:47,520
+ just like always discuss it and so on so the mean and the median why uh they are different we have seen
+
+42
+00:09:47,520 --> 00:09:55,080
+ a couple of times now uh during this uh module uh we have seen that the uh that the mean price is higher than
+
+43
+00:09:55,080 --> 00:10:05,520
+ the median price right and i've said a few uh so what i've said basically is that few very expensive uh
+
+44
+00:10:05,520 --> 00:10:16,240
+ listings pull uh the the mean up right so today i want to show it uh first of all with a very small
+
+45
+00:10:16,240 --> 00:10:25,820
+ example uh so to so that you can see exactly what happens so imagine that we have five listings okay
+
+46
+00:10:25,820 --> 00:10:36,730
+ just imagine now yes i would like just to ask uh i don't see here that i have a listing screen
+
+47
+00:10:36,730 --> 00:10:48,360
+ uh in your databases uh maybe i try to in in teams in teams i try to get from things in database but
+
+48
+00:10:48,360 --> 00:10:53,370
+ there is let me let me fix that just give me one second i can fix that now okay thank you
+
+49
+00:10:53,370 --> 00:11:02,570
+ oh no no no problem at all uh just give me one second uh it just stops sharing my screen i don't
+
+50
+00:11:02,570 --> 00:11:17,310
+ want to maybe do some conversations uh see here one second one second one second one second one second
+
+51
+00:11:17,310 --> 00:11:27,160
+ it's good that you said it at the beginning so we can actually fix that uh it should be under oh yeah
+
+52
+00:11:27,160 --> 00:11:42,740
+ exactly in in two seconds you will have under code in our shared folder uh you will have a day day
+
+53
+00:11:42,740 --> 00:12:04,160
+ five and in that uh you will have uh the code and the uh code and the data but there is a data data file
+
+54
+00:12:04,160 --> 00:12:14,310
+ for do we have a have data file okay okay okay okay okay okay so let me put that in the right way
+
+55
+00:12:14,310 --> 00:12:27,170
+ then all right uh thank you so there is the code and now we just need the data folder and there you want
+
+56
+00:12:27,170 --> 00:12:53,620
+ the listings clean i guess it should be up now just share my screen again yes it is yes perfect
+
+57
+00:12:53,620 --> 00:13:13,770
+ perfect oh no no problem thank you for letting me know there we go uh where was i i said something
+
+58
+00:13:13,770 --> 00:13:22,420
+ yeah yeah yeah yeah we said we talked about uh imagine right imagination no uh so we were gonna imagine
+
+59
+00:13:22,420 --> 00:13:35,960
+ uh some uh some uh some uh some uh some uh uh uh uh uh listings five actually uh with a price uh that's
+
+60
+00:13:35,960 --> 00:13:46,690
+ almost the same so we're gonna have a price of 900 1 000 1 100 1 200 and 1 300 all right so they're
+
+61
+00:13:46,690 --> 00:13:56,770
+ very close uh and i will make one column and do you remember guys what that was called one column
+
+62
+00:13:56,770 --> 00:14:09,950
+ one column what do you call that and it is important because yeah exactly another uh series uh because
+
+63
+00:14:09,950 --> 00:14:24,050
+ it's uh in order to um uh you will see uh so so basically a series is simply uh one one column as
+
+64
+00:14:24,050 --> 00:14:34,560
+ always says here of values uh like one column in our table uh so without a table around it uh so yeah
+
+65
+00:14:34,560 --> 00:14:42,510
+ basically we just write the list in the values in a list obviously uh and then pandas will turn them
+
+66
+00:14:42,510 --> 00:14:48,580
+ into a column and that's why i asked about the word here because that's uh the word that we're going
+
+67
+00:14:48,580 --> 00:14:56,480
+ to use in order to do that and then we'll just take the mean and medium and just uh look at it so we
+
+68
+00:14:56,480 --> 00:15:06,640
+ want five listings just creating them up now uh and therefore here we're gonna in order to create it to a
+
+69
+00:15:06,640 --> 00:15:21,730
+ series like this and then we want the list we said 900 we said uh 1000 we said um 1100 and we said oops
+
+70
+00:15:21,730 --> 00:15:36,960
+ and we said um 1200 and last but not least 1300 right oops uh there we go uh and then let's just print
+
+71
+00:15:36,960 --> 00:16:18,900
+ median uh sorry the mean first and then also print the media just to make it super clear all right i think
+
+72
+00:16:18,900 --> 00:16:51,430
+ something is off isn't it here we go uh i was like tapping into my mathematical skills okay so yeah we get
+
+73
+00:16:51,430 --> 00:16:59,950
+ both the same number for both right so when the prices are spread evenly around the the middle the
+
+74
+00:16:59,950 --> 00:17:09,820
+ mean and the median agree so now uh let's add one more listing a luxury villa that costs uh maybe uh let's
+
+75
+00:17:09,820 --> 00:17:22,340
+ say um 40 000 a night all right just take a look at it and i think you guys who know where i'm going with
+
+76
+00:17:22,340 --> 00:17:49,890
+ this uh but let's call it six this time and let's add our luxury villa for 41 two three 40 000 and round
+
+77
+00:17:49,890 --> 00:18:20,970
+ it five right six six there we go if we look at the two numbers now one listing right just adding one
+
+78
+00:18:20,970 --> 00:18:33,920
+ listing uh the the mean jumped from 1100 to well 7583 that is a number that does not describe any of the six
+
+79
+00:18:33,920 --> 00:18:45,730
+ listings right five of them cost between 900 to 1300 and the sixth sixth listing actually cost 40 000. so
+
+80
+00:18:45,730 --> 00:19:03,040
+ the median the median here moved from 1000 to 1150 it barely noticed right so the reason is how they are
+
+81
+00:19:03,040 --> 00:19:11,030
+ actually calculated right so obviously the mean um well adds up all the values and then divides uh so every
+
+82
+00:19:11,030 --> 00:19:21,450
+ value counts for the with its full size uh so the the a huge value here uh would drag the results uh
+
+83
+00:19:21,450 --> 00:19:33,160
+ toward this towards it just like we saw here while the median only cares about the order right it lines
+
+84
+00:19:33,160 --> 00:19:39,080
+ up the values from smallest to largest and takes the one in the middle since it can't find the middle it will
+
+85
+00:19:39,080 --> 00:19:48,690
+ take these plus uh each other divided by two so it doesn't matter if the biggest one is 1300 or 40 000
+
+86
+00:19:50,560 --> 00:20:05,650
+ uh it is still the the the biggest right uh so the here we can actually write a little rule uh but i have
+
+87
+00:20:05,650 --> 00:20:22,360
+ a politic pre written for you guys uh a general rule here so the median is the typical value when a few
+
+88
+00:20:22,360 --> 00:20:32,060
+ values are far away from the rest it is hard to push around while the mean well when you want to
+
+89
+00:20:32,060 --> 00:20:39,160
+ calculate something with all the values like a total or when the values are spread evenly right so mean uh
+
+90
+00:20:42,210 --> 00:20:51,520
+ times count gives you the sum right so now let's actually look at the real prices and we have actually
+
+91
+00:20:51,520 --> 00:21:00,790
+ seen both uh numbers before uh but let's put them next to each other and take it from there so print
+
+92
+00:21:02,080 --> 00:21:31,150
+ listings we're gonna do that with the price and let's look at the mean first mean round one then instead of
+
+93
+00:21:31,150 --> 00:21:55,490
+ mean but the median okay so uh the mean here is 2327 and the median is 1791 so the mean is more than 500
+
+94
+00:21:55,490 --> 00:22:05,030
+ higher right so it is the same thing as in our small example as we saw before only less extreme
+
+95
+00:22:05,030 --> 00:22:13,270
+ right so a group of expensive listings actually pulled the mean up while the median stays with the
+
+96
+00:22:13,270 --> 00:22:18,520
+ typical listing so if someone asks what does a night in stockholm cost well the
+
+97
+00:22:18,520 --> 00:22:28,320
+ median is actually uh the armist answer because half of the listing actually costs less than 1791
+
+98
+00:22:28,320 --> 00:22:42,430
+ and half costs more so remember this uh among the listings that that that actually have a price
+
+99
+00:22:42,430 --> 00:23:02,500
+ uh yeah so which one should you use is a typical question uh i could get uh maybe after a lesson
+
+100
+00:23:02,500 --> 00:23:10,020
+ or during a lesson so which one should i get use well uh there isn't
+
+101
+00:23:10,020 --> 00:23:19,800
+ an answer uh a straight answer for that but uh i would say median if we have a few values that are far
+
+102
+00:23:19,800 --> 00:23:31,850
+ away from each other and the mean if you're gonna count with the sum okay and always look at both of
+
+103
+00:23:31,850 --> 00:23:40,860
+ them and if they differ a lot well that's kind of a signal right that something is not symmetrical the
+
+104
+00:23:40,860 --> 00:23:49,520
+ the next question that we're gonna look at um is well how much do the prices differ from each other and for
+
+105
+00:23:49,520 --> 00:23:57,720
+ that uh we actually need uh more than one uh more than one number so we are actually going to take a look
+
+106
+00:23:57,720 --> 00:24:25,000
+ at percentiles and spread so you already know describe uh so let's just write it and then we can talk a
+
+107
+00:24:25,000 --> 00:24:56,170
+ little bit about it first um listings uh price describe and then round right if we take a look at what it
+
+108
+00:24:56,170 --> 00:25:03,370
+ gives us for the price well i've been reading it as a list of numbers uh but there is of course a system
+
+109
+00:25:03,370 --> 00:25:15,600
+ right and let's actually look at it again and then discuss it a little bit so the rows 25 percent
+
+110
+00:25:15,600 --> 00:25:27,190
+ 50 percent 75 percent actually called percentiles uh or quartiles uh when it's these these three so a
+
+111
+00:25:27,190 --> 00:25:36,980
+ a percentile well answers the question what share of listings are below this value so the 50 percent
+
+112
+00:25:36,980 --> 00:25:44,750
+ uh the 50 percent row here uh well it's the median uh so half of the listings are cheaper the 25
+
+113
+00:25:46,300 --> 00:25:57,950
+ row 1071 says that one quarter of the listings are cost less and the 75 obviously uh 3004
+
+114
+00:25:57,950 --> 00:26:09,340
+ uh says that the three quarters costs less than that so one quarter costs more we are not limited to only
+
+115
+00:26:09,340 --> 00:26:27,100
+ these three with tool called quantile we can ask for any percentile so here the number is actually a share
+
+116
+00:26:27,100 --> 00:26:39,740
+ between zero and one so 0.1 would mean 10 percentile and we can also give it a list so let's ask for the
+
+117
+00:26:39,740 --> 00:26:52,320
+ cheapest um 10 percent the the middle and the most expensive 10 percent and let's also ask for the 99th
+
+118
+00:26:52,320 --> 00:27:05,490
+ percentile uh um which is the price that only the most expensive one percent are uh well are above that
+
+119
+00:27:05,490 --> 00:27:16,780
+ right so let's take a look at that and then we can look at the tool uh quantile because i i don't
+
+120
+00:27:16,780 --> 00:27:24,040
+ believe we have met this uh before right at least in this project so listings price and then we can
+
+121
+00:27:24,040 --> 00:27:53,590
+ use quantile in here we can put uh 0.1 for example and we said uh 0.25 0.0.5 uh we said 0.75
+
+122
+00:27:55,680 --> 00:28:14,880
+ uh also 0.9 and 0.99 and then we can just round it up uh we don't want any decimals all right so we're
+
+123
+00:28:14,880 --> 00:28:30,390
+ asking for specific uh percentiles uh of the price and not only these ones excuse me so the cheapest uh
+
+124
+00:28:30,390 --> 00:28:43,220
+ uh 10 percent of the list costs less than 691 the most expensive 10 uh cost 4 446 and if we look at the
+
+125
+00:28:43,220 --> 00:28:57,710
+ uh last uh row here uh because from uh uh 10 percent to to to uh one percent to uh sorry 10 percent uh um
+
+126
+00:28:57,710 --> 00:29:10,330
+ uh uh to the 90 uh 90 uh 90th percentile it goes actually from 691 to 4 446 right uh but between
+
+127
+00:29:10,890 --> 00:29:27,040
+ 90 or the 90th and the 99th percentile it goes from 4 446 to 8 575 and the maximum here is of course
+
+128
+00:29:27,040 --> 00:29:44,520
+ uh 40 000 right so the numbers are punched as we see here at the low end there is a long tail of
+
+129
+00:29:44,520 --> 00:29:54,080
+ expensive listing stretching out to the right so that's the that's the shape that makes the mean
+
+130
+00:29:54,820 --> 00:30:00,330
+ larger than the median and tomorrow we will actually draw it and look at that tail so we can see it in
+
+131
+00:30:00,330 --> 00:30:08,850
+ black and white uh so that that is just like a teaser for for what we're going to do tomorrow when we're
+
+132
+00:30:08,850 --> 00:30:19,810
+ going to see it the long tail percentiles uh also gives us a way to say uh how much the price differ
+
+133
+00:30:19,810 --> 00:30:30,360
+ so that does not depend on just on the few extreme values uh so we take the 75 percentiles and subtract
+
+134
+00:30:30,360 --> 00:30:44,410
+ the 25th uh and the difference here is actually called the iqr and let me actually write that um iqr uh it
+
+135
+00:30:44,410 --> 00:30:58,210
+ stands for uh i always forget uh let me see here inter uh quartile range actually uh a hard word to
+
+136
+00:30:58,210 --> 00:31:10,950
+ remember uh interquartile range and and and it it is the width of the middle half of the listings so
+
+137
+00:31:10,950 --> 00:31:19,460
+ let's actually uh uh count that or uh calculate that uh and then save it because we're going to use it
+
+138
+00:31:19,460 --> 00:31:44,140
+ in a moment right um so let's try that out so we have q1 equals listings the price here we would use uh
+
+139
+00:31:44,140 --> 00:32:10,220
+ quantile we said uh 0.25 then we have q2 uh or sorry quarter three um to 75 okay so therefore this is
+
+140
+00:32:10,220 --> 00:32:20,930
+ uh a quarter of the listings that are cheaper and somebody turned on their mic uh let's see here
+
+141
+00:32:20,930 --> 00:32:27,020
+ because i hear my voice again i'm not now all right uh so cheaper than this right and then we have a
+
+142
+00:32:27,020 --> 00:32:37,510
+ quarter of the listings that are more expensive than this uh so how did we count the uh the iqr or the
+
+143
+00:32:37,510 --> 00:32:47,450
+ interquartile range well we said you take the in this case the 75 minus uh the 25 or not in this case
+
+144
+00:32:47,450 --> 00:33:03,940
+ this is what we do so q3 minus q1 and then we have it and now let's take a look at it together here
+
+145
+00:33:05,180 --> 00:33:23,200
+ so round uh q1 so we want to see the q1 uh with only one decimal and then we want to see the q3 in the
+
+146
+00:33:23,200 --> 00:33:54,620
+ same way so q3 um and one decimal and also the iqr round um iqr one let's take a look the middle half of the
+
+147
+00:33:54,620 --> 00:34:11,130
+ listing costs uh 1071 and 3 000 and four so the iqr here is 1933 and if we compare that with the standard
+
+148
+00:34:11,130 --> 00:34:24,060
+ deviation that we got uh which we don't have here right uh there we go 2160 so they both try to say
+
+149
+00:34:24,060 --> 00:34:32,970
+ how much the values actually differ but the standard deviation here is affected by the very expensive
+
+150
+00:34:32,970 --> 00:34:49,500
+ listings just like the mean while the iqr is not right so it is to the standard deviation what the
+
+151
+00:34:49,500 --> 00:35:08,850
+ median is actually to the mean right uh so therefore we can summarize it something like this the sensitive
+
+152
+00:35:08,850 --> 00:35:14,480
+ to extreme values well that would be the mean and also the standard deviation if you're looking at the
+
+153
+00:35:14,480 --> 00:35:26,670
+ spread hard to push around well that is actually the median and iqr now comes to 100 billion dollar
+
+154
+00:35:26,670 --> 00:36:10,050
+ question uh what should we do about the out layers we do thousand an out layer well uh is just a value
+
+155
+00:36:10,050 --> 00:36:16,900
+ that that is far away from the others right uh and we have seen the the most expensive listing and that
+
+156
+00:36:16,900 --> 00:36:26,940
+ was a penthouse for uh 40 000 a night uh and this is an out layer obviously right but we need the rule
+
+157
+00:36:26,940 --> 00:36:36,130
+ so it looks like a lot uh uh to say that it looks like a lot i would say it's not good enough right
+
+158
+00:36:36,130 --> 00:36:45,940
+ because what looks like a lot to me well may not look uh like a lot to you so the most common rule
+
+159
+00:36:45,940 --> 00:37:01,680
+ rule uses the iqr that we just calculated uh and it says well take the middle half then go one and a
+
+160
+00:37:01,680 --> 00:37:15,020
+ half iqr out on each side so anything beyond uh beyond that is actually an out layer so the upper limit
+
+161
+00:37:15,020 --> 00:37:26,410
+ would be what well it would be uh q3 plus 1.5 times the iqr while the low limit would be
+
+162
+00:37:26,410 --> 00:37:42,940
+ q1 minus 1.5 times the iqr and these two is what we call fences right and i'm not going to write the
+
+163
+00:37:42,940 --> 00:37:50,720
+ the calculation because i'm going to do that in the cold uh in one second uh i don't want you to think
+
+164
+00:37:50,720 --> 00:37:57,860
+ that 1.5 here is a law of nature it's just a convention it's a good starting point that people
+
+165
+00:37:58,960 --> 00:38:07,200
+ kind of have agreed on all right uh but just the convention uh let me just uh it's not an
+
+166
+00:38:09,100 --> 00:38:16,280
+ what you call it uh it's not an instruction that you always have to follow blindly just to make sure
+
+167
+00:38:16,280 --> 00:38:26,210
+ that everybody got that so let's calculate it and therefore you will have it in your notes as well
+
+168
+00:38:26,210 --> 00:38:57,370
+ so we set the q3 um plus 1.5 times the um iqr while the lower is the q1 minus uh 1.5 times the iqr
+
+169
+00:38:57,370 --> 00:39:26,380
+ print uh round let's look at the lower then round with the upper so here we just calculated calculating the
+
+170
+00:39:26,380 --> 00:39:35,320
+ uh fences with the iqr rule and let me actually write that as a comment maybe when you go back to this
+
+171
+00:39:36,480 --> 00:39:41,310
+ on friday or thursday or whatever maybe you don't remember what we're doing here so
+
+172
+00:39:41,310 --> 00:40:04,910
+ and we said um calculate um the two fences using an iqr rule or something like that using iqr that is
+
+173
+00:40:04,910 --> 00:40:19,010
+ enough okay or we can put like your rule let's see what we get all right so we get the upper fence is
+
+174
+00:40:19,010 --> 00:40:28,880
+ five thousand nine hundred and two so if anything costs uh more than that than that then it is an
+
+175
+00:40:28,880 --> 00:40:36,620
+ outlier and we see actually uh that the lower fence is a negative number so minus one thousand eight
+
+176
+00:40:36,620 --> 00:40:43,860
+ hundred twenty seven right so a price below minus one thousand eight hundred twenty seven well cannot
+
+177
+00:40:43,860 --> 00:40:55,860
+ exist right so here we actually have uh no low out layers so the the the cheapest listing actually
+
+178
+00:40:55,860 --> 00:41:04,130
+ costs 120 uh so therefore we don't need to take that into consideration so here the rule will only
+
+179
+00:41:04,130 --> 00:41:16,300
+ find expensive ones which actually fits with what we saw with the long uh with the long tail so how many
+
+180
+00:41:16,300 --> 00:41:23,430
+ are there well we filter like we did in the first lesson and then we will look at the size of the
+
+181
+00:41:23,430 --> 00:41:51,770
+ the result so out uh layers equals listings listings eyes so the listings above the upper fence right
+
+182
+00:41:51,770 --> 00:42:27,930
+ print len the out layers and also out uh layers uh price here we use describe around it too so here's
+
+183
+00:42:27,930 --> 00:42:36,760
+ our filter just like we saw on the last uh on the uh on the first
+
+184
+00:42:36,760 --> 00:42:57,040
+ list ever lesson that we had let's take a look so we see that 132 listings are above the fence so how
+
+185
+00:42:57,040 --> 00:43:05,660
+ can we look at this well i would say that it's actually not just a handful of strange cases right
+
+186
+00:43:05,660 --> 00:43:15,380
+ it is actually 132 listings out of the 2957 that actually have the price right and that is about
+
+187
+00:43:15,380 --> 00:43:25,540
+ four point uh according to my calculation 4.5 percent if i remember correctly uh and they cost
+
+188
+00:43:25,540 --> 00:43:43,420
+ uh uh between 5 910 and 40 000 and the middle one of them cost uh 7091 so now that we have built up
+
+189
+00:43:43,420 --> 00:43:53,650
+ uh an overview of everything well now comes the important question what do we do with that first we need to
+
+190
+00:43:53,650 --> 00:44:03,550
+ understand that right are they mistakes like for example a host who wrote to 10 000 uh when they
+
+191
+00:44:03,550 --> 00:44:13,690
+ meant 1000 for example or are they real so in order to build a a a a a an understanding if this is
+
+192
+00:44:13,690 --> 00:44:25,360
+ kind of a mistake or not well we should obviously uh look at what kind of listings they are um so print
+
+193
+00:44:25,360 --> 00:44:48,430
+ the outlayers and we want to see the room type and let's do a value count here and let's also print
+
+194
+00:44:48,430 --> 00:45:30,410
+ the outlayers call more dates then medium things it's again let's look at them and the last thing
+
+195
+00:45:30,410 --> 00:46:02,710
+ i want to look at is this and i'll expect um let's see something like this outliers so in the second
+
+196
+00:46:02,710 --> 00:47:09,950
+ where i'm going with this uh round or in and then also around here too which room types how many
+
+197
+00:47:09,950 --> 00:47:23,900
+ guests can they hold right and here i actually want to see uh here i actually want to see the share
+
+198
+00:47:23,900 --> 00:47:34,460
+ that holds six guests or more among the outliers and among the others that's basically the idea here
+
+199
+00:47:34,460 --> 00:48:09,310
+ so now we know something here that 128 out of those 100 and 132 are actually entire homes so the typical
+
+200
+00:48:09,310 --> 00:48:23,970
+ outlayer holds uh six guests uh while the typical listing holds three guests and 68 percent of the
+
+201
+00:48:23,970 --> 00:48:34,450
+ outliers have room for six or more guests uh compared with the with the 17 of the others so most of them
+
+202
+00:48:34,450 --> 00:48:45,290
+ are not mistakes they are actually a big place villas uh maybe large apartments maybe a a whole small
+
+203
+00:48:45,290 --> 00:48:53,010
+ hotel i don't know what i actually do but but but the price here uh per night uh for a house uh that
+
+204
+00:48:53,010 --> 00:49:03,830
+ sleep sleep 16 is of course high so now we actually decide well we have three options and this is the real
+
+205
+00:49:03,830 --> 00:49:14,920
+ choice that any analyst would make all the time could remove them averages would look nicer but we would
+
+206
+00:49:14,920 --> 00:49:25,320
+ we would be throwing away 132 real listings only because they're expensive and then our numbers well
+
+207
+00:49:25,320 --> 00:49:34,960
+ would not longer describe the whole market wouldn't they we could of course change them for example cut
+
+208
+00:49:34,960 --> 00:49:46,200
+ every price at the fence or something like that but then we would kind of invent numbers right and i've
+
+209
+00:49:46,200 --> 00:49:57,020
+ actually said what i think about that or we could keep them and we would be just open about it and here
+
+210
+00:49:57,020 --> 00:50:04,330
+ obviously uh you know what i would choose i will actually choose the third option with a little small
+
+211
+00:50:04,330 --> 00:50:17,030
+ twist so i will keep them but i will actually mark them with a new column called price outlayer and
+
+212
+00:50:17,030 --> 00:50:26,210
+ then i can always choose to look at the table with them or without them and anyone reading my work
+
+213
+00:50:26,210 --> 00:50:35,590
+ you can see exactly what i did so this is basically the same idea as we did yesterday with the has
+
+214
+00:50:35,590 --> 00:50:50,880
+ reviews so let's actually do that uh so keeping them but with a little twist so listings uh price
+
+215
+00:50:50,880 --> 00:51:16,750
+ we said price we're gonna call the price out uh layer uh equals listings um price and then put and
+
+216
+00:51:16,750 --> 00:51:33,050
+ and then we print the listings price uh out layer just take a look at the sum here
+
+217
+00:51:33,050 --> 00:51:43,460
+ so here we're just trying to mark uh the outlier in a new true and false column so that we keep them
+
+218
+00:51:43,460 --> 00:51:56,050
+ uh but can also find them right so here we would get true for the outliers false uh false for the others
+
+219
+00:51:56,050 --> 00:52:21,800
+ okay 132 that's good uh before i move on what should we actually think about 132 obviously because we got
+
+220
+00:52:21,800 --> 00:52:30,440
+ 132 before but there is something i should take into consideration and let's see if anybody uh
+
+221
+00:52:30,440 --> 00:52:49,210
+ pick that up what should i take into concentration now when i did this christopher yeah one thing could
+
+222
+00:52:49,210 --> 00:52:57,770
+ be that there are uh huge differences between the outliers so that was one thing i was thinking about
+
+223
+00:52:57,770 --> 00:53:04,570
+ mm-hmm uh well there is a huge difference between the outliers i i i agree with you but but we have
+
+224
+00:53:04,570 --> 00:53:12,570
+ mark them right so so and we have decided to put it like that all right i can buy it but but but at
+
+225
+00:53:12,570 --> 00:53:20,940
+ the same time we took our uh we we made our decision but what what i'm thinking about here
+
+226
+00:53:20,940 --> 00:53:29,380
+ when i mark them in the in the table now uh something will actually happen that maybe we
+
+227
+00:53:29,380 --> 00:53:35,420
+ have not taken into consideration uh when doing this so some will get true some will get false
+
+228
+00:53:35,420 --> 00:53:45,970
+ right so who will get false if i ask you that well the prices uh that are not in the outlay right
+
+229
+00:53:45,970 --> 00:53:56,580
+ where is it is that true okay i can put it very if i simplify my question are the prices outside the
+
+230
+00:53:56,580 --> 00:54:10,030
+ out layers the only price is that the only listings that will get the false in this column do you say
+
+231
+00:54:10,030 --> 00:54:29,860
+ guys okay if i ask you this uh which prices will actually get true which prices will get true
+
+232
+00:54:30,010 --> 00:54:41,650
+ christopher uh the ones above the upper outlier right or the upper fence uh yes yes that's true
+
+233
+00:54:41,650 --> 00:54:48,450
+ so i was i i was gonna give you a follow-up question here but uh i see that uh some are writing in the
+
+234
+00:54:48,450 --> 00:55:01,000
+ chat some listings have no price listings without price need to take them into consideration right so
+
+235
+00:55:01,000 --> 00:55:08,390
+ we actually have one thousand uh it was something one thousand six hundred and uh 600 and uh 600 is
+
+236
+00:55:08,390 --> 00:55:20,360
+ something uh listings without a price and these will also get false right because missing is actually
+
+237
+00:55:21,080 --> 00:55:36,160
+ bigger than the 5903 so they will also get false right uh so in this case a false not only means uh not an outlayer
+
+238
+00:55:36,160 --> 00:55:49,360
+ uh uh it also means we have no price and this is the kind of same trap as we saw with the shared bed
+
+239
+00:55:50,880 --> 00:55:58,890
+ shared bath right uh that we saw yesterday it is kind of harmless here in what we are doing right now
+
+240
+00:55:58,890 --> 00:56:08,130
+ but it is actually good to know so the prices without the listings without the price will also get false
+
+241
+00:56:08,130 --> 00:56:16,540
+ okay so remember that and since we're not going to work with it i actually want you to pick that up
+
+242
+00:56:16,540 --> 00:56:30,430
+ okay let's move on uh let's see what the outliers do to our numbers so i will make a a a a small table
+
+243
+00:56:30,430 --> 00:56:40,300
+ uh with two columns uh all prices uh and then the price with without the outliers and here i can use
+
+244
+00:56:40,300 --> 00:56:46,340
+ ag uh that can calculate several things at once and we will ask for the count we will ask for the mean
+
+245
+00:56:46,340 --> 00:57:03,570
+ we will ask for the median and the standard deviation std all right so uh we can call it compare uh pd uh data
+
+246
+00:57:03,570 --> 00:57:44,990
+ frame all listings price uh we set the count we set the uh set the uh mean we set the median median and we
+
+247
+00:57:44,990 --> 00:58:53,150
+ set the um and then without without out these things uh lock uh doom check there we go uh listings listings
+
+248
+00:58:53,150 --> 00:59:54,520
+ listings out there right price again again let's also uh and then we want to print it out obviously so
+
+249
+00:59:54,520 --> 01:00:09,610
+ to compare here so calculate the same four numbers for the price with and without all players and we want
+
+250
+01:00:09,610 --> 01:00:22,790
+ to put them side by side here right so here we actually uh write this just to choose um so a table
+
+251
+01:00:22,790 --> 01:00:32,860
+ we made from several columns with the same with the names that we actually uh choose right uh and here we're
+
+252
+01:00:32,860 --> 01:00:42,840
+ we're actually looking at the the what they call it um uh we're looking at the price of the listings
+
+253
+01:00:42,840 --> 01:00:56,350
+ that are not turning it around right that are not out layers all right now let's run this see what we
+
+254
+01:00:56,350 --> 01:01:12,540
+ get well i would say that this table actually tells the whole story so the count goes from 2957
+
+255
+01:01:12,540 --> 01:01:21,140
+ to 2825 right uh which is uh the 132 that we actually took away right so
+
+256
+01:01:21,140 --> 01:01:32,750
+ this minus 132 will give us this uh the mean actually goes from 2328 to 2027 it drops off about
+
+257
+01:01:33,780 --> 01:01:44,720
+ well 300 the median goes from 1791 to 1700 a drop of only about 90 right and then we have the standard
+
+258
+01:01:44,720 --> 01:01:53,650
+ deviation that almost halves from 2160 to 1257 so 132
+
+259
+01:01:53,650 --> 01:02:04,510
+ two listings 4.5 percent of the table changed the mean with roughly 30 percent and the standard deviation
+
+260
+01:02:04,510 --> 01:02:15,120
+ by 42 percent the median well only five percent right so that is the lesson of this whole morning
+
+261
+01:02:15,120 --> 01:02:28,490
+ that we have had uh right now uh in one table the median is hard to push around like we mentioned earlier and
+
+262
+01:02:28,490 --> 01:02:39,150
+ the mean and the standard deviation are not and it tells us what to write in a report so if i say the
+
+263
+01:02:39,150 --> 01:02:49,370
+ typical price is 1791 well that is number that that actually holds with or without the outliers if i say
+
+264
+01:02:49,370 --> 01:03:00,920
+ the average price here is 2328 well i should say that it actually includes 132 very expensive listings
+
+265
+01:03:00,920 --> 01:03:13,770
+ in my report and this is how you actually handle uh these kind of numbers these extreme values
+
+266
+01:03:13,770 --> 01:03:21,900
+ in reality you need to understand them and make a decision upon them mark them and be open about
+
+267
+01:03:21,900 --> 01:03:30,260
+ them right so there are no right answers here uh it's just do you have an answer that you actually can
+
+268
+01:03:30,260 --> 01:03:39,620
+ defend all right uh before moving on i think it's a perfect time to take a little break uh and then we
+
+269
+01:03:39,620 --> 01:03:51,310
+ will uh continue uh with the module starting with describing groups and so on uh so let's take a short
+
+270
+01:03:51,310 --> 01:04:06,560
+ break uh let's say 10 16 all right 10 16 i will be back by the precise all right 10 16 see you guys soon
+
+271
+01:04:06,560 --> 01:13:49,660
+ all right uh 10 16 uh can you hear me guys begin with thank you all right uh so yeah uh the last thing
+
+272
+01:13:50,220 --> 01:13:56,100
+ we said i'm gonna move a little bit from prices because yeah we look at we have looked at the price
+
+273
+01:13:56,100 --> 01:14:04,070
+ for the whole table uh but we know from yesterday that the listings are very different right and that
+
+274
+01:14:04,070 --> 01:14:16,040
+ the room type matters a lot for the the price so let's describe the price per room type uh we know group
+
+275
+01:14:16,040 --> 01:14:25,670
+ by um and we know that this uh um and we know describe right which we have used on on on uh only one
+
+276
+01:14:25,670 --> 01:14:34,630
+ one column right but we also knows that it works uh on every group so we actually get the whole summary
+
+277
+01:14:34,630 --> 01:14:40,770
+ for each room type in one table so we will try that and from there we're gonna move uh in order to move
+
+278
+01:14:40,770 --> 01:14:46,940
+ to the next step that we want to do and to see a correlation something that i spoke about in the
+
+279
+01:14:46,940 --> 01:14:58,460
+ beginning of the lesson we will come back to that so let's start here uh so we want a full summary
+
+280
+01:14:58,460 --> 01:15:08,990
+ um of the price for every what room type right so listings uh
+
+281
+01:15:11,040 --> 01:15:48,320
+ group by room room type guys tribe describe and and and and the group by here um uh the same summary as
+
+282
+01:15:48,320 --> 01:16:19,420
+ before but only one row per group let's try it around zero so we get uh so eight columns uh for every room
+
+283
+01:16:19,420 --> 01:16:34,500
+ uh so we can start here with entire homes two thousand three hundred and forty six listings
+
+284
+01:16:34,500 --> 01:16:43,820
+ with the price and the median is two thousand one hundred and sixty eight the mean is two thousand six
+
+285
+01:16:43,820 --> 01:16:52,250
+ hundred and seventy nine about five hundred higher uh which is a long tail again uh the middle half of the
+
+286
+01:16:52,250 --> 01:17:00,720
+ of the entire homes uh costs uh one thousand three hundred and seventy two uh and uh three thousand three
+
+287
+01:17:00,720 --> 01:17:08,980
+ hundred and seventy one and the maximum is uh forty thousand that the penthouse right if you look at
+
+288
+01:17:08,980 --> 01:17:23,930
+ the private the private room uh 591 listings um median is 808 uh so a private room costs about a third of an entire
+
+289
+01:17:23,930 --> 01:17:37,370
+ home right uh the middle half costs uh five hundred and sixty four uh and uh one thousand uh to one hundred and
+
+290
+01:17:37,370 --> 01:17:47,040
+ twenty nine right but if we look at the max here uh it's twenty five thousand nine hundred and ninety eight
+
+291
+01:17:47,040 --> 01:17:59,570
+ for a private room and that is actually uh that is actually the small uh privately owned hotel with the 12 rooms
+
+292
+01:17:59,890 --> 01:18:08,340
+ uh i think we saw that yesterday right so therefore it is over here uh so the host has filled in private
+
+293
+01:18:08,340 --> 01:18:15,980
+ room but the price is for the whole hotel and these things happen of course uh so it is a good example
+
+294
+01:18:15,980 --> 01:18:21,230
+ that that a number can it can be correct and still be listed under the wrong label i would say this would
+
+295
+01:18:21,230 --> 01:18:29,550
+ be a wrong label right then we have the two small groups um the shared rooms are only 19 and the whole
+
+296
+01:18:29,550 --> 01:18:39,870
+ the whole room is only one um and that is why it's std and uh uh uh why the uh why the the uh
+
+297
+01:18:39,870 --> 01:18:46,490
+ it's std is uh not a number here uh because you cannot calculate how much values differ if you
+
+298
+01:18:46,490 --> 01:18:56,930
+ only have one value right uh i always say nothing about the whole two rooms uh because for a result to mean
+
+299
+01:18:56,930 --> 01:19:03,840
+ something we need enough listings behind it uh and we have actually said that several times now
+
+300
+01:19:03,840 --> 01:19:16,050
+ so notice one thing here this one table uh well gives us what we have learned in this last hour
+
+301
+01:19:16,050 --> 01:19:24,560
+ for every room time at the at the same time right the count the mean the median the spread and the
+
+302
+01:19:24,560 --> 01:19:41,120
+ percentiles if i had to let's say hand over only one table to a colleague or somebody like that
+
+303
+01:19:41,120 --> 01:19:52,310
+ well this would be a good candidate now since we have seen this we can actually move to the
+
+304
+01:19:53,280 --> 01:20:03,860
+ next part which is about uh correlation which i actually mentioned a little bit in the earlier in
+
+305
+01:20:03,860 --> 01:20:31,380
+ the morning here uh and it was about how two columns uh move to other correlation uh well i would say it's
+
+306
+01:20:31,380 --> 01:20:40,360
+ like this so far we have described one column right at a time or one column per group now a different
+
+307
+01:20:40,360 --> 01:20:53,980
+ question a different kind of question would be do two columns move together for example when a listing
+
+308
+01:20:53,980 --> 01:21:01,740
+ has room for more guests is the price higher well it kind of sounds obvious but there are two questions
+
+309
+01:21:01,740 --> 01:21:11,610
+ inside it is inside it is there a connection at all and how strong is it and for the for that we actually
+
+310
+01:21:11,610 --> 01:21:19,720
+ use one number it is called the correlation and it always lies between minus one and the one and
+
+311
+01:21:19,720 --> 01:21:29,270
+ usually i i summarize it like this so we said uh let me just add another mark down here so we said uh
+
+312
+01:21:29,270 --> 01:21:53,260
+ correlation um lies um between minus one and one right and then uh put it like this actually prepared some
+
+313
+01:21:53,260 --> 01:22:01,670
+ notes you don't need to see me and watch me writing it um there we go so the the general rule here is
+
+314
+01:22:01,670 --> 01:22:09,330
+ it's close to one so if it lies close to one uh so when one columns goes up the other goes down they
+
+315
+01:22:09,330 --> 01:22:17,780
+ actually move together sorry when one column goes up the other one goes up too right so they move
+
+316
+01:22:17,780 --> 01:22:26,600
+ together and if they both one goes down both go down right uh in this case they wouldn't go up okay i'll go
+
+317
+01:22:26,600 --> 01:22:36,220
+ down all right then we have close to zero uh no connection at all uh so knowing one column tells
+
+318
+01:22:36,220 --> 01:22:44,800
+ you nothing about the other and then we have close to minus one so when one goes up the other goes
+
+319
+01:22:44,800 --> 01:22:55,360
+ down so there is a relation but it's the opposite relation of what we see up here so it's just a rough
+
+320
+01:22:55,360 --> 01:23:06,840
+ guide uh it is only a a convention so i would say below 0.2 is weak around 0.5 is moderate
+
+321
+01:23:07,940 --> 01:23:20,120
+ and above 0.8 is strong so so the sign tells the direction and the size well tells us how strong
+
+322
+01:23:23,010 --> 01:23:32,610
+ and in pandas it is actually uh something we use here is uh i can actually write that as well
+
+323
+01:23:36,670 --> 01:23:48,250
+ so we use it on the table of columns and we get the correlation between every pair so that is a lot of
+
+324
+01:23:48,250 --> 01:23:52,220
+ numbers so i i will only look at the columns for the price
+
+325
+01:23:52,220 --> 01:24:01,460
+ and i have chosen some columns that we know the number of guests the bedrooms the beds the number
+
+326
+01:24:01,460 --> 01:24:12,530
+ of reviews the days the listings is available during a year and the rating right uh and i knew
+
+327
+01:24:13,030 --> 01:24:22,660
+ uh before before we came here today that this is gonna take too much time to write so i've already
+
+328
+01:24:22,660 --> 01:24:37,920
+ pre-written it so columns equals to the columns we want uh are b's right now let's use core on that one
+
+329
+01:24:37,920 --> 01:25:01,130
+ correlation listings of the um columns and use for with the what well the price and round it up to
+
+330
+01:25:01,130 --> 01:25:11,120
+ two decimal numbers that could be good okay so we just try to calculate uh the correlation between the price
+
+331
+01:25:11,120 --> 01:25:27,940
+ uh and uh and uh and some other columns uh so here we see the correlation uh um between uh uh every pair
+
+332
+01:25:27,940 --> 01:25:39,300
+ of columns in the list right and keep only the columns of uh for the price right now let's take a look at
+
+333
+01:25:39,300 --> 01:25:53,060
+ that okay so the first row well it's the price itself which of course uh won uh hopefully uh they should
+
+334
+01:25:53,060 --> 01:25:59,500
+ move together right the price and price uh if the price goes up well the price goes up right so we can
+
+335
+01:25:59,500 --> 01:26:11,420
+ skip that part uh but if we look here at for example that accommodates uh bedrooms uh and and beds uh well
+
+336
+01:26:11,420 --> 01:26:20,480
+ these are the three that would kind of matter here right so 0.58 0.58 0.58 and 0.52 so that is kind
+
+337
+01:26:20,480 --> 01:26:27,860
+ of a moderate uh connection if we uh look at what we said before 0.5 above 0.5 was moderate right
+
+338
+01:26:29,920 --> 01:26:39,070
+ a bigger listings uh cost cost more as we expected and the number says that it's fair a fairly clear
+
+339
+01:26:39,070 --> 01:26:47,480
+ pattern but not the perfect one right number of reviews has a negative number it's a minus
+
+340
+01:26:48,440 --> 01:27:00,710
+ 0.09 so close to zero uh with a slightly negative sign right so more reviews means
+
+341
+01:27:01,310 --> 01:27:10,260
+ slightly lower price which kind of fits with what we said in lesson one right small cheap places often get
+
+342
+01:27:10,260 --> 01:27:22,360
+ booked more right therefore they would get more reviews right availability is zero so it makes
+
+343
+01:27:22,360 --> 01:27:30,460
+ no difference for the price how uh how many days the listings are actually open that kind of makes
+
+344
+01:27:30,460 --> 01:27:39,870
+ sense doesn't it it's not the price that sets if something's going to be open or not okay uh and then
+
+345
+01:27:39,870 --> 01:27:51,250
+ we've got the the the ratings here for uh 0.70 it's a week it's a week it's it's weak and and and kind of
+
+346
+01:27:51,250 --> 01:28:00,510
+ positive right uh so listings with a higher rating are a little bit more expensive but you can hardly
+
+347
+01:28:00,510 --> 01:28:11,110
+ tell uh from one listing to another so the numbers here do not just say yes or no they tell us where to
+
+348
+01:28:11,110 --> 01:28:21,760
+ look so the number of guests is the column that tells us most about the price and the ability well tells
+
+349
+01:28:21,760 --> 01:28:48,270
+ us nothing right was that clear i think it was sometimes at least okay now let's look at the same
+
+350
+01:28:48,270 --> 01:28:55,330
+ connection in in a way where we can see it with our own eyes here so so we will group by the number of
+
+351
+01:28:55,330 --> 01:29:03,370
+ guests and take the median price for each and i will only show the first eight rows here uh so let's try
+
+352
+01:29:03,370 --> 01:29:29,430
+ that out and see what we get so listings uh group by uh call date price and we set the median the head
+
+353
+01:29:29,430 --> 01:29:41,420
+ uh we said only the eight and then we can round it to zero zero decimals all right so the median
+
+354
+01:29:41,420 --> 01:29:55,330
+ price for every number of guests to see the connection with our own eyes here hmm so the
+
+355
+01:29:55,330 --> 01:30:10,730
+ median price uh rises almost uh 673 for one guest 1211 for for two and 2038 for four and so on uh
+
+356
+01:30:10,730 --> 01:30:22,820
+ 4338 for eight right so each extra guest adds around 500 on an average so that is what a correlation
+
+357
+01:30:22,820 --> 01:30:33,820
+ of 0.58 looks like in numbers so here we see the the correlation and here we see it with numbers
+
+358
+01:30:33,820 --> 01:30:43,140
+ and tomorrow we will draw it uh as a a something that we call a scatter plot uh we have not talked
+
+359
+01:30:43,140 --> 01:30:49,550
+ about scatter plots yet so i don't uh assume that you already know it but anyways it's it's just one
+
+360
+01:30:49,550 --> 01:30:58,020
+ dot for every listing uh so you will see the both uh patterns and the and the scatters around it but we
+
+361
+01:30:58,020 --> 01:31:09,100
+ will talk more about that tomorrow okay um two more uh observations here first do the outliers
+
+362
+01:31:09,100 --> 01:31:19,150
+ affect the correlation so we have 132 expensive uh listings so they could uh now let's calculate it
+
+363
+01:31:19,150 --> 01:31:38,170
+ with with and without them and let's see what we what we what we get um so no out layers equals uh equals what
+
+364
+01:31:38,170 --> 01:32:08,100
+ uh listings uh we can actually use a knot here uh there we go listings um price uh outlayer so the
+
+365
+01:32:08,100 --> 01:32:30,870
+ listings that are not outliers right because i'm using the knots in there uh print listings price um or listings
+
+366
+01:32:30,870 --> 01:33:27,560
+ um that uh and then around 222 and print no outliers price inflation low outliers uh so the correlation
+
+367
+01:33:27,560 --> 01:33:42,360
+ between price and and and guess with all these things and without outliers and we see we have an a
+
+368
+01:33:42,360 --> 01:33:57,850
+ a correlation b so that would be the correlation between two columns a and b so column a and column b
+
+369
+01:34:04,160 --> 01:34:14,700
+ now let's see so with the out layers we got the correlation uh is 0.58 and without them we get the
+
+370
+01:34:14,700 --> 01:34:25,560
+ 0.65 so the out layer uh uh uh weaken the pattern right because some of them are very expensive for the
+
+371
+01:34:25,560 --> 01:34:32,720
+ number of guests they they uh so the number of guests they actually hold right so the penthouse
+
+372
+01:34:32,720 --> 01:34:40,610
+ that holds six and costs 40 000 so so even the the the correlation is something uh that the extreme
+
+373
+01:34:40,610 --> 01:34:55,840
+ values can actually change right so again we see look at out layers and say what you actually did the
+
+374
+01:34:55,840 --> 01:35:04,510
+ second observation is well compare the columns that describe the size of the listing with each other
+
+375
+01:35:04,510 --> 01:35:12,570
+ so how strongly do the numbers of guests and numbers of beds move together for example now let's take a
+
+376
+01:35:12,570 --> 01:35:53,020
+ look at that as well um print um listings dates or listings beds and so the correlation between
+
+377
+01:35:53,020 --> 01:35:59,570
+ the number of guests and the number of beds right so let's take a look at that as well 0.82 okay
+
+378
+01:35:59,570 --> 01:36:09,110
+ so a very strong connection of course so a listing with with with room for eight guests uh well has more
+
+379
+01:36:09,110 --> 01:36:18,980
+ beds right so the two columns tell almost the same story which is actually useful to know so if we later
+
+380
+01:36:18,980 --> 01:36:39,540
+ want to explain the price we do not need uh both because the second one adds a a title okay in the
+
+381
+01:36:39,540 --> 01:36:55,830
+ next part here is something very important to to keep in mind because correlation is not an explanation
+
+382
+01:36:55,830 --> 01:37:10,470
+ because there is one sentence that every person who works with data learns very early correlation is
+
+383
+01:37:10,470 --> 01:37:20,020
+ not an exp is not they say like this correlation is not causation actually gonna write that i love that
+
+384
+01:37:20,020 --> 01:37:41,180
+ sentence uh correlation is not calls station so it basically means that the two things move together
+
+385
+01:37:41,180 --> 01:37:48,960
+ we cannot say that one causes the other right
+
+386
+01:37:49,190 --> 01:37:55,110
+ because we have seen the number 0.58 and we have and we are kind of tempted to say
+
+387
+01:37:55,790 --> 01:38:03,680
+ more guests make the price higher right and that is probably true here but the number alone does not
+
+388
+01:38:03,680 --> 01:38:13,700
+ prove it and a better way to understand why is actually to go back to a question that we left open
+
+389
+01:38:13,700 --> 01:38:21,390
+ yesterday because we saw that the super hosts are a little cheaper if you remember that so the super
+
+390
+01:38:21,390 --> 01:38:31,440
+ hosts are a little cheaper than the other hosts uh it was 100 no sorry 1682 compared with the
+
+391
+01:38:31,440 --> 01:38:42,530
+ one thousand 826 and i said that we cannot know why now we have a better way to look at it because we said
+
+392
+01:38:42,530 --> 01:38:54,680
+ that the room type well matters a lot for the price so let's ask do super hosts and other hosts have the same
+
+393
+01:38:56,360 --> 01:39:10,430
+ mix of room types let me that sentence because i'm gonna put it in in the comment in a second here so we will
+
+394
+01:39:10,430 --> 01:39:16,490
+ calculate the share of entire homes in each group uh with the same trick as yesterday uh the mean uh
+
+395
+01:39:16,490 --> 01:39:57,320
+ of a true and false column okay uh is uh entire was listings type was tire home so this will be true for uh
+
+396
+01:39:57,320 --> 01:40:43,730
+ uh entire uh entire homes right is uh entire group by listings post post is super host 100 takes zero
+
+397
+01:40:43,730 --> 01:40:51,100
+ decimals so here we want the share of entire homes among the super hosts and among the other hosts okay
+
+398
+01:40:51,100 --> 01:41:03,970
+ and we kind of trying to answer this question along the way here so the mixes well are not the same 84
+
+399
+01:41:03,970 --> 01:41:13,800
+ of the uh the other host listings are entire homes but only 74 percent of the superhost uh uh of the
+
+400
+01:41:13,800 --> 01:41:25,340
+ superhost listings right so the superhost have more private rooms uh and we know that rooms are much
+
+401
+01:41:25,340 --> 01:41:33,790
+ cheaper than entire homes right that alone it could make the superhost look cheaper even if a superhost
+
+402
+01:41:33,790 --> 01:41:41,250
+ charges just as much as any other host for the same kind of place so in order to see uh how much the
+
+403
+01:41:41,250 --> 01:41:49,030
+ difference uh this uh this uh this explains well we will compare like with like as we did with the
+
+404
+01:41:49,030 --> 01:42:06,430
+ neighborhood yesterday uh but only the entire homes like would like now let's see listings um is entire
+
+405
+01:42:06,430 --> 01:42:39,670
+ group by host um is super host uh nice tag in order to do different calculations at once uh count and
+
+406
+01:42:40,720 --> 01:42:51,780
+ uh median and then we can also run this to zero decimals so the median price for superhost and other
+
+407
+01:42:51,780 --> 01:43:08,560
+ hosts but only for entire homes for the entire homes the median for the superhost is 2111 and for the
+
+408
+01:43:08,560 --> 01:43:23,500
+ others it's it's 2193 so the difference is now 82 right and before it was 144 if you remember uh 1826 minus the
+
+409
+01:43:23,500 --> 01:43:33,010
+ the 1682 right so almost half of the difference actually disappeared when we compare the same kind
+
+410
+01:43:33,010 --> 01:43:45,430
+ of place a large part of it was not about the holes it was about what they rent out but not all of it
+
+411
+01:43:45,430 --> 01:43:59,040
+ right so the difference a difference of uh of 82 is still there so what is the rest well we do not know
+
+412
+01:43:59,040 --> 01:44:08,200
+ maybe they have smaller entire homes maybe they are in other neighborhoods maybe they just charge a little
+
+413
+01:44:08,200 --> 01:44:14,930
+ less well we can't keep going and look uh look at the neighborhood and the number of guests and
+
+414
+01:44:14,930 --> 01:44:20,430
+ and every time we and every time we would would would learn something right but we would never get to
+
+415
+01:44:20,430 --> 01:44:29,120
+ say being a superhost makes a host cheaper from a table like this we can only say that two things
+
+416
+01:44:29,120 --> 01:44:43,680
+ actually go together and then try to understand what else is going on the thing that mixes everything up
+
+417
+01:44:43,680 --> 01:44:51,420
+ has a name uh so when the third thing like a room type affects both columns that we are comparing
+
+418
+01:44:51,420 --> 01:45:02,870
+ it is called a it's called a co-founder and you don't need to remember the word by heart here you
+
+419
+01:45:02,870 --> 01:45:14,790
+ just need to remember the question what else could explain this and actually gonna write that down so
+
+420
+01:45:14,790 --> 01:45:34,950
+ the question here is uh the question here is what else could blame it all right so now we have described
+
+421
+01:45:34,950 --> 01:45:43,180
+ the airbnb table with the numbers and we have learned when to use which number we started with the mean
+
+422
+01:45:43,180 --> 01:45:53,830
+ and the median the mean adds up everything so few huge values to drag it away and one villa at at 40 000
+
+423
+01:45:53,830 --> 01:46:04,260
+ made the mean of six prices jump from 1100 to 7583 or something like that the median only cares about the
+
+424
+01:46:04,260 --> 01:46:16,850
+ order so it barely moves so for the real price the mean is 2328 and the median is 1791 and the honest
+
+425
+01:46:16,850 --> 01:46:27,940
+ answer to to what does the night cost is uh we found is the median right we learned about the percentile
+
+426
+01:46:27,940 --> 01:46:37,380
+ and then quantile and the iqr the width of the middle half which says how much the value differed without
+
+427
+01:46:37,380 --> 01:46:47,610
+ being uh fooled by by by extreme values uh just like the media uh we found the outlay out layers with
+
+428
+01:46:47,610 --> 01:46:57,840
+ the iqr rule anything above the uh we said uh the the the third quarter or q3 plus uh we used q3 plus
+
+429
+01:46:58,480 --> 01:47:15,520
+ 0.5 times iqr uh which gave us uh 5903 we found 132 of them we did not just remove them we looked uh at
+
+430
+01:47:15,520 --> 01:47:22,910
+ what they were a big place for six guests or more we made the decision and the decision was to keep
+
+431
+01:47:22,910 --> 01:47:32,960
+ them and but we marked them with a new column so that we can always choose uh when to use them right and we
+
+432
+01:47:32,960 --> 01:47:41,930
+ saw what they do we saw that the median changed by five percent the mean by 13 and the big difference was
+
+433
+01:47:41,930 --> 01:47:54,410
+ the standard deviation by 42 right uh and the price per room type by group by and scribe we also learned
+
+434
+01:47:54,410 --> 01:48:02,750
+ the correlation uh a number between minus one and one and that says how two columns actually move together
+
+435
+01:48:02,750 --> 01:48:13,020
+ the number of guests has a moderate connection uh to to to the price uh we've got zero point uh 0.58
+
+436
+01:48:13,020 --> 01:48:25,070
+ right uh and the availability had no uh nothing there right zero uh and we finally we saw that a
+
+437
+01:48:25,070 --> 01:48:30,580
+ correlation or a difference well it's not an explanation because almost half of the difference
+
+438
+01:48:30,580 --> 01:48:35,620
+ difference between superhosts and other this uh and others will disappeared when we compared the same kind
+
+439
+01:48:35,620 --> 01:48:46,590
+ of place right tomorrow we're actually going to draw all of this so we will kind of see the long tail
+
+440
+01:48:46,590 --> 01:48:54,120
+ of the price uh the out layers and the connection between the guests and price with our own eyes and
+
+441
+01:48:54,120 --> 01:49:03,050
+ here we will use two tools that we installed the first day uh so if you haven't done all the installation
+
+442
+01:49:03,050 --> 01:49:13,120
+ go back in python uh group chat uh and yeah look at the instructions there because we're going to use
+
+443
+01:49:13,840 --> 01:49:31,510
+ matplotlib and then seaboard and yeah that's basically basically uh everything for today
+
+444
+01:49:31,510 --> 01:49:47,900
+ ah yeah sven that's a good site uh thumbs up on that too as well yeah that was basically it and uh uh today
+
+445
+01:49:47,900 --> 01:49:56,200
+ you will get a lab just like always uh so it wasn't three hours less than today uh and we can actually
+
+446
+01:49:56,200 --> 01:50:09,510
+ take a look at the lab uh i don't think you can see my screen right now right uh you can't uh someone
+
+447
+01:50:09,510 --> 01:50:28,200
+ is sharing a window here uh there and then share uh this uh so today we we're leaving the uh the data
+
+448
+01:50:28,200 --> 01:50:39,720
+ frame from yesterday um so we're using uh this um uh everything we learned uh today on the same uh data
+
+449
+01:50:39,720 --> 01:50:48,090
+ but with other columns and just like always you get to choose uh what to to work with either you do
+
+450
+01:50:48,090 --> 01:50:56,190
+ the practice part or go deeper so practice part is like i've mentioned several times now um the steps
+
+451
+01:50:56,190 --> 01:51:06,170
+ steps that we did today and you should use the file uh called listings clean and yeah we made sure that
+
+452
+01:51:06,170 --> 01:51:16,860
+ it's actually in our data folder all right any questions about the lab or anything uh before i let you go
+

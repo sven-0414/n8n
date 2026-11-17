@@ -1,0 +1,21 @@
+How do you ensure that date columns are properly converted to datetime objects when reading a CSV file in pandas?;Use the `parse_dates` parameter in `pd.read_csv()` and specify the column names that contain dates.
+
+What is the difference between mean and median as measures of central tendency?;The mean is affected by extreme values and represents the arithmetic average, while the median is the middle value in an ordered dataset and is resistant to outliers.
+
+Why might the median be preferred over the mean when analyzing data with outliers?;Because the median is not influenced by extreme values and provides a better representation of typical values in skewed distributions.
+
+What does the interquartile range (IQR) measure in a dataset?;The IQR measures the spread of the middle 50% of the data, calculated as the difference between the third and first quartiles.
+
+How are outliers identified using the IQR rule?;Outliers are values that fall below Q1 - 1.5 × IQR or above Q3 + 1.5 × IQR, where Q1 and Q3 are the first and third quartiles.
+
+What is the recommended approach for handling outliers in a dataset?;Mark outliers without removing them to maintain data integrity and allow flexibility in analysis.
+
+Why is it important to compare statistical measures with and without outliers?;Because outliers can significantly skew mean and standard deviation, while median remains stable, helping to assess data distribution accurately.
+
+How do you calculate percentiles and quartiles in pandas?;Use the `quantile()` method on a Series or DataFrame, specifying the desired percentile values (e.g., 0.25 for Q1).
+
+What does a correlation coefficient close to zero indicate about the relationship between two variables?;It indicates that there is no meaningful linear relationship between the variables.
+
+How can confounding variables affect correlation analysis?;They can create spurious relationships or mask true associations, leading to incorrect conclusions about causation.
+
+What are three key practices for maintaining data integrity during analysis?;Verify data types after reading, check for missing values, and mark outliers rather than removing them.
