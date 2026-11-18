@@ -1,0 +1,652 @@
+1
+00:00:03,040 --> 00:00:24,130
+ let me just do this and do that and do this and do this it's less than seven right lesson no less
+
+2
+00:00:24,130 --> 00:00:45,690
+ than seven exactly yeah less than seven out of eight right so for two days now the lesson five
+
+3
+00:00:45,690 --> 00:01:00,390
+ and six um we have done what well we have talked uh about prices with number we have talked about
+
+4
+00:01:00,390 --> 00:01:15,370
+ the mean uh median um we have talked about the percentiles um out layers and yesterday's lesson
+
+5
+00:01:15,370 --> 00:01:24,760
+ kind of kind of paved the path to to today's lesson right because what i promised you guys
+
+6
+00:01:24,760 --> 00:01:31,920
+ yesterday was that we are actually going to see uh the things that we did yesterday uh so that's
+
+7
+00:01:31,920 --> 00:01:41,190
+ basically the idea uh we're actually going to draw a little bit draw we're going to create at least
+
+8
+00:01:41,190 --> 00:01:52,940
+ um a table uh well the tables um that we have seen up to now um they are exact aren't they
+
+9
+00:01:52,940 --> 00:02:05,480
+ there's nothing wrong with that i mean these are exact uh these are exact and so on but uh sometimes
+
+10
+00:02:05,480 --> 00:02:14,880
+ they are hard to take in right so a good picture can actually show you show you sometimes in a second
+
+11
+00:02:14,880 --> 00:02:31,640
+ or uh matter of a second what a table needs um and so on um um so to draw pictures in python uh we need
+
+12
+00:02:31,640 --> 00:02:44,810
+ new tools and um excuse me and i want to explain what they are uh because they are not just
+
+13
+00:02:44,810 --> 00:02:54,840
+ more pandas uh they are they are how do you say how do you put it well there are three tools in a chain
+
+14
+00:02:54,840 --> 00:03:03,530
+ uh and and it helps to to know uh to actually which one does what right so we have said pandas here
+
+15
+00:03:03,530 --> 00:03:11,800
+ right and pandas well holds the data and i think we know it well by now right but two tools that we're
+
+16
+00:03:11,800 --> 00:03:16,900
+ going to look at today is matplotlib and seaborne i don't know how familiar you are with those
+
+17
+00:03:16,900 --> 00:03:28,120
+ either way uh matplotlib um is the library that uh how do you put it well that actually draws
+
+18
+00:03:28,120 --> 00:03:40,200
+ right it draws the lines it draws the bars it draws the the dots uh hex axis and so on so it is the
+
+19
+00:03:40,200 --> 00:03:48,520
+ foundation that almost all drawing in python is built on right powerful and very detailed of course
+
+20
+00:03:48,520 --> 00:03:57,340
+ um you can control uh you have a lot of control there uh you can pretty much control everything
+
+21
+00:03:57,340 --> 00:04:05,070
+ but you also have to say a lot right you can think of it as drawing by hand
+
+22
+00:04:05,070 --> 00:04:16,000
+ with a pen and paper uh you kind of decide every detail um which is of course great uh for control
+
+23
+00:04:16,000 --> 00:04:26,120
+ right but at the same time but uh a lot of work for a simple picture what we're also going to use
+
+24
+00:04:26,120 --> 00:04:33,500
+ today is seaborne and the seaborne is kind of built on top of matplotlib if i'm not mistaken
+
+25
+00:04:33,500 --> 00:04:42,990
+ yes it is uh and what it does well it does the drawing with matplotlib behind the scenes right
+
+26
+00:04:44,150 --> 00:04:53,430
+ but it gives you a ready-made chart uh types in a single line um and this is kind of made for exactly
+
+27
+00:04:53,430 --> 00:05:03,390
+ exactly what we do look at distribution uh compare groups see how columns relate um and it actually
+
+28
+00:05:03,390 --> 00:05:12,050
+ has a very good looking defaults as well and it actually understands pandas tables as well you just
+
+29
+00:05:12,050 --> 00:05:20,940
+ say which column goes where and yeah that's pretty much it so if matplotlib um if i take that the
+
+30
+00:05:20,940 --> 00:05:29,830
+ example i took before uh so if matplotlib is drawing by hand then seaborne is a template
+
+31
+00:05:29,830 --> 00:05:37,900
+ um yeah it's fast and it looks good so they don't actually compete
+
+32
+00:05:37,900 --> 00:05:46,580
+ we will actually use seaborne for the chart itself and matplotlib for what is around the chart the size
+
+33
+00:05:46,580 --> 00:05:55,170
+ for example the title the labels and saving the picture as well so yeah you will see them work
+
+34
+00:05:55,170 --> 00:06:05,620
+ together in every picture that we draw today um one more thing um you will meet if you search the
+
+35
+00:06:05,620 --> 00:06:17,340
+ internet for example well pandas also has its own uh drawing command which is uh plot uh which uses
+
+36
+00:06:17,340 --> 00:06:25,840
+ mapplotlib and it is fine for a for a quick look uh and you will see it in many examples but today
+
+37
+00:06:25,840 --> 00:06:33,320
+ we will use seaborne since it's easier to to make something uh that looks actually good all right so
+
+38
+00:06:33,320 --> 00:06:41,590
+ if you see that you know what my idea at least was uh obviously both libraries has to be installed and
+
+39
+00:06:41,590 --> 00:06:46,310
+ hopefully you have all done that of course because you have uh followed the instructions that i uh that
+
+40
+00:06:46,310 --> 00:07:04,930
+ i sent you on on uh the friday before we started this module uh but if you get a module not found
+
+41
+00:07:04,930 --> 00:07:11,700
+ there or anything like that you know that it's missing then you will need to install it uh i just pip
+
+42
+00:07:11,700 --> 00:07:23,510
+ install matplotlib and seaborne at the same row yeah but let's start with the imports and let's get
+
+43
+00:07:23,510 --> 00:07:30,420
+ started actually and yeah if there are any questions just let me know so we're going to import uh pandas
+
+44
+00:07:30,420 --> 00:07:52,330
+ as usual nothing new we're going to import um uh matplotlib and plot uh and just like we do with pd
+
+45
+00:07:52,330 --> 00:08:10,930
+ uh here we do as um plt and import um seaborne as um sns fret nice always called sns always called plt
+
+46
+00:08:10,930 --> 00:08:20,310
+ always called pd uh so today uh you don't always have to do this or something like that but i'm gonna
+
+47
+00:08:20,310 --> 00:08:35,670
+ set a theme uh set the theme uh and you can explore others if you want later on but for now
+
+48
+00:08:35,670 --> 00:08:58,870
+ you can go with white grid i think it's a clean look for every chart actually it's kind of a white
+
+49
+00:08:58,870 --> 00:09:08,220
+ background um light grid lines and i think it works uh great with this monitor the extra monitor that i
+
+50
+00:09:08,220 --> 00:09:24,630
+ have um uh we are gonna take some date columns from our um uh the the columns that actually contain the
+
+51
+00:09:24,630 --> 00:09:35,080
+ dates today also what we're gonna use and more specifically we're gonna take last something
+
+52
+00:09:35,080 --> 00:09:47,200
+ called last scraped those are the ones that we're gonna need for the lesson calendar uh and it's
+
+53
+00:09:47,200 --> 00:10:13,210
+ actually not calendar it's calendar uh calendar last uh scrape and then we got uh first first um review and
+
+54
+00:10:13,210 --> 00:10:25,110
+ we got uh obviously last uh maybe not that obvious but last review so the columns that actually uh contains
+
+55
+00:10:25,110 --> 00:10:40,300
+ dates listings equals id read csv we don't need a copy since we're not going to change anything
+
+56
+00:10:40,300 --> 00:11:07,120
+ data file uh data and it's called listings clean csv let's not make that mistake again um and we need to
+
+57
+00:11:07,120 --> 00:11:15,280
+ not forget to parse right parse the date uh parse dates uh and on what's what the date columns that we just
+
+58
+00:11:15,280 --> 00:11:31,270
+ created okay so it reads those columns as dates right so far so now let's print uh the shape it's a good
+
+59
+00:11:31,270 --> 00:11:57,310
+ start to see that everything loaded correctly uh listings uh shape right let's see all right we are
+
+60
+00:11:57,310 --> 00:12:08,730
+ actually uh gonna uh meet uh um a bunch of words today and i thought it was a good idea to at least
+
+61
+00:12:08,730 --> 00:12:23,690
+ give you a little uh something to lean on here um i can put it here there's a mark down this and i'm
+
+62
+00:12:23,690 --> 00:12:31,420
+ actually also going to send it in the chat so if anyone needs it during the lesson or anything like
+
+63
+00:12:31,420 --> 00:12:53,620
+ that forgets the word what was that again uh you can just look at the um correctly like this there you
+
+64
+00:12:53,620 --> 00:13:04,680
+ go i think it will be helpful okay so now let's well i can at least go through them right so we're
+
+65
+00:13:04,680 --> 00:13:12,670
+ going to talk figure uh the whole picture uh like a sheet of paper the axis or axe uh one chart on the
+
+66
+00:13:12,670 --> 00:13:23,800
+ figure with its own x-axis and y-axis x-axis y-axis we have fig and axe those plc subplots well that
+
+67
+00:13:23,800 --> 00:13:32,100
+ makes a new figure with one axis on it uh and we draw on the axis we have something called histogram
+
+68
+00:13:32,100 --> 00:13:40,820
+ well divides the values into intervals and counts how many fall in each one we are gonna see bins
+
+69
+00:13:40,820 --> 00:13:51,390
+ intervals of a histogram uh well more bins give a more detailed picture we have well drop now which
+
+70
+00:13:51,390 --> 00:13:59,510
+ you're already familiar with uh removes the missing values because the chart can only draw uh what is
+
+71
+00:13:59,510 --> 00:14:06,720
+ this right and then we have plc show that you're gonna see a lot uh that shows the picture right
+
+72
+00:14:06,720 --> 00:14:26,350
+ so the first uh question for our um excuse me i have a little cough today it usually goes away from the
+
+73
+00:14:26,350 --> 00:14:42,230
+ morning but yeah uh the first question that we're actually going to answer here is um what does or at
+
+74
+00:14:42,230 --> 00:14:58,060
+ what does the um distribution uh of the price look like so we have i've already seen uh things like
+
+75
+00:14:58,060 --> 00:15:06,950
+ this but now we're going to see it uh drawn right so we have the numbers we have the mean um we have the
+
+76
+00:15:06,950 --> 00:15:15,320
+ uh median uh and the percentiles right and now we basically just want to see it and the tools for
+
+77
+00:15:15,320 --> 00:15:27,300
+ that is actually a histogram let me put that as well uh histogram what we're going to look at first
+
+78
+00:15:27,300 --> 00:15:34,870
+ uh so what it does basically it divides as you see here it divides the price into intervals called
+
+79
+00:15:34,870 --> 00:15:45,220
+ bins and then counts how many listings fall in each and we will start with with the first pure uh matplotlib
+
+80
+00:15:48,620 --> 00:15:59,640
+ so you actually see how that works so uh a chart can actually just be drawn um uh um let me put it
+
+81
+00:15:59,640 --> 00:16:06,200
+ like this uh we can actually just draw the pic the the when we drop it to uh we can only use the
+
+82
+00:16:06,200 --> 00:16:13,600
+ values that actually exist uh so i will take away uh the missing uh uh missing it drives missing
+
+83
+00:16:13,600 --> 00:16:26,890
+ prices uh with drotna but let's start there uh so first of all uh a new figure with one axis on it
+
+84
+00:16:27,040 --> 00:16:50,220
+ so fig uh we said fig x equals plt uh sub subplots so yeah a new figure with one axis on it
+
+85
+00:16:50,220 --> 00:17:24,470
+ uh and then we're going to put x um hist listings price the drotna bins uh 50 here so basically just draw
+
+86
+00:17:24,470 --> 00:17:38,910
+ a histogram of the price in 50 bins plt show node see it so just basically show the picture okay so we're just
+
+87
+00:17:38,910 --> 00:17:51,500
+ so we're just drawing uh our first histogram uh of the price with our uh matplotlib so basically we're
+
+88
+00:17:51,500 --> 00:18:10,790
+ just uh we're just counting the the listings um in 50 intervals and draw a bar for each let's take a
+
+89
+00:18:10,790 --> 00:18:21,420
+ look at it yeah and we're familiar with this we see the prices right and the first thing that we may be
+
+90
+00:18:21,420 --> 00:18:29,320
+ noticing here the long tail that we talked about yesterday um but this time we can actually see
+
+91
+00:18:29,320 --> 00:18:37,180
+ it in black and white that we have this long tail right uh so all almost all of the listings are on
+
+92
+00:18:37,180 --> 00:18:46,490
+ the first uh few bars here on the left and then uh we have a thin tail that actually uh stretches to
+
+93
+00:18:46,490 --> 00:18:55,110
+ the right all the way to 40 000 the penthouse um and that is the shape that actually pulls the mean
+
+94
+00:18:55,110 --> 00:19:06,570
+ away from the media but the picture here is not finished uh it actually has no title right no names
+
+95
+00:19:07,330 --> 00:19:17,500
+ on the axis the axis is x and y uh so someone who sees this for the first time well does not know what
+
+96
+00:19:17,500 --> 00:19:27,070
+ what it's actually showing right so let's uh draw the same histogram but this time with seaborn and just
+
+97
+00:19:27,070 --> 00:19:35,550
+ see the difference here uh so in in in in in seaborn we do not give it a column of values uh we give
+
+98
+00:19:35,550 --> 00:19:43,490
+ the whole table um uh with something called well data equals and then we say which columns goes on
+
+99
+00:19:43,490 --> 00:19:50,300
+ the x axis with x equals so our seaborn also skips the missing values by itself so we do not even need
+
+100
+00:19:50,300 --> 00:20:01,720
+ the droplet as well uh and we just add what's missing uh we put the title and names on the axis with
+
+101
+00:20:01,720 --> 00:20:09,320
+ well with uh with access own commands with set title uh set x label set y label which you will see
+
+102
+00:20:09,890 --> 00:20:21,170
+ in a second i think we have a question i think i saw a hand let's see uh somebody put their hands up i
+
+103
+00:20:21,170 --> 00:20:37,790
+ think yes uh novica uh i tried to draw a picture like you but i have a error here uh about uh matplot lib
+
+104
+00:20:37,790 --> 00:20:49,400
+ no model named i don't uh installed it do i need to install in my uh here yeah the problem is with plot plt
+
+105
+00:20:49,400 --> 00:20:59,890
+ it doesn't uh it says uh model not found error uh try this i will send it to you in chat here
+
+106
+00:21:00,930 --> 00:21:15,280
+ oh so i can uh i can chat uh okay just give me one second i i i will set in chat
+
+107
+00:21:16,540 --> 00:21:50,480
+ this is what i got um to just put pip uh install matplot uh lib uh c born there you go and sometimes
+
+108
+00:21:50,480 --> 00:21:59,010
+ you actually have to at least for me you have to actually um uh reopen the visual studio code thank
+
+109
+00:21:59,010 --> 00:22:07,230
+ you so if it doesn't work directly uh try that yes or else i can help you a little bit uh after the
+
+110
+00:22:07,230 --> 00:22:20,590
+ lesson of course all right so let's look at the difference here with the seaboard so we start off
+
+111
+00:22:20,590 --> 00:22:28,860
+ uh in the same way here how is the size should i make it a little bit bigger at least maybe like this
+
+112
+00:22:28,860 --> 00:22:38,360
+ or and that is too big maybe how about that can i give a thumbs up or thumbs down yeah seems to work for
+
+113
+00:22:38,360 --> 00:23:04,580
+ you all right uh okay so we said fig and nothing new here fig x equals um plt um subplot and now we're
+
+114
+00:23:04,580 --> 00:23:16,390
+ using sns seaborn right uh and you know since we're gonna make a histogram here this plot uh we put our
+
+115
+00:23:16,390 --> 00:23:39,600
+ data here uh and that is the listings and then look at this we just put x price bins equals 50 and we
+
+116
+00:23:39,600 --> 00:24:03,270
+ put x equals x so seaborn draws on our axis uh that we can put whatever text we want here so i'm gonna put
+
+117
+00:24:03,270 --> 00:24:25,530
+ uh most uh listings uh are cheap uh a few uh a few are very uh expensive so the title that actually sees
+
+118
+00:24:25,530 --> 00:24:48,830
+ uh says what we actually see uh and then we're gonna put uh x set uh set the uh x x label right whatever we
+
+119
+00:24:48,830 --> 00:25:02,160
+ want here price uh price uh night things will make it a little bit clearer and set the y label and we're
+
+120
+00:25:02,160 --> 00:25:22,960
+ gonna put to um number of listings and then just show it guilty show yeah uh it's basically the same
+
+121
+00:25:22,960 --> 00:25:33,590
+ histogram but this time uh with c1 now we will have a uh but this time we will actually have a title we will
+
+122
+00:25:33,590 --> 00:26:01,780
+ have the uh we have a title and names on the axis for x and y here's just where to draw right let's see
+
+123
+00:26:01,780 --> 00:26:16,020
+ do you think it's much better right same picture but now it actually says something at least we see a
+
+124
+00:26:16,020 --> 00:26:29,400
+ title right doesn't say um doesn't just say histogram of price it actually says what we actually see right
+
+125
+00:26:29,400 --> 00:26:37,070
+ so that's a good habit a title that tells the reader what to actually notice so try to to to implement
+
+126
+00:26:37,070 --> 00:26:45,790
+ this habits when when doing that when doing the lab so try not to jump over it in order just to get
+
+127
+00:26:45,790 --> 00:26:57,690
+ into it right uh and also uh try to notice the the pattern in the code because we will use it in in
+
+128
+00:26:57,690 --> 00:27:06,320
+ pretty much every chart today we have fig we have uh yeah we have the fig axe uh plc subplots for
+
+129
+00:27:06,320 --> 00:27:18,020
+ example uh then this uh then the seaborne command with axe equals axe uh and then a few accent um for
+
+130
+00:27:18,020 --> 00:27:27,110
+ the text and then we got plc show basically right so the same pattern as you will see
+
+131
+00:27:29,320 --> 00:27:37,440
+ now let's actually draw something um that we calculated yesterday on top of the histogram
+
+132
+00:27:37,440 --> 00:27:47,400
+ for example the median the mean um and the upper fence so a vertical line is basically just drawn with
+
+133
+00:27:47,400 --> 00:27:57,870
+ uh with uh with the xv line um and since we will have three lines in the same picture
+
+134
+00:27:58,510 --> 00:28:05,820
+ the reader needs to know which is which of course and for that we will give each line a label uh just
+
+135
+00:28:05,820 --> 00:28:13,240
+ basically a short name and then we will ask for a legend what is a legend well yeah that's a little
+
+136
+00:28:13,240 --> 00:28:20,160
+ small box uh in the corner of the chart that explains maybe it's up here sometimes and yeah
+
+137
+00:28:20,700 --> 00:28:34,280
+ uh what every line is um so it works like a key to a map for example so let's begin there let me just
+
+138
+00:28:34,280 --> 00:28:53,560
+ set a title for that so uh the histogram see the shape of the of the price i think it's good so yesterday
+
+139
+00:28:53,560 --> 00:29:00,770
+ well we found the defense for the for the outliers uh but we never saved it so so i need to actually
+
+140
+00:29:00,770 --> 00:29:07,410
+ calculate it again uh and it's a good repetition as well and it's the same four lines as as before
+
+141
+00:29:08,190 --> 00:29:21,510
+ so we should still get the same numbers uh yesterday we got uh 5903 when uh when rounding it up for the
+
+142
+00:29:21,510 --> 00:29:53,100
+ upper fence for example so we had a qm equals listings uh price quantile uh 0.25 then we got q3 on tile
+
+143
+00:29:53,100 --> 00:30:07,740
+ 0.75 so 0.75 so quarter uh of the listings are cheaper than this uh than this so and a quarter
+
+144
+00:30:07,740 --> 00:30:20,380
+ of the listings that are more expensive than this and then we just put an upper here there upper equals
+
+145
+00:30:20,380 --> 00:30:49,760
+ what well q3 plus 1.5 times uh q3 or minus q uh one right excuse me so that would be the upper fence uh
+
+146
+00:30:49,760 --> 00:31:03,840
+ from the iqr rule that we used yesterday um listings we're just gonna mark the outliers uh just like
+
+147
+00:31:03,840 --> 00:31:35,440
+ yesterday so listings um price out layer equals uh listings it's written and then just print round
+
+148
+00:31:35,440 --> 00:32:08,090
+ same time uh the upper and we want to run the two one these things uh is this layer the sum let's see if we
+
+149
+00:32:08,090 --> 00:32:21,210
+ get the same results as yesterday 5903 and 132 out layers the same as we saw yesterday the histogram
+
+150
+00:32:21,210 --> 00:32:33,620
+ right with the three lights and here i will use an f string uh to put the numbers in labels uh and and
+
+151
+00:32:33,620 --> 00:32:42,050
+ we will also see something a little bit new uh for no decimals and so on but we will see it in a minute
+
+152
+00:32:42,050 --> 00:33:03,670
+ so let's do some drawing here medium equals uh well the middle price right listings um price median
+
+153
+00:33:08,800 --> 00:33:43,190
+ and and we have the the mean this is price mean which price right fig max equals tlt uh subplots plots um
+
+154
+00:33:43,740 --> 00:34:13,140
+ s s and s just plot um data we close listings um x is the price we need the beans was uh 50 and acts
+
+155
+00:34:14,810 --> 00:34:40,180
+ acts to to draw the the lines here um so kind of mentioned we use something x v line here we just put
+
+156
+00:34:40,180 --> 00:34:54,040
+ what well that would be the median to begin with uh you can put a color was uh we can use black here
+
+157
+00:34:54,040 --> 00:35:13,890
+ and then we can put the line style uh i want it something like this so dash line at the media right
+
+158
+00:35:13,890 --> 00:35:33,600
+ and then we're going to put a label on it as well uh we set an f string media and the median um comma
+
+159
+00:35:33,600 --> 00:35:53,120
+ like this uh zero f and i'm gonna get back to that uh and then same thing for the mean let's put another
+
+160
+00:35:53,120 --> 00:36:16,200
+ color red uh you can have the same line style uh but not the median the mean and mean and also uh the
+
+161
+00:36:17,180 --> 00:36:46,510
+ upper fence um for here usually so upper uh okay here's another color gray let's change the uh to a
+
+162
+00:36:46,510 --> 00:37:08,940
+ a dotted line instead and the label instead of median we'll put upper fence then we're gonna uh set some
+
+163
+00:37:08,940 --> 00:37:13,280
+ titles as well for that one
+

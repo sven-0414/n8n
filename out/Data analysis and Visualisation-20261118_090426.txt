@@ -1,0 +1,163 @@
+let me just do this and do that and do this and do this it's less than seven right lesson no less
+than seven exactly yeah less than seven out of eight right so for two days now the lesson five
+and six um we have done what well we have talked uh about prices with number we have talked about
+the mean uh median um we have talked about the percentiles um out layers and yesterday's lesson
+kind of kind of paved the path to to today's lesson right because what i promised you guys
+yesterday was that we are actually going to see uh the things that we did yesterday uh so that's
+basically the idea uh we're actually going to draw a little bit draw we're going to create at least
+um a table uh well the tables um that we have seen up to now um they are exact aren't they
+there's nothing wrong with that i mean these are exact uh these are exact and so on but uh sometimes
+they are hard to take in right so a good picture can actually show you show you sometimes in a second
+or uh matter of a second what a table needs um and so on um um so to draw pictures in python uh we need
+new tools and um excuse me and i want to explain what they are uh because they are not just
+more pandas uh they are they are how do you say how do you put it well there are three tools in a chain
+uh and and it helps to to know uh to actually which one does what right so we have said pandas here
+right and pandas well holds the data and i think we know it well by now right but two tools that we're
+going to look at today is matplotlib and seaborne i don't know how familiar you are with those
+either way uh matplotlib um is the library that uh how do you put it well that actually draws
+right it draws the lines it draws the bars it draws the the dots uh hex axis and so on so it is the
+foundation that almost all drawing in python is built on right powerful and very detailed of course
+um you can control uh you have a lot of control there uh you can pretty much control everything
+but you also have to say a lot right you can think of it as drawing by hand
+with a pen and paper uh you kind of decide every detail um which is of course great uh for control
+right but at the same time but uh a lot of work for a simple picture what we're also going to use
+today is seaborne and the seaborne is kind of built on top of matplotlib if i'm not mistaken
+yes it is uh and what it does well it does the drawing with matplotlib behind the scenes right
+but it gives you a ready-made chart uh types in a single line um and this is kind of made for exactly
+exactly what we do look at distribution uh compare groups see how columns relate um and it actually
+has a very good looking defaults as well and it actually understands pandas tables as well you just
+say which column goes where and yeah that's pretty much it so if matplotlib um if i take that the
+example i took before uh so if matplotlib is drawing by hand then seaborne is a template
+um yeah it's fast and it looks good so they don't actually compete
+we will actually use seaborne for the chart itself and matplotlib for what is around the chart the size
+for example the title the labels and saving the picture as well so yeah you will see them work
+together in every picture that we draw today um one more thing um you will meet if you search the
+internet for example well pandas also has its own uh drawing command which is uh plot uh which uses
+mapplotlib and it is fine for a for a quick look uh and you will see it in many examples but today
+we will use seaborne since it's easier to to make something uh that looks actually good all right so
+if you see that you know what my idea at least was uh obviously both libraries has to be installed and
+hopefully you have all done that of course because you have uh followed the instructions that i uh that
+i sent you on on uh the friday before we started this module uh but if you get a module not found
+there or anything like that you know that it's missing then you will need to install it uh i just pip
+install matplotlib and seaborne at the same row yeah but let's start with the imports and let's get
+started actually and yeah if there are any questions just let me know so we're going to import uh pandas
+as usual nothing new we're going to import um uh matplotlib and plot uh and just like we do with pd
+uh here we do as um plt and import um seaborne as um sns fret nice always called sns always called plt
+always called pd uh so today uh you don't always have to do this or something like that but i'm gonna
+set a theme uh set the theme uh and you can explore others if you want later on but for now
+you can go with white grid i think it's a clean look for every chart actually it's kind of a white
+background um light grid lines and i think it works uh great with this monitor the extra monitor that i
+have um uh we are gonna take some date columns from our um uh the the columns that actually contain the
+dates today also what we're gonna use and more specifically we're gonna take last something
+called last scraped those are the ones that we're gonna need for the lesson calendar uh and it's
+actually not calendar it's calendar uh calendar last uh scrape and then we got uh first first um review and
+we got uh obviously last uh maybe not that obvious but last review so the columns that actually uh contains
+dates listings equals id read csv we don't need a copy since we're not going to change anything
+data file uh data and it's called listings clean csv let's not make that mistake again um and we need to
+not forget to parse right parse the date uh parse dates uh and on what's what the date columns that we just
+created okay so it reads those columns as dates right so far so now let's print uh the shape it's a good
+start to see that everything loaded correctly uh listings uh shape right let's see all right we are
+actually uh gonna uh meet uh um a bunch of words today and i thought it was a good idea to at least
+give you a little uh something to lean on here um i can put it here there's a mark down this and i'm
+actually also going to send it in the chat so if anyone needs it during the lesson or anything like
+that forgets the word what was that again uh you can just look at the um correctly like this there you
+go i think it will be helpful okay so now let's well i can at least go through them right so we're
+going to talk figure uh the whole picture uh like a sheet of paper the axis or axe uh one chart on the
+figure with its own x-axis and y-axis x-axis y-axis we have fig and axe those plc subplots well that
+makes a new figure with one axis on it uh and we draw on the axis we have something called histogram
+well divides the values into intervals and counts how many fall in each one we are gonna see bins
+intervals of a histogram uh well more bins give a more detailed picture we have well drop now which
+you're already familiar with uh removes the missing values because the chart can only draw uh what is
+this right and then we have plc show that you're gonna see a lot uh that shows the picture right
+so the first uh question for our um excuse me i have a little cough today it usually goes away from the
+morning but yeah uh the first question that we're actually going to answer here is um what does or at
+what does the um distribution uh of the price look like so we have i've already seen uh things like
+this but now we're going to see it uh drawn right so we have the numbers we have the mean um we have the
+uh median uh and the percentiles right and now we basically just want to see it and the tools for
+that is actually a histogram let me put that as well uh histogram what we're going to look at first
+uh so what it does basically it divides as you see here it divides the price into intervals called
+bins and then counts how many listings fall in each and we will start with with the first pure uh matplotlib
+so you actually see how that works so uh a chart can actually just be drawn um uh um let me put it
+like this uh we can actually just draw the pic the the when we drop it to uh we can only use the
+values that actually exist uh so i will take away uh the missing uh uh missing it drives missing
+prices uh with drotna but let's start there uh so first of all uh a new figure with one axis on it
+so fig uh we said fig x equals plt uh sub subplots so yeah a new figure with one axis on it
+uh and then we're going to put x um hist listings price the drotna bins uh 50 here so basically just draw
+a histogram of the price in 50 bins plt show node see it so just basically show the picture okay so we're just
+so we're just drawing uh our first histogram uh of the price with our uh matplotlib so basically we're
+just uh we're just counting the the listings um in 50 intervals and draw a bar for each let's take a
+look at it yeah and we're familiar with this we see the prices right and the first thing that we may be
+noticing here the long tail that we talked about yesterday um but this time we can actually see
+it in black and white that we have this long tail right uh so all almost all of the listings are on
+the first uh few bars here on the left and then uh we have a thin tail that actually uh stretches to
+the right all the way to 40 000 the penthouse um and that is the shape that actually pulls the mean
+away from the media but the picture here is not finished uh it actually has no title right no names
+on the axis the axis is x and y uh so someone who sees this for the first time well does not know what
+what it's actually showing right so let's uh draw the same histogram but this time with seaborn and just
+see the difference here uh so in in in in in seaborn we do not give it a column of values uh we give
+the whole table um uh with something called well data equals and then we say which columns goes on
+the x axis with x equals so our seaborn also skips the missing values by itself so we do not even need
+the droplet as well uh and we just add what's missing uh we put the title and names on the axis with
+well with uh with access own commands with set title uh set x label set y label which you will see
+in a second i think we have a question i think i saw a hand let's see uh somebody put their hands up i
+think yes uh novica uh i tried to draw a picture like you but i have a error here uh about uh matplot lib
+no model named i don't uh installed it do i need to install in my uh here yeah the problem is with plot plt
+it doesn't uh it says uh model not found error uh try this i will send it to you in chat here
+oh so i can uh i can chat uh okay just give me one second i i i will set in chat
+this is what i got um to just put pip uh install matplot uh lib uh c born there you go and sometimes
+you actually have to at least for me you have to actually um uh reopen the visual studio code thank
+you so if it doesn't work directly uh try that yes or else i can help you a little bit uh after the
+lesson of course all right so let's look at the difference here with the seaboard so we start off
+uh in the same way here how is the size should i make it a little bit bigger at least maybe like this
+or and that is too big maybe how about that can i give a thumbs up or thumbs down yeah seems to work for
+you all right uh okay so we said fig and nothing new here fig x equals um plt um subplot and now we're
+using sns seaborn right uh and you know since we're gonna make a histogram here this plot uh we put our
+data here uh and that is the listings and then look at this we just put x price bins equals 50 and we
+put x equals x so seaborn draws on our axis uh that we can put whatever text we want here so i'm gonna put
+uh most uh listings uh are cheap uh a few uh a few are very uh expensive so the title that actually sees
+uh says what we actually see uh and then we're gonna put uh x set uh set the uh x x label right whatever we
+want here price uh price uh night things will make it a little bit clearer and set the y label and we're
+gonna put to um number of listings and then just show it guilty show yeah uh it's basically the same
+histogram but this time uh with c1 now we will have a uh but this time we will actually have a title we will
+have the uh we have a title and names on the axis for x and y here's just where to draw right let's see
+do you think it's much better right same picture but now it actually says something at least we see a
+title right doesn't say um doesn't just say histogram of price it actually says what we actually see right
+so that's a good habit a title that tells the reader what to actually notice so try to to to implement
+this habits when when doing that when doing the lab so try not to jump over it in order just to get
+into it right uh and also uh try to notice the the pattern in the code because we will use it in in
+pretty much every chart today we have fig we have uh yeah we have the fig axe uh plc subplots for
+example uh then this uh then the seaborne command with axe equals axe uh and then a few accent um for
+the text and then we got plc show basically right so the same pattern as you will see
+now let's actually draw something um that we calculated yesterday on top of the histogram
+for example the median the mean um and the upper fence so a vertical line is basically just drawn with
+uh with uh with the xv line um and since we will have three lines in the same picture
+the reader needs to know which is which of course and for that we will give each line a label uh just
+basically a short name and then we will ask for a legend what is a legend well yeah that's a little
+small box uh in the corner of the chart that explains maybe it's up here sometimes and yeah
+uh what every line is um so it works like a key to a map for example so let's begin there let me just
+set a title for that so uh the histogram see the shape of the of the price i think it's good so yesterday
+well we found the defense for the for the outliers uh but we never saved it so so i need to actually
+calculate it again uh and it's a good repetition as well and it's the same four lines as as before
+so we should still get the same numbers uh yesterday we got uh 5903 when uh when rounding it up for the
+upper fence for example so we had a qm equals listings uh price quantile uh 0.25 then we got q3 on tile
+0.75 so 0.75 so quarter uh of the listings are cheaper than this uh than this so and a quarter
+of the listings that are more expensive than this and then we just put an upper here there upper equals
+what well q3 plus 1.5 times uh q3 or minus q uh one right excuse me so that would be the upper fence uh
+from the iqr rule that we used yesterday um listings we're just gonna mark the outliers uh just like
+yesterday so listings um price out layer equals uh listings it's written and then just print round
+same time uh the upper and we want to run the two one these things uh is this layer the sum let's see if we
+get the same results as yesterday 5903 and 132 out layers the same as we saw yesterday the histogram
+right with the three lights and here i will use an f string uh to put the numbers in labels uh and and
+we will also see something a little bit new uh for no decimals and so on but we will see it in a minute
+so let's do some drawing here medium equals uh well the middle price right listings um price median
+and and we have the the mean this is price mean which price right fig max equals tlt uh subplots plots um
+s s and s just plot um data we close listings um x is the price we need the beans was uh 50 and acts
+acts to to draw the the lines here um so kind of mentioned we use something x v line here we just put
+what well that would be the median to begin with uh you can put a color was uh we can use black here
+and then we can put the line style uh i want it something like this so dash line at the media right
+and then we're going to put a label on it as well uh we set an f string media and the median um comma
+like this uh zero f and i'm gonna get back to that uh and then same thing for the mean let's put another
+color red uh you can have the same line style uh but not the median the mean and mean and also uh the
+upper fence um for here usually so upper uh okay here's another color gray let's change the uh to a
+a dotted line instead and the label instead of median we'll put upper fence then we're gonna uh set some
+titles as well for that one
