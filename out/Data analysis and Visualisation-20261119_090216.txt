@@ -1,0 +1,432 @@
+There we go. All right. Now, let's actually begin with the last lesson for this module.
+Then you will start the next module next week, right?
+So for seven lessons now, well, we have been asking the same kind of question, right?
+Or one kind of a question to be exact.
+What does the data say, right?
+We load it. We cleaned it, described it with numbers and drew it in charge, right?
+And today we will ask the other question, the one that is just as important.
+Come and trust it. And what does it not say, right?
+If you remember, the first lesson, one of the first things I said was,
+if the data is messy or biased, well, then the answer would be messy or biased too, right?
+And since then, I have left a few questions out or not out, but I would rather say open, right?
+And I've said, we will come back on this on Thursday, we will come back on this on Monday or whatever.
+But for this, actually on Thursday and today's Thursday, right?
+And so we said, well, we have noticed some things along the way.
+A third of the price of missing, the ratings are almost five stars.
+Excuse me, are you showing the right screen?
+Yeah, I think so.
+Hello.
+Am I not?
+Are you showing the right screen?
+I think so.
+I'm okay.
+What do you see right now?
+Can you see my...
+Who was asking?
+Okay, okay.
+I'm getting thumbs ups.
+So I guess you can see my screen.
+All right.
+Where was I?
+I said something.
+Five stars.
+We said something else.
+Yeah, and one thing that we also talked about is that listings that exist, well, they are today, right?
+And today we're going to try to give some names, right?
+And we will also look at these problems that we have seen during the way, along the way, one by one, right?
+And there are three words that is kind of going to carry the lesson.
+Excuse me.
+That's them.
+So we have data quality, well, which basically means does the table contains what it says it actually contains, right?
+Is it complete?
+And is it correct, right?
+For example, a missing price is a quality problem.
+Bias, well, we have actually mentioned bias, right?
+So it just means that the data tilts in one direction.
+So that is kind of different from the thing that we want to describe, right?
+In a consistent way, right?
+So if only happy guests write reviews, well, the average rating will be too high.
+And every time we collect new reviews, it will be too high again.
+So bias is not the same as a mistake, right?
+A mistake is random.
+A bias, well, pushes the same way every time, right?
+And then we've got source criticism.
+Where did the data come from, right?
+Who made it?
+How?
+When?
+And why?
+And you know this kind of stuff from history or taking any history class or from reading the news or whatever.
+Is it a source that we can actually trust?
+And for what, right?
+And there are actually three questions that we can ask from any table.
+Sorry.
+Three questions that we can actually ask from any table.
+And these are the ones that we're going to try to answer here.
+What is missing?
+Who or what is not in the table?
+Who made the data and why?
+Right?
+I don't know what I intended.
+Let's see.
+You can actually do this.
+So, same import as always.
+And not forget to parse dates.
+And I'm actually going to use some specific columns for that, of course.
+And, yeah.
+So, let's start from here.
+So, import, we want to import pandas as PD.
+We want to import matplotlib, pipelot as PLT.
+We want to import seaboard as SNS.
+SNS, if we ever draw something, set theme.
+And we're going to use white grid style equals white grid.
+Listings plus data frame as well.
+PD, read CSV.
+And we got it in the data.
+And we're going to use clean version.
+And it's a CSV file, right?
+Let's not forget to parse dates.
+And the columns that we're going to use is first review.
+And, of course, last.
+Last review.
+And always look to shape, right?
+Print listings.
+Perfect.
+So, everything seems to be there, right?
+Now, the first thing that we're going to talk about, let me set a title for that.
+We can start off with the missing values.
+What is not there?
+This is kind of question number one, right?
+What is missing?
+And we have seen missing values before with ISNA in lesson one and many more other lessons.
+So, now we will do it properly.
+For a column, the mean of true and false is the shared of true, right?
+So, a trick that we actually have used since lesson, I don't remember, five, six or something like that.
+So, ISNA dot mean what gives us the share of missing values.
+I multiply by 100% and I multiply by 100 in order to get the percent, right?
+And we will look at four columns that we have used and then take it from there, right?
+So, we said columns equals and that again, this.
+Listings, columns is now multiplied, 100 and then round, probably to one.
+Okay?
+Just to see how large the share of each column is missing, right?
+Percent.
+Now, let's see.
+All right.
+So, beds and bathrooms are almost complete.
+2% and 0.2%.
+And that is normal.
+That is not a problem, I would say.
+But if you look at the first two, 35% of the prices are missing.
+And that would be equivalent to 1,617 listings out of the 4,574 total listings, right?
+And 14% of the ratings are missing, right?
+And there is a big difference between a few values missing
+and a third of the most important column is actually missing.
+And there is even a bigger question, right?
+Why?
+So, what we want to know is if the prices are missing at random,
+well, then the listings that do have a price are a fair picture of the listings, right?
+But if there is a reason for it, well, then the missing prices tells us something.
+And the ones that are left may be different kind of listings, right?
+So, let's try to find a look for a reason.
+And there is a column that I haven't mentioned before, but let's take it again here,
+which I think is connected to the prices here.
+It's the column called Avability, Avability 365, 365,
+which, if you remember, it says how many of the 365 days the listing is available in the calendar.
+So, I'm thinking a listing with zero available days has nothing left to book right now, right?
+So, I will actually compare those two with the crosstab,
+which counts how many rows there are for every combination, if you remember.
+So, the rows is the price missing, and the column are, are there zero days open?
+See if there is a connection there, all right?
+So, let's try that.
+pd, cross tab, listings, price, isla, listings, 365 equals zero.
+Okay?
+So, we're just trying to count the, the, the, the, the, the, the, the list is for every combination of the price missing and, and no days open.
+Okay?
+So, a crosstab on A and B.
+Now, let's see.
+All right.
+The listing, or we could say like this.
+So, there are 127 plus 149.
+So, this would be the prices, the listings without the price, right?
+And there is 1,000, and if you're adding them up, you will get 1,617 of them.
+And 1,490 here, 92%, have no open days, right?
+And here are the ones with the price.
+So, only four have no open days.
+So, the price is almost always there for a listing with the open days in the calendar, and almost always missing for a listing with none, right?
+So, the missing prices are not actually random.
+And I, and I just believe that the, the, the explanation is, is that the data, well, the data comes from a website, and, and, and, and, and the listing with no open days has no price to show, right?
+So, the, the file even has a column called, there is a column called price code checking date, and the price code total price, which actually tells us that the price is, is a code for, for, for particular dates.
+So that is my explanation, right?
+And I have not checked it, but we will actually talk a little bit about it in the end of the lesson.
+We will talk about the documentation, right?
+And what does this mean for our work?
+Well, everything that we calculated about the price in Lesson 5, in Lesson 6, in Lesson 7, I mean this week, right?
+The median of 1,791 and the outliers and the neighborhood comparison is true for the listings that have a price, right?
+Which are mostly listings with open days and not for all 4,574.
+And that is not wrong, but it is something we have to keep in mind, we have to say, we have to report, right?
+So if we were to say like this, the median price is 1,791, that would not be a complete sentence.
+I would rather say the median price is 1,791 for the 2,957 listings that have a price, right?
+That is a more complete sentence.
+And this is something that you will look at the lab, you will see in the lab today.
+I think you will enjoy the lab.
+I hope so, at least.
+So, another thing, is it also different between the types of rooms, okay?
+So let's actually check the share of missing prices for each room, just to see if we can get an idea here as well.
+So, listings, price is now group by, listings type, there, right?
+Mean times 100, and then that is rounded to 0.
+Let's take a look.
+So, 38% of the entire homes have no price, and only 25% of the private rooms.
+We can't ignore the hotel rooms, because there are only three hotel rooms, I believe, right?
+So, the prices we have are a little more about rooms, and a little less about the entire homes than the whole table is, right?
+So, the difference is not huge, I would say, but that is also a small reason to be careful, right?
+And we have mentioned, right, what can you do about the missing values?
+And we have said the three choices we actually have, and none of them is always right.
+And we said, and we have written it down, is to remove the rows, and that is what actually Pandas does for us in mean, median, and describe, right?
+It skips the missing values.
+We can fill them with something, for example, the median, and that is called imputing.
+So, for a few missing beds, sure, that could be fine.
+But for a third of the prices we have said, it would mean that we actually make up a third of the column, right?
+And then every result is partly our own invention.
+Or, that's why we said we're not going to recommend imputing in this case, right?
+Or, we could keep them and just say it.
+And that is what we have done, right?
+We kept the missing prices as missing.
+And from now, well, we have written how many listings are behind the number.
+And we chose the third one, right?
+And the important thing here is not what you choose, right?
+Or, let me put it like this.
+It's not the choice that you actually make, but that you make it on purpose and then tell the reader, right?
+So, you have an idea behind it.
+You're not just choosing something at random.
+Yeah.
+And now, let's actually look at the ratings.
+We said 14% are missing.
+That is actually equivalent to 644 listings.
+And is there a reason in the data for that as well?
+Well, let's take a look and try to build up an idea here.
+Excuse me.
+Cross tab.
+The listings.
+We said the review.
+It's called review scores rating.
+And there's none.
+The missing ones.
+Listings.
+As reviews, right?
+So, check if the missing ratings are the listings without any reviews.
+All right?
+Let's see.
+What do we see here?
+Perfect match, right?
+So, the 644 listings with a missing rating are actually exactly 644 listings without any reviews.
+And every listing with a review has a rating, right?
+As we see.
+So, this is not a mistake and not a mystery, right?
+So, a listing with no reviews cannot actually have a rating.
+So, this is something we need to keep in mind, right?
+When we actually read the rating column, it only describes the listings that actually have been reviewed.
+So, this is kind of the thinking that we should have, right?
+Let's move on to the next part.
+Just see.
+I haven't missed anything in the chat or anything like that.
+All right.
+In the next part, I actually want to speak about does it actually make sense, okay?
+Like that.
+Does it make sense?
+So, missing values, well, I would say are the problem that you actually can't, that you can actually see, right?
+Because pandas shows none, right?
+Not a number.
+But we have said that the harder problems are not those, right?
+The harder problems are the values that are actually there, right?
+And they look fine, but they are wrong or mean something else than we think.
+So, there's no tools that actually finds those automatically.
+So, what we can do is to ask a few questions every time.
+And let's actually show, let me show you three from this table.
+So, the first thing that we can look at are the duplicates.
+So, if a listing is in the table twice, well, everything we count is a little too high, right?
+And we said that every listing has an ID.
+So, we count them by how many IDs appear more than once.
+And, yeah.
+And we use duplicated there because every repeat will show true, right?
+And then some will actually count them.
+So, let's do that again.
+Duplicate listings, ID, duplicated, sum, all right, zero.
+So, no duplicates.
+Good news.
+And good news is also a result.
+We can actually say that we have checked, right?
+Because we got rid of those duplicates, if you remember.
+The second check, do the values mean what the column name actually says?
+And if you remember in lesson, on Monday, today's this week's Monday, right?
+We made a bathroom.
+We looked at the bathroom count from the, we created, we made bathroom count from the text in the bathroom, in bathroom text, right?
+And I said that some listings have actually zero bathrooms.
+So, let me look at what the host actually wrote in those listings because that's kind of interesting.
+Just to rent a room or a house or whatever without a bathroom, it's kind of weird, isn't it?
+So, let's see what the host actually wrote here, step by step.
+So, listings, listings, I think here, yeah.
+Listings, through count, was it?
+Zero, bath, count, text, right?
+And then do a value count.
+So, for the listings with zero bathrooms, we're trying to see what the original text actually says about those, right?
+So, we're just doing a mask here.
+So, the rows where the mask is true and only that column, right?
+Now, let's take a look here.
+Okay.
+So, we have a total of 42, right?
+And the host has, where the host has zero shared baths.
+And in 24 of them, in 24 of them, right?
+And zero baths in 18 of them, right?
+And what does that mean?
+I don't know.
+I don't know for sure.
+So, zero shared baths can mean that there's no shared bathroom.
+So, basically, I guess, at least, that the guest has a private one.
+So, then the zero is a little bit misleading, isn't it?
+Because the zero is not a missing bathroom at all.
+Because they actually do have a bathroom.
+It's not, it's just that it's not shared, right?
+Zero baths here can mean that the bathroom might be somewhere else.
+Maybe in the corridor or, I don't know.
+Or maybe that the host did not fill it in properly.
+But just from this table, we can actually not, cannot tell.
+So, do you actually see the problem here?
+The number zero is correct.
+I had an idea that I wanted to show you.
+There's something I wanted to show you here.
+Maybe we can get back to that one.
+Because I had an idea here, but I forgot.
+I'm going to get back to it, all right?
+But before we get back to it, I have a third check that I want to do.
+Does the values answer?
+But we can remember this.
+We kind of find something, at least, right?
+So, zero shared baths, what does it mean?
+Does it make sense?
+Well, it doesn't in a first glance, but it could make sense
+because there could be a reason for what, why we get the zero, right?
+I think I was going with this, with something else, if I remember correctly.
+Anyways, it doesn't matter.
+But do the value answer the question we're asking?
+Well, we're going to look at minimum nights.
+We have seen that it goes up to 500.
+So, and let's actually see how many listings require a stay of at least 28 nights, okay?
+And that is about a month, and it's a different kind of rental.
+And, yeah, let's try it out and see what happens.
+So, let's look at the long day, just to build an idea.
+Listings, long stay listings, minimum nights, where it equals to 28.
+Therefore, we'll get true for listings with a minimum stay of 28 nights or more, right?
+Now, let's sum them up.
+Print, just so I get a nice print here.
+So, print long stay dot sum.
+And also, let's print long day mean times, let me think, yeah, multiply it with 100.
+And let's print that up to one decimal.
+So, count the listings that are what?
+That can only be booked for a month or more, all right?
+I think I've done a mistake here.
+Do you see it?
+I can't see it.
+Yeah, it needs to be a dot before the round.
+Ah, thank you, thank you.
+There we go.
+All right.
+So, 188 listings, 4.1% can only be rented for a month, right?
+Or more.
+So, their price is a price per night.
+So, it's not actually wrong.
+But a guest who wants a weekend in Stockholm can never book them, right?
+So, if we want to describe what a tourist pays for for a night, well, these do not belong to the answer, right?
+But if we want to describe all renters, well, they should do, right?
+So, there's no right answer in the date.
+It depends on the question, right?
+And that is why you always need to write down what you actually included.
+So, the habit should be when the table arrives, before you start, and I think I've said many before you start now.
+So, there's a lot to do before you start.
+So, anyways, before you start, you should ask yourself four simple questions, right?
+And I've actually written them down for you.
+Let's see.
+There we go.
+And I put it down.
+Boom.
+So, how much is missing and where?
+Are there duplicates?
+Are there values that cannot be true?
+Price of zero, a date in the future, and so on.
+Are there values that are true but mean something else than the column name?
+Say, and I would say that this last one is the hardest, right?
+Because the data cannot answer it, right?
+You need to know, or you have to know what the data is.
+That will take us, that is something that we will take a little bit later on during the lesson.
+All right.
+I think it's actually a perfect time to take a break because I usually always mark in my plan here where I should take a break in order to land well.
+So, yeah, I think it's a perfect time to take a break, maybe a little bit early from what we used to.
+So, yeah, let's take a break and then we can take it from there.
+All right.
+See you soon, guys.
+So, let's say 9.50 or 9.51 to be exact.
+So, 0.9.51.
+Can you hear me, guys?
+Hello.
+Welcome back.
+Oh, no, we said 51.
+I'm going to be quiet for one more minute.
+All right.
+9.51.
+I hope you can hear me.
+I just think so.
+All right.
+Let's see here.
+Didn't we make a column shared bath where the listings had a shared bathroom?
+So, zero shared baths would be true in that column.
+Yes.
+Yes.
+Yes.
+Yes.
+We actually made a shared bath column.
+It wasn't on Monday, right?
+And it is true, well, for all 24 with zero shared baths.
+So, yeah, good catch there.
+But so, the column actually tells us that the host actually wrote shared, but it does not
+actually tell us what the zero means, right?
+So, it does not tell us what the zero means, right?
+Is there no bathroom?
+Or is the bathroom just shared?
+So, the column copies the word.
+The word itself is actually unclear, right?
+So, that is the point.
+A value can be correct and still misleading, right?
+Basically, idea.
+But good catch.
+I had something more.
+Does it make sense?
+Yeah.
+My notes.
+I was a little bit looking more in my notes if there was anything else that I've missed
+here.
+But no, it was exactly with the zero shared baths and zero baths.
+Does that actually mean for us?
+It could be a little bit misleading, right?
+Could be true at the same time as it's not true, depending on how we put it, right?
+But let's take the next step here.
+Are the values that are true but mean something else than the column name says?
+And a perfect thing to look at then, I would say, is the ratings, if you remember.
+Specifically, when almost everyone gets five stars.
+So, on Monday, in lesson five, well, I asked the question, does that mean that a listing are
+almost always perfect, right?
+And from the first lesson or something like that, we actually saw that the most reviewed
+listings had a rating between 4.4 to 4.9, right?
+And if we take a look at the whole picture here, so I will only take the listings that have
+a rating, which are the ones with at least one review, right?
+And then we would draw a histogram, like we did yesterday, in order to get the whole picture,
+right?
+So let's try to do that.
+So, rated listings, listings has what?
+Well, reviews.
+So, the listing with at least one review, right?
+Then we do, like we did yesterday, fig x equals plt subplot, oops, SNS, we are going to draw
+a histogram, right?
+So, his plot, the data would be rated, and we have an x, which would be the review,
+um, uh, rev, rev, you, uh, course rating, uh, bins 40, and x, x.
+We need to set the title, x set title.
+Let's write something here, uh, and we already know that almost every, every, uh, rating is
+close to five, x, set, uh, y label, rating, uh.
