@@ -1,33 +1,15 @@
-What are the three key aspects of data quality?;Completeness, correctness, and consistency are the three key aspects of data quality.
-
-Why is data quality important in analysis?;Poor data quality leads to misleading conclusions, making valid interpretations and decisions based on the data difficult.
-
-How can missing data affect analysis results?;Missing data can introduce bias and reduce the reliability of analysis outcomes if not handled properly.
-
-What is the difference between bias and random errors in data?;Bias is systematic and consistently pushes results in one direction, while random errors can cancel out and do not follow a pattern.
-
-What does it mean when data has bias?;Bias refers to systematic deviations from the truth that consistently skew results in a particular direction.
-
-How might missing prices be related to listing availability?;Missing prices are often found in listings with zero available days, suggesting those listings are not actively listed on the website.
-
-What is an example of a misleading value in data?;A "zero bathroom" listing might actually have private bathrooms or the value may not have been recorded properly.
-
-Why should you document data quality issues in your analysis?;Documentation ensures transparency and helps readers understand the scope, limitations, and validity of your conclusions.
-
-What are the three main strategies for handling missing data?;Remove rows, fill with imputed values, or keep as missing while documenting the issue.
-
-What is a key principle when choosing how to handle missing data?;It's more important to make a deliberate decision based on understanding rather than which approach you choose.
-
-How can duplicate records impact analysis?;Duplicates can skew results by inflating counts and leading to incorrect interpretations of the dataset.
-
-What are the four essential questions for checking data quality before analysis?;1. How much is missing and where? 2. Are there duplicates? 3. Are there impossible values? 4. Do values mean something different than their column names suggest?
-
-Why should you be cautious about interpreting values that appear correct but may have hidden meanings?;Values can be technically accurate yet misleading if the column name or context doesn't fully explain what they represent.
-
-How does understanding data quality help in making decisions?;It prevents overconfidence in results and ensures appropriate comparisons, leading to more thoughtful analysis and clearer communication of findings.
-
-What is a common issue with rating data when no reviews exist?;All listings without reviews also have missing ratings, meaning the rating column only includes reviewed listings.
-
-How can you improve transparency in reporting price data with missing values?;Instead of just stating a median price, specify how many listings were included and what percentage of total that represents.
-
-What is the ultimate goal of addressing data quality issues?;To systematically identify problems, understand their implications, make informed decisions about analysis, and communicate limitations clearly to stakeholders.
+What are the three key aspects of data quality?;Completeness, correctness, and consistency.
+Why is data quality important for analysis?;Poor data quality leads to invalid conclusions and results.
+How can you calculate the percentage of missing values in a dataset using pandas?;Use `isna().mean() * 100` on a DataFrame or Series.
+What does it mean if missing data is not random?;It suggests a pattern or systematic reason for the absence of values.
+Why are missing prices correlated with availability in the example?;Listings with zero availability don't display prices on the website.
+What are the three main approaches to handling missing values?;Remove rows, fill with imputed values, or keep as missing and report.
+How should you interpret missing ratings in a dataset?;They indicate listings without any reviews, not random errors.
+What is bias in data, and how does it differ from random error?;Bias is systematic skewing of results in one direction, unlike random errors which are unpredictable.
+How can you detect duplicates in a dataset using pandas?;Use `duplicated()` method on a column like ID.
+What should you check when validating values in a dataset?;Ensure values make sense given the column names and real-world expectations.
+Why might "zero bathrooms" be misleading in a dataset?;It could indicate missing information or different data collection practices rather than actual zero bathrooms.
+How do you identify unreasonable values in a dataset?;Look for extreme or logically inconsistent entries based on context.
+What are the three core questions to ask about any dataset?;What is missing? Who or what is not in the table? Who made the data and why?
+What four steps should be included in a data validation process?;Check how much and where data is missing, look for duplicates, identify impossible values, and detect misleading information.
+Why is it important to document data quality issues and decisions made during analysis?;To ensure transparency and help others understand the limitations of the dataset and analysis.

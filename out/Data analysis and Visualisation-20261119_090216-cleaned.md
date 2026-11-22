@@ -3,208 +3,201 @@
 ## Understanding Data Quality Problems
 
 ### What is Data Quality?
-Data quality refers to whether a dataset contains what it claims to contain. It addresses three key aspects:
-- **Completeness**: Are all required data points present?
-- **Correctness**: Do the values accurately represent what they claim to be?
-- **Consistency**: Is the data uniform and reliable across all entries?
+Data quality refers to whether a dataset contains what it claims to contain, is complete, and is correct. It encompasses three key aspects:
+- **Completeness**: Are all expected values present?
+- **Correctness**: Do the values accurately represent what they're supposed to measure?
+- **Consistency**: Are values consistent with each other and with real-world expectations?
 
 ### Why Data Quality Matters
-Poor data quality leads to misleading conclusions. As mentioned in the lecture, if data is messy or biased, then the analysis results will also be messy or biased. Understanding data quality issues is crucial for making valid interpretations and decisions based on your data.
+Data quality directly impacts the validity of any analysis or conclusions drawn from the data. As mentioned in the lecture, if data is messy or biased, the results will be equally problematic. Understanding data quality helps analysts make informed decisions about how to handle their datasets and interpret their findings.
 
-### Example of Data Quality Assessment
+### Identifying Missing Values
+
+#### The Rule for Finding Missing Values
+To determine what's missing in a dataset, we use pandas' `isna()` function combined with statistical operations. The mean of boolean values (True/False) gives us the proportion of missing values, which can be converted to percentages by multiplying by 100.
+
+```python
+import pandas as pd
+
+# Example showing how to calculate missing value percentages
+columns = ['price', 'reviews', 'beds', 'bathrooms']
+missing_percentages = (listings[columns].isna().mean() * 100).round(1)
+print(missing_percentages)
+```
+
+#### Gotchas and Edge Cases
+- **Random vs. Systematic Missingness**: The difference between missing values that occur randomly versus those that follow a pattern is crucial for interpretation.
+- **Missing Data Patterns**: When examining missing data, it's important to look at why values are missing rather than just how many are missing.
+
+#### Key Example: Price Missing Values
+The lecture demonstrated that 35% of prices were missing (1,617 out of 4,574 listings). This is significant because it represents a third of the most important column. 
+
+```python
+# Analysis of missing price values
+price_missing = listings['price'].isna().sum()
+print(f"Missing prices: {price_missing} ({(price_missing/len(listings)*100):.1f}%)")
+
+# Check correlation with availability
+availability_analysis = pd.crosstab(
+    listings['price'].isna(), 
+    listings['availability_365'] == 0
+)
+print(availability_analysis)
+```
+
+#### Why This Matters for Analysis
+Missing prices are not random - they're correlated with availability. Listings with zero available days don't have prices because the website doesn't display them when there's no availability. This means any analysis of price should specify it only applies to listings that actually have prices.
+
+### Handling Missing Values
+
+#### The Three Approaches
+When dealing with missing values, analysts have three main approaches:
+1. **Remove rows** - Pandas automatically skips missing values in calculations (mean, median, describe)
+2. **Fill with values (imputation)** - Replace missing values with calculated statistics like median
+3. **Keep as missing and report** - Maintain the missing data and clearly state which data was used
+
+#### Choosing the Right Approach
+The lecture emphasized that the choice matters less than making a conscious decision based on understanding the data and purpose of analysis.
+
+```python
+# Example approach for handling missing values
+# Instead of saying "median price is $1,791"
+# Say "median price is $1,791 for 2,957 listings that have a price"
+
+# Counting valid vs missing values
+valid_prices = listings['price'].notna().sum()
+print(f"Valid prices: {valid_prices}")
+print(f"Missing prices: {len(listings) - valid_prices}")
+
+# Grouping by room type to see differences in missing data
+room_type_missing = (listings.groupby('room_type')['price'].isna().mean() * 100).round(0)
+print(room_type_missing)
+```
+
+### Bias in Data
+
+#### Understanding Bias vs. Mistakes
+Bias is not random error - it's systematic skewing of results in a particular direction. Unlike random mistakes, bias pushes results consistently in the same way.
+
+#### Example: Rating Bias
+The lecture showed that 14% of ratings were missing, and this was not random - these were exactly the listings without any reviews. This isn't a mistake but a logical consequence of how the data was collected.
+
+### Data Validation Techniques
+
+#### Checking for Duplicates
+Duplicates can skew results by inflating counts. Every listing should have a unique ID.
+
+```python
+# Check for duplicates
+duplicate_count = listings['id'].duplicated().sum()
+print(f"Duplicate IDs: {duplicate_count}")
+
+# If duplicates exist, remove them
+listings_clean = listings.drop_duplicates(subset=['id'])
+```
+
+#### Validating Values Match Column Names
+Values should make sense given what the column name implies.
+
+#### Example: Zero Bathroom Values
+The lecture demonstrated how "zero bathrooms" could be misleading. Hosts might write "0 shared baths" when they actually have private bathrooms, or "0 baths" when they haven't filled in information properly.
+
+```python
+# Analysis of zero bathroom values
+zero_bath_listings = listings[listings['bathrooms'] == 0]
+print("Zero bathroom listings:")
+print(zero_bath_listings['bathroom_text'].value_counts())
+
+# Check shared bath column
+shared_bath_zero = listings[listings['shared_bath'] == 0]
+print("Zero shared bath listings:")
+print(shared_bath_zero['bathroom_text'].value_counts())
+```
+
+#### Identifying Unreasonable Values
+Values can be technically correct but unreasonable given the context.
+
+```python
+# Check for extreme values in minimum nights
+long_stay_listings = listings[listings['minimum_nights'] >= 28]
+print(f"Long stay listings (≥28 nights): {len(long_stay_listings)} ({(len(long_stay_listings)/len(listings)*100):.1f}%)")
+
+# This shows that some listings are only available for months, not suitable for typical tourists
+```
+
+## Data Quality Questions Framework
+
+### The Three Core Questions About Any Dataset
+1. **What is missing?** - Identify what data is absent or incomplete
+2. **Who or what is not in the table?** - Determine what's excluded from the dataset
+3. **Who made the data and why?** - Understand the source, collection method, and purpose
+
+### The Four-Step Validation Process
+Before starting any analysis, analysts should ask:
+1. **How much is missing and where?** - Quantify and locate missing values
+2. **Are there duplicates?** - Check for redundant entries
+3. **Are there values that cannot be true?** - Identify impossible or unreasonable values
+4. **Are there values that are true but mean something else than the column name says?** - Find misleading information
+
+### Why This Matters for Data Analysis
+The lecture emphasized that data quality issues are fundamental to understanding what data can and cannot tell us. The goal is not just to clean data, but to understand its limitations and communicate those clearly.
+
+## Practical Implementation
+
+### Complete Example Workflow
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the dataset with date parsing
-listings = pd.read_csv('data/listings.csv', parse_dates=['first_review', 'last_review'])
+# Load data with date parsing
+listings = pd.read_csv('data/listings.csv', 
+                      parse_dates=['first_review', 'last_review'])
 
-# Check for missing values in specific columns
-columns = ['price', 'reviews_per_month', 'number_of_reviews', 'availability_365']
-missing_percentages = (listings[columns].isna().mean() * 100).round(1)
-print(missing_percentages)
-```
+# Check basic structure
+print("Dataset shape:", listings.shape)
 
-### Key Findings from Missing Data Analysis
-- **Beds and bathrooms**: Only 2% and 0.2% missing respectively - normal and acceptable levels
-- **Prices**: 35% missing (1,617 out of 4,574 listings) - significant issue requiring attention
-- **Ratings**: 14% missing (644 out of 4,574 listings) - also substantial
+# Analyze missing values
+missing_values = (listings.isna().mean() * 100).round(1)
+print("Missing value percentages:")
+print(missing_values)
 
-## Understanding Bias in Data
+# Check for duplicates
+duplicates = listings['id'].duplicated().sum()
+print(f"Duplicate IDs: {duplicates}")
 
-### What is Bias?
-Bias refers to systematic deviations from the truth in data collection or analysis. Unlike random errors (mistakes), bias consistently pushes results in one direction.
-
-### Key Characteristics of Bias
-- **Systematic**: Always goes in the same direction
-- **Consistent**: Repeats with each new sample
-- **Different from mistakes**: Random errors can cancel out, while bias accumulates
-
-### Example: Price vs Availability Bias
-```python
-# Check if missing prices are related to availability
-crosstab_result = pd.crosstab(
+# Analyze specific issues
+# Price and availability correlation
+availability_price = pd.crosstab(
     listings['price'].isna(), 
     listings['availability_365'] == 0
 )
-print(crosstab_result)
+print("Price vs Availability correlation:")
+print(availability_price)
 
-# Results show:
-# - 1,490 out of 1,617 missing prices (92%) are for listings with 0 available days
-# - Only 4 out of 1,617 missing prices (0.25%) are for listings with available days
+# Check room type differences in missing prices
+room_type_missing = (listings.groupby('room_type')['price'].isna().mean() * 100).round(0)
+print("Missing price by room type:")
+print(room_type_missing)
+
+# Analyze ratings specifically
+rating_analysis = pd.crosstab(
+    listings['review_scores_rating'].isna(),
+    listings['number_of_reviews'] == 0
+)
+print("Rating vs review correlation:")
+print(rating_analysis)
+
+# Check for extreme values
+long_stay = (listings['minimum_nights'] >= 28).sum()
+print(f"Listings requiring ≥28 nights: {long_stay} ({(long_stay/len(listings)*100):.1f}%)")
 ```
 
-### Bias Implications
-The data reveals that listings with no available days don't have prices because they're not actively listed on the website. This creates a systematic bias where:
-- Our price calculations only represent active listings
-- The median price of 1,791 applies only to 2,957 listings that actually have prices
-- This is not wrong per se, but it's incomplete information
+### Key Takeaways
+- Data quality issues are systematic problems that affect the validity of analysis
+- Missing values can be random or systematic - understanding the difference is crucial
+- Values that appear correct might still be misleading due to unclear data collection methods
+- Always document your data validation process and decisions about handling missing or questionable data
+- The goal is not just to clean data but to understand its limitations and communicate them clearly
 
-### Room Type Bias Analysis
-```python
-# Compare missing price rates by room type
-price_missing_by_type = (listings['price'].isna().groupby(listings['room_type']).mean() * 100).round(0)
-print(price_missing_by_type)
-
-# Results show:
-# - Entire homes: 38% missing prices
-# - Private rooms: 25% missing prices
-```
-
-## Strategies for Handling Missing Data
-
-### Three Approaches to Missing Values
-1. **Remove rows**: Pandas automatically skips missing values in calculations (mean, median, describe)
-2. **Fill with values**: Imputation using statistics like median or mean
-3. **Keep as missing**: Maintain the original data state and document the issue
-
-### Decision-Making Framework for Missing Data
-The lecture emphasizes that the choice of approach matters less than making a deliberate decision based on understanding:
-- What you choose to do
-- Why you chose it
-- How you explain it to readers
-
-### Recommendation for Price Data
-For price data with 35% missing values, the decision was to keep them as missing because:
-- Imputing would create false data (one-third of the column)
-- It's better to acknowledge and report this limitation
-- The analysis should specify that results apply only to listings with prices
-
-## Identifying Hidden Data Problems
-
-### Types of Data Quality Issues Beyond Missing Values
-
-#### 1. Duplicates Detection
-```python
-# Check for duplicate listings using ID column
-duplicate_count = listings['id'].duplicated().sum()
-print(f"Number of duplicate listings: {duplicate_count}")
-
-# Result: Zero duplicates found - good news!
-```
-
-#### 2. Values That Look Correct But Mean Something Different
-The lecture identified several examples where values appear correct but have misleading meanings:
-
-**Zero Bathroom Issue:**
-```python
-# Investigate zero bathroom listings
-zero_bath_listings = listings[listings['bathrooms'] == 0]
-print(zero_bath_listings['bathroom_text'].value_counts())
-
-# Results show:
-# - "Zero shared baths" in 24 listings (guests may have private bathrooms)
-# - "Zero baths" in 18 listings (unclear if they mean no bathroom or not recorded)
-```
-
-**Minimum Nights Misleading Values:**
-```python
-# Identify long stay listings
-long_stay_listings = listings[listings['minimum_nights'] >= 28]
-print(f"Long stay listings: {long_stay_listings['minimum_nights'].sum()}")
-print(f"Percentage of total: {(long_stay_listings['minimum_nights'].count() / len(listings)) * 100:.1f}%")
-
-# Results show:
-# - 188 listings (4.1%) require minimum stays of 28 nights or more
-# - These are typically monthly rentals, not suitable for short-term tourists
-```
-
-### Key Insight: Values Can Be Correct But Misleading
-A value that is technically correct can still be misleading when the column name doesn't fully explain what the data represents. The example shows how "zero shared baths" could mean:
-- No shared bathroom (but guest may have private one)
-- Not recorded properly
-- Different meaning than intended
-
-## Comprehensive Data Quality Check Framework
-
-### Four Essential Questions to Ask Before Analysis
-
-1. **How much is missing and where?**
-   - Identify missing data patterns across columns
-   - Determine if missing values are random or systematic
-
-2. **Are there duplicates?**
-   - Check for repeated entries that could skew results
-   - Ensure unique identification of each record
-
-3. **Are there values that cannot be true?**
-   - Look for impossible values (price = 0, future dates)
-   - Identify logical inconsistencies in the data
-
-4. **Are values true but mean something else than the column name says?**
-   - Examine if column names accurately represent what's stored
-   - Look for semantic mismatches between data and labels
-
-### Why This Framework Matters
-These questions help you:
-- **Avoid false conclusions**: Understanding data limitations prevents overconfidence in results
-- **Ensure proper interpretation**: Recognizing bias helps make appropriate comparisons
-- **Communicate findings effectively**: Clear documentation of data issues builds trust with readers
-- **Design better analysis**: Awareness of problems leads to more thoughtful approaches
-
-## Addressing Rating Data Issues
-
-### The Missing Rating Problem
-```python
-# Investigate relationship between reviews and ratings
-rating_missing = listings['review_scores_rating'].isna()
-no_reviews = listings['number_of_reviews'] == 0
-
-# Cross-tabulate to see if missing ratings correspond to no reviews
-crosstab_ratings = pd.crosstab(rating_missing, no_reviews)
-print(crosstab_ratings)
-
-# Results show perfect correlation:
-# - All listings with 0 reviews also have missing ratings (644 listings)
-# - All listings with reviews have ratings
-```
-
-### Implications for Rating Analysis
-This discovery reveals that:
-- Ratings only describe reviews that were actually given
-- The rating column excludes listings without any reviews
-- When analyzing ratings, we must specify whether we're looking at all reviewed listings or all listings
-
-## Practical Recommendations for Data Analysis
-
-### Documentation and Transparency
-The lecture emphasizes the importance of documenting data quality issues:
-- Always state how many records you're working with in your analysis
-- Clearly explain what's included/excluded from calculations
-- Justify your choices for handling missing or problematic data
-
-### Example of Proper Reporting
-Instead of saying "the median price is 1,791," it's better to say:
-> "The median price is 1,791 for the 2,957 listings that have a price, representing 65% of all listings"
-
-This transparency ensures readers understand the scope and limitations of your analysis.
-
-### Final Thoughts on Data Quality
-The lecture concludes that data quality issues are fundamental to understanding what data can and cannot tell us. The goal isn't to eliminate all problems, but to:
-- Identify them systematically
-- Understand their implications
-- Make informed decisions about how to proceed with analysis
-- Communicate limitations clearly to stakeholders
-
-These skills are essential for any data analyst because they determine the validity of conclusions drawn from data and help prevent misleading interpretations that could affect important decisions.
+This comprehensive approach to data quality ensures that analyses are both technically sound and transparent about their assumptions and limitations.
