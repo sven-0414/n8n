@@ -1,113 +1,77 @@
-# Python Data Analysis Study Notes
+# Python Data Analysis - Statistical Measures and Correlation
 
-## Data Cleaning Review
+## Understanding Mean vs Median
 
-### Reading CSV Files with Proper Data Types
-When reading CSV files, pandas doesn't automatically preserve data types. You must explicitly specify which columns should be parsed as dates.
+### What is Mean and Median?
+The **mean** is the average of all values in a dataset, calculated by summing all values and dividing by the number of values. The **median** is the middle value when data is arranged in order from smallest to largest.
 
-**Rule**: Use `parse_dates` parameter in `pd.read_csv()` to convert string dates into datetime objects.
-
+### Code Example
 ```python
 import pandas as pd
 
-listings = pd.read_csv('listings_clean.csv', 
-                      parse_dates=['calendar_last_review', 'last_review'])
-```
-
-**Code Example**:
-```python
-# Reading the cleaned Airbnb data with proper date parsing
-listings = pd.read_csv('listings_clean.csv', 
-                      parse_dates=['calendar_last_review', 'last_review'])
-
-print(listings.shape)  # (4574, 73)
-print(listings.dtypes)
-```
-
-**Gotchas**:
-- If you misspell column names in `parse_dates`, pandas will silently ignore them
-- Date parsing may fail if the date format is inconsistent across rows
-- Always verify that types were correctly parsed after reading
-
-### Data Type Verification
-After reading data, always check that your columns have the expected data types.
-
-**Rule**: Verify data types using `.dtypes` attribute and compare with expected values.
-
-```python
-# Check that date columns are properly converted
-print(listings[['calendar_last_review', 'last_review']].dtypes)
-```
-
-## Measures of Central Tendency
-
-### Mean vs Median Comparison
-
-**Rule**: The mean is affected by extreme values while the median represents the middle value in an ordered dataset.
-
-**Mean Definition**: The arithmetic average calculated by summing all values and dividing by the count.
-
-**Median Definition**: The middle value when data points are arranged in ascending order. For even number of observations, it's the average of the two middle values.
-
-```python
-import pandas as pd
-import numpy as np
-
-# Small example to illustrate difference
-prices = [900, 1000, 1100, 1200, 1300]  # Five listings with similar prices
+# Small example with 5 listings
+prices = [900, 1000, 1100, 1200, 1300]
 series = pd.Series(prices)
-print(f"Mean: {series.mean()}")
-print(f"Median: {series.median()}")
+print("Mean:", series.mean())
+print("Median:", series.median())
 
-# Adding one extreme value
-prices_with_extreme = [900, 1000, 1100, 1200, 1300, 40000]  # Luxury villa added
-series_with_extreme = pd.Series(prices_with_extreme)
-print(f"Mean with extreme: {series_with_extreme.mean()}")
-print(f"Median with extreme: {series_with_extreme.median()}")
+# Adding one luxury listing
+prices_with_villa = [900, 1000, 1100, 1200, 1300, 40000]
+series_with_villa = pd.Series(prices_with_villa)
+print("Mean with villa:", series_with_villa.mean())
+print("Median with villa:", series_with_villa.median())
 ```
 
-**Why This Matters**: 
-- When data has outliers, median provides a better representation of typical values
-- Mean gets pulled toward extreme values (as seen with the luxury villa)
-- The difference between mean and median signals asymmetry in data distribution
+### Key Rules and Gotchas
+- **Mean**: Affected by extreme values (outliers) - each value contributes equally to the result
+- **Median**: Robust against outliers - only cares about position/order, not actual values
+- When data is symmetrically distributed, mean ≈ median
+- When data has outliers, mean > median (positive skew) or mean < median (negative skew)
 
-### Real World Application - Airbnb Pricing
+### Why This Matters
+Understanding when to use mean vs median is crucial for accurate analysis. The median represents the "typical" value more reliably when extreme values exist, making it better for describing central tendency in skewed distributions.
+
+## Working with Percentiles and Spread
+
+### What are Percentiles?
+Percentiles divide data into 100 equal parts. Common percentiles include:
+- **25th percentile (Q1)**: First quartile - 25% of data is below this value
+- **50th percentile (Q2)**: Median - 50% of data is below this value  
+- **75th percentile (Q3)**: Third quartile - 75% of data is below this value
+
+### Code Example
 ```python
-# Using actual Airbnb data
-print(f"Mean price: {listings['price'].mean():.0f}")
-print(f"Median price: {listings['price'].median():.0f}")
-```
+import pandas as pd
 
-## Measures of Spread and Distribution
+# Load the cleaned Airbnb data
+listings = pd.read_csv('listings_clean.csv', parse_dates=['last_review', 'calendar_last_review'])
 
-### Percentiles and Quantiles
-
-**Rule**: Percentiles divide data into 100 equal parts, quartiles divide into four equal parts.
-
-**Percentile Definition**: A value below which a given percentage of observations in a group falls.
-
-```python
-# Basic description statistics
+# Get descriptive statistics for price
 print(listings['price'].describe())
 
-# Specific percentiles
+# Calculate specific percentiles
 percentiles = listings['price'].quantile([0.1, 0.25, 0.5, 0.75, 0.9, 0.99])
+print("Specific percentiles:")
 print(percentiles)
 ```
 
-**Key Percentiles**:
-- 25th percentile (Q1): First quartile
-- 50th percentile (Q2): Median  
-- 75th percentile (Q3): Third quartile
+### Key Rules and Gotchas
+- Percentiles range from 0 to 1 (or 0% to 100%)
+- Quantile function accepts values between 0 and 1
+- Common percentiles: 25% (Q1), 50% (median), 75% (Q3)
+- The **interquartile range (IQR)** = Q3 - Q1, represents the middle 50% of data
 
-### Interquartile Range (IQR)
+### Why This Matters
+Percentiles help understand data distribution and identify outliers. They provide a more complete picture than just mean/median by showing how values are spread across the dataset.
 
-**Rule**: IQR = Q3 - Q1, measures the spread of middle 50% of data.
+## Interquartile Range (IQR) and Outliers
 
-**Definition**: The width of the middle half of the data points, calculated as the difference between third and first quartiles.
+### What is IQR?
+The **interquartile range** measures the spread of the middle 50% of data points, calculated as Q3 - Q1. It's a robust measure of variability that's not influenced by outliers.
 
+### Code Example
 ```python
-# Calculate IQR
+# Calculate IQR for price data
 q1 = listings['price'].quantile(0.25)
 q3 = listings['price'].quantile(0.75)
 iqr = q3 - q1
@@ -115,229 +79,187 @@ iqr = q3 - q1
 print(f"Q1: {q1:.1f}")
 print(f"Q3: {q3:.1f}")
 print(f"IQR: {iqr:.1f}")
+
+# Calculate outlier fences using IQR rule
+lower_fence = q1 - 1.5 * iqr
+upper_fence = q3 + 1.5 * iqr
+
+print(f"Lower fence: {lower_fence:.0f}")
+print(f"Upper fence: {upper_fence:.0f}")
 ```
 
-**Why IQR Matters**: 
-- More robust than standard deviation because it ignores outliers
-- Provides insight into data spread without being influenced by extreme values
+### Finding Outliers with IQR Rule
+Outliers are values that fall outside the range:
+- Lower bound: Q1 - 1.5 × IQR  
+- Upper bound: Q3 + 1.5 × IQR
 
-## Outlier Detection and Handling
-
-### IQR Rule for Outliers
-
-**Rule**: Outliers are values beyond 1.5 × IQR from the quartiles.
-
-**Fence Calculation**:
-- Lower fence = Q1 - 1.5 × IQR
-- Upper fence = Q3 + 1.5 × IQR
-
+### Code Example for Outlier Detection
 ```python
-# Calculate fences using IQR rule
-upper_fence = q3 + 1.5 * iqr
-lower_fence = q1 - 1.5 * iqr
-
-print(f"Upper fence: {upper_fence:.0f}")
-print(f"Lower fence: {lower_fence:.0f}")
-
-# Find outliers
+# Find outliers in price data
 outliers = listings[listings['price'] > upper_fence]
 print(f"Number of outliers: {len(outliers)}")
+
+# Analyze outlier characteristics
+print("Outlier room types:")
+print(outliers['room_type'].value_counts())
+
+print("Outlier guests:")
+print(outliers['accommodates'].describe())
 ```
 
-**Analysis of Outliers**: 
-- 132 listings (4.5% of total) were identified as outliers
-- Most outliers are expensive entire homes/villas with high guest capacity
-- These aren't errors but legitimate high-end listings
+### Key Rules and Gotchas
+- The 1.5 × IQR multiplier is a convention, not a strict rule
+- Lower fence can be negative (which makes sense for price data)
+- Outliers may be legitimate extreme values or data entry errors
+- When filtering data, remember that missing values will also be excluded from outlier detection
 
-### Decision Making for Outliers
+## Handling Outliers in Analysis
 
-**Three Options for Handling Outliers**:
-1. Remove them (loses 132 real listings)
-2. Modify values (invents numbers)  
-3. Keep them and mark them (recommended approach)
+### Decision Making Process
+When dealing with outliers, you have three main options:
+1. **Remove them** - Loses real data points and may bias results
+2. **Modify them** - Invents data, which is generally not recommended  
+3. **Keep and mark them** - Most honest approach for analysis
 
+### Code Example for Marking Outliers
 ```python
-# Recommended approach: Mark outliers without removing
+# Mark outliers in the dataset
 listings['price_outlier'] = listings['price'] > upper_fence
-print(f"Number of outliers marked: {listings['price_outlier'].sum()}")
+
+# Check how many outliers we have
+print(f"Number of outliers: {listings['price_outlier'].sum()}")
+
+# Compare statistics with and without outliers
+stats_with_outliers = listings['price'].describe()
+stats_without_outliers = listings[listings['price_outlier'] == False]['price'].describe()
+
+print("With outliers:")
+print(stats_with_outliers[['count', 'mean', 'median', 'std']])
+print("\nWithout outliers:")
+print(stats_without_outliers[['count', 'mean', 'median', 'std']])
 ```
 
-**Why This Matters**: 
-- Maintains data integrity by not discarding real observations
-- Allows analysis flexibility - can choose to include or exclude outliers
-- Transparent reporting of methodology
+### Why This Matters
+Understanding outlier behavior helps make informed decisions about data treatment. The key insight is that outliers can significantly affect mean and standard deviation, but have minimal impact on median.
 
-## Comparing Statistics With and Without Outliers
+## Group Analysis by Room Type
 
-### Statistical Comparison Table
+### Describing Groups
+When analyzing grouped data, you can use `groupby()` with descriptive statistics to understand differences between groups:
 
 ```python
-# Create comparison table
-comparison = pd.DataFrame({
-    'All prices': [listings['price'].count(), 
-                   listings['price'].mean(),
-                   listings['price'].median(),
-                   listings['price'].std()],
-    'Without outliers': [listings[listings['price_outlier'] == False]['price'].count(),
-                        listings[listings['price_outlier'] == False]['price'].mean(),
-                        listings[listings['price_outlier'] == False]['price'].median(),
-                        listings[listings['price_outlier'] == False]['price'].std()]
-}, index=['Count', 'Mean', 'Median', 'Standard Deviation'])
+# Describe price for each room type
+room_type_stats = listings.groupby('room_type')['price'].describe()
+print(room_type_stats)
 
+# Compare specific statistics
+comparison = listings.groupby('room_type')[['price', 'accommodates']].agg(['count', 'mean', 'median'])
 print(comparison)
 ```
 
-**Key Findings**:
-- Mean drops from 2328 to 2027 (13% decrease) 
-- Median drops from 1791 to 1700 (5% decrease)
-- Standard deviation drops from 2160 to 1257 (42% decrease)
-
-**Lesson**: 
-- Median is resistant to outliers (hard to push around)
-- Mean and standard deviation are sensitive to extreme values
-- For reporting typical values, median is more reliable
-
-## Group Analysis
-
-### Describing Price by Room Type
-
-**Rule**: Use `groupby()` with `describe()` to get summary statistics for each group.
-
-```python
-# Price analysis by room type
-price_by_room = listings.groupby('room_type')['price'].describe()
-print(price_by_room)
-```
-
-**Analysis Results**:
-- Entire homes: Mean 2679, Median 2168, Max 40000
-- Private rooms: Mean 1361, Median 808, Max 25998  
-- Shared rooms: Only 19 listings (not enough for reliable statistics)
-
-### Handling Missing Values in Group Analysis
-
-**Rule**: Be aware that missing values can affect group membership.
-
-```python
-# Example of how missing values affect grouping
-listings['price_outlier'] = listings['price'] > upper_fence
-print("Number of outliers:", listings['price_outlier'].sum())
-print("Missing price records:", listings['price'].isna().sum())
-```
+### Key Rules and Gotchas
+- Groupby() creates separate summary statistics for each group
+- The same descriptive functions work on grouped data
+- Always check sample sizes - some groups may have very few entries (like shared rooms with only 19 listings)
 
 ## Correlation Analysis
 
-### Correlation Definition and Interpretation
+### What is Correlation?
+Correlation measures the strength and direction of the linear relationship between two variables. It ranges from -1 to +1:
+- **+1**: Perfect positive correlation (variables move together)
+- **0**: No correlation (variables are independent)
+- **-1**: Perfect negative correlation (variables move in opposite directions)
 
-**Rule**: Correlation coefficient ranges from -1 to +1, indicating strength and direction of relationship.
-
+### Code Example for Correlation
 ```python
-# Calculate correlation matrix
-columns = ['price', 'accommodates', 'bedrooms', 'beds', 'number_of_reviews',
-           'availability_30', 'review_scores_rating']
+# Calculate correlations between price and other columns
+columns_to_check = ['price', 'accommodates', 'bedrooms', 'beds', 'number_of_reviews', 
+                   'availability_365', 'review_scores_rating']
 
-correlation_matrix = listings[columns].corr()
-print(correlation_matrix['price'])
+correlations = listings[columns_to_check].corr()
+print(correlations['price'].round(2))
 ```
 
-**Interpretation Guide**:
-- Close to +1: Strong positive relationship (both variables increase together)
-- Close to 0: No meaningful relationship  
-- Close to -1: Strong negative relationship (one variable increases while other decreases)
-
-### Correlation Strength Scale
-- Below 0.2: Weak correlation
-- Around 0.5: Moderate correlation  
-- Above 0.8: Strong correlation
-
-**Example Results**:
-- Price vs Accommodates: 0.58 (moderate positive)
-- Price vs Bedrooms: 0.58 (moderate positive)  
-- Price vs Beds: 0.58 (moderate positive)
-- Price vs Number of Reviews: -0.09 (weak negative)
-- Price vs Availability: 0.00 (no relationship)
-
-### Visualizing Relationships
-
-**Rule**: Correlation shows relationships but doesn't prove causation.
-
+### Interpreting Correlation Results
 ```python
-# Group by guests to see price trends
-guest_price = listings.groupby('accommodates')['price'].median().head(8).round(0)
-print(guest_price)
+# Focus on correlation with price specifically
+price_correlations = correlations['price'].drop('price')
+print("Correlation with price:")
+for col, corr in price_correlations.items():
+    print(f"{col}: {corr:.2f}")
 ```
 
-**Observations**:
-- Price increases with number of guests (500-600 more per guest)
-- Correlation of 0.58 shows moderate relationship
-- Outliers weaken the pattern (as shown by correlation difference)
+### Key Rules and Gotchas
+- **Direction**: Positive correlation means variables move together; negative means opposite movement
+- **Strength**: 
+  - < 0.2: Weak correlation
+  - 0.2-0.5: Moderate correlation  
+  - > 0.8: Strong correlation
+- **Correlation ≠ Causation**: Just because two variables are correlated doesn't mean one causes the other
 
-## Advanced Analysis: Confounding Variables
-
-### Understanding Causation vs Correlation
-
-**Rule**: Just because two variables are correlated doesn't mean one causes the other.
-
+### Understanding Correlation Limitations
 ```python
-# Example: Superhost pricing comparison
-superhost_analysis = listings.groupby('host_is_superhost')['price'].agg(['count', 'median'])
+# Example showing how correlation can be misleading
+# Compare superhosts vs regular hosts by room type
+superhost_analysis = listings.groupby(['host_is_superhost', 'room_type'])['price'].mean()
 print(superhost_analysis)
+
+# Calculate share of entire homes by host type
+entire_home_share = listings.groupby('host_is_superhost')['room_type'].apply(lambda x: (x == 'Entire home/apt').mean())
+print("Share of entire homes:")
+print(entire_home_share)
 ```
 
-### Confounding Variables
+### Why This Matters
+Correlation analysis helps identify relationships between variables, but understanding the context and potential confounding factors is essential. The room type example shows how a third variable can explain differences in correlation.
 
-**Definition**: A third variable that affects both variables being studied, creating a spurious relationship.
+## Practical Application
 
-**Example Analysis**:
+### Complete Analysis Example
 ```python
-# Compare room type distribution between superhosts and regular hosts
-room_type_share = listings.groupby('host_is_superhost')['room_type'].value_counts(normalize=True)
-print(room_type_share)
+import pandas as pd
+import numpy as np
 
-# Compare same room types (entire homes only)
-entire_home_comparison = listings[listings['room_type'] == 'Entire home/apt'].groupby('host_is_superhost')['price'].median()
-print(entire_home_comparison)
+# Load data
+listings = pd.read_csv('listings_clean.csv', parse_dates=['last_review', 'calendar_last_review'])
+
+# Calculate basic statistics
+mean_price = listings['price'].mean()
+median_price = listings['price'].median()
+
+print(f"Mean price: ${mean_price:.0f}")
+print(f"Median price: ${median_price:.0f}")
+
+# Calculate IQR and outliers
+q1 = listings['price'].quantile(0.25)
+q3 = listings['price'].quantile(0.75)
+iqr = q3 - q1
+upper_fence = q3 + 1.5 * iqr
+
+# Mark outliers
+listings['price_outlier'] = listings['price'] > upper_fence
+
+# Compare with and without outliers
+with_outliers = listings['price'].describe()
+without_outliers = listings[listings['price_outlier'] == False]['price'].describe()
+
+print("Comparison:")
+print("With outliers - Mean:", with_outliers['mean'].round(0))
+print("Without outliers - Mean:", without_outliers['mean'].round(0))
+print("Change in mean:", (with_outliers['mean'] - without_outliers['mean']).round(0))
+
+# Correlation analysis
+numeric_cols = ['price', 'accommodates', 'bedrooms', 'beds', 'number_of_reviews']
+correlation_matrix = listings[numeric_cols].corr()
+print("\nCorrelation with price:")
+print(correlation_matrix['price'].drop('price').round(2))
 ```
 
-**Key Finding**: 
-- Superhosts have 74% entire homes vs 84% for regular hosts
-- When comparing only entire homes, price difference reduced from 144 to 82
-- Room type explains part of the pricing difference, but not all
+### Key Takeaways
+1. **Mean vs Median**: Use median when outliers exist; use mean when data is symmetric
+2. **Spread Measures**: IQR is robust against outliers, while standard deviation is sensitive
+3. **Outlier Handling**: Mark rather than remove to preserve data integrity
+4. **Group Analysis**: Compare statistics across categories (room types) for deeper insights
+5. **Correlation Limitations**: Correlation shows relationship but not causation; consider confounding variables
 
-### Importance of Multiple Variables
-
-**Lesson**: Complex relationships require analyzing multiple factors simultaneously.
-
-**Key Takeaway**: 
-- Correlation ≠ causation
-- Confounding variables can mask or create false relationships
-- Always consider what other factors might influence your results
-
-## Summary of Key Concepts
-
-### When to Use Which Measure
-
-| Measure | Best For | Sensitivity to Outliers |
-|---------|----------|------------------------|
-| Mean | Summarizing total values | Very sensitive |
-| Median | Typical value representation | Resistant |
-| Standard Deviation | Overall spread | Very sensitive |
-| IQR | Robust spread measurement | Resistant |
-
-### Practical Application
-
-1. **For typical pricing**: Use median
-2. **For understanding spread**: Use IQR  
-3. **For detecting outliers**: Use IQR rule
-4. **For relationships**: Use correlation coefficient
-5. **For group comparisons**: Use groupby with describe()
-
-### Data Integrity Practices
-
-- Always verify data types after reading
-- Check for missing values that might affect analysis
-- Mark outliers rather than removing them
-- Consider confounding variables in correlations
-- Document methodology clearly for reproducibility
-
-These concepts form the foundation of descriptive statistics and data analysis, providing tools to understand data patterns while being aware of limitations and potential biases.
+This comprehensive approach ensures robust analysis that accounts for data characteristics and provides meaningful insights for decision-making.

@@ -1,21 +1,19 @@
-How do you ensure that date columns are properly converted to datetime objects when reading a CSV file in pandas?;Use the `parse_dates` parameter in `pd.read_csv()` and specify the column names that contain dates.
+What is the difference between mean and median?;The mean is the average of all values, calculated by summing all values and dividing by the number of values, while the median is the middle value when data is arranged in order from smallest to largest.
 
-What is the difference between mean and median as measures of central tendency?;The mean is affected by extreme values and represents the arithmetic average, while the median is the middle value in an ordered dataset and is resistant to outliers.
+How does the presence of outliers affect mean and median?;The mean is affected by extreme values (outliers), whereas the median is robust against outliers because it only depends on the position of values, not their actual values.
 
-Why might the median be preferred over the mean when analyzing data with outliers?;Because the median is not influenced by extreme values and provides a better representation of typical values in skewed distributions.
+Why is the median often preferred over the mean in skewed distributions?;The median better represents the "typical" value in skewed data because it is not influenced by extreme values, unlike the mean which can be pulled in the direction of the skew.
 
-What does the interquartile range (IQR) measure in a dataset?;The IQR measures the spread of the middle 50% of the data, calculated as the difference between the third and first quartiles.
+What are percentiles and why are they useful?;Percentiles divide data into 100 equal parts, helping to understand data distribution and identify outliers by showing how values are spread across the dataset.
 
-How are outliers identified using the IQR rule?;Outliers are values that fall below Q1 - 1.5 × IQR or above Q3 + 1.5 × IQR, where Q1 and Q3 are the first and third quartiles.
+What is the interquartile range (IQR) and how is it calculated?;The interquartile range measures the spread of the middle 50% of data points, calculated as Q3 minus Q1 (the third quartile minus the first quartile).
 
-What is the recommended approach for handling outliers in a dataset?;Mark outliers without removing them to maintain data integrity and allow flexibility in analysis.
+How do you identify outliers using the IQR rule?;Outliers are identified by calculating the lower fence (Q1 - 1.5 × IQR) and upper fence (Q3 + 1.5 × IQR), with values outside this range considered outliers.
 
-Why is it important to compare statistical measures with and without outliers?;Because outliers can significantly skew mean and standard deviation, while median remains stable, helping to assess data distribution accurately.
+What are the three main approaches to handling outliers in data analysis?;The three main approaches are removing them, modifying them, or keeping and marking them, with marking being the most honest approach for analysis.
 
-How do you calculate percentiles and quartiles in pandas?;Use the `quantile()` method on a Series or DataFrame, specifying the desired percentile values (e.g., 0.25 for Q1).
+Why is it important to consider group differences when analyzing data?;Group analysis helps identify variations between categories (like room types) and provides deeper insights into how different segments behave differently in the dataset.
 
-What does a correlation coefficient close to zero indicate about the relationship between two variables?;It indicates that there is no meaningful linear relationship between the variables.
+What does correlation measure and what do its values indicate?;Correlation measures the strength and direction of a linear relationship between two variables, ranging from -1 (perfect negative correlation) to +1 (perfect positive correlation), with 0 indicating no correlation.
 
-How can confounding variables affect correlation analysis?;They can create spurious relationships or mask true associations, leading to incorrect conclusions about causation.
-
-What are three key practices for maintaining data integrity during analysis?;Verify data types after reading, check for missing values, and mark outliers rather than removing them.
+Why can't correlation be used to determine causation?;Correlation only shows that two variables are related or move together, but does not prove that one variable causes the other; there may be confounding factors or reverse causality.
