@@ -1,31 +1,21 @@
-What is the primary purpose of data cleaning in data analysis?;Data cleaning involves identifying and correcting errors, inconsistencies, and missing values to ensure reliable and accurate results.
+What is the primary purpose of data cleaning in data analysis?;Data cleaning ensures that datasets are free from errors and inconsistencies, making the results of analysis reliable and trustworthy.
 
-Why is data cleaning important for decision making?;Clean data provides a solid foundation for business decisions by ensuring accuracy and trustworthiness of the information used.
+Why is it important to never modify the original dataset during cleaning?;Modifying the original dataset can lead to loss of information and prevents others from reproducing your work or checking your process.
 
-What are the six standard steps in the data cleaning process?;1. Look at the data, 2. Identify problems, 3. Fix problems one at a time, 4. Check results after each fix, 5. Never change the original data, 6. Write steps as code for reproducibility.
+How should you handle missing values when cleaning data?;Missing values should be analyzed to understand their cause, and then handled appropriately—either by imputation, removal, or keeping them as they may carry meaningful information.
 
-How should you handle the original dataset during cleaning?;Always work on copies of the original data and maintain backups to prevent accidental loss or modification of the source data.
+What are the main types of problems found in real-world datasets?;Real-world datasets often contain text columns stored as numbers, inconsistent capitalization or spacing, missing data points, and duplicate entries.
 
-What are common issues found in text columns during data cleaning?;Inconsistent capitalization, extra spaces, different spellings, and mixed formatting can cause problems in text columns.
+How do you standardize text data such as categories in a dataset?;Text data can be standardized by stripping whitespace, converting to lowercase, correcting spelling variations, and applying title case where appropriate.
 
-How do you standardize text values in Python using pandas?;Use `.str.strip().str.lower()` to remove leading/trailing spaces and normalize case.
+What steps are involved in cleaning numeric data like unit prices stored as text?;Numeric data should have currency symbols removed, internal spaces stripped, decimal separators converted correctly, and then converted to a proper numeric type using pd.to_numeric().
 
-What technique is used to handle specific inconsistencies in text data?;The `.replace()` method allows replacing inconsistent values with standardized ones.
+How do you convert text-based dates into usable datetime objects in pandas?;Use pd.to_datetime() function to parse text dates into datetime objects, handling conversion errors gracefully with the errors='coerce' parameter.
 
-How do you convert text representations of numbers into numeric types in pandas?;Remove formatting characters, then use `pd.to_numeric()` with `errors='coerce'` to handle invalid entries.
+What is the recommended approach for removing duplicate rows from a dataset?;Identify duplicates using duplicated(), then remove them with drop_duplicates(keep='first') while resetting the index afterward.
 
-What function converts text dates into proper datetime objects in pandas?;The `pd.to_datetime()` function converts text date strings into datetime objects.
+Why should empty columns be removed during data cleaning?;Empty columns provide no value to analysis and can clutter datasets, so they should be removed to improve clarity and reduce storage needs.
 
-How can you detect duplicate rows in a dataset using pandas?;Use the `.duplicated()` method which marks all duplicate rows except the first occurrence.
+How do you create calculated columns after cleaning your dataset?;After cleaning, you can create new columns by performing operations on existing ones, such as multiplying unit price by quantity to get total order value.
 
-What is the recommended approach for removing duplicates from a dataset?;Use `drop_duplicates()` to remove duplicate rows while keeping the first occurrence of each unique row.
-
-Why should you check for duplicates based on specific columns rather than entire rows?;It allows you to identify duplicates based on meaningful identifiers like order IDs, which may be unique even when other data is duplicated.
-
-How do you remove completely empty columns from a dataset?;Use `drop(columns=[column_name])` after verifying that the column contains only missing values.
-
-What is the benefit of creating calculated columns after cleaning data?;Calculated columns enable more advanced analysis and can provide insights not directly available in the original data.
-
-Why should you save cleaned data to a file?;Saving ensures you don't have to repeat the cleaning process and allows others to reproduce your work.
-
-What are key principles of good data cleaning practices?;Never modify original data, document everything, check your work, handle missing values thoughtfully, test with real analysis, and be honest about decisions made during cleaning.
+What are the benefits of grouping and aggregating cleaned data?;Grouping and aggregating allow for meaningful insights like revenue by category or monthly sales trends, which help inform business decisions.
