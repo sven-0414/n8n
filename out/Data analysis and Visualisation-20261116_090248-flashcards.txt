@@ -1,19 +1,19 @@
-What is the purpose of creating a working copy of the original dataset during data cleaning?;Creating a working copy allows you to modify the data without altering the original, which is useful if you need to restart or revert changes.
+What is the purpose of creating a copy of the original dataset before cleaning?;Creating a backup copy ensures that you can always revert to the original version if mistakes are made or if different approaches are tried during cleaning.
 
-Why should empty columns be removed from a dataset?;Empty columns contain no useful information, increase dataset width, and make analysis more difficult, so they are typically removed.
+How do you identify completely empty columns in a pandas DataFrame?;You can use `listings.isnull().all()` to find columns where all values are missing, and then filter column names based on this boolean Series.
 
-How do you convert a price column with text formatting into a numeric format in pandas?;Remove the dollar sign and commas using str.replace(), then use pd.to_numeric() to convert to numbers.
+Why should empty columns be removed from a dataset?;Empty columns increase file size unnecessarily, complicate data exploration, and can cause confusion during analysis since they contain no useful information.
 
-What does it mean when the mean price is higher than the median price in a dataset?;It indicates the presence of extreme outliers that pull the average upward, suggesting a "penthouse effect" in pricing.
+What are the steps to clean price data stored as text in a DataFrame?;First remove the dollar sign using `str.replace('$', '', regex=False)`, then remove commas with `str.replace(',', '', regex=False)`, and finally convert to numeric type using `pd.to_numeric()`.
 
-Why might missing prices in an Airbnb dataset not be random?;Missing prices often correlate with closed listings, suggesting systematic data collection issues rather than random absence.
+Why is it important to check for missing data patterns when cleaning datasets?;Understanding why data is missing helps inform decisions about how to handle it, such as whether to remove, fill in, or leave missing values as they are.
 
-What is the benefit of analyzing only entire homes when comparing neighborhood prices?;It controls for room type differences, allowing for more accurate comparisons of neighborhood-specific pricing factors.
+What does the correlation between missing prices and availability tell us about the dataset?;It shows that most missing prices correspond to listings that are unavailable for booking, indicating a systematic pattern rather than random missingness.
 
-How can you determine if missing values in a dataset follow a pattern?;Cross-tabulate the missing values against other variables like availability to identify systematic relationships.
+How do you determine which neighborhood has the highest median price?;Group the data by neighborhood and calculate the median price for each group, then sort by median price in descending order.
 
-Why is it important to document assumptions made during data analysis?;Documentation ensures transparency, allows others to understand limitations, and supports reproducibility of results.
+What is the difference between mean and median price in neighborhoods with outliers?;The mean price is typically higher than the median due to a few very expensive listings skewing the average, indicating the presence of outliers or extreme values.
 
-What are the key steps in a data cleaning workflow for this Airbnb dataset?;Load data, remove empty columns, transform price data, analyze missing values, perform grouped statistical analysis, and make controlled comparisons.
+How does room type affect pricing according to the analysis?;Entire home/apt has the highest median price, followed by private rooms and shared rooms, showing that room type significantly influences listing cost.
 
-What does it mean when a dataset has "like-with-like" comparisons in analysis?;It refers to comparing similar types of items (e.g., entire homes) across different groups (e.g., neighborhoods) to isolate the effect of one variable.
+Why might it be better to leave missing prices in the dataset rather than filling them with estimates?;Leaving missing values as-is avoids introducing artificial data that could skew results, especially since removing them would eliminate over a third of the data.
