@@ -1,77 +1,56 @@
 # Python Data Visualization
 
-## Overview of Data Visualization Tools in Python
+## Introduction to Data Visualization Tools
 
-### Introduction to Visualization Libraries
+### Overview of Visualization Libraries
+Python offers several libraries for creating visual representations of data. The three main tools in this ecosystem are:
+- **pandas**: Data handling and manipulation (stores the data)
+- **matplotlib**: Low-level drawing library that actually creates the visual elements (drawing by hand with fine control)
+- **seaborn**: High-level interface built on top of matplotlib that provides ready-made chart types with cleaner defaults
 
-Data visualization is an essential part of data analysis because it helps us understand patterns, trends, and outliers in our datasets more quickly than looking at raw numbers alone. In this lesson, we'll explore three key Python libraries for creating visualizations:
+### Why These Tools Matter
+Data visualization helps transform complex numerical data into easily understandable visual formats. While tables can show exact values, pictures can reveal patterns, trends, and relationships that are difficult to see in raw numbers. Visualizations make it easier to communicate findings to others.
 
-1. **Pandas** - For handling and organizing data
-2. **Matplotlib** - The foundational library for drawing plots (like drawing by hand)
-3. **Seaborn** - Built on top of matplotlib, designed for quick, attractive statistical graphics
+## Setting Up the Environment
 
-These tools work together to create professional-looking charts that clearly communicate your findings.
-
-### Why Use Multiple Libraries?
-
-- **Matplotlib**: Provides fine-grained control over every aspect of the plot but requires more code
-- **Seaborn**: Offers ready-made chart types with beautiful defaults and easy-to-use syntax
-- **Pandas**: Has its own plotting capabilities but is less flexible than the other two
-
-We'll use Seaborn for creating the actual charts because it's easier to make them look good, and Matplotlib for customizing elements like titles, labels, and saving images.
-
-## Setting Up Your Environment
-
-Before starting any visualization work, ensure you have all necessary libraries installed:
-
-```bash
-pip install matplotlib seaborn pandas
-```
-
-### Importing Libraries
-
+### Importing Required Libraries
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set a clean theme for better-looking charts
+# Set seaborn theme for better-looking default charts
 sns.set_theme(style="whitegrid")
 ```
 
-## Understanding Chart Components
+### Common Import Patterns
+- `import pandas as pd` - Standard pandas alias
+- `import matplotlib.pyplot as plt` - Standard matplotlib pyplot alias  
+- `import seaborn as sns` - Standard seaborn alias
 
-Before diving into creating visualizations, let's define key terms:
+## Working with Date Columns
 
-- **Figure**: The entire picture or canvas (like a sheet of paper)
-- **Axes**: One chart on the figure with its own x-axis and y-axis
-- **Histogram**: A type of chart that divides values into intervals called bins and counts how many fall in each interval
-- **Bins**: Intervals used to group data in histograms
-
-## Loading and Preparing Data
-
-We begin by loading our dataset containing date information:
+### Loading Data with Date Parsing
+When working with date columns, it's essential to parse them properly during data loading:
 
 ```python
-# Load the CSV file with proper date parsing
+# Load CSV with date parsing
 listings = pd.read_csv('listings_clean.csv', parse_dates=['last_scraped', 'first_review', 'last_review'])
-
-# Check that data loaded correctly
-print(listings.shape)
 ```
 
-This approach ensures that date columns are properly interpreted as datetime objects rather than strings.
+### Understanding the Data Structure
+The dataset contains several date-related columns:
+- `last_scraped`: Last time the listing was scraped
+- `first_review`: First review date for each listing
+- `last_review`: Most recent review date
 
-## Creating Histograms with Matplotlib
+## Basic Histogram Creation
 
-A histogram shows the distribution of continuous numerical data by dividing values into bins and counting occurrences in each bin.
+### Creating Histograms with Matplotlib
 
-### Basic Histogram with Matplotlib
-
+#### Simple Histogram Example
 ```python
-import matplotlib.pyplot as plt
-
-# Create a new figure with one axis
+# Create a figure with one axis
 fig, ax = plt.subplots()
 
 # Draw histogram using matplotlib
@@ -81,23 +60,16 @@ ax.hist(listings['price'].dropna(), bins=50)
 plt.show()
 ```
 
-This code creates a basic histogram showing price distribution. The `dropna()` method removes missing values before plotting, ensuring only valid data points are included.
+#### Key Concepts:
+- **bins**: The number of intervals to divide data into
+- **dropna()**: Removes missing values (None/NaN) before plotting
+- **hist()**: Matplotlib function that creates histograms
 
-### Issues with Basic Matplotlib Histograms
+### Creating Histograms with Seaborn
 
-Basic matplotlib histograms lack important features:
-- No title
-- No axis labels
-- No meaningful context for readers
-
-## Creating Better Histograms with Seaborn
-
-Seaborn simplifies creating publication-ready charts:
-
+#### Simple Seaborn Histogram Example
 ```python
-import seaborn as sns
-
-# Create figure and axis
+# Create a figure with one axis
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Draw histogram using seaborn
@@ -112,132 +84,211 @@ ax.set_ylabel('Number of Listings')
 plt.show()
 ```
 
-### Advantages of Seaborn Over Matplotlib
+#### Key Concepts:
+- **data parameter**: Pass the entire DataFrame instead of just column values
+- **x parameter**: Specify which column to plot on x-axis
+- **ax parameter**: Specify which axis to draw on
+- **Seaborn automatically handles missing values**
 
-1. **Automatic missing value handling**: Seaborn automatically skips NaN values without requiring explicit `dropna()`
-2. **Better defaults**: Cleaner appearance with built-in styling
-3. **Easier syntax**: Fewer lines of code needed to achieve the same result
-4. **Integration with pandas**: Works directly with DataFrame objects
+## Advanced Histogram Features
 
-## Adding Statistical Information to Histograms
+### Adding Statistical Lines to Histograms
 
-We often want to show summary statistics (mean, median) along with our distribution:
-
-### Calculating Key Statistics
-
+#### Calculating Key Statistics
 ```python
-# Calculate quartiles for outlier detection
+# Calculate quartiles and upper fence for outlier detection
 q1 = listings['price'].quantile(0.25)
 q3 = listings['price'].quantile(0.75)
-
-# Calculate upper fence using IQR rule
-upper_fence = q3 + 1.5 * (q3 - q1)
+iqr = q3 - q1
+upper_fence = q3 + 1.5 * iqr
 
 # Calculate median and mean
 median_price = listings['price'].median()
 mean_price = listings['price'].mean()
 
-print(f"Median Price: £{median_price:.0f}")
-print(f"Mean Price: £{mean_price:.0f}")
-print(f"Upper Fence: £{upper_fence:.0f}")
+print(f"Upper fence: £{round(upper_fence)}")
+print(f"Median price: £{round(median_price)}")
+print(f"Mean price: £{round(mean_price)}")
 ```
 
-### Adding Reference Lines to Histograms
+### Adding Vertical Lines to Charts
 
+#### Adding Statistical Reference Lines
 ```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-
 # Create figure and axis
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Draw histogram
 sns.histplot(data=listings, x='price', bins=50, ax=ax)
 
-# Add reference lines for statistics
-ax.axvline(median_price, color='black', linestyle='--', linewidth=2, label=f'Median: £{median_price:.0f}')
-ax.axvline(mean_price, color='red', linestyle='-', linewidth=2, label=f'Mean: £{mean_price:.0f}')
-ax.axvline(upper_fence, color='gray', linestyle=':', linewidth=2, label=f'Upper Fence: £{upper_fence:.0f}')
+# Add statistical lines
+ax.axvline(median_price, color='black', linestyle='--', label=f'Median: £{round(median_price)}')
+ax.axvline(mean_price, color='red', linestyle='-', label=f'Mean: £{round(mean_price)}')
+ax.axvline(upper_fence, color='gray', linestyle=':', label=f'Upper Fence: £{round(upper_fence)}')
 
-# Add title and labels
-ax.set_title('Distribution of Listing Prices with Summary Statistics')
+# Add legend
+ax.legend()
+
+# Set labels and title
+ax.set_title('Distribution of Listing Prices with Statistical Measures')
 ax.set_xlabel('Price (£)')
 ax.set_ylabel('Number of Listings')
 
-# Show legend
+plt.show()
+```
+
+### Key Parameters for Vertical Lines:
+- **axvline()**: Draws vertical line at specified x-value
+- **color**: Sets the line color
+- **linestyle**: Sets line style ('--', '-', ':')
+- **label**: Adds label for legend
+- **legend()**: Displays legend explaining line meanings
+
+## Chart Components and Best Practices
+
+### Essential Chart Elements
+
+#### Complete Histogram with Labels and Title
+```python
+# Create figure with specific size
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Draw histogram
+sns.histplot(data=listings, x='price', bins=50, ax=ax)
+
+# Add statistical lines
+ax.axvline(median_price, color='black', linestyle='--', label=f'Median: £{round(median_price)}')
+ax.axvline(mean_price, color='red', linestyle='-', label=f'Mean: £{round(mean_price)}')
+
+# Add title and axis labels
+ax.set_title('Price Distribution of Accommodations')
+ax.set_xlabel('Price (£) per Night')
+ax.set_ylabel('Number of Listings')
+
+# Add legend
 ax.legend()
 
 # Display the plot
 plt.show()
 ```
 
-### Understanding Line Styles
+### Chart Design Principles:
+1. **Clear Title**: Should explain what the chart shows
+2. **Proper Axis Labels**: Include units and clear descriptions
+3. **Legend**: When multiple lines/elements are present
+4. **Appropriate Bin Size**: More bins = more detail, fewer bins = broader overview
 
-- **Solid line (`-`)**: Standard continuous line
-- **Dashed line (`--`)**: Broken line pattern
-- **Dotted line (`:`)**: Points separated by gaps
-- **Dash-dot line (`-.`)**: Alternating dashes and dots
+## Understanding Histogram Bins
 
-## Code Patterns for Consistent Visualizations
+### What Are Bins?
+Bins are the intervals into which data values are grouped for histogram creation:
+- Each bin represents a range of values
+- The height of each bar shows how many data points fall within that range
+- More bins provide more detailed information but can be cluttered
+- Fewer bins give broader overview but less detail
 
-Every chart follows a consistent pattern:
-
+### Bin Selection Strategy:
 ```python
-# Pattern for creating charts:
-fig, ax = plt.subplots(figsize=(width, height))  # Create figure with axis
-# Seaborn command here (e.g., sns.histplot())
-ax.set_title('Chart Title')                      # Add title
-ax.set_xlabel('X-axis Label')                    # Add x-axis label
-ax.set_ylabel('Y-axis Label')                    # Add y-axis label
-plt.show()                                       # Display chart
-```
+# Try different bin counts to find optimal visualization
+fig, axes = plt.subplots(2, 2, figsize=(15, 10))
 
-## Advanced Concepts in Histograms
+# Different bin counts for comparison
+bins_list = [20, 50, 100, 200]
+titles = ['20 Bins', '50 Bins', '100 Bins', '200 Bins']
 
-### Bins and Detail Levels
-
-The number of bins affects how detailed your histogram appears:
-
-- **Fewer bins**: Shows general shape but loses detail
-- **More bins**: Reveals finer details but may create noise
-- **Optimal bin count**: Usually between 10-50 depending on data size
-
-```python
-# Compare different bin counts
-fig, axes = plt.subplots(1, 3, figsize=(15, 5))
-
-sns.histplot(data=listings, x='price', bins=10, ax=axes[0])
-axes[0].set_title('Fewer Bins (10)')
-
-sns.histplot(data=listings, x='price', bins=50, ax=axes[1])
-axes[1].set_title('Medium Bins (50)')
-
-sns.histplot(data=listings, x='price', bins=100, ax=axes[2])
-axes[2].set_title('More Bins (100)')
+for i, (bins, title) in enumerate(zip(bins_list, titles)):
+    axes[i//2, i%2].hist(listings['price'].dropna(), bins=bins)
+    axes[i//2, i%2].set_title(title)
+    axes[i//2, i%2].set_xlabel('Price (£)')
+    axes[i//2, i%2].set_ylabel('Number of Listings')
 
 plt.tight_layout()
 plt.show()
 ```
 
-### Interpreting Long Tails
+## Complete Visualization Workflow
 
-The histogram reveals the long tail that we discussed earlier - most listings are priced low while a few are extremely expensive. This skewness pulls the mean away from the median, which is important for understanding the true central tendency of the data.
+### Step-by-Step Process:
+1. **Import Libraries**: pandas, matplotlib.pyplot, seaborn
+2. **Load Data**: With proper date parsing using `parse_dates`
+3. **Set Theme**: Use `sns.set_theme()` for better default appearance
+4. **Create Figure and Axis**: `plt.subplots()`
+5. **Draw Chart**: Using seaborn's plotting functions with appropriate parameters
+6. **Add Labels and Titles**: Using axis methods
+7. **Display Chart**: `plt.show()`
 
-## Common Gotchas and Best Practices
+### Complete Working Example:
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-1. **Always check data integrity**: Use `dropna()` or handle missing values explicitly
-2. **Choose appropriate bin sizes**: Too few bins lose detail; too many create noise
-3. **Add meaningful labels**: Titles and axis labels help readers understand context
-4. **Use consistent styling**: Maintain uniform appearance across multiple charts
-5. **Include reference lines strategically**: Only add lines that provide useful insight
+# Load data
+listings = pd.read_csv('listings_clean.csv', parse_dates=['last_scraped', 'first_review', 'last_review'])
 
-## Why This Matters for Data Analysis
+# Set theme for better-looking charts
+sns.set_theme(style="whitegrid")
 
-Understanding how to visualize data distributions is crucial because:
+# Calculate statistics
+q1 = listings['price'].quantile(0.25)
+q3 = listings['price'].quantile(0.75)
+iqr = q3 - q1
+upper_fence = q3 + 1.5 * iqr
+median_price = listings['price'].median()
+mean_price = listings['price'].mean()
 
-1. **Pattern Recognition**: Visuals make it easier to spot trends and anomalies
-2. **Communication**: Charts tell stories more effectively than numbers alone
-3. **Decision Making**: Clear visualizations help stakeholders understand complex information quickly
-4. **Statistical Insight**: Histograms reveal skewness, outliers, and overall data shape
+# Create figure and axis
+fig, ax = plt.subplots(figsize=(12, 8))
 
-The ability to create clear, informative visualizations will be essential throughout your data analysis journey and helps transform raw data into actionable insights.
+# Draw histogram with seaborn
+sns.histplot(data=listings, x='price', bins=50, ax=ax)
+
+# Add statistical reference lines
+ax.axvline(median_price, color='black', linestyle='--', linewidth=2, 
+          label=f'Median: £{round(median_price)}')
+ax.axvline(mean_price, color='red', linestyle='-', linewidth=2, 
+          label=f'Mean: £{round(mean_price)}')
+ax.axvline(upper_fence, color='gray', linestyle=':', linewidth=2, 
+          label=f'Upper Fence: £{round(upper_fence)}')
+
+# Add labels and title
+ax.set_title('Distribution of Accommodation Prices - Showing Statistical Measures', fontsize=16)
+ax.set_xlabel('Price (£) per Night', fontsize=12)
+ax.set_ylabel('Number of Listings', fontsize=12)
+
+# Add legend
+ax.legend()
+
+# Display the plot
+plt.show()
+```
+
+### Why This Matters:
+Understanding these visualization concepts is crucial because:
+- Visualizations help identify data patterns that are invisible in raw numbers
+- Proper labeling and formatting make charts accessible to others
+- Statistical reference lines provide context for understanding distribution shapes
+- The combination of matplotlib and seaborn allows both fine control and quick, clean results
+
+## Troubleshooting Common Issues
+
+### Installation Problems:
+If you encounter "No module named" errors:
+```bash
+pip install matplotlib seaborn
+```
+
+Sometimes you may need to restart your IDE (like Visual Studio Code) after installation.
+
+### Missing Data Handling:
+Both matplotlib and seaborn automatically handle missing values when plotting, but it's good practice to be aware of what happens:
+- `dropna()` removes all missing values explicitly
+- Seaborn handles missing data internally without requiring explicit removal
+
+### Figure Size Management:
+```python
+# Set figure size for better visualization
+fig, ax = plt.subplots(figsize=(12, 8))  # Width, Height in inches
+```
+
+This ensures charts are readable and appropriately sized for presentation purposes.

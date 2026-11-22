@@ -1,33 +1,25 @@
-What is the purpose of data visualization in data analysis?;It helps understand patterns, trends, and outliers more quickly than looking at raw numbers alone.
+What are the three main Python libraries used for data visualization?;Pandas handles data manipulation, matplotlib provides low-level drawing control, and seaborn offers high-level interfaces with cleaner defaults.
 
-Which three Python libraries are discussed for data visualization?;Pandas, Matplotlib, and Seaborn.
+Why is data visualization important for analyzing data?;It transforms complex numerical data into visual formats that reveal patterns, trends, and relationships that are difficult to detect in raw numbers.
 
-What role does Matplotlib play in data visualization?;It is the foundational library for drawing plots and offers fine-grained control over every aspect of the plot.
+How do you load a CSV file with date columns parsed properly in pandas?;Use the `parse_dates` parameter in `pd.read_csv()` and pass a list of column names to be converted to datetime objects.
 
-How does Seaborn differ from Matplotlib?;Seaborn is built on top of Matplotlib, designed for quick and attractive statistical graphics with easy-to-use syntax.
+What is the purpose of the `bins` parameter when creating histograms?;It determines the number of intervals into which the data values are grouped, affecting the level of detail in the histogram.
 
-What is the main advantage of using Seaborn over Matplotlib for histograms?;Seaborn automatically handles missing values and provides better defaults with cleaner appearance.
+How does seaborn handle missing data in plots compared to matplotlib?;Seaborn automatically handles missing values internally without requiring explicit removal, while matplotlib requires using methods like `dropna()`.
 
-Why is it important to set up your environment before starting visualization work?;It ensures that all necessary libraries are installed and properly imported for creating visualizations.
+What is the difference between using `ax.hist()` and `sns.histplot()` for creating histograms?;`ax.hist()` is a matplotlib function that needs column values directly, whereas `sns.histplot()` accepts the full DataFrame and column name as parameters.
 
-What does a histogram represent in data visualization?;A type of chart that divides values into intervals called bins and counts how many fall in each interval.
+What are some best practices for designing effective charts?;Use clear titles, proper axis labels with units, include legends when multiple elements are present, and choose an appropriate bin size for clarity.
 
-What do "bins" refer to in the context of histograms?;Intervals used to group data in histograms.
+How do you add vertical reference lines to a histogram using matplotlib?;Use `ax.axvline()` with parameters specifying the x-value, color, linestyle, and label for each line.
 
-How can you load a CSV file with proper date parsing in pandas?;Use `pd.read_csv('filename.csv', parse_dates=['column_name'])` to interpret date columns as datetime objects.
+What does the seaborn theme setting do in data visualization?;It improves the default appearance of charts by applying consistent styling like gridlines, font sizes, and color schemes.
 
-What is one issue with basic Matplotlib histograms?;They lack title, axis labels, and meaningful context for readers.
+Why is it important to understand how bins affect histogram visualization?;Bins determine whether you get a detailed view or broad overview of data distribution, impacting interpretation and clarity.
 
-What are some advantages of using Seaborn over Matplotlib?;Automatic missing value handling, better defaults, easier syntax, and integration with pandas DataFrames.
+What are the key steps in a complete data visualization workflow using Python?;Import libraries, load data with proper date parsing, set theme, create figure and axis, draw chart with appropriate parameters, add labels and titles, then display the plot.
 
-How do you add reference lines to a histogram in matplotlib?;Use functions like `ax.axvline()` to draw vertical lines at specific values such as mean or median.
+How can you troubleshoot common issues when installing Python visualization libraries?;Use `pip install matplotlib seaborn` to install missing packages, and restart your IDE if changes don't take effect immediately.
 
-What are common line styles used in matplotlib plots?;Solid (`-`), dashed (`--`), dotted (`:`), and dash-dot (`-.`) lines.
-
-What is the recommended pattern for creating charts with Matplotlib and Seaborn?;Create figure and axis, use seaborn command, set title and labels, then display the plot.
-
-How does the number of bins affect a histogram's appearance?;Fewer bins show general shape but lose detail; more bins reveal finer details but may create noise.
-
-What does a long tail in a histogram indicate about the data distribution?;It indicates skewness where most values are low with a few extremely high values, pulling the mean away from the median.
-
-What are some best practices for creating effective visualizations?;Check data integrity, choose appropriate bin sizes, add meaningful labels, maintain consistent styling, and include strategic reference lines.
+What is the significance of statistical reference lines in histogram analysis?;They provide context by showing key measures like median, mean, and outlier thresholds that help interpret the shape and central tendency of data distribution.
