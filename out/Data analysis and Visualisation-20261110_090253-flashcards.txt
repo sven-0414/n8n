@@ -1,0 +1,19 @@
+What does the value_counts() method do in pandas?;It counts how many times each unique value appears in a column and returns results sorted by count, with the most frequent value first.
+
+How does value_counts() handle missing values by default?;It automatically excludes missing values (NaN) from the count.
+
+Can value_counts() include missing values in its output?;Yes, by setting the dropna parameter to False.
+
+What is the purpose of the GroupBy operation in pandas?;It splits data into groups based on one or more columns, applies calculations to each group, and returns structured results.
+
+How do you calculate the average number of guests for each room type using GroupBy?;Use groupby('room_type')['accommodates'].mean() to compute the mean accommodates for each room type.
+
+What is the role of the agg() method in GroupBy operations?;It allows performing multiple calculations on grouped data simultaneously and returns results in a structured format.
+
+How can you customize column names when using GroupBy with aggregation?;Pass a dictionary to the agg() method specifying which functions to apply to which columns.
+
+Why might you encounter an error when trying to calculate the mean of a text-based price column?;Because text columns cannot be used directly in mathematical operations without data cleaning first.
+
+What are some practical applications of GroupBy operations?;They enable categorical analysis, answering business questions across categories, and creating comprehensive data summaries.
+
+How does sample size affect the reliability of averages in grouped statistics?;Small sample sizes can lead to unreliable averages, making the median often more reliable than the mean for small groups.
