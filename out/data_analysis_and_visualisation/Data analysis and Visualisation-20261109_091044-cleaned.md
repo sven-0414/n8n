@@ -1,351 +1,339 @@
-# Python Data Analysis with Pandas
+# Introduction to Pandas
 
 ## What is Pandas?
 
-Pandas is a Python library designed for working with tabular data. The name comes from "panel data," which refers to tables of observations. It was created around 2008 and has become the standard tool for handling tables in Python.
+Pandas is a Python library designed for working with tabular data. The name comes from "panel data," which refers to tables of observations. It was first developed around 2008 and has become a standard tool for data analysis in Python.
 
-### Key Features:
-- Built on NumPy (which provides array functionality for fast numerical calculations)
-- Enables data reading, cleaning, selection, filtering, sorting, grouping, joining, and summarizing
-- Works with large datasets efficiently due to its foundation on NumPy arrays
+Key characteristics:
+- Built on NumPy (which provides array functionality)
+- Designed specifically for handling tables
+- Can efficiently manage large datasets
+- Provides powerful tools for data manipulation, cleaning, and analysis
 
-### Why Pandas?
-- Unlike Excel, code serves as documentation - anyone can reproduce results
-- Unlike SQL, it works on loaded data rather than querying databases
-- Enables direct transition from data exploration to visualization and machine learning
-- Provides intuitive syntax that mirrors SQL concepts but uses different terminology
-
-## Setting Up Jupyter Notebooks
-
-### File Format
-Jupyter notebooks use the `.ipynb` extension, which stands for "I Python Notebook" (original name). Today they're commonly called Jupyter Notebooks or simply notebooks.
-
-### Cell Types
-- **Code cells**: Write and execute Python code
-- **Markdown cells**: Write text with formatting (headers, lists, etc.)
-
-### Basic Operations
 ```python
-# Creating variables
+import pandas as pd
+```
+
+## Why Pandas?
+
+Pandas offers several advantages over other approaches:
+- **Excel limitations**: Excel doesn't show the process used to manipulate data
+- **Reproducibility**: With Pandas, code serves as documentation that anyone can run again
+- **Integration**: Works directly with charts and machine learning tools
+- **Performance**: Built on NumPy for fast calculations
+
+## Jupyter Notebooks
+
+Jupyter Notebooks provide an interactive environment where you can mix text and code in the same file. This makes them ideal for data exploration.
+
+### Notebook Components:
+1. **Code cells**: Where you write Python code
+2. **Markdown cells**: For writing explanations, documentation, and formatted text
+
+### Basic Operations:
+```python
+# Create a variable
 x = 10
 
-# Running code in a cell - no output visible until you run it
-# The left side shows execution order (1, 2, 3...)
+# Run the cell to see output
+x  # This will show 10
 
-# Accessing previous variables
-print(x)  # Shows value of x
-
-# Using functions
-def add(a, b):
-    return a + b
-
-result = add(2, 3)
+# Multiple cells can reference each other
+y = 20
 ```
 
-### Execution Shortcuts
-- Run cell: Ctrl+Enter or Shift+Enter
-- Restart kernel: Menu → Kernel → Restart
-- Run all cells in order: Menu → Cell → Run All
+### Notebook Features:
+- **Cell execution**: Each cell runs independently and maintains state
+- **Order tracking**: Cells are numbered to show execution order
+- **Restart functionality**: Reset the entire notebook environment
+- **Markdown formatting**: Use `##` for headings, `*text*` for italics
 
-## Importing Pandas
+## Data Frames and Series
+
+### Data Frame
+A data frame is the primary object in Pandas - essentially a whole table with rows and columns.
 
 ```python
-import pandas as pd
-print(pd.__version__)  # Check version (should be 3.0.5)
-```
-
-### Why Version Matters
-The current version is 3.0.5, which has behavioral changes from earlier versions (1 and 2). Many online tutorials use older pandas syntax that may not work in newer versions. This can cause confusion when copying code.
-
-## Loading Data with Pandas
-
-### Reading CSV Files
-```python
-import pandas as pd
-
-# Load data into a DataFrame called 'listings'
+# Loading data into a data frame
 listings = pd.read_csv('data/listings.csv')
 ```
 
-### Understanding the Data Structure
-The Airbnb Stockholm listings dataset contains:
-- 4,574 rows (listings)
-- 84 columns (pieces of information per listing)
-
-### Key Concepts
-
-**DataFrame**: The whole table - a two-dimensional data structure with labeled rows and columns.
-
-**Series**: A single column from a DataFrame - one-dimensional array with axis labels.
+### Series
+A series is a single column from a data frame - just one dimension of data.
 
 ```python
-# Loading the dataset
-listings = pd.read_csv('data/listings.csv')
+# Getting a single column (creates a series)
+room_type = listings['room_type']
 
-# Check size of the DataFrame
-print(listings.shape)  # Output: (4574, 84)
+# Getting multiple columns (creates a data frame)
+selected_columns = listings[['room_type', 'name', 'price']]
+```
+
+## Loading Data
+
+### CSV Files
+CSV (Comma Separated Values) files are plain text files where:
+- First line contains column names
+- Each subsequent line represents one row
+- Values separated by commas
+- Empty values appear as consecutive commas
+- Text with commas is enclosed in quotation marks
+
+```python
+# Loading CSV data into pandas
+listings = pd.read_csv('data/listings.csv')
+```
+
+### Data Frame Properties:
+```python
+# Check the size of your data frame
+print(listings.shape)  # (4574, 84) - 4574 rows, 84 columns
 
 # View first few rows
-print(listings.head())  # Shows first 5 rows
+listings.head()  # Shows first 5 rows by default
+listings.head(10)  # Shows first 10 rows
 
 # View column names
 print(listings.columns.tolist())
-```
 
-## Examining Data Structure
-
-### Getting Basic Information About Data
-```python
-# Detailed information about the DataFrame
+# Get detailed information about the data frame
 listings.info()
-
-# Count of each data type
-listings.dtypes.value_counts()
 ```
 
-### Understanding Data Types
-- **int64**: Whole numbers (integers)
-- **float64**: Decimal numbers 
-- **object**: Text strings (in older versions, this was called 'string')
-- **string**: New in pandas 3.0+ for text columns
+## Basic Data Exploration
 
-### Identifying Missing Values
+### Understanding Your Data:
 ```python
-# Find columns with no values (count = 0)
-listings.count().sort_values().head(16)
+# Check what data types you have
+print(listings.dtypes)
 
-# Show columns that are completely empty
+# Count how many of each data type
+print(listings.dtypes.value_counts())
+```
+
+### Identifying Missing Data:
+```python
+# Find columns with missing values
+missing_data = listings.count().sort_values()
+missing_data.head(16)  # Show first 16 columns with lowest counts
+
+# Check which columns are completely empty
 empty_columns = listings.count()[listings.count() == 0]
-print(empty_columns.index.tolist())
+print(empty_columns)
 ```
 
-## Selecting Columns
+## Selecting Data
 
-### Single Column Selection
+### Single Column Selection:
 ```python
-# Select one column using single brackets
+# Select one column (returns a Series)
 room_type = listings['room_type']
 
-# Check what type of object it is
-print(type(room_type))  # Output: pandas.core.series.Series
+# This is equivalent to:
+room_type = listings.room_type  # but only works if column name has no spaces
 ```
 
-### Multiple Column Selection
+### Multiple Column Selection:
 ```python
-# Select multiple columns using double brackets (list inside brackets)
-selected_columns = listings[['room_type', 'name', 'price']]
+# Select multiple columns (returns a DataFrame)
+selected_data = listings[['room_type', 'name', 'price']]
 
-# This creates a DataFrame with the specified columns
+# Wrong way - will cause KeyError
+# selected_data = listings['room_type', 'name', 'price']  # This fails!
 ```
 
-### Common Mistake to Avoid
+## Data Description and Statistics
+
+### The describe() Method:
 ```python
-# WRONG - single brackets only select one column
-wrong_selection = listings['room_type', 'name']  # KeyError
-
-# CORRECT - double brackets for multiple columns
-correct_selection = listings[['room_type', 'name']]
-```
-
-## Describing Data
-
-### Using describe() Method
-```python
-# Get statistical summary of numeric columns
+# Get summary statistics for all numeric columns
 listings.describe()
 
-# For specific columns only
-specific_columns = ['accommodates', 'bedrooms', 'beds', 'minimum_nights', 'number_of_reviews', 'review_scores_rating']
+# Get summary for specific columns
+specific_columns = ['accommodates', 'bedrooms', 'beds', 'minimum_nights', 
+                   'number_of_reviews', 'review_scores_rating']
 listings[specific_columns].describe().round(2)
 ```
 
-### Understanding Statistical Output
-- **count**: Number of non-null values
-- **mean**: Average value
-- **std**: Standard deviation (measure of spread)
-- **min**: Smallest value
-- **25%**: First quartile (25th percentile)
-- **50%**: Median (50th percentile)
-- **75%**: Third quartile (75th percentile)
-- **max**: Largest value
+### Understanding describe() Output:
+- **Count**: Number of non-null values in each column
+- **Mean**: Average value (only for numeric columns)
+- **Std**: Standard deviation (measure of spread)
+- **Min/Max**: Minimum and maximum values
+- **25%/50%/75%**: Quartiles - 25th, 50th (median), and 75th percentiles
 
-### Key Insights from Describe
-1. **Missing values**: Count shows how many rows have data for each column
-2. **Extreme values**: Large differences between mean and median indicate uneven distribution
-3. **Data quality issues**: Some columns may contain non-numeric data that shouldn't be described
+### Important Notes:
+1. **Missing Values**: Columns with fewer counts than total rows have missing data
+2. **Non-Numeric Data**: Text columns won't show mean, std, min, max in describe()
+3. **Data Type Issues**: Some columns may be stored as numbers but aren't meaningful for calculations
 
 ## Working with Text Data
 
-### Problem with Text Numbers
+### Text Column Analysis:
 ```python
-# Price column appears to be numeric but is actually text
-print(listings['price'].dtype)  # Output: object/string
-
-# Example of problematic sorting
-listings[['name', 'price']].head(5)
-# This will sort by character, not numerical value
-```
-
-### Text Column Analysis
-```python
-# For text columns, describe shows different statistics
+# Analyze text columns using describe()
 listings['room_type'].describe()
 
 # Get unique values
 unique_room_types = listings['room_type'].unique()
 print(unique_room_types)
 
-# Count how many unique values exist
+# Count unique values
 num_unique_room_types = listings['room_type'].nunique()
 print(num_unique_room_types)
 ```
 
-## Filtering Data (Boolean Masks)
+### Common Text Column Problems:
+- **Mixed Data Types**: Values may look like numbers but are stored as text
+- **Formatting Issues**: Currency symbols, commas, etc. make them appear numeric but they're not
+- **Missing Values**: Empty cells are shown as NaN (Not a Number)
 
-### Creating Boolean Conditions
+## Filtering and Masking
+
+### Boolean Masks:
 ```python
-# Create a mask for entire home apartments
+# Create a boolean mask for entire homes
 mask = listings['room_type'] == 'Entire home/apt'
+print(mask.head())  # Shows True/False values
 
-# Count results using sum() - True = 1, False = 0
-entire_homes_count = mask.sum()
-print(entire_homes_count)  # Output: 3760
+# Count how many are entire homes
+num_entire_homes = mask.sum()  # True=1, False=0
+print(f"Number of entire homes: {num_entire_homes}")
 
-# Calculate percentage
+# Get percentage
 percentage_entire_homes = mask.mean()
-print(percentage_entire_homes)  # Output: ~0.82 (82%)
+print(f"Percentage of entire homes: {percentage_entire_homes:.2%}")
 ```
 
-### Using Masks as Filters
+### Filtering Data:
 ```python
-# Filter the DataFrame using the mask
+# Filter the data frame using a mask
 entire_homes = listings[mask]
-print(entire_homes.shape)  # Output: (3760, 84)
+print(entire_homes.shape)  # Shows (3760, 84)
 
-# This is equivalent to:
-filtered_listings = listings[listings['room_type'] == 'Entire home/apt']
+# Multiple conditions - use & instead of and
+mask_multiple = (listings['neighbourhood_cleansed'] == 'Södermalm') & \
+                (listings['accommodates'] >= 4)
+filtered_data = listings[mask_multiple]
+print(filtered_data.shape)
 ```
 
-### Combining Multiple Conditions
+### Common Comparison Operators:
+- `==` (equals)
+- `!=` (not equals)  
+- `>` (greater than)
+- `<` (less than)
+- `>=` (greater than or equal)
+- `<=` (less than or equal)
 
-**Incorrect way (causes error):**
+## Advanced Filtering
+
+### Using Helper Methods:
 ```python
-# This will cause a ValueError
-listings['neighborhood_cleansed'] == 'Södermalm' and listings['accommodates'] >= 4
-```
+# isin() - check if value is in a list
+neighborhoods = ['Södermalm', 'Östermalm', 'Norrmalm']
+mask_isin = listings['neighbourhood_cleansed'].isin(neighborhoods)
+print(mask_isin.sum())  # Count of rows
 
-**Correct way using pandas operators:**
-```python
-# Using & (and), | (or), ~ (not)
-mask = (listings['neighborhood_cleansed'] == 'Södermalm') & (listings['accommodates'] >= 4)
-filtered_listings = listings[mask]
-print(filtered_listings.shape)  # Output: (454, 84)
-```
+# between() - check if value is between two numbers
+mask_between = listings['accommodates'].between(2, 4)
+print(mask_between.sum())
 
-### Helper Methods for Filtering
-```python
-# isin() - checks if value is in a list
-central_neighborhoods = ['Södermalm', 'Norrmalm', 'Östermalm']
-mask = listings['neighborhood_cleansed'].isin(central_neighborhoods)
+# notna() / notnull() - check for non-missing values
+mask_notna = listings['review_scores_rating'].notna()
+print(mask_notna.sum())
 
-# between() - checks if value is between two values (inclusive)
-mask = listings['accommodates'].between(2, 4)  # Includes 2 and 4
-
-# notna() / notnull() - checks for missing values
-mask = listings['review_scores_rating'].notna()
-
-# not() - negates boolean values
-mask = ~(listings['room_type'] == 'Entire home/apt')  # Not entire homes
+# isna() / isnull() - check for missing values  
+mask_isna = listings['review_scores_rating'].isna()
+print(mask_isna.sum())
 ```
 
 ## Sorting Data
 
-### Basic Sorting
+### Basic Sorting:
 ```python
-# Sort by one column (descending order)
-sorted_by_reviews = listings.sort_values('number_of_reviews', ascending=False)
+# Sort by one column (ascending)
+listings_sorted = listings.sort_values('number_of_reviews')
 
-# Show top 5 rows
-top_5_reviews = sorted_by_reviews.head(5)
-```
+# Sort by one column (descending)
+listings_sorted_desc = listings.sort_values('number_of_reviews', ascending=False)
 
-### Multi-column Sorting
-```python
 # Sort by multiple columns
-multi_sorted = listings.sort_values(['accommodates', 'number_of_reviews'], 
-                                    ascending=[False, False])
-
-# First sort by accommodates (largest first)
-# Then for ties, sort by number of reviews (largest first)
+listings_sorted_multi = listings.sort_values(['accommodates', 'number_of_reviews'], 
+                                             ascending=[False, False])
 ```
 
-### Getting Top N Rows
+### Getting Top/Bottom Records:
 ```python
-# Using nlargest() method
-top_5_accommodates = listings.nlargest(5, 'accommodates')
+# Get top 5 records by number of reviews
+top_5_reviews = listings.nlargest(5, 'number_of_reviews')
 
-# This is equivalent to:
-top_5_accommodates = listings.sort_values('accommodates', ascending=False).head(5)
+# Get bottom 5 records by price (assuming price is numeric)
+bottom_5_price = listings.nsmallest(5, 'price')
 ```
 
-## Indexing and Accessing Specific Rows
+## Accessing Specific Rows
 
-### Understanding Indexes
+### Using loc and iloc:
 ```python
-# Every row has an index (like a label/tag)
-print(listings.index)  # Shows the index values
+# Using loc - label-based access
+first_row_name = listings.loc[0, 'name']  # Row 0, column 'name'
 
-# Access specific rows using loc[] or iloc[]
-# loc uses labels/index names
-row_by_label = listings.loc[825]  # Gets row with index 825
+# Using iloc - position-based access  
+first_row_name_pos = listings.iloc[0, 1]  # First row, second column
 
-# iloc uses positions (0-based)
-row_by_position = listings.iloc[0]  # Gets first row
+# Select multiple rows and columns
+subset_data = listings.loc[0:5, ['name', 'room_type', 'price']]
 ```
 
-### Resetting Index After Filtering
-```python
-# After filtering, indexes may be inconsistent
-filtered_data = listings[listings['accommodates'] >= 16]
-print(filtered_data.index)  # May show 825, 997, etc.
+## Resetting Index After Filtering
 
-# Reset to sequential numbering (0, 1, 2, ...)
-reset_index_data = filtered_data.reset_index(drop=True)
+When you filter or sort data, the index numbers may not be sequential. You can reset them:
+
+```python
+# Reset index to get 0, 1, 2, 3...
+reset_data = listings.reset_index(drop=True)
 ```
 
-## Complete Example: Finding Top Listings
+## Complete Example
 
-### Step-by-Step Process
 ```python
-# Find top 5 listings in Södermalm with room for 4+ guests by number of reviews
-# Step 1: Filter conditions
-mask = ((listings['neighborhood_cleansed'] == 'Södermalm') & 
-        (listings['room_type'] == 'Entire home/apt') & 
-        (listings['accommodates'] >= 4))
+import pandas as pd
 
-# Step 2: Apply filter
-filtered_listings = listings[mask]
+# Load the data
+listings = pd.read_csv('data/listings.csv')
 
-# Step 3: Sort by reviews (descending)
-sorted_listings = filtered_listings.sort_values('number_of_reviews', ascending=False)
+# Basic exploration
+print("Data shape:", listings.shape)
+print("Column names:", listings.columns.tolist())
+print("Data types:")
+print(listings.dtypes.value_counts())
 
-# Step 4: Get top 5
-top_5 = sorted_listings.head(5)
+# Get summary statistics for specific columns
+columns_of_interest = ['accommodates', 'bedrooms', 'beds', 'minimum_nights', 
+                      'number_of_reviews', 'review_scores_rating']
+summary = listings[columns_of_interest].describe().round(2)
+print(summary)
 
-# Step 5: Select specific columns for display
-view_columns = ['name', 'neighborhood_cleansed', 'room_type', 'accommodates', 
-                'number_of_reviews', 'review_scores_rating']
-result = top_5[view_columns]
+# Filter and analyze data
+entire_homes_mask = listings['room_type'] == 'Entire home/apt'
+num_entire_homes = entire_homes_mask.sum()
+print(f"Number of entire homes: {num_entire_homes}")
+
+# Find listings in Södermalm with room for 4+ guests
+soder_malm_mask = (listings['neighbourhood_cleansed'] == 'Södermalm') & \
+                  (listings['accommodates'] >= 4)
+filtered_listings = listings[soder_malm_mask]
+print(f"Listings in Södermalm with room for 4+ guests: {len(filtered_listings)}")
 ```
 
 ## Key Takeaways
 
-1. **Pandas is essential** for data analysis in Python - it handles large datasets efficiently
-2. **DataFrame vs Series**: Tables are DataFrames, individual columns are Series
-3. **Data types matter**: Text representations of numbers (like prices with $ signs) must be converted before numerical operations
-4. **Boolean masks**: The foundation for filtering data effectively
-5. **Multiple conditions**: Use `&`, `|`, and `~` instead of `and`, `or`, `not`
-6. **Index management**: Understand when to use labels vs positions for accessing rows
-7. **Data quality**: Always examine missing values, outliers, and data structure before analysis
+1. **Data Loading**: Use `pd.read_csv()` to load CSV files into data frames
+2. **Data Exploration**: Start with `.shape`, `.info()`, and `.describe()`
+3. **Selection**: Single brackets for one column (Series), double brackets for multiple columns (DataFrame)
+4. **Filtering**: Use boolean masks with `&` (and), `|` (or), `~` (not) operators
+5. **Sorting**: Use `.sort_values()` to organize data by column values
+6. **Missing Data**: Check with `.count()` and `.isna()` methods
 
-This foundational knowledge will be built upon in future lessons as we learn data cleaning techniques and more advanced analytical methods.
+This foundational knowledge will help you navigate through the rest of your data analysis journey, as these are essential skills for any data manipulation task in Pandas.

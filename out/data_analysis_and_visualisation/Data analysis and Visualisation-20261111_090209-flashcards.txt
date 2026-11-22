@@ -1,37 +1,21 @@
-What is the primary purpose of data cleaning in data analysis?;Data cleaning ensures accurate analysis and reliable results by identifying and correcting errors, inconsistencies, and missing values in datasets.
+What is the primary purpose of data cleaning in data analysis?;Data cleaning ensures that datasets are free from errors and inconsistencies, making the results of analysis reliable and trustworthy.
 
-What are the key steps involved in the data cleaning process?;The process involves examining the data to identify problems, fixing them systematically, and documenting all steps taken during the cleaning process.
+Why is it important to never modify the original dataset during cleaning?;Modifying the original dataset can lead to loss of information and prevents others from reproducing your work or checking your process.
 
-Why is it important to clean data before performing analysis?;Clean data ensures accurate analysis and reliable results, as decisions made during cleaning determine what the final numbers mean.
+How should you handle missing values when cleaning data?;Missing values should be analyzed to understand their cause, and then handled appropriately—either by imputation, removal, or keeping them as they may carry meaningful information.
 
-What are some common issues found in real-world datasets?;Common issues include text format dates, text format prices with currency symbols and commas, empty or inconsistent columns, and inconsistent text formatting.
+What are the main types of problems found in real-world datasets?;Real-world datasets often contain text columns stored as numbers, inconsistent capitalization or spacing, missing data points, and duplicate entries.
 
-How do you standardize category values in a dataset using pandas?;You use pandas string methods like `str.strip()`, `str.lower()`, and `str.replace()` to remove whitespace, normalize case, and replace variations with consistent formats.
+How do you standardize text data such as categories in a dataset?;Text data can be standardized by stripping whitespace, converting to lowercase, correcting spelling variations, and applying title case where appropriate.
 
-What is the difference between `str.replace()` and `.replace()` in pandas?;`str.replace()` replaces parts of text within values (like removing currency symbols), while `.replace()` replaces entire values (like changing one category name to another).
+What steps are involved in cleaning numeric data like unit prices stored as text?;Numeric data should have currency symbols removed, internal spaces stripped, decimal separators converted correctly, and then converted to a proper numeric type using pd.to_numeric().
 
-How do you clean text format prices that contain currency symbols, spaces, and commas?;You strip whitespace, remove currency symbols, replace internal spaces, and convert commas to decimal points before converting the column to numeric type.
+How do you convert text-based dates into usable datetime objects in pandas?;Use pd.to_datetime() function to parse text dates into datetime objects, handling conversion errors gracefully with the errors='coerce' parameter.
 
-What happens when you use `pd.to_datetime()` with invalid date formats and `errors='coerce'`?;Invalid dates are converted to NaN (Not a Time) instead of raising errors, allowing processing to continue without interruption.
+What is the recommended approach for removing duplicate rows from a dataset?;Identify duplicates using duplicated(), then remove them with drop_duplicates(keep='first') while resetting the index afterward.
 
-How can you identify and remove duplicate records in a dataset?;Use the `duplicated()` method to identify duplicates and `drop_duplicates()` to remove them, optionally specifying which columns to check for duplication.
+Why should empty columns be removed during data cleaning?;Empty columns provide no value to analysis and can clutter datasets, so they should be removed to improve clarity and reduce storage needs.
 
-What is the best practice for handling missing values during data cleaning?;Always document the reason for missing data, handle it appropriately (remove, impute, or flag), and validate that the approach makes sense for the analysis.
+How do you create calculated columns after cleaning your dataset?;After cleaning, you can create new columns by performing operations on existing ones, such as multiplying unit price by quantity to get total order value.
 
-How do you verify that your data cleaning steps were successful?;You can cross-check totals, verify consistency of values, and ensure calculated columns make logical sense after cleaning.
-
-What should you do before checking for duplicates in a dataset?;Clean text data first by removing extra spaces and normalizing capitalization to ensure accurate duplicate detection.
-
-How do you remove an entirely empty column from a dataset?;Use the `drop(columns=['column_name'])` method to remove columns that contain no useful data.
-
-What is the significance of documenting decisions made during data cleaning?;Documentation ensures transparency, allows for reproducibility, and helps others understand how the final numbers were derived.
-
-How do you calculate total revenue for each order line after cleaning?;Multiply `unit_price` by `quantity` to create a new column called `total`.
-
-What are some validation techniques used after cleaning data?;Cross-check totals, verify consistency of values, and ensure calculated results make logical sense in the context of the dataset.
-
-Why should you be cautious when using `pd.to_numeric()` with text data?;Because it can convert invalid entries to NaN instead of raising errors, which might mask underlying issues in the data.
-
-What are some common pitfalls to avoid during data cleaning?;Not handling missing values properly, converting data types without error handling, and checking for duplicates before cleaning text fields.
-
-How does data cleaning impact future analysis workflows?;Cleaned data provides a reliable foundation for deeper analysis, enabling accurate calculations of revenue by category, seasonal trends, and customer purchasing patterns.
+What are the benefits of grouping and aggregating cleaned data?;Grouping and aggregating allow for meaningful insights like revenue by category or monthly sales trends, which help inform business decisions.

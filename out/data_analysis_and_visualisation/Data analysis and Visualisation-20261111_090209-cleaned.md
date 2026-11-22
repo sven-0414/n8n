@@ -1,329 +1,327 @@
 # Data Cleaning in Python
 
-## Overview of Data Cleaning Process
+## Introduction to Data Cleaning
 
-Data cleaning is a crucial part of data analysis that involves identifying and correcting errors, inconsistencies, and missing values in datasets. The process follows a routine approach where we examine the data, identify problems, fix them systematically, and document our steps.
+Data cleaning is a crucial part of data analysis that involves identifying and correcting errors or inconsistencies in datasets. Every real dataset requires cleaning before it can be trusted for analysis.
 
 ### Why Data Cleaning Matters
-- Almost every real table has to be cleaned before it can be trusted
-- What you decide during cleaning actually determines what your numbers mean
-- Clean data ensures accurate analysis and reliable results
-- The tools learned today will be applied to more complex datasets next week
 
-## Loading and Setting Up Data
+- **Trust in Results**: Clean data produces reliable answers to questions
+- **Decision Making**: The decisions made during cleaning determine what your numbers mean
+- **Data Quality**: Real-world data is rarely perfect and contains various types of problems
 
-### Importing Libraries and Loading Data
+## Setting Up the Environment
+
+We'll be working with a sample dataset called `orders.csv` that simulates an online shop's transaction data.
+
+### Loading Data
 
 ```python
 import pandas as pd
 
-# Load the original data
+# Load original data
 orders_raw = pd.read_csv('data/orders.csv')
 
 # Create a copy for cleaning
 orders = orders_raw.copy()
+
+# Check the shape of the data
+print(orders.shape)  # Output: (825, 10)
 ```
 
-### Understanding the Dataset Structure
+The dataset contains 825 rows (individual orders) and 10 columns. The key columns include:
+- `order_id`: Unique identifier for each order
+- `customer_id`: Customer identification number
+- `order_date`: Date when the order was placed
+- `product`: Name of the product ordered
+- `category`: Product category (clothing, shoes, etc.)
+- `unit_price`: Price per unit
+- `quantity`: Number of items purchased
+- `express`: Whether express delivery was used
+- `coupon_code`: Discount code applied
+- `gift_message`: Gift message for the order
 
-The orders dataset contains:
-- 825 rows (one row per order line)
-- 10 columns including: order_id, customer_id, order_date, product, category, unit_price, quantity, express, coupon_code, gift_message
-- The data is entirely synthetic and designed to mirror real-world problems
+## Understanding Data Problems
 
-## Identifying Initial Problems
+Before cleaning, we need to identify problems in our dataset:
 
-### Key Issues Found:
-1. **Text format dates** - Dates are stored as strings instead of datetime objects
-2. **Text format prices** - Prices contain currency symbols, spaces, and commas instead of decimal points
-3. **Empty gift_message column** - Completely empty column with no values
-4. **Inconsistent text formatting** - Categories and express columns have inconsistent capitalization and spacing
+### Key Issues Identified:
+1. **Text columns that should be numbers**: `unit_price` is stored as text with currency symbols and formatting
+2. **Text inconsistency**: `category` and `express` columns have inconsistent capitalization and spacing
+3. **Missing values**: Some dates are missing, and there are 15 empty columns in the Airbnb dataset (though this one has fewer issues)
+4. **Duplicate entries**: Some orders appear twice due to formatting differences
 
-## Text Data Cleaning
+## Cleaning Text Data
 
 ### Problem 1: Inconsistent Category Values
 
-#### Understanding the Issue
-Categories in the dataset appear in multiple formats:
-- Capitalized words
-- Lowercase words  
-- Words with leading/trailing spaces
-- Different spellings for the same category (e.g., "home and garden" vs "home&garden")
+Categories like "clothing" appear in different formats:
+- "Clothing"
+- "clothing" 
+- "Clothing "
+- "clothing "
 
-#### Solution Approach
-We'll use pandas string methods to standardize the text format:
+#### Steps to Fix:
 
 ```python
-# Before cleaning - check unique values
-print(orders['category'].unique())
-# Output shows 38 different values instead of expected 6
+# Check unique values before cleaning
+print(orders['category'].nunique())  # Output: 38
 
-# Count how many times each category appears
+# Count occurrences of each value
 print(orders['category'].value_counts())
 
-# Clean the categories step by step
-orders['category'] = orders['category'].str.strip().str.lower()
-orders['category'] = orders['category'].replace('home and garden', 'home&garden')
-orders['category'] = orders['category'].str.title()
+# Clean the category column step by step:
+orders['category'] = orders['category'].str.strip()  # Remove leading/trailing spaces
+orders['category'] = orders['category'].str.lower()  # Convert to lowercase
+orders['category'] = orders['category'].replace('home and garden', 'home and garden')  # Fix spelling
+orders['category'] = orders['category'].str.title()  # Capitalize first letter of each word
 
-# Verify the cleaning worked
-print(orders['category'].value_counts())
+# Verify results
+print(orders['category'].nunique())  # Output: 6 (correct number of categories)
 ```
 
-#### Key String Methods Used:
-- `str.strip()` - Removes spaces at beginning and end of strings
-- `str.lower()` - Converts all characters to lowercase
-- `str.replace()` - Replaces entire values with new values
-- `str.title()` - Capitalizes first letter of each word
+### Problem 2: Inconsistent Express Delivery Values
 
-### Problem 2: Inconsistent Express Values
+The `express` column has inconsistent values:
+- "Yes"
+- "yes" 
+- "YES"
+- "y"
+- "No"
+- "no"
 
-#### Understanding the Issue
-The express column contains multiple variations of "yes" and "no":
-- "Yes", "YES", "yes"
-- "No", "NO", "no"
-- "Y", "y"
-- Missing values
-
-#### Solution Approach
-We'll use a combination of string methods and mapping:
+#### Steps to Fix:
 
 ```python
-# Check current values
+# Check unique values before cleaning
 print(orders['express'].value_counts())
 
-# Clean the express column
-orders['express'] = orders['express'].str.lower()
+# Clean the express column using map function
+orders['express'] = orders['express'].str.lower()  # Convert to lowercase
 
-# Create a mapping dictionary for standardization
+# Map values to boolean (True/False)
 express_mapping = {
     'yes': True,
     'y': True,
-    'no': False,
-    None: False  # Missing values become False
+    'no': False
 }
 
-# Apply mapping
 orders['express'] = orders['express'].map(express_mapping)
 
-# Verify the cleaning worked
+# Check results - missing values should be zero
+print(orders['express'].isnull().sum())  # Should output: 0
+
+# Verify the cleaned data
 print(orders['express'].value_counts())
 ```
 
-### Problem 3: Text Format Prices
+## Cleaning Numeric Data
 
-#### Understanding the Issue
-Prices are stored as text with:
-- Currency symbols (kroner)
-- Spaces within numbers  
-- Commas for decimal points
-- Inconsistent formatting
+### Problem 3: Price Data as Text
 
-#### Solution Approach - Step-by-Step Cleaning:
+Unit prices are stored as text with currency symbols and inconsistent formatting:
+- "1199,00 kroner" 
+- "1299 kroner"
+- "349,00"
+
+#### Steps to Fix:
 
 ```python
-# First, examine the raw prices
+# Check current price format
 print(orders['unit_price'].head(8))
 
-# Clean step by step
+# Clean step by step:
 price = orders['unit_price'].str.strip()  # Remove leading/trailing spaces
-price = price.str.replace('kroner', '')   # Remove currency symbol
-price = price.str.replace(' ', '')        # Remove internal spaces
-price = price.str.replace(',', '.')       # Convert comma to decimal point
+price = price.str.replace(' kroner', '')  # Remove currency symbol
+price = price.str.replace(' ', '')  # Remove internal spaces
+price = price.str.replace(',', '.')  # Convert comma to decimal point
 
 # Convert to numeric type
 orders['unit_price'] = pd.to_numeric(price, errors='coerce')
 
-# Verify the results
+# Verify results
+print(orders['unit_price'].dtype)  # Should show float64
 print(orders['unit_price'].describe())
 ```
 
-#### Key Methods Used:
-- `str.strip()` - Remove whitespace
-- `str.replace()` - Replace parts of strings (not `replace()` which replaces entire values)
-- `pd.to_numeric()` - Convert to numeric type with error handling
+## Cleaning Date Data
 
-## Date Cleaning
+### Problem 4: Date Values as Text
 
-### Problem: Text Format Dates
+Order dates are stored as text and need to be converted to proper datetime objects.
 
-#### Understanding the Issue
-Dates are stored as text strings instead of datetime objects, making date-based analysis impossible.
-
-#### Solution Approach:
+#### Steps to Fix:
 
 ```python
-# Try direct conversion (will fail)
-try:
-    pd.to_datetime(orders['order_date'])
-except Exception as e:
-    print(f"Error: {e}")
+# Check date format issues
+print(orders['order_date'].head())
 
-# Clean with error handling
-orders['order_date'] = pd.to_datetime(orders['order_date'], 
-                                     errors='coerce')
+# Convert text to datetime, handling errors gracefully
+orders['order_date'] = pd.to_datetime(orders['order_date'], errors='coerce')
 
-# Check for missing values introduced by conversion
-print("Missing dates before:", orders['order_date'].isnull().sum())
-print("Missing dates after:", orders['order_date'].isnull().sum())
+# Count missing dates before and after
+missing_before = orders['order_date'].isnull().sum()
+print(f"Missing dates before: {missing_before}")
 
-# Show rows with missing dates
-missing_dates = orders[orders['order_date'].isnull()]
-print(missing_dates[['order_id', 'order_date']])
+# Check which specific dates failed to convert
+failed_dates = orders[orders['order_date'].isnull()]['order_date']
+print(failed_dates)
+
+# Verify results
+print(orders['order_date'].dtype)  # Should show datetime64[ns]
 ```
 
-#### Key Concepts:
-- `pd.to_datetime()` converts text to datetime objects
-- `errors='coerce'` converts invalid dates to NaN (Not a Time) instead of raising errors
-- Always check for missing values before and after cleaning
+## Finding and Removing Duplicates
 
-## Duplicate Detection and Removal
+Duplicates can skew analysis results by inflating counts and totals.
 
-### Problem: Duplicate Order Records
-
-#### Understanding the Issue
-Some orders appear twice in the dataset, which would inflate totals.
-
-#### Solution Approach:
+### Steps to Find Duplicates:
 
 ```python
 # Check for duplicates using all columns
-duplicates = orders.duplicated()
-print("Total duplicates:", duplicates.sum())
+duplicate_count = orders.duplicated().sum()
+print(f"Number of duplicate rows: {duplicate_count}")
 
-# Show specific duplicate rows (both copies)
+# Show actual duplicate rows
 duplicate_rows = orders[orders.duplicated(keep=False)]
-print(duplicate_rows.head(6))
+print(duplicate_rows.head())
 
-# Remove duplicates, keeping first occurrence
-orders_cleaned = orders.drop_duplicates()
-
-# Alternative: Check only by order_id (unique identifier)
-order_id_duplicates = orders.duplicated(subset=['order_id'])
-print("Duplicates by order_id:", order_id_duplicates.sum())
+# Check duplicates based on specific column (order_id)
+duplicate_order_ids = orders.duplicated(subset=['order_id']).sum()
+print(f"Duplicate order IDs: {duplicate_order_ids}")
 ```
 
-#### Key Concepts:
-- `duplicated()` identifies duplicate rows (marks second and subsequent occurrences)
-- `drop_duplicates()` removes duplicate rows
-- Always clean text data before checking for duplicates to ensure proper matching
-- `keep=False` shows all copies of duplicates instead of just the second occurrence
+### Removing Duplicates:
 
-## Handling Missing Values
+```python
+# Remove duplicate rows, keeping first occurrence
+orders_cleaned = orders.drop_duplicates(keep='first').reset_index(drop=True)
 
-### Problem: Empty Gift Message Column
+# Verify result
+print(orders_cleaned.shape)  # Should be 800 rows (825 - 25 duplicates)
+```
 
-#### Understanding the Issue
-The gift_message column is completely empty (825 out of 825 rows are null).
+## Removing Empty Columns
 
-#### Solution:
+Empty columns provide no value and should be removed.
+
+### Steps to Remove:
 
 ```python
 # Check column statistics
-print(orders.describe(include='all'))
+print(orders.describe())
 
-# Remove the empty column
-orders = orders.drop(columns=['gift_message'])
+# Remove empty gift_message column
+orders_final = orders.drop(columns=['gift_message'])
 
-# Verify removal
-print(orders.shape)
+# Verify result
+print(orders_final.shape)  # Should be 9 columns (10 - 1)
 ```
 
-### Coupon Code Column
+## Creating New Calculated Columns
 
-The coupon_code column has 635 missing values (79% of rows). These are not errors but represent legitimate data - most customers didn't use coupons.
+After cleaning, we can create new meaningful columns for analysis.
 
-## Final Analysis and Validation
-
-### Creating New Calculated Columns
+### Example: Total Order Value:
 
 ```python
-# Calculate total amount for each order line
-orders['total'] = orders['unit_price'] * orders['quantity']
+# Calculate total value per order line
+orders_final['total'] = orders_final['unit_price'] * orders_final['quantity']
 
-# Group by category to see revenue by product type
-category_revenue = orders.groupby('category')['total'].sum().sort_values(ascending=False)
+# Verify the calculation
+print(orders_final[['unit_price', 'quantity', 'total']].head())
+```
+
+## Grouping and Aggregating Data
+
+Now that data is clean, we can answer meaningful questions.
+
+### Example: Revenue by Category:
+
+```python
+# Group by category and sum total revenue
+category_revenue = orders_final.groupby('category')['total'].sum().sort_values(ascending=False)
 print(category_revenue)
 
-# Group by month to see revenue over time
-orders['month'] = orders['order_date'].dt.to_period('M')
-monthly_revenue = orders.groupby('month')['total'].sum()
+# Example output:
+# shoes        207382.0
+# clothing     154639.0
+# books         16680.0
+```
+
+### Example: Monthly Revenue:
+
+```python
+# Group by month and sum revenue
+orders_final['month'] = orders_final['order_date'].dt.to_period('M')
+monthly_revenue = orders_final.groupby('month')['total'].sum().sort_values(ascending=False)
 print(monthly_revenue)
 ```
 
-### Validation Techniques
+## Saving Cleaned Data
 
-1. **Cross-check totals**: Ensure parts add up to the whole
-2. **Verify consistency**: Check that cleaned values make sense
-3. **Document changes**: Record all cleaning decisions for transparency
-
-## Complete Cleaning Workflow
-
-### Best Practices Implemented:
+Always save your cleaned data to avoid reprocessing.
 
 ```python
-# Complete cleaning workflow in one cell
-orders_clean = orders_raw.copy()
-
-# Clean categories
-orders_clean['category'] = (orders_clean['category']
-                           .str.strip()
-                           .str.lower()
-                           .replace('home and garden', 'home&garden')
-                           .str.title())
-
-# Clean express column  
-orders_clean['express'] = orders_clean['express'].str.lower()
-orders_clean['express'] = orders_clean['express'].map({
-    'yes': True, 'y': True, 'no': False, None: False
-})
-
-# Clean prices
-price = (orders_clean['unit_price']
-         .str.strip()
-         .str.replace('kroner', '')
-         .str.replace(' ', '')
-         .str.replace(',', '.'))
-orders_clean['unit_price'] = pd.to_numeric(price, errors='coerce')
-
-# Clean dates
-orders_clean['order_date'] = pd.to_datetime(orders_clean['order_date'], 
-                                           errors='coerce')
-
-# Remove duplicates
-orders_clean = orders_clean.drop_duplicates()
-
-# Remove empty column
-orders_clean = orders_clean.drop(columns=['gift_message'])
-
-# Save cleaned data
-orders_clean.to_csv('data/orders_clean.csv', index=False)
+# Save cleaned dataset
+orders_final.to_csv('data/orders_clean.csv', index=False)
 ```
 
-## Important Concepts and Gotchas
+## Key Principles of Data Cleaning
 
-### String Methods vs Replace Methods
-- **`.str.replace()`**: Replaces parts of text within values (like removing currency symbols)
-- **`.replace()`**: Replaces entire values (like changing 'home and garden' to 'home&garden')
+### 1. **Never Modify Original Data**
+Always work on a copy of the original dataset to preserve the raw data for reference.
 
-### Error Handling in Data Conversion
-- Always use `errors='coerce'` when converting data types
-- Check for missing values before and after conversion
-- Invalid conversions become NaN, not errors
+### 2. **Document Your Process**
+Each step should be written as code so others can reproduce your cleaning process exactly.
 
-### Duplicate Detection Timing
-- Clean text data first before checking for duplicates
-- Text differences (capitalization, spacing) can cause false negatives in duplicate detection
-- Use `subset` parameter to check duplicates in specific columns only
+### 3. **Check Results After Each Step**
+Verify that each cleaning operation produced the expected result before proceeding.
 
-### Data Validation
-- Never assume your cleaned data is perfect
-- Always validate that results make sense
-- Cross-check totals and verify calculations
-- Document all decisions made during cleaning for reproducibility
+### 4. **Handle Missing Values Thoughtfully**
+Missing values often have reasons (customers didn't use coupons, orders lack dates) and should be treated appropriately.
 
-## Why This Matters
+## Common Gotchas and Edge Cases
 
-Data cleaning is not just about fixing errors - it's about making informed decisions about what constitutes valid data. Every decision affects the final numbers, and understanding these decisions is crucial for accurate analysis. The tools learned here will be applied to more complex datasets in future work, but the fundamental approach remains the same: identify problems systematically, fix them methodically, and document everything clearly.
+1. **Regex for Multiple Replacements**: You can combine multiple string operations into one step using regex patterns
+2. **Data Type Conversion Errors**: Always clean text before converting to numeric types
+3. **Duplicate Detection Timing**: Clean text first, then look for duplicates to catch formatting variations
+4. **Missing Values in Grouping**: Groupby operations silently exclude missing values - always verify totals match parts
 
-The cleaned dataset now provides reliable foundation for deeper analysis, including calculating revenue by category, analyzing seasonal trends, and understanding customer purchasing patterns - all of which would have been impossible with the original messy data.
+## Summary of Cleaning Steps
+
+1. **Text Standardization**:
+   - Remove leading/trailing spaces
+   - Convert to consistent case (lowercase)
+   - Handle special characters and spelling variations
+   - Apply title case where appropriate
+
+2. **Numeric Data Conversion**:
+   - Clean formatting (remove currency symbols, spaces)
+   - Convert to proper numeric types
+   - Handle decimal separators correctly
+
+3. **Date Conversion**:
+   - Convert text dates to datetime objects
+   - Handle conversion errors gracefully
+   - Identify and document problematic dates
+
+4. **Duplicate Management**:
+   - Identify duplicate rows
+   - Remove duplicates while preserving meaningful data
+   - Verify that removal doesn't change analysis results significantly
+
+5. **Column Management**:
+   - Remove completely empty columns
+   - Keep columns with meaningful missing values (like coupon codes)
+   - Create calculated columns for analysis
+
+## Best Practices
+
+1. **Start Small**: Work with small datasets or samples to test cleaning logic
+2. **Version Control**: Keep track of changes and document why decisions were made
+3. **Validation**: Always validate that your cleaned data makes sense
+4. **Reproducibility**: Write all steps as code that can be run repeatedly
+5. **Documentation**: Include comments explaining each cleaning step for future reference
+
+The key takeaway is that data cleaning is both a technical skill and a judgment call. Every decision you make affects the final analysis, so it's important to document your reasoning and validate that your results are reasonable.

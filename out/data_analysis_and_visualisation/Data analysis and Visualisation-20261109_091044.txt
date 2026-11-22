@@ -1264,61 +1264,75 @@ So, both ends included, actually, not in the entire home.
 So, missing ratings.
 So, let's take a look at that.
 So, 1,911 listings, well, are in one to three central neighborhoods.
-So, the Malm, and we have a little bit more.
-So, the Malm, the Malm, the Malm.
+Södermalm, and we have a little bit more.
+So, Södermalm, Östermalm, Normal.
 And that is more than, well, four out of ten, right?
-So, without is in, we would have had to write three conditions.
-And join them with this side, or.
+So, without is in, we would have had to write three conditions and join them with the sign, or.
 And the 2,968 listings have room for between two and four guests.
 And maybe you can notice here that we're using between, which includes both ends.
-So, two, three, and four are all counted.
-Okay.
+So, 2,3, and 4 are all counted, okay?
 So, a little bit different here, right?
-And that is, maybe.
-I've actually already calculated this before the list.
+And that is, maybe, I've actually already calculated this before the lesson.
 So, 65% of all the listings.
 814 are not entire homes.
-That is the mask from before, with the not sign in front.
+And that is the mask from before, with the not sign in front.
 The mask, because we have already used mask before, if you remember, when we created it.
-So, yeah.
-You can check it again with what we already know.
-So, we know that 3,760 entire homes plus the 814 gives us the total 4,574, which we always come back to, which is realistic, right?
+So, yeah, you can check it again with what we already know.
+So, we know that 3,760 entire homes, plus the 814, gives us the total 4,574, which we always come back to.
+Which is every listing, right?
 So, not gives us exactly the rows that were actually left out.
 So, that's quite useful as well, if we want to look at the opposite of some.
-So, and 644 here have no ratings.
+And 644 here have no ratings.
 So, yeah.
-Isna is true where a value is actually missing, right?
-And if you remember, that count, for ratings, we had 3,930 when we used the scribe, right?
+Isna is true, where a value is actually missing, right?
+And if you remember, that count, for ratings, we had 3,930, when we used the scribe, right?
 So, 4,574 minus that 3,930, that would give us the 644.
 So, yeah.
-So, it's the same number.
-We just found it in a different way.
+So, it's the same number, we just found it in a different way.
 So, missing values, as you see, is something we have run into several times a day.
-But like I said, on Thursday, at the end of this week, we will learn what to do about them and then implement those tools into this data.
+But like I said, on Thursday, at the end of this week, we will learn what to do about them.
+And then implement those tools into this data.
 Okay.
 We are reaching the end of the lesson.
 So, one of the last things that I want to talk about is how we sort and pick rows and columns.
-Not that complicated at all, but we take it step by step.
+Not that complicated at all.
+But we take it step by step.
 So, let's do some sorting.
-A very common question about data is which one is the biggest, the smallest, the most popular?
+A very common question about data is which one is the biggest, the smallest, the most popular.
 And to answer that, well, we sort the table.
 So, in SQL, that would be equivalent to order by, right?
 So, one practical thing first.
 Our table actually has 84 columns, which is too wide to read.
 So, before we sort, I will make a list of six columns I actually want to see.
 And I will just call that, actually, I will call that view.
-All right.
+All right?
 And then we can look at the result later.
 So, the ones I want to use is name.
 I want to use, let's put it in there.
 Or the selection.
-Name, neighborhood, cleansed, room, type, com, date, date, number of views, scores, things.
+Name.
+Neighborhood.
+Cleansed.
+Let's spell it.
+Room.
+Type.
+Com.
+Date.
+Date.
+Number.
+Number.
+Views.
+Scores.
+Things.
 No, it's actually called rating, not ratings.
 Scores.
 Yeah.
 All right.
-And then I'm going to write listings, views, view.
-I want to sort the values, views.
+Then I'm going to write listings.
+Views.
+View.
+I want to sort the values.
+Views.
 And I'm actually also going to write sending calls.
 We're going to put the head.
 And what am I trying to do here?
@@ -1326,83 +1340,111 @@ It's just right.
 So, we're trying to find the five listings with the most reviews.
 So, keep only the only six columns that I want to see.
 One, two, three, four, five, six.
-Right.
+Right?
+Sort.
 Sort by number of reviews.
-Right.
+Right?
 Sort by number of reviews.
 Ascending false.
 So, biggest first.
 And show only the first five rows.
 All right.
-So, when we run this, if we look at number of reviews here, it goes down.
-From top to bottom.
-And that is the sort, right?
+So, when we run this.
+If we look at number of reviews here.
+It goes down from top to bottom.
+And that is the sort.
+Right?
 So, these are the five listings with the most reviews, of course.
 So, the top one has 1,293 reviews.
-And then 867, 855, 754, 734.
-And if we look at the ratings, 4.5, 4.46, 4.93, and so on.
-All of them are high, even for the popular listings.
+And then, 867, 855, 754, 734.
+And if we look at the ratings.
+4.5, 4.46, 4.93, and so on.
+All of them are high.
+Even for the popular listings.
 So, yeah.
 We can keep that in mind a little bit.
 Because we will come back to it on Thursday next week.
-And also, the first listing is a studio for two, right?
+And also, the first listing is a studio for two.
+Right?
 And the second one, well, is a bed in a dorm.
-So, that means something, well, a conclusion that we can draw here is that listings with the
-most reviews are not the big, fancy places or anything like that.
+So, that means something.
+Well, a conclusion that we can draw here is that listings with the most reviews
+are not the big fancy places or anything like that.
 And what do you think, guys?
 Is that a coincidence?
 Well, maybe it's just that small, cheap places get booked more often.
-And everyone just can leave a review, right?
+And everyone just can leave a review.
+Right?
 So, we cannot tell anything from this table.
-But it's a good thing to ask, right?
+But it's a good thing to ask.
+Right?
 Now, what if we want to sort two things?
 Let's try that as well.
-So, listings, view, sort, values.
-And I simply can just do in one single line, right?
-So, accommodates and reviews, sending, and I can post, false.
-And then, and let's put just for a second.
+So, listings.
+Listings.
+View.
+Sort.
+Values.
+And I simply can just do in one single line.
+Right?
+So, accommodates.
+And reviews.
+Sending.
+And I can post.
+False.
+And then, let's put just for a second.
 So, what am I trying to do here?
-Find the biggest listings, and among equally big ones, right?
-The most reviewed.
-So, first, sort by accommodates, right?
+Find the biggest listings.
+And among equally big ones.
+Right?
 So, when two rows have the same value, sort those on number of reviews.
 So, the order here matters.
 And you see that we said false, false here.
 So, one true, false for each column.
-Biggest first for both, right?
+Biggest first for both.
+All right?
 So, let's see here.
 Something accommodates.
-So, all listings have room for 16 guests, all right?
+So, all listings have room for 16 guests.
+All right?
 So, that's the first sort.
-The biggest first, right?
+The biggest first.
+Right?
 But a lot of listings have room for exactly, since both have exactly for 16.
 Actually, in fact, there are 11.
-I've already looked that up.
+I've already looked it up.
 So, it's not only these that have accommodates for 16.
 There's 11 of them.
 So, how does actually Pandas choose the order between them?
-Well, that is where the second column comes in, the number of reviews.
+Well, that is where the second column comes in.
+The number of reviews.
 So, among the listings with 16 guests, the ones with the most reviews actually comes first.
 So, 344, then 308, 27, 17, 10, and so on.
 And, yeah, we see that the number goes down.
-So, the rule is the first column decides, and the second column, when the first one is a tie, right?
+So, the rule is the first column decides, and the second column when the first one is a tie.
+Right?
 There is actually a shortcut for the top five.
 Sorry, top few, not top five.
 Top few case, which we do all the time.
 And it looks like something like this.
 Listings.
-And we put something in largest, right?
+And we put something in largest.
 Let's put the five here.
 And then view, right?
 There we go.
 And let's run this.
-And, yeah, again, five listings with the room of 16.
-This is not the same list as before, because we had, well, a large town at the top.
+And, yeah.
+Again, five listings with the room of 16.
+This is not the same list as before.
+Because we had, well, a large town at the top.
 And now it's not a large town at the top.
-Now it's Stockholm House, close to fair, close to fair in town.
+Now it's Stockholm House.
+Close to fair.
+Close to fair in town.
 So, it's a little bit different from before.
 And why is that?
-Well, because the 11 listings share the same number, 16, right?
+Well, because the 11 listings share the same number, 16.
+Right?
 And we only asked for five.
 There's no rule here for choosing between listings that are tied.
 So, Panda simply takes the one that comes first in our table.
@@ -1410,57 +1452,66 @@ So, in our earlier sort, we told it how to break the tie with the number of revi
 And here, we did not.
 So, it's a big difference, right?
 And also, if you notice the last two rows here, they have zero reviews.
-And the rating says none or not a number.
-So, yeah, listing with no reviews has no rating, right?
-And those are actually the part of the 644 missing ratings we counted before, right?
-So, the lesson here is just if there are ties and the order matters, well, add a second column to sort by.
-And if we look at this, so, if we look at the numbers on the far left here, on the table that we just made, 825, 997, 15, and 417, and 596, well, that is an index.
-So, it is a number or a label that every row carries around with it, like name tag, right?
+And the rating says none.
+Or not a number.
+So, yeah.
+Listing with no reviews has no rating, right?
+And those are actually part of the 644 missing ratings we counted before, right?
+So, the lesson here is just if there are ties and the order matters,
+well, add a second column to sort by.
+And if we look at this, so, if we look at the numbers on the far left here,
+on the table that we just made, 825, 997, 15, and 417, and 5900.
+Well, that is an index.
+So, it is a number or a label that every row carries around with it like name tag, right?
 And I'm pretty sure that you already know what an index is.
-So, when we first loaded the table, the index was simply 0, 1, 2, 3, and so on, one for each row.
-But when we sort of filter, the row keeps its own name tag, of course.
+So, when we first loaded the table, the index was simply 0, 1, 2, 3, and so on.
+One for each row.
+But when we sort a filter, the row keeps its own name tag, of course.
 So, that's why the top is still called 825.
 The top here is called 892, and so on.
 So, that actually gives us two different ways to point at the row.
-We can point to that by label.
-So, give me the row called 825, or by position.
+We can point at that by label.
+So, give me the row called 825.
+Or by position.
 Give me the first row, whatever it is called, right?
 And we can actually try both on our top five.
 Let's try that out.
-So, and then print top, I'll follow you just blindly here, 825 name.
-And here, we're going to say, e-lock, and we'll write it a little differently.
+So, and then print, top, follow you blindly here, 825, name.
+And here, we're going to say ELOCK.
+We'll write it a little differently.
 So, 0 and name, right?
 So, what are we trying to do here?
 Well, we're trying to get the name of the top listing in two different ways, right?
 So, we're saving the five most previewed listings in a variable called top.
-And here, we are using lock, right?
+And here, we are using LOCK, right?
 So, the row labeled 825, column called name.
 And here is the row position, row position 0, the first one, right?
 And the column called name, okay?
-And notice here that lock and e-lock always uses square brackets, not parentheses.
+And notice here that LOCK and ELOCK always uses square brackets, not parentheses.
 So, both lines print the same name, studio, apartment, double bed.
-We find, we found the same listings in two ways, right?
+We found the same listings in two ways, right?
 And here, they just happen to give the same answer because the row called 825 is also the first row.
 But they're not the same thing, okay?
-Yeah.
-So, lock uses the name and e-lock uses the position.
-And lock can actually do more than pick one row.
+Yeah, so LOCK uses the name and ELOCK uses the position.
+And LOCK can actually do more than pick one row.
 It can pick rows and columns in one go.
-Listings, lock, listings, accommodate, 10, view.
+Listings, LOCK, listings, accommodate, 10, view.
 So, what are we trying to do here?
 Well, show the listings with room for 10 or more guests with only my six columns that I chose earlier in view, right?
 Yeah.
 So, let's try that out.
 And there we go.
 So, here are the first five listings with room for 10 or more.
-A big one with 16, 16, and a few villas, family house for 12 also.
+A big one with 16, 16.
+And a few villas, family house for 12 also.
 Yeah.
 So, that is sometimes useful.
 But sometimes, it might look just messy.
 And maybe we would like a clean 0, 1, 2 here.
 And for that, there is a method that we could do.
 And we will use the top here.
-So, instead of having these indexes, sorry, instead of having the indexes that we saw before when using top, we're going to change it to 0, 0, 1, 2, 3, 4, and so on.
+So, instead of having these indexes, sorry, instead of having the indexes that we saw before when using top,
+we're going to change it to 0, 0, 1, 2, 3, 4, and so on.
 So, there is a method for that.
 So, what we can do is top, yeah, reset, reset index, and then we just drop, and then we put it to true.
 Yeah, that's it.
@@ -1468,24 +1519,28 @@ Yeah, that's it.
 Same thing as we saw before.
 So, the old names 825 and 997 and so on are gone.
 But everything else is the same list or the same five listings in the same order.
-So, we just wrote a drop true just to throw the old index away.
-And if we have left this out, actually, if we dropped false or something like that, the pandas would keep the old numbers and put them in a new column.
+So, we just wrote drop true just to throw the old index away.
+And if we have left this out, actually, if we drop false or something like that,
+the pandas would keep the old numbers and put them in a new column.
 So, we would get both of them.
 So, we would have an extra column called index.
 And we don't want that for now.
 So, there you go.
 Now, we can actually read the table.
 We can look at its parts, pick columns, filter rows, sort, and point at specific rows.
-And yeah, I think that's too much it.
+And, yeah, I think that's too much it.
 And we could wrap it up with a question.
 And I'm actually going to go through it because I will share this code if you want to look into it more.
 You can do that.
-But at the end of the lesson, I'm going to try to remember to always do a wrap it up question, which I have actually prepared for Lee.
+But at the end of the lesson, I'm going to try to remember to always do a wrap it up question,
+which I have actually prepared for Lee.
 And it looks like something like this.
 And I've already prepared the answer as well.
 So, there we go.
 So, the question is to wrap up the whole lesson.
-Inside the mall, among entire homes, for four or more guests, which five listings have the most reviews and how are they rated?
+Inside the mall, among entire homes, for four or more guests,
+which five listings have the most reviews?
+And how are they rated?
 So, how would I write that in super speed?
 Well, something like this.
 So, the same four steps as in the list above.
@@ -1502,8 +1557,9 @@ I think that would be all right.
 And show only these one, two, three, four columns.
 And that would quite answer the question.
 And then we might want to print it out as well so we can see it.
+So, answer.
 So, let's actually run this.
-And then when we finish, try this question out yourself without looking at my answer.
+And at the end, when we finish, try this question out yourself without looking at my answer.
 That's a good check if you have been able to.
 And that can help you also with the lab.
 And I'm going to show you the lab in a second.
@@ -1513,29 +1569,26 @@ So, if we look at two things here, a lot of reviews here does not actually tell 
 So, because a review is only left by a guest who has stayed there.
 So, a number of reviews is just measures how many guests have stayed and written something, not how good the place actually is.
 So, a listing that has been on Airbnb for 10 years, well, would have collected 10 years of reviews.
-And a brand new listing, even a wonderful one, would never reach maybe CF 734.
+And a brand new listing, even a wonderful one, would never reach maybe CF734.
 And our table here cannot tell us how long each listing has existed.
 We actually have a column called the first review with the date of the review, but it's actually sorted as text.
 So, we cannot calculate with it quite yet.
-And that's something that we're going to learn when we're going to clean the data and come back to it.
-So, yeah, when we read the table here, the honest sentence is, these are the best listings.
-Sure, but is it really?
+And that's something that we're going to learn when we're going to clean the data and come back to.
+So, yeah, when we read the table here, the honest sentence is, these are the best listings, sure, but is it really?
 I would rather say, these are the listings that have collected the most reviews, not the best, not used the best, right?
-And the ratings also hardly tells us anything.
-4.66, 4.58, 4.80, and so on.
+And the ratings also hardly tells us anything, 4.66, 4.58, 4.8 and so on.
 They look different.
 But if you remember the Scribe table from earlier, the average rating for all listings were 4.82, right?
 So, the median, I think, was 4.92 or something like that.
 And I think 75% of the rows said actually 5.
 So, that means at least a quarter of all listings have a perfect score of 5.
 So, almost everything is actually rated very high.
-So, the difference between 4.51 and 4.80 is actually quite tiny, right?
-Compared to the whole scale.
+So, the difference between 4.51 and 4.80 is actually quite tiny, right, compared to the whole scale.
 So, we cannot say that one is good and the other one is bad because when nearly everyone gets close to the top score, the score stops telling us good from bad.
 And that's quite good for us to stumble on in this course.
-And one more thing.
-We looked at five rows, right?
-Our filter found, well, earlier we found 499 listings in Southern Mound, entire homes, and it was for four or more guests.
+So, one more thing, we looked at five rows, right?
+Our filter found, well, earlier we found 499 listings in Southern Malm, entire homes, and it was for four or more guests.
+We showed the top five.
 So, the other 444 are actually not in the answer.
 So, a table actually gives us an answer very quickly.
 But it is our job to ask what the answer is really saying.
@@ -1547,56 +1600,49 @@ But before I let you go, I actually want to show you the lab so there's no confu
 So, please pay attention now.
 So, there is no confusion, no panics.
 Let me just stop sharing because I think I'm only sharing one particular window.
-Or, yeah.
-So, let me actually share the whole screen.
-And let me just show you the lab.
+So, let me actually put it on the screen and let me just show you the lab.
 I haven't uploaded it yet, so you can't find it quite yet.
 But the lab for today looks like this.
 And I'm going to read it together with you guys.
-So, today, well, we started on a new area.
-And it can feel confusing at first.
-So, I understand.
-It can feel confusing at first, especially if it's news for you.
-This is the first time doing it and so on.
+So, today, well, we started on a new area and it can feel confusing at first.
+So, I understand it can feel confusing at first, especially if it's news for you.
+This is first time doing it and so on.
 So, we introduced Jupyter Notebooks.
 We introduced Pandas for the first time and so on.
 Therefore, this lab, and this is going to be for the whole week, actually.
 So, this lab for this week, and we will see how we will do next week.
 I will talk to some of you guys and pick some info from you guys.
-So, this lab has two parts, and you choose.
+So, this lab has two parts and you choose.
 So, if one just looks directly, four pages, a lot of questions, maybe a little bit of panic.
 Oh, my God, do I need to do all of this?
-No.
-You choose.
+No, you choose.
 So, you have a part one, which I call practice.
 It repeats every step we did today, but with other columns and other questions.
 Principle is the same.
-So, do this part if you want to try all the steps once, once more, and feel sure about them.
+So, do this part if you want to try all the steps once more and feel sure about them.
 And then we have a part two.
 You can go deeper.
-And this is for you who felt, well, I understood this, and I want to go further.
-The questions here are more open, and you combine the tools from today.
+And this is for you who felt, well, I understood this and I want to go further.
+The questions here are more open and you combine the tools from today.
 So, I do not expect you to do both parts.
 It is your own choice.
 Can you do both?
 Sure.
 If you find time enough to do it, sure.
 And on Friday, we might have a little bit of catch-up.
-So, you can also save a little bit for Friday.
-Because, yeah, most certainly, we will have a little bit of catch-up.
+So, you can also save a little bit for Friday because, yeah, most certainly we will have a little bit of catch-up.
 And you're also welcome to contact me if you want to talk about which part to take.
 So, sometimes it's not black and white.
 I understand that.
-So, sometimes I might say, well, I was a little bit confused.
+So, sometimes I might say, well, I was only confused.
 Should I do some of the practice and then go?
 Sure.
-We can discuss it.
+And we can discuss it.
 So, there might be a special case for just you.
 So, just contact me and we can discuss it.
 And, of course, you work in your own notebook and so on.
 And then there's some descriptions of what to do.
-And the questions.
-And wrong on purpose and so on.
+And the questions and wrong purpose and so on.
 And what is expected.
 Same thing for Go Deeper.
 So, you choose which one you want to do.
@@ -1614,29 +1660,22 @@ But sometimes you do have longer lessons.
 And sometimes they're shorter.
 Any questions before I let you go?
 Any questions about the lab, first of all?
-You just want me to be quiet now.
-So, you can't go too much.
-Oh, no.
-Actually, I have a question.
+You just want me to be quiet now so you can't go to lunch.
+No, no, actually, I have a question.
 You have some notes that you copied and pasted into the editor.
 Are you going to share those notes?
 Those are all my notes that I actually have.
 And, of course, I have a little, you could say, a cheat sheet that I follow.
-But, yeah, those notes would make no sense to you, to you guys.
-It's more...
-No, no.
-I mean, like, about this data.
+But, yeah, those notes would make no sense to you guys.
+No, no, I mean, like, about this data.
 Oh, yeah, yeah, yeah.
 Oh, okay.
-Everything, everything that I've written here, I'm actually going to share that in, if you
-remember the folders in the DLA, the shared folder that we have in Teams.
-There is a folder, a specific folder where you find recordings, a specific folder where you
-find labs, and a specific folder where you find data, but also a specific folder called
-code, and that's where you're going to keep the lesson.
-So, I'm going to call it lesson one or something like that.
+Everything that I've written here, I'm actually going to share that in, if you remember, the folders in the DLA, the shared folder that we have in Teams.
+There is a folder, a specific folder where you find recordings, a specific folder where you find labs.
+And the specific folder where you find data, but also a specific folder called code.
+And that's where you're going to keep the lesson.
+So I'm going to call it lesson one or something like that.
 All right.
-All right.
-Okay.
 And then you can find everything that we have written together today.
 All right.
 Thanks.
@@ -1644,20 +1683,17 @@ Thank you.
 Any more questions?
 Perfect question.
 Any more questions?
-I do have another question, but it connects to installation notes that you've written last
-Friday.
+I do have another question, but it connects to installation notes that you've written last Friday.
 Sure.
-Could, if it's more specific for you, maybe...
+If it's more specific for you, maybe...
 Probably.
 Yeah.
-So, maybe we can take that after lunch together.
+So maybe we can take that after lunch together.
 Okay.
 Sounds all right?
 Thank you.
 Okay.
-So, when you get back from lunch, just write to me and, yeah, we can take it from there.
-And if I find something that involves the whole class, of course, I can take it with all of
-you guys, of course.
+So when you get back from lunch, just write to me and yeah, we can take it from there.
+And if I find something that involves the whole class, of course, I can take it with you, all of you guys, of course.
 All right.
 I will end the recording there.
-And...

@@ -1,23 +1,19 @@
-What is the standard representation of missing values in pandas?;In pandas, missing values are typically represented as `NaN` (Not a Number) or `None`.
+What does NaN represent in pandas and how is it treated in comparisons?;NaN stands for "Not a Number" and represents missing values in pandas. It is not equal to itself, meaning np.nan != np.nan evaluates to True.
 
-How can you detect missing values in a pandas DataFrame?;You can use the `isnull()` or `isna()` methods to detect missing values and return boolean masks indicating their locations.
+How can you detect missing values in a pandas DataFrame?;You can use the isnull() or isna() methods, which return a boolean DataFrame where True indicates a missing value.
 
-How do you count the number of missing values per column in a DataFrame?;Use `df.isnull().sum()` to count missing values for each column.
+What are the different strategies for handling missing values in pandas?;Common strategies include removing rows/columns with missing data (dropna), filling with statistical measures like mean or median (fillna), forward/backward fill, using indicator variables, or model-based imputation.
 
-Why is it important to handle missing values properly in data analysis?;Improper handling of missing values can lead to biased conclusions, reduced statistical power, or errors in computations.
+What is the difference between an inner join and a left join when merging DataFrames?;An inner join returns only rows that have matching values in both DataFrames, while a left join returns all rows from the left DataFrame and matching rows from the right.
 
-What are some basic strategies for dealing with missing values?;Common strategies include removing rows/columns with missing data using `dropna()` or filling them with estimates like mean, median, or constant values through imputation.
+Why is it important to clean data before merging multiple DataFrames?;Cleaning ensures data consistency, handles missing values appropriately, standardizes formats, and prevents errors during the merge operation, leading to accurate analysis results.
 
-What does an inner join do when merging two DataFrames?;An inner join returns only the rows where matching records exist in both tables based on the specified key column.
+What are some key considerations when performing merges in pandas?;Key considerations include matching column names and data types, index preservation, performance optimization with large datasets, memory usage, and choosing appropriate join types (inner, left, right, outer).
 
-How does a left join differ from an inner join?;A left join keeps all rows from the left DataFrame and adds matching rows from the right DataFrame, filling non-matching entries with NaN.
+How do you decide which strategy to use for handling missing values in a dataset?;The decision depends on factors like the amount of missing data, pattern of missingness, impact on analysis, and domain knowledge about what missing values might signify.
 
-What happens during a right join operation?;A right join retains all rows from the right DataFrame and matches them with corresponding rows from the left DataFrame.
+What is the purpose of merging DataFrames in data analysis?;Merging combines related information from different sources into one cohesive dataset, enabling comprehensive analysis that requires data from multiple tables or sources.
 
-What is the result of performing an outer join between two DataFrames?;An outer join includes all rows from both DataFrames, combining matching records and filling unmatched entries with NaN.
+How does pandas represent missing values and what are the implications for data types?;Missing values are typically represented as NaN (Not a Number) or None. When mixed data types are present, pandas often converts everything to object dtype, which can affect operations and memory usage.
 
-What should be checked before joining two DataFrames to ensure successful merging?;You must verify that the columns used for joining have identical data types and values to avoid mismatches or errors.
-
-How can duplicate keys in joined tables affect the outcome of a merge operation?;Duplicate keys may cause a Cartesian product effect, resulting in more rows than expected in the merged output.
-
-What are some best practices for performing efficient joins on large datasets?;Best practices include verifying data types, checking for duplicates, choosing appropriate join types, handling missing values beforehand, and optimizing performance with indexes or filtering.
+What are some best practices for managing missing data during the data cleaning process?;Best practices include understanding the pattern of missingness, making informed decisions about imputation vs. removal, using domain knowledge, documenting choices, and ensuring consistency across related datasets before merging.

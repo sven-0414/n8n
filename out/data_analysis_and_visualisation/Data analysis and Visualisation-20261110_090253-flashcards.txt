@@ -1,19 +1,19 @@
-What does the `value_counts()` method do in pandas?;It counts how many times each unique value appears in a column and returns a Series sorted by count in descending order.
+What does the `value_counts()` method do in pandas?;It counts how many times each unique value appears in a column and returns a Series sorted by frequency in descending order.
 
-How does `value_counts()` handle missing values by default?;It automatically excludes missing values (NaN) from the calculation unless `dropna=False` is specified.
+How can you calculate proportions instead of absolute counts using value counts?;Use the `normalize=True` parameter to convert counts into proportions that sum to 1.0.
 
-What are the three steps involved in a group by operation?;Split: divide data into groups based on criteria, Apply: calculate statistics for each group, Combine: merge results back into a structured output.
+What happens if you don't exclude missing values when using `value_counts()`?;Missing values (NaN) will be included in the result and displayed as 'nan'.
 
-What is the purpose of the `aggregate()` method in grouped data?;It allows multiple calculations to be performed on grouped data simultaneously and returns a structured result table.
+What are the three steps involved in a group by operation?;Split the dataset into groups, apply an aggregation function to each group, and combine the results.
 
-Why should you examine sample sizes when analyzing grouped data?;Small sample sizes can lead to unreliable averages and may indicate the presence of outliers, making median a more reliable measure than mean.
+How do you perform multiple aggregations on grouped data using `agg()`?;Pass a list of function names to `agg()` to apply each function to all numeric columns in the group.
 
-How do you include missing values in `value_counts()` results?;By setting the parameter `dropna=False` in the method call.
+Can you specify different functions for different columns when grouping data?;Yes, by passing a dictionary to `agg()` where keys are column names and values are the aggregation functions.
 
-What happens if you try to perform mathematical operations on a price column stored as strings?;The operation will fail because pandas cannot perform numeric calculations on text data directly.
+Why is it important to clean price data before performing mathematical operations?;Price data often contains non-numeric characters like currency symbols and commas that prevent calculations.
 
-What is one key takeaway about using averages in grouped analysis?;Averages can be misleading without examining sample sizes, especially when dealing with small samples or outliers.
+What should you check before performing calculations on a dataset?;You should verify that columns have appropriate data types (numeric) before doing mathematical operations.
 
-How can you group data by multiple columns in pandas?;By passing a list of column names to the `groupby()` method, such as `df.groupby(['col1', 'col2'])`.
+How can group by operations help identify data quality issues?;By examining value counts and group statistics, you can spot missing values, unexpected patterns, or outliers that may indicate errors.
 
-What should you document during data analysis to ensure reliable results?;Missing values, unusual patterns, data type inconsistencies, and sample sizes for each group.
+What is the advantage of using median over mean when interpreting small sample groups?;Median is more robust to outliers and provides a better representation of central tendency for small or skewed datasets.
