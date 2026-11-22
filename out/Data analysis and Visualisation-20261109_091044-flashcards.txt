@@ -1,0 +1,45 @@
+What happens when you sort text data containing numbers in pandas?;Pandas sorts text lexicographically, which means it orders them like a dictionary, not numerically.
+
+How do you create a boolean mask to filter rows in pandas?;A boolean mask is created by applying a condition to a column, such as `df.column == "value"`, resulting in a Series of True/False values.
+
+How do you count the number of True values in a boolean mask?;Use `.sum()` on the mask to count how many True values it contains.
+
+What operator should be used instead of `and` when combining conditions in pandas?;Use `&` for "and", `|` for "or", and `~` for "not" in pandas boolean operations.
+
+How can you check if values in a column are within a specific range?;Use the `.between()` method, e.g., `df.column.between(2, 4)` to find values between 2 and 4 inclusive.
+
+How do you filter rows where a column's value is in a list of options?;Use the `.isin()` method, such as `df.column.isin(['A', 'B', 'C'])`.
+
+What does the `.notna()` method return for a pandas Series?;It returns a boolean mask indicating which values are not missing (NaN).
+
+How do you sort a DataFrame by one column in descending order?;Use `df.sort_values('column_name', ascending=False)`.
+
+How do you sort a DataFrame by multiple columns with different orders?;Use `df.sort_values(['col1', 'col2'], ascending=[True, False])`.
+
+What is the difference between `.loc` and `.iloc` in pandas?;.loc accesses rows and columns by label, while .iloc accesses them by integer position.
+
+How do you select the top 5 rows after sorting a DataFrame?;Use `df.sort_values('column').head(5)` or `df.nlargest(5, 'column')`.
+
+How can you combine multiple filtering conditions using boolean operations?;Wrap each condition in parentheses and use `&`, `|`, or `~` to combine them, like `(cond1) & (cond2)`.
+
+What is the purpose of a boolean mask in data analysis?;A boolean mask allows filtering rows based on conditions and can also be used for counting or calculating proportions.
+
+How do you filter rows where a column has missing values?;Use `.isna()` to identify missing values, e.g., `df.column.isna()` returns a boolean mask.
+
+How do you extract specific columns from a filtered DataFrame?;Select the desired columns using square brackets with a list of column names, like `df[['col1', 'col2']]`.
+
+How do you filter data for rows matching multiple criteria in one line?;Combine conditions using parentheses and operators like `(cond1) & (cond2) & (cond3)`.
+
+What is the correct syntax for filtering a DataFrame with multiple conditions?;Each condition must be wrapped in parentheses, e.g., `(df.col1 == 'A') & (df.col2 > 5)`.
+
+How do you get the proportion of True values in a boolean mask?;Use `.mean()` on the mask, which calculates the fraction of True values.
+
+What happens when you apply operations like `&` or `|` directly to pandas Series?;These operators work element-wise on Series, making them suitable for combining boolean conditions.
+
+How do you access data using label-based indexing in pandas?;Use `.loc[row_label, column_label]` to select specific rows and columns by their labels.
+
+How do you access data using position-based indexing in pandas?;Use `.iloc[row_position, column_position]` to select rows and columns by integer index.
+
+What is the key benefit of vectorized operations in pandas?;Vectorized operations allow efficient processing of entire columns at once rather than row-by-row iteration.
+
+How do you sort a DataFrame by multiple columns with ascending order for all?;Use `df.sort_values(['col1', 'col2'], ascending=True)` or simply omit the `ascending` parameter.
